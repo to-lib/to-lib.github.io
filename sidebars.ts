@@ -13,6 +13,7 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
+  // 设计模式侧边栏
   docsSidebar: [
     // 学习资源 - 顶部快速入口
     {
@@ -185,6 +186,292 @@ const sidebars: SidebarsConfig = {
           type: "doc",
           id: "java-design-patterns/interpreter-pattern",
           label: "🔤 解释器模式",
+        },
+      ],
+    },
+  ],
+
+  // Netty 侧边栏
+  nettySidebar: [
+    {
+      type: "doc",
+      id: "netty/index",
+      label: "🏠 Netty 首页",
+    },
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "netty/overview",
+          label: "📘 Netty 概述",
+        },
+        {
+          type: "doc",
+          id: "netty/basics",
+          label: "🔰 基础知识",
+        },
+        {
+          type: "doc",
+          id: "netty/core-components",
+          label: "🧩 核心组件",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 核心功能",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "netty/bytebuf",
+          label: "📦 ByteBuf 详解",
+        },
+        {
+          type: "doc",
+          id: "netty/codec",
+          label: "🔄 编解码器",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶实战",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "netty/advanced",
+          label: "⚡ 高级特性",
+        },
+        {
+          type: "doc",
+          id: "netty/practical-examples",
+          label: "💡 实战案例",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考资料",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "netty/quick-reference",
+          label: "⚡ 快速参考",
+        },
+        {
+          type: "doc",
+          id: "netty/troubleshooting",
+          label: "🔧 故障排查",
+        },
+      ],
+    },
+  ],
+
+  // Spring Framework 侧边栏
+  springSidebar: [
+    {
+      type: "doc",
+      id: "spring/index",
+      label: "🏠 Spring 首页",
+    },
+    {
+      type: "category",
+      label: "📖 核心概念",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "spring/core-concepts",
+          label: "🧩 核心概念",
+        },
+        {
+          type: "doc",
+          id: "spring/dependency-injection",
+          label: "💉 依赖注入",
+        },
+        {
+          type: "doc",
+          id: "spring/bean-management",
+          label: "🫘 Bean 管理",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 核心功能",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "spring/aop",
+          label: "🎯 AOP 切面",
+        },
+        {
+          type: "doc",
+          id: "spring/spring-mvc",
+          label: "🌐 Spring MVC",
+        },
+        {
+          type: "doc",
+          id: "spring/transactions",
+          label: "💳 事务管理",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考资料",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "spring/quick-reference",
+          label: "⚡ 快速参考",
+        },
+        {
+          type: "doc",
+          id: "spring/best-practices",
+          label: "✨ 最佳实践",
+        },
+        {
+          type: "doc",
+          id: "spring/faq",
+          label: "❓ 常见问题",
+        },
+      ],
+    },
+  ],
+
+  // Spring Boot 侧边栏
+  springBootSidebar: [
+    {
+      type: "doc",
+      id: "springboot/index",
+      label: "🏠 Spring Boot 首页",
+    },
+    {
+      type: "category",
+      label: "🚀 快速开始",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "springboot/quick-start",
+          label: "⚡ 快速开始",
+        },
+        {
+          type: "doc",
+          id: "springboot/core-concepts",
+          label: "🧩 核心概念",
+        },
+        {
+          type: "doc",
+          id: "springboot/project-structure-config",
+          label: "📁 项目结构与配置",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 核心功能",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "springboot/auto-configuration",
+          label: "⚙️ 自动配置",
+        },
+        {
+          type: "doc",
+          id: "springboot/dependency-management",
+          label: "📦 依赖管理",
+        },
+        {
+          type: "doc",
+          id: "springboot/web-development",
+          label: "🌐 Web 开发",
+        },
+        {
+          type: "doc",
+          id: "springboot/data-access",
+          label: "💾 数据访问",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "⚡ 高级特性",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "springboot/cache-management",
+          label: "🗄️ 缓存管理",
+        },
+        {
+          type: "doc",
+          id: "springboot/message-queue",
+          label: "📨 消息队列",
+        },
+        {
+          type: "doc",
+          id: "springboot/scheduling",
+          label: "⏰ 任务调度",
+        },
+        {
+          type: "doc",
+          id: "springboot/security",
+          label: "🔒 安全认证",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 运维部署",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "springboot/health-monitoring",
+          label: "💊 健康监控",
+        },
+        {
+          type: "doc",
+          id: "springboot/performance-optimization",
+          label: "⚡ 性能优化",
+        },
+        {
+          type: "doc",
+          id: "springboot/deployment",
+          label: "🚢 部署发布",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考资料",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "springboot/quick-reference",
+          label: "⚡ 快速参考",
+        },
+        {
+          type: "doc",
+          id: "springboot/best-practices",
+          label: "✨ 最佳实践",
+        },
+        {
+          type: "doc",
+          id: "springboot/faq",
+          label: "❓ 常见问题",
         },
       ],
     },
