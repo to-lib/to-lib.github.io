@@ -259,16 +259,19 @@ const config: Config = {
           position: "left",
           items: [
             {
+              type: "docSidebar",
+              sidebarId: "springSidebar",
               label: "🍃 Spring Framework",
-              to: "/docs/spring",
             },
             {
+              type: "docSidebar",
+              sidebarId: "springBootSidebar",
               label: "🚀 Spring Boot",
-              to: "/docs/springboot",
             },
             {
+              type: "docSidebar",
+              sidebarId: "nettySidebar",
               label: "⚡ Netty",
-              to: "/docs/netty/overview",
             },
           ],
         },
