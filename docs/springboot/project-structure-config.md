@@ -456,8 +456,8 @@ echo "Application started on port \\${PORT}"
 1. 命令行参数：`--server.port=9000`
 2. 系统属性：`-Dserver.port=9000`
 3. 操作系统环境变量：`SERVER_PORT=9000`
-4. 随机值：`${random.int}`
-5. application-{profile}.yml / .properties
+4. 随机值：`\${random.int}`
+5. application-{`profile`}.yml / .properties
 6. application.yml / .properties
 7. @PropertySource 注解指定
 8. 默认值
