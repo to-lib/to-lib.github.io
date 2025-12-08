@@ -130,11 +130,21 @@ const config: Config = {
             },
             {
               label: "Netty",
-              to: "/docs/netty",
+              to: "/docs/netty/overview",
             },
           ],
         },
-        { to: "/blog", label: "📝 Blog", position: "left" },
+        {
+          type: "dropdown",
+          label: "More",
+          position: "left",
+          items: [
+            {
+              label: "📝 Blog",
+              to: "/",
+            },
+          ],
+        },
         {
           href: "https://github.com/to-lib/to-lib.github.io",
           label: "GitHub",
