@@ -5,8 +5,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "to-lib",
-  tagline: "Sharing knowledge and tools.",
+  title: "TechLib - 开发者知识库",
+  tagline: "专业的技术学习与开发工具集",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
