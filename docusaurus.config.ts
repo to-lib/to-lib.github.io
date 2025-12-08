@@ -135,17 +135,6 @@ const config: Config = {
           ],
         },
         {
-          type: "dropdown",
-          label: "More",
-          position: "left",
-          items: [
-            {
-              label: "📝 Blog",
-              to: "/",
-            },
-          ],
-        },
-        {
           href: "https://github.com/to-lib/to-lib.github.io",
           label: "GitHub",
           position: "right",
