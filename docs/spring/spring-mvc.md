@@ -597,4 +597,4 @@ public String uploadFiles(@RequestParam("files") MultipartFile[] files) {
 
 ---
 
-**下一步**：学习[REST API开发](./rest-api.md)
+**下一步**：探索更多[Spring特性](./core-concepts.md)

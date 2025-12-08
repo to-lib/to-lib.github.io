@@ -22,7 +22,6 @@ sidebar_position: 1
 ### 进阶特性
 - **[缓存管理](./cache-management.md)** - Spring Cache 和缓存集成
 - **[消息队列](./message-queue.md)** - 集成 RabbitMQ、Kafka 等消息中间件
-- **[日志管理](./logging.md)** - 日志配置和管理
 - **[定时任务](./scheduling.md)** - @Scheduled 定时任务和异步执行
 
 ### 生产级特性

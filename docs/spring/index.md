@@ -19,17 +19,9 @@ Spring是一个开源的Java企业级应用开发框架，提供了全方位的�
 ### 核心特性
 - **[面向切面编程(AOP)](./aop.md)** - 切点、通知、代理等AOP核心概念
 - **[事务管理](./transactions.md)** - 事务特性、传播行为、隔离级别
-- **[数据访问](./data-access.md)** - JdbcTemplate、ORM集成、事务处理
 
 ### Web应用开发
 - **[Spring MVC](./spring-mvc.md)** - MVC架构、请求处理流程、视图解析
-- **[REST API开发](./rest-api.md)** - RESTful设计原则、请求映射、数据绑定
-- **[异常处理](./exception-handling.md)** - 全局异常处理、自定义异常
-
-### 高级特性
-- **[配置与属性](./configuration.md)** - JavaConfig、注解配置、属性绑定
-- **[事件与监听](./events.md)** - 应用事件、事件监听器、事件发布
-- **[Spring Boot集成](./spring-boot-integration.md)** - 与Spring Boot的集成、自动配置
 
 ### 快速参考
 - **[快速参考](./quick-reference.md)** - 常用注解、配置方式、代码片段
