@@ -149,7 +149,15 @@ const config: Config = {
           items: [
             {
               label: "Design Patterns",
-              to: "/docs/java-design-patterns",
+              to: "/docs/java-design-patterns/overview",
+            },
+            {
+              label: "Spring Framework",
+              to: "/docs/spring",
+            },
+            {
+              label: "Spring Boot",
+              to: "/docs/springboot",
             },
           ],
         },
@@ -165,10 +173,6 @@ const config: Config = {
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
               href: "https://github.com/to-lib/to-lib.github.io",
