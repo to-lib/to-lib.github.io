@@ -11,7 +11,7 @@ sidebar_position: 8
 **问题表现：** 内存持续增长，GC 后不释放
 
 **常见原因：**
-1. ByteBuf 没有正确释放
+1. [ByteBuf](./bytebuf.md) 没有正确释放
 2. Handler 中接收的消息没有传播给下一个 Handler
 
 **解决方案：**
@@ -57,7 +57,7 @@ public class MyHandler extends SimpleChannelInboundHandler<ByteBuf> {
 **问题表现：** 处理消息的延迟很高，不符合预期
 
 **常见原因：**
-1. 在 EventLoop 线程中执行阻塞操作
+1. 在 [EventLoop](./core-components.md#eventloop) 线程中执行阻塞操作
 2. 事件处理链过长
 3. 消息处理效率低
 
@@ -67,7 +67,11 @@ public class MyHandler extends SimpleChannelInboundHandler<ByteBuf> {
 // ✗ 错误：阻塞 EventLoop
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
-    Thread.sleep(1000); // 阻塞！
+    try {
+        Thread.sleep(1000); // 阻塞！
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
     ctx.write(msg);
 }
 
@@ -77,8 +81,12 @@ private ExecutorService executor = Executors.newFixedThreadPool(10);
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
     executor.execute(() -> {
-        Thread.sleep(1000); // 在独立线程执行
-        ctx.writeAndFlush(msg);
+        try {
+            Thread.sleep(1000); // 在独立线程执行
+            ctx.writeAndFlush(msg);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     });
 }
 
@@ -87,8 +95,12 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
     ctx.executor().execute(() -> {
         // 这个操作会在 EventLoop 的任务队列中异步执行
-        Thread.sleep(1000);
-        ctx.writeAndFlush(msg);
+        try {
+            Thread.sleep(1000);
+            ctx.writeAndFlush(msg);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     });
 }
 ```
@@ -354,7 +366,11 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 ```java
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
-    Thread.sleep(5000); // 大错特错！
+    try {
+        Thread.sleep(5000); // 大错特错！
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
     ctx.writeAndFlush(msg);
 }
 ```
@@ -472,3 +488,6 @@ public class MonitoringMetrics {
     }
 }
 ```
+
+---
+[下一章：快速参考](./quick-reference.md)

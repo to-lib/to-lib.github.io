@@ -386,3 +386,6 @@ protected void encode(ChannelHandlerContext ctx, MyMessage msg, ByteBuf out) {
     out.writeBytes(...)
 }
 ```
+
+---
+[下一章：实战案例](./practical-examples.md)

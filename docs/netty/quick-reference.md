@@ -227,7 +227,11 @@ future.addListener(f -> {
 });
 
 // 异步等待（阻塞）
-future.sync();
+try {
+    future.sync();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
 
 // 检查完成状态
 if (future.isDone()) {
@@ -262,7 +266,8 @@ ctx.executor().execute(() -> {
 @Override
 public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
     // 记录异常
-    logger.error("异常: ", cause);
+    // logger.error("异常: ", cause);
+    cause.printStackTrace();
     
     // 关闭连接
     ctx.close();

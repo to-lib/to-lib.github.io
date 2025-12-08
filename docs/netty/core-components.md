@@ -82,7 +82,7 @@ if (channel.isWritable()) {
 
 // 保存自定义数据
 channel.attr(AttributeKey.valueOf("userId")).set(12345);
-Integer userId = channel.attr(AttributeKey.valueOf("userId")).get();
+Integer userId = (Integer) channel.attr(AttributeKey.valueOf("userId")).get();
 ```
 
 ## EventLoop
@@ -157,7 +157,11 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
     // 这是错误的 - 阻塞操作会导致 EventLoop 卡住
-    Thread.sleep(1000);
+    try {
+        Thread.sleep(1000);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
     ctx.write(msg);
 }
 
@@ -167,9 +171,13 @@ private ExecutorService executor = Executors.newFixedThreadPool(10);
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
     executor.execute(() -> {
-        // 阻塞操作在独立线程中执行
-        Thread.sleep(1000);
-        ctx.writeAndFlush(msg);
+        try {
+            // 阻塞操作在独立线程中执行
+            Thread.sleep(1000);
+            ctx.writeAndFlush(msg);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     });
 }
 ```
@@ -343,3 +351,6 @@ public class Handler2 extends ChannelInboundHandlerAdapter {
 | **Pipeline** | Handler 的处理链 | addLast、remove、write |
 | **Handler** | 业务逻辑处理 | channelRead、write |
 | **Context** | Handler 之间的通信 | fireChannelRead、write |
+
+---
+[下一章：ByteBuf 详解](./bytebuf.md)

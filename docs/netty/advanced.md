@@ -403,7 +403,7 @@ public class StatsServerHandler extends ChannelInboundHandlerAdapter {
 ## 最佳实践检查清单
 
 ### 内存
-- [ ] 使用 PooledByteBufAllocator
+- [ ] 使用 [PooledByteBufAllocator](./bytebuf.md#pooledbytebufallocator推荐)
 - [ ] 及时释放 ByteBuf
 - [ ] 重用对象避免频繁创建
 - [ ] 监控内存使用情况
@@ -468,3 +468,6 @@ public class PerformanceTest {
     }
 }
 ```
+
+---
+[下一章：常见问题与排查](./troubleshooting.md)

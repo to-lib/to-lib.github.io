@@ -181,7 +181,7 @@ public class ByteBufHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) {
         // 如果写入 ByteBuf，需要传递给下一个 Handler
         ByteBuf response = ctx.alloc().buffer(128);
         response.writeCharSequence("OK", CharsetUtil.UTF_8);
@@ -299,7 +299,7 @@ public class ByteBufBestPractices extends ChannelInboundHandlerAdapter {
 
     // ✗ 错误：内存泄漏
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    public void channelRead2(ChannelHandlerContext ctx, Object msg) {
         ByteBuf in = (ByteBuf) msg;
         // 没有释放，导致内存泄漏！
         processMessage(in);
@@ -334,3 +334,6 @@ ByteBufUtil.appendPrettyHexDump(sb, buf);
 // PooledByteBufAllocator.DEFAULT - 获取默认分配器
 ByteBuf buf = PooledByteBufAllocator.DEFAULT.buffer(256);
 ```
+
+---
+[下一章：编码与解码](./codec.md)

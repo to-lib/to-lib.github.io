@@ -473,3 +473,8 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 5. **内存管理** - 使用对象池重用内存，避免频繁分配
 6. **协议设计** - 使用长度字段或分界符便于解析
 7. **连接管理** - 设置合理的超时和心跳机制
+
+---
+[下一章：高级特性](./advanced.md)
+
+```
