@@ -1,0 +1,8 @@
+{
+  "label": "Netty 网络编程",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "完整的Netty框架学习指南，包括基础概念、核心组件、高级特性和实战应用"
+  }
+}
