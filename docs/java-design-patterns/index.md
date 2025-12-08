@@ -124,25 +124,25 @@ slug: /design-patterns-guide
 ## 🔍 快速查询
 
 **我需要创建对象？**
-- 单一对象 → [Singleton](./singleton-pattern)
-- 多种类型 → [Factory Method](./factory-pattern)
-- 产品族 → [Abstract Factory](./abstract-factory-pattern)
-- 复杂对象 → [Builder](./builder-pattern)
-- 克隆对象 → [Prototype](./prototype-pattern)
+- 单一对象 → [Singleton](/docs/java-design-patterns/singleton-pattern)
+- 多种类型 → [Factory Method](/docs/java-design-patterns/factory-pattern)
+- 产品族 → [Abstract Factory](/docs/java-design-patterns/abstract-factory-pattern)
+- 复杂对象 → [Builder](/docs/java-design-patterns/builder-pattern)
+- 克隆对象 → [Prototype](/docs/java-design-patterns/prototype-pattern)
 
 **我需要组织对象结构？**
-- 树形结构 → [Composite](./composite-pattern)
-- 动态功能 → [Decorator](./decorator-pattern)
-- 简化系统 → [Facade](./facade-pattern)
-- 隐藏实现 → [Proxy](./proxy-pattern)
-- 转换接口 → [Adapter](./adapter-pattern)
-- 分享对象 → [Flyweight](./flyweight-pattern)
+- 树形结构 → [Composite](/docs/java-design-patterns/composite-pattern)
+- 动态功能 → [Decorator](/docs/java-design-patterns/decorator-pattern)
+- 简化系统 → [Facade](/docs/java-design-patterns/facade-pattern)
+- 隐藏实现 → [Proxy](/docs/java-design-patterns/proxy-pattern)
+- 转换接口 → [Adapter](/docs/java-design-patterns/adapter-pattern)
+- 分享对象 → [Flyweight](/docs/java-design-patterns/flyweight-pattern)
 
 **我需要处理对象交互？**
-- 一对多通知 → [Observer](./observer-pattern)
-- 可换算法 → [Strategy](./strategy-pattern)
-- 状态转换 → [State](./state-pattern)
-- 多对多通信 → [Mediator](./mediator-pattern)
+- 一对多通知 → [Observer](/docs/java-design-patterns/observer-pattern)
+- 可换算法 → [Strategy](/docs/java-design-patterns/strategy-pattern)
+- 状态转换 → [State](/docs/java-design-patterns/state-pattern)
+- 多对多通信 → [Mediator](/docs/java-design-patterns/mediator-pattern)
 - 其他...
 
 ## 💻 每个文档包含
@@ -165,7 +165,7 @@ slug: /design-patterns-guide
 从基础到高级，完整学习所有模式。
 
 ### 方式2：按需查询
-使用[快速参考](./quick-reference)快速找到所需模式。
+使用[快速参考](/docs/java-design-patterns/quick-reference)快速找到所需模式。
 
 ### 方式3：按场景学习
 根据实际需求查找相关模式（如"我要实现undo功能"）。
@@ -192,4 +192,4 @@ slug: /design-patterns-guide
 
 ---
 
-**现在就开始学习吧！** 👉 [从概述开始](./overview)
+**现在就开始学习吧！** 👉 [从概述开始](/docs/java-design-patterns/overview)
