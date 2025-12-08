@@ -440,13 +440,13 @@ sleep 2
 # 启动新实例
 echo "Starting application..."
 nohup java -jar \
-    -Dspring.profiles.active=${PROFILES} \
-    -Dserver.port=${PORT} \
+    -Dspring.profiles.active=\${PROFILES} \
+    -Dserver.port=\${PORT} \
     -Xms512m \
     -Xmx1024m \
-    ${JAR_FILE} > logs/app.log 2>&1 &
+    \${JAR_FILE} > logs/app.log 2>&1 &
 
-echo "Application started on port ${PORT}"
+echo "Application started on port \${PORT}"
 ```
 
 ## 配置优先级
