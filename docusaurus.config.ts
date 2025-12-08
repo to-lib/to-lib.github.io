@@ -92,9 +92,9 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "docsSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Design Patterns",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
@@ -111,8 +111,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Design Patterns",
+              to: "/docs/java-design-patterns",
             },
           ],
         },

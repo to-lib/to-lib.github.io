@@ -2,46 +2,40 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Java 设计模式
 
-Let's discover **Docusaurus in less than 5 minutes**.
+欢迎来到Java设计模式完全学习指南！
 
-## Getting Started
+本文档包含了23种经典设计模式的详细讲解、实际应用示例和最佳实践。
 
-Get started by **creating a new site**.
+## 快速开始
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **新手入门** - 建议从 [设计模式概述](/docs/java-design-patterns/overview) 开始
+- **快速查询** - 使用 [快速参考](/docs/java-design-patterns/quick-reference) 快速找到所需模式
+- **完整指南** - 查看 [Java设计模式指南](/docs/java-design-patterns) 了解所有模式
 
-### What you'll need
+## 涵盖内容
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### 创建型模式 (5种)
+用于对象创建的模式，隐藏创建逻辑，使代码更灵活。
 
-## Generate a new site
+### 结构型模式 (7种)
+用于组织对象关系的模式，形成更大的结构。
 
-Generate a new Docusaurus site using the **classic template**.
+### 行为型模式 (11种)
+用于处理对象间通信和职责分配的模式。
 
-The classic template will automatically be added to your project after you run the command:
+## 学习路径
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+**初级** → 掌握5个最常用的模式  
+**中级** → 学习10个中等难度的模式  
+**高级** → 深入理解所有23种模式  
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## 资源
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- 📚 完整的代码示例
+- 💡 实际应用场景
+- 🎯 最佳实践指南
+- 📊 快速参考表
 
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+[立即开始学习 →](/docs/java-design-patterns)

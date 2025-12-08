@@ -13,20 +13,27 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          <span style={{ color: "var(--ifm-color-primary)" }}>
-            {siteConfig.title}
-          </span>
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
-            Get Started
-          </Link>
-          <span style={{ margin: "0 10px" }}></span>
-          <Link className="button button--secondary button--lg" to="/blog">
-            Read Blog
-          </Link>
+        <div className={styles.heroContent}>
+          <Heading as="h1" className={styles.heroTitle}>
+            <span className={styles.titleGradient}>
+              Java 设计模式完全指南
+            </span>
+          </Heading>
+          <p className={styles.heroSubtitle}>
+            掌握23种经典设计模式 • 提升代码质量 • 成为更优秀的开发者
+          </p>
+          <p className={styles.heroDescription}>
+            详细讲解、完整代码示例、实际应用场景、最佳实践指导。
+            无论你是初学者还是资深开发者，都能从这份完整指南中获益。
+          </p>
+          <div className={styles.buttons}>
+            <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/java-design-patterns">
+              🚀 立即开始学习
+            </Link>
+            <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/intro">
+              📖 了解更多
+            </Link>
+          </div>
         </div>
       </div>
     </header>
