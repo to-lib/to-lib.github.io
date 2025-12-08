@@ -94,9 +94,47 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "docsSidebar",
           position: "left",
-          label: "Design Patterns",
+          label: "📚 Design Patterns",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          type: "dropdown",
+          label: "🎓 Learning",
+          position: "left",
+          items: [
+            {
+              label: "Quick Reference",
+              to: "/docs/java-design-patterns/quick-reference",
+            },
+            {
+              label: "Best Practices",
+              to: "/docs/java-design-patterns/best-practices",
+            },
+            {
+              label: "Design Patterns Overview",
+              to: "/docs/java-design-patterns/overview",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🛠️ Frameworks",
+          position: "left",
+          items: [
+            {
+              label: "Spring Framework",
+              to: "/docs/spring",
+            },
+            {
+              label: "Spring Boot",
+              to: "/docs/springboot",
+            },
+            {
+              label: "Netty",
+              to: "/docs/netty",
+            },
+          ],
+        },
+        { to: "/blog", label: "📝 Blog", position: "left" },
         {
           href: "https://github.com/to-lib/to-lib.github.io",
           label: "GitHub",

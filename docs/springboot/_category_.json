@@ -1,0 +1,8 @@
+{
+  "label": "Spring Boot",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Spring Boot 完整学习指南，涵盖快速启动、自动配置、内嵌服务器、生产级特性等内容"
+  }
+}

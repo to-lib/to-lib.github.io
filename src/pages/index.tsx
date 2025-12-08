@@ -30,9 +30,31 @@ function HomepageHeader() {
             <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/java-design-patterns">
               🚀 立即开始学习
             </Link>
-            <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/intro">
-              📖 了解更多
+            <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/java-design-patterns/quick-reference">
+              ⚡ 快速参考
             </Link>
+          </div>
+          
+          {/* Quick Navigation Cards */}
+          <div className={styles.quickNav}>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🏗️</span>
+              <Link to="/docs/java-design-patterns/overview">
+                <h4>Pattern Overview</h4>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>📖</span>
+              <Link to="/docs/java-design-patterns/best-practices">
+                <h4>Best Practices</h4>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>⚡</span>
+              <Link to="/docs/java-design-patterns/quick-reference">
+                <h4>Quick Reference</h4>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
