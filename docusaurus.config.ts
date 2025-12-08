@@ -98,31 +98,230 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "docsSidebar",
           position: "left",
-          label: "📚 Design Patterns",
+          label: "📚 设计模式",
         },
         {
           type: "dropdown",
-          label: "🎓 Learning",
+          label: "🎯 模式分类",
           position: "left",
           items: [
             {
-              label: "Quick Reference",
-              to: "/docs/java-design-patterns/quick-reference",
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>创建型模式 (5)</div>",
             },
             {
-              label: "Best Practices",
-              to: "/docs/java-design-patterns/best-practices",
+              label: "📌 单例模式",
+              to: "/docs/java-design-patterns/singleton-pattern",
             },
             {
-              label: "Design Patterns Overview",
-              to: "/docs/java-design-patterns/overview",
+              label: "🏭 工厂方法模式",
+              to: "/docs/java-design-patterns/factory-pattern",
+            },
+            {
+              label: "🏢 抽象工厂模式",
+              to: "/docs/java-design-patterns/abstract-factory-pattern",
+            },
+            {
+              label: "🔨 建造者模式",
+              to: "/docs/java-design-patterns/builder-pattern",
+            },
+            {
+              label: "🐑 原型模式",
+              to: "/docs/java-design-patterns/prototype-pattern",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>结构型模式 (7)</div>",
+            },
+            {
+              label: "🎭 代理模式",
+              to: "/docs/java-design-patterns/proxy-pattern",
+            },
+            {
+              label: "🔌 适配器模式",
+              to: "/docs/java-design-patterns/adapter-pattern",
+            },
+            {
+              label: "🎁 装饰器模式",
+              to: "/docs/java-design-patterns/decorator-pattern",
+            },
+            {
+              label: "🏛️ 外观模式",
+              to: "/docs/java-design-patterns/facade-pattern",
+            },
+            {
+              label: "🌳 组合模式",
+              to: "/docs/java-design-patterns/composite-pattern",
+            },
+            {
+              label: "♻️ 享元模式",
+              to: "/docs/java-design-patterns/flyweight-pattern",
+            },
+            {
+              label: "🌉 桥接模式",
+              to: "/docs/java-design-patterns/bridge-pattern",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>行为型模式 (11)</div>",
+            },
+            {
+              label: "👀 观察者模式",
+              to: "/docs/java-design-patterns/observer-pattern",
+            },
+            {
+              label: "🎲 策略模式",
+              to: "/docs/java-design-patterns/strategy-pattern",
+            },
+            {
+              label: "📋 模板方法模式",
+              to: "/docs/java-design-patterns/template-method-pattern",
+            },
+            {
+              label: "⚡ 命令模式",
+              to: "/docs/java-design-patterns/command-pattern",
+            },
+            {
+              label: "🔄 迭代器模式",
+              to: "/docs/java-design-patterns/iterator-pattern",
+            },
+            {
+              label: "🔀 状态模式",
+              to: "/docs/java-design-patterns/state-pattern",
+            },
+            {
+              label: "⛓️ 责任链模式",
+              to: "/docs/java-design-patterns/chain-of-responsibility-pattern",
+            },
+            {
+              label: "🤝 中介者模式",
+              to: "/docs/java-design-patterns/mediator-pattern",
+            },
+            {
+              label: "💾 备忘录模式",
+              to: "/docs/java-design-patterns/memento-pattern",
+            },
+            {
+              label: "🚶 访问者模式",
+              to: "/docs/java-design-patterns/visitor-pattern",
+            },
+            {
+              label: "🔤 解释器模式",
+              to: "/docs/java-design-patterns/interpreter-pattern",
             },
           ],
         },
         {
           type: "dropdown",
-          label: "🛠️ Frameworks",
+          label: "📖 学习资源",
           position: "left",
+          items: [
+            {
+              label: "📘 模式概览",
+              to: "/docs/java-design-patterns/overview",
+            },
+            {
+              label: "⚡ 快速参考",
+              to: "/docs/java-design-patterns/quick-reference",
+            },
+            {
+              label: "✨ 最佳实践",
+              to: "/docs/java-design-patterns/best-practices",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 4px 0;'>",
+            },
+            {
+              label: "🎯 使用场景对比",
+              to: "/docs/java-design-patterns/scenarios",
+            },
+            {
+              label: "🔍 模式选择指南",
+              to: "/docs/java-design-patterns/selection-guide",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🛠️ 框架应用",
+          position: "left",
+          items: [
+            {
+              label: "🍃 Spring Framework",
+              to: "/docs/spring",
+            },
+            {
+              label: "🚀 Spring Boot",
+              to: "/docs/springboot",
+            },
+            {
+              label: "⚡ Netty",
+              to: "/docs/netty/overview",
+            },
+          ],
+        },
+        {
+          href: "https://github.com/to-lib/to-lib.github.io",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "dark",
+      links: [
+        {
+          title: "📚 设计模式",
+          items: [
+            {
+              label: "模式概览",
+              to: "/docs/java-design-patterns/overview",
+            },
+            {
+              label: "创建型模式 (5)",
+              to: "/docs/java-design-patterns/singleton-pattern",
+            },
+            {
+              label: "结构型模式 (7)",
+              to: "/docs/java-design-patterns/proxy-pattern",
+            },
+            {
+              label: "行为型模式 (11)",
+              to: "/docs/java-design-patterns/observer-pattern",
+            },
+          ],
+        },
+        {
+          title: "📖 学习资源",
+          items: [
+            {
+              label: "快速参考",
+              to: "/docs/java-design-patterns/quick-reference",
+            },
+            {
+              label: "最佳实践",
+              to: "/docs/java-design-patterns/best-practices",
+            },
+            {
+              label: "选择指南",
+              to: "/docs/java-design-patterns/selection-guide",
+            },
+          ],
+        },
+        {
+          title: "🛠️ 框架应用",
           items: [
             {
               label: "Spring Framework",
@@ -139,52 +338,20 @@ const config: Config = {
           ],
         },
         {
-          href: "https://github.com/to-lib/to-lib.github.io",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
-    },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Design Patterns",
-              to: "/docs/java-design-patterns/overview",
-            },
-            {
-              label: "Spring Framework",
-              to: "/docs/spring",
-            },
-            {
-              label: "Spring Boot",
-              to: "/docs/springboot",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
+          title: "🔗 链接",
           items: [
             {
               label: "GitHub",
               href: "https://github.com/to-lib/to-lib.github.io",
             },
+            {
+              label: "问题反馈",
+              href: "https://github.com/to-lib/to-lib.github.io/issues",
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} to-lib. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} to-lib 开发者知识库. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
