@@ -330,13 +330,13 @@ app:
 @Component
 public class AppConfig {
     
-    @Value("${app.name}")
+    @Value("\\${app.name}")
     private String appName;
     
-    @Value("${app.version:1.0.0}")  // 默认值
+    @Value("\\${app.version:1.0.0}")  // 默认值
     private String version;
     
-    @Value("${app.features.cache.enabled}")
+    @Value("\\${app.features.cache.enabled}")
     private boolean cacheEnabled;
 }
 ```
@@ -427,26 +427,26 @@ java -jar app.jar
 
 # 部署脚本
 APP_NAME="my-springboot-app"
-JAR_FILE="target/${APP_NAME}.jar"
+JAR_FILE="target/\\${APP_NAME}.jar"
 PROFILES="prod"
 PORT=8080
 
 # 停止旧实例
 echo "Stopping application..."
-pkill -f "java.*${JAR_FILE}"
+pkill -f "java.*\\${JAR_FILE}"
 
 sleep 2
 
 # 启动新实例
 echo "Starting application..."
 nohup java -jar \
-    -Dspring.profiles.active=\${PROFILES} \
-    -Dserver.port=\${PORT} \
+    -Dspring.profiles.active=\\${PROFILES} \
+    -Dserver.port=\\${PORT} \
     -Xms512m \
     -Xmx1024m \
-    \${JAR_FILE} > logs/app.log 2>&1 &
+    \\${JAR_FILE} > logs/app.log 2>&1 &
 
-echo "Application started on port \${PORT}"
+echo "Application started on port \\${PORT}"
 ```
 
 ## 配置优先级
