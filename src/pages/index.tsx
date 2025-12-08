@@ -27,7 +27,7 @@ function HomepageHeader() {
             无论你是初学者还是资深开发者，都能从这份完整指南中获益。
           </p>
           <div className={styles.buttons}>
-            <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/java-design-patterns">
+            <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/design-patterns-guide">
               🚀 立即开始学习
             </Link>
             <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/java-design-patterns/quick-reference">

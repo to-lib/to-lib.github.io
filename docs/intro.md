@@ -12,7 +12,7 @@ sidebar_position: 1
 
 - **新手入门** - 建议从 [设计模式概述](/docs/java-design-patterns/overview) 开始
 - **快速查询** - 使用 [快速参考](/docs/java-design-patterns/quick-reference) 快速找到所需模式
-- **完整指南** - 查看 [Java设计模式指南](/docs/java-design-patterns) 了解所有模式
+- **完整指南** - 查看 [Java设计模式指南](/docs/design-patterns-guide) 了解所有模式
 
 ## 涵盖内容
 
@@ -38,4 +38,4 @@ sidebar_position: 1
 - 🎯 最佳实践指南
 - 📊 快速参考表
 
-[立即开始学习 →](/docs/java-design-patterns)
+[立即开始学习 →](/docs/design-patterns-guide)
