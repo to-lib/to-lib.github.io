@@ -275,11 +275,65 @@ const config: Config = {
             {
               type: "html",
               value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>核心概念</div>",
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
+            },
+            {
+              label: "🧩 组件基础",
+              to: "/docs/react/components",
+            },
+            {
+              label: "🔤 JSX 语法",
+              to: "/docs/react/jsx-syntax",
+            },
+            {
+              label: "📦 Props 和 State",
+              to: "/docs/react/props-and-state",
+            },
+            {
+              label: "🎯 事件处理",
+              to: "/docs/react/event-handling",
+            },
+            {
+              label: "🔀 条件渲染",
+              to: "/docs/react/conditional-rendering",
+            },
+            {
+              label: "📋 列表和 Keys",
+              to: "/docs/react/lists-and-keys",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心概念</div>",
             },
             {
               label: "🎣 Hooks 详解",
               to: "/docs/react/hooks",
+            },
+            {
+              label: "🔄 Context API",
+              to: "/docs/react/context",
+            },
+            {
+              label: "📝 表单处理",
+              to: "/docs/react/forms",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>性能优化</div>",
+            },
+            {
+              label: "⚡ 性能优化",
+              to: "/docs/react/performance-optimization",
             },
             {
               type: "html",

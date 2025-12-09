@@ -1,0 +1,8 @@
+{
+  "label": "MySQL 数据库",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "MySQL 数据库完整学习指南，涵盖基础概念、SQL语法、索引优化、事务处理、性能调优等核心内容"
+  }
+}
