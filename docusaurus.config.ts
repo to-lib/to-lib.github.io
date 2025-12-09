@@ -493,20 +493,63 @@ const config: Config = {
           position: "left",
           items: [
             {
-              label: "☕ Java 面试题",
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Java 核心</div>",
+            },
+            {
+              label: "☕ Java 基础知识",
               to: "/docs/java",
             },
             {
-              label: "🍃 Spring 面试题",
+              label: "📋 Java 面试题精选",
+              to: "/docs/java/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>框架应用</div>",
+            },
+            {
+              label: "🍃 Spring 框架",
               to: "/docs/spring",
             },
             {
-              label: "📚 设计模式面试题",
+              label: "📋 Spring 面试题精选",
+              to: "/docs/spring/interview-questions",
+            },
+            {
+              label: "� Spring Boot",
+              to: "/docs/springboot",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶主题</div>",
+            },
+            {
+              label: "�📚 设计模式",
               to: "/docs/java-design-patterns/overview",
             },
             {
-              label: "⚡ Netty 面试题",
+              label: "📋 设计模式面试题精选",
+              to: "/docs/java-design-patterns/interview-questions",
+            },
+            {
+              label: "⚡ Netty 网络编程",
               to: "/docs/netty",
+            },
+            {
+              label: "📋 Netty 面试题精选",
+              to: "/docs/netty/interview-questions",
             },
           ],
         },
