@@ -260,9 +260,517 @@ public class SleepVsWait {
         synchronized (lock) {
             lock.notify();  // 唤醒 waitThread
         }
+}
+```
+
+## 线程中断
+
+线程中断是一种协作机制，用于请求线程停止当前工作。并不是强制终止线程，而是通知线程应该中断。
+
+### 中断的核心方法
+
+```java
+public class InterruptBasics {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            System.out.println("线程开始运行");
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("线程在睡眠时被中断");
+            }
+            System.out.println("线程结束");
+        });
+        
+        thread.start();
+        Thread.sleep(1000);
+        
+        // 请求中断线程
+        thread.interrupt();
+        
+        System.out.println("主线程发出中断请求");
     }
 }
 ```
+
+### 中断状态检查
+
+```java
+public class InterruptStatusCheck {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            // 方式1：使用 isInterrupted() 检查
+            while (!Thread.currentThread().isInterrupted()) {
+                System.out.println("任务执行中...");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    // 重要：捕获异常后，中断状态会被清除
+                    // 需要重新设置中断状态
+                    Thread.currentThread().interrupt();
+                    System.out.println("收到中断信号，准备退出");
+                    break;
+                }
+            }
+            System.out.println("线程正常结束");
+        });
+        
+        thread.start();
+        Thread.sleep(2000);
+        thread.interrupt();
+        
+        thread.join();
+        System.out.println("任务完成");
+    }
+}
+```
+
+### 中断的三种方法对比
+
+```java
+public class InterruptMethods {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("计数: " + i);
+                
+                // 1. isInterrupted()：检查中断状态，不清除标志
+                if (Thread.currentThread().isInterrupted()) {
+                    System.out.println("检测到中断，状态仍为: " + 
+                        Thread.currentThread().isInterrupted());
+                    break;
+                }
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    System.out.println("被中断，状态已清除: " + 
+                        Thread.currentThread().isInterrupted());
+                    break;
+                }
+            }
+        });
+        
+        thread.start();
+        Thread.sleep(1500);
+        thread.interrupt();
+        
+        // 2. Thread.interrupted()：检查并清除当前线程的中断状态
+        Thread mainThread = Thread.currentThread();
+        mainThread.interrupt();
+        System.out.println("第一次检查: " + Thread.interrupted());  // true，清除标志
+        System.out.println("第二次检查: " + Thread.interrupted());  // false，已清除
+        
+        // 3. interrupt()：设置中断标志
+        thread.interrupt();
+    }
+}
+```
+
+### 正确处理中断的模式
+
+#### 模式1：传播中断异常
+
+```java
+public class PropagateInterrupt {
+    // 不捕获，向上传播异常
+    public void task() throws InterruptedException {
+        while (true) {
+            Thread.sleep(1000);  // 可能抛出 InterruptedException
+            System.out.println("执行任务");
+        }
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            PropagateInterrupt example = new PropagateInterrupt();
+            try {
+                example.task();
+            } catch (InterruptedException e) {
+                System.out.println("任务被中断");
+            }
+        });
+        
+        thread.start();
+        Thread.sleep(3000);
+        thread.interrupt();
+    }
+}
+```
+
+#### 模式2：恢复中断状态
+
+```java
+public class RestoreInterrupt {
+    public void task() {
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                Thread.sleep(1000);
+                System.out.println("执行任务");
+            } catch (InterruptedException e) {
+                // 捕获异常后恢复中断状态
+                Thread.currentThread().interrupt();
+                System.out.println("恢复中断状态并退出");
+                return;
+            }
+        }
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            new RestoreInterrupt().task();
+        });
+        
+        thread.start();
+        Thread.sleep(3000);
+        thread.interrupt();
+        thread.join();
+        System.out.println("线程已终止");
+    }
+}
+```
+
+#### 模式3：使用标志位配合中断
+
+```java
+public class InterruptWithFlag {
+    private volatile boolean running = true;
+    
+    public void task() {
+        while (running && !Thread.currentThread().isInterrupted()) {
+            try {
+                // 执行任务
+                System.out.println("执行任务...");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("被中断，准备清理资源");
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+        
+        // 清理资源
+        cleanup();
+    }
+    
+    private void cleanup() {
+        System.out.println("清理资源完成");
+    }
+    
+    public void stop() {
+        running = false;
+    }
+    
+    public static void main(String[] args) throws InterruptedException {
+        InterruptWithFlag example = new InterruptWithFlag();
+        Thread thread = new Thread(() -> example.task());
+        
+        thread.start();
+        Thread.sleep(3000);
+        
+        // 方式1：使用标志位停止
+        // example.stop();
+        
+        // 方式2：使用中断停止
+        thread.interrupt();
+        
+        thread.join();
+    }
+}
+```
+
+### 阻塞方法的中断处理
+
+```java
+import java.io.*;
+import java.util.concurrent.*;
+
+public class InterruptBlockingOperations {
+    // 1. sleep 中断
+    public static void interruptSleep() {
+        Thread thread = new Thread(() -> {
+            try {
+                System.out.println("开始睡眠");
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                System.out.println("睡眠被中断");
+            }
+        });
+        
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+    }
+    
+    // 2. wait 中断
+    public static void interruptWait() {
+        Object lock = new Object();
+        Thread thread = new Thread(() -> {
+            synchronized (lock) {
+                try {
+                    System.out.println("开始等待");
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    System.out.println("等待被中断");
+                }
+            }
+        });
+        
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+    }
+    
+    // 3. join 中断
+    public static void interruptJoin() {
+        Thread worker = new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("工作线程被中断");
+            }
+        });
+        
+        Thread waiter = new Thread(() -> {
+            try {
+                System.out.println("等待工作线程完成");
+                worker.join();
+            } catch (InterruptedException e) {
+                System.out.println("等待被中断");
+            }
+        });
+        
+        worker.start();
+        waiter.start();
+        
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        waiter.interrupt();
+    }
+    
+    // 4. BlockingQueue 中断
+    public static void interruptBlockingQueue() {
+        BlockingQueue<String> queue = new LinkedBlockingQueue<>();
+        
+        Thread thread = new Thread(() -> {
+            try {
+                System.out.println("等待队列数据");
+                String item = queue.take();  // 阻塞等待
+                System.out.println("获取到: " + item);
+            } catch (InterruptedException e) {
+                System.out.println("队列操作被中断");
+            }
+        });
+        
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== Sleep 中断 ===");
+        interruptSleep();
+        
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("\n=== Wait 中断 ===");
+        interruptWait();
+        
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("\n=== Join 中断 ===");
+        interruptJoin();
+        
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("\n=== BlockingQueue 中断 ===");
+        interruptBlockingQueue();
+    }
+}
+```
+
+### IO 操作的中断
+
+```java
+import java.io.*;
+import java.nio.channels.*;
+
+public class InterruptIO {
+    // 传统 IO 不响应中断
+    public static void traditionalIO() {
+        Thread thread = new Thread(() -> {
+            try {
+                ServerSocket serverSocket = new ServerSocket(8888);
+                System.out.println("等待连接...");
+                Socket socket = serverSocket.accept();  // 阻塞，不响应中断
+                System.out.println("连接成功");
+            } catch (IOException e) {
+                System.out.println("IO 异常: " + e.getMessage());
+            }
+        });
+        
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();  // 不会中断 accept()
+        System.out.println("已发送中断，但 accept() 不响应");
+    }
+    
+    // NIO 可中断
+    public static void interruptibleIO() throws IOException {
+        Thread thread = new Thread(() -> {
+            try {
+                ServerSocketChannel serverChannel = ServerSocketChannel.open();
+                serverChannel.socket().bind(new java.net.InetSocketAddress(9999));
+                
+                System.out.println("NIO 等待连接...");
+                SocketChannel channel = serverChannel.accept();  // 可中断
+                System.out.println("连接成功");
+            } catch (ClosedByInterruptException e) {
+                System.out.println("NIO 操作被中断");
+            } catch (IOException e) {
+                System.out.println("IO 异常: " + e.getMessage());
+            }
+        });
+        
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();  // 会中断 NIO 操作
+    }
+}
+```
+
+### 线程中断的最佳实践
+
+#### 1. 不要忽略中断
+
+```java
+// ❌ 不好：吞掉中断异常
+try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+    // 什么都不做
+}
+
+// ✅ 好：传播异常
+public void method() throws InterruptedException {
+    Thread.sleep(1000);
+}
+
+// ✅ 好：恢复中断状态
+try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+    Thread.currentThread().interrupt();  // 恢复中断状态
+    // 或者清理并返回
+}
+```
+
+#### 2. 及时响应中断
+
+```java
+public class ResponsiveInterrupt {
+    public void longRunningTask() {
+        while (!Thread.currentThread().isInterrupted()) {
+            // 定期检查中断状态
+            if (Thread.currentThread().isInterrupted()) {
+                System.out.println("检测到中断，准备退出");
+                cleanup();
+                return;
+            }
+            
+            // 执行一小部分工作
+            doWork();
+        }
+    }
+    
+    private void doWork() {
+        // 工作代码
+    }
+    
+    private void cleanup() {
+        // 清理资源
+    }
+}
+```
+
+#### 3. 不要使用 Thread.stop()
+
+```java
+// ❌ 不好：使用已废弃的 stop() 方法
+thread.stop();  // 危险！可能导致数据不一致
+
+// ✅ 好：使用中断机制
+thread.interrupt();
+```
+
+### 中断状态总结
+
+| 方法 | 作用 | 是否清除标志 | 调用对象 |
+|------|------|--------------|----------|
+| `interrupt()` | 请求中断线程 | - | Thread 实例 |
+| `isInterrupted()` | 检查中断状态 | 否 | Thread 实例 |
+| `interrupted()` | 检查并清除中断状态 | 是 | Thread 类（静态） |
+
+### 常见问题
+
+**Q1: 为什么 InterruptedException 会清除中断状态？**
+
+A: 这是设计选择。当抛出 InterruptedException 时，表示线程已经响应了中断，因此清除标志。如果需要保留中断状态，需要在 catch 块中重新设置。
+
+**Q2: 如何优雅地停止线程？**
+
+A:
+
+1. 使用中断机制（interrupt）
+2. 使用 volatile 标志位
+3. 两者结合使用
+4. 避免使用已废弃的 stop()、suspend()、resume()
+
+**Q3: 哪些操作会响应中断？**
+
+A:
+
+- `Thread.sleep()`
+- `Object.wait()`
+- `Thread.join()`
+- `BlockingQueue.take()/put()`
+- `Lock.lockInterruptibly()`
+- NIO 的可中断通道操作
 
 ## 线程同步
 
