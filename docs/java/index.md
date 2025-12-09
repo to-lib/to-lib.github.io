@@ -34,7 +34,7 @@ title: Java 编程概述
 - **函数式编程** - Lambda 表达式、Stream API
 - **反射与注解** - 反射 API、自定义注解、注解处理
 - **JVM 基础** - JVM 架构、类加载、内存模型、垃圾回收
-- **性能优化** - 代码优化、并发优化、IO优化、调优技巧
+- **性能优化** - 代码优化、并发优化、IO 优化、调优技巧
 - **JDK 17 新特性** - 密封类、记录类型、模式匹配、文本块
 - **JDK 21 新特性** - 虚拟线程、序列化集合、增强的模式匹配
 
@@ -90,29 +90,29 @@ title: Java 编程概述
 
 ## 📚 完整学习资源
 
-| 主题 | 描述 |
-|-----|------|
-| [基础语法](./basic-syntax) | 数据类型、变量、运算符、流程控制、字符串处理 |
-| [面向对象](./oop) | 类、对象、继承、多态、内部类、枚举、注解 |
-| [集合框架](./collections) | List、Set、Map 详解和性能对比 |
-| [异常处理](./exception-handling) | 异常分类、处理机制、最佳实践 |
-| [泛型编程](./generics) | 泛型类、泛型方法、通配符、类型擦除 |
-| [多线程](./multithreading) | 线程创建、同步、通信、线程池、并发工具类 |
-| [IO 流](./io-streams) | 字节流、字符流、缓冲流、NIO 详解 |
-| [函数式编程](./functional-programming) | Lambda、Stream API、函数式接口 |
-| [字符串与日期](./date-time) | LocalDate、LocalTime、格式化、时间计算 |
-| [反射与注解](./reflection-annotation) | 反射 API、动态代理、自定义注解 |
-| [正则表达式](./regex) | 正则语法、Pattern、Matcher、常见验证 |
-| [JVM 基础](./jvm-basics) | JVM架构、类加载、内存模型、垃圾回收、调优 |
-| [性能优化](./performance) | 代码优化、并发优化、缓存策略、监控分析 |
-| [JDK 17 新特性](./jdk17-features) | 密封类、记录类型、模式匹配、文本块、Switch表达式 |
-| [JDK 21 新特性](./jdk21-features) | 虚拟线程、序列化集合、增强模式匹配、记录模式 |
+| 主题                                   | 描述                                              |
+| -------------------------------------- | ------------------------------------------------- |
+| [基础语法](./basic-syntax)             | 数据类型、变量、运算符、流程控制、字符串处理      |
+| [面向对象](./oop)                      | 类、对象、继承、多态、内部类、枚举、注解          |
+| [集合框架](./collections)              | List、Set、Map 详解和性能对比                     |
+| [异常处理](./exception-handling)       | 异常分类、处理机制、最佳实践                      |
+| [泛型编程](./generics)                 | 泛型类、泛型方法、通配符、类型擦除                |
+| [多线程](./multithreading)             | 线程创建、同步、通信、线程池、并发工具类          |
+| [IO 流](./io-streams)                  | 字节流、字符流、缓冲流、NIO 详解                  |
+| [函数式编程](./functional-programming) | Lambda、Stream API、函数式接口                    |
+| [字符串与日期](./date-time)            | LocalDate、LocalTime、格式化、时间计算            |
+| [反射与注解](./reflection-annotation)  | 反射 API、动态代理、自定义注解                    |
+| [正则表达式](./regex)                  | 正则语法、Pattern、Matcher、常见验证              |
+| [JVM 基础](./jvm-basics)               | JVM 架构、类加载、内存模型、垃圾回收、调优        |
+| [性能优化](./performance)              | 代码优化、并发优化、缓存策略、监控分析            |
+| [JDK 17 新特性](./jdk17-features)      | 密封类、记录类型、模式匹配、文本块、Switch 表达式 |
+| [JDK 21 新特性](./jdk21-features)      | 虚拟线程、序列化集合、增强模式匹配、记录模式      |
 
 ## 🔗 相关资源
 
-- [Java 设计模式](/docs/java-design-patterns)
-- [Spring Framework](/docs/spring)
-- [Spring Boot](/docs/springboot)
-- [Netty](/docs/netty)
+- [Java 设计模式](../java-design-patterns)
+- [Spring Framework](../spring)
+- [Spring Boot](../springboot)
+- [Netty](../netty)
 
 开始你的 Java 学习之旅吧！

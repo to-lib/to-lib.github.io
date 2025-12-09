@@ -12,33 +12,33 @@ sidebar_position: 1
 
 #### 核心 Java
 
-- **[Java 编程](/docs/java)** - Java 核心知识与高级特性
-- **[Java 设计模式](/docs/java-design-patterns)** - 23 种经典设计模式完全指南
+- **[Java 编程](java)** - Java 核心知识与高级特性
+- **[Java 设计模式](java-design-patterns)** - 23 种经典设计模式完全指南
 
 #### Spring 全家桶
 
-- **[Spring Framework](/docs/spring)** - Spring 核心框架与 IoC、AOP 等核心概念
-- **[Spring Boot](/docs/springboot)** - 快速开发与自动配置详解
-- **[Spring Cloud](/docs/springcloud)** - 微服务架构与服务治理
-- **[Spring Cloud Alibaba](/docs/springcloud-alibaba)** - 阿里巴巴微服务解决方案
+- **[Spring Framework](spring)** - Spring 核心框架与 IoC、AOP 等核心概念
+- **[Spring Boot](springboot)** - 快速开发与自动配置详解
+- **[Spring Cloud](springcloud)** - 微服务架构与服务治理
+- **[Spring Cloud Alibaba](springcloud-alibaba)** - 阿里巴巴微服务解决方案
 
 #### 网络编程
 
-- **[Netty](/docs/netty)** - 高性能网络应用框架
+- **[Netty](netty)** - 高性能网络应用框架
 
 ### 💾 数据存储
 
-- **[MySQL](/docs/mysql)** - 关系型数据库与 SQL 优化
-- **[Redis](/docs/redis)** - 高性能缓存与数据结构
+- **[MySQL](mysql)** - 关系型数据库与 SQL 优化
+- **[Redis](redis)** - 高性能缓存与数据结构
 
 ### 🖥️ 系统与工具
 
-- **[Linux](/docs/linux)** - Linux 系统管理与 Shell 编程
-- **[Rust](/docs/rust)** - 系统编程语言与内存安全
+- **[Linux](linux)** - Linux 系统管理与 Shell 编程
+- **[Rust](rust)** - 系统编程语言与内存安全
 
 ### 🎨 前端技术
 
-- **[React](/docs/react)** - 现代前端框架与生态系统
+- **[React](react)** - 现代前端框架与生态系统
 
 ## 🚀 快速开始
 
@@ -88,10 +88,10 @@ sidebar_position: 1
 
 ## 🔗 快速链接
 
-- [Java 设计模式快速参考](/docs/java-design-patterns/quick-reference)
-- [Spring Boot 快速入门](/docs/springboot)
-- [MySQL 性能优化](/docs/mysql)
-- [Redis 实战应用](/docs/redis)
+- [Java 设计模式快速参考](java-design-patterns/quick-reference)
+- [Spring Boot 快速入门](springboot)
+- [MySQL 性能优化](mysql)
+- [Redis 实战应用](redis)
 
 ---
 

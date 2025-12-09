@@ -680,7 +680,7 @@ list.forEach(s -> System.out.println(s));
 - [多线程详解](./multithreading)
 - [JVM 基础](./jvm-basics)
 - [集合框架](./collections)
-- [设计模式面试题](/docs/java-design-patterns/interview-questions)
+- [设计模式面试题](../java-design-patterns/interview-questions)
 
 ---
 

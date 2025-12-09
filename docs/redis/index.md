@@ -189,10 +189,10 @@ ZRANK leaderboard "player1"
 
 ## 🔗 相关资源
 
-- [Java 编程](/docs/java)
-- [Spring Framework](/docs/spring)
-- [Spring Boot](/docs/springboot)
-- [MySQL 数据库](/docs/mysql)
+- [Java 编程](../java)
+- [Spring Framework](../spring)
+- [Spring Boot](../springboot)
+- [MySQL 数据库](../mysql)
 
 ## 📖 推荐学习资源
 

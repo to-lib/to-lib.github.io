@@ -433,6 +433,6 @@ public class Directory implements FileSystemElement {
 
 ## 相关文档
 
-- [快速参考](/docs/java-design-patterns/quick-reference) - 23种模式速查表
-- [最佳实践](/docs/java-design-patterns/best-practices) - SOLID原则和反模式
-- [设计模式概述](/docs/java-design-patterns/overview) - 理解设计模式基础
+- [快速参考](quick-reference) - 23种模式速查表
+- [最佳实践](best-practices) - SOLID原则和反模式
+- [设计模式概述](overview) - 理解设计模式基础
