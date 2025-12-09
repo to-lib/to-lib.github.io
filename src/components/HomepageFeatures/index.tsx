@@ -15,8 +15,8 @@ const FeatureList: FeatureItem[] = [
     emoji: "📚",
     description: (
       <>
-        全面覆盖后端开发技术栈：Java/Rust 编程、Linux 系统、
-        23种设计模式、Spring 生态、Netty 网络编程。
+        全面覆盖前后端开发技术栈：Java/Rust 编程、React 19 前端开发、Linux
+        系统、 23种设计模式、Spring 生态、Netty 网络编程、MySQL/Redis 数据库。
         系统化的知识体系助你全面提升技术能力。
       </>
     ),
@@ -83,7 +83,7 @@ export default function HomepageFeatures(): ReactNode {
               <div className={styles.statLabel}>技术文档</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNumber}>6</div>
+              <div className={styles.statNumber}>9</div>
               <div className={styles.statLabel}>核心模块</div>
             </div>
             <div className={styles.stat}>
