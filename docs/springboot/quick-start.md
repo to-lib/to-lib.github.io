@@ -7,7 +7,7 @@ sidebar_position: 2
 ## 5 分钟创建第一个 Spring Boot 应用
 
 > [!TIP]
-> **首次使用？** 推荐使用 Spring Initializr (<https://start.spring.io>) 创建项目，无需手动配置！
+> **首次使用？** 推荐使用 Spring Initializr [https://start.spring.io](https://start.spring.io) 创建项目，无需手动配置！
 
 ### 前置条件
 
@@ -21,7 +21,7 @@ sidebar_position: 2
 ### 方法一：使用 Spring Initializr（推荐）
 
 1. **访问官方网站**
-   打开 <https://start.spring.io>
+   打开 [https://start.spring.io](https://start.spring.io)
 
 2. **配置项目**
    - Project: Maven Project

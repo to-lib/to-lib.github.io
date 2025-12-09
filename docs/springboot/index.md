@@ -151,4 +151,4 @@ mindmap
 ---
 
 > [!NOTE]
-> **学习建议**: 每个文档都包含详细的示例代码和实战应用场景，建议边学边练，加深理解。推荐使用 Spring Initializr (<https://start.spring.io/>) 快速创建项目。
+> **学习建议**: 每个文档都包含详细的示例代码和实战应用场景，建议边学边练，加深理解。推荐使用 Spring Initializr [https://start.spring.io/](https://start.spring.io/) 快速创建项目。
