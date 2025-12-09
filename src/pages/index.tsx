@@ -18,13 +18,13 @@ function HomepageHeader() {
             <span className={styles.titleGradient}>TechLib - 开发者知识库</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            Java 编程 • Rust 编程 • Linux 系统 • 设计模式 • Spring 生态 • Netty
-            网络编程
+            Java • Rust • React 19 • Linux • 设计模式 • Spring • Netty • MySQL •
+            Redis
           </p>
           <p className={styles.heroDescription}>
-            全面覆盖后端开发技术栈，从编程语言基础到框架应用实战。
-            系统化学习路径，涵盖 Java/Rust 编程、Linux
-            运维、23种设计模式、Spring 生态和高性能网络编程。
+            全面覆盖前后端开发技术栈，从编程语言基础到框架应用实战。
+            系统化学习路径，涵盖 Java/Rust 编程、React 19 前端开发、Linux
+            运维、23种设计模式、Spring 生态、高性能网络编程和主流数据库技术。
             提供详细教程、完整代码示例、实战案例和最佳实践指导。
           </p>
           <div className={styles.buttons}>
@@ -65,6 +65,13 @@ function HomepageHeader() {
               </Link>
             </div>
             <div className={styles.navCard}>
+              <span className={styles.navIcon}>⚛️</span>
+              <Link to="/docs/react">
+                <h4>React 19</h4>
+                <p className={styles.navDesc}>现代前端框架</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
               <span className={styles.navIcon}>🐧</span>
               <Link to="/docs/linux">
                 <h4>Linux 系统</h4>
@@ -92,6 +99,20 @@ function HomepageHeader() {
                 <p className={styles.navDesc}>高性能网络框架</p>
               </Link>
             </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🐬</span>
+              <Link to="/docs/mysql">
+                <h4>MySQL</h4>
+                <p className={styles.navDesc}>关系型数据库</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🔴</span>
+              <Link to="/docs/redis">
+                <h4>Redis</h4>
+                <p className={styles.navDesc}>高性能缓存</p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -103,8 +124,8 @@ export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${siteConfig.title} - 专业的技术学习与开发工具集`}
+      description="全面覆盖前后端开发技术栈：Java、Rust、React 19、Linux、设计模式、Spring、Netty、MySQL、Redis。提供系统化学习路径、详细教程和最佳实践。"
     >
       <HomepageHeader />
       <main>
