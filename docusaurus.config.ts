@@ -296,6 +296,72 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "🦀 Rust 编程",
+          position: "left",
+          items: [
+            {
+              label: "📖 Rust 概述",
+              to: "/docs/rust",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
+            },
+            {
+              label: "📝 基础语法",
+              to: "/docs/rust/basic-syntax",
+            },
+            {
+              label: "🔑 所有权系统",
+              to: "/docs/rust/ownership",
+            },
+            {
+              label: "📦 结构体和枚举",
+              to: "/docs/rust/structs-enums",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
+            },
+            {
+              label: "❌ 错误处理",
+              to: "/docs/rust/error-handling",
+            },
+            {
+              label: "🔤 泛型和 Trait",
+              to: "/docs/rust/generics-traits",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级主题</div>",
+            },
+            {
+              label: "🧵 并发编程",
+              to: "/docs/rust/concurrency",
+            },
+            {
+              label: "📌 智能指针",
+              to: "/docs/rust/smart-pointers",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "📖 学习资源",
           position: "left",
           items: [
@@ -393,6 +459,27 @@ const config: Config = {
             {
               label: "多线程",
               to: "/docs/java/multithreading",
+            },
+          ],
+        },
+        {
+          title: "🦀 Rust 编程",
+          items: [
+            {
+              label: "Rust 概述",
+              to: "/docs/rust",
+            },
+            {
+              label: "所有权系统",
+              to: "/docs/rust/ownership",
+            },
+            {
+              label: "错误处理",
+              to: "/docs/rust/error-handling",
+            },
+            {
+              label: "并发编程",
+              to: "/docs/rust/concurrency",
             },
           ],
         },
