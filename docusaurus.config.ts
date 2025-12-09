@@ -95,14 +95,8 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "designPatterns",
-          position: "left",
-          label: "📚 设计模式",
-        },
-        {
           type: "dropdown",
-          label: "🎯 模式分类",
+          label: "📚 设计模式",
           position: "left",
           items: [
             {
