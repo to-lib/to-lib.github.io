@@ -108,10 +108,10 @@
 /* Quick Navigation Cards */
 .quickNav {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 4rem;
-  max-width: 900px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -228,7 +228,7 @@
   }
 
   .quickNav {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 2rem;
   }
