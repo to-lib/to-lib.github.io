@@ -1,0 +1,8 @@
+{
+    "label": "Rust 编程",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Rust 编程完整学习指南，涵盖所有权系统、生命周期、并发编程等核心内容"
+    }
+}
