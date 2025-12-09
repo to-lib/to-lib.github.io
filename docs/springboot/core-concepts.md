@@ -8,6 +8,9 @@ sidebar_position: 3
 
 Spring Boot 是一个基于 Spring Framework 的快速开发框架，旨在简化 Spring 应用的初始搭建和开发过程。它通过约定优于配置的原则，让开发者能够快速创建生产级别的应用程序。
 
+> [!IMPORTANT]
+> **Spring Boot 的核心价值**: 通过自动配置和约定优于配置的设计理念，让开发者专注于业务逻辑而非繁琐的配置工作。
+
 ### 核心特性
 
 1. **开箱即用** - 自动配置绝大多数常用功能
@@ -84,32 +87,38 @@ SpringApplication.from(Application.class)
 
 ## 应用生命周期
 
+```mermaid
+sequenceDiagram
+    participant Main as main()
+    participant App as SpringApplication
+    participant Context as ApplicationContext
+    participant AutoConfig as AutoConfiguration
+    participant Runners as Runners
+    
+    Main->>App: run()
+    App->>App: 加载配置和属性
+    App->>Context: 创建ApplicationContext
+    Context->>AutoConfig: 自动配置Beans
+    AutoConfig-->>Context: Beans就绪
+    Context->>Runners: 调用Runners
+    Note over Runners: ApplicationRunner<br/>CommandLineRunner
+    Runners-->>App: 启动完成
+    App-->>Main: 应用运行中
+    
+    style App fill:#e1f5ff
+    style Context fill:#c8e6c9
+    style AutoConfig fill:#fff9c4
 ```
-┌─────────────────────────────────────┐
-│   1. SpringApplication.run()        │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│   2. 加载配置和属性                   │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│   3. 创建 ApplicationContext         │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│   4. 自动配置 Beans                  │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│   5. 调用 ApplicationRunner          │
-│      和 CommandLineRunner           │
-└────────────┬────────────────────────┘
-             │
-┌────────────▼────────────────────────┐
-│   6. 应用启动完成                    │
-└─────────────────────────────────────┘
-```
+
+> [!NOTE]
+> **启动流程说明:**
+>
+> 1. `SpringApplication.run()` 触发启动流程
+> 2. 加载 application.properties/yml 配置
+> 3. 创建并刷新 ApplicationContext
+> 4. 执行自动配置，创建所需的 Beans
+> 5. 调用 ApplicationRunner 和 CommandLineRunner
+> 6. 应用启动完成，开始接收请求
 
 ## 配置体系
 
@@ -138,6 +147,7 @@ application.properties
 ### 配置示例
 
 `application.properties`:
+
 ```properties
 server.port=8080
 server.servlet.context-path=/api
@@ -149,6 +159,7 @@ logging.level.root=INFO
 ```
 
 `application.yml`:
+
 ```yaml
 server:
   port: 8080
@@ -291,34 +302,31 @@ public class UserService {
 
 ## Bean 的生命周期
 
+```mermaid
+stateDiagram-v2
+    [*] --> 实例化: new Bean()
+    实例化 --> 属性赋值: 注入依赖
+    属性赋值 --> Aware接口: setBeanName等
+    Aware接口 --> 初始化前: BeanPostProcessor
+    初始化前 --> PostConstruct: @PostConstruct
+    PostConstruct --> AfterPropertiesSet: InitializingBean
+    AfterPropertiesSet --> InitMethod: init-method
+    InitMethod --> 初始化后: BeanPostProcessor
+    初始化后 --> Bean就绪: 可以使用
+    Bean就绪 --> PreDestroy: 容器关闭
+    PreDestroy --> Destroy: DisposableBean
+    Destroy --> DestroyMethod: destroy-method
+    DestroyMethod --> [*]
+    
+    note right of Bean就绪: Bean在此阶段<br/>可被正常使用
 ```
-1. 实例化 (Instantiation)
-   ↓
-2. 属性赋值 (Populate properties)
-   ↓
-3. BeanNameAware.setBeanName()
-   ↓
-4. BeanFactoryAware.setBeanFactory()
-   ↓
-5. ApplicationContextAware.setApplicationContext()
-   ↓
-6. BeanPostProcessor.postProcessBeforeInitialization()
-   ↓
-7. @PostConstruct 方法
-   ↓
-8. InitializingBean.afterPropertiesSet()
-   ↓
-9. init-method 方法
-   ↓
-10. BeanPostProcessor.postProcessAfterInitialization()
-    ↓
-11. Bean 就绪
-    ↓
-12. 销毁时：
-    - @PreDestroy 方法
-    - DisposableBean.destroy()
-    - destroy-method 方法
-```
+
+> [!TIP]
+> **生命周期回调顺序记忆法:**
+>
+> - **初始化**: @PostConstruct → InitializingBean → init-method
+> - **销毁**: @PreDestroy → DisposableBean → destroy-method
+> - 推荐使用 @PostConstruct 和 @PreDestroy 注解（JSR-250标准）
 
 ### 生命周期示例
 

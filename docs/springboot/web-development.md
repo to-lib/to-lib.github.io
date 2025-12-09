@@ -4,7 +4,8 @@ sidebar_position: 6
 
 # Web 开发
 
-## RESTful API 基础
+> [!TIP]
+> **RESTful API 设计要点**: 遵循REST原则，使用正确的HTTP方法，合理处理状态码，统一异常处理。本章节包含完整的RESTful API开发最佳实践。
 
 ### REST 原则
 
@@ -170,6 +171,9 @@ public ResponseEntity<User> getProfile(
 ```
 
 ## 数据验证
+
+> [!IMPORTANT]
+> **输入验证是安全的第一道防线**: 始终在Controller层验证用户输入，使用Bean Validation (@Valid, @NotNull, @Size等)确保数据合法性。不要相信客户端验证！
 
 ### Bean Validation
 
@@ -350,6 +354,7 @@ public ResponseEntity<User> getUserById(@PathVariable Long id) {
 ```
 
 根据 Accept 请求头返回对应格式：
+
 - `Accept: application/json` → JSON
 - `Accept: application/xml` → XML
 

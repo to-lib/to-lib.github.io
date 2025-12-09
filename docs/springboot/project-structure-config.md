@@ -4,6 +4,9 @@ sidebar_position: 5
 
 # 项目结构与配置
 
+> [!TIP]
+> **良好的开始**: 标准化的项目结构和配置管理是成功项目的基础。遵循 Maven/Gradle 约定,使用 Profile 管理环境。
+
 ## 标准项目结构
 
 ```
@@ -397,6 +400,7 @@ public class EnvironmentService {
 ### 激活 Profile
 
 **方式 1：application.yml**
+
 ```yaml
 spring:
   profiles:
@@ -404,11 +408,13 @@ spring:
 ```
 
 **方式 2：命令行参数**
+
 ```bash
 java -jar app.jar --spring.profiles.active=prod
 ```
 
 **方式 3：环境变量**
+
 ```bash
 export SPRING_PROFILES_ACTIVE=prod
 java -jar app.jar
@@ -416,6 +422,7 @@ java -jar app.jar
 
 **方式 4：IDE 运行配置**
 在 IntelliJ IDEA 中：
+
 - Run → Edit Configurations
 - 在 VM options 中添加：`-Dspring.profiles.active=dev`
 - 或在 Program arguments 中添加：`--spring.profiles.active=dev`

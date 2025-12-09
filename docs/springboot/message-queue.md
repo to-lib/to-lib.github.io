@@ -4,6 +4,9 @@ sidebar_position: 18
 
 # 消息队列
 
+> [!IMPORTANT]
+> **异步通信核心**: 消息队列用于系统解耦和异步处理。本章介绍 RabbitMQ 和 Kafka 集成,注意消息可靠性和幂等性。
+
 ## RabbitMQ 集成
 
 ### 依赖配置

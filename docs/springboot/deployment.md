@@ -1,22 +1,15 @@
----
-sidebar_position: 13
----
-
-# 部署上线
-
-## 打包应用
-
-### Maven 打包
-
-```bash
 # 清理并打包
+
 mvn clean package
 
 # 跳过测试打包
+
 mvn clean package -DskipTests
 
 # 打包 WAR 文件（用于应用服务器）
+
 mvn clean package -P war
+
 ```
 
 ### Gradle 打包

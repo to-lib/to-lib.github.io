@@ -4,6 +4,9 @@ sidebar_position: 8
 
 # 依赖管理
 
+> [!TIP]
+> **Starter 的力量**: Spring Boot Starter 简化了依赖管理,自动处理版本兼容。使用 dependencyManagement 统一管理版本。
+
 ## Spring Boot Starter
 
 Spring Boot Starter 是一组方便的依赖描述符，可简化 Maven 配置。它们让开发者能够无需关心具体的版本号和配置细节。
@@ -126,11 +129,13 @@ Spring Boot Starter 是一组方便的依赖描述符，可简化 Maven 配置�
 ### 依赖版本冲突解决
 
 查看依赖树：
+
 ```bash
 mvn dependency:tree
 ```
 
 排除冲突的依赖：
+
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>

@@ -4,22 +4,28 @@ sidebar_position: 11
 
 # 常见问题解答
 
+> [!TIP]
+> **快速导航**: 使用 `Ctrl+F` 查找关键词，快速定位您遇到的问题。如未找到解答，请查看 [最佳实践](./best-practices.md) 或 [快速参考](./quick-reference.md)。
+
 ## 常见配置问题
 
 ### Q: 如何修改服务器端口？
 
 A: 在 `application.yml` 中修改：
+
 ```yaml
 server:
   port: 9000
 ```
 
 或启动时指定：
+
 ```bash
 java -jar app.jar --server.port=9000
 ```
 
 或环境变量：
+
 ```bash
 export SERVER_PORT=9000
 ```
@@ -27,6 +33,7 @@ export SERVER_PORT=9000
 ### Q: 如何修改上下文路径？
 
 A: 配置文件中：
+
 ```yaml
 server:
   servlet:
@@ -38,6 +45,7 @@ server:
 ### Q: 如何禁用自动配置？
 
 A: 在启动类上排除：
+
 ```java
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Application {
@@ -48,6 +56,7 @@ public class Application {
 ```
 
 或配置文件中：
+
 ```yaml
 spring:
   autoconfigure:
@@ -60,6 +69,7 @@ spring:
 ### Q: 连接超时问题怎么解决？
 
 A: 调整连接池配置：
+
 ```yaml
 spring:
   datasource:
@@ -73,6 +83,7 @@ spring:
 ### Q: 表自动创建失败？
 
 A: 检查 JPA 配置：
+
 ```yaml
 spring:
   jpa:
@@ -108,6 +119,7 @@ Spring Boot 会自动执行这些脚本。
 ### Q: 如何修改 Spring Boot 版本？
 
 A: 在 `pom.xml` 中修改 parent 版本：
+
 ```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
@@ -119,6 +131,7 @@ A: 在 `pom.xml` 中修改 parent 版本：
 ### Q: 如何处理依赖冲突？
 
 A: 使用 `<exclusion>` 排除冲突的依赖：
+
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -133,6 +146,7 @@ A: 使用 `<exclusion>` 排除冲突的依赖：
 ```
 
 或查看依赖树：
+
 ```bash
 mvn dependency:tree
 ```
@@ -140,6 +154,7 @@ mvn dependency:tree
 ### Q: 如何使用自定义的 BOM（Bill of Materials）？
 
 A: 在 dependencyManagement 中引入：
+
 ```xml
 <dependencyManagement>
     <dependencies>
@@ -159,6 +174,7 @@ A: 在 dependencyManagement 中引入：
 ### Q: 如何处理跨域（CORS）？
 
 A: 配置 CORS：
+
 ```java
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
@@ -175,6 +191,7 @@ public class CorsConfig implements WebMvcConfigurer {
 ### Q: 如何上传文件？
 
 A: Controller 代码：
+
 ```java
 @PostMapping("/upload")
 public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file) {
@@ -186,6 +203,7 @@ public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file) {
 ```
 
 配置文件：
+
 ```yaml
 spring:
   servlet:
@@ -197,6 +215,7 @@ spring:
 ### Q: 如何自定义错误页面？
 
 A: 创建 `src/main/resources/templates/error.html`：
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -216,6 +235,7 @@ A: 创建 `src/main/resources/templates/error.html`：
 A: 默认位置：`src/main/resources/static/` 和 `src/main/resources/public/`
 
 或自定义：
+
 ```yaml
 spring:
   web:
@@ -228,6 +248,7 @@ spring:
 ### Q: 如何修改日志级别？
 
 A: 配置文件：
+
 ```yaml
 logging:
   level:
@@ -237,6 +258,7 @@ logging:
 ```
 
 或启动参数：
+
 ```bash
 java -jar app.jar --logging.level.root=DEBUG
 ```
@@ -244,6 +266,7 @@ java -jar app.jar --logging.level.root=DEBUG
 ### Q: 如何输出日志到文件？
 
 A: 配置文件：
+
 ```yaml
 logging:
   file:
@@ -257,6 +280,7 @@ logging:
 ### Q: 如何使用 logback 配置？
 
 A: 创建 `src/main/resources/logback-spring.xml`：
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
@@ -282,12 +306,14 @@ A: 创建 `src/main/resources/logback-spring.xml`：
 A: 可能原因和解决方案：
 
 1. **减少扫描范围**：
+
 ```java
 @SpringBootApplication(scanBasePackages = {"com.example"})
 public class Application {}
 ```
 
 2. **延迟初始化**：
+
 ```yaml
 spring:
   jpa:
@@ -297,6 +323,7 @@ spring:
 ```
 
 3. **检查启动时间**：
+
 ```bash
 java -jar app.jar --debug
 ```
@@ -304,11 +331,13 @@ java -jar app.jar --debug
 ### Q: 内存占用过高？
 
 A: 调整堆内存：
+
 ```bash
 java -Xms512m -Xmx1024m -jar app.jar
 ```
 
 或检查连接池：
+
 ```yaml
 spring:
   datasource:
@@ -319,15 +348,17 @@ spring:
 
 ### Q: 查询速度慢？
 
-A: 
+A:
 
 1. **使用分页**：
+
 ```java
 Pageable pageable = PageRequest.of(0, 20);
 Page<User> users = userRepository.findAll(pageable);
 ```
 
 2. **使用缓存**：
+
 ```java
 @Cacheable("users")
 public User getUser(Long id) { ... }
@@ -339,12 +370,14 @@ public User getUser(Long id) { ... }
 
 ### Q: 如何打包成 JAR 文件？
 
-A: 
+A:
+
 ```bash
 mvn clean package
 ```
 
 运行：
+
 ```bash
 java -jar target/app-0.0.1-SNAPSHOT.jar
 ```
@@ -352,6 +385,7 @@ java -jar target/app-0.0.1-SNAPSHOT.jar
 ### Q: 如何打包成 WAR 文件？
 
 A: 修改 `pom.xml`：
+
 ```xml
 <packaging>war</packaging>
 
@@ -363,6 +397,7 @@ A: 修改 `pom.xml`：
 ```
 
 修改启动类：
+
 ```java
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -376,6 +411,7 @@ public class Application extends SpringBootServletInitializer {
 ### Q: 如何在 Docker 中运行？
 
 A: 创建 `Dockerfile`：
+
 ```dockerfile
 FROM openjdk:17-slim
 COPY target/app.jar app.jar
@@ -383,6 +419,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 
 构建和运行：
+
 ```bash
 docker build -t myapp .
 docker run -p 8080:8080 myapp
@@ -391,11 +428,13 @@ docker run -p 8080:8080 myapp
 ### Q: 如何配置 HTTPS？
 
 A: 生成密钥：
+
 ```bash
 keytool -genkey -alias tomcat -keyalg RSA -keystore keystore.p12 -keypass password -storepass password -storetype PKCS12
 ```
 
 配置文件：
+
 ```yaml
 server:
   port: 8443
@@ -409,7 +448,8 @@ server:
 
 ### Q: 如何进行单元测试？
 
-A: 
+A:
+
 ```java
 @SpringBootTest
 public class UserServiceTest {
@@ -429,6 +469,7 @@ public class UserServiceTest {
 ### Q: 如何 Mock 依赖？
 
 A:
+
 ```java
 @SpringBootTest
 public class UserControllerTest {
@@ -455,6 +496,7 @@ public class UserControllerTest {
 ### Q: 如何启用远程调试？
 
 A: 运行时添加参数：
+
 ```bash
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar app.jar
 ```
@@ -464,6 +506,7 @@ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar app
 ### Q: 如何查看应用配置？
 
 A: 启用 Actuator 端点：
+
 ```yaml
 management:
   endpoints:

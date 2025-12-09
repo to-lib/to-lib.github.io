@@ -6,16 +6,22 @@ sidebar_position: 2
 
 ## 5 分钟创建第一个 Spring Boot 应用
 
+> [!TIP]
+> **首次使用？** 推荐使用 Spring Initializr (<https://start.spring.io>) 创建项目，无需手动配置！
+
 ### 前置条件
 
-- JDK 11 或更高版本
-- Maven 3.6+ 或 Gradle 7.0+
-- IDE（如 IntelliJ IDEA 或 VS Code）
+- ✅ JDK 11 或更高版本
+- ✅ Maven 3.6+ 或 Gradle 7.0+
+- ✅ IDE（如 IntelliJ IDEA 或 VS Code）
+
+> [!NOTE]
+> **版本推荐**: 生产环境使用 JDK 17 或 21，Spring Boot 3.x 版本。
 
 ### 方法一：使用 Spring Initializr（推荐）
 
 1. **访问官方网站**
-   打开 https://start.spring.io
+   打开 <https://start.spring.io>
 
 2. **配置项目**
    - Project: Maven Project
@@ -49,6 +55,7 @@ cd hello-world
 ### 方法三：使用 IDE 创建项目
 
 **IntelliJ IDEA:**
+
 - File → New → Project
 - 选择 Spring Boot
 - 配置项目信息
@@ -58,7 +65,7 @@ cd hello-world
 
 创建项目后的标准结构：
 
-```
+```text
 hello-world/
 ├── src/
 │   ├── main/
@@ -115,14 +122,17 @@ record Greeting(String message) {}
 ## 运行应用
 
 ### 使用 IDE
+
 点击 IDE 中的 Run 按钮，或按 `Shift + F10` (IntelliJ) 或 `Ctrl + F5` (VS Code)
 
 ### 使用 Maven
+
 ```bash
 mvn spring-boot:run
 ```
 
 ### 打包并运行
+
 ```bash
 # 打包
 mvn clean package
@@ -134,15 +144,19 @@ java -jar target/hello-world-0.0.1-SNAPSHOT.jar
 ## 测试应用
 
 1. **访问应用**
-   ```
+
+   ```text
    http://localhost:8080/
    ```
+
    您应该看到：`Hello, Spring Boot!`
 
 2. **测试 API**
-   ```
+
+   ```text
    http://localhost:8080/api/greeting?name=Spring Boot
    ```
+
    响应：`{"message":"Hello, Spring Boot!"}`
 
 ## 配置应用
@@ -202,21 +216,24 @@ logging:
 
 ## 常见问题
 
-**Q: 如何关闭应用？**
+**Q: 如何关闭应用？**  
 A: 按 `Ctrl + C` 关闭终端中运行的应用
 
-**Q: 端口已被占用？**
+**Q: 端口已被占用？**  
 A: 在 `application.properties` 中修改：`server.port=8081`
 
-**Q: 需要 Tomcat？**
+**Q: 需要 Tomcat？**  
 A: Spring Boot 已内置 Tomcat，无需额外配置
 
 ## 下一步
 
-- 学习 [核心概念](./core-concepts.md)
-- 构建 [RESTful API](./web-development.md)
-- 集成 [数据库](./data-access.md)
+恭喜！你已经成功创建了第一个 Spring Boot 应用。接下来可以：
+
+- 📚 学习 [核心概念](./core-concepts.md) - 深入理解 Spring Boot
+- 🚀 构建 [RESTful API](./web-development.md) - 实现真实的 Web 服务
+- 💾 集成 [数据库](./data-access.md) - 持久化数据
 
 ---
 
-**提示**：Spring Boot DevTools 会在文件更改时自动重启应用，大大提高开发效率！
+> [!TIP]
+> **开发技巧**: Spring Boot DevTools 会在文件更改时自动重启应用，大大提高开发效率！通过添加 `spring-boot-devtools` 依赖启用。

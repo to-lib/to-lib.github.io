@@ -4,6 +4,9 @@ sidebar_position: 9
 
 # 缓存管理
 
+> [!TIP]
+> **缓存是性能优化的利器**: Spring Cache 抽象层支持 Redis、Caffeine 等多种缓存实现。合理使用缓存可显著提升性能。
+
 ## 启用缓存
 
 ### 配置缓存

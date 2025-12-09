@@ -4,6 +4,9 @@ sidebar_position: 16
 
 # 健康检查与监控
 
+> [!IMPORTANT]
+> **生产环境必备**: Actuator 提供了完整的应用健康检查和监控功能。生产环境必须启用监控,但要注意保护敏感端点。
+
 ## Spring Boot Actuator
 
 ### 依赖和配置
@@ -303,6 +306,7 @@ docker run -d \
 ```
 
 在 Grafana 中：
+
 1. 添加 Prometheus 数据源：`http://prometheus:9090`
 2. 导入 Spring Boot 仪表板（ID: 6417）
 

@@ -4,9 +4,8 @@ sidebar_position: 4
 
 # 自动配置详解
 
-## 自动配置原理
-
-Spring Boot 的核心特性就是自动配置，它能根据 classpath 中的 jar 包和已定义的 Bean 自动配置 Spring 应用。
+> [!IMPORTANT]
+> **Spring Boot 的核心特性**: 自动配置能根据 classpath 中的jar包和已定义的Bean自动配置Spring应用。理解自动配置原理对于深入掌握Spring Boot至关重要。
 
 ### 工作流程
 

@@ -4,6 +4,9 @@ sidebar_position: 7
 
 # 数据访问
 
+> [!TIP]
+> **数据持久化核心**: 本章介绍 Spring Boot 集成JPA、MyBatis等数据访问技术。掌握事务管理和连接池配置是生产环境的关键。
+
 ## Spring Data JPA
 
 ### 依赖配置
