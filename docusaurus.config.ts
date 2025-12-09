@@ -300,6 +300,23 @@ const config: Config = {
               label: "🚀 性能优化",
               to: "/docs/java/performance",
             },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>版本新特性</div>",
+            },
+            {
+              label: "📦 JDK 17 新特性",
+              to: "/docs/java/jdk17-features",
+            },
+            {
+              label: "🎯 JDK 21 新特性",
+              to: "/docs/java/jdk21-features",
+            },
           ],
         },
         {
