@@ -200,7 +200,7 @@ mod tests {
 
 ## Result 测试
 
-### 使用 Result<T, E>
+### 使用 `Result<T, E>`
 
 ```rust
 #[cfg(test)]

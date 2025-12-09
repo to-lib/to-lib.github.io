@@ -413,7 +413,7 @@ fn good_concurrency() {
 }
 ```
 
-### 2. Arc<Mutex<T>> 用于共享可变状态
+### 2. `Arc<Mutex<T>>` 用于共享可变状态
 
 ```rust
 use std::sync::{Arc, Mutex};
