@@ -303,7 +303,7 @@ SELECT * FROM users WHERE username LIKE '%张三';
 SELECT * FROM users WHERE username LIKE '张三%';
 ```
 
-### 5. 使用 != 或 <>
+### 5. 使用 != 或 `<>`
 
 ```sql
 -- ❌ 可能不走索引
