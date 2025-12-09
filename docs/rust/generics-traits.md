@@ -609,6 +609,309 @@ impl<T> MyTrait for Vec<T> {
 }
 ```
 
+## 高级 Trait 使用
+
+### 关联类型
+
+```rust
+trait Iterator {
+    type Item;  // 关联类型
+    
+    fn next(&mut self) -> Option<Self::Item>;
+}
+
+struct Counter {
+    count: u32,
+}
+
+impl Iterator for Counter {
+    type Item = u32;  // 指定关联类型
+    
+    fn next(&mut self) -> Option<Self::Item> {
+        self.count += 1;
+        if self.count < 6 {
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+```
+
+### Trait 对象详解
+
+```rust
+trait Draw {
+    fn draw(&self);
+}
+
+struct Circle {
+    radius: f64,
+}
+
+struct Rectangle {
+    width: f64,
+    height: f64,
+}
+
+impl Draw for Circle {
+    fn draw(&self) {
+        println!("绘制圆形,半径: {}", self.radius);
+    }
+}
+
+impl Draw for Rectangle {
+    fn draw(&self) {
+        println!("绘制矩形,宽: {}, 高: {}", self.width, self.height);
+    }
+}
+
+// 使用 trait 对象
+fn draw_all(shapes: &[Box<dyn Draw>]) {
+    for shape in shapes {
+        shape.draw();
+    }
+}
+
+fn main() {
+    let shapes: Vec<Box<dyn Draw>> = vec![
+        Box::new(Circle { radius: 5.0 }),
+        Box::new(Rectangle { width: 10.0, height: 20.0 }),
+    ];
+    
+    draw_all(&shapes);
+}
+```
+
+### Trait 对象 vs 泛型
+
+```rust
+// 静态分发(泛型):编译时确定类型,性能更好
+fn draw_generic<T: Draw>(shape: &T) {
+    shape.draw();
+}
+
+// 动态分发(trait对象):运行时确定类型,更灵活
+fn draw_dynamic(shape: &dyn Draw) {
+    shape.draw();
+}
+```
+
+### 超 Trait (Supertrait)
+
+```rust
+use std::fmt::Display;
+
+// OutlinePrint 依赖 Display trait
+trait OutlinePrint: Display {
+    fn outline_print(&self) {
+        let output = self.to_string();
+        let len = output.len();
+        println!("{}", "*".repeat(len + 4));
+        println!("*{}*", " ".repeat(len + 2));
+        println!("* {} *", output);
+        println!("*{}*", " ".repeat(len + 2));
+        println!("{}", "*".repeat(len + 4));
+    }
+}
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Display for Point {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
+    }
+}
+
+impl OutlinePrint for Point {}
+
+fn main() {
+    let point = Point { x: 1, y: 3 };
+    point.outline_print();
+}
+```
+
+### Newtype 模式绕过孤儿规则
+
+```rust
+use std::fmt;
+
+// 为外部类型Vec<String>实现外部trait Display
+struct Wrapper(Vec<String>);
+
+impl fmt::Display for Wrapper {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "[{}]", self.0.join(", "))
+    }
+}
+
+fn main() {
+    let w = Wrapper(vec![
+        String::from("hello"),
+        String::from("world"),
+    ]);
+    println!("w = {}", w);
+}
+```
+
+## Trait 边界高级技巧
+
+### Where 子句
+
+```rust
+// 复杂的 trait 边界使用 where
+fn some_function<T, U>(t: &T, u: &U) -> i32
+where
+    T: Display + Clone,
+    U: Clone + Debug,
+{
+    // 函数体
+    0
+}
+```
+
+### 多个 Trait 边界
+
+```rust
+use std::fmt::{Debug, Display};
+
+fn compare_prints<T: Debug + Display>(t: &T) {
+    println!("Debug: {:?}", t);
+    println!("Display: {}", t);
+}
+```
+
+### 返回实现 Trait 的类型
+
+```rust
+fn returns_summarizable() -> impl Summary {
+    Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course"),
+        reply: false,
+        retweet: false,
+    }
+}
+```
+
+### 有条件地实现方法
+
+```rust
+use std::fmt::Display;
+
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> Self {
+        Pair { x, y }
+    }
+}
+
+// 只为实现了 Display + PartialOrd 的类型实现 cmp_display
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("最大值是 x = {}", self.x);
+        } else {
+            println!("最大值是 y = {}", self.y);
+        }
+    }
+}
+```
+
+### Blanket Implementation
+
+```rust
+// 为所有实现了 Display 的类型实现 ToString
+trait ToString {
+    fn to_string(&self) -> String;
+}
+
+impl<T: Display> ToString for T {
+    fn to_string(&self) -> String {
+        format!("{}", self)
+    }
+}
+```
+
+## 运算符重载
+
+```rust
+use std::ops::Add;
+
+#[derive(Debug, Copy, Clone, PartialEq)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Add for Point {
+    type Output = Point;
+
+    fn add(self, other: Point) -> Point {
+        Point {
+            x: self.x + other.x,
+            y: self.y + other.y,
+        }
+    }
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 0 };
+    let p2 = Point { x: 2, y: 3 };
+    let p3 = p1 + p2;
+    
+    println!("{:?} + {:?} = {:?}", p1, p2, p3);
+}
+```
+
+## 完全限定语法
+
+```rust
+trait Pilot {
+    fn fly(&self);
+}
+
+trait Wizard {
+    fn fly(&self);
+}
+
+struct Human;
+
+impl Pilot for Human {
+    fn fly(&self) {
+        println!("这是你的机长在讲话");
+    }
+}
+
+impl Wizard for Human {
+    fn fly(&self) {
+        println!("飞起来!");
+    }
+}
+
+impl Human {
+    fn fly(&self) {
+        println!("*疯狂挥动手臂*");
+    }
+}
+
+fn main() {
+    let person = Human;
+    
+    person.fly();                // 调用 Human::fly
+    Pilot::fly(&person);         // 调用 Pilot::fly
+    Wizard::fly(&person);        // 调用 Wizard::fly
+    <Human as Pilot>::fly(&person);  // 完全限定语法
+}
+```
+
 ## 总结
 
 本文介绍了泛型和 Trait：

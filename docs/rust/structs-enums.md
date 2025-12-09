@@ -514,6 +514,331 @@ fn find_user(id: i32) -> Option<User> {
 }
 ```
 
+## 设计模式
+
+### 构建者模式 (Builder Pattern)
+
+```rust
+#[derive(Debug)]
+struct Server {
+    host: String,
+    port: u16,
+    timeout: Option<u64>,
+    max_connections: Option<usize>,
+}
+
+struct ServerBuilder {
+    host: String,
+    port: u16,
+    timeout: Option<u64>,
+    max_connections: Option<usize>,
+}
+
+impl ServerBuilder {
+    fn new(host: String, port: u16) -> Self {
+        ServerBuilder {
+            host,
+            port,
+            timeout: None,
+            max_connections: None,
+        }
+    }
+    
+    fn timeout(mut self, timeout: u64) -> Self {
+        self.timeout = Some(timeout);
+        self
+    }
+    
+    fn max_connections(mut self, max: usize) -> Self {
+        self.max_connections = Some(max);
+        self
+    }
+    
+    fn build(self) -> Server {
+        Server {
+            host: self.host,
+            port: self.port,
+            timeout: self.timeout,
+            max_connections: self.max_connections,
+        }
+    }
+}
+
+fn main() {
+    let server = ServerBuilder::new("localhost".to_string(), 8080)
+        .timeout(30)
+        .max_connections(100)
+        .build();
+    
+    println!("{:?}", server);
+}
+```
+
+### 类型状态模式 (Typestate Pattern)
+
+```rust
+// 使用类型系统表示状态
+struct Locked;
+struct Unlocked;
+
+struct Door<State> {
+    _state: std::marker::PhantomData<State>,
+}
+
+impl Door<Locked> {
+    fn new() -> Self {
+        println!("门已锁上");
+        Door {
+            _state: std::marker::PhantomData,
+        }
+    }
+    
+    fn unlock(self) -> Door<Unlocked> {
+        println!("门已解锁");
+        Door {
+            _state: std::marker::PhantomData,
+        }
+    }
+}
+
+impl Door<Unlocked> {
+    fn lock(self) -> Door<Locked> {
+        println!("门已锁上");
+        Door {
+            _state: std::marker::PhantomData,
+        }
+    }
+    
+    fn open(&self) {
+        println!("门已打开");
+    }
+}
+
+fn main() {
+    let door = Door::<Locked>::new();
+    // door.open();  // 编译错误:锁住的门不能打开
+    
+    let door = door.unlock();
+    door.open();  // 正确
+    
+    let door = door.lock();
+    // door.open();  // 编译错误
+}
+```
+
+### Newtype 模式
+
+```rust
+// 创建类型安全的包装
+struct UserId(u64);
+struct OrderId(u64);
+
+fn process_user(user_id: UserId) {
+    println!("处理用户: {}", user_id.0);
+}
+
+fn process_order(order_id: OrderId) {
+    println!("处理订单: {}", order_id.0);
+}
+
+fn main() {
+    let user = UserId(42);
+    let order = OrderId(123);
+    
+    process_user(user);
+    process_order(order);
+    
+    // process_user(order);  // 编译错误:类型不匹配
+}
+```
+
+## 枚举高级用法
+
+### 枚举方法和关联函数
+
+```rust
+#[derive(Debug)]
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+impl Message {
+    // 关联函数
+    fn new_move(x: i32, y: i32) -> Self {
+        Message::Move { x, y }
+    }
+    
+    // 方法
+    fn call(&self) {
+        match self {
+            Message::Quit => println!("退出"),
+            Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
+            Message::Write(text) => println!("写入: {}", text),
+            Message::ChangeColor(r, g, b) => {
+                println!("改变颜色: RGB({}, {}, {})", r, g, b)
+            }
+        }
+    }
+    
+    fn is_quit(&self) -> bool {
+        matches!(self, Message::Quit)
+    }
+}
+
+fn main() {
+    let msg1 = Message::Quit;
+    let msg2 = Message::new_move(10, 20);
+    let msg3 = Message::Write("Hello".to_string());
+    
+    msg1.call();
+    msg2.call();
+    msg3.call();
+    
+    println!("是否退出: {}", msg1.is_quit());
+}
+```
+
+### 枚举和泛型结合
+
+```rust
+enum Either<L, R> {
+    Left(L),
+    Right(R),
+}
+
+impl<L, R> Either<L, R> {
+    fn is_left(&self) -> bool {
+        matches!(self, Either::Left(_))
+    }
+    
+    fn is_right(&self) -> bool {
+        matches!(self, Either::Right(_))
+    }
+    
+    fn left(self) -> Option<L> {
+        match self {
+            Either::Left(l) => Some(l),
+            Either::Right(_) => None,
+        }
+    }
+    
+    fn right(self) -> Option<R> {
+        match self {
+            Either::Left(_) => None,
+            Either::Right(r) => Some(r),
+        }
+    }
+}
+
+fn main() {
+    let value: Either<i32, String> = Either::Left(42);
+    
+    if value.is_left() {
+        println!("是左值");
+    }
+    
+    let left_value = value.left();
+    println!("{:?}", left_value);
+}
+```
+
+### 递归枚举
+
+```rust
+#[derive(Debug)]
+enum Json {
+    Null,
+    Bool(bool),
+    Number(f64),
+    String(String),
+    Array(Vec<Json>),
+    Object(std::collections::HashMap<String, Json>),
+}
+
+fn main() {
+    use std::collections::HashMap;
+    
+    let mut obj = HashMap::new();
+    obj.insert("name".to_string(), Json::String("Alice".to_string()));
+    obj.insert("age".to_string(), Json::Number(30.0));
+    obj.insert("active".to_string(), Json::Bool(true));
+    
+    let json = Json::Object(obj);
+    println!("{:#?}", json);
+}
+```
+
+## 实用模式
+
+### 状态机
+
+```rust
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+
+impl TrafficLight {
+    fn next(self) -> Self {
+        match self {
+            TrafficLight::Red => TrafficLight::Green,
+            TrafficLight::Yellow => TrafficLight::Red,
+            TrafficLight::Green => TrafficLight::Yellow,
+        }
+    }
+    
+    fn duration(&self) -> u32 {
+        match self {
+            TrafficLight::Red => 60,
+            TrafficLight::Yellow => 3,
+            TrafficLight::Green => 45,
+        }
+    }
+}
+
+fn main() {
+    let mut light = TrafficLight::Red;
+    
+    for _ in 0..5 {
+        println!("当前: {:?}, 持续: {}秒", light, light.duration());
+        light = light.next();
+    }
+}
+```
+
+### 错误类型组合
+
+```rust
+#[derive(Debug)]
+enum Error {
+    Io(std::io::Error),
+    Parse(std::num::ParseIntError),
+    Custom(String),
+}
+
+impl From<std::io::Error> for Error {
+    fn from(error: std::io::Error) -> Self {
+        Error::Io(error)
+    }
+}
+
+impl From<std::num::ParseIntError> for Error {
+    fn from(error: std::num::ParseIntError) -> Self {
+        Error::Parse(error)
+    }
+}
+
+fn read_number_from_file(path: &str) -> Result<i32, Error> {
+    let content = std::fs::read_to_string(path)?;
+    let number: i32 = content.trim().parse()?;
+    Ok(number)
+}
+```
+
 ## 总结
 
 本文介绍了结构体和枚举的使用：
@@ -524,5 +849,8 @@ fn find_user(id: i32) -> Option<User> {
 - ✅ Option 枚举
 - ✅ match 表达式
 - ✅ if let 语法
+- ✅ 设计模式:构建者模式、类型状态模式、Newtype模式
+- ✅ 枚举高级用法:方法、泛型结合、递归枚举
+- ✅ 实用模式:状态机、错误类型组合
 
-掌握这些后，继续学习 [模块和包管理](./modules-packages)。
+掌握这些后，继续学习 [泛型和Trait](./generics-traits)。

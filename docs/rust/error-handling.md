@@ -495,6 +495,188 @@ pub enum DataStoreError {
 }
 ```
 
+## 错误处理设计模式
+
+### 错误链(Error Chain)
+
+```rust
+use std::error::Error;
+use std::fmt;
+
+#[derive(Debug)]
+struct DatabaseError {
+    message: String,
+    source: Option<Box<dyn Error>>,
+}
+
+impl fmt::Display for DatabaseError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "数据库错误: {}", self.message)
+    }
+}
+
+impl Error for DatabaseError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        self.source.as_ref().map(|e| e.as_ref())
+    }
+}
+
+impl From<std::io::Error> for DatabaseError {
+    fn from(error: std::io::Error) -> Self {
+        DatabaseError {
+            message: "IO操作失败".to_string(),
+            source: Some(Box::new(error)),
+        }
+    }
+}
+```
+
+### Context 模式
+
+```rust
+trait Context<T, E> {
+    fn context<C>(self, context: C) -> Result<T, String>
+    where
+        C: fmt::Display;
+}
+
+impl<T, E: fmt::Display> Context<T, E> for Result<T, E> {
+    fn context<C>(self, context: C) -> Result<T, String>
+    where
+        C: fmt::Display,
+    {
+        self.map_err(|e| format!("{}: {}", context, e))
+    }
+}
+
+fn read_config() -> Result<String, String> {
+    std::fs::read_to_string("config.toml")
+        .map_err(|e| e.to_string())
+        .context("无法读取配置文件")
+}
+```
+
+### Early Return 模式
+
+```rust
+fn process_data() -> Result<(), Box<dyn Error>> {
+    let file = std::fs::File::open("data.txt")?;
+    let content = std::fs::read_to_string("data.txt")?;
+    let number: i32 = content.trim().parse()?;
+    
+    println!("数字: {}", number);
+    Ok(())
+}
+```
+
+## 错误上下文处理
+
+### 使用 anyhow crate
+
+```rust
+use anyhow::{Context, Result};
+
+fn read_username() -> Result<String> {
+    let path = "username.txt";
+    std::fs::read_to_string(path)
+        .with_context(|| format!("无法读取文件 {}", path))
+}
+
+fn main() -> Result<()> {
+    let username = read_username()?;
+    println!("用户名: {}", username);
+    Ok(())
+}
+```
+
+### 自定义上下文
+
+```rust
+#[derive(Debug)]
+struct AppError {
+    context: String,
+    source: Box<dyn std::error::Error>,
+}
+
+impl fmt::Display for AppError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}\n原因: {}", self.context, self.source)
+    }
+}
+
+impl std::error::Error for AppError {}
+
+fn with_context<T, E>(result: Result<T, E>, context: &str) -> Result<T, AppError>
+where
+    E: std::error::Error + 'static,
+{
+    result.map_err(|e| AppError {
+        context: context.to_string(),
+        source: Box::new(e),
+    })
+}
+```
+
+## 错误恢复策略
+
+### 重试模式
+
+```rust
+fn retry<F, T, E>(mut f: F, max_attempts: u32) -> Result<T, E>
+where
+    F: FnMut() -> Result<T, E>,
+{
+    let mut attempts = 0;
+    loop {
+        match f() {
+            Ok(result) => return Ok(result),
+            Err(e) => {
+                attempts += 1;
+                if attempts >= max_attempts {
+                    return Err(e);
+                }
+                std::thread::sleep(std::time::Duration::from_millis(100));
+            }
+        }
+    }
+}
+
+fn main() {
+    let result = retry(
+        || {
+            // 模拟不稳定的操作
+            if rand::random::<bool>() {
+                Ok("成功")
+            } else {
+                Err("失败")
+            }
+        },
+        3,
+    );
+}
+```
+
+### 降级模式
+
+```rust
+fn get_user_from_cache(id: u32) -> Option<User> {
+    // 尝试从缓存获取
+    None
+}
+
+fn get_user_from_database(id: u32) -> Result<User, DbError> {
+    // 从数据库获取
+    Ok(User { id, name: "Alice".to_string() })
+}
+
+fn get_user(id: u32) -> User {
+    // 优先缓存,失败则数据库,再失败则默认值
+    get_user_from_cache(id)
+        .or_else(|| get_user_from_database(id).ok())
+        .unwrap_or_else(|| User::default())
+}
+```
+
 ## 总结
 
 本文介绍了 Rust 的错误处理机制：
@@ -505,5 +687,8 @@ pub enum DataStoreError {
 - ✅ unwrap 和 expect
 - ✅ 自定义错误类型
 - ✅ 错误处理最佳实践
+- ✅ 错误处理设计模式:错误链、Context模式、Early Return
+- ✅ 错误上下文:anyhow crate、自定义上下文
+- ✅ 错误恢复策略:重试模式、降级模式
 
 掌握错误处理后，继续学习 [泛型和 Trait](./generics-traits)。
