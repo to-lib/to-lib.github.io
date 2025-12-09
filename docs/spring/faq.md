@@ -7,7 +7,8 @@ sidebar_position: 97
 
 # Spring Framework 常见问题解答
 
-## 1. 依赖注入相关
+> [!TIP]
+> **快速查找**: 使用 Ctrl+F 搜索关键词快速定位问题。如未找到解答，请查看 [最佳实践](./best-practices.md) 或 [官方文档](https://spring.io/projects/spring-framework)。
 
 ### Q1: 什么时候应该使用@Autowired？
 
@@ -134,7 +135,8 @@ public class UserService {
 
 ### Q5: Bean的初始化顺序是什么？
 
-**A:** 
+**A:**
+
 1. 实例化
 2. 设置属性
 3. @PostConstruct
@@ -222,6 +224,7 @@ spring:
 ```
 
 运行时指定：
+
 ```bash
 java -jar app.jar --spring.profiles.active=prod
 ```
@@ -621,6 +624,7 @@ public class UserService {
 ## 总结
 
 常见问题通常与以下方面有关：
+
 - **依赖注入** - 选择正确的注入方式
 - **Bean生命周期** - 理解初始化和销毁顺序
 - **事务管理** - 注意@Transactional的限制
@@ -631,12 +635,14 @@ public class UserService {
 ---
 
 **建议**：
+
 1. 熟悉Spring的核心概念
 2. 阅读相关文档和源码
 3. 实践常见问题的解决方案
 4. 遵循最佳实践
 
 **相关文档**：
+
 - [核心概念](./core-concepts.md)
 - [依赖注入](./dependency-injection.md)
 - [最佳实践](./best-practices.md)

@@ -7,7 +7,8 @@ sidebar_position: 99
 
 # Spring Framework 快速参考
 
-## 常用注解
+> [!TIP]
+> **速查手册**: 本文档汇总了 Spring 常用注解和配置。建议收藏此页以便快速查阅。适合有一定基础的开发者查找具体用法。
 
 ### 组件注解
 
@@ -391,6 +392,7 @@ public class BeanInspector implements ApplicationContextAware {
 ### 启用Debug日志
 
 在`application.properties`：
+
 ```properties
 logging.level.org.springframework=DEBUG
 logging.level.org.springframework.web=DEBUG

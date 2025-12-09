@@ -7,7 +7,8 @@ sidebar_position: 98
 
 # Spring Framework 最佳实践
 
-## 1. 依赖管理最佳实践
+> [!IMPORTANT]
+> **Spring 最佳实践**: 优先使用构造器注入、合理使用作用域、注意事务边界。遵循这些原则可提升代码质量和可维护性。
 
 ### 1.1 优先使用构造函数注入
 
@@ -759,6 +760,7 @@ public ResponseEntity<List<User>> getAllUsers() {
 ---
 
 **关键原则**：
+
 1. 遵循SOLID设计原则
 2. 使用Spring提供的抽象而不是底层API
 3. 充分利用Spring的自动化特性
