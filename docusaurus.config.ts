@@ -104,6 +104,22 @@ const config: Config = {
               to: "/docs/java-design-patterns/overview",
             },
             {
+              label: "⚡ 快速参考",
+              to: "/docs/java-design-patterns/quick-reference",
+            },
+            {
+              label: "✨ 最佳实践",
+              to: "/docs/java-design-patterns/best-practices",
+            },
+            {
+              label: "🎯 使用场景对比",
+              to: "/docs/java-design-patterns/scenarios",
+            },
+            {
+              label: "🔍 模式选择指南",
+              to: "/docs/java-design-patterns/selection-guide",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -435,37 +451,6 @@ const config: Config = {
             {
               label: "📜 Shell 脚本",
               to: "/docs/linux/shell-scripting",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "📖 学习资源",
-          position: "left",
-          items: [
-            {
-              label: "📘 模式概览",
-              to: "/docs/java-design-patterns/overview",
-            },
-            {
-              label: "⚡ 快速参考",
-              to: "/docs/java-design-patterns/quick-reference",
-            },
-            {
-              label: "✨ 最佳实践",
-              to: "/docs/java-design-patterns/best-practices",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 4px 0;'>",
-            },
-            {
-              label: "🎯 使用场景对比",
-              to: "/docs/java-design-patterns/scenarios",
-            },
-            {
-              label: "🔍 模式选择指南",
-              to: "/docs/java-design-patterns/selection-guide",
             },
           ],
         },
