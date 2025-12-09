@@ -59,12 +59,6 @@ React 是一个用于构建用户界面的 JavaScript 库：
 ### 🎓 核心特性
 
 - **[Hooks 详解](./hooks)** - useState、useEffect、自定义 Hooks、React 19 新 Hooks
-  {/\* 以下文档待补充
-- **[Context API](./context)** - 跨组件状态共享
-- **[表单处理](./forms)** - 受控组件和表单验证
-- **[生命周期](./lifecycle)** - 组件生命周期深入理解
-- **[React Router](./routing)** - 单页应用路由
-  \*/}
 
 ### 🚀 React 19 新特性
 
@@ -73,18 +67,6 @@ React 是一个用于构建用户界面的 JavaScript 库：
 ### 💡 实战部分
 
 - **[面试题精选](./interview-questions)** - React 面试题库
-
-{/\* 以下文档待补充
-
-### 高级特性
-
-- **[性能优化](./performance)** - memo、useMemo、useCallback
-- **[Server Components](./server-components)** - React Server Components
-- **[并发特性](./concurrent-features)** - Suspense、Transitions
-- **[最佳实践](./best-practices)** - 代码组织和架构模式
-- **[代码示例](./code-examples)** - 常用功能代码示例
-- **[常见模式](./common-patterns)** - 设计模式和最佳实践
-  \*/}
 
 ## 🎯 学习建议
 
