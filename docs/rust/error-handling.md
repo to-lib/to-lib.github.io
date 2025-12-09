@@ -5,7 +5,7 @@ title: 错误处理
 
 # 错误处理
 
-Rust 将错误分为两大类：可恢复错误和不可恢复错误。本文介绍 Result<T, E> 和 panic! 的使用。
+Rust 将错误分为两大类：可恢复错误和不可恢复错误。本文介绍 `Result<T, E>` 和 `panic!` 的使用。
 
 ## 不可恢复错误 panic
 
@@ -35,7 +35,7 @@ RUST_BACKTRACE=1 cargo run
 RUST_BACKTRACE=full cargo run
 ```
 
-## 可恢复错误 Result<T, E>
+## 可恢复错误 `Result<T, E>`
 
 ### Result 枚举
 
@@ -500,7 +500,7 @@ pub enum DataStoreError {
 本文介绍了 Rust 的错误处理机制：
 
 - ✅ panic! 用于不可恢复错误
-- ✅ Result<T, E> 用于可恢复错误
+- ✅ `Result<T, E>` 用于可恢复错误
 - ✅ ? 运算符简化错误传播
 - ✅ unwrap 和 expect
 - ✅ 自定义错误类型

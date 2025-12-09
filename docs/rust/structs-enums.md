@@ -245,7 +245,7 @@ fn main() {
 
 ## Option 枚举
 
-### Option<T> 定义
+### `Option<T>` 定义
 
 ```rust
 enum Option<T> {
@@ -330,7 +330,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 ```
 
-### 匹配 Option<T>
+### 匹配 `Option<T>`
 
 ```rust
 fn plus_one(x: Option<i32>) -> Option<i32> {
