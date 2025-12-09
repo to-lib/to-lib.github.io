@@ -592,6 +592,21 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "💾 数据库",
+          position: "left",
+          items: [
+            {
+              label: "🐬 MySQL",
+              to: "/docs/mysql",
+            },
+            {
+              label: "🔴 Redis",
+              to: "/docs/redis",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "📝 面试题库",
           position: "left",
           items: [
