@@ -7,6 +7,7 @@ sidebar_position: 25
 ## 23种设计模式完整列表
 
 ### 创建型模式 (5种)
+
 创建对象的各种方式，隐藏创建逻辑，使代码更灵活。
 
 | 模式 | 目的 | 关键特性 | 适用场景 |
@@ -18,6 +19,7 @@ sidebar_position: 25
 | **Prototype**<br/>原型 | 通过克隆创建对象 | 对象复制 | 大量相似对象，复制代价低 |
 
 ### 结构型模式 (7种)
+
 处理对象和类的组合，形成更复杂的结构。
 
 | 模式 | 目的 | 关键特性 | 适用场景 |
@@ -31,6 +33,7 @@ sidebar_position: 25
 | **Proxy**<br/>代理 | 控制对象访问 | 替身代理 | 延迟加载、访问控制、日志 |
 
 ### 行为型模式 (11种)
+
 处理对象间的通信、职责分配和算法的分离。
 
 | 模式 | 目的 | 关键特性 | 适用场景 |
@@ -95,6 +98,7 @@ sidebar_position: 25
 ## 按复杂度分类
 
 ### 简单 ⭐
+
 适合初学者，容易理解实现
 
 - Singleton（单例）
@@ -104,6 +108,7 @@ sidebar_position: 25
 - Observer（观察者）
 
 ### 中等 ⭐⭐
+
 需要一定经验，要理解关键概念
 
 - Abstract Factory（抽象工厂）
@@ -115,6 +120,7 @@ sidebar_position: 25
 - Template Method（模板方法）
 
 ### 复杂 ⭐⭐⭐
+
 需要深入理解，应用场景特殊
 
 - Bridge（桥接）
@@ -132,6 +138,7 @@ sidebar_position: 25
 ## 按使用频率排序
 
 ### 高频 (项目中经常用到)
+
 1. Singleton（单例）- 无处不在
 2. Factory Method（工厂方法）- 对象创建
 3. Strategy（策略）- 算法选择
@@ -142,6 +149,7 @@ sidebar_position: 25
 8. Proxy（代理）- 访问控制
 
 ### 中频 (根据需要)
+
 - Abstract Factory（产品族）
 - Template Method（流程定义）
 - Command（请求对象化）
@@ -149,6 +157,7 @@ sidebar_position: 25
 - Iterator（集合遍历）
 
 ### 低频 (特定场景)
+
 - Prototype（对象克隆）
 - Facade（简化接口）
 - Composite（树形结构）
@@ -163,6 +172,7 @@ sidebar_position: 25
 ## 模式间的关系
 
 ### 经常一起使用
+
 - **Factory + Singleton** - 工厂创建单例
 - **Strategy + Factory** - 工厂创建策略对象
 - **Observer + Mediator** - 对象协调和通知
@@ -174,6 +184,7 @@ sidebar_position: 25
 - **State + Strategy** - 状态和行为
 
 ### 替代关系
+
 - **Strategy vs State** - 策略由客户端选择，状态自动转换
 - **Factory Method vs Abstract Factory** - 单产品vs产品族
 - **Decorator vs Proxy** - 装饰添加功能，代理控制访问
@@ -183,32 +194,38 @@ sidebar_position: 25
 ## 最常见的使用场景
 
 ### Web框架
+
 - Spring IoC: Factory + Singleton
 - Spring AOP: Proxy + Decorator
 - MVC: Observer + Template Method
 
 ### 数据库
+
 - Connection Pool: Flyweight + Singleton
 - ORM: Visitor + Iterator
 
 ### 游戏开发
+
 - GameObject: Composite + Visitor
 - Animation: State + Strategy
 - Audio Manager: Singleton + Facade
 
 ### 编译器/IDE
+
 - AST: Visitor + Interpreter + Composite
 - Lexer: Iterator + Visitor
 
 ## 学习建议
 
 ### 第一阶段：理解基础
+
 1. Singleton - 最简单的模式
 2. Factory Method - 基础创建模式
 3. Strategy - 基础行为模式
 4. Observer - 基础交互模式
 
 ### 第二阶段：掌握常用
+
 5. Builder - 复杂对象创建
 6. Decorator - 功能增强
 7. Adapter - 接口适配
@@ -217,6 +234,7 @@ sidebar_position: 25
 10. State - 状态管理
 
 ### 第三阶段：深入理解
+
 11. Abstract Factory - 产品族
 12. Composite - 树形结构
 13. Chain of Responsibility - 请求链
@@ -228,21 +246,25 @@ sidebar_position: 25
 ## 反模式警告
 
 ### 过度使用设计模式
+
 - 问题：为简单问题使用复杂模式
 - 症状：代码反而变复杂
 - 解决：根据实际需求选择
 
 ### 滥用继承
+
 - 问题：优先使用继承而非组合
 - 症状：类层次过深，难以维护
 - 解决：优先选择组合
 
 ### 不一致的应用
+
 - 问题：同一模式应用不一致
 - 症状：代码风格混乱
 - 解决：制定团队规范
 
 ### 忽视性能
+
 - 问题：为了"优雅"忽视性能
 - 症状：系统响应缓慢
 - 解决：在模式和性能间平衡

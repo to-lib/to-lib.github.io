@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 26
 ---
 
 # 设计模式最佳实践
@@ -7,6 +7,7 @@ sidebar_position: 10
 ## 选择设计模式的原则
 
 ### 1. KISS原则（Keep It Simple, Stupid）
+
 不要过度设计，在必要时才使用设计模式。
 
 ```java
@@ -32,6 +33,7 @@ public enum GlobalConfig {
 ```
 
 ### 2. DRY原则（Don't Repeat Yourself）
+
 使用设计模式消除代码重复。
 
 ```java
@@ -70,6 +72,7 @@ public class LoggingProxy implements UserService {
 ### 3. SOLID原则
 
 #### 单一职责原则 (Single Responsibility)
+
 每个类只负责一个功能。
 
 ```java
@@ -101,6 +104,7 @@ public class UserNotifier {
 ```
 
 #### 开闭原则 (Open/Closed Principle)
+
 对扩展开放，对修改关闭。
 
 ```java
@@ -131,6 +135,7 @@ public class PaymentProcessor {
 ```
 
 #### 里氏替换原则 (Liskov Substitution)
+
 子类应该能替换其父类。
 
 ```java
@@ -166,6 +171,7 @@ public class Penguin {
 ```
 
 #### 接口隔离原则 (Interface Segregation)
+
 客户端不应被迫依赖它们不使用的接口。
 
 ```java
@@ -207,6 +213,7 @@ public class Director implements Worker, Manager, Reporter {
 ```
 
 #### 依赖倒置原则 (Dependency Inversion)
+
 依赖抽象而不是具体实现。
 
 ```java
@@ -240,9 +247,11 @@ public interface Database {
 ## 常见的反模式及其解决方案
 
 ### 1. 上帝对象（God Object）
+
 一个类做太多事情。
 
 **解决**：分解成多个小类
+
 ```java
 // 将UserManager分解为：
 // - UserService：业务逻辑
@@ -252,9 +261,11 @@ public interface Database {
 ```
 
 ### 2. 特性羡慕（Feature Envy）
+
 一个类过度使用另一个类的方法。
 
 **解决**：移动方法到正确的类
+
 ```java
 // 不好
 class OrderService {
@@ -276,9 +287,11 @@ class Order {
 ```
 
 ### 3. 过度工程（Over Engineering）
+
 使用过于复杂的设计处理简单问题。
 
 **解决**：根据实际需求选择合适的设计
+
 ```java
 // 不好：简单场景使用复杂设计
 public enum LoggerFactory {
@@ -401,18 +414,21 @@ public class DiscountedOrder implements Order {
 ## 设计模式学习路线
 
 ### 初级（理解基础）
+
 1. 单例模式
 2. 工厂方法模式
 3. 策略模式
 4. 观察者模式
 
 ### 中级（掌握应用）
+
 5. 装饰器模式
 6. 适配器模式
 7. 建造者模式
 8. 代理模式
 
 ### 高级（深入理解）
+
 9. 抽象工厂模式
 10. 模板方法模式
 11. 责任链模式
