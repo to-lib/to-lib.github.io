@@ -226,6 +226,76 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "☕ Java 编程",
+          position: "left",
+          items: [
+            {
+              label: "📖 Java 概述",
+              to: "/docs/java",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
+            },
+            {
+              label: "📝 基础语法",
+              to: "/docs/java/basic-syntax",
+            },
+            {
+              label: "🎯 面向对象",
+              to: "/docs/java/oop",
+            },
+            {
+              label: "❌ 异常处理",
+              to: "/docs/java/exception-handling",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
+            },
+            {
+              label: "📦 集合框架",
+              to: "/docs/java/collections",
+            },
+            {
+              label: "🔤 泛型编程",
+              to: "/docs/java/generics",
+            },
+            {
+              label: "💾 IO 流",
+              to: "/docs/java/io-streams",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级主题</div>",
+            },
+            {
+              label: "🧵 多线程",
+              to: "/docs/java/multithreading",
+            },
+            {
+              label: "⚡ 函数式编程",
+              to: "/docs/java/functional-programming",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "📖 学习资源",
           position: "left",
           items: [
@@ -302,6 +372,27 @@ const config: Config = {
             {
               label: "行为型模式 (11)",
               to: "/docs/java-design-patterns/observer-pattern",
+            },
+          ],
+        },
+        {
+          title: "☕ Java 编程",
+          items: [
+            {
+              label: "Java 概述",
+              to: "/docs/java",
+            },
+            {
+              label: "基础语法",
+              to: "/docs/java/basic-syntax",
+            },
+            {
+              label: "集合框架",
+              to: "/docs/java/collections",
+            },
+            {
+              label: "多线程",
+              to: "/docs/java/multithreading",
             },
           ],
         },
