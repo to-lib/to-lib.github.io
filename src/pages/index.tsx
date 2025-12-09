@@ -18,13 +18,14 @@ function HomepageHeader() {
             <span className={styles.titleGradient}>TechLib - 开发者知识库</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            Java • Rust • React 19 • Linux • 设计模式 • Spring • Netty • MySQL •
-            Redis
+            Java • Rust • React 19 • Linux • 设计模式 • Spring • Spring Cloud •
+            Netty • MySQL • Redis
           </p>
           <p className={styles.heroDescription}>
             全面覆盖前后端开发技术栈，从编程语言基础到框架应用实战。
             系统化学习路径，涵盖 Java/Rust 编程、React 19 前端开发、Linux
-            运维、23种设计模式、Spring 生态、高性能网络编程和主流数据库技术。
+            运维、23种设计模式、Spring
+            生态（含微服务）、高性能网络编程和主流数据库技术。
             提供详细教程、完整代码示例、实战案例和最佳实践指导。
           </p>
           <div className={styles.buttons}>
@@ -93,6 +94,20 @@ function HomepageHeader() {
               </Link>
             </div>
             <div className={styles.navCard}>
+              <span className={styles.navIcon}>☁️</span>
+              <Link to="/docs/springcloud">
+                <h4>Spring Cloud</h4>
+                <p className={styles.navDesc}>微服务治理</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>☁️</span>
+              <Link to="/docs/springcloud-alibaba">
+                <h4>Spring Cloud Alibaba</h4>
+                <p className={styles.navDesc}>阿里微服务</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
               <span className={styles.navIcon}>⚡</span>
               <Link to="/docs/netty">
                 <h4>Netty</h4>
@@ -125,7 +140,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title} - 专业的技术学习与开发工具集`}
-      description="全面覆盖前后端开发技术栈：Java、Rust、React 19、Linux、设计模式、Spring、Netty、MySQL、Redis。提供系统化学习路径、详细教程和最佳实践。"
+      description="全面覆盖前后端开发技术栈：Java、Rust、React 19、Linux、设计模式、Spring生态（Framework/Boot/Cloud）、Netty、MySQL、Redis。提供系统化学习路径、详细教程和最佳实践。"
     >
       <HomepageHeader />
       <main>

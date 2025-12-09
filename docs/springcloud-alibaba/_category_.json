@@ -1,0 +1,8 @@
+{
+  "label": "☁️ Spring Cloud Alibaba",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "description": "Spring Cloud Alibaba 微服务解决方案完整学习指南，涵盖 Nacos、Sentinel、Seata、RocketMQ、Dubbo 等核心组件。"
+  }
+}

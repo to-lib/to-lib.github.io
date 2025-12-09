@@ -1,0 +1,8 @@
+{
+  "label": "☁️ Spring Cloud",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "description": "Spring Cloud 微服务框架完整学习指南，涵盖服务注册发现、配置中心、API网关、服务调用、熔断降级等核心组件。"
+  }
+}

@@ -582,6 +582,23 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>微服务框架</div>",
+            },
+            {
+              label: "☁️ Spring Cloud",
+              to: "/docs/springcloud",
+            },
+            {
+              label: "☁️ Spring Cloud Alibaba",
+              to: "/docs/springcloud-alibaba",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>网络框架</div>",
             },
             {
@@ -800,6 +817,14 @@ const config: Config = {
             {
               label: "Spring Boot",
               to: "/docs/springboot",
+            },
+            {
+              label: "Spring Cloud",
+              to: "/docs/springcloud",
+            },
+            {
+              label: "Spring Cloud Alibaba",
+              to: "/docs/springcloud-alibaba",
             },
             {
               label: "Netty",
