@@ -157,7 +157,7 @@ npm run dev
 
 ### 学习资源
 
-- [React 设计模式](/docs/java-design-patterns) - 可借鉴的设计思想
+- [React 设计模式](../java-design-patterns) - 可借鉴的设计思想
 - [TypeScript](/docs) - React + TypeScript 最佳组合
 
 ## 🎓 学习目标

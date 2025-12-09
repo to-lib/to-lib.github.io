@@ -669,7 +669,7 @@ public class DataSourceAutoConfiguration {
 - `@ConditionalOnMissingBean`：Bean 不存在
 - `@ConditionalOnProperty`：配置属性存在
 
-**延伸：** 参考 [Spring Boot 自动配置](/docs/springboot)
+**延伸：** 参考 [Spring Boot 自动配置](../springboot)
 
 ---
 

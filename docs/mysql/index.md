@@ -31,11 +31,11 @@ title: MySQL 数据库学习指南
 
 如果你是 MySQL 初学者，建议按以下顺序学习：
 
-1. [基础概念](./basic-concepts) - 了解 MySQL 架构和存储引擎
-2. [数据类型](./data-types) - 掌握各种数据类型的使用
-3. [SQL 语法](./sql-syntax) - 学习 SQL 基本语法和查询
-4. [索引优化](./indexes) - 理解索引原理和优化策略
-5. [事务处理](./transactions) - 掌握事务和锁机制
+1. [基础概念](mysql/basic-concepts) - 了解 MySQL 架构和存储引擎
+2. [数据类型](mysql/data-types) - 掌握各种数据类型的使用
+3. [SQL 语法](mysql/sql-syntax) - 学习 SQL 基本语法和查询
+4. [索引优化](mysql/indexes) - 理解索引原理和优化策略
+5. [事务处理](mysql/transactions) - 掌握事务和锁机制
 
 ## 📖 学习路径
 
@@ -146,24 +146,24 @@ DELETE FROM users WHERE id = 1;
 
 ## 📚 完整学习资源
 
-| 主题                                   | 描述                                     |
-| -------------------------------------- | ---------------------------------------- |
-| [基础概念](./basic-concepts)           | MySQL 架构、存储引擎、字符集与排序规则   |
-| [数据类型](./data-types)               | 数值、字符串、日期时间、JSON 类型详解    |
-| [SQL 语法](./sql-syntax)               | DDL、DML、查询语句、连接查询完整指南     |
-| [索引优化](./indexes)                  | 索引类型、创建策略、覆盖索引、索引优化   |
-| [事务处理](./transactions)             | ACID 特性、隔离级别、锁机制、MVCC 原理   |
-| [性能优化](./performance-optimization) | 查询优化、EXPLAIN 分析、参数调优、分区表 |
-| [存储过程与函数](./stored-procedures)  | 存储过程创建、流程控制、游标、错误处理   |
-| [视图与触发器](./views-triggers)       | 视图管理、可更新视图、触发器类型与应用   |
-| [备份与恢复](./backup-recovery)        | 备份策略、mysqldump、主从复制、故障恢复  |
-| [面试题集](./interview-questions)      | MySQL 常见面试题和答案详解               |
+| 主题                                       | 描述                                     |
+| ------------------------------------------ | ---------------------------------------- |
+| [基础概念](mysql/basic-concepts)           | MySQL 架构、存储引擎、字符集与排序规则   |
+| [数据类型](mysql/data-types)               | 数值、字符串、日期时间、JSON 类型详解    |
+| [SQL 语法](mysql/sql-syntax)               | DDL、DML、查询语句、连接查询完整指南     |
+| [索引优化](mysql/indexes)                  | 索引类型、创建策略、覆盖索引、索引优化   |
+| [事务处理](mysql/transactions)             | ACID 特性、隔离级别、锁机制、MVCC 原理   |
+| [性能优化](mysql/performance-optimization) | 查询优化、EXPLAIN 分析、参数调优、分区表 |
+| [存储过程与函数](mysql/stored-procedures)  | 存储过程创建、流程控制、游标、错误处理   |
+| [视图与触发器](mysql/views-triggers)       | 视图管理、可更新视图、触发器类型与应用   |
+| [备份与恢复](mysql/backup-recovery)        | 备份策略、mysqldump、主从复制、故障恢复  |
+| [面试题集](mysql/interview-questions)      | MySQL 常见面试题和答案详解               |
 
 ## 🔗 相关资源
 
-- [Java 编程](/docs/java)
-- [Spring Framework](/docs/spring)
-- [Spring Boot](/docs/springboot)
+- [Java 编程](../java)
+- [Spring Framework](../spring)
+- [Spring Boot](../springboot)
 
 ## 📖 推荐学习资源
 
