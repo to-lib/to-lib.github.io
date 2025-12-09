@@ -666,4 +666,4 @@ function getWindowSize() {} // 不是 Hook
 
 ---
 
-**下一步**: 学习 [Context API](./context) 了解跨组件状态共享，或查看 [React 19 新特性](./react19-features) 了解最新的 Hook 功能。
+**下一步**: 查看 [React 19 新特性](./react19-features) 了解最新的 Hook 功能，或浏览 [面试题精选](./interview-questions) 巩固知识。

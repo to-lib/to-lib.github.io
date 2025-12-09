@@ -80,7 +80,7 @@ while (true) {
 - 也支持 Epoll（Linux）、KQueue（Mac）等更高效的实现
 - 不使用 AIO，因为 Linux 的 AIO 实现并不成熟
 
-**延伸：** 参考 [基础知识 - IO 模型](./basics#io-模型)
+**延伸：** 参考 [基础知识](./basics)
 
 ---
 
@@ -332,7 +332,7 @@ public class MyDecoder extends ByteToMessageDecoder {
 }
 ```
 
-**延伸：** 参考 [编解码 - 粘包拆包](./codec#粘包拆包问题)
+**延伸：** 参考 [编解码](./codec)
 
 ---
 
@@ -437,7 +437,7 @@ ctx.writeAndFlush(region);
 零拷贝：硬盘 → 内核缓冲区 → 网卡  （减少2次拷贝）
 ```
 
-**延伸：** 参考 [高级特性 - 零拷贝](./advanced#零拷贝技术)
+**延伸：** 参考 [高级特性](./advanced)
 
 ---
 
@@ -484,7 +484,7 @@ buf.release();  // 计数归零，归还内存池
 - 避免内存泄漏检测警告
 - 使用 `ResourceLeakDetector` 检测泄漏
 
-**延伸：** 参考 [高级特性 - 内存管理](./advanced#内存管理)
+**延伸：** 参考 [高级特性](./advanced)
 
 ---
 
@@ -534,7 +534,7 @@ Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 }));
 ```
 
-**延伸：** 参考 [最佳实践 - 资源管理](./best-practices#资源管理)
+**延伸：** 参考 [最佳实践](./best-practices)
 
 ---
 
@@ -588,7 +588,7 @@ if (msg instanceof PingMessage) {
 }
 ```
 
-**延伸：** 参考 [实战示例 - 心跳机制](./practical-examples#心跳机制)
+**延伸：** 参考 [实战示例](./practical-examples)
 
 ---
 

@@ -42,7 +42,7 @@ public class UserService {
 }
 ```
 
-**延伸：** 参考 [核心概念 - IoC](./core-concepts#ioc-控制反转)
+**延伸：** 参考 [核心概念](./core-concepts)
 
 ---
 
@@ -130,7 +130,7 @@ private UserDao userDao;
 private UserDao userDao;
 ```
 
-**延伸：** 参考 [依赖注入 - 注解](./dependency-injection#自动装配注解)
+**延伸：** 参考 [依赖注入](./dependency-injection)
 
 ---
 
@@ -168,7 +168,7 @@ public class OrderService { }
 public class LoginController { }
 ```
 
-**延伸：** 参考 [Bean 管理 - 作用域](./bean-management#bean-作用域)
+**延伸：** 参考 [Bean 管理](./bean-management)
 
 ---
 
@@ -229,7 +229,7 @@ public class MyBean implements InitializingBean, DisposableBean {
 }
 ```
 
-**延伸：** 参考 [Bean 管理 - 生命周期](./bean-management#bean-生命周期)
+**延伸：** 参考 [Bean 管理](./bean-management)
 
 ---
 
@@ -302,7 +302,7 @@ public class LoggingAspect {
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 ```
 
-**延伸：** 参考 [AOP - 代理机制](./aop#代理方式)
+**延伸：** 参考 [AOP 详解](./aop)
 
 ---
 
@@ -365,7 +365,7 @@ public class OrderAspect {
 }
 ```
 
-**延伸：** 参考 [AOP - 通知类型](./aop#通知类型)
+**延伸：** 参考 [AOP 详解](./aop)
 
 ---
 
@@ -412,7 +412,7 @@ public class LogService {
 }
 ```
 
-**延伸：** 参考 [事务管理 - 传播行为](./transactions#事务传播行为)
+**延伸：** 参考 [事务管理](./transactions)
 
 ---
 
@@ -474,7 +474,7 @@ public void save() throws Exception {
 
 - MyISAM 不支持事务，必须使用 InnoDB
 
-**延伸：** 参考 [常见问题 - 事务失效](./faq#事务不生效)
+**延伸：** 参考 [常见问题](./faq)
 
 ---
 
@@ -509,7 +509,7 @@ public void transfer() {
 }
 ```
 
-**延伸：** 参考 [事务管理 - 隔离级别](./transactions#事务隔离级别)
+**延伸：** 参考 [事务管理](./transactions)
 
 ---
 
@@ -552,7 +552,7 @@ public class UserController {
 }
 ```
 
-**延伸：** 参考 [Spring MVC - 工作原理](./spring-mvc#工作原理)
+**延伸：** 参考 [Spring MVC](./spring-mvc)
 
 ---
 
@@ -589,7 +589,7 @@ public List<Order> getUserOrders(@PathVariable Long id,
 }
 ```
 
-**延伸：** 参考 [Spring MVC - 参数绑定](./spring-mvc#参数绑定)
+**延伸：** 参考 [Spring MVC](./spring-mvc)
 
 ---
 
@@ -626,7 +626,7 @@ public class EmailSender { }
 
 - 会将数据库异常转换为 Spring 的 DataAccessException
 
-**延伸：** 参考 [核心概念 - 注解](./core-concepts#常用注解)
+**延伸：** 参考 [核心概念](./core-concepts)
 
 ---
 

@@ -41,7 +41,7 @@ System.out.println(s1 == s2);        // false (不同对象)
 System.out.println(s1.equals(s2));   // true (内容相同)
 ```
 
-**延伸：** 参考 [基础语法 - 字符串比较](./basic-syntax#字符串操作)
+**延伸：** 参考 [基础语法 - 字符串创建和操作](./basic-syntax#字符串创建和操作)
 
 ---
 
@@ -69,7 +69,7 @@ for (int i = 0; i < 10000; i++) {
 }
 ```
 
-**延伸：** 参考 [基础语法 - 字符串处理](./basic-syntax#字符串处理)
+**延伸：** 参考 [基础语法 - 字符串详解](./basic-syntax#字符串详解)
 
 ---
 
@@ -153,7 +153,7 @@ class Dog extends Animal {
 }
 ```
 
-**延伸：** 参考 [面向对象 - 多态](./oop#多态性polymorphism)
+**延伸：** 参考 [面向对象 - 多态](./oop#多态)
 
 ---
 
@@ -250,7 +250,7 @@ Map<String, Integer> hashMap = new HashMap<>();
 Map<String, Integer> concurrentMap = new ConcurrentHashMap<>();
 ```
 
-**延伸：** 参考 [多线程 - 并发集合](./multithreading#并发集合类)
+**延伸：** 参考 [多线程 - 并发集合](./multithreading#3-使用并发集合)
 
 ---
 
@@ -371,7 +371,7 @@ public void method() {
 }
 ```
 
-**延伸：** 参考 [多线程 - 同步机制](./multithreading#同步机制)
+**延伸：** 参考 [多线程 - 线程同步](./multithreading#线程同步)
 
 ---
 
@@ -416,7 +416,7 @@ public void increment() {
 }
 ```
 
-**延伸：** 参考 [多线程 - volatile 详解](./multithreading#volatile-关键字)
+**延伸：** 参考 [多线程 - volatile 详解](./multithreading)
 
 ---
 
@@ -488,7 +488,7 @@ public ThreadPoolExecutor(
    - 线程共享，存储类信息、常量、静态变量
    - OutOfMemoryError: Metaspace
 
-**延伸：** 参考 [JVM 基础 - 内存结构](./jvm-basics#jvm-内存结构)
+**延伸：** 参考 [JVM 基础 - 内存模型](./jvm-basics#内存模型)
 
 ---
 
@@ -517,7 +517,7 @@ public ThreadPoolExecutor(
 - 新生代：复制算法
 - 老年代：标记-清除或标记-整理
 
-**延伸：** 参考 [JVM 基础 - 垃圾回收](./jvm-basics#垃圾回收机制)
+**延伸：** 参考 [JVM 基础 - 垃圾回收](./jvm-basics#垃圾回收gc)
 
 ---
 
@@ -575,7 +575,7 @@ public int test() {
 
 **最佳实践：** 不要在 finally 中使用 return
 
-**延伸：** 参考 [异常处理 - try-catch-finally](./exception-handling#try-catch-finally-语句)
+**延伸：** 参考 [异常处理 - try-catch-finally](./exception-handling#try-catch-finally)
 
 ---
 
@@ -616,7 +616,7 @@ while (true) {
 }
 ```
 
-**延伸：** 参考 [IO 流 - NIO 详解](./io-streams#nio-非阻塞-io)
+**延伸：** 参考 [IO 流 - NIO 详解](./io-streams#nio-new-io)
 
 ---
 

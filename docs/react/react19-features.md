@@ -561,9 +561,9 @@ function Form() {
 ## 🔗 相关资源
 
 - [React 19 官方文档](https://react.dev/blog/2024/04/25/react-19)
-- [Server Components 深入](./server-components)
-- [性能优化](./performance)
-- [最佳实践](./best-practices)
+- [Hooks 详解](./hooks)
+- [面试题精选](./interview-questions)
+- [快速开始](./getting-started)
 
 ---
 

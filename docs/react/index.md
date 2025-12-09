@@ -54,31 +54,35 @@ React 是一个用于构建用户界面的 JavaScript 库：
 ### 🔰 基础部分
 
 - **[快速开始](./getting-started)** - 创建第一个 React 应用
-- **[组件基础](./components)** - 函数组件和类组件
-- **[JSX 语法](./jsx)** - JSX 基础和高级用法
-- **[Props 和 State](./props-state)** - 组件通信和状态管理
+- **Hooks 详解** - useState、useEffect、自定义 Hooks（参见下方）
 
-### 🎓 进阶部分
+### 🎓 核心特性
 
-- **[Hooks 详解](./hooks)** - useState、useEffect、自定义 Hooks
+- **[Hooks 详解](./hooks)** - useState、useEffect、自定义 Hooks、React 19 新 Hooks
+<!-- 以下文档待补充
 - **[Context API](./context)** - 跨组件状态共享
 - **[表单处理](./forms)** - 受控组件和表单验证
 - **[生命周期](./lifecycle)** - 组件生命周期深入理解
 - **[React Router](./routing)** - 单页应用路由
+  -->
 
-### 🚀 高级部分
+### 🚀 React 19 新特性
 
-- **[性能优化](./performance)** - memo、useMemo、useCallback
-- **[Server Components](./server-components)** - React Server Components
-- **[并发特性](./concurrent-features)** - Suspense、Transitions
-- **[React 19 新特性](./react19-features)** - 最新特性详解
-- **[最佳实践](./best-practices)** - 代码组织和架构模式
+- **[React 19 新特性](./react19-features)** - Server Components、Actions、新 Hooks 详解
 
 ### 💡 实战部分
 
+- **[面试题精选](./interview-questions)** - React 面试题库
+
+<!-- 以下文档待补充
+### 高级特性
+- **[性能优化](./performance)** - memo、useMemo、useCallback
+- **[Server Components](./server-components)** - React Server Components
+- **[并发特性](./concurrent-features)** - Suspense、Transitions
+- **[最佳实践](./best-practices)** - 代码组织和架构模式
 - **[代码示例](./code-examples)** - 常用功能代码示例
 - **[常见模式](./common-patterns)** - 设计模式和最佳实践
-- **[面试题精选](./interview-questions)** - React 面试题库
+-->
 
 ## 🎯 学习建议
 

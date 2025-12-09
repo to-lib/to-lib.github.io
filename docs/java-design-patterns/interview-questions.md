@@ -74,7 +74,7 @@ class EmailService {
 }
 ```
 
-**延伸：** 参考 [最佳实践 - 设计原则](./best-practices#设计原则)
+**延伸：** 参考 [最佳实践](./best-practices)
 
 ---
 

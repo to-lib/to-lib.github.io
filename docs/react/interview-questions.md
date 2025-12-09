@@ -590,8 +590,7 @@ const [optimisticState, addOptimistic] = useOptimistic(state);
 - [React 开发指南](./index.md)
 - [Hooks 详解](./hooks)
 - [React 19 新特性](./react19-features)
-- [性能优化](./performance)
-- [最佳实践](./best-practices)
+- [快速开始](./getting-started)
 
 ---
 
