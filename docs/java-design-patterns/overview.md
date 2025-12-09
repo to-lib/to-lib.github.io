@@ -11,6 +11,7 @@ sidebar_position: 1
 ## 设计模式的三大类型
 
 ### 1. 创建型模式 (Creational Patterns)
+
 处理对象的创建过程，提高系统的灵活性和可扩展性。
 
 - **Singleton（单例模式）** - 确保类仅有一个实例
@@ -20,6 +21,7 @@ sidebar_position: 1
 - **Prototype（原型模式）** - 通过克隆创建新对象
 
 ### 2. 结构型模式 (Structural Patterns)
+
 处理类和对象的组合，形成更大的结构。
 
 - **Adapter（适配器模式）** - 转换接口以实现兼容性
@@ -31,6 +33,7 @@ sidebar_position: 1
 - **Proxy（代理模式）** - 为对象提供代理
 
 ### 3. 行为型模式 (Behavioral Patterns)
+
 处理对象之间的通信和职责分配。
 
 - **Chain of Responsibility（责任链模式）** - 传递处理请求
@@ -61,3 +64,66 @@ sidebar_position: 1
 3. 最后学习**行为型模式**，掌握对象间的交互
 
 每个模式包含：模式定义、问题分析、解决方案、代码示例和适用场景。
+
+## 可视化学习路线图
+
+```mermaid
+graph TB
+    subgraph 初级阶段
+    A[设计模式概述] --> B[Singleton 单例]
+    B --> C[Factory Method 工厂方法]
+    C --> D[Strategy 策略]
+    D --> E[Observer 观察者]
+    end
+    
+    subgraph 中级阶段
+    E --> F[Decorator 装饰器]
+    F --> G[Adapter 适配器]
+    G --> H[Builder 建造者]
+    H --> I[Proxy 代理]
+    I --> J[Template Method 模板方法]
+    end
+    
+    subgraph 高级阶段
+    J --> K[Abstract Factory 抽象工厂]
+    K --> L[State 状态]
+    L --> M[Command 命令]
+    M --> N[Composite 组合]
+    N --> O[其他复杂模式]
+    end
+    
+    O --> P[best-practices<br/>最佳实践总结]
+```
+
+## 模式分类关系图
+
+```mermaid
+mindmap
+  root((设计模式))
+    创建型模式
+      Singleton
+      Factory Method
+      Abstract Factory
+      Builder
+      Prototype
+    结构型模式
+      Adapter
+      Bridge
+      Composite
+      Decorator
+      Facade
+      Flyweight
+      Proxy
+    行为型模式
+      Chain of Responsibility
+      Command
+      Iterator
+      Mediator
+      Memento
+      Observer
+      State
+      Strategy
+      Template Method
+      Visitor
+      Interpreter
+```
