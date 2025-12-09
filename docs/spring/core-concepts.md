@@ -7,9 +7,11 @@ sidebar_position: 2
 
 # Spring核心概念
 
-## 1. 概述
+> [!IMPORTANT]
+> **Spring 三大核心**: IoC(控制反转)、DI(依赖注入)、AOP(面向切面编程)。理解这三个概念是掌握 Spring 框架的基础。
 
 Spring框架的核心概念围绕两个主要的设计原则：
+
 - **IoC（Inversion of Control）** - 控制反转
 - **DI（Dependency Injection）** - 依赖注入
 
@@ -22,6 +24,7 @@ Spring框架的核心概念围绕两个主要的设计原则：
 **控制反转**是一种设计原则，它反转了程序中对象创建和生命周期管理的控制流。
 
 传统方式（没有IoC）：
+
 ```java
 public class UserService {
     // 手动创建依赖对象
@@ -34,6 +37,7 @@ public class UserService {
 ```
 
 使用IoC方式：
+
 ```java
 public class UserService {
     private UserRepository userRepository;
@@ -83,6 +87,7 @@ public class UserService {
 ```
 
 **优势**：
+
 - 依赖清晰，必须依赖在构造时提供
 - 对象创建时就是完全初始化状态
 - 易于测试
@@ -102,10 +107,12 @@ public class UserService {
 ```
 
 **优势**：
+
 - 依赖可选
 - 可在对象创建后更改依赖
 
 **劣势**：
+
 - 对象创建时不一定完全初始化
 - 依赖关系不明确
 
@@ -120,9 +127,11 @@ public class UserService {
 ```
 
 **优势**：
+
 - 代码简洁
 
 **劣势**：
+
 - 无法用于构造函数参数
 - 不利于单元测试
 - 隐藏了依赖关系
@@ -371,6 +380,7 @@ public class UserService {
 ---
 
 **关键要点**：
+
 - 使用构造函数注入是最佳实践
 - 理解Bean的生命周期很重要
 - 合理选择Bean的作用域

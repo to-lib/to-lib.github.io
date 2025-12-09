@@ -7,7 +7,8 @@ sidebar_position: 5
 
 # 面向切面编程(AOP)
 
-## 1. AOP概述
+> [!IMPORTANT]
+> **AOP 核心作用**: AOP 用于分离横切关注点(日志、事务、安全等),避免代码重复。理解切点(Pointcut)和通知(Advice)是关键。
 
 **面向切面编程(Aspect-Oriented Programming)**是一种编程范式，它将横切关注点（如日志、事务、安全等）从业务逻辑中分离出来，通过**切面**来管理这些关注点。
 
@@ -526,6 +527,7 @@ public class AppConfig {
 ---
 
 **关键要点**：
+
 - 优先使用@Around处理复杂逻辑
 - 使用自定义注解让代码更清晰
 - 注意self-invocation问题

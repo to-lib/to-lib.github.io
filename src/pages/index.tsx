@@ -15,44 +15,65 @@ function HomepageHeader() {
       <div className="container">
         <div className={styles.heroContent}>
           <Heading as="h1" className={styles.heroTitle}>
-            <span className={styles.titleGradient}>
-              Java 设计模式完全指南
-            </span>
+            <span className={styles.titleGradient}>TechLib - 开发者知识库</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            掌握23种经典设计模式 • 提升代码质量 • 成为更优秀的开发者
+            设计模式 • Spring 框架 • Spring Boot • Netty 网络编程
           </p>
           <p className={styles.heroDescription}>
-            详细讲解、完整代码示例、实际应用场景、最佳实践指导。
-            无论你是初学者还是资深开发者，都能从这份完整指南中获益。
+            系统化学习 Java 开发核心技术，涵盖设计模式、Spring
+            生态和高性能网络编程。
+            提供详细教程、完整代码示例、实战案例和最佳实践指导。
           </p>
           <div className={styles.buttons}>
-            <Link className={clsx("button button--primary button--lg", styles.primaryBtn)} to="/docs/design-patterns-guide">
-              🚀 立即开始学习
+            <Link
+              className={clsx(
+                "button button--primary button--lg",
+                styles.primaryBtn
+              )}
+              to="/docs/intro"
+            >
+              🚀 开始探索
             </Link>
-            <Link className={clsx("button button--secondary button--lg", styles.secondaryBtn)} to="/docs/java-design-patterns/quick-reference">
+            <Link
+              className={clsx(
+                "button button--secondary button--lg",
+                styles.secondaryBtn
+              )}
+              to="/docs/java-design-patterns/quick-reference"
+            >
               ⚡ 快速参考
             </Link>
           </div>
-          
+
           {/* Quick Navigation Cards */}
           <div className={styles.quickNav}>
             <div className={styles.navCard}>
-              <span className={styles.navIcon}>🏗️</span>
+              <span className={styles.navIcon}>🎨</span>
               <Link to="/docs/java-design-patterns/overview">
-                <h4>Pattern Overview</h4>
+                <h4>设计模式</h4>
+                <p className={styles.navDesc}>23种经典模式</p>
               </Link>
             </div>
             <div className={styles.navCard}>
-              <span className={styles.navIcon}>📖</span>
-              <Link to="/docs/java-design-patterns/best-practices">
-                <h4>Best Practices</h4>
+              <span className={styles.navIcon}>🍃</span>
+              <Link to="/docs/spring">
+                <h4>Spring 框架</h4>
+                <p className={styles.navDesc}>IoC & AOP 核心</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🚀</span>
+              <Link to="/docs/springboot">
+                <h4>Spring Boot</h4>
+                <p className={styles.navDesc}>快速开发指南</p>
               </Link>
             </div>
             <div className={styles.navCard}>
               <span className={styles.navIcon}>⚡</span>
-              <Link to="/docs/java-design-patterns/quick-reference">
-                <h4>Quick Reference</h4>
+              <Link to="/docs/netty">
+                <h4>Netty</h4>
+                <p className={styles.navDesc}>高性能网络框架</p>
               </Link>
             </div>
           </div>
