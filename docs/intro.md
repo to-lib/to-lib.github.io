@@ -2,40 +2,97 @@
 sidebar_position: 1
 ---
 
-# Java 设计模式
+# 🎯 欢迎来到 TO-LIB 技术文档库
 
-欢迎来到Java设计模式完全学习指南！
+您好！欢迎来到这个全面的技术学习平台。这里汇集了后端开发、系统编程、前端技术等多个领域的深度学习资源。
 
-本文档包含了23种经典设计模式的详细讲解、实际应用示例和最佳实践。
+## 📚 文档导航
 
-## 快速开始
+### ☕ Java 生态系统
 
-- **新手入门** - 建议从 [设计模式概述](/docs/java-design-patterns/overview) 开始
-- **快速查询** - 使用 [快速参考](/docs/java-design-patterns/quick-reference) 快速找到所需模式
-- **完整指南** - 查看 [Java设计模式指南](/docs/design-patterns-guide) 了解所有模式
+#### 核心 Java
 
-## 涵盖内容
+- **[Java 编程](/docs/java)** - Java 核心知识与高级特性
+- **[Java 设计模式](/docs/java-design-patterns)** - 23 种经典设计模式完全指南
 
-### 创建型模式 (5种)
-用于对象创建的模式，隐藏创建逻辑，使代码更灵活。
+#### Spring 全家桶
 
-### 结构型模式 (7种)
-用于组织对象关系的模式，形成更大的结构。
+- **[Spring Framework](/docs/spring)** - Spring 核心框架与 IoC、AOP 等核心概念
+- **[Spring Boot](/docs/springboot)** - 快速开发与自动配置详解
+- **[Spring Cloud](/docs/springcloud)** - 微服务架构与服务治理
+- **[Spring Cloud Alibaba](/docs/springcloud-alibaba)** - 阿里巴巴微服务解决方案
 
-### 行为型模式 (11种)
-用于处理对象间通信和职责分配的模式。
+#### 网络编程
 
-## 学习路径
+- **[Netty](/docs/netty)** - 高性能网络应用框架
 
-**初级** → 掌握5个最常用的模式  
-**中级** → 学习10个中等难度的模式  
-**高级** → 深入理解所有23种模式  
+### 💾 数据存储
 
-## 资源
+- **[MySQL](/docs/mysql)** - 关系型数据库与 SQL 优化
+- **[Redis](/docs/redis)** - 高性能缓存与数据结构
 
-- 📚 完整的代码示例
-- 💡 实际应用场景
-- 🎯 最佳实践指南
-- 📊 快速参考表
+### 🖥️ 系统与工具
 
-[立即开始学习 →](/docs/design-patterns-guide)
+- **[Linux](/docs/linux)** - Linux 系统管理与 Shell 编程
+- **[Rust](/docs/rust)** - 系统编程语言与内存安全
+
+### 🎨 前端技术
+
+- **[React](/docs/react)** - 现代前端框架与生态系统
+
+## 🚀 快速开始
+
+根据您的需求选择合适的学习路径：
+
+| 学习方向         | 推荐起点                            | 难度       |
+| ---------------- | ----------------------------------- | ---------- |
+| **后端开发入门** | Java → Spring Boot → MySQL          | ⭐⭐       |
+| **微服务架构**   | Spring → Spring Boot → Spring Cloud | ⭐⭐⭐⭐   |
+| **高并发系统**   | Java → Redis → Netty                | ⭐⭐⭐⭐   |
+| **代码质量提升** | Java 设计模式                       | ⭐⭐⭐     |
+| **系统编程**     | Linux → Rust                        | ⭐⭐⭐⭐⭐ |
+| **全栈开发**     | Spring Boot → React → MySQL         | ⭐⭐⭐     |
+
+## 💡 使用建议
+
+- 📖 **循序渐进** - 按照推荐的学习路径系统学习
+- 🔍 **深入实践** - 每个章节都包含实际代码示例
+- 🎯 **按需学习** - 使用搜索功能快速定位所需内容
+- 💬 **持续更新** - 文档会不断更新和完善
+
+## 🎓 特色内容
+
+### Java 设计模式完全指南
+
+23 种经典设计模式的详细讲解，包括：
+
+- ✅ 完整的代码示例
+- ✅ 实际应用场景分析
+- ✅ 最佳实践与注意事项
+- ✅ 面试题与快速参考
+
+### Spring 生态全栈教程
+
+从基础到微服务的完整学习路径：
+
+- ✅ Spring 核心概念深度解析
+- ✅ Spring Boot 快速开发实战
+- ✅ Spring Cloud 微服务架构设计
+- ✅ 阿里巴巴微服务解决方案
+
+### 数据库与缓存优化
+
+- ✅ MySQL 性能优化与索引设计
+- ✅ Redis 数据结构与应用场景
+- ✅ 高并发场景的最佳实践
+
+## 🔗 快速链接
+
+- [Java 设计模式快速参考](/docs/java-design-patterns/quick-reference)
+- [Spring Boot 快速入门](/docs/springboot)
+- [MySQL 性能优化](/docs/mysql)
+- [Redis 实战应用](/docs/redis)
+
+---
+
+**开始您的学习之旅吧！** 选择左侧导航栏中的任意主题开始探索。
