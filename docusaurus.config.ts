@@ -257,6 +257,55 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "⚛️ React 19",
+          position: "left",
+          items: [
+            {
+              label: "📖 React 概览",
+              to: "/docs/react",
+            },
+            {
+              label: "🚀 快速开始",
+              to: "/docs/react/getting-started",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>核心概念</div>",
+            },
+            {
+              label: "🎣 Hooks 详解",
+              to: "/docs/react/hooks",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>React 19 新特性</div>",
+            },
+            {
+              label: "🆕 React 19 新特性",
+              to: "/docs/react/react19-features",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 面试题精选",
+              to: "/docs/react/interview-questions",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "🐧 Linux",
           position: "left",
           items: [
