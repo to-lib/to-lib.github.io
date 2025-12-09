@@ -292,6 +292,14 @@ const config: Config = {
               label: "⚡ 函数式编程",
               to: "/docs/java/functional-programming",
             },
+            {
+              label: "🖥️ JVM 基础",
+              to: "/docs/java/jvm-basics",
+            },
+            {
+              label: "🚀 性能优化",
+              to: "/docs/java/performance",
+            },
           ],
         },
         {
@@ -512,6 +520,14 @@ const config: Config = {
             {
               label: "多线程",
               to: "/docs/java/multithreading",
+            },
+            {
+              label: "JVM 基础",
+              to: "/docs/java/jvm-basics",
+            },
+            {
+              label: "性能优化",
+              to: "/docs/java/performance",
             },
           ],
         },
