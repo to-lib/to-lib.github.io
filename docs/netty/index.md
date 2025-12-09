@@ -25,7 +25,8 @@ sidebar_position: 0
 ### 实战进阶
 
 - **[实战示例](./practical-examples.md)** - Echo、聊天室、HTTP服务器
-- **[高级特性](./advanced.md)** - 性能调优、内存管理、监控方案
+- **[高级特性](./advanced.md)** - 性能优化、内存管理、安全通信、监控方案
+- **[最佳实践](./best-practices.md)** - Spring Boot 集成、设计模式、版本升级指南
 
 ### 工具参考
 
@@ -45,10 +46,11 @@ graph LR
     F --> H[编解码]
     G --> H
     H --> I[高级特性]
-    I --> J[完成学习]
+    I --> J[最佳实践]
+    J --> K[完成学习]
     
     style A fill:#e1f5ff
-    style J fill:#c8e6c9
+    style K fill:#c8e6c9
     style E fill:#fff9c4
 ```
 
@@ -69,14 +71,15 @@ graph LR
 #### 🚀 第三阶段：实战（1-2周）
 
 1. 完成 [实战示例](./practical-examples.md) 中的所有案例
-2. 学习 [高级特性](./advanced.md) 的性能优化
+2. 学习 [高级特性](./advanced.md) 的性能优化和安全通信
 3. 尝试构建自己的网络应用
 
-#### 💡 第四阶段：精通
+#### 💡 第四阶段：精通（2-3周）
 
-1. 参考 [快速参考](./quick-reference.md) 编写高质量代码
-2. 使用 [故障排除](./troubleshooting.md) 解决实际问题
-3. 阅读 Netty 源码，理解设计思想
+1. 学习 [最佳实践](./best-practices.md)，掌握工程规范和设计模式
+2. 参考 [快速参考](./quick-reference.md) 编写高质量代码
+3. 使用 [故障排除](./troubleshooting.md) 解决实际问题
+4. 尝试 Spring Boot 集成和项目实战
 
 ## 📖 相关资源
 

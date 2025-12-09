@@ -403,6 +403,126 @@ public class StatsServerHandler extends ChannelInboundHandlerAdapter {
 }
 ```
 
+## SSL/TLS 安全通信
+
+Netty 提供了完整的 SSL/TLS 支持，可以轻松实现加密通信。
+
+### 配置 SSL 上下文
+
+```java
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslContext;
+import io.netty.handler.ssl.util.SelfSignedCertificate;
+
+// 服务器端：使用证书和私钥
+public class SslServerInitializer {
+    public static void main(String[] args) throws Exception {
+        // 生成自签名证书（仅用于测试）
+        SelfSignedCertificate ssc = new SelfSignedCertificate();
+        
+        SslContext sslCtx = SslContextBuilder.forServer(ssc.certificate(), ssc.privateKey())
+            .build();
+        
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+        
+        try {
+            ServerBootstrap bootstrap = new ServerBootstrap();
+            bootstrap.group(bossGroup, workerGroup)
+                .channel(NioServerSocketChannel.class)
+                .childHandler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel ch) {
+                        ChannelPipeline pipeline = ch.pipeline();
+                        // 添加 SSL Handler
+                        pipeline.addLast(sslCtx.newHandler(ch.alloc()));
+                        pipeline.addLast(new YourHandler());
+                    }
+                });
+            
+            ChannelFuture future = bootstrap.bind(8443).sync();
+            future.channel().closeFuture().sync();
+        } finally {
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+        }
+    }
+}
+```
+
+### 客户端 SSL 配置
+
+```java
+public class SslClientInitializer {
+    public static void main(String[] args) throws Exception {
+        // 信任所有证书（仅用于测试，生产环境需要正确的证书链）
+        SslContext sslCtx = SslContextBuilder.forClient()
+            .trustManager(InsecureTrustManagerFactory.INSTANCE)
+            .build();
+        
+        EventLoopGroup group = new NioEventLoopGroup();
+        
+        try {
+            Bootstrap bootstrap = new Bootstrap();
+            bootstrap.group(group)
+                .channel(NioSocketChannel.class)
+                .handler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel ch) {
+                        ChannelPipeline pipeline = ch.pipeline();
+                        // 添加 SSL Handler
+                        pipeline.addLast(sslCtx.newHandler(ch.alloc(), "localhost", 8443));
+                        pipeline.addLast(new YourHandler());
+                    }
+                });
+            
+            ChannelFuture future = bootstrap.connect("localhost", 8443).sync();
+            future.channel().closeFuture().sync();
+        } finally {
+            group.shutdownGracefully();
+        }
+    }
+}
+```
+
+### 使用真实证书
+
+```java
+// 使用 JKS 格式的密钥库
+SslContext sslCtx = SslContextBuilder.forServer(
+    new FileInputStream("server.jks"),
+    "password", // 密钥库密码
+    "password"  // 密钥密码
+).build();
+
+// 使用 PEM 格式的证书和私钥（推荐）
+SslContext sslCtx = SslContextBuilder.forServer(
+    new File("path/to/server.crt"),    // 证书文件
+    new File("path/to/server.key")     // 私钥文件
+).build();
+```
+
+### SSL 性能优化
+
+```java
+// 启用会话缓存，提高握手性能
+SslContext sslCtx = SslContextBuilder.forServer(cert, key)
+    .sessionCacheSize(64 * 1024)  // 64KB 会话缓存
+    .sessionTimeout(86400)        // 86400 秒（24小时）
+    .build();
+
+// 配置 HTTP/2 支持（如果使用 OpenSSL 引擎）
+SslContext sslCtx = SslContextBuilder.forServer(cert, key)
+    .applicationProtocolConfig(
+        new ApplicationProtocolConfig(
+            ApplicationProtocolConfig.Protocol.H2_HTTP_1_1,
+            ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
+            ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT
+        )
+    )
+    .build();
+```
+
 ## 最佳实践检查清单
 
 ### 内存
@@ -474,6 +594,226 @@ public class PerformanceTest {
         System.out.println("总耗时: " + duration + " ms");
         System.out.println("吞吐量: " + throughput + " msg/s");
     }
+}
+```
+
+## 最佳实践汇总
+
+### 工程规范
+
+#### 1. 异常处理
+
+总是在 Handler 中实现 `exceptionCaught` 方法，确保异常被正确处理：
+
+```java
+public class MyHandler extends ChannelInboundHandlerAdapter {
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        // 记录异常
+        logger.error("异常发生", cause);
+        
+        // 分类处理
+        if (cause instanceof IOException) {
+            logger.warn("连接异常: " + cause.getMessage());
+        } else if (cause instanceof DecoderException) {
+            logger.error("解码失败: " + cause.getMessage());
+        }
+        
+        // 关闭连接
+        ctx.close();
+    }
+}
+```
+
+#### 2. 资源管理
+
+使用 try-finally 或 try-with-resources 确保资源释放：
+
+```java
+// 服务器启动
+EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+try {
+    ServerBootstrap bootstrap = new ServerBootstrap();
+    // ... 配置
+    ChannelFuture future = bootstrap.bind(port).sync();
+    future.channel().closeFuture().sync();
+} finally {
+    // 必须释放资源
+    bossGroup.shutdownGracefully();
+    workerGroup.shutdownGracefully();
+}
+```
+
+#### 3. 日志记录
+
+使用 SLF4J 或 Logback 进行日志记录，便于调试和监控：
+
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class MyHandler extends ChannelInboundHandlerAdapter {
+    private static final Logger logger = LoggerFactory.getLogger(MyHandler.class);
+    
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) {
+        logger.info("新连接: {}", ctx.channel().remoteAddress());
+    }
+    
+    @Override
+    protected void channelRead0(ChannelHandlerContext ctx, Object msg) {
+        logger.debug("接收到消息: {}", msg);
+    }
+}
+```
+
+### 代码组织
+
+#### 1. Handler 职责分离
+
+为不同的功能创建专门的 Handler：
+
+```java
+// 解码 Handler
+pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
+
+// 业务逻辑 Handler
+pipeline.addLast(new BusinessLogicHandler());
+
+// 编码 Handler
+pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
+
+// 异常处理 Handler（放在最后）
+pipeline.addLast(new ExceptionHandler());
+```
+
+#### 2. 避免 Handler 中的阻塞操作
+
+耗时操作应提交到独立线程池：
+
+```java
+public class MyHandler extends ChannelInboundHandlerAdapter {
+    private static final ExecutorService executor = Executors.newFixedThreadPool(10);
+    
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        // 不阻塞 EventLoop，提交到线程池
+        executor.execute(() -> {
+            // 耗时业务逻辑
+            processData(msg);
+            ctx.fireChannelRead(msg);
+        });
+    }
+}
+```
+
+#### 3. Handler 重用注意事项
+
+```java
+// ✗ 错误：Handler 包含可变状态，不能重用
+public class BadHandler extends ChannelInboundHandlerAdapter {
+    private int counter = 0; // 可变状态
+    
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        counter++;
+    }
+}
+
+// ✓ 正确：Handler 无状态，可以重用
+public class GoodHandler extends ChannelInboundHandlerAdapter {
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        // 使用 Channel 的 Attribute 存储状态
+        AttributeKey<Integer> key = AttributeKey.valueOf("counter");
+        Integer counter = ctx.channel().attr(key).getAndSet(0);
+    }
+}
+```
+
+### 常见陷阱
+
+#### 1. ChannelFuture 异步处理
+
+**陷阱：** 同步等待 ChannelFuture
+
+```java
+// ✗ 错误：阻塞线程
+ChannelFuture future = ctx.writeAndFlush(msg);
+future.sync(); // 这会阻塞当前线程
+
+// ✓ 正确：异步处理
+ChannelFuture future = ctx.writeAndFlush(msg);
+future.addListener((ChannelFutureListener) f -> {
+    if (f.isSuccess()) {
+        logger.info("数据写入成功");
+    } else {
+        logger.error("数据写入失败", f.cause());
+    }
+});
+```
+
+#### 2. 事件传播
+
+**陷阱：** 忘记调用 `fireChannelRead` 或 `ctx.close()`
+
+```java
+// ✗ 错误：事件没有传播，下一个 Handler 收不到
+@Override
+public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    // 处理消息后没有传播
+}
+
+// ✓ 正确：传播事件
+@Override
+public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    processData(msg);
+    ctx.fireChannelRead(msg); // 传播给下一个 Handler
+}
+```
+
+#### 3. 内存管理
+
+**陷阱：** 在自定义 Codec 中忘记释放 ByteBuf
+
+```java
+// ✓ 正确：及时释放
+public class MyDecoder extends ByteToMessageDecoder {
+    @Override
+    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
+        if (in.readableBytes() < 4) {
+            return;
+        }
+        
+        int length = in.readInt();
+        if (in.readableBytes() < length) {
+            in.readerIndex(in.readerIndex() - 4);
+            return;
+        }
+        
+        ByteBuf msg = in.readSlice(length);
+        msg.retain(); // 保持引用
+        out.add(msg); // 添加到 out，由下一个 Handler 释放
+    }
+}
+```
+
+#### 4. 连接泄漏
+
+**陷阱：** 没有正确处理连接的关闭
+
+```java
+// ✗ 错误：连接可能不会正确关闭
+if (error) {
+    return; // 没有关闭连接
+}
+
+// ✓ 正确：确保连接关闭
+if (error) {
+    ctx.close(); // 关闭连接
+    return;
 }
 ```
 

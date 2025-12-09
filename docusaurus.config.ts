@@ -362,6 +362,59 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "🐧 Linux",
+          position: "left",
+          items: [
+            {
+              label: "📖 Linux 概述",
+              to: "/docs/linux",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
+            },
+            {
+              label: "💻 基础命令",
+              to: "/docs/linux/basic-commands",
+            },
+            {
+              label: "📁 文件系统",
+              to: "/docs/linux/file-system",
+            },
+            {
+              label: "🔐 权限管理",
+              to: "/docs/linux/permissions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>系统管理</div>",
+            },
+            {
+              label: "⚙️ 进程管理",
+              to: "/docs/linux/process-management",
+            },
+            {
+              label: "🌐 网络配置",
+              to: "/docs/linux/networking",
+            },
+            {
+              label: "📜 Shell 脚本",
+              to: "/docs/linux/shell-scripting",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "📖 学习资源",
           position: "left",
           items: [
@@ -480,6 +533,27 @@ const config: Config = {
             {
               label: "并发编程",
               to: "/docs/rust/concurrency",
+            },
+          ],
+        },
+        {
+          title: "🐧 Linux",
+          items: [
+            {
+              label: "Linux 概述",
+              to: "/docs/linux",
+            },
+            {
+              label: "基础命令",
+              to: "/docs/linux/basic-commands",
+            },
+            {
+              label: "权限管理",
+              to: "/docs/linux/permissions",
+            },
+            {
+              label: "Shell 脚本",
+              to: "/docs/linux/shell-scripting",
             },
           ],
         },

@@ -1,0 +1,8 @@
+{
+    "label": "Linux",
+    "position": 5,
+    "link": {
+        "type": "generated-index",
+        "description": "Linux 操作系统完整学习指南，涵盖命令行、系统管理、网络配置等核心内容"
+    }
+}
