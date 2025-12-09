@@ -474,6 +474,435 @@ fn main() {
 }
 ```
 
+## 内存布局详解
+
+### 栈和堆
+
+```rust
+fn main() {
+    // 栈上分配:固定大小,快速访问
+    let x = 5;              // i32: 4字节,栈上
+    let y = true;           // bool: 1字节,栈上
+    let z = 3.14;           // f64: 8字节,栈上
+    
+    // 堆上分配:动态大小,较慢但灵活
+    let s = String::from("hello");  // 指针在栈,数据在堆
+    let v = vec![1, 2, 3];          // 指针在栈,数据在堆
+}
+```
+
+### String 的内存布局
+
+```rust
+fn main() {
+    let s = String::from("hello");
+    
+    // String 在栈上存储三个值(共24字节):
+    // - ptr: 指向堆数据的指针 (8字节)
+    // - len: 当前长度 (8字节)
+    // - capacity: 容量 (8字节)
+    
+    // 堆上存储实际字符串数据: "hello"
+}
+```
+
+### 移动的内存效果
+
+```rust
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;  // 浅拷贝栈数据,s1失效
+    
+    // 内存布局:
+    // 栈:
+    //   s1: [失效]
+    //   s2: [ptr | len | cap] -> 堆数据
+    // 堆:
+    //   "hello"
+    
+    // 只有一个所有者,避免双重释放!
+}
+```
+
+### 克隆的内存效果
+
+```rust
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone();  // 深拷贝
+    
+    // 内存布局:
+    // 栈:
+    //   s1: [ptr1 | len | cap] -> 堆数据1
+    //   s2: [ptr2 | len | cap] -> 堆数据2
+    // 堆:
+    //   "hello" (s1的数据)
+    //   "hello" (s2的数据,独立拷贝)
+}
+```
+
+### Copy 类型的内存
+
+```rust
+fn main() {
+    let x = 5;
+    let y = x;  // 按位复制,都有效
+    
+    // 内存布局(栈):
+    //   x: 5
+    //   y: 5
+    // 简单的按位复制,无堆分配
+}
+```
+
+## 生命周期预览
+
+### 编译器如何跟踪生命周期
+
+```rust
+fn main() {
+    let r;                    // -------+-- 'a
+                              //        |
+    {                         //        |
+        let x = 5;            // -+-- 'b|
+        r = &x;               //  |     |
+    }                         // -+     |
+                              //        |
+    // println!("{}", r);     // 错误   |
+}                            // -------+
+
+// 'b < 'a: x的生命周期小于r的期望生命周期
+```
+
+### 函数返回引用
+
+```rust
+// 需要生命周期注解
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+fn main() {
+    let string1 = String::from("long string");
+    let string2 = String::from("xyz");
+    
+    let result = longest(string1.as_str(), string2.as_str());
+    println!("{}", result);
+}
+```
+
+### 结构体中的引用
+
+```rust
+// 结构体持有引用需要生命周期注解
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+fn main() {
+    let novel = String::from("Call me Ishmael.");
+    let first_sentence = novel.split('.').next().unwrap();
+    
+    let excerpt = ImportantExcerpt {
+        part: first_sentence,
+    };
+    
+    println!("{}", excerpt.part);
+}
+```
+
+## 实战场景
+
+### 场景1:解析器状态
+
+```rust
+struct Parser<'a> {
+    input: &'a str,
+    position: usize,
+}
+
+impl<'a> Parser<'a> {
+    fn new(input: &'a str) -> Self {
+        Parser { input, position: 0 }
+    }
+    
+    fn current_char(&self) -> Option<char> {
+        self.input.chars().nth(self.position)
+    }
+    
+    fn advance(&mut self) {
+        self.position += 1;
+    }
+    
+    fn parse_word(&mut self) -> Option<&'a str> {
+        let start = self.position;
+        
+        while let Some(c) = self.current_char() {
+            if c.is_whitespace() {
+                break;
+            }
+            self.advance();
+        }
+        
+        if start < self.position {
+            Some(&self.input[start..self.position])
+        } else {
+            None
+        }
+    }
+}
+
+fn main() {
+    let text = "hello world rust";
+    let mut parser = Parser::new(text);
+    
+    while let Some(word) = parser.parse_word() {
+        println!("{}", word);
+        parser.advance(); // 跳过空格
+    }
+}
+```
+
+### 场景2:缓存系统
+
+```rust
+use std::collections::HashMap;
+
+struct Cache {
+    data: HashMap<String, String>,
+}
+
+impl Cache {
+    fn new() -> Self {
+        Cache {
+            data: HashMap::new(),
+        }
+    }
+    
+    // 返回引用避免克隆
+    fn get(&self, key: &str) -> Option<&String> {
+        self.data.get(key)
+    }
+    
+    fn insert(&mut self, key: String, value: String) {
+        self.data.insert(key, value);
+    }
+}
+
+fn main() {
+    let mut cache = Cache::new();
+    cache.insert("name".to_string(), "Alice".to_string());
+    
+    // 借用而非克隆
+    if let Some(value) = cache.get("name") {
+        println!("Found: {}", value);
+    }
+}
+```
+
+### 场景3:数据流处理
+
+```rust
+fn process_data(data: &[i32]) -> Vec<i32> {
+    data.iter()
+        .filter(|&&x| x > 0)
+        .map(|&x| x * 2)
+        .collect()
+}
+
+fn main() {
+    let numbers = vec![1, -2, 3, -4, 5];
+    
+    // 传递引用,避免所有权转移
+    let result = process_data(&numbers);
+    
+    println!("原始: {:?}", numbers);
+    println!("结果: {:?}", result);
+}
+```
+
+## 性能优化建议
+
+### 1. 避免不必要的克隆
+
+```rust
+// 不好:频繁克隆
+fn bad_example(data: Vec<String>) -> Vec<String> {
+    let mut result = Vec::new();
+    for item in data {
+        let cloned = item.clone();
+        result.push(cloned);
+    }
+    result
+}
+
+// 好:直接使用所有权
+fn good_example(data: Vec<String>) -> Vec<String> {
+    data
+}
+
+// 或者使用引用
+fn reference_example(data: &[String]) -> Vec<String> {
+    data.to_vec()  // 只在需要时克隆
+}
+```
+
+### 2. 使用 Cow 优化写时复制
+
+```rust
+use std::borrow::Cow;
+
+fn process<'a>(input: &'a str) -> Cow<'a, str> {
+    if input.contains("bad") {
+        // 需要修改:返回拥有的
+        Cow::Owned(input.replace("bad", "good"))
+    } else {
+        // 不需要修改:返回借用
+        Cow::Borrowed(input)
+    }
+}
+
+fn main() {
+    let s1 = "hello bad world";
+    let s2 = "hello world";
+    
+    println!("{}", process(s1));  // Owned
+    println!("{}", process(s2));  // Borrowed (无分配)
+}
+```
+
+### 3. 使用切片而非完整集合
+
+```rust
+// 不好:传递整个Vec
+fn sum_bad(data: Vec<i32>) -> i32 {
+    data.iter().sum()
+}
+
+// 好:传递切片
+fn sum_good(data: &[i32]) -> i32 {
+    data.iter().sum()
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5];
+    
+    // 可以传递Vec、数组、切片等
+    println!("{}", sum_good(&numbers));
+    println!("{}", sum_good(&[1, 2, 3]));
+}
+```
+
+### 4. 预分配容量
+
+```rust
+fn main() {
+    // 不好:多次重新分配
+    let mut v = Vec::new();
+    for i in 0..1000 {
+        v.push(i);
+    }
+    
+    // 好:预分配容量
+    let mut v = Vec::with_capacity(1000);
+    for i in 0..1000 {
+        v.push(i);
+    }
+}
+```
+
+### 5. 使用 &str 而非 String
+
+```rust
+// 不好:不必要的分配
+fn greet_bad(name: String) {
+    println!("Hello, {}!", name);
+}
+
+// 好:使用字符串切片
+fn greet_good(name: &str) {
+    println!("Hello, {}!", name);
+}
+
+fn main() {
+    let name = String::from("Alice");
+    greet_good(&name);  // 更灵活
+    greet_good("Bob");  // 也可以接受字面量
+}
+```
+
+### 6. 避免运行时借用检查
+
+```rust
+use std::cell::RefCell;
+
+// 不好:运行时检查(有开销)
+fn bad_pattern() {
+    let x = RefCell::new(5);
+    *x.borrow_mut() += 1;
+}
+
+// 好:编译时检查(零开销)
+fn good_pattern() {
+    let mut x = 5;
+    x += 1;
+}
+```
+
+### 7. 返回迭代器而非Vec
+
+```rust
+// 不好:立即分配
+fn get_evens_bad(data: &[i32]) -> Vec<i32> {
+    data.iter()
+        .filter(|&&x| x % 2 == 0)
+        .copied()
+        .collect()
+}
+
+// 好:惰性求值
+fn get_evens_good(data: &[i32]) -> impl Iterator<Item = i32> + '_ {
+    data.iter()
+        .filter(|&&x| x % 2 == 0)
+        .copied()
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6];
+    
+    // 只在需要时分配
+    let evens: Vec<_> = get_evens_good(&numbers).collect();
+}
+```
+
+### 8. 使用引用优化循环
+
+```rust
+fn main() {
+    let strings = vec![
+        String::from("hello"),
+        String::from("world"),
+    ];
+    
+    // 不好:每次迭代都克隆
+    for s in strings.clone() {
+        println!("{}", s);
+    }
+    
+    // 好:使用引用
+    for s in &strings {
+        println!("{}", s);
+    }
+    
+    // strings 仍然有效
+    println!("{:?}", strings);
+}
+```
+
 ## 总结
 
 本文介绍了 Rust 的所有权系统：

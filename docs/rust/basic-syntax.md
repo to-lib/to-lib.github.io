@@ -528,6 +528,448 @@ fn main() {
 }
 ```
 
+## 迭代器
+
+### 迭代器基础
+
+迭代器模式允许你对一个序列的项进行某些处理。
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    
+    // 创建迭代器
+    let v_iter = v.iter();
+    
+    // 使用迭代器
+    for val in v_iter {
+        println!("{}", val);
+    }
+}
+```
+
+### Iterator Trait
+
+```rust
+pub trait Iterator {
+    type Item;
+    fn next(&mut self) -> Option<Self::Item>;
+    
+    // 其他方法有默认实现...
+}
+```
+
+### 三种迭代方式
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3];
+    
+    // iter(): 不可变引用
+    for val in v.iter() {
+        println!("{}", val);  // &i32
+    }
+    
+    // iter_mut(): 可变引用
+    let mut v = vec![1, 2, 3];
+    for val in v.iter_mut() {
+        *val += 1;  // &mut i32
+    }
+    
+    // into_iter(): 获取所有权
+    for val in v.into_iter() {
+        println!("{}", val);  // i32
+    }
+    // println!("{:?}", v);  // 错误: v 已被移动
+}
+```
+
+### 消费适配器
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3];
+    
+    // sum: 消费迭代器
+    let total: i32 = v.iter().sum();
+    println!("总和: {}", total);
+    
+    // collect: 收集到集合
+    let v2: Vec<_> = v.iter().collect();
+    
+    // count: 计数
+    let count = v.iter().count();
+}
+```
+
+### 迭代器适配器
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    
+    // map: 转换每个元素
+    let v2: Vec<_> = v.iter()
+        .map(|x| x + 1)
+        .collect();
+    println!("{:?}", v2);  // [2, 3, 4, 5, 6]
+    
+    // filter: 过滤元素
+    let v3: Vec<_> = v.iter()
+        .filter(|&x| x % 2 == 0)
+        .collect();
+    println!("{:?}", v3);  // [2, 4]
+    
+    // 链式调用
+    let result: Vec<_> = v.iter()
+        .filter(|&&x| x % 2 == 0)
+        .map(|&x| x * 2)
+        .collect();
+    println!("{:?}", result);  // [4, 8]
+}
+```
+
+### 常用迭代器方法
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    
+    // take: 取前 n 个
+    let first_three: Vec<_> = v.iter().take(3).collect();
+    
+    // skip: 跳过前 n 个
+    let after_two: Vec<_> = v.iter().skip(2).collect();
+    
+    // enumerate: 带索引
+    for (i, val) in v.iter().enumerate() {
+        println!("索引 {}: 值 {}", i, val);
+    }
+    
+    // zip: 组合两个迭代器
+    let v2 = vec!["a", "b", "c"];
+    for (num, letter) in v.iter().zip(v2.iter()) {
+        println!("{}: {}", num, letter);
+    }
+    
+    // fold: 折叠/累积
+    let sum = v.iter().fold(0, |acc, &x| acc + x);
+    println!("总和: {}", sum);
+    
+    // any: 任意一个满足
+    let has_even = v.iter().any(|&x| x % 2 == 0);
+    
+    // all: 全部满足
+    let all_positive = v.iter().all(|&x| x > 0);
+    
+    // find: 查找第一个
+    let first_even = v.iter().find(|&&x| x % 2 == 0);
+    
+    // position: 查找位置
+    let pos = v.iter().position(|&x| x == 3);
+}
+```
+
+### 自定义迭代器
+
+```rust
+struct Counter {
+    count: u32,
+}
+
+impl Counter {
+    fn new() -> Counter {
+        Counter { count: 0 }
+    }
+}
+
+impl Iterator for Counter {
+    type Item = u32;
+    
+    fn next(&mut self) -> Option<Self::Item> {
+        self.count += 1;
+        
+        if self.count < 6 {
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+
+fn main() {
+    let counter = Counter::new();
+    
+    for num in counter {
+        println!("{}", num);  // 1, 2, 3, 4, 5
+    }
+    
+    // 使用迭代器方法
+    let sum: u32 = Counter::new()
+        .zip(Counter::new().skip(1))
+        .map(|(a, b)| a * b)
+        .filter(|x| x % 3 == 0)
+        .sum();
+    println!("结果: {}", sum);  // 18
+}
+```
+
+### 迭代器性能
+
+```rust
+// 迭代器是零成本抽象
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    
+    // 使用迭代器(推荐)
+    let sum: i32 = v.iter().sum();
+    
+    // 等价的 for 循环
+    let mut sum = 0;
+    for &x in &v {
+        sum += x;
+    }
+    
+    // 编译后性能相同!
+}
+```
+
+## 闭包
+
+### 闭包基础
+
+闭包是可以捕获环境的匿名函数。
+
+```rust
+fn main() {
+    // 闭包语法
+    let add_one = |x: i32| -> i32 { x + 1 };
+    
+    // 类型推断
+    let add_one = |x| x + 1;
+    
+    // 调用闭包
+    let result = add_one(5);
+    println!("{}", result);  // 6
+    
+    // 多行闭包
+    let complex = |x| {
+        let y = x + 1;
+        y * 2
+    };
+}
+```
+
+### 捕获环境
+
+```rust
+fn main() {
+    let x = 4;
+    
+    // 闭包捕获环境变量
+    let equal_to_x = |z| z == x;
+    
+    let y = 4;
+    println!("{}", equal_to_x(y));  // true
+}
+```
+
+### Fn Trait
+
+Rust 有三种闭包 trait:
+
+1. **FnOnce** - 消费捕获的变量,只能调用一次
+2. **FnMut** - 可变借用,可调用多次
+3. **Fn** - 不可变借用,可调用多次
+
+```rust
+fn main() {
+    // FnOnce: 获取所有权
+    let s = String::from("hello");
+    let consume = || {
+        println!("{}", s);
+        drop(s);  // 消费 s
+    };
+    consume();
+    // consume();  // 错误:只能调用一次
+    
+    // FnMut: 可变借用
+    let mut count = 0;
+    let mut increment = || {
+        count += 1;
+        println!("{}", count);
+    };
+    increment();  // 1
+    increment();  // 2
+    
+    // Fn: 不可变借用
+    let value = String::from("hello");
+    let print = || {
+        println!("{}", value);
+    };
+    print();
+    print();  // 可以多次调用
+}
+```
+
+### move 关键字
+
+```rust
+use std::thread;
+
+fn main() {
+    let s = String::from("hello");
+    
+    // move 强制闭包获取所有权
+    let handle = thread::spawn(move || {
+        println!("{}", s);
+    });
+    
+    // println!("{}", s);  // 错误: s 已被移动
+    
+    handle.join().unwrap();
+}
+```
+
+### 闭包作为参数
+
+```rust
+fn apply<F>(f: F, x: i32) -> i32
+where
+    F: Fn(i32) -> i32,
+{
+    f(x)
+}
+
+fn main() {
+    let double = |x| x * 2;
+    let result = apply(double, 5);
+    println!("{}", result);  // 10
+}
+```
+
+### 闭包作为返回值
+
+```rust
+fn make_adder(x: i32) -> impl Fn(i32) -> i32 {
+    move |y| x + y
+}
+
+fn main() {
+    let add_5 = make_adder(5);
+    println!("{}", add_5(10));  // 15
+}
+```
+
+### 闭包与迭代器
+
+```rust
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    
+    // filter + map
+    let result: Vec<_> = v.iter()
+        .filter(|&x| x % 2 == 0)
+        .map(|x| x * 2)
+        .collect();
+    println!("{:?}", result);  // [4, 8]
+    
+    // 复杂闭包
+    let threshold = 3;
+    let result: Vec<_> = v.iter()
+        .filter(|&&x| x > threshold)
+        .map(|&x| {
+            if x % 2 == 0 {
+                x * 2
+            } else {
+                x * 3
+            }
+        })
+        .collect();
+    println!("{:?}", result);  // [12, 15]
+}
+```
+
+### 缓存/记忆化
+
+```rust
+use std::collections::HashMap;
+
+struct Cacher<T>
+where
+    T: Fn(u32) -> u32,
+{
+    calculation: T,
+    value: HashMap<u32, u32>,
+}
+
+impl<T> Cacher<T>
+where
+    T: Fn(u32) -> u32,
+{
+    fn new(calculation: T) -> Cacher<T> {
+        Cacher {
+            calculation,
+            value: HashMap::new(),
+        }
+    }
+    
+    fn value(&mut self, arg: u32) -> u32 {
+        match self.value.get(&arg) {
+            Some(&v) => v,
+            None => {
+                let v = (self.calculation)(arg);
+                self.value.insert(arg, v);
+                v
+            }
+        }
+    }
+}
+
+fn main() {
+    let mut expensive_result = Cacher::new(|num| {
+        println!("计算中...");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+        num
+    });
+    
+    println!("{}", expensive_result.value(1));  // 计算
+    println!("{}", expensive_result.value(1));  // 使用缓存
+}
+```
+
+### 实用示例
+
+```rust
+fn main() {
+    // 示例1: 排序
+    let mut v = vec![5, 2, 8, 1, 9];
+    v.sort_by(|a, b| a.cmp(b));
+    println!("{:?}", v);
+    
+    // 示例2: 自定义迭代处理
+    let numbers = vec![1, 2, 3, 4, 5];
+    let sum_of_squares: i32 = numbers
+        .iter()
+        .map(|&x| x * x)
+        .sum();
+    println!("平方和: {}", sum_of_squares);
+    
+    // 示例3: Option 和 Result 处理
+    let maybe_number = Some(5);
+    let doubled = maybe_number.map(|x| x * 2);
+    
+    // 示例4: 链式处理
+    let text = "hello world";
+    let result: String = text
+        .split_whitespace()
+        .map(|word| word.chars().rev().collect::<String>())
+        .collect::<Vec<_>>()
+        .join(" ");
+    println!("{}", result);  // "olleh dlrow"
+}
+```
+
 ## 总结
 
 本文介绍了 Rust 的基础语法：
@@ -538,5 +980,7 @@ fn main() {
 - ✅ 控制流语句
 - ✅ 字符串基础
 - ✅ 类型转换和运算符
+- ✅ 迭代器:iter、map、filter、collect
+- ✅ 闭包:Fn/FnMut/FnOnce、捕获环境
 
 掌握这些基础知识后，继续学习 [所有权系统](./ownership)，这是 Rust 最重要的特性。
