@@ -18,11 +18,13 @@ function HomepageHeader() {
             <span className={styles.titleGradient}>TechLib - 开发者知识库</span>
           </Heading>
           <p className={styles.heroSubtitle}>
-            设计模式 • Spring 框架 • Spring Boot • Netty 网络编程
+            Java 编程 • Rust 编程 • Linux 系统 • 设计模式 • Spring 生态 • Netty
+            网络编程
           </p>
           <p className={styles.heroDescription}>
-            系统化学习 Java 开发核心技术，涵盖设计模式、Spring
-            生态和高性能网络编程。
+            全面覆盖后端开发技术栈，从编程语言基础到框架应用实战。
+            系统化学习路径，涵盖 Java/Rust 编程、Linux
+            运维、23种设计模式、Spring 生态和高性能网络编程。
             提供详细教程、完整代码示例、实战案例和最佳实践指导。
           </p>
           <div className={styles.buttons}>
@@ -49,6 +51,27 @@ function HomepageHeader() {
           {/* Quick Navigation Cards */}
           <div className={styles.quickNav}>
             <div className={styles.navCard}>
+              <span className={styles.navIcon}>☕</span>
+              <Link to="/docs/java">
+                <h4>Java 编程</h4>
+                <p className={styles.navDesc}>基础到高级</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🦀</span>
+              <Link to="/docs/rust">
+                <h4>Rust 编程</h4>
+                <p className={styles.navDesc}>系统编程语言</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🐧</span>
+              <Link to="/docs/linux">
+                <h4>Linux 系统</h4>
+                <p className={styles.navDesc}>运维与脚本</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
               <span className={styles.navIcon}>🎨</span>
               <Link to="/docs/java-design-patterns/overview">
                 <h4>设计模式</h4>
@@ -60,13 +83,6 @@ function HomepageHeader() {
               <Link to="/docs/spring">
                 <h4>Spring 框架</h4>
                 <p className={styles.navDesc}>IoC & AOP 核心</p>
-              </Link>
-            </div>
-            <div className={styles.navCard}>
-              <span className={styles.navIcon}>🚀</span>
-              <Link to="/docs/springboot">
-                <h4>Spring Boot</h4>
-                <p className={styles.navDesc}>快速开发指南</p>
               </Link>
             </div>
             <div className={styles.navCard}>

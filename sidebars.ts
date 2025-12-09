@@ -24,6 +24,8 @@ const sidebars: SidebarsConfig = {
         "java-design-patterns/overview",
         "java-design-patterns/quick-reference",
         "java-design-patterns/best-practices",
+        "java-design-patterns/scenarios",
+        "java-design-patterns/selection-guide",
       ],
     },
     {
