@@ -4,6 +4,9 @@ sidebar_position: 9
 
 # 快速参考
 
+> [!TIP]
+> 本页面提供常用 API、配置和模板的快速查询。建议收藏此页面,开发时随时查阅。使用 Ctrl+F 快速定位所需内容。
+
 ## 核心 API 速查表
 
 ### 服务器启动模板
@@ -357,11 +360,13 @@ sysctl -w net.ipv4.tcp_fin_timeout=30
 ## 学习资源
 
 ### 官方资源
+
 - [Netty 官网](https://netty.io/)
 - [API 文档](https://netty.io/4.1/api/)
 - [GitHub](https://github.com/netty/netty)
 
 ### 推荐书籍
+
 - 《Netty in Action》
 - 《Netty 权威指南》
 

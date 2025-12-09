@@ -22,6 +22,7 @@ int read = input.read(buffer); // 阻塞，等待数据
 ```
 
 **问题：**
+
 - 每个连接需要一个线程
 - 线程数受限，内存消耗大
 - 大量连接时性能下降
@@ -57,6 +58,7 @@ while (true) {
 ```
 
 **优势：**
+
 - 一个线程可处理多个连接
 - 充分利用 CPU 资源
 - 扩展性好
@@ -65,19 +67,25 @@ while (true) {
 
 Netty 采用事件驱动的异步模型：
 
+```mermaid
+graph TB
+    A[EventLoop Thread] -->|1| B[Selector 轮询 I/O 事件]
+    B -->|2| C[获取就绪的 Channel]
+    C -->|3| D[触发相应的事件回调]
+    D -->|4| E[Handler 处理事件]
+    E -->|5| F[生成新事件或传播事件]
+    F -->|回到开始| A
+    
+    style A fill:#e1f5ff
+    style E fill:#c8e6c9
 ```
-┌─────────────────────────────────────────────┐
-│           Event Loop Thread                  │
-├─────────────────────────────────────────────┤
-│                                               │
-│  1. Selector 轮询 I/O 事件                   │
-│  2. 获取就绪的 Channel                      │
-│  3. 触发相应的事件回调                      │
-│  4. Handler 处理事件                        │
-│  5. 生成新事件或传播事件                    │
-│                                               │
-└─────────────────────────────────────────────┘
-```
+
+> [!TIP]
+> **事件驱动的优势:**
+>
+> - 非阻塞处理,提高吞吐量
+> - 单线程处理多个连接
+> - 简化并发编程模型
 
 ### 事件类型
 
@@ -90,52 +98,70 @@ Netty 采用事件驱动的异步模型：
 
 ### 分层架构
 
-```
-┌────────────────────────────────────┐
-│      业务逻辑层 (Application)       │
-├────────────────────────────────────┤
-│     编码解码层 (Codec Layer)        │
-├────────────────────────────────────┤
-│      传输层 (Transport Layer)       │
-│  - Channel                         │
-│  - EventLoop                       │
-│  - ChannelFuture                   │
-├────────────────────────────────────┤
-│     Java NIO / IO                  │
-└────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph "应用层"
+    A[业务逻辑层<br/>Application]
+    end
+    
+    subgraph "编解码层"
+    B[Codec Layer<br/>编码解码]
+    end
+    
+    subgraph "传输层"
+    C1[Channel]
+    C2[EventLoop]
+    C3[ChannelFuture]
+    end
+    
+    subgraph "底层"
+    D[Java NIO / IO]
+    end
+    
+    A --> B
+    B --> C1
+    B --> C2
+    B --> C3
+    C1 --> D
+    C2 --> D
+    C3 --> D
+    
+    style A fill:#e1f5ff
+    style B fill:#fff9c4
+    style C1 fill:#c8e6c9
+    style C2 fill:#c8e6c9
+    style C3 fill:#c8e6c9
+    style D fill:#ffccbc
 ```
 
 ### 核心概念图解
 
-```
-    ┌──────────────────────────────────────────┐
-    │         ServerBootstrap                  │
-    └──────────────────┬───────────────────────┘
-                       │
-                       │ 配置
-                       ▼
-    ┌──────────────────────────────────────────┐
-    │        EventLoopGroup (Boss)             │
-    │  ┌────────────────────────────────────┐  │
-    │  │  EventLoop 1 (accept 连接)         │  │
-    │  └────────────────────────────────────┘  │
-    └──────────────────────────────────────────┘
-                       │
-                       │ 监听 Accept 事件
-                       ▼
-    ┌──────────────────────────────────────────┐
-    │        EventLoopGroup (Worker)           │
-    │  ┌────────────────────────────────────┐  │
-    │  │  EventLoop 1 (处理读写)            │  │
-    │  │  - Channel 1                       │  │
-    │  │  - Channel 2                       │  │
-    │  └────────────────────────────────────┘  │
-    │  ┌────────────────────────────────────┐  │
-    │  │  EventLoop 2 (处理读写)            │  │
-    │  │  - Channel 3                       │  │
-    │  │  - Channel 4                       │  │
-    │  └────────────────────────────────────┘  │
-    └──────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph "ServerBootstrap"
+    SB[配置服务器]
+    end
+    
+    subgraph "Boss EventLoopGroup"
+    B1[EventLoop 1<br/>处理 accept 连接]
+    end
+    
+    subgraph "Worker EventLoopGroup"
+    W1[EventLoop 1<br/>Channel 1, 2]
+    W2[EventLoop 2<br/>Channel 3, 4]
+    W3[EventLoop 3<br/>Channel 5, 6]
+    end
+    
+    SB -->|配置| B1
+    B1 -->|分配连接| W1
+    B1 -->|分配连接| W2
+    B1 -->|分配连接| W3
+    
+    style SB fill:#e1f5ff
+    style B1 fill:#fff9c4
+    style W1 fill:#c8e6c9
+    style W2 fill:#c8e6c9
+    style W3 fill:#c8e6c9
 ```
 
 ## 异步和 Future
@@ -206,23 +232,34 @@ ServerBootstrap bootstrap = new ServerBootstrap();
 bootstrap.group(bossGroup, workerGroup);
 ```
 
+> [!IMPORTANT]
+> **为什么要分离 Boss 和 Worker？**
+>
+> - Boss 只负责接受新连接,数量通常为 1 即可
+> - Worker 负责数据读写,需要多个线程并发处理
+> - 分离可以避免连接处理影响数据处理性能
+
 ### 线程绑定规则
 
-```
-┌─────────────────────────────────────────┐
-│        EventLoop 线程绑定规则            │
-├─────────────────────────────────────────┤
-│ 1. 一个 Channel 绑定到一个 EventLoop    │
-│ 2. 一个 EventLoop 可管理多个 Channel    │
-│ 3. Channel 的所有操作在同一线程执行    │
-│ 4. 不同 Channel 可能在不同线程中并发   │
-└─────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph "EventLoop 线程绑定规则"
+    A[一个 Channel] -->|绑定到| B[一个 EventLoop]
+    C[一个 EventLoop] -->|可管理| D[多个 Channel]
+    E[Channel 的所有操作] -->|在同一线程执行| F[避免并发问题]
+    end
+    
+    style A fill:#e1f5ff
+    style B fill:#c8e6c9
+    style C fill:#c8e6c9
+    style D fill:#e1f5ff
 ```
 
 **重要原则：**
-- 不要阻塞 EventLoop 线程
-- 提交耗时任务到独立线程池
-- 使用 `ctx.executor().execute()` 异步执行
+
+- ✅ 不要阻塞 EventLoop 线程
+- ✅ 提交耗时任务到独立线程池
+- ✅ 使用 `ctx.executor().execute()` 异步执行
 
 ```java
 public class MyHandler extends ChannelInboundHandlerAdapter {

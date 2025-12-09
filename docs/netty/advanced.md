@@ -4,6 +4,9 @@ sidebar_position: 7
 
 # 性能优化与进阶
 
+> [!IMPORTANT]
+> 性能优化是一个系统工程,需要从内存、连接、吞吐量、线程等多个维度综合考虑。在优化前务必先做性能测试,建立基准,然后针对性优化。
+
 ## 内存优化
 
 ### ByteBuf 内存池
@@ -403,30 +406,35 @@ public class StatsServerHandler extends ChannelInboundHandlerAdapter {
 ## 最佳实践检查清单
 
 ### 内存
+
 - [ ] 使用 [PooledByteBufAllocator](./bytebuf.md#pooledbytebufallocator推荐)
 - [ ] 及时释放 ByteBuf
 - [ ] 重用对象避免频繁创建
 - [ ] 监控内存使用情况
 
 ### 连接
+
 - [ ] 配置心跳检测
 - [ ] 设置连接超时
 - [ ] 限制最大连接数
 - [ ] 优雅关闭连接
 
 ### 性能
+
 - [ ] 关闭 Nagle 算法（TCP_NODELAY）
 - [ ] 配置合理的缓冲区大小
 - [ ] 避免阻塞 EventLoop
 - [ ] 使用独立线程池处理业务逻辑
 
 ### 监控
+
 - [ ] 记录关键业务指标
 - [ ] 监控连接数和流量
 - [ ] 定期检查内存使用
 - [ ] 设置告警阈值
 
 ### 安全
+
 - [ ] 验证请求数据
 - [ ] 限制消息大小
 - [ ] 实现 DDoS 防护

@@ -4,6 +4,9 @@ sidebar_position: 6
 
 # 实战案例
 
+> [!TIP]
+> 本章节提供完整可运行的示例代码,涵盖 Echo 服务器、聊天系统和 HTTP 服务器等常见场景。建议跟随示例动手实践,加深理解。
+
 ## 案例1：简单的 Echo 服务器和客户端
 
 ### Echo 服务器
@@ -86,6 +89,14 @@ public class EchoServerHandler extends SimpleChannelInboundHandler<String> {
     }
 }
 ```
+
+> [!NOTE]
+> **代码要点:**
+>
+> - `bossGroup` 和 `workerGroup` 分离提高性能
+> - `SO_KEEPALIVE` 开启TCP保活机制
+> - `SimpleChannelInboundHandler` 自动释放ByteBuf
+> - `channelActive` 在连接建立时触发
 
 ### Echo 客户端
 

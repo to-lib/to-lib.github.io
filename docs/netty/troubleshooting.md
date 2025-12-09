@@ -4,6 +4,13 @@ sidebar_position: 8
 
 # 常见问题与排查
 
+> [!TIP]
+> **问题排查三步法:**
+>
+> 1. 查看日志和异常堆栈
+> 2. 检查资源使用情况(内存、连接、线程)
+> 3. 使用监控工具定位瓶颈
+
 ## 常见问题
 
 ### Q1: 内存泄漏问题
@@ -11,6 +18,7 @@ sidebar_position: 8
 **问题表现：** 内存持续增长，GC 后不释放
 
 **常见原因：**
+
 1. [ByteBuf](./bytebuf.md) 没有正确释放
 2. Handler 中接收的消息没有传播给下一个 Handler
 
@@ -57,6 +65,7 @@ public class MyHandler extends SimpleChannelInboundHandler<ByteBuf> {
 **问题表现：** 处理消息的延迟很高，不符合预期
 
 **常见原因：**
+
 1. 在 [EventLoop](./core-components.md#eventloop) 线程中执行阻塞操作
 2. 事件处理链过长
 3. 消息处理效率低
@@ -110,6 +119,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 **问题表现：** 服务器无法处理新连接，连接数持续增长
 
 **常见原因：**
+
 1. Worker EventLoop 处理速度过慢
 2. 消息处理耗时过长
 3. 并发能力不足
@@ -138,6 +148,7 @@ bootstrap.childOption(
 **问题表现：** 抛出 OutOfMemoryError 异常
 
 **常见原因：**
+
 1. 直接内存溢出
 2. 堆内存溢出
 3. 大消息处理不当
@@ -177,6 +188,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 **问题表现：** 客户端连接超时或被拒绝
 
 **常见原因：**
+
 1. 服务器连接数达到上限
 2. TCP backlog 队列满
 3. 资源不足
@@ -348,6 +360,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 ```
 
 **修复：**
+
 ```java
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
@@ -376,6 +389,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 ```
 
 **修复：**
+
 ```java
 private ExecutorService executor = Executors.newFixedThreadPool(10);
 
@@ -404,6 +418,7 @@ public void channelRead(ChannelHandlerContext ctx, Object msg) {
 ```
 
 **修复：**
+
 ```java
 @Override
 public void channelRead(ChannelHandlerContext ctx, Object msg) {
