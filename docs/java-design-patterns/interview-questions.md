@@ -768,7 +768,7 @@ Logger → ConsoleHandler → FileHandler → DatabaseHandler
 
 ### 相关资源
 
-- [设计模式完整指南](./index.md)
+- [设计模式完整指南](./index)
 - [模式概览](./overview)
 - [最佳实践](./best-practices)
 - [模式对比分析](./pattern-comparisons)

@@ -315,4 +315,4 @@ public class UserService {
 - 熔断降级保证系统的可用性
 - 链路追踪帮助理解系统行为
 
-**下一步**：学习 [Eureka 服务注册与发现](./eureka.md)
+**下一步**：学习 [Eureka 服务注册与发现](./eureka)

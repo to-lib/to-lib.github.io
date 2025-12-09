@@ -13,15 +13,15 @@ sidebar_position: 1
 
 ### 基础入门
 
-- **[核心概念](./core-concepts.md)** - Spring Cloud Alibaba 组件体系、与 Spring Cloud 的关系
-- **[Nacos](./nacos.md)** - 服务注册与配置中心、动态配置管理
-- **[Sentinel](./sentinel.md)** - 流量控制、熔断降级、系统保护
+- **[核心概念](./core-concepts)** - Spring Cloud Alibaba 组件体系、与 Spring Cloud 的关系
+- **[Nacos](./nacos)** - 服务注册与配置中心、动态配置管理
+- **[Sentinel](./sentinel)** - 流量控制、熔断降级、系统保护
 
 ### 进阶应用
 
-- **[Seata](./seata.md)** - 分布式事务解决方案、AT/TCC/SAGA 模式
-- **[RocketMQ](./rocketmq.md)** - 消息队列、事务消息、顺序消息
-- **[Dubbo](./dubbo.md)** - 高性能 RPC 框架、服务治理
+- **[Seata](./seata)** - 分布式事务解决方案、AT/TCC/SAGA 模式
+- **[RocketMQ](./rocketmq)** - 消息队列、事务消息、顺序消息
+- **[Dubbo](./dubbo)** - 高性能 RPC 框架、服务治理
 
 ## 🎯 核心组件速览
 
@@ -172,7 +172,7 @@ sidebar_position: 1
 
 ## 🚀 下一步
 
-选择上面的任意主题开始学习，建议从 [核心概念](./core-concepts.md) 或 [Nacos](./nacos.md) 开始。
+选择上面的任意主题开始学习，建议从 [核心概念](./core-concepts) 或 [Nacos](./nacos) 开始。
 
 ---
 

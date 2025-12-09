@@ -535,4 +535,4 @@ ribbon:
 - 合理配置超时和隔离策略
 - 建议迁移到 Resilience4j 或 Sentinel
 
-**下一步**：学习 [Sleuth 链路追踪](./sleuth.md)
+**下一步**：学习 [Sleuth 链路追踪](./sleuth)

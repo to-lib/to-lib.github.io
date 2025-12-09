@@ -767,4 +767,4 @@ public ResponseEntity<List<User>> getAllUsers() {
 4. 编写可测试的代码
 5. 保持代码简洁清晰
 
-**下一步**：参考[快速参考](./quick-reference.md)查看常用代码片段
+**下一步**：参考[快速参考](./quick-reference)查看常用代码片段

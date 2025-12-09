@@ -496,4 +496,4 @@ public class DatabaseProperties {
 3. 避免循环依赖，通过重新设计解决
 4. 充分利用Optional和ObjectProvider处理可选依赖
 
-**下一步**：学习[Bean管理](./bean-management.md)
+**下一步**：学习[Bean管理](./bean-management)

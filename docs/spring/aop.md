@@ -533,4 +533,4 @@ public class AppConfig {
 - 注意self-invocation问题
 - 理解代理的工作原理
 
-**下一步**：学习[事务管理](./transactions.md)
+**下一步**：学习[事务管理](./transactions)

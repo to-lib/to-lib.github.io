@@ -511,4 +511,4 @@ public class UserService {
 4. **处理边界情况** - 缓存穿透、雪崩、击穿
 5. **监控指标** - 缓存命中率、大小等
 
-下一步学习 [定时任务和异步](./scheduling.md)。
+下一步学习 [定时任务和异步](./scheduling)。

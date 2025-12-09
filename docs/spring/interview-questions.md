@@ -692,7 +692,7 @@ public class DataSourceAutoConfiguration {
 
 ### 相关资源
 
-- [Spring Framework 学习指南](./index.md)
+- [Spring Framework 学习指南](./index)
 - [核心概念](./core-concepts)
 - [AOP 详解](./aop)
 - [事务管理](./transactions)

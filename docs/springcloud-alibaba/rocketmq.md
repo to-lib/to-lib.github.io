@@ -358,4 +358,4 @@ public class OrderConsumer implements RocketMQListener<Order> {
 - 注意消息幂等性
 - 合理使用重试和死信队列
 
-**下一步**：学习 [Dubbo RPC 框架](./dubbo.md)
+**下一步**：学习 [Dubbo RPC 框架](./dubbo)

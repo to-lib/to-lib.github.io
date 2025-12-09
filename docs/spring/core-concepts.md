@@ -386,4 +386,4 @@ public class UserService {
 - 合理选择Bean的作用域
 - 避免循环依赖
 
-**下一步**：学习[依赖注入详解](./dependency-injection.md)
+**下一步**：学习[依赖注入详解](./dependency-injection)

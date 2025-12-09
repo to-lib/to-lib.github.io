@@ -446,4 +446,4 @@ Spring Boot 自动配置的关键点：
 4. **可覆盖** - 用户定义的 Bean 总是优先于自动配置
 5. **可排除** - 支持排除不需要的自动配置类
 
-下一步学习 [项目结构与配置](./project-structure-config.md)。
+下一步学习 [项目结构与配置](./project-structure-config)。

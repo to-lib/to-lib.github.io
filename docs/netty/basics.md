@@ -297,4 +297,4 @@ public class MyHandler extends ChannelInboundHandlerAdapter {
 | **非阻塞** | 一个线程处理多个连接 |
 
 ---
-[下一章：核心组件](./core-components.md)
+[下一章：核心组件](./core-components)

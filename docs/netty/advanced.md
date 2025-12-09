@@ -818,4 +818,4 @@ if (error) {
 ```
 
 ---
-[下一章：常见问题与排查](./troubleshooting.md)
+[下一章：常见问题与排查](./troubleshooting)

@@ -535,4 +535,4 @@ public class OrderService {
 4. 合理选择隔离级别和传播行为
 5. 只读事务可以优化性能
 
-**下一步**：学习[Spring MVC](./spring-mvc.md)
+**下一步**：学习[Spring MVC](./spring-mvc)

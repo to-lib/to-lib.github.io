@@ -229,9 +229,9 @@ A: Spring Boot 已内置 Tomcat，无需额外配置
 
 恭喜！你已经成功创建了第一个 Spring Boot 应用。接下来可以：
 
-- 📚 学习 [核心概念](./core-concepts.md) - 深入理解 Spring Boot
-- 🚀 构建 [RESTful API](./web-development.md) - 实现真实的 Web 服务
-- 💾 集成 [数据库](./data-access.md) - 持久化数据
+- 📚 学习 [核心概念](./core-concepts) - 深入理解 Spring Boot
+- 🚀 构建 [RESTful API](./web-development) - 实现真实的 Web 服务
+- 💾 集成 [数据库](./data-access) - 持久化数据
 
 ---
 

@@ -546,4 +546,4 @@ public void inspectBeans() {
 - 正确处理资源的初始化和销毁
 - 使用ObjectFactory/ObjectProvider在单例中获取原型Bean
 
-**下一步**：学习[面向切面编程(AOP)](./aop.md)
+**下一步**：学习[面向切面编程(AOP)](./aop)

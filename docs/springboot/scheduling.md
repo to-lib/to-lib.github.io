@@ -468,4 +468,4 @@ public class TaskMonitorService {
 - **异常处理** - 为异步任务添加完善的异常处理机制
 - **监控** - 使用指标监控定时任务和异步任务的执行情况
 
-下一步学习 [安全认证](./security.md)。
+下一步学习 [安全认证](./security)。

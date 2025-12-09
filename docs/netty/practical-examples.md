@@ -486,6 +486,6 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 7. **连接管理** - 设置合理的超时和心跳机制
 
 ---
-[下一章：高级特性](./advanced.md)
+[下一章：高级特性](./advanced)
 
 ```

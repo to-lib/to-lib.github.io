@@ -676,7 +676,7 @@ list.forEach(s -> System.out.println(s));
 
 ### 相关资源
 
-- [Java 编程完整指南](./index.md)
+- [Java 编程完整指南](./index)
 - [多线程详解](./multithreading)
 - [JVM 基础](./jvm-basics)
 - [集合框架](./collections)

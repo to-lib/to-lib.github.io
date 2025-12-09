@@ -301,4 +301,4 @@ public void createOrder(Order order) {
 - 注意幂等性和异常处理
 - 生产环境建议使用集群部署
 
-**下一步**：学习 [RocketMQ 消息队列](./rocketmq.md)
+**下一步**：学习 [RocketMQ 消息队列](./rocketmq)

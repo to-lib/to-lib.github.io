@@ -560,4 +560,4 @@ public class UserService {
 - **MyBatis** - 对于复杂 SQL 使用 MyBatis
 - **事务** - 使用 @Transactional 管理事务
 
-下一步学习 [缓存管理](./cache-management.md)。
+下一步学习 [缓存管理](./cache-management)。

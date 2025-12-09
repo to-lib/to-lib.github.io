@@ -529,4 +529,4 @@ spring:
 - 敏感配置需要加密
 - 生产环境建议使用集群部署
 
-**下一步**：学习 [Gateway API 网关](./gateway.md)
+**下一步**：学习 [Gateway API 网关](./gateway)

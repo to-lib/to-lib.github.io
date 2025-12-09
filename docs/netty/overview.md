@@ -208,11 +208,11 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
 ### 📚 学习模块
 
-1. **[基础概念](./basics.md)** - NIO、事件驱动模型、Netty 架构
-2. **[核心组件](./core-components.md)** - Channel、EventLoop、Pipeline、Handler
-3. **编码与协议** - [ByteBuf](./bytebuf.md)、[编解码](./codec.md)、Protocol Buffer
-4. **[高级特性](./advanced.md)** - 线程池配置、性能优化、内存管理
-5. **[实战应用](./practical-examples.md)** - WebSocket、RPC、聊天系统
+1. **[基础概念](./basics)** - NIO、事件驱动模型、Netty 架构
+2. **[核心组件](./core-components)** - Channel、EventLoop、Pipeline、Handler
+3. **编码与协议** - [ByteBuf](./bytebuf)、[编解码](./codec)、Protocol Buffer
+4. **[高级特性](./advanced)** - 线程池配置、性能优化、内存管理
+5. **[实战应用](./practical-examples)** - WebSocket、RPC、聊天系统
 
 ## 学习路径建议
 
@@ -269,4 +269,4 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
 ---
 
-**准备好了吗？** 继续学习 → [基础概念](./basics.md)
+**准备好了吗？** 继续学习 → [基础概念](./basics)

@@ -303,5 +303,5 @@ public interface CallbackService {
 
 **相关文档**：
 
-- [Spring Cloud](../springcloud/index.md)
-- [Nacos](./nacos.md)
+- [Spring Cloud](../springcloud/index)
+- [Nacos](./nacos)

@@ -612,7 +612,7 @@ if (msg instanceof PingMessage) {
 
 ### 相关资源
 
-- [Netty 学习指南](./index.md)
+- [Netty 学习指南](./index)
 - [核心组件详解](./core-components)
 - [ByteBuf 深入](./bytebuf)
 - [高级特性](./advanced)

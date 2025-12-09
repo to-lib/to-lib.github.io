@@ -353,4 +353,4 @@ ByteBuf buf = PooledByteBufAllocator.DEFAULT.buffer(256);
 ```
 
 ---
-[下一章：编码与解码](./codec.md)
+[下一章：编码与解码](./codec)

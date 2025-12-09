@@ -19,7 +19,7 @@ sidebar_position: 8
 
 **常见原因：**
 
-1. [ByteBuf](./bytebuf.md) 没有正确释放
+1. [ByteBuf](./bytebuf) 没有正确释放
 2. Handler 中接收的消息没有传播给下一个 Handler
 
 **解决方案：**
@@ -505,4 +505,4 @@ public class MonitoringMetrics {
 ```
 
 ---
-[下一章：快速参考](./quick-reference.md)
+[下一章：快速参考](./quick-reference)
