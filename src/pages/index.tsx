@@ -89,8 +89,15 @@ function HomepageHeader() {
             <div className={styles.navCard}>
               <span className={styles.navIcon}>🍃</span>
               <Link to="/docs/spring">
-                <h4>Spring 框架</h4>
+                <h4>Spring</h4>
                 <p className={styles.navDesc}>IoC & AOP 核心</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🚀</span>
+              <Link to="/docs/springboot">
+                <h4>Spring Boot</h4>
+                <p className={styles.navDesc}>快速开发框架</p>
               </Link>
             </div>
             <div className={styles.navCard}>
