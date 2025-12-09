@@ -528,6 +528,360 @@ fn main() {
 }
 ```
 
+## 模式匹配高级用法
+
+### 解构结构体
+
+```rust
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main() {
+    let p = Point { x: 0, y: 7 };
+    
+    // 完整解构
+    let Point { x, y } = p;
+    println!("x: {}, y: {}", x, y);
+    
+    // 部分解构
+    let Point { x, .. } = p;
+    println!("x: {}", x);
+    
+    // 重命名
+    let Point { x: a, y: b } = p;
+    println!("a: {}, b: {}", a, b);
+}
+```
+
+### 解构枚举
+
+```rust
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+fn process_message(msg: Message) {
+    match msg {
+        Message::Quit => println!("退出"),
+        Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
+        Message::Write(text) => println!("写入: {}", text),
+        Message::ChangeColor(r, g, b) => {
+            println!("改变颜色: RGB({}, {}, {})", r, g, b)
+        }
+    }
+}
+```
+
+### 嵌套解构
+
+```rust
+enum Color {
+    Rgb(i32, i32, i32),
+    Hsv(i32, i32, i32),
+}
+
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    ChangeColor(Color),
+}
+
+fn main() {
+    let msg = Message::ChangeColor(Color::Hsv(0, 160, 255));
+    
+    match msg {
+        Message::ChangeColor(Color::Rgb(r, g, b)) => {
+            println!("RGB: {}, {}, {}", r, g, b);
+        }
+        Message::ChangeColor(Color::Hsv(h, s, v)) => {
+            println!("HSV: {}, {}, {}", h, s, v);
+        }
+        _ => (),
+    }
+}
+```
+
+### 匹配守卫
+
+```rust
+fn main() {
+    let num = Some(4);
+    
+    match num {
+        Some(x) if x < 5 => println!("小于5: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+    
+    // 多个条件
+    let x = 4;
+    let y = false;
+    
+    match x {
+        4 | 5 | 6 if y => println!("yes"),
+        _ => println!("no"),
+    }
+}
+```
+
+### @ 绑定
+
+```rust
+enum Message {
+    Hello { id: i32 },
+}
+
+fn main() {
+    let msg = Message::Hello { id: 5 };
+    
+    match msg {
+        Message::Hello {
+            id: id_variable @ 3..=7,
+        } => println!("在范围内的id: {}", id_variable),
+        Message::Hello { id: 10..=12 } => println!("在另一个范围内"),
+        Message::Hello { id } => println!("其他id: {}", id),
+    }
+}
+```
+
+### 忽略模式
+
+```rust
+fn main() {
+    // 使用 _ 忽略整个值
+    let _x = 5;
+    
+    // 忽略元组部分值
+    let (x, _, z) = (1, 2, 3);
+    
+    // 忽略剩余部分
+    let numbers = (2, 4, 8, 16, 32);
+    match numbers {
+        (first, .., last) => {
+            println!("第一个: {}, 最后一个: {}", first, last);
+        }
+    }
+}
+```
+
+## 实战技巧
+
+### 技巧1: 使用 if let 简化 match
+
+```rust
+fn main() {
+    let favorite_color: Option<&str> = None;
+    let is_tuesday = false;
+    let age: Result<u8, _> = "34".parse();
+    
+    // 复杂的条件逻辑
+    if let Some(color) = favorite_color {
+        println!("使用喜欢的颜色: {}", color);
+    } else if is_tuesday {
+        println!("星期二是绿色的!");
+    } else if let Ok(age) = age {
+        if age > 30 {
+            println!("使用紫色");
+        } else {
+            println!("使用橙色");
+        }
+    } else {
+        println!("使用蓝色");
+    }
+}
+```
+
+### 技巧2: while let 循环
+
+```rust
+fn main() {
+    let mut stack = Vec::new();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    
+    // 持续弹出直到 None
+    while let Some(top) = stack.pop() {
+        println!("{}", top);
+    }
+}
+```
+
+### 技巧3: for 循环解构
+
+```rust
+fn main() {
+    let v = vec!['a', 'b', 'c'];
+    
+    // 解构索引和值
+    for (index, value) in v.iter().enumerate() {
+        println!("{}: {}", index, value);
+    }
+    
+    // 解构元组
+    let pairs = vec![(1, 2), (3, 4), (5, 6)];
+    for (x, y) in pairs {
+        println!("x: {}, y: {}", x, y);
+    }
+}
+```
+
+### 技巧4: let 语句解构
+
+```rust
+fn main() {
+    // 元组解构
+    let (x, y, z) = (1, 2, 3);
+    
+    // 数组解构
+    let [a, b, c] = [1, 2, 3];
+    
+    // 结构体解构
+    struct Point { x: i32, y: i32 }
+    let Point { x, y } = Point { x: 10, y: 20 };
+}
+```
+
+### 技巧5: 范围模式
+
+```rust
+fn main() {
+    let x = 5;
+    
+    match x {
+        1..=5 => println!("1到5"),
+        6..=10 => println!("6到10"),
+        _ => println!("其他"),
+    }
+    
+    // 字符范围
+    let c = 'c';
+    match c {
+        'a'..='j' => println!("前半部分字母"),
+        'k
+
+'..='z' => println!("后半部分字母"),
+        _ => println!("其他"),
+    }
+}
+```
+
+### 技巧6: 链式调用和错误处理
+
+```rust
+use std::fs::File;
+use std::io::Read;
+
+fn read_file_content(path: &str) -> Result<String, std::io::Error> {
+    let mut file = File::open(path)?;
+    let mut content = String::new();
+    file.read_to_string(&mut content)?;
+    Ok(content)
+}
+
+fn main() {
+    match read_file_content("test.txt") {
+        Ok(content) => println!("内容: {}", content),
+        Err(e) => eprintln!("错误: {}", e),
+    }
+}
+```
+
+### 技巧7: 迭代器常用方法组合
+
+```rust
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    
+    // filter + map + collect
+    let even_squares: Vec<_> = numbers
+        .iter()
+        .filter(|&&x| x % 2 == 0)
+        .map(|&x| x * x)
+        .collect();
+    
+    println!("{:?}", even_squares);  // [4, 16, 36, 64, 100]
+    
+    // take_while + sum
+    let sum: i32 = numbers
+        .iter()
+        .take_while(|&&x| x < 5)
+        .sum();
+    
+    println!("和: {}", sum);  // 10
+}
+```
+
+### 技巧8: Option 和 Result 处理
+
+```rust
+fn main() {
+    let s = "42";
+    
+    // 使用 and_then 链式处理
+    let result = s.parse::<i32>()
+        .ok()
+        .and_then(|n| if n > 0 { Some(n) } else { None })
+        .map(|n| n * 2);
+    
+    println!("{:?}", result);  // Some(84)
+    
+    // unwrap_or_else 提供默认值
+    let value = result.unwrap_or_else(|| {
+        println!("使用默认值");
+        0
+    });
+}
+```
+
+### 技巧9: 使用 matches! 宏
+
+```rust
+fn main() {
+    let x = Some(5);
+    
+    // 简洁的模式检查
+    if matches!(x, Some(n) if n > 3) {
+        println!("大于3");
+    }
+    
+    // 多个模式
+    let y = 4;
+    assert!(matches!(y, 1 | 2 | 3 | 4 | 5));
+}
+```
+
+### 技巧10: 字符串处理
+
+```rust
+fn main() {
+    let text = "hello,world,rust";
+    
+    // split + collect
+    let words: Vec<&str> = text.split(',').collect();
+    println!("{:?}", words);
+    
+    // split + map + collect
+    let upper: Vec<String> = text
+        .split(',')
+        .map(|s| s.to_uppercase())
+        .collect();
+    println!("{:?}", upper);
+    
+    // chars + filter
+    let vowels: String = "hello"
+        .chars()
+        .filter(|&c| matches!(c, 'a' | 'e' | 'i' | 'o' | 'u'))
+        .collect();
+    println!("{}", vowels);  // "eo"
+}
+```
+
 ## 迭代器
 
 ### 迭代器基础
@@ -980,6 +1334,8 @@ fn main() {
 - ✅ 控制流语句
 - ✅ 字符串基础
 - ✅ 类型转换和运算符
+- ✅ 模式匹配高级:解构、匹配守卫、@ 绑定
+- ✅ 实战技巧:if let、while let、链式调用、错误处理
 - ✅ 迭代器:iter、map、filter、collect
 - ✅ 闭包:Fn/FnMut/FnOnce、捕获环境
 
