@@ -7,6 +7,9 @@ sidebar_position: 7
 
 # Spring MVC
 
+> [!IMPORTANT]
+> **MVC 核心模式**: Spring MVC 基于 MVC 设计模式,理解 DispatcherServlet 和请求处理流程是关键。
+
 ## 1. Spring MVC概述
 
 **Spring MVC**是Spring框架的Web模块，实现了Model-View-Controller（MVC）设计模式。

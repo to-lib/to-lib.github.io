@@ -100,6 +100,14 @@ const config: Config = {
           position: "left",
           items: [
             {
+              label: "📘 模式概览",
+              to: "/docs/java-design-patterns/overview",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
               type: "html",
               value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>创建型模式 (5)</div>",

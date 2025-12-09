@@ -7,7 +7,8 @@ sidebar_position: 4
 
 # Bean管理
 
-## 1. Bean的定义
+> [!TIP]
+> **Bean 生命周期**: 掌握 Bean 的生命周期和作用域对于正确使用 Spring 至关重要。默认为单例(singleton),注意线程安全问题。
 
 ### 1.1 使用@Bean注解
 
@@ -461,6 +462,7 @@ public class DatabaseConnection implements InitializingBean, DisposableBean {
 ```
 
 生命周期顺序：
+
 1. @PostConstruct
 2. afterPropertiesSet()
 3. 自定义init-method/initMethod
@@ -537,6 +539,7 @@ public void inspectBeans() {
 ---
 
 **关键要点**：
+
 - 优先使用@Component系列注解
 - 合理使用@Bean处理第三方对象
 - 选择合适的作用域
