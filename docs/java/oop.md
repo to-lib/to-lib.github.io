@@ -662,7 +662,393 @@ public class AnonymousExample {
 }
 ```
 
-## 最佳实践
+## 枚举（Enum）
+
+枚举是一种特殊的类，用于表示一组常量值。
+
+### 基本枚举
+
+```java
+// 定义枚举
+public enum Color {
+    RED("红色"), 
+    GREEN("绿色"), 
+    BLUE("蓝色");
+    
+    private String description;
+    
+    // 枚举构造方法
+    Color(String description) {
+        this.description = description;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+}
+
+// 使用枚举
+public class EnumBasics {
+    public static void main(String[] args) {
+        // 枚举常量
+        Color color = Color.RED;
+        System.out.println(color);  // RED
+        System.out.println(color.getDescription());  // 红色
+        
+        // 枚举比较
+        if (color == Color.RED) {
+            System.out.println("颜色是红色");
+        }
+        
+        // 枚举迭代
+        for (Color c : Color.values()) {
+            System.out.println(c + ": " + c.getDescription());
+        }
+        
+        // 按名称获取枚举
+        Color c = Color.valueOf("GREEN");
+        System.out.println(c.getDescription());  // 绿色
+    }
+}
+```
+
+### 枚举的实际应用
+
+```java
+// 订单状态枚举
+public enum OrderStatus {
+    PENDING("待支付") {
+        @Override
+        public OrderStatus next() {
+            return PAID;
+        }
+    },
+    PAID("已支付") {
+        @Override
+        public OrderStatus next() {
+            return SHIPPED;
+        }
+    },
+    SHIPPED("已发货") {
+        @Override
+        public OrderStatus next() {
+            return DELIVERED;
+        }
+    },
+    DELIVERED("已送达") {
+        @Override
+        public OrderStatus next() {
+            return null;
+        }
+    },
+    CANCELLED("已取消") {
+        @Override
+        public OrderStatus next() {
+            return null;
+        }
+    };
+    
+    private String description;
+    
+    OrderStatus(String description) {
+        this.description = description;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+    
+    // 抽象方法，每个枚举常量都必须实现
+    public abstract OrderStatus next();
+}
+
+// 使用枚举状态
+public class Order {
+    private String orderId;
+    private OrderStatus status;
+    
+    public Order(String orderId) {
+        this.orderId = orderId;
+        this.status = OrderStatus.PENDING;
+    }
+    
+    public void pay() {
+        if (status == OrderStatus.PENDING) {
+            status = status.next();
+            System.out.println("订单 " + orderId + " 已支付");
+        }
+    }
+    
+    public void ship() {
+        if (status == OrderStatus.PAID) {
+            status = status.next();
+            System.out.println("订单 " + orderId + " 已发货");
+        }
+    }
+    
+    public OrderStatus getStatus() {
+        return status;
+    }
+    
+    public static void main(String[] args) {
+        Order order = new Order("ORD001");
+        System.out.println("当前状态: " + order.getStatus().getDescription());
+        
+        order.pay();
+        System.out.println("当前状态: " + order.getStatus().getDescription());
+        
+        order.ship();
+        System.out.println("当前状态: " + order.getStatus().getDescription());
+    }
+}
+```
+
+### 单例枚举
+
+枚举是实现单例模式的最佳方式。
+
+```java
+// 使用枚举实现单例
+public enum Singleton {
+    INSTANCE;
+    
+    private String value;
+    
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
+    public String getValue() {
+        return value;
+    }
+}
+
+// 使用
+public class SingletonEnumExample {
+    public static void main(String[] args) {
+        Singleton s1 = Singleton.INSTANCE;
+        s1.setValue("Hello");
+        
+        Singleton s2 = Singleton.INSTANCE;
+        System.out.println(s2.getValue());  // Hello
+        System.out.println(s1 == s2);  // true，确实是同一个对象
+    }
+}
+```
+
+## 注解（Annotation）
+
+注解是一种元数据，不直接影响代码执行，但为编译器和运行时环境提供信息。
+
+### 内置注解
+
+```java
+public class BuiltInAnnotations {
+    // @Override：标记方法重写
+    @Override
+    public String toString() {
+        return "重写的方法";
+    }
+    
+    // @Deprecated：标记已过时
+    @Deprecated
+    public void oldMethod() {
+        System.out.println("这个方法已过时");
+    }
+    
+    // @SuppressWarnings：抑制编译警告
+    @SuppressWarnings("unchecked")
+    public void suppressWarning() {
+        // ...
+    }
+    
+    // @FunctionalInterface：标记函数式接口
+    @FunctionalInterface
+    public interface MyInterface {
+        void method();
+    }
+}
+```
+
+### 自定义注解
+
+```java
+import java.lang.annotation.*;
+
+// 定义注解
+@Target(ElementType.METHOD)  // 作用于方法
+@Retention(RetentionPolicy.RUNTIME)  // 运行时保留
+@Documented
+public @interface MyAnnotation {
+    String value() default "default value";
+    int count() default 1;
+}
+
+// 使用注解
+public class AnnotationExample {
+    @MyAnnotation(value = "test", count = 5)
+    public void testMethod() {
+        System.out.println("带注解的方法");
+    }
+    
+    // 获取注解信息
+    public static void main(String[] args) throws NoSuchMethodException {
+        // 获取方法
+        java.lang.reflect.Method method = AnnotationExample.class.getMethod("testMethod");
+        
+        // 检查是否有注解
+        if (method.isAnnotationPresent(MyAnnotation.class)) {
+            MyAnnotation annotation = method.getAnnotation(MyAnnotation.class);
+            System.out.println("value: " + annotation.value());
+            System.out.println("count: " + annotation.count());
+        }
+    }
+}
+```
+
+### 实用注解示例
+
+```java
+import java.lang.annotation.*;
+import java.lang.reflect.Method;
+
+// 定义测试注解
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Test {
+    String description() default "";
+}
+
+// 使用注解标记测试方法
+public class TestClass {
+    @Test(description = "测试加法")
+    public void testAdd() {
+        System.out.println("执行加法测试");
+    }
+    
+    @Test(description = "测试减法")
+    public void testSubtract() {
+        System.out.println("执行减法测试");
+    }
+    
+    public void notATest() {
+        System.out.println("这不是测试方法");
+    }
+}
+
+// 简单的注解处理器
+public class TestRunner {
+    public static void runTests(Class<?> testClass) {
+        Object instance = null;
+        try {
+            instance = testClass.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+            return;
+        }
+        
+        // 遍历所有方法
+        for (Method method : testClass.getDeclaredMethods()) {
+            // 检查是否有 @Test 注解
+            if (method.isAnnotationPresent(Test.class)) {
+                Test test = method.getAnnotation(Test.class);
+                System.out.println("执行测试: " + test.description());
+                
+                try {
+                    method.invoke(instance);
+                } catch (Exception e) {
+                    System.out.println("测试失败: " + e.getMessage());
+                }
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        runTests(TestClass.class);
+    }
+}
+```
+
+### 常用的第三方注解
+
+```java
+// Lombok 注解（需要依赖）
+// @Getter @Setter：自动生成 getter/setter
+// @ToString：自动生成 toString 方法
+// @EqualsAndHashCode：自动生成 equals 和 hashCode
+
+// JPA 注解
+// @Entity：标记实体类
+// @Table：指定表名
+// @Column：指定列属性
+
+// Spring 注解
+// @Component：标记为组件
+// @Autowired：自动注入
+// @Service：标记为服务类
+// @Repository：标记为仓储类
+// @Controller：标记为控制器
+// @RequestMapping：映射请求路径
+
+// 验证注解
+// @NotNull：非空验证
+// @NotEmpty：非空且非空字符串验证
+// @Length：长度验证
+// @Min @Max：数值范围验证
+```
+
+### @Target 和 @Retention
+
+```java
+// @Target 指定注解的使用位置
+public enum ElementType {
+    TYPE,              // 类、接口、枚举
+    FIELD,             // 成员变量
+    METHOD,            // 方法
+    PARAMETER,         // 参数
+    CONSTRUCTOR,       // 构造方法
+    LOCAL_VARIABLE,    // 局部变量
+    ANNOTATION_TYPE,   // 注解类型
+    PACKAGE,           // 包
+    TYPE_PARAMETER,    // 类型参数
+    TYPE_USE           // 类型使用
+}
+
+// @Retention 指定注解的生命周期
+public enum RetentionPolicy {
+    SOURCE,     // 仅在源代码中保留
+    CLASS,      // 编译时保留（默认）
+    RUNTIME     // 运行时保留
+}
+
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyAnnotation {
+    String value();
+}
+```
+
+### 标记注解
+
+```java
+import java.lang.annotation.*;
+
+// 标记注解（没有成员）
+@Target(ElementType.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Marker {
+}
+
+// 使用标记注解
+@Marker
+public class MarkedClass {
+    public static void main(String[] args) {
+        if (MarkedClass.class.isAnnotationPresent(Marker.class)) {
+            System.out.println("这个类被标记了");
+        }
+    }
+}
+```
 
 ### 1. 优先使用组合而非继承
 

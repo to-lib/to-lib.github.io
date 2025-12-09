@@ -1184,8 +1184,285 @@ public class SemaphoreExample {
 
 ## 线程安全的集合
 
+### ConcurrentHashMap
+
+ConcurrentHashMap 使用分段锁（分桶）提高并发性能，比 synchronized HashMap 效率高很多。
+
 ```java
 import java.util.concurrent.*;
+import java.util.*;
+
+public class ConcurrentHashMapExample {
+    public static void main(String[] args) throws InterruptedException {
+        ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+        
+        // 基本操作
+        map.put("count", 0);
+        System.out.println("初始值: " + map.get("count"));
+        
+        // 多线程安全的操作
+        Thread[] threads = new Thread[5];
+        for (int i = 0; i < 5; i++) {
+            final int threadId = i;
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    // putIfAbsent：原子操作，如果不存在才插入
+                    map.putIfAbsent("count", 0);
+                    
+                    // 虽然线程安全，但复合操作仍需同步
+                    synchronized (map) {
+                        int value = map.get("count");
+                        map.put("count", value + 1);
+                    }
+                }
+            });
+            threads[i].start();
+        }
+        
+        for (Thread thread : threads) {
+            thread.join();
+        }
+        
+        System.out.println("最终值: " + map.get("count"));
+        
+        // 遍历（迭代期间其他线程可修改）
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+        
+        // compute：原子性的计算
+        map.compute("count", (key, value) -> value == null ? 1 : value + 1);
+        System.out.println("compute 后: " + map.get("count"));
+    }
+}
+```
+
+### BlockingQueue
+
+BlockingQueue 是线程安全的队列，支持阻塞的插入和移除操作。
+
+```java
+import java.util.concurrent.*;
+
+public class BlockingQueueExample {
+    public static void main(String[] args) {
+        BlockingQueue<String> queue = new LinkedBlockingQueue<>(5);
+        
+        // 生产者
+        new Thread(() -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("生产: " + i);
+                    queue.put("item-" + i);  // 队列满时阻塞
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        
+        // 消费者
+        new Thread(() -> {
+            try {
+                while (true) {
+                    String item = queue.take();  // 队列空时阻塞
+                    System.out.println("消费: " + item);
+                    Thread.sleep(300);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+}
+```
+
+### CopyOnWriteArrayList
+
+CopyOnWriteArrayList 用于读多写少的场景，每次写操作都复制一份数组。
+
+```java
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.List;
+
+public class CopyOnWriteArrayListExample {
+    public static void main(String[] args) throws InterruptedException {
+        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+        
+        // 写入（创建新的数组副本）
+        list.add("item1");
+        list.add("item2");
+        list.add("item3");
+        
+        // 多线程读
+        Thread[] readers = new Thread[3];
+        for (int i = 0; i < 3; i++) {
+            final int id = i;
+            readers[i] = new Thread(() -> {
+                for (int j = 0; j < 5; j++) {
+                    System.out.println("读取线程-" + id + ": " + list);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            readers[i].start();
+        }
+        
+        // 单线程写
+        new Thread(() -> {
+            try {
+                for (int i = 4; i < 6; i++) {
+                    Thread.sleep(100);
+                    list.add("item" + i);
+                    System.out.println("添加: item" + i);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        
+        for (Thread reader : readers) {
+            reader.join();
+        }
+    }
+}
+```
+
+### CopyOnWriteArraySet
+
+CopyOnWriteArraySet 是线程安全的 Set，基于 CopyOnWriteArrayList 实现。
+
+```java
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.Set;
+
+public class CopyOnWriteArraySetExample {
+    public static void main(String[] args) {
+        CopyOnWriteArraySet<String> set = new CopyOnWriteArraySet<>();
+        
+        set.add("A");
+        set.add("B");
+        set.add("C");
+        set.add("A");  // 重复元素不会添加
+        
+        System.out.println("集合大小: " + set.size());  // 3
+        
+        // 迭代期间可以安全地修改
+        set.forEach(item -> {
+            System.out.println(item);
+            if (item.equals("B")) {
+                set.add("D");  // 不会抛出 ConcurrentModificationException
+            }
+        });
+        
+        System.out.println("最终集合: " + set);
+    }
+}
+```
+
+### ConcurrentLinkedQueue
+
+ConcurrentLinkedQueue 是非阻塞的线程安全队列，基于链表实现。
+
+```java
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.Queue;
+
+public class ConcurrentLinkedQueueExample {
+    public static void main(String[] args) throws InterruptedException {
+        ConcurrentLinkedQueue<Integer> queue = new ConcurrentLinkedQueue<>();
+        
+        // 生产者
+        new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                queue.offer(i);  // 加入队列（非阻塞）
+                System.out.println("生产: " + i);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        
+        // 消费者
+        new Thread(() -> {
+            while (true) {
+                Integer item = queue.poll();  // 移除队列头（非阻塞）
+                if (item != null) {
+                    System.out.println("消费: " + item);
+                } else {
+                    System.out.println("队列为空");
+                }
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        
+        Thread.sleep(2000);
+    }
+}
+```
+
+### 各种线程安全集合对比
+
+```java
+import java.util.*;
+import java.util.concurrent.*;
+
+public class ConcurrentCollectionComparison {
+    public static void main(String[] args) {
+        // 1. ConcurrentHashMap：线程安全的 Map
+        ConcurrentHashMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
+        // 适用于多线程读写
+        
+        // 2. Collections.synchronizedMap：同步的 Map
+        Map<String, Integer> synchronizedMap = Collections.synchronizedMap(new HashMap<>());
+        // 整个 Map 被锁，性能较差
+        
+        // 3. Hashtable：已过时
+        Hashtable<String, Integer> hashtable = new Hashtable<>();
+        // 不推荐使用，使用 ConcurrentHashMap 替代
+        
+        // 4. CopyOnWriteArrayList：读多写少场景
+        CopyOnWriteArrayList<String> cowList = new CopyOnWriteArrayList<>();
+        // 适用于读操作远多于写操作的场景
+        
+        // 5. Collections.synchronizedList：同步的 List
+        List<String> syncList = Collections.synchronizedList(new ArrayList<>());
+        // 性能不如 CopyOnWriteArrayList
+        
+        // 6. BlockingQueue：队列，支持阻塞操作
+        BlockingQueue<String> blockingQueue = new LinkedBlockingQueue<>();
+        // 适用于生产者-消费者模式
+        
+        // 7. ConcurrentLinkedQueue：非阻塞队列
+        Queue<String> concurrentQueue = new ConcurrentLinkedQueue<>();
+        // 性能更高但不支持阻塞操作
+    }
+}
+```
+
+### 推荐用法总结
+
+| 数据结构 | 线程安全方案 | 使用场景 |
+|---------|-----------|---------|
+| Map | ConcurrentHashMap | 多线程读写 |
+| List | CopyOnWriteArrayList | 读多写少 |
+| Set | CopyOnWriteArraySet | 读多写少 |
+| Queue（有界） | LinkedBlockingQueue | 生产者-消费者 |
+| Queue（无界） | ConcurrentLinkedQueue | 高并发场景 |
+| 计数 | AtomicInteger | 原子操作 |
+
+```java
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrentCollections {
     public static void main(String[] args) {
@@ -1201,6 +1478,10 @@ public class ConcurrentCollections {
         
         // 线程安全的 Set
         CopyOnWriteArraySet<String> set = new CopyOnWriteArraySet<>();
+        
+        // 线程安全的整数
+        AtomicInteger counter = new AtomicInteger(0);
+        counter.incrementAndGet();
     }
 }
 ```

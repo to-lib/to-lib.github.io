@@ -357,7 +357,52 @@ public class JumpStatements {
 }
 ```
 
-## 字符串基础
+## 字符串详解
+
+### 字符串的不可变性
+
+Java 中的 String 是不可变的（Immutable）。这意味着一旦创建了 String 对象，就无法修改它。
+
+```java
+public class StringImmutability {
+    public static void main(String[] args) {
+        String str = "Hello";
+        str = str + " World";  // 创建新的 String 对象
+        
+        System.out.println(str);  // Hello World
+        
+        // ❌ 不能这样做：没有 setChar 方法
+        // str.setChar(0, 'h');
+        
+        // ✅ 字符串虽然不可变，但变量可以重新赋值
+        str = "Goodbye";
+    }
+}
+```
+
+### String 常量池
+
+Java 为了提高效率，设立了字符串常量池。相同的字符串字面量会共用一个对象。
+
+```java
+public class StringPoolExample {
+    public static void main(String[] args) {
+        // 都从常量池取同一个对象
+        String str1 = "Hello";
+        String str2 = "Hello";
+        System.out.println(str1 == str2);  // true（同一对象）
+        
+        // 使用 new 创建新对象，不用常量池
+        String str3 = new String("Hello");
+        System.out.println(str1 == str3);      // false（不同对象）
+        System.out.println(str1.equals(str3)); // true（内容相同）
+        
+        // intern() 方法：强制放入常量池
+        String str4 = new String("Hello").intern();
+        System.out.println(str1 == str4);  // true（同一对象）
+    }
+}
+```
 
 ### 字符串创建和操作
 
@@ -391,6 +436,130 @@ public class StringBasics {
         
         // 字符串分割
         String[] words = greeting.split(" ");
+        for (String word : words) {
+            System.out.println(word);
+        }
+    }
+}
+```
+
+### StringBuilder 和 StringBuffer
+
+对于频繁修改字符串的场景，应该使用 StringBuilder 而不是 String 连接。
+
+```java
+public class StringBuilderExample {
+    public static void main(String[] args) {
+        // StringBuilder：不同步，性能更好
+        StringBuilder sb = new StringBuilder();
+        
+        // append：追加字符
+        sb.append("Hello");
+        sb.append(" ");
+        sb.append("World");
+        
+        System.out.println(sb.toString());  // Hello World
+        
+        // insert：插入字符
+        sb.insert(5, ",");  // 在位置 5 插入 ","
+        System.out.println(sb);  // Hello, World
+        
+        // delete：删除字符
+        sb.delete(5, 6);  // 删除位置 5-6 的字符
+        System.out.println(sb);  // Hello World
+        
+        // reverse：反转
+        sb.reverse();
+        System.out.println(sb);  // dlroW olleH
+    }
+}
+```
+
+### 字符串性能对比
+
+```java
+public class StringPerformance {
+    public static void main(String[] args) {
+        // 性能测试：10000 次字符串操作
+        
+        // ❌ 使用 String 连接（低效）
+        long startTime = System.currentTimeMillis();
+        String str = "";
+        for (int i = 0; i < 10000; i++) {
+            str += "x";  // 每次都创建新 String 对象
+        }
+        long time1 = System.currentTimeMillis() - startTime;
+        System.out.println("String 连接耗时: " + time1 + "ms");
+        
+        // ✅ 使用 StringBuilder（高效）
+        startTime = System.currentTimeMillis();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10000; i++) {
+            sb.append("x");  // 在同一对象上操作
+        }
+        String result = sb.toString();
+        long time2 = System.currentTimeMillis() - startTime;
+        System.out.println("StringBuilder 耗时: " + time2 + "ms");
+        
+        System.out.println("性能提升: " + (time1 / time2) + " 倍");
+    }
+}
+```
+
+### String vs StringBuilder vs StringBuffer
+
+| 特性 | String | StringBuilder | StringBuffer |
+|------|--------|---------------|--------------|
+| 可变性 | 不可变 | 可变 | 可变 |
+| 线程安全 | 是 | 否 | 是 |
+| 性能 | 低（频繁修改） | 高 | 中等 |
+| 使用场景 | 字符串不修改 | 单线程频繁修改 | 多线程频繁修改 |
+
+```java
+public class StringComparison {
+    public static void main(String[] args) {
+        // StringBuffer：线程安全但性能稍差
+        StringBuffer sbuf = new StringBuffer();
+        sbuf.append("Hello");  // 同步方法
+        
+        // StringBuilder：性能最好但非线程安全
+        StringBuilder sbuilder = new StringBuilder();
+        sbuilder.append("Hello");  // 非同步方法
+        
+        System.out.println(sbuf.toString());     // Hello
+        System.out.println(sbuilder.toString()); // Hello
+    }
+}
+```
+
+### 常用 String 方法
+
+```java
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "  Hello Java World  ";
+        
+        // 大小写转换
+        System.out.println(str.toUpperCase());   // "  HELLO JAVA WORLD  "
+        System.out.println(str.toLowerCase());   // "  hello java world  "
+        
+        // 去掉首尾空格
+        System.out.println(str.trim());  // "Hello Java World"
+        
+        // 开始和结尾判断
+        System.out.println(str.startsWith("  Hello"));  // true
+        System.out.println(str.endsWith("World  "));    // true
+        
+        // 字符替换
+        System.out.println(str.replace(" ", ""));    // "HelloJavaWorld"
+        System.out.println(str.replaceAll("\\s+", " "));  // " Hello Java World "
+        
+        // 转换成字符数组
+        char[] chars = str.toCharArray();
+        System.out.println("首字符: " + chars[2]);  // 'H'
+        
+        // 字符串拆分
+        String[] words = str.trim().split(" ");
         for (String word : words) {
             System.out.println(word);
         }
