@@ -82,7 +82,7 @@ const sidebars: SidebarsConfig = {
       label: "📖 概览与基础",
       collapsed: false,
       items: [
-        "spring/index",
+        "spring/spring-index",
         "spring/core-concepts",
         "spring/dependency-injection",
         "spring/bean-management",
@@ -95,7 +95,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "spring/aop",
         "spring/transactions",
-        "spring/spring-events",
+        "spring/events",
         "spring/resource-management",
       ],
     },
@@ -121,7 +121,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🧪 测试",
       collapsed: false,
-      items: ["spring/spring-testing"],
+      items: ["spring/testing"],
     },
     {
       type: "category",
