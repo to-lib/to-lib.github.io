@@ -220,6 +220,18 @@ const config: Config = {
               to: "/docs/rust/structs-enums",
             },
             {
+              label: "📚 集合类型",
+              to: "/docs/rust/collections",
+            },
+            {
+              label: "🗂️ 项目组织",
+              to: "/docs/rust/project-structure",
+            },
+            {
+              label: "📦 Cargo 使用",
+              to: "/docs/rust/cargo-guide",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -237,6 +249,14 @@ const config: Config = {
               to: "/docs/rust/generics-traits",
             },
             {
+              label: "⏱️ 生命周期",
+              to: "/docs/rust/lifetimes",
+            },
+            {
+              label: "🎯 闭包和迭代器",
+              to: "/docs/rust/closures-iterators",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -246,12 +266,41 @@ const config: Config = {
                 "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级主题</div>",
             },
             {
+              label: "📌 智能指针",
+              to: "/docs/rust/smart-pointers",
+            },
+            {
               label: "🧵 并发编程",
               to: "/docs/rust/concurrency",
             },
             {
-              label: "📌 智能指针",
-              to: "/docs/rust/smart-pointers",
+              label: "⚡ 异步编程",
+              to: "/docs/rust/async-programming",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>参考指南</div>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/rust/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/rust/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/rust/interview-questions",
+            },
+            {
+              label: "🚀 实战项目",
+              to: "/docs/rust/practical-projects",
             },
           ],
         },
