@@ -1,5 +1,4 @@
 ---
-id: springcloud-index
 title: Spring Cloud 学习指南
 sidebar_label: 概览
 sidebar_position: 1
@@ -23,12 +22,30 @@ sidebar_position: 1
 - **[Feign 声明式调用](./feign)** - HTTP 客户端、服务调用、负载均衡
 - **[Ribbon 负载均衡](./ribbon)** - 负载均衡策略、自定义配置
 
+### 现代组件 (推荐)
+
+- **[LoadBalancer 负载均衡](./loadbalancer)** - 现代客户端负载均衡器
+- **[Resilience4j 容错](./resilience4j)** - 轻量级容错库 (熔断、限流、重试)
+- **[Stream 消息驱动](./stream)** - 消息驱动微服务 (RabbitMQ/Kafka)
+
 ### 高级特性
 
-- **[Hystrix 熔断器](./hystrix)** - 服务降级、熔断、限流、隔离
+- **[Hystrix 熔断器](./hystrix)** - (维护模式) 服务降级、熔断、限流、隔离
 - **[Sleuth 链路追踪](./sleuth)** - 分布式追踪、日志关联、性能分析
 
 ## 🎯 核心组件速览
+
+### LoadBalancer - 新一代负载均衡
+
+Spring Cloud 官方推荐的客户端负载均衡器，支持响应式编程，替代 Ribbon。
+
+### Resilience4j - 容错保护
+
+轻量级容错库，专为 Java 8+ 设计，提供熔断、限流、重试等功能，替代 Hystrix。
+
+### Stream - 消息驱动
+
+屏蔽底层消息中间件差异，提供统一的编程模型，支持 RabbitMQ 和 Kafka。
 
 ### Eureka - 服务注册与发现
 
@@ -46,11 +63,11 @@ sidebar_position: 1
 
 通过声明式接口实现 HTTP 调用，集成负载均衡和熔断器。
 
-### Ribbon - 客户端负载均衡
+### Ribbon - 客户端负载均衡 (维护模式)
 
 提供多种负载均衡策略，支持自定义规则。
 
-### Hystrix - 熔断器
+### Hystrix - 熔断器 (维护模式)
 
 实现服务降级、熔断、限流等容错机制，保护系统稳定性。
 
@@ -69,19 +86,20 @@ sidebar_position: 1
 | `@EnableFeignClients`   | 启用 Feign 客户端  |
 | `@FeignClient`          | 声明 Feign 客户端  |
 | `@LoadBalanced`         | 启用负载均衡       |
-| `@HystrixCommand`       | 定义熔断方法       |
-| `@EnableCircuitBreaker` | 启用熔断器         |
+| `@CircuitBreaker`       | 声明熔断 (Resilience4j) |
+| `@HystrixCommand`       | 定义熔断方法 (Hystrix) |
 
 ## 📊 Spring Cloud 组件对比
 
-| 功能         | Netflix 组件 | 阿里巴巴组件 | 说明                     |
-| ------------ | ------------ | ------------ | ------------------------ |
-| 服务注册发现 | Eureka       | Nacos        | Nacos 功能更强大         |
-| 配置中心     | Config       | Nacos        | Nacos 同时支持注册和配置 |
-| 负载均衡     | Ribbon       | Dubbo        | 都支持多种策略           |
-| 服务调用     | Feign        | Dubbo        | Dubbo 性能更高           |
-| 熔断降级     | Hystrix      | Sentinel     | Sentinel 更灵活          |
-| API 网关     | Zuul/Gateway | Gateway      | Gateway 是推荐方案       |
+| 功能         | Netflix 组件 (旧) | Spring Cloud (新) | 阿里巴巴组件 | 说明                     |
+| ------------ | ------------ | ------------ | ------------ | ------------------------ |
+| 服务注册发现 | Eureka       | -            | Nacos        | Nacos 功能更强大         |
+| 配置中心     | Config       | Config       | Nacos        | Nacos 同时支持注册和配置 |
+| 负载均衡     | Ribbon       | **LoadBalancer** | Dubbo        | LoadBalancer 支持响应式  |
+| 服务调用     | Feign        | OpenFeign    | Dubbo        | OpenFeign 是标准         |
+| 熔断降级     | Hystrix      | **Resilience4j** | Sentinel     | Sentinel/Resilience4j 推荐 |
+| API 网关     | Zuul         | Gateway      | Gateway      | Gateway 是推荐方案       |
+| 消息驱动     | -            | **Stream**   | RocketMQ     | Stream 统一编程模型      |
 
 ## 📖 学习资源
 

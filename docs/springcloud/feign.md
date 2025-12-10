@@ -1,5 +1,4 @@
 ---
-id: feign
 title: Feign 声明式HTTP客户端
 sidebar_label: Feign
 sidebar_position: 6

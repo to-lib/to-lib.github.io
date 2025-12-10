@@ -1,5 +1,4 @@
 ---
-id: gateway
 title: Gateway API网关
 sidebar_label: Gateway
 sidebar_position: 5

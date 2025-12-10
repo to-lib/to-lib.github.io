@@ -1,5 +1,4 @@
 ---
-id: hystrix
 title: Hystrix 熔断器
 sidebar_label: Hystrix
 sidebar_position: 8

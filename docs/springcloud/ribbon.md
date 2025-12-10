@@ -1,5 +1,4 @@
 ---
-id: ribbon
 title: Ribbon 负载均衡
 sidebar_label: Ribbon
 sidebar_position: 7

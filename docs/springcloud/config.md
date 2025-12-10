@@ -1,5 +1,4 @@
 ---
-id: config
 title: Config 配置中心
 sidebar_label: Config
 sidebar_position: 4

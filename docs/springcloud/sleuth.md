@@ -1,5 +1,4 @@
 ---
-id: sleuth
 title: Sleuth 链路追踪
 sidebar_label: Sleuth
 sidebar_position: 9

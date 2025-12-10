@@ -1,5 +1,4 @@
 ---
-id: core-concepts
 title: Spring Cloud 核心概念
 sidebar_label: 核心概念
 sidebar_position: 2
