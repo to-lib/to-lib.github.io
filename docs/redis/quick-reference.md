@@ -158,7 +158,7 @@ tcp-backlog 511
 
 - 使用层级命名（user:1001:profile）
 - 设置合理的过期时间
-- 避免大 key（<10KB）
+- 避免大 key（&lt;10KB）
 
 ### ✅ 数据结构
 

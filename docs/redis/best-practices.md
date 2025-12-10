@@ -200,7 +200,7 @@ sentinel failover-timeout mymaster 10000
 - 最少 3 主 3 从
 - 每个主节点 1-2 个从节点
 - 合理分配槽位
-- 节点间网络延迟<1ms
+- 节点间网络延迟&lt;1ms
 
 ## 监控告警
 
