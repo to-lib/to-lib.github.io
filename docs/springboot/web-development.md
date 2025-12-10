@@ -446,4 +446,4 @@ public class UserController {
 - **异常处理** - 全局异常处理器统一处理异常
 - **API 文档** - 使用 Swagger/OpenAPI 自动生成文档
 
-下一步学习 [数据访问](./data-access)。
+下一步学习 [数据访问](/docs/springboot/data-access)。

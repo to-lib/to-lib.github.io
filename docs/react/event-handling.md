@@ -550,4 +550,4 @@ function FileUpload() {
 
 ---
 
-**下一步**: 学习 [条件渲染](./conditional-rendering) 了解如何根据条件显示内容，或查看 [列表和 Keys](./lists-and-keys) 学习列表渲染。
+**下一步**: 学习 [条件渲染](/docs/react/conditional-rendering) 了解如何根据条件显示内容，或查看 [列表和 Keys](/docs/react/lists-and-keys) 学习列表渲染。

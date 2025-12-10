@@ -373,4 +373,4 @@ spring:
 - 支持多种流控和熔断策略
 - 规则可以持久化到 Nacos
 
-**下一步**：学习 [Seata 分布式事务](./seata)
+**下一步**：学习 [Seata 分布式事务](/docs/springcloud-alibaba/seata)

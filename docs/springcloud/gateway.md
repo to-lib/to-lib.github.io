@@ -580,4 +580,4 @@ public class AuthFilter implements GlobalFilter, Ordered {
 - 支持限流、熔断等高级功能
 - 可以作为统一认证网关
 
-**下一步**：学习 [Feign 声明式调用](./feign)
+**下一步**：学习 [Feign 声明式调用](/docs/springcloud/feign)

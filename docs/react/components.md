@@ -487,4 +487,4 @@ function ProductCard({ product }) {
 
 ---
 
-**下一步**: 学习 [JSX 语法](./jsx-syntax) 深入了解如何编写组件，或查看 [Props 和 State](./props-and-state) 了解组件数据管理。
+**下一步**: 学习 [JSX 语法](/docs/react/jsx-syntax) 深入了解如何编写组件，或查看 [Props 和 State](/docs/react/props-and-state) 了解组件数据管理。

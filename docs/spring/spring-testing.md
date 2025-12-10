@@ -699,4 +699,4 @@ void testPublicMethod() {
 - 使用内存数据库进行数据层测试
 - 测试应该快速、独立、可重复
 
-**下一步**：学习 [最佳实践](./best-practices)
+**下一步**：学习 [最佳实践](/docs/spring/best-practices)

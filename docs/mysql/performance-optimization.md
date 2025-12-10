@@ -463,4 +463,4 @@ sysbench ... cleanup
 - ✅ 架构优化：分库分表、读写分离
 - ✅ 监控分析：性能指标、测试工具
 
-继续学习 [存储过程](./stored-procedures) 和 [备份恢复](./backup-recovery)！
+继续学习 [存储过程](/docs/mysql/stored-procedures) 和 [备份恢复](/docs/mysql/backup-recovery)！

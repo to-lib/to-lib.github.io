@@ -747,4 +747,4 @@ A:
 - **Testcontainers** - 真实环境测试
 - **测试覆盖率** - JaCoCo 生成报告
 
-下一步学习 [AOP 面向切面编程](./aop)。
+下一步学习 [AOP 面向切面编程](/docs/springboot/aop)。

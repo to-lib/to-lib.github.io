@@ -396,4 +396,4 @@ tar -czf backup.tar.gz /important/data/
 - ✅ 文件系统检查修复
 - ✅ inode 和特殊文件系统
 
-继续学习 [权限管理](./permissions) 和 [进程管理](./process-management)。
+继续学习 [权限管理](/docs/linux/permissions) 和 [进程管理](/docs/linux/process-management)。

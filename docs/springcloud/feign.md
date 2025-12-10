@@ -544,4 +544,4 @@ public class FeignErrorDecoder implements ErrorDecoder {
 - 合理配置超时时间很重要
 - 为关键接口配置降级
 
-**下一步**：学习 [Ribbon 负载均衡](./ribbon)
+**下一步**：学习 [Ribbon 负载均衡](/docs/springcloud/ribbon)

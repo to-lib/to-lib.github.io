@@ -568,4 +568,4 @@ tar -tzf backup.tar.gz > /dev/null
 - ✅ 文档化和团队协作
 - ✅ 自动化运维
 
-继续学习 [快速参考](./quick-reference) 和 [常见问题](./faq)。
+继续学习 [快速参考](/docs/linux/quick-reference) 和 [常见问题](/docs/linux/faq)。

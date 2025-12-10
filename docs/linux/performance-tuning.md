@@ -498,4 +498,4 @@ sar -A -o baseline.sar
 - ✅ 内核参数调优
 - ✅ 应用程序优化
 
-继续学习 [故障排查](./troubleshooting) 和 [最佳实践](./best-practices)。
+继续学习 [故障排查](/docs/linux/troubleshooting) 和 [最佳实践](/docs/linux/best-practices)。

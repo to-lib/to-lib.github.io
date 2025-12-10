@@ -690,4 +690,4 @@ try {
 - ✅ 常见异常类型
 - ✅ 异常处理最佳实践
 
-掌握异常处理后，继续学习 [多线程](./multithreading) 和 [IO 流](./io-streams)。
+掌握异常处理后，继续学习 [多线程](/docs/java/multithreading) 和 [IO 流](/docs/java/io-streams)。

@@ -361,4 +361,4 @@ public class OSSFileService {
 - **流式处理** - 处理大文件避免内存溢出
 - **云存储** - 生产环境推荐使用云存储服务
 
-下一步学习 [国际化](./i18n)。
+下一步学习 [国际化](/docs/springboot/i18n)。

@@ -586,4 +586,4 @@ sudo cat /var/log/auth.log | grep sudo
 - ✅ 密码策略和安全
 - ✅ 用户审计和故障排查
 
-继续学习 [软件包管理](./package-management) 和 [系统管理](./system-admin)。
+继续学习 [软件包管理](/docs/linux/package-management) 和 [系统管理](/docs/linux/system-admin)。

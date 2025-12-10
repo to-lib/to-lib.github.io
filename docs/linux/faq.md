@@ -511,4 +511,4 @@ sudo lynis audit system
 - ✅ 网络和软件安装
 - ✅ 性能优化和安全
 
-继续学习 [面试题集](./interview-questions)。
+继续学习 [面试题集](/docs/linux/interview-questions)。

@@ -491,4 +491,4 @@ public class AuditConfig {
 6. ✅ **审计日志** - 记录用户操作
 7. ✅ **CSRF 保护** - 防止跨站请求伪造
 
-下一步学习 [监控和健康检查](./health-monitoring)。
+下一步学习 [监控和健康检查](/docs/springboot/health-monitoring)。

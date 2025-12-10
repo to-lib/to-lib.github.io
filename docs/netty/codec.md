@@ -352,4 +352,4 @@ protected void encode(ChannelHandlerContext ctx, MyMessage msg, ByteBuf out) {
 ```
 
 ---
-[下一章：实战案例](./practical-examples)
+[下一章：实战案例](/docs/netty/practical-examples)

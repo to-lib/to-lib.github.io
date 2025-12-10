@@ -650,4 +650,4 @@ macro_rules! public_macro {
 4. 使用 cargo expand 调试宏
 5. 保持宏简单,提供清晰的文档
 
-掌握宏编程后,继续学习 [不安全 Rust](./unsafe-rust) 或 [最佳实践](./best-practices)。
+掌握宏编程后,继续学习 [不安全 Rust](/docs/rust/unsafe-rust) 或 [最佳实践](/docs/rust/best-practices)。

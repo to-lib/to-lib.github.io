@@ -712,4 +712,4 @@ const focusInput = () => {
 
 ---
 
-**下一步**：学习 [错误边界](./error-boundaries) 处理组件错误，或查看 [组件组合模式](./composition-patterns) 了解高级组件模式。
+**下一步**：学习 [错误边界](/docs/react/error-boundaries) 处理组件错误，或查看 [组件组合模式](/docs/react/composition-patterns) 了解高级组件模式。

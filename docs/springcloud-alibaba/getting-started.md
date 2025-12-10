@@ -641,10 +641,10 @@ springcloud-alibaba-demo
 
 **继续学习**:
 
-- [Sentinel 流量控制](./sentinel) - 保护服务稳定性
-- [Seata 分布式事务](./seata) - 解决数据一致性
-- [RocketMQ 消息队列](./rocketmq) - 异步通信
-- [Gateway 网关](./gateway) - 统一入口
+- [Sentinel 流量控制](/docs/springcloud-alibaba/sentinel) - 保护服务稳定性
+- [Seata 分布式事务](/docs/springcloud-alibaba/seata) - 解决数据一致性
+- [RocketMQ 消息队列](/docs/springcloud-alibaba/rocketmq) - 异步通信
+- [Gateway 网关](/docs/springcloud-alibaba/gateway) - 统一入口
 
 **完整代码**: [GitHub 示例仓库](https://github.com/alibaba/spring-cloud-alibaba/tree/2022.x/spring-cloud-alibaba-examples)
 

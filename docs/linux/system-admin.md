@@ -633,4 +633,4 @@ sudo systemctl edit --force --full maintenance.timer
 - ✅ 内核模块管理
 - ✅ 性能监控
 
-继续学习 [日志管理](./log-management) 和 [磁盘管理](./disk-management)。
+继续学习 [日志管理](/docs/linux/log-management) 和 [磁盘管理](/docs/linux/disk-management)。

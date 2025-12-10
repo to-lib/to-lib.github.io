@@ -528,4 +528,4 @@ SELECT * FROM performance_schema.data_locks;
 - ✅ SQL 优化技巧
 - ✅ 运维命令集合
 
-继续学习 [最佳实践](./best-practices) 和 [常见问题](./faq)！
+继续学习 [最佳实践](/docs/mysql/best-practices) 和 [常见问题](/docs/mysql/faq)！

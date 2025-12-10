@@ -734,4 +734,4 @@ public class UserService {
 - **实战场景** - 日志、性能监控、权限控制、异常处理
 - **自定义注解** - 注解 + AOP 实现优雅的横切逻辑
 
-下一步学习 [事务管理](./transaction)。
+下一步学习 [事务管理](/docs/springboot/transaction)。

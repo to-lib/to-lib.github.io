@@ -594,4 +594,4 @@ fn longest<'a>(x: &'a str, y: &str) -> &'a str {
 4. 'static 表示整个程序期间有效
 5. 避免不必要的显式生命周期注解
 
-掌握生命周期后,继续学习 [模块和包管理](./modules-packages)。
+掌握生命周期后,继续学习 [模块和包管理](/docs/rust/modules-packages)。

@@ -604,6 +604,6 @@ Proxy proxy = ProxyBuilder.build(strategy);
 
 **相关文档**：
 
-- [使用场景对比](./scenarios) - 查看详细的场景对比
-- [快速参考](./quick-reference) - 快速查阅模式速查表
-- [最佳实践](./best-practices) - 学习模式应用的最佳实践
+- [使用场景对比](/docs/java-design-patterns/scenarios) - 查看详细的场景对比
+- [快速参考](/docs/java-design-patterns/quick-reference) - 快速查阅模式速查表
+- [最佳实践](/docs/java-design-patterns/best-practices) - 学习模式应用的最佳实践

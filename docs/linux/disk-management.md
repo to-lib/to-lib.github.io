@@ -509,4 +509,4 @@ du -sh /*
 - ✅ RAID 磁盘阵列
 - ✅ 存储性能优化
 
-继续学习 [性能优化](./performance-tuning) 和 [系统安全](./security)。
+继续学习 [性能优化](/docs/linux/performance-tuning) 和 [系统安全](/docs/linux/security)。

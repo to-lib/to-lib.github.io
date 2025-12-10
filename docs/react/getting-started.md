@@ -351,9 +351,9 @@ function UserList() {
 
 学习完快速开始后，建议按以下顺序继续学习：
 
-1. [Hooks 详解](./hooks) - 深入理解 React Hooks
-2. [React 19 新特性](./react19-features) - 探索最新特性
-3. [面试题精选](./interview-questions) - React 面试准备
+1. [Hooks 详解](/docs/react/hooks) - 深入理解 React Hooks
+2. [React 19 新特性](/docs/react/react19-features) - 探索最新特性
+3. [面试题精选](/docs/react/interview-questions) - React 面试准备
 
 ## 🆘 常见问题
 
@@ -378,4 +378,4 @@ taskkill /PID [PID号] /F
 
 ---
 
-**恭喜！** 您已经创建了第一个 React 应用！继续学习 [Hooks 详解](./hooks) 或探索 [React 19 新特性](./react19-features)。
+**恭喜！** 您已经创建了第一个 React 应用！继续学习 [Hooks 详解](/docs/react/hooks) 或探索 [React 19 新特性](/docs/react/react19-features)。

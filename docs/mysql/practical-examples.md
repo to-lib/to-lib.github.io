@@ -468,4 +468,4 @@ public class DataSourceRouter {
 - ✅ 分库分表：水平分表、路由策略
 - ✅ 主从复制：配置方法、读写分离
 
-这些案例可以直接应用到实际项目中，继续学习 [性能优化](./performance-optimization) 和 [最佳实践](./best-practices)！
+这些案例可以直接应用到实际项目中，继续学习 [性能优化](/docs/mysql/performance-optimization) 和 [最佳实践](/docs/mysql/best-practices)！

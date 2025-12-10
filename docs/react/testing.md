@@ -189,4 +189,4 @@ screen.getByTestId("email-input");
 
 ---
 
-**下一步**：学习 [代码分割](./code-splitting) 优化加载性能，或查看 [最佳实践](./best-practices) 掌握开发规范。
+**下一步**：学习 [代码分割](/docs/react/code-splitting) 优化加载性能，或查看 [最佳实践](/docs/react/best-practices) 掌握开发规范。

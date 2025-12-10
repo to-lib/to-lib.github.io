@@ -408,4 +408,4 @@ spring:
 - 支持配置动态刷新
 - 生产环境建议集群部署
 
-**下一步**：学习 [Sentinel 流量控制](./sentinel)
+**下一步**：学习 [Sentinel 流量控制](/docs/springcloud-alibaba/sentinel)

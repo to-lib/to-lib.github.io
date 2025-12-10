@@ -453,4 +453,4 @@ sudo apache2ctl configtest
 - ✅ 编辑器选择建议
 - ✅ 配置和最佳实践
 
-继续学习 [系统管理](./system-admin) 和 [Shell 脚本](./shell-scripting)。
+继续学习 [系统管理](/docs/linux/system-admin) 和 [Shell 脚本](/docs/linux/shell-scripting)。

@@ -477,4 +477,4 @@ echo "Application started on port \\${PORT}"
 - **灵活注入** - 支持多种方式注入配置属性
 - **易于部署** - 简单的部署脚本和命令行参数支持
 
-下一步学习 [Web 开发](./web-development)。
+下一步学习 [Web 开发](/docs/springboot/web-development)。

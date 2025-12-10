@@ -674,6 +674,6 @@ JDK 21 带来了许多革命性的特性:
 
 继续学习其他 Java 核心主题:
 
-- [多线程编程](./multithreading)
-- [JVM 基础](./jvm-basics)
-- [性能优化](./performance)
+- [多线程编程](/docs/java/multithreading)
+- [JVM 基础](/docs/java/jvm-basics)
+- [性能优化](/docs/java/performance)

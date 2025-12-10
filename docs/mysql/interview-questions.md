@@ -469,4 +469,4 @@ ALTER TABLE users ADD INDEX idx_age (age) ALGORITHM=INPLACE, LOCK=NONE;
 - ✅ 性能优化：慢查询、回表、分页优化
 - ✅ 高级主题：分库分表、主从复制
 
-建议结合 [基础概念](./basic-concepts)、[索引优化](./indexes)、[事务处理](./transactions) 等文档深入学习！
+建议结合 [基础概念](/docs/mysql/basic-concepts)、[索引优化](/docs/mysql/indexes)、[事务处理](/docs/mysql/transactions) 等文档深入学习！

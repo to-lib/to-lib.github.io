@@ -1142,4 +1142,4 @@ public class UserService {
 - ✅ 抽象类和接口的使用
 - ✅ 内部类的各种形式
 
-掌握这些概念后，可以继续学习 [集合框架](./collections) 和 [异常处理](./exception-handling)。
+掌握这些概念后，可以继续学习 [集合框架](/docs/java/collections) 和 [异常处理](/docs/java/exception-handling)。

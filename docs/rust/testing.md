@@ -664,4 +664,4 @@ jobs:
 4. 遵循 AAA 模式组织测试
 5. 使用 CI/CD 自动化测试
 
-掌握测试后,继续学习 [宏编程](./macros) 或 [最佳实践](./best-practices)。
+掌握测试后,继续学习 [宏编程](/docs/rust/macros) 或 [最佳实践](/docs/rust/best-practices)。

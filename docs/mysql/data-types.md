@@ -382,4 +382,4 @@ CREATE TABLE users (
 - ✅ 时间：记录时间用 TIMESTAMP，业务日期用 DATE
 - ✅ JSON：存储灵活的结构化数据
 
-掌握数据类型选择后，可以继续学习 [SQL 语法](./sql-syntax) 和 [索引优化](./indexes)！
+掌握数据类型选择后，可以继续学习 [SQL 语法](/docs/mysql/sql-syntax) 和 [索引优化](/docs/mysql/indexes)！

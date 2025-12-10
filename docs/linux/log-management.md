@@ -585,4 +585,4 @@ sudo chmod 640 /var/log/syslog
 - ✅ 应用日志管理
 - ✅ 日志分析和远程日志
 
-继续学习 [磁盘管理](./disk-management) 和 [性能优化](./performance-tuning)。
+继续学习 [磁盘管理](/docs/linux/disk-management) 和 [性能优化](/docs/linux/performance-tuning)。

@@ -532,7 +532,7 @@ Vehicle.checkLicense();  // 检查驾驶证（调用静态方法）
 
 ## 新的日期时间 API
 
-详见 [日期时间 API](./date-time) 文档。
+详见 [日期时间 API](/docs/java/date-time) 文档。
 
 ## 其他新特性
 

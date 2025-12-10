@@ -760,4 +760,4 @@ spring:
 - 安全和性能同样重要
 - 持续优化和改进
 
-**下一步**: 学习 [FAQ 常见问题](./faq)
+**下一步**: 学习 [FAQ 常见问题](/docs/springcloud-alibaba/faq)

@@ -923,4 +923,4 @@ fn main() {
 - ✅ 常用 Trait
 - ✅ Trait 对象
 
-掌握泛型和 Trait 后，继续学习 [并发编程](./concurrency)。
+掌握泛型和 Trait 后，继续学习 [并发编程](/docs/rust/concurrency)。

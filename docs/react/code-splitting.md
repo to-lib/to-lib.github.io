@@ -89,4 +89,4 @@ const Button = lazy(() => import("./Button")); // 不推荐
 
 ---
 
-**相关主题**：[性能优化](./performance-optimization)
+**相关主题**：[性能优化](/docs/react/performance-optimization)

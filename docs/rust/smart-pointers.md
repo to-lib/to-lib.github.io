@@ -945,4 +945,4 @@ fn main() {
 4. `RefCell<T>` 提供内部可变性
 5. `Weak<T>` 避免循环引用导致的内存泄漏
 
-掌握智能指针后,继续学习 [并发编程](./concurrency) 和 [生命周期](./lifetimes)。
+掌握智能指针后,继续学习 [并发编程](/docs/rust/concurrency) 和 [生命周期](/docs/rust/lifetimes)。

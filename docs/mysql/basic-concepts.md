@@ -398,4 +398,4 @@ CREATE TABLE products (
 - ✅ 数据库和表的基本操作
 - ✅ 最佳实践和设计规范
 
-掌握这些基础知识后，你就可以开始学习 [数据类型](./data-types) 和 [SQL 语法](./sql-syntax) 了！
+掌握这些基础知识后，你就可以开始学习 [数据类型](/docs/mysql/data-types) 和 [SQL 语法](/docs/mysql/sql-syntax) 了！

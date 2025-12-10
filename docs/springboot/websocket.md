@@ -417,4 +417,4 @@ public class AuthChannelInterceptor implements ChannelInterceptor {
 - **SockJS** - WebSocket 降级方案
 - **实时场景** - 聊天、通知、协作、游戏等
 
-下一步学习 [Docker 容器化](./docker)。
+下一步学习 [Docker 容器化](/docs/springboot/docker)。

@@ -427,4 +427,4 @@ future.addListener((ChannelFutureListener) f -> {
 - [相关博客和教程](https://github.com/netty/netty/wiki)
 
 ---
-[返回首页](./index)
+[返回首页](/docs/netty/index)

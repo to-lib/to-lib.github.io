@@ -661,4 +661,4 @@ public void handleUserCreated(UserCreatedEvent event) {
 - 事务相关用 @TransactionalEventListener
 - 保持事件对象不可变
 
-**下一步**：学习 [AOP 详解](./aop)
+**下一步**：学习 [AOP 详解](/docs/spring/aop)

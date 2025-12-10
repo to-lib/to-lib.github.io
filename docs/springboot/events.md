@@ -666,4 +666,4 @@ public class UserService {
 - **@TransactionalEventListener** - 事务感知的事件监听
 - **解耦业务逻辑** - 通过事件机制实现模块解耦
 
-下一步学习 [WebSocket 实时通信](./websocket)。
+下一步学习 [WebSocket 实时通信](/docs/springboot/websocket)。

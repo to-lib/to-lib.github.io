@@ -289,12 +289,12 @@ public class MyHandler extends ChannelInboundHandlerAdapter {
 |------|------|
 | **NIO** | Java 非阻塞 I/O，Netty 的基础 |
 | **事件驱动** | 基于事件的异步处理模型 |
-| **[EventLoop](./core-components.md#eventloop)** | 处理 I/O 和任务的线程实体 |
-| **[Channel](./core-components.md#channel)** | 客户端/服务器连接的抽象 |
-| **[Pipeline](./core-components.md#channelpipeline)** | 处理链，串联多个 Handler |
+| **[EventLoop](/docs/netty/core-components.md#eventloop)** | 处理 I/O 和任务的线程实体 |
+| **[Channel](/docs/netty/core-components.md#channel)** | 客户端/服务器连接的抽象 |
+| **[Pipeline](/docs/netty/core-components.md#channelpipeline)** | 处理链，串联多个 Handler |
 | **Handler** | 处理具体业务逻辑的组件 |
 | **ChannelFuture** | 异步操作的结果占位符 |
 | **非阻塞** | 一个线程处理多个连接 |
 
 ---
-[下一章：核心组件](./core-components)
+[下一章：核心组件](/docs/netty/core-components)

@@ -234,4 +234,4 @@ function Layout() {
 
 ---
 
-**下一步**：学习 [状态管理](./state-management) 管理全局状态，或查看 [TypeScript](./typescript) 提升代码质量。
+**下一步**：学习 [状态管理](/docs/react/state-management) 管理全局状态，或查看 [TypeScript](/docs/react/typescript) 提升代码质量。

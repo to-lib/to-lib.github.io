@@ -569,4 +569,4 @@ function App() {
 
 ---
 
-**下一步**：学习 [组件组合模式](./composition-patterns) 掌握高级组件设计，或查看 [性能优化](./performance-optimization) 提升应用性能。
+**下一步**：学习 [组件组合模式](/docs/react/composition-patterns) 掌握高级组件设计，或查看 [性能优化](/docs/react/performance-optimization) 提升应用性能。

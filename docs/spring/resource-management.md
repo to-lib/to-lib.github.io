@@ -550,4 +550,4 @@ public class ResourceCleanupService {
 - 使用 try-with-resources 自动关闭流
 - @Value 可以直接注入资源对象
 
-**下一步**：学习 [Spring 最佳实践](./best-practices)
+**下一步**：学习 [Spring 最佳实践](/docs/spring/best-practices)

@@ -555,4 +555,4 @@ DELIMITER ;
 - ✅ MVCC 多版本并发控制
 - ✅ 事务日志：Undo Log、Redo Log、Binlog
 
-掌握事务处理后，可以继续学习 [性能优化](./performance-optimization)！
+掌握事务处理后，可以继续学习 [性能优化](/docs/mysql/performance-optimization)！

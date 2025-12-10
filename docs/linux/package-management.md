@@ -626,4 +626,4 @@ sudo rpm --rebuilddb
 - ✅ 从源码编译安装
 - ✅ 包创建和版本管理
 
-继续学习 [系统管理](./system-admin) 和 [文本编辑器](./text-editors)。
+继续学习 [系统管理](/docs/linux/system-admin) 和 [文本编辑器](/docs/linux/text-editors)。

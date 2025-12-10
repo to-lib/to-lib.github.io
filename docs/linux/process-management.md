@@ -456,4 +456,4 @@ username hard nofile 8192
 - ✅ 计划任务（cron、at）
 - ✅ 进程监控和性能分析
 
-继续学习 [用户和组管理](./users-groups) 和 [网络配置](./networking)。
+继续学习 [用户和组管理](/docs/linux/users-groups) 和 [网络配置](/docs/linux/networking)。

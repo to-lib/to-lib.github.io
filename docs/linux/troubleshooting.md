@@ -508,4 +508,4 @@ journalctl -p crit
 - ✅ 服务问题（启动失败、重启）
 - ✅ 日志分析和调试
 
-继续学习 [最佳实践](./best-practices) 和 [快速参考](./quick-reference)。
+继续学习 [最佳实践](/docs/linux/best-practices) 和 [快速参考](/docs/linux/quick-reference)。

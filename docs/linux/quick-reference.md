@@ -481,4 +481,4 @@ $                      # 变量
 - ✅ 系统监控
 - ✅ Shell 技巧
 
-继续学习 [常见问题](./faq) 和 [面试题集](./interview-questions)。
+继续学习 [常见问题](/docs/linux/faq) 和 [面试题集](/docs/linux/interview-questions)。

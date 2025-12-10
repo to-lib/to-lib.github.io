@@ -756,4 +756,4 @@ try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("larg
 - ✅ File 类：文件和目录操作
 - ✅ NIO：Path、Files、WatchService
 
-掌握 IO 流后，继续学习 [泛型](./generics) 和 [函数式编程](./functional-programming)。
+掌握 IO 流后，继续学习 [泛型](/docs/java/generics) 和 [函数式编程](/docs/java/functional-programming)。

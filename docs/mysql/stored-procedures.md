@@ -448,4 +448,4 @@ DELIMITER ;
 - ✅ 自定义函数
 - ✅ 错误处理和事务
 
-继续学习 [视图与触发器](./views-triggers) 和 [备份恢复](./backup-recovery)！
+继续学习 [视图与触发器](/docs/mysql/views-triggers) 和 [备份恢复](/docs/mysql/backup-recovery)！

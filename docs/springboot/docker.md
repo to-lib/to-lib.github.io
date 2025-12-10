@@ -392,4 +392,4 @@ spec:
 - **环境变量** - 配置容器化应用
 - **Kubernetes** - 生产环境容器编排
 
-下一步学习 [文件上传下载](./file-upload)。
+下一步学习 [文件上传下载](/docs/springboot/file-upload)。

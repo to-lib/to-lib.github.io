@@ -515,4 +515,4 @@ sudo logwatch --detail high --mailto admin@example.com --range today
 - ✅ 安全审计和监控
 - ✅ 入侵检测（Fail2ban）
 
-继续学习 [性能优化](./performance-tuning) 和 [故障排查](./troubleshooting)。
+继续学习 [性能优化](/docs/linux/performance-tuning) 和 [故障排查](/docs/linux/troubleshooting)。

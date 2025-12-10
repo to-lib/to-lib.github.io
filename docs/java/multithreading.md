@@ -1556,4 +1556,4 @@ Map<String, Integer> map = new ConcurrentHashMap<>();
 - ✅ 并发工具类：CountDownLatch、CyclicBarrier、Semaphore
 - ✅ 线程安全的集合
 
-掌握多线程后，继续学习 [IO 流](./io-streams) 和 [函数式编程](./functional-programming)。
+掌握多线程后，继续学习 [IO 流](/docs/java/io-streams) 和 [函数式编程](/docs/java/functional-programming)。

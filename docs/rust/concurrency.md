@@ -950,4 +950,4 @@ fn potential_deadlock() {
 4. **异步编程**适用于 I/O 密集型任务
 5. **选择合适的同步原语**优化性能
 
-掌握并发编程后,继续学习 [异步编程详解](./async-programming) 和 [生命周期](./lifetimes)。
+掌握并发编程后,继续学习 [异步编程详解](/docs/rust/async-programming) 和 [生命周期](/docs/rust/lifetimes)。

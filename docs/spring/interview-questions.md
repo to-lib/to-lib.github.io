@@ -42,7 +42,7 @@ public class UserService {
 }
 ```
 
-**延伸：** 参考 [核心概念](./core-concepts)
+**延伸：** 参考 [核心概念](/docs/spring/core-concepts)
 
 ---
 
@@ -98,7 +98,7 @@ public class UserService {
 
 **推荐：** 必需依赖用构造器注入，可选依赖用 Setter 注入
 
-**延伸：** 参考 [依赖注入详解](./dependency-injection)
+**延伸：** 参考 [依赖注入详解](/docs/spring/dependency-injection)
 
 ---
 
@@ -130,7 +130,7 @@ private UserDao userDao;
 private UserDao userDao;
 ```
 
-**延伸：** 参考 [依赖注入](./dependency-injection)
+**延伸：** 参考 [依赖注入](/docs/spring/dependency-injection)
 
 ---
 
@@ -168,7 +168,7 @@ public class OrderService { }
 public class LoginController { }
 ```
 
-**延伸：** 参考 [Bean 管理](./bean-management)
+**延伸：** 参考 [Bean 管理](/docs/spring/bean-management)
 
 ---
 
@@ -229,7 +229,7 @@ public class MyBean implements InitializingBean, DisposableBean {
 }
 ```
 
-**延伸：** 参考 [Bean 管理](./bean-management)
+**延伸：** 参考 [Bean 管理](/docs/spring/bean-management)
 
 ---
 
@@ -276,7 +276,7 @@ public class LoggingAspect {
 }
 ```
 
-**延伸：** 参考 [AOP 详解](./aop)
+**延伸：** 参考 [AOP 详解](/docs/spring/aop)
 
 ---
 
@@ -302,7 +302,7 @@ public class LoggingAspect {
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 ```
 
-**延伸：** 参考 [AOP 详解](./aop)
+**延伸：** 参考 [AOP 详解](/docs/spring/aop)
 
 ---
 
@@ -365,7 +365,7 @@ public class OrderAspect {
 }
 ```
 
-**延伸：** 参考 [AOP 详解](./aop)
+**延伸：** 参考 [AOP 详解](/docs/spring/aop)
 
 ---
 
@@ -412,7 +412,7 @@ public class LogService {
 }
 ```
 
-**延伸：** 参考 [事务管理](./transactions)
+**延伸：** 参考 [事务管理](/docs/spring/transactions)
 
 ---
 
@@ -474,7 +474,7 @@ public void save() throws Exception {
 
 - MyISAM 不支持事务，必须使用 InnoDB
 
-**延伸：** 参考 [常见问题](./faq)
+**延伸：** 参考 [常见问题](/docs/spring/faq)
 
 ---
 
@@ -509,7 +509,7 @@ public void transfer() {
 }
 ```
 
-**延伸：** 参考 [事务管理](./transactions)
+**延伸：** 参考 [事务管理](/docs/spring/transactions)
 
 ---
 
@@ -552,7 +552,7 @@ public class UserController {
 }
 ```
 
-**延伸：** 参考 [Spring MVC](./spring-mvc)
+**延伸：** 参考 [Spring MVC](/docs/spring/spring-mvc)
 
 ---
 
@@ -589,7 +589,7 @@ public List<Order> getUserOrders(@PathVariable Long id,
 }
 ```
 
-**延伸：** 参考 [Spring MVC](./spring-mvc)
+**延伸：** 参考 [Spring MVC](/docs/spring/spring-mvc)
 
 ---
 
@@ -626,7 +626,7 @@ public class EmailSender { }
 
 - 会将数据库异常转换为 Spring 的 DataAccessException
 
-**延伸：** 参考 [核心概念](./core-concepts)
+**延伸：** 参考 [核心概念](/docs/spring/core-concepts)
 
 ---
 
@@ -692,11 +692,11 @@ public class DataSourceAutoConfiguration {
 
 ### 相关资源
 
-- [Spring Framework 学习指南](./index)
-- [核心概念](./core-concepts)
-- [AOP 详解](./aop)
-- [事务管理](./transactions)
-- [最佳实践](./best-practices)
+- [Spring Framework 学习指南](/docs/spring/index)
+- [核心概念](/docs/spring/core-concepts)
+- [AOP 详解](/docs/spring/aop)
+- [事务管理](/docs/spring/transactions)
+- [最佳实践](/docs/spring/best-practices)
 
 ---
 

@@ -357,4 +357,4 @@ curl -I http://example.com
 - ✅ SSH 配置
 - ✅ 网络监控和故障排查
 
-继续学习 [Shell 脚本](./shell-scripting)。
+继续学习 [Shell 脚本](/docs/linux/shell-scripting)。

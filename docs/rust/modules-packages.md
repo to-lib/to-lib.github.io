@@ -643,4 +643,4 @@ path = "src/main.rs"
 4. 工作空间管理多包项目
 5. 遵循发布规范和文档标准
 
-掌握模块和包管理后,继续学习 [异步编程](./async-programming) 或 [宏编程](./macros)。
+掌握模块和包管理后,继续学习 [异步编程](/docs/rust/async-programming) 或 [宏编程](/docs/rust/macros)。

@@ -620,4 +620,4 @@ List<?> list = new ArrayList<>();
 - ✅ 类型擦除
 - ✅ 泛型的实际应用
 
-掌握泛型后，继续学习 [注解](./annotations) 和 [反射](./reflection)。
+掌握泛型后，继续学习 [注解](/docs/java/annotations) 和 [反射](/docs/java/reflection)。

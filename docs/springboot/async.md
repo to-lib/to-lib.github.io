@@ -768,4 +768,4 @@ public class ThreadPoolMonitor {
 - **异步与事务** - 注意事务边界，使用事件监听器
 - **实战场景** - 并行处理、批量处理、定时任务
 
-下一步学习 [事件机制](./events)。
+下一步学习 [事件机制](/docs/springboot/events)。

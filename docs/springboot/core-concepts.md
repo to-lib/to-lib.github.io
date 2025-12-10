@@ -413,4 +413,4 @@ Spring Boot 通过以下机制简化了应用开发：
 4. **开箱即用** - 完整的生产级特性
 5. **灵活可扩展** - 支持自定义配置和扩展
 
-下一步学习 [自动配置详解](./auto-configuration)。
+下一步学习 [自动配置详解](/docs/springboot/auto-configuration)。

@@ -651,4 +651,4 @@ spring:
 - 与 Sentinel 集成实现限流熔断
 - 通过过滤器实现认证、日志等通用功能
 
-**下一步**: 学习 [最佳实践](./best-practices)
+**下一步**: 学习 [最佳实践](/docs/springcloud-alibaba/best-practices)

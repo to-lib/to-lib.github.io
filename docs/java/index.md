@@ -42,11 +42,11 @@ title: Java 编程概述
 
 如果你是 Java 初学者，建议按以下顺序学习：
 
-1. [基础语法](./basic-syntax) - 掌握 Java 基本语法和字符串处理
-2. [面向对象](./oop) - 理解面向对象编程思想、枚举和注解
-3. [集合框架](./collections) - 学习常用数据结构
-4. [异常处理](./exception-handling) - 掌握异常处理机制
-5. [多线程](./multithreading) - 了解并发编程基础
+1. [基础语法](/docs/java/basic-syntax) - 掌握 Java 基本语法和字符串处理
+2. [面向对象](/docs/java/oop) - 理解面向对象编程思想、枚举和注解
+3. [集合框架](/docs/java/collections) - 学习常用数据结构
+4. [异常处理](/docs/java/exception-handling) - 掌握异常处理机制
+5. [多线程](/docs/java/multithreading) - 了解并发编程基础
 
 ## 📖 学习路径
 
@@ -90,23 +90,23 @@ title: Java 编程概述
 
 ## 📚 完整学习资源
 
-| 主题                                   | 描述                                              |
-| -------------------------------------- | ------------------------------------------------- |
-| [基础语法](./basic-syntax)             | 数据类型、变量、运算符、流程控制、字符串处理      |
-| [面向对象](./oop)                      | 类、对象、继承、多态、内部类、枚举、注解          |
-| [集合框架](./collections)              | List、Set、Map 详解和性能对比                     |
-| [异常处理](./exception-handling)       | 异常分类、处理机制、最佳实践                      |
-| [泛型编程](./generics)                 | 泛型类、泛型方法、通配符、类型擦除                |
-| [多线程](./multithreading)             | 线程创建、同步、通信、线程池、并发工具类          |
-| [IO 流](./io-streams)                  | 字节流、字符流、缓冲流、NIO 详解                  |
-| [函数式编程](./functional-programming) | Lambda、Stream API、函数式接口                    |
-| [字符串与日期](./date-time)            | LocalDate、LocalTime、格式化、时间计算            |
-| [反射与注解](./reflection-annotation)  | 反射 API、动态代理、自定义注解                    |
-| [正则表达式](./regex)                  | 正则语法、Pattern、Matcher、常见验证              |
-| [JVM 基础](./jvm-basics)               | JVM 架构、类加载、内存模型、垃圾回收、调优        |
-| [性能优化](./performance)              | 代码优化、并发优化、缓存策略、监控分析            |
-| [JDK 17 新特性](./jdk17-features)      | 密封类、记录类型、模式匹配、文本块、Switch 表达式 |
-| [JDK 21 新特性](./jdk21-features)      | 虚拟线程、序列化集合、增强模式匹配、记录模式      |
+| 主题                                            | 描述                                              |
+| ----------------------------------------------- | ------------------------------------------------- |
+| [基础语法](/docs/java/basic-syntax)             | 数据类型、变量、运算符、流程控制、字符串处理      |
+| [面向对象](/docs/java/oop)                      | 类、对象、继承、多态、内部类、枚举、注解          |
+| [集合框架](/docs/java/collections)              | List、Set、Map 详解和性能对比                     |
+| [异常处理](/docs/java/exception-handling)       | 异常分类、处理机制、最佳实践                      |
+| [泛型编程](/docs/java/generics)                 | 泛型类、泛型方法、通配符、类型擦除                |
+| [多线程](/docs/java/multithreading)             | 线程创建、同步、通信、线程池、并发工具类          |
+| [IO 流](/docs/java/io-streams)                  | 字节流、字符流、缓冲流、NIO 详解                  |
+| [函数式编程](/docs/java/functional-programming) | Lambda、Stream API、函数式接口                    |
+| [字符串与日期](/docs/java/date-time)            | LocalDate、LocalTime、格式化、时间计算            |
+| [反射与注解](/docs/java/reflection-annotation)  | 反射 API、动态代理、自定义注解                    |
+| [正则表达式](/docs/java/regex)                  | 正则语法、Pattern、Matcher、常见验证              |
+| [JVM 基础](/docs/java/jvm-basics)               | JVM 架构、类加载、内存模型、垃圾回收、调优        |
+| [性能优化](/docs/java/performance)              | 代码优化、并发优化、缓存策略、监控分析            |
+| [JDK 17 新特性](/docs/java/jdk17-features)      | 密封类、记录类型、模式匹配、文本块、Switch 表达式 |
+| [JDK 21 新特性](/docs/java/jdk21-features)      | 虚拟线程、序列化集合、增强模式匹配、记录模式      |
 
 ## 🔗 相关资源
 

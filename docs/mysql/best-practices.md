@@ -590,4 +590,4 @@ SHOW GLOBAL STATUS LIKE 'Innodb_buffer_pool_read%';
 - ✅ 性能优化：配置优化、分区、定期维护
 - ✅ 备份监控：备份策略、关键指标监控
 
-继续学习 [常见问题](./faq) 和 [实战案例](./practical-examples)！
+继续学习 [常见问题](/docs/mysql/faq) 和 [实战案例](/docs/mysql/practical-examples)！

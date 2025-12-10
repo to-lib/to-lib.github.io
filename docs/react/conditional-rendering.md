@@ -454,4 +454,4 @@ function App() {
 
 ---
 
-**下一步**: 学习 [列表和 Keys](./lists-and-keys) 了解如何渲染列表，或查看 [Hooks 详解](./hooks) 深入学习 React。
+**下一步**: 学习 [列表和 Keys](/docs/react/lists-and-keys) 了解如何渲染列表，或查看 [Hooks 详解](/docs/react/hooks) 深入学习 React。

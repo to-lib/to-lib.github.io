@@ -557,4 +557,4 @@ CREATE TABLE new_table (
 - ✅ 备份恢复：备份方法、数据恢复
 - ✅ 主从复制：延迟、中断处理
 
-继续学习 [快速参考](./quick-reference) 和 [实战案例](./practical-examples)！
+继续学习 [快速参考](/docs/mysql/quick-reference) 和 [实战案例](/docs/mysql/practical-examples)！

@@ -36,7 +36,7 @@ Redis Sentinel（哨兵）是 Redis 官方提供的高可用解决方案，用�
 
 ### 1. 准备 Redis 主从
 
-首先配置一个主从架构（参考[主从复制](./replication)章节）。
+首先配置一个主从架构（参考[主从复制](/docs/redis/replication)章节）。
 
 ### 2. 配置哨兵
 

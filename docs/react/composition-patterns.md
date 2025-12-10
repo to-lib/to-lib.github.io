@@ -436,4 +436,4 @@ function Button({ variant, ...props }) {
 
 ---
 
-**下一步**：学习 [React Router](./react-router) 管理应用路由，或查看 [状态管理](./state-management) 了解全局状态方案。
+**下一步**：学习 [React Router](/docs/react/react-router) 管理应用路由，或查看 [状态管理](/docs/react/state-management) 了解全局状态方案。

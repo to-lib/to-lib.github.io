@@ -491,4 +491,4 @@ function VirtualList({ items }) {
 
 ---
 
-**下一步**: 学习 [Context API](./context) 了解跨组件状态管理，或查看 [性能优化](./performance-optimization) 提升应用性能。
+**下一步**: 学习 [Context API](/docs/react/context) 了解跨组件状态管理，或查看 [性能优化](/docs/react/performance-optimization) 提升应用性能。

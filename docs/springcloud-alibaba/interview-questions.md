@@ -561,4 +561,4 @@ private UserService userService;
 - 主动扩展相关知识点
 - 诚实面对不懂的问题
 
-**下一步**: 继续学习 [FAQ 常见问题](./faq)
+**下一步**: 继续学习 [FAQ 常见问题](/docs/springcloud-alibaba/faq)

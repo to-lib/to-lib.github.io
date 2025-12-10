@@ -372,4 +372,4 @@ chmod 6755 file
 - ✅ sudo 权限提升
 - ✅ 权限最佳实践
 
-继续学习 [进程管理](./process-management) 和 [用户和组管理](./users-groups)。
+继续学习 [进程管理](/docs/linux/process-management) 和 [用户和组管理](/docs/linux/users-groups)。

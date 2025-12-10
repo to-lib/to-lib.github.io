@@ -447,4 +447,4 @@ sort < input.txt
 - ✅ 系统信息查看
 - ✅ 网络基本操作
 
-继续学习 [文件系统](./file-system) 和 [权限管理](./permissions)。
+继续学习 [文件系统](/docs/linux/file-system) 和 [权限管理](/docs/linux/permissions)。

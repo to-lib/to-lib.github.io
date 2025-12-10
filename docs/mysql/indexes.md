@@ -497,4 +497,4 @@ OPTIMIZE TABLE users;
 - ✅ EXPLAIN 执行计划分析
 - ✅ 实战优化案例
 
-掌握索引优化后，可以继续学习 [事务处理](./transactions) 和 [性能优化](./performance-optimization)！
+掌握索引优化后，可以继续学习 [事务处理](/docs/mysql/transactions) 和 [性能优化](/docs/mysql/performance-optimization)！

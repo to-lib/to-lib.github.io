@@ -518,4 +518,4 @@ spec:
 - 链路追踪定位问题
 - 多级防护保证稳定性
 
-**下一步**: 学习 [版本升级指南](./migration-guide)
+**下一步**: 学习 [版本升级指南](/docs/springcloud-alibaba/migration-guide)

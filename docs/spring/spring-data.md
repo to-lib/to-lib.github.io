@@ -592,4 +592,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
 - 合理使用分页和排序
 - 利用审计功能追踪变更
 
-**下一步**：学习 [Spring 事务管理](./transactions)
+**下一步**：学习 [Spring 事务管理](/docs/spring/transactions)

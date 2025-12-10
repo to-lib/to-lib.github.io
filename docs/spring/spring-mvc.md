@@ -600,4 +600,4 @@ public String uploadFiles(@RequestParam("files") MultipartFile[] files) {
 
 ---
 
-**下一步**：探索更多[Spring特性](./core-concepts)
+**下一步**：探索更多[Spring特性](/docs/spring/core-concepts)

@@ -6,32 +6,32 @@ sidebar_position: 1
 
 # Spring Cloud 学习指南
 
-> [!TIP] > **微服务架构基础**: Spring Cloud 是构建微服务架构的完整工具集。掌握服务注册发现、配置管理、API 网关是微服务开发的关键，建议从 [核心概念](./core-concepts) 开始学习。
+> [!TIP] > **微服务架构基础**: Spring Cloud 是构建微服务架构的完整工具集。掌握服务注册发现、配置管理、API 网关是微服务开发的关键，建议从 [核心概念](/docs/springcloud/core-concepts) 开始学习。
 
 ## 📚 学习路径
 
 ### 基础部分
 
-- **[核心概念](./core-concepts)** - 微服务架构、服务治理、Spring Cloud 组件体系
-- **[Eureka 服务注册与发现](./eureka)** - 服务注册、服务发现、高可用配置
-- **[Config 配置中心](./config)** - 集中配置管理、动态刷新、配置加密
+- **[核心概念](/docs/springcloud/core-concepts)** - 微服务架构、服务治理、Spring Cloud 组件体系
+- **[Eureka 服务注册与发现](/docs/springcloud/eureka)** - 服务注册、服务发现、高可用配置
+- **[Config 配置中心](/docs/springcloud/config)** - 集中配置管理、动态刷新、配置加密
 
 ### 核心组件
 
-- **[Gateway API 网关](./gateway)** - 路由配置、过滤器、限流熔断
-- **[Feign 声明式调用](./feign)** - HTTP 客户端、服务调用、负载均衡
-- **[Ribbon 负载均衡](./ribbon)** - 负载均衡策略、自定义配置
+- **[Gateway API 网关](/docs/springcloud/gateway)** - 路由配置、过滤器、限流熔断
+- **[Feign 声明式调用](/docs/springcloud/feign)** - HTTP 客户端、服务调用、负载均衡
+- **[Ribbon 负载均衡](/docs/springcloud/ribbon)** - 负载均衡策略、自定义配置
 
 ### 现代组件 (推荐)
 
-- **[LoadBalancer 负载均衡](./loadbalancer)** - 现代客户端负载均衡器
-- **[Resilience4j 容错](./resilience4j)** - 轻量级容错库 (熔断、限流、重试)
-- **[Stream 消息驱动](./stream)** - 消息驱动微服务 (RabbitMQ/Kafka)
+- **[LoadBalancer 负载均衡](/docs/springcloud/loadbalancer)** - 现代客户端负载均衡器
+- **[Resilience4j 容错](/docs/springcloud/resilience4j)** - 轻量级容错库 (熔断、限流、重试)
+- **[Stream 消息驱动](/docs/springcloud/stream)** - 消息驱动微服务 (RabbitMQ/Kafka)
 
 ### 高级特性
 
-- **[Hystrix 熔断器](./hystrix)** - (维护模式) 服务降级、熔断、限流、隔离
-- **[Sleuth 链路追踪](./sleuth)** - 分布式追踪、日志关联、性能分析
+- **[Hystrix 熔断器](/docs/springcloud/hystrix)** - (维护模式) 服务降级、熔断、限流、隔离
+- **[Sleuth 链路追踪](/docs/springcloud/sleuth)** - 分布式追踪、日志关联、性能分析
 
 ## 🎯 核心组件速览
 
@@ -109,7 +109,7 @@ Spring Cloud 官方推荐的客户端负载均衡器，支持响应式编程，�
 
 ## 🚀 下一步
 
-选择上面的任意主题开始学习，建议按照学习路径的顺序进行学习。如果你已经熟悉 Spring Boot，可以直接从 [Eureka](./eureka) 或 [Gateway](./gateway) 开始。
+选择上面的任意主题开始学习，建议按照学习路径的顺序进行学习。如果你已经熟悉 Spring Boot，可以直接从 [Eureka](/docs/springcloud/eureka) 或 [Gateway](/docs/springcloud/gateway) 开始。
 
 对于国内项目，也可以考虑学习 **Spring Cloud Alibaba**，它提供了更适合国内场景的解决方案。
 

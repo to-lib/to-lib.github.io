@@ -8,7 +8,7 @@ sidebar_position: 97
 # Spring Framework 常见问题解答
 
 > [!TIP]
-> **快速查找**: 使用 Ctrl+F 搜索关键词快速定位问题。如未找到解答，请查看 [最佳实践](./best-practices) 或 [官方文档](https://spring.io/projects/spring-framework)。
+> **快速查找**: 使用 Ctrl+F 搜索关键词快速定位问题。如未找到解答，请查看 [最佳实践](/docs/spring/best-practices) 或 [官方文档](https://spring.io/projects/spring-framework)。
 
 ### Q1: 什么时候应该使用@Autowired？
 
@@ -643,6 +643,6 @@ public class UserService {
 
 **相关文档**：
 
-- [核心概念](./core-concepts)
-- [依赖注入](./dependency-injection)
-- [最佳实践](./best-practices)
+- [核心概念](/docs/spring/core-concepts)
+- [依赖注入](/docs/spring/dependency-injection)
+- [最佳实践](/docs/spring/best-practices)

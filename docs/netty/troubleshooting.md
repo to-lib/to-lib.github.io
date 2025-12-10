@@ -19,7 +19,7 @@ sidebar_position: 8
 
 **常见原因：**
 
-1. [ByteBuf](./bytebuf) 没有正确释放
+1. [ByteBuf](/docs/netty/bytebuf) 没有正确释放
 2. Handler 中接收的消息没有传播给下一个 Handler
 
 **解决方案：**
@@ -66,7 +66,7 @@ public class MyHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
 **常见原因：**
 
-1. 在 [EventLoop](./core-components.md#eventloop) 线程中执行阻塞操作
+1. 在 [EventLoop](/docs/netty/core-components.md#eventloop) 线程中执行阻塞操作
 2. 事件处理链过长
 3. 消息处理效率低
 
@@ -505,4 +505,4 @@ public class MonitoringMetrics {
 ```
 
 ---
-[下一章：快速参考](./quick-reference)
+[下一章：快速参考](/docs/netty/quick-reference)

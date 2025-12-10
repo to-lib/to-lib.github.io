@@ -553,4 +553,4 @@ function ContactForm() {
 
 ---
 
-**下一步**: 了解 [Props 和 State](./props-and-state) 学习组件数据管理，或查看 [事件处理](./event-handling) 了解用户交互。
+**下一步**: 了解 [Props 和 State](/docs/react/props-and-state) 学习组件数据管理，或查看 [事件处理](/docs/react/event-handling) 了解用户交互。

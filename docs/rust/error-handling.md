@@ -691,4 +691,4 @@ fn get_user(id: u32) -> User {
 - ✅ 错误上下文:anyhow crate、自定义上下文
 - ✅ 错误恢复策略:重试模式、降级模式
 
-掌握错误处理后，继续学习 [泛型和 Trait](./generics-traits)。
+掌握错误处理后，继续学习 [泛型和 Trait](/docs/rust/generics-traits)。

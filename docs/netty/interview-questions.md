@@ -35,7 +35,7 @@ title: Netty 面试题精选
 - 游戏服务器
 - 即时通讯
 
-**延伸：** 参考 [Netty 概览](./overview)
+**延伸：** 参考 [Netty 概览](/docs/netty/overview)
 
 ---
 
@@ -80,7 +80,7 @@ while (true) {
 - 也支持 Epoll（Linux）、KQueue（Mac）等更高效的实现
 - 不使用 AIO，因为 Linux 的 AIO 实现并不成熟
 
-**延伸：** 参考 [基础知识](./basics)
+**延伸：** 参考 [基础知识](/docs/netty/basics)
 
 ---
 
@@ -133,7 +133,7 @@ bootstrap.group(bossGroup, workerGroup)
 - 避免线程频繁切换
 - 一个连接只由一个线程处理，避免并发问题
 
-**延伸：** 参考 [核心组件 - EventLoop](./core-components#eventloop)
+**延伸：** 参考 [核心组件 - EventLoop](/docs/netty/core-components#eventloop)
 
 ---
 
@@ -175,7 +175,7 @@ bootstrap.group(bossGroup, workerGroup)
 Client → Channel → EventLoop → Pipeline → Handler1 → Handler2 → ...
 ```
 
-**延伸：** 参考 [核心组件详解](./core-components)
+**延伸：** 参考 [核心组件详解](/docs/netty/core-components)
 
 ---
 
@@ -218,7 +218,7 @@ pipeline.addLast("encoder", new StringEncoder());     // 出站：编码
 // 业务数据 → StringEncoder → ByteBuf → 网络
 ```
 
-**延伸：** 参考 [核心组件 - Pipeline](./core-components#channelpipeline)
+**延伸：** 参考 [核心组件 - Pipeline](/docs/netty/core-components#channelpipeline)
 
 ---
 
@@ -263,7 +263,7 @@ try {
 }
 ```
 
-**延伸：** 参考 [ByteBuf 详解](./bytebuf)
+**延伸：** 参考 [ByteBuf 详解](/docs/netty/bytebuf)
 
 ---
 
@@ -332,7 +332,7 @@ public class MyDecoder extends ByteToMessageDecoder {
 }
 ```
 
-**延伸：** 参考 [编解码](./codec)
+**延伸：** 参考 [编解码](/docs/netty/codec)
 
 ---
 
@@ -386,7 +386,7 @@ public class JsonDecoder extends MessageToMessageDecoder<String> {
 }
 ```
 
-**延伸：** 参考 [编解码详解](./codec)
+**延伸：** 参考 [编解码详解](/docs/netty/codec)
 
 ---
 
@@ -437,7 +437,7 @@ ctx.writeAndFlush(region);
 零拷贝：硬盘 → 内核缓冲区 → 网卡  （减少2次拷贝）
 ```
 
-**延伸：** 参考 [高级特性](./advanced)
+**延伸：** 参考 [高级特性](/docs/netty/advanced)
 
 ---
 
@@ -484,7 +484,7 @@ buf.release();  // 计数归零，归还内存池
 - 避免内存泄漏检测警告
 - 使用 `ResourceLeakDetector` 检测泄漏
 
-**延伸：** 参考 [高级特性](./advanced)
+**延伸：** 参考 [高级特性](/docs/netty/advanced)
 
 ---
 
@@ -534,7 +534,7 @@ Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 }));
 ```
 
-**延伸：** 参考 [最佳实践](./best-practices)
+**延伸：** 参考 [最佳实践](/docs/netty/best-practices)
 
 ---
 
@@ -588,7 +588,7 @@ if (msg instanceof PingMessage) {
 }
 ```
 
-**延伸：** 参考 [实战示例](./practical-examples)
+**延伸：** 参考 [实战示例](/docs/netty/practical-examples)
 
 ---
 
@@ -612,11 +612,11 @@ if (msg instanceof PingMessage) {
 
 ### 相关资源
 
-- [Netty 学习指南](./index)
-- [核心组件详解](./core-components)
-- [ByteBuf 深入](./bytebuf)
-- [高级特性](./advanced)
-- [实战示例](./practical-examples)
+- [Netty 学习指南](/docs/netty/index)
+- [核心组件详解](/docs/netty/core-components)
+- [ByteBuf 深入](/docs/netty/bytebuf)
+- [高级特性](/docs/netty/advanced)
+- [实战示例](/docs/netty/practical-examples)
 
 ---
 

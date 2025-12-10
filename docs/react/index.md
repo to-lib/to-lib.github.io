@@ -53,20 +53,20 @@ React 是一个用于构建用户界面的 JavaScript 库：
 
 ### 🔰 基础部分
 
-- **[快速开始](./getting-started)** - 创建第一个 React 应用
+- **[快速开始](/docs/react/getting-started)** - 创建第一个 React 应用
 - **Hooks 详解** - useState、useEffect、自定义 Hooks（参见下方）
 
 ### 🎓 核心特性
 
-- **[Hooks 详解](./hooks)** - useState、useEffect、自定义 Hooks、React 19 新 Hooks
+- **[Hooks 详解](/docs/react/hooks)** - useState、useEffect、自定义 Hooks、React 19 新 Hooks
 
 ### 🚀 React 19 新特性
 
-- **[React 19 新特性](./react19-features)** - Server Components、Actions、新 Hooks 详解
+- **[React 19 新特性](/docs/react/react19-features)** - Server Components、Actions、新 Hooks 详解
 
 ### 💡 实战部分
 
-- **[面试题精选](./interview-questions)** - React 面试题库
+- **[面试题精选](/docs/react/interview-questions)** - React 面试题库
 
 ## 🎯 学习建议
 
@@ -173,7 +173,7 @@ npm run dev
 
 ---
 
-**准备好了吗？** 让我们从 [快速开始](./getting-started) 开始您的 React 学习之旅！
+**准备好了吗？** 让我们从 [快速开始](/docs/react/getting-started) 开始您的 React 学习之旅！
 
 ## 📝 更新日志
 

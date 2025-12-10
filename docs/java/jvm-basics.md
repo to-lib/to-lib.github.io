@@ -569,4 +569,4 @@ public class JVMMonitoring {
 - ✅ 垃圾回收算法和回收器
 - ✅ JVM 调优参数和监控工具
 
-理解 JVM 原理有助于编写高性能、可靠的 Java 应用。下一步可以学习 [性能优化](./performance) 相关内容。
+理解 JVM 原理有助于编写高性能、可靠的 Java 应用。下一步可以学习 [性能优化](/docs/java/performance) 相关内容。

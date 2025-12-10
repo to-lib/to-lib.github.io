@@ -56,4 +56,4 @@ src/
 
 ---
 
-**了解更多**：查看 [最佳实践](./best-practices)
+**了解更多**：查看 [最佳实践](/docs/react/best-practices)

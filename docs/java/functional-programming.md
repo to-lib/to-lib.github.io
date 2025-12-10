@@ -653,4 +653,4 @@ bigList.parallelStream().map(expensiveOperation).collect(Collectors.toList());
 - ✅ 并行流
 - ✅ Optional 类
 
-掌握函数式编程后，可以继续学习 [注解](./annotations) 和 [反射](./reflection)。
+掌握函数式编程后，可以继续学习 [注解](/docs/java/annotations) 和 [反射](/docs/java/reflection)。

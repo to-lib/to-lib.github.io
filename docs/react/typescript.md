@@ -252,4 +252,4 @@ function UserProfile({ userId }: { userId: number }) {
 
 ---
 
-**下一步**：学习 [测试](./testing) 保证代码质量，或查看 [SSR/Next.js](./ssr-nextjs) 了解服务端渲染。
+**下一步**：学习 [测试](/docs/react/testing) 保证代码质量，或查看 [SSR/Next.js](/docs/react/ssr-nextjs) 了解服务端渲染。

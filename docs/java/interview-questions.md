@@ -20,7 +20,7 @@ title: Java 面试题精选
   - 字符型：`char`(2 字节)
   - 布尔型：`boolean`(理论上 1 位，实际 JVM 实现可能占 1 字节)
 
-**延伸：** 参考 [基础语法 - 数据类型](./basic-syntax#数据类型)
+**延伸：** 参考 [基础语法 - 数据类型](/docs/java/basic-syntax#数据类型)
 
 ---
 
@@ -41,7 +41,7 @@ System.out.println(s1 == s2);        // false (不同对象)
 System.out.println(s1.equals(s2));   // true (内容相同)
 ```
 
-**延伸：** 参考 [基础语法 - 字符串创建和操作](./basic-syntax#字符串创建和操作)
+**延伸：** 参考 [基础语法 - 字符串创建和操作](/docs/java/basic-syntax#字符串创建和操作)
 
 ---
 
@@ -69,7 +69,7 @@ for (int i = 0; i < 10000; i++) {
 }
 ```
 
-**延伸：** 参考 [基础语法 - 字符串详解](./basic-syntax#字符串详解)
+**延伸：** 参考 [基础语法 - 字符串详解](/docs/java/basic-syntax#字符串详解)
 
 ---
 
@@ -90,7 +90,7 @@ Animal animal = new Dog();  // 父类引用指向子类对象
 animal.makeSound();         // 运行时调用Dog的实现
 ```
 
-**延伸：** 参考 [面向对象编程](./oop)
+**延伸：** 参考 [面向对象编程](/docs/java/oop)
 
 ---
 
@@ -112,7 +112,7 @@ animal.makeSound();         // 运行时调用Dog的实现
 - 抽象类：表示"是一个"（is-a）关系，有共同实现
 - 接口：表示"具有某能力"（can-do）关系，定义规范
 
-**延伸：** 参考 [面向对象 - 抽象类与接口](./oop#抽象类)
+**延伸：** 参考 [面向对象 - 抽象类与接口](/docs/java/oop#抽象类)
 
 ---
 
@@ -153,7 +153,7 @@ class Dog extends Animal {
 }
 ```
 
-**延伸：** 参考 [面向对象 - 多态](./oop#多态)
+**延伸：** 参考 [面向对象 - 多态](/docs/java/oop#多态)
 
 ---
 
@@ -184,7 +184,7 @@ linkedList.addFirst(1);  // 快速
 linkedList.addLast(2);   // 快速
 ```
 
-**延伸：** 参考 [集合框架 - List](./collections#list-接口)
+**延伸：** 参考 [集合框架 - List](/docs/java/collections#list-接口)
 
 ---
 
@@ -221,7 +221,7 @@ map.put("banana", 2);
 // 当元素数量达到 16 * 0.75 = 12 时会扩容到32
 ```
 
-**延伸：** 参考 [集合框架 - HashMap 详解](./collections#hashmap)
+**延伸：** 参考 [集合框架 - HashMap 详解](/docs/java/collections#hashmap)
 
 ---
 
@@ -250,7 +250,7 @@ Map<String, Integer> hashMap = new HashMap<>();
 Map<String, Integer> concurrentMap = new ConcurrentHashMap<>();
 ```
 
-**延伸：** 参考 [多线程 - 并发集合](./multithreading#3-使用并发集合)
+**延伸：** 参考 [多线程 - 并发集合](/docs/java/multithreading#3-使用并发集合)
 
 ---
 
@@ -277,7 +277,7 @@ public class HashSet<E> {
 
 **重要：** 自定义对象需要重写 `hashCode()` 和 `equals()` 方法
 
-**延伸：** 参考 [集合框架 - Set](./collections#set-接口)
+**延伸：** 参考 [集合框架 - Set](/docs/java/collections#set-接口)
 
 ---
 
@@ -332,7 +332,7 @@ ExecutorService executor = Executors.newFixedThreadPool(5);
 executor.submit(() -> System.out.println("Task running"));
 ```
 
-**延伸：** 参考 [多线程 - 线程创建](./multithreading#创建线程的方式)
+**延伸：** 参考 [多线程 - 线程创建](/docs/java/multithreading#创建线程的方式)
 
 ---
 
@@ -371,7 +371,7 @@ public void method() {
 }
 ```
 
-**延伸：** 参考 [多线程 - 线程同步](./multithreading#线程同步)
+**延伸：** 参考 [多线程 - 线程同步](/docs/java/multithreading#线程同步)
 
 ---
 
@@ -416,7 +416,7 @@ public void increment() {
 }
 ```
 
-**延伸：** 参考 [多线程 - volatile 详解](./multithreading)
+**延伸：** 参考 [多线程 - volatile 详解](/docs/java/multithreading)
 
 ---
 
@@ -452,7 +452,7 @@ public ThreadPoolExecutor(
 - `DiscardPolicy`：直接丢弃
 - `DiscardOldestPolicy`：丢弃最老的任务
 
-**延伸：** 参考 [多线程 - 线程池](./multithreading#线程池)
+**延伸：** 参考 [多线程 - 线程池](/docs/java/multithreading#线程池)
 
 ---
 
@@ -488,7 +488,7 @@ public ThreadPoolExecutor(
    - 线程共享，存储类信息、常量、静态变量
    - OutOfMemoryError: Metaspace
 
-**延伸：** 参考 [JVM 基础 - 内存模型](./jvm-basics#内存模型)
+**延伸：** 参考 [JVM 基础 - 内存模型](/docs/java/jvm-basics#内存模型)
 
 ---
 
@@ -517,7 +517,7 @@ public ThreadPoolExecutor(
 - 新生代：复制算法
 - 老年代：标记-清除或标记-整理
 
-**延伸：** 参考 [JVM 基础 - 垃圾回收](./jvm-basics#垃圾回收gc)
+**延伸：** 参考 [JVM 基础 - 垃圾回收](/docs/java/jvm-basics#垃圾回收gc)
 
 ---
 
@@ -548,7 +548,7 @@ public void divide(int a, int b) {
 }
 ```
 
-**延伸：** 参考 [异常处理](./exception-handling)
+**延伸：** 参考 [异常处理](/docs/java/exception-handling)
 
 ---
 
@@ -575,7 +575,7 @@ public int test() {
 
 **最佳实践：** 不要在 finally 中使用 return
 
-**延伸：** 参考 [异常处理 - try-catch-finally](./exception-handling#try-catch-finally)
+**延伸：** 参考 [异常处理 - try-catch-finally](/docs/java/exception-handling#try-catch-finally)
 
 ---
 
@@ -616,7 +616,7 @@ while (true) {
 }
 ```
 
-**延伸：** 参考 [IO 流 - NIO 详解](./io-streams#nio-new-io)
+**延伸：** 参考 [IO 流 - NIO 详解](/docs/java/io-streams#nio-new-io)
 
 ---
 
@@ -654,7 +654,7 @@ list.forEach(new Consumer<String>() {
 list.forEach(s -> System.out.println(s));
 ```
 
-**延伸：** 参考 [函数式编程 - Lambda 表达式](./functional-programming#lambda-表达式)
+**延伸：** 参考 [函数式编程 - Lambda 表达式](/docs/java/functional-programming#lambda-表达式)
 
 ---
 
@@ -676,10 +676,10 @@ list.forEach(s -> System.out.println(s));
 
 ### 相关资源
 
-- [Java 编程完整指南](./index)
-- [多线程详解](./multithreading)
-- [JVM 基础](./jvm-basics)
-- [集合框架](./collections)
+- [Java 编程完整指南](/docs/java/index)
+- [多线程详解](/docs/java/multithreading)
+- [JVM 基础](/docs/java/jvm-basics)
+- [集合框架](/docs/java/collections)
 - [设计模式面试题](../java-design-patterns/interview-questions)
 
 ---

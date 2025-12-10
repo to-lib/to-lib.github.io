@@ -521,4 +521,4 @@ function MultiStepForm() {
 
 ---
 
-**下一步**: 查看 [样式方案](./styling) 了解如何为表单添加样式，或学习 [TypeScript](./typescript) 为表单添加类型安全。
+**下一步**: 查看 [样式方案](/docs/react/styling) 了解如何为表单添加样式，或学习 [TypeScript](/docs/react/typescript) 为表单添加类型安全。

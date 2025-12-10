@@ -497,4 +497,4 @@ user-service:
 - 可以从 Eureka 获取服务列表
 - 合理配置超时和重试参数
 
-**下一步**：学习 [Hystrix 熔断器](./hystrix)
+**下一步**：学习 [Hystrix 熔断器](/docs/springcloud/hystrix)

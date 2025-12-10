@@ -754,4 +754,4 @@ public class QueryService {
 - **编程式事务** - TransactionTemplate 和 PlatformTransactionManager
 - **分布式事务** - Seata 等分布式事务解决方案
 
-下一步学习 [异步处理](./async)。
+下一步学习 [异步处理](/docs/springboot/async)。

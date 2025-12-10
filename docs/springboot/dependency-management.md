@@ -400,4 +400,4 @@ mvn versions:use-latest-releases
 5. **使用 Maven BOM** - 统一管理企业级项目的依赖版本
 6. **监控安全漏洞** - 定期检查依赖中的已知漏洞
 
-下一步学习 [缓存管理](./cache-management)。
+下一步学习 [缓存管理](/docs/springboot/cache-management)。

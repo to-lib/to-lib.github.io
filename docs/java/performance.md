@@ -707,4 +707,4 @@ public class PerformanceTiming {
 - ✅ 权衡可读性和性能
 - ✅ 持续监控和改进
 
-掌握这些优化技巧可以显著提升 Java 应用的性能。建议结合 [JVM 基础](./jvm-basics) 和实际业务场景进行优化。
+掌握这些优化技巧可以显著提升 Java 应用的性能。建议结合 [JVM 基础](/docs/java/jvm-basics) 和实际业务场景进行优化。

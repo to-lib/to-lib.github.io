@@ -643,4 +643,4 @@ order-service-dev.yaml
 - 监听机制实时响应变更
 - 集群部署保证高可用
 
-**下一步**: 学习 [服务治理高级](./service-governance)
+**下一步**: 学习 [服务治理高级](/docs/springcloud-alibaba/service-governance)

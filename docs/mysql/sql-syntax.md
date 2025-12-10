@@ -675,4 +675,4 @@ SELECT * FROM users WHERE email = 'zhangsan@example.com';
 - ✅ 子查询和 UNION
 - ✅ 常用函数和最佳实践
 
-掌握 SQL 语法后，可以继续学习 [索引优化](./indexes) 和 [事务处理](./transactions)！
+掌握 SQL 语法后，可以继续学习 [索引优化](/docs/mysql/indexes) 和 [事务处理](/docs/mysql/transactions)！

@@ -648,4 +648,4 @@ list.removeIf(num -> num == 3);
 - ✅ Collections 工具类
 - ✅ 集合选择和性能比较
 
-掌握集合框架后，继续学习 [泛型](./generics) 和 [异常处理](./exception-handling)。
+掌握集合框架后，继续学习 [泛型](/docs/java/generics) 和 [异常处理](/docs/java/exception-handling)。

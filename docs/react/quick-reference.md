@@ -134,4 +134,4 @@ const [value] = useDebounce(searchTerm, 500);
 
 ---
 
-**更多详情**：查看 [Hooks 详解](./hooks) 或 [最佳实践](./best-practices)
+**更多详情**：查看 [Hooks 详解](/docs/react/hooks) 或 [最佳实践](/docs/react/best-practices)

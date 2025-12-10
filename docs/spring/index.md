@@ -8,30 +8,30 @@ sidebar_position: 1
 # Spring Framework 学习指南
 
 > [!TIP]
-> **Spring 框架基础**: Spring 是 Java 企业应用开发的基础框架。深入理解 IoC、DI 和 AOP 是掌握 Spring 的关键，建议从 [核心概念](./core-concepts) 开始学习。
+> **Spring 框架基础**: Spring 是 Java 企业应用开发的基础框架。深入理解 IoC、DI 和 AOP 是掌握 Spring 的关键，建议从 [核心概念](/docs/spring/core-concepts) 开始学习。
 
 ## 📚 学习路径
 
 ### 基础部分
 
-- **[Spring核心概念](./core-concepts)** - IoC、DI、Bean生命周期等基础概念
-- **[依赖注入详解](./dependency-injection)** - 深入理解DI的各种方式和最佳实践
-- **[Bean管理](./bean-management)** - Bean的定义、作用域、生命周期管理
+- **[Spring核心概念](/docs/spring/core-concepts)** - IoC、DI、Bean生命周期等基础概念
+- **[依赖注入详解](/docs/spring/dependency-injection)** - 深入理解DI的各种方式和最佳实践
+- **[Bean管理](/docs/spring/bean-management)** - Bean的定义、作用域、生命周期管理
 
 ### 核心特性
 
-- **[面向切面编程(AOP)](./aop)** - 切点、通知、代理等AOP核心概念
-- **[事务管理](./transactions)** - 事务特性、传播行为、隔离级别
+- **[面向切面编程(AOP)](/docs/spring/aop)** - 切点、通知、代理等AOP核心概念
+- **[事务管理](/docs/spring/transactions)** - 事务特性、传播行为、隔离级别
 
 ### Web应用开发
 
-- **[Spring MVC](./spring-mvc)** - MVC架构、请求处理流程、视图解析
+- **[Spring MVC](/docs/spring/spring-mvc)** - MVC架构、请求处理流程、视图解析
 
 ### 快速参考
 
-- **[快速参考](./quick-reference)** - 常用注解、配置方式、代码片段
-- **[常见问题解答](./faq)** - 常见问题及解决方案
-- **[最佳实践](./best-practices)** - Spring应用开发的最佳实践
+- **[快速参考](/docs/spring/quick-reference)** - 常用注解、配置方式、代码片段
+- **[常见问题解答](/docs/spring/faq)** - 常见问题及解决方案
+- **[最佳实践](/docs/spring/best-practices)** - Spring应用开发的最佳实践
 
 ## 🎯 核心概念速览
 

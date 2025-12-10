@@ -364,4 +364,4 @@ public class Handler2 extends ChannelInboundHandlerAdapter {
 | **Context** | Handler 之间的通信 | fireChannelRead、write |
 
 ---
-[下一章：ByteBuf 详解](./bytebuf)
+[下一章：ByteBuf 详解](/docs/netty/bytebuf)

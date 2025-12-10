@@ -528,4 +528,4 @@ function CartItem({ item, onRemove, onUpdateQuantity }) {
 
 ---
 
-**下一步**: 学习 [事件处理](./event-handling) 了解用户交互，或查看 [Hooks 详解](./hooks) 深入理解状态管理。
+**下一步**: 学习 [事件处理](/docs/react/event-handling) 了解用户交互，或查看 [Hooks 详解](/docs/react/hooks) 深入理解状态管理。

@@ -252,4 +252,4 @@ it("sets state correctly", () => {
 
 ---
 
-**相关资源**：[快速参考](./quick-reference) | [性能优化](./performance-optimization) | [FAQ](./faq)
+**相关资源**：[快速参考](/docs/react/quick-reference) | [性能优化](/docs/react/performance-optimization) | [FAQ](/docs/react/faq)

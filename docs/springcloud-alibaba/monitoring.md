@@ -631,4 +631,4 @@ analyze_errors "/var/log/application.log"
 
 ---
 
-**下一步**: 学习 [FAQ 常见问题](./faq)
+**下一步**: 学习 [FAQ 常见问题](/docs/springcloud-alibaba/faq)

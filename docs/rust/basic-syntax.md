@@ -1339,4 +1339,4 @@ fn main() {
 - ✅ 迭代器:iter、map、filter、collect
 - ✅ 闭包:Fn/FnMut/FnOnce、捕获环境
 
-掌握这些基础知识后，继续学习 [所有权系统](./ownership)，这是 Rust 最重要的特性。
+掌握这些基础知识后，继续学习 [所有权系统](/docs/rust/ownership)，这是 Rust 最重要的特性。

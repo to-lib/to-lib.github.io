@@ -5,7 +5,7 @@ sidebar_position: 11
 # 常见问题解答
 
 > [!TIP]
-> **快速导航**: 使用 `Ctrl+F` 查找关键词，快速定位您遇到的问题。如未找到解答，请查看 [最佳实践](./best-practices) 或 [快速参考](./quick-reference)。
+> **快速导航**: 使用 `Ctrl+F` 查找关键词，快速定位您遇到的问题。如未找到解答，请查看 [最佳实践](/docs/springboot/best-practices) 或 [快速参考](/docs/springboot/quick-reference)。
 
 ## 常见配置问题
 
@@ -519,4 +519,4 @@ management:
 
 ---
 
-**提示**：更多问题和解决方案，请查看 [最佳实践](./best-practices)。
+**提示**：更多问题和解决方案，请查看 [最佳实践](/docs/springboot/best-practices)。

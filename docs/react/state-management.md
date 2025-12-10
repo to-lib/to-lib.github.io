@@ -273,4 +273,4 @@ function Modal() {
 
 ---
 
-**下一步**：学习 [TypeScript](./typescript) 增强类型安全，或查看 [测试](./testing) 保证代码质量。
+**下一步**：学习 [TypeScript](/docs/react/typescript) 增强类型安全，或查看 [测试](/docs/react/testing) 保证代码质量。

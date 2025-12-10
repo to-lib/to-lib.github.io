@@ -463,4 +463,4 @@ export function useNotification() {
 
 ---
 
-**下一步**: 学习 [性能优化](./performance-optimization) 提升应用性能，或查看 [状态管理](./state-management) 了解更多状态管理方案。
+**下一步**: 学习 [性能优化](/docs/react/performance-optimization) 提升应用性能，或查看 [状态管理](/docs/react/state-management) 了解更多状态管理方案。

@@ -642,4 +642,4 @@ sequenceDiagram
 
 ---
 
-**下一步**：查看 [Hooks 详解](./hooks) 深入学习函数组件，或学习 [错误边界](./error-boundaries) 处理组件错误。
+**下一步**：查看 [Hooks 详解](/docs/react/hooks) 深入学习函数组件，或学习 [错误边界](/docs/react/error-boundaries) 处理组件错误。

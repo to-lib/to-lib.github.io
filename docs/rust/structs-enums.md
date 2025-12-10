@@ -853,4 +853,4 @@ fn read_number_from_file(path: &str) -> Result<i32, Error> {
 - ✅ 枚举高级用法:方法、泛型结合、递归枚举
 - ✅ 实用模式:状态机、错误类型组合
 
-掌握这些后，继续学习 [泛型和Trait](./generics-traits)。
+掌握这些后，继续学习 [泛型和Trait](/docs/rust/generics-traits)。

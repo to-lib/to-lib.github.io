@@ -33,7 +33,7 @@ title: 设计模式面试题精选
 - **结构型（7 种）：** 类和对象的组合
 - **行为型（11 种）：** 对象间的职责分配
 
-**延伸：** 参考 [设计模式概览](./overview)
+**延伸：** 参考 [设计模式概览](/docs/java-design-patterns/overview)
 
 ---
 
@@ -74,7 +74,7 @@ class EmailService {
 }
 ```
 
-**延伸：** 参考 [最佳实践](./best-practices)
+**延伸：** 参考 [最佳实践](/docs/java-design-patterns/best-practices)
 
 ---
 
@@ -152,7 +152,7 @@ public enum Singleton {
 
 ✓ 防止反射和序列化破坏
 
-**延伸：** 参考 [单例模式详解](./singleton-pattern)
+**延伸：** 参考 [单例模式详解](/docs/java-design-patterns/singleton-pattern)
 
 ---
 
@@ -223,7 +223,7 @@ class WindowsFactory implements GUIFactory {
 - **工厂方法：** 日志记录器（FileLogger, ConsoleLogger）
 - **抽象工厂：** 跨平台 UI 组件（Windows, Mac）
 
-**延伸：** 参考 [工厂模式](./factory-pattern) 和 [抽象工厂模式](./abstract-factory-pattern)
+**延伸：** 参考 [工厂模式](/docs/java-design-patterns/factory-pattern) 和 [抽象工厂模式](/docs/java-design-patterns/abstract-factory-pattern)
 
 ---
 
@@ -296,7 +296,7 @@ Computer computer = new Computer.Builder("Intel i7", "16GB")
 - `Lombok @Builder`：自动生成 Builder
 - HTTP 请求构建器
 
-**延伸：** 参考 [建造者模式](./builder-pattern)
+**延伸：** 参考 [建造者模式](/docs/java-design-patterns/builder-pattern)
 
 ---
 
@@ -374,7 +374,7 @@ RealService proxy = (RealService) enhancer.create();
 - MyBatis 的 Mapper 接口
 - RPC 框架的远程调用
 
-**延伸：** 参考 [代理模式详解](./proxy-pattern)
+**延伸：** 参考 [代理模式详解](/docs/java-design-patterns/proxy-pattern)
 
 ---
 
@@ -417,7 +417,7 @@ class AdminProxy implements Service {
 }
 ```
 
-**延伸：** 参考 [装饰器模式](./decorator-pattern) 和 [代理模式](./proxy-pattern)
+**延伸：** 参考 [装饰器模式](/docs/java-design-patterns/decorator-pattern) 和 [代理模式](/docs/java-design-patterns/proxy-pattern)
 
 ---
 
@@ -472,7 +472,7 @@ class Adapter implements Target {
 - `InputStreamReader`：字节流到字符流的适配
 - Spring MVC 的`HandlerAdapter`：不同 Controller 的适配
 
-**延伸：** 参考 [适配器模式](./adapter-pattern)
+**延伸：** 参考 [适配器模式](/docs/java-design-patterns/adapter-pattern)
 
 ---
 
@@ -542,7 +542,7 @@ private Map<String, DiscountStrategy> strategyMap;
 DiscountStrategy strategy = strategyMap.get(userType);
 ```
 
-**延伸：** 参考 [策略模式详解](./strategy-pattern)
+**延伸：** 参考 [策略模式详解](/docs/java-design-patterns/strategy-pattern)
 
 ---
 
@@ -603,7 +603,7 @@ subject.notifyObservers("订单已发货");  // 所有观察者收到通知
 - **GUI**：事件监听器
 - **消息队列**：发布-订阅模式
 
-**延伸：** 参考 [观察者模式](./observer-pattern)
+**延伸：** 参考 [观察者模式](/docs/java-design-patterns/observer-pattern)
 
 ---
 
@@ -659,7 +659,7 @@ class CSVMiner extends DataMiner {
 - **模板方法：** Spring 的`JdbcTemplate`, `RestTemplate`
 - **策略模式：** 排序算法选择，支付方式选择
 
-**延伸：** 参考 [模板方法模式](./template-method-pattern) 和 [策略模式](./strategy-pattern)
+**延伸：** 参考 [模板方法模式](/docs/java-design-patterns/template-method-pattern) 和 [策略模式](/docs/java-design-patterns/strategy-pattern)
 
 ---
 
@@ -737,7 +737,7 @@ public class MyInterceptor implements HandlerInterceptor {
 Logger → ConsoleHandler → FileHandler → DatabaseHandler
 ```
 
-**延伸：** 参考 [责任链模式](./chain-of-responsibility-pattern)
+**延伸：** 参考 [责任链模式](/docs/java-design-patterns/chain-of-responsibility-pattern)
 
 ---
 
@@ -768,11 +768,11 @@ Logger → ConsoleHandler → FileHandler → DatabaseHandler
 
 ### 相关资源
 
-- [设计模式完整指南](./index)
-- [模式概览](./overview)
-- [最佳实践](./best-practices)
-- [模式对比分析](./pattern-comparisons)
-- [选择指南](./selection-guide)
+- [设计模式完整指南](/docs/java-design-patterns/index)
+- [模式概览](/docs/java-design-patterns/overview)
+- [最佳实践](/docs/java-design-patterns/best-practices)
+- [模式对比分析](/docs/java-design-patterns/pattern-comparisons)
+- [选择指南](/docs/java-design-patterns/selection-guide)
 
 ---
 

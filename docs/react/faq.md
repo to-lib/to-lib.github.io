@@ -243,8 +243,8 @@ useEffect(() => {
 
 - [官方文档](https://react.dev)
 - [React DevTools](https://react.dev/learn/react-developer-tools)
-- [本站其他文档](./index)
+- [本站其他文档](/docs/react/index)
 
 ---
 
-**还有问题？** 查看 [最佳实践](./best-practices) 或 [面试题](./interview-questions)
+**还有问题？** 查看 [最佳实践](/docs/react/best-practices) 或 [面试题](/docs/react/interview-questions)
