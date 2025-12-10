@@ -58,7 +58,7 @@ cd nacos\bin
 startup.cmd -m standalone
 ```
 
-访问控制台: <http://localhost:8848/nacos>
+访问控制台: [http://localhost:8848/nacos](http://localhost:8848/nacos)
 
 默认账号密码: `nacos/nacos`
 
@@ -463,7 +463,7 @@ public class OrderServiceApplication {
 
 ### 验证服务注册
 
-访问 Nacos 控制台: <http://localhost:8848/nacos>
+访问 Nacos 控制台: [http://localhost:8848/nacos](http://localhost:8848/nacos)
 
 在"服务管理" → "服务列表"中应该能看到:
 
