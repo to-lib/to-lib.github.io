@@ -33,7 +33,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "创建型模式 (5)",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java-design-patterns/singleton-pattern",
         "java-design-patterns/factory-pattern",
@@ -45,7 +45,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "结构型模式 (7)",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java-design-patterns/proxy-pattern",
         "java-design-patterns/adapter-pattern",
@@ -59,7 +59,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "行为型模式 (11)",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java-design-patterns/observer-pattern",
         "java-design-patterns/strategy-pattern",
@@ -92,7 +92,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "spring/aop",
         "spring/transactions",
@@ -103,31 +103,31 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🌐 Web 开发",
-      collapsed: false,
+      collapsed: true,
       items: ["spring/spring-mvc"],
     },
     {
       type: "category",
       label: "💾 数据访问",
-      collapsed: false,
+      collapsed: true,
       items: ["spring/spring-data"],
     },
     {
       type: "category",
       label: "🔒 安全基础",
-      collapsed: false,
+      collapsed: true,
       items: ["spring/security-basics"],
     },
     {
       type: "category",
       label: "🧪 测试",
-      collapsed: false,
+      collapsed: true,
       items: ["spring/testing"],
     },
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "spring/quick-reference",
         "spring/best-practices",
@@ -152,7 +152,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎓 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springboot/auto-configuration",
         "springboot/dependency-management",
@@ -165,7 +165,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🌐 Web 开发",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springboot/web-development",
         "springboot/websocket",
@@ -176,13 +176,13 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "💾 数据访问",
-      collapsed: false,
+      collapsed: true,
       items: ["springboot/data-access", "springboot/cache-management"],
     },
     {
       type: "category",
       label: "🚀 进阶特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springboot/async",
         "springboot/scheduling",
@@ -193,7 +193,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🔒 生产级特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springboot/security",
         "springboot/health-monitoring",
@@ -205,7 +205,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 开发指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springboot/best-practices",
         "springboot/devtools",
@@ -231,13 +231,13 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: ["netty/bytebuf", "netty/codec"],
     },
     {
       type: "category",
       label: "🚀 进阶实战",
-      collapsed: false,
+      collapsed: true,
       items: [
         "netty/practical-examples",
         "netty/advanced",
@@ -247,7 +247,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "netty/quick-reference",
         "netty/troubleshooting",
@@ -272,7 +272,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java/collections",
         "java/generics",
@@ -286,7 +286,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 高级主题",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java/multithreading",
         "java/functional-programming",
@@ -298,7 +298,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "✨ JDK 新特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java/jdk8-features",
         "java/jdk11-features",
@@ -309,7 +309,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "java/best-practices",
         "java/quick-reference",
@@ -350,7 +350,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 高级主题",
-      collapsed: false,
+      collapsed: true,
       items: [
         "rust/smart-pointers",
         "rust/concurrency",
@@ -362,7 +362,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "rust/testing",
         "rust/best-practices",
@@ -393,7 +393,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 系统管理",
-      collapsed: false,
+      collapsed: true,
       items: [
         "linux/process-management",
         "linux/system-admin",
@@ -404,13 +404,13 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 网络与安全",
-      collapsed: false,
+      collapsed: true,
       items: ["linux/networking", "linux/security"],
     },
     {
       type: "category",
       label: "💡 进阶主题",
-      collapsed: false,
+      collapsed: true,
       items: [
         "linux/shell-scripting",
         "linux/performance-tuning",
@@ -420,7 +420,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "linux/quick-reference",
         "linux/best-practices",
@@ -448,7 +448,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "react/hooks",
         "react/event-handling",
@@ -464,7 +464,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 高级主题",
-      collapsed: false,
+      collapsed: true,
       items: [
         "react/performance-optimization",
         "react/react19-features",
@@ -481,7 +481,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "react/quick-reference",
         "react/best-practices",
@@ -508,7 +508,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "mysql/indexes",
         "mysql/transactions",
@@ -519,7 +519,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 高级应用",
-      collapsed: false,
+      collapsed: true,
       items: [
         "mysql/performance-optimization",
         "mysql/backup-recovery",
@@ -530,7 +530,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "mysql/quick-reference",
         "mysql/faq",
@@ -550,7 +550,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🎯 核心特性",
-      collapsed: false,
+      collapsed: true,
       items: [
         "redis/persistence",
         "redis/replication",
@@ -565,7 +565,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 高级应用",
-      collapsed: false,
+      collapsed: true,
       items: [
         "redis/cache-strategies",
         "redis/performance-optimization",
@@ -575,7 +575,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 参考指南",
-      collapsed: false,
+      collapsed: true,
       items: [
         "redis/quick-reference",
         "redis/faq",
@@ -601,13 +601,13 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🔧 核心组件",
-      collapsed: false,
+      collapsed: true,
       items: ["springcloud/gateway", "springcloud/feign", "springcloud/ribbon"],
     },
     {
       type: "category",
       label: "🌟 现代组件 (推荐)",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springcloud/loadbalancer",
         "springcloud/resilience4j",
@@ -617,7 +617,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🛠 高级与维护",
-      collapsed: false,
+      collapsed: true,
       items: ["springcloud/hystrix", "springcloud/sleuth"],
     },
   ],
@@ -637,7 +637,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🔧 核心组件",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springcloud-alibaba/nacos",
         "springcloud-alibaba/sentinel",
@@ -650,7 +650,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "🚀 进阶主题",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springcloud-alibaba/config-advanced",
         "springcloud-alibaba/service-governance",
@@ -661,7 +661,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "📚 实战与参考",
-      collapsed: false,
+      collapsed: true,
       items: [
         "springcloud-alibaba/practical-project",
         "springcloud-alibaba/migration-guide",
