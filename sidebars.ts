@@ -585,6 +585,53 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // PostgreSQL sidebar
+  postgres: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "postgres/index",
+        "postgres/basic-concepts",
+        "postgres/data-types",
+        "postgres/sql-syntax",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "postgres/indexes",
+        "postgres/transactions",
+        "postgres/stored-procedures",
+        "postgres/views-triggers",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级应用",
+      collapsed: true,
+      items: [
+        "postgres/performance-optimization",
+        "postgres/backup-recovery",
+        "postgres/best-practices",
+        "postgres/practical-examples",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "postgres/quick-reference",
+        "postgres/faq",
+        "postgres/interview-questions",
+      ],
+    },
+  ],
+
   // Spring Cloud sidebar
   springcloud: [
     {

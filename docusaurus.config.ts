@@ -731,6 +731,51 @@ const config: Config = {
               label: "💼 面试题集",
               to: "/docs/redis/interview-questions",
             },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>PostgreSQL 数据库</div>",
+            },
+            {
+              label: "🐘 PostgreSQL 概述",
+              to: "/docs/postgres",
+            },
+            {
+              label: "📚 数据类型",
+              to: "/docs/postgres/data-types",
+            },
+            {
+              label: "🎯 索引优化",
+              to: "/docs/postgres/indexes",
+            },
+            {
+              label: "🔄 事务管理",
+              to: "/docs/postgres/transactions",
+            },
+            {
+              label: "🚀 性能优化",
+              to: "/docs/postgres/performance-optimization",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/postgres/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/postgres/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/postgres/interview-questions",
+            },
           ],
         },
         {
