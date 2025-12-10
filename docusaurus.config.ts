@@ -666,8 +666,70 @@ const config: Config = {
               to: "/docs/mysql",
             },
             {
-              label: "🔴 Redis",
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Redis 数据库</div>",
+            },
+            {
+              label: "📖 Redis 概述",
               to: "/docs/redis",
+            },
+            {
+              label: "📚 数据类型",
+              to: "/docs/redis/data-types",
+            },
+            {
+              label: "💾 持久化",
+              to: "/docs/redis/persistence",
+            },
+            {
+              label: "🔄 主从复制",
+              to: "/docs/redis/replication",
+            },
+            {
+              label: "🏛️ Redis 集群",
+              to: "/docs/redis/cluster",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心功能</div>",
+            },
+            {
+              label: "📡 发布订阅",
+              to: "/docs/redis/pubsub",
+            },
+            {
+              label: "🌊 Stream 数据流",
+              to: "/docs/redis/streams",
+            },
+            {
+              label: "🚀 Pipeline 批量操作",
+              to: "/docs/redis/pipeline",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/redis/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/redis/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/redis/interview-questions",
             },
           ],
         },
