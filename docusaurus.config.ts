@@ -671,6 +671,10 @@ const config: Config = {
               label: "📊 Kafka",
               to: "/docs/kafka",
             },
+            {
+              label: "⚡ Flink",
+              to: "/docs/flink",
+            },
           ],
         },
         {
