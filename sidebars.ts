@@ -717,6 +717,82 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+
+  // RocketMQ sidebar
+  rocketmq: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: [
+        "rocketmq/index",
+        "rocketmq/introduction",
+        "rocketmq/core-concepts",
+      ],
+    },
+  ],
+
+  // Kafka sidebar
+  kafka: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "kafka/index",
+        "kafka/introduction",
+        "kafka/core-concepts",
+        "kafka/quick-start",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: ["kafka/producer-api", "kafka/consumer-api"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "kafka/quick-reference",
+        "kafka/faq",
+        "kafka/interview-questions",
+      ],
+    },
+  ],
+
+  // Flink sidebar
+  flink: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: [
+        "flink/index",
+        "flink/introduction",
+        "flink/core-concepts",
+        "flink/quick-start",
+      ],
+    },
+    {
+      type: "category",
+      label: "💻 核心 API",
+      collapsed: true,
+      items: ["flink/datastream-api", "flink/table-sql"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "flink/quick-reference",
+        "flink/faq",
+        "flink/interview-questions",
+      ],
+    },
+  ],
 };
 
 export default sidebars;

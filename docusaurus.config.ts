@@ -654,6 +654,23 @@ const config: Config = {
               label: "⚡ Netty",
               to: "/docs/netty",
             },
+            {
+              type: "html",
+              value: "\u003chr style='margin: 8px 0;'\u003e",
+            },
+            {
+              type: "html",
+              value:
+                "\u003cdiv style='padding: 8px 12px; font-weight: bold; color: #ff9800;'\u003e消息中间件\u003c/div\u003e",
+            },
+            {
+              label: "🚀 RocketMQ",
+              to: "/docs/rocketmq",
+            },
+            {
+              label: "📊 Kafka",
+              to: "/docs/kafka",
+            },
           ],
         },
         {
@@ -775,6 +792,149 @@ const config: Config = {
             {
               label: "💼 面试题集",
               to: "/docs/postgres/interview-questions",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "📨 消息队列",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff6b6b;'>RabbitMQ</div>",
+            },
+            {
+              label: "🐰 RabbitMQ 概述",
+              to: "/docs/rabbitmq",
+            },
+            {
+              label: "📖 RabbitMQ 简介",
+              to: "/docs/rabbitmq/introduction",
+            },
+            {
+              label: "🎯 核心概念",
+              to: "/docs/rabbitmq/core-concepts",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Kafka</div>",
+            },
+            {
+              label: "📡 Kafka 概述",
+              to: "/docs/kafka",
+            },
+            {
+              label: "📖 Kafka 简介",
+              to: "/docs/kafka/introduction",
+            },
+            {
+              label: "🎯 核心概念",
+              to: "/docs/kafka/core-concepts",
+            },
+            {
+              label: "🚀 快速开始",
+              to: "/docs/kafka/quick-start",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "💻 生产者 API",
+              to: "/docs/kafka/producer-api",
+            },
+            {
+              label: "📊 消费者 API",
+              to: "/docs/kafka/consumer-api",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/kafka/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/kafka/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/kafka/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>RocketMQ</div>",
+            },
+            {
+              label: "🚀 RocketMQ 概述",
+              to: "/docs/rocketmq",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Flink</div>",
+            },
+            {
+              label: "⚡ Flink 概述",
+              to: "/docs/flink",
+            },
+            {
+              label: "📖 Flink 简介",
+              to: "/docs/flink/introduction",
+            },
+            {
+              label: "🎯 核心概念",
+              to: "/docs/flink/core-concepts",
+            },
+            {
+              label: "🚀 快速开始",
+              to: "/docs/flink/quick-start",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "💻 DataStream API",
+              to: "/docs/flink/datastream-api",
+            },
+            {
+              label: "📊 Table API & SQL",
+              to: "/docs/flink/table-sql",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/flink/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/flink/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/flink/interview-questions",
             },
           ],
         },
