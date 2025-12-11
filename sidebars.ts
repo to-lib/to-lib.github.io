@@ -816,12 +816,42 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "🎯 高级主题",
+      collapsed: true,
+      items: ["flink/state-management", "flink/cep", "flink/connectors"],
+    },
+    {
+      type: "category",
+      label: "🚀 生产部署",
+      collapsed: true,
+      items: [
+        "flink/deployment",
+        "flink/performance-optimization",
+        "flink/best-practices",
+      ],
+    },
+    {
+      type: "category",
       label: "📚 参考指南",
       collapsed: true,
       items: [
         "flink/quick-reference",
         "flink/faq",
         "flink/interview-questions",
+      ],
+    },
+  ],
+  // Spring AI sidebar
+  springAi: [
+    {
+      type: "category",
+      label: "🤖 Spring AI",
+      collapsed: false,
+      items: [
+        "spring-ai/index",
+        "spring-ai/quick-start",
+        "spring-ai/core-concepts",
+        "spring-ai/api-reference",
       ],
     },
   ],

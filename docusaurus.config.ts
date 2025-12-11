@@ -656,7 +656,20 @@ const config: Config = {
             },
             {
               type: "html",
-              value: "\u003chr style='margin: 8px 0;'\u003e",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>人工智能</div>",
+            },
+            {
+              label: "🤖 Spring AI",
+              to: "/docs/spring-ai",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
             },
             {
               type: "html",
@@ -948,6 +961,48 @@ const config: Config = {
             {
               label: "📊 Table API & SQL",
               to: "/docs/flink/table-sql",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>高级主题</div>",
+            },
+            {
+              label: "🔄 状态管理",
+              to: "/docs/flink/state-management",
+            },
+            {
+              label: "🎯 CEP 复杂事件处理",
+              to: "/docs/flink/cep",
+            },
+            {
+              label: "🔌 连接器",
+              to: "/docs/flink/connectors",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>生产部署</div>",
+            },
+            {
+              label: "🛠️ 部署与运维",
+              to: "/docs/flink/deployment",
+            },
+            {
+              label: "⚡ 性能优化",
+              to: "/docs/flink/performance-optimization",
+            },
+            {
+              label: "✨ 最佳实践",
+              to: "/docs/flink/best-practices",
             },
             {
               type: "html",
