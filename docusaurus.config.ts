@@ -881,6 +881,31 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>高级应用</div>",
+            },
+            {
+              label: "🔧 集群管理",
+              to: "/docs/kafka/cluster-management",
+            },
+            {
+              label: "⚡ 性能优化",
+              to: "/docs/kafka/performance-optimization",
+            },
+            {
+              label: "✨ 最佳实践",
+              to: "/docs/kafka/best-practices",
+            },
+            {
+              label: "📊 监控与运维",
+              to: "/docs/kafka/monitoring",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>RocketMQ</div>",
             },
             {

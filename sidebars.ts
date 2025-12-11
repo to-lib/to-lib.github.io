@@ -728,6 +728,27 @@ const sidebars: SidebarsConfig = {
         "rocketmq/index",
         "rocketmq/introduction",
         "rocketmq/core-concepts",
+        "rocketmq/quick-start",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "rocketmq/producer",
+        "rocketmq/consumer",
+        "rocketmq/message-types",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "rocketmq/quick-reference",
+        "rocketmq/faq",
+        "rocketmq/interview-questions",
       ],
     },
   ],
@@ -750,6 +771,17 @@ const sidebars: SidebarsConfig = {
       label: "🎯 核心特性",
       collapsed: true,
       items: ["kafka/producer-api", "kafka/consumer-api"],
+    },
+    {
+      type: "category",
+      label: "🚀 高级应用",
+      collapsed: true,
+      items: [
+        "kafka/cluster-management",
+        "kafka/performance-optimization",
+        "kafka/best-practices",
+        "kafka/monitoring",
+      ],
     },
     {
       type: "category",
