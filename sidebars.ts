@@ -841,6 +841,47 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+  // RabbitMQ sidebar
+  rabbitmq: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "rabbitmq/index",
+        "rabbitmq/introduction",
+        "rabbitmq/core-concepts",
+        "rabbitmq/quick-start",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: ["rabbitmq/producer", "rabbitmq/consumer"],
+    },
+    {
+      type: "category",
+      label: "🚀 高级应用",
+      collapsed: true,
+      items: [
+        "rabbitmq/cluster-management",
+        "rabbitmq/performance-optimization",
+        "rabbitmq/best-practices",
+        "rabbitmq/monitoring",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "rabbitmq/quick-reference",
+        "rabbitmq/faq",
+        "rabbitmq/interview-questions",
+      ],
+    },
+  ],
   // Spring AI sidebar
   springAi: [
     {
