@@ -339,9 +339,9 @@ kafka-run-class.sh kafka.tools.EndToEndLatency \
 
 ## 下一步
 
-- 🔧 [集群管理](./cluster-management.md) - 集群部署和管理
-- 🔒 [最佳实践](./best-practices.md) - 生产环境最佳实践
-- 📊 [监控与运维](./monitoring.md) - 监控和告警
+- 🔧 [集群管理](/docs/kafka/cluster-management) - 集群部署和管理
+- 🔒 [最佳实践](/docs/kafka/best-practices) - 生产环境最佳实践
+- 📊 [监控与运维](/docs/kafka/monitoring) - 监控和告警
 
 ## 参考资料
 

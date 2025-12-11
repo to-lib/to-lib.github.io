@@ -266,5 +266,5 @@ public class MultiModelController {
 
 ## 下一步
 
-- [最佳实践](./best-practices) - 生产环境配置与优化
-- [FAQ](./faq) - 常见问题解答
+- [最佳实践](/docs/spring-ai/best-practices) - 生产环境配置与优化
+- [FAQ](/docs/spring-ai/faq) - 常见问题解答

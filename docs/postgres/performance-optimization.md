@@ -390,8 +390,8 @@ ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
 
 ## 📚 相关资源
 
-- [索引优化](./indexes) - 深入了解索引
-- [事务管理](./transactions) - 事务和并发
-- [备份恢复](./backup-recovery) - 数据安全
+- [索引优化](/docs/postgres/indexes) - 深入了解索引
+- [事务管理](/docs/postgres/transactions) - 事务和并发
+- [备份恢复](/docs/postgres/backup-recovery) - 数据安全
 
-下一节：[备份恢复](./backup-recovery)
+下一节：[备份恢复](/docs/postgres/backup-recovery)

@@ -344,9 +344,9 @@ rabbitmq-perf-test \
 
 ## 下一步
 
-- 📊 [监控运维](./monitoring.md) - 监控 RabbitMQ
-- ✨ [最佳实践](./best-practices.md) - 生产环境建议
-- ❓ [常见问题](./faq.md) - 性能相关 FAQ
+- 📊 [监控运维](/docs/rabbitmq/monitoring) - 监控 RabbitMQ
+- ✨ [最佳实践](/docs/rabbitmq/best-practices) - 生产环境建议
+- ❓ [常见问题](/docs/rabbitmq/faq) - 性能相关 FAQ
 
 ## 参考资料
 

@@ -472,9 +472,9 @@ props.put("buffer.memory", 67108864); // 64MB
 
 ## 下一步
 
-- 📊 [消费者 API](./consumer-api.md) - 学习消息消费
-- 🔧 [集群管理](./cluster-management.md) - 了解集群管理
-- ⚡ [性能优化](./performance-optimization.md) - 深入性能优化
+- 📊 [消费者 API](/docs/kafka/consumer-api) - 学习消息消费
+- 🔧 [集群管理](/docs/kafka/cluster-management) - 了解集群管理
+- ⚡ [性能优化](/docs/kafka/performance-optimization) - 深入性能优化
 
 ## 参考资料
 

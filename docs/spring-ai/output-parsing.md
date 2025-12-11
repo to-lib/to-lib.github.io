@@ -253,5 +253,5 @@ public class MarkdownTableParser implements OutputParser<List<Map<String, String
 
 ## 下一步
 
-- [RAG 应用](./rag) - 构建检索增强生成应用
-- [ChatClient 详解](./chat-client) - 深入了解 ChatClient 的高级用法
+- [RAG 应用](/docs/spring-ai/rag) - 构建检索增强生成应用
+- [ChatClient 详解](/docs/spring-ai/chat-client) - 深入了解 ChatClient 的高级用法

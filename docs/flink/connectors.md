@@ -322,6 +322,6 @@ public class RedisSink extends RichSinkFunction<Event> {
 
 ## 下一步
 
-- 📊 [Table API & SQL](./table-sql.md) - SQL 连接器使用
-- 🚀 [部署与运维](./deployment.md) - 生产部署
-- 📋 [最佳实践](./best-practices.md) - 开发规范
+- 📊 [Table API & SQL](/docs/flink/table-sql) - SQL 连接器使用
+- 🚀 [部署与运维](/docs/flink/deployment) - 生产部署
+- 📋 [最佳实践](/docs/flink/best-practices) - 开发规范

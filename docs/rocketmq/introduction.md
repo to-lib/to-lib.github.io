@@ -244,10 +244,10 @@ consumer.subscribe("TopicTest",
 
 ## 下一步
 
-- 🚀 [快速开始](./quick-start.md) - 搭建 RocketMQ 环境
-- 🎯 [核心概念](./core-concepts.md) - 深入理解核心组件
-- 💻 [生产者详解](./producer.md) - 掌握消息发送
-- 📊 [消费者详解](./consumer.md) - 掌握消息消费
+- 🚀 [快速开始](/docs/rocketmq/quick-start) - 搭建 RocketMQ 环境
+- 🎯 [核心概念](/docs/rocketmq/core-concepts) - 深入理解核心组件
+- 💻 [生产者详解](/docs/rocketmq/producer) - 掌握消息发送
+- 📊 [消费者详解](/docs/rocketmq/consumer) - 掌握消息消费
 
 ---
 

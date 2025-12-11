@@ -367,8 +367,8 @@ SELECT pg_size_pretty(pg_total_relation_size('employees'));
 
 ## 📚 相关资源
 
-- [数据类型](./data-types) - 了解 PostgreSQL 的数据类型
-- [SQL 语法](./sql-syntax) - 学习 SQL 查询语法
-- [索引优化](./indexes) - 理解索引的使用
+- [数据类型](/docs/postgres/data-types) - 了解 PostgreSQL 的数据类型
+- [SQL 语法](/docs/postgres/sql-syntax) - 学习 SQL 查询语法
+- [索引优化](/docs/postgres/indexes) - 理解索引的使用
 
-下一节：[数据类型](./data-types)
+下一节：[数据类型](/docs/postgres/data-types)

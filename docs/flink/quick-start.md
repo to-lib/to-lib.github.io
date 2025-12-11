@@ -275,6 +275,6 @@ jobmanager.memory.process.size: 1024m
 
 ## 下一步
 
-- 💻 [DataStream API](./datastream-api.md) - 深入学习流处理 API
-- 📊 [Table API & SQL](./table-sql.md) - 使用 SQL 进行数据处理
-- 🎯 [核心概念](./core-concepts.md) - 理解 Flink 的核心概念
+- 💻 [DataStream API](/docs/flink/datastream-api) - 深入学习流处理 API
+- 📊 [Table API & SQL](/docs/flink/table-sql) - 使用 SQL 进行数据处理
+- 🎯 [核心概念](/docs/flink/core-concepts) - 理解 Flink 的核心概念

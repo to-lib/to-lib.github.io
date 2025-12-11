@@ -342,9 +342,9 @@ cluster_partition_handling = pause_if_all_down
 
 ## 下一步
 
-- 🚀 [性能优化](./performance-optimization.md) - 优化集群性能
-- 📊 [监控运维](./monitoring.md) - 监控集群状态
-- ✨ [最佳实践](./best-practices.md) - 生产环境建议
+- 🚀 [性能优化](/docs/rabbitmq/performance-optimization) - 优化集群性能
+- 📊 [监控运维](/docs/rabbitmq/monitoring) - 监控集群状态
+- ✨ [最佳实践](/docs/rabbitmq/best-practices) - 生产环境建议
 
 ## 参考资料
 

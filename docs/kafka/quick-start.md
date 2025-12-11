@@ -341,10 +341,10 @@ bin/kafka-configs.sh --alter \
 
 ## 下一步
 
-- 📖 [核心概念](./core-concepts.md) - 深入理解 Kafka 架构
-- 💻 [生产者 API](./producer-api.md) - 学习生产者高级用法
-- 📊 [消费者 API](./consumer-api.md) - 学习消费者高级用法
-- ⚙️ [集群管理](./cluster-management.md) - 了解如何管理 Kafka 集群
+- 📖 [核心概念](/docs/kafka/core-concepts) - 深入理解 Kafka 架构
+- 💻 [生产者 API](/docs/kafka/producer-api) - 学习生产者高级用法
+- 📊 [消费者 API](/docs/kafka/consumer-api) - 学习消费者高级用法
+- ⚙️ [集群管理](/docs/kafka/cluster-management) - 了解如何管理 Kafka 集群
 
 ## 参考资料
 

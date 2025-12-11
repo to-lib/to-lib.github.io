@@ -355,8 +355,8 @@ pg_restore -d mydb latest_backup.dump
 
 ## 📚 相关资源
 
-- [性能优化](./performance-optimization) - 优化备份性能
-- [高可用](./replication) - 主从复制
-- [安全管理](./security) - 备份加密
+- [性能优化](/docs/postgres/performance-optimization) - 优化备份性能
+- [高可用](/docs/postgres/replication) - 主从复制
+- [安全管理](/docs/postgres/security) - 备份加密
 
-下一节：[快速参考](./quick-reference)
+下一节：[快速参考](/docs/postgres/quick-reference)

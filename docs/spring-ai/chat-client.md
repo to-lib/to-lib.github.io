@@ -200,5 +200,5 @@ public ResponseEntity<String> safeCaht(@RequestParam String message) {
 
 ## 下一步
 
-- [Prompt 工程](./prompts) - 学习如何编写有效的提示词
-- [输出解析](./output-parsing) - 将 AI 响应转换为结构化数据
+- [Prompt 工程](/docs/spring-ai/prompts) - 学习如何编写有效的提示词
+- [输出解析](/docs/spring-ai/output-parsing) - 将 AI 响应转换为结构化数据

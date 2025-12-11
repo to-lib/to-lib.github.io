@@ -441,9 +441,9 @@ public void send(String message) throws Exception {
 
 ## 下一步
 
-- 📖 [消费者指南](./consumer.md) - 学习消费者开发
-- ⚙️ [集群管理](./cluster-management.md) - 了解集群部署
-- 🚀 [性能优化](./performance-optimization.md) - 优化生产者性能
+- 📖 [消费者指南](/docs/rabbitmq/consumer) - 学习消费者开发
+- ⚙️ [集群管理](/docs/rabbitmq/cluster-management) - 了解集群部署
+- 🚀 [性能优化](/docs/rabbitmq/performance-optimization) - 优化生产者性能
 
 ## 参考资料
 

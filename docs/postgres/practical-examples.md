@@ -613,4 +613,4 @@ WHERE created_at >= '2024-03-01' AND created_at < '2024-04-01';
 
 这些案例充分展示了 PostgreSQL 相比传统关系数据库的优势，可以直接应用到实际项目中。
 
-继续学习 [性能优化](./performance-optimization) 和 [最佳实践](./best-practices)！
+继续学习 [性能优化](/docs/postgres/performance-optimization) 和 [最佳实践](/docs/postgres/best-practices)！

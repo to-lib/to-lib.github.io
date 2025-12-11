@@ -110,9 +110,9 @@ title: Java 编程概述
 
 ## 🔗 相关资源
 
-- [Java 设计模式](../java-design-patterns)
-- [Spring Framework](../spring)
-- [Spring Boot](../springboot)
-- [Netty](../netty)
+- [Java 设计模式](/docs/java-design-patterns)
+- [Spring Framework](/docs/spring)
+- [Spring Boot](/docs/springboot)
+- [Netty](/docs/netty)
 
 开始你的 Java 学习之旅吧！

@@ -549,4 +549,4 @@ PostgreSQL 的视图和触发器功能强大：
 - ✅ 丰富的触发器时机选择
 - ✅ 完善的审计和验证能力
 
-继续学习 [存储过程与函数](./stored-procedures) 和 [最佳实践](./best-practices)！
+继续学习 [存储过程与函数](/docs/postgres/stored-procedures) 和 [最佳实践](/docs/postgres/best-practices)！

@@ -260,10 +260,10 @@ RabbitMQ 提供了强大的 Web 管理界面:
 
 ## 下一步学习
 
-- 🎯 [核心概念](./core-concepts.md) - 深入理解交换机、队列、绑定等概念
-- 🚀 [快速开始](./quick-start.md) - 动手实践 RabbitMQ
-- 💻 [Java 客户端](./java-client.md) - 在 Java 应用中使用 RabbitMQ
-- 🔧 [高级配置](./advanced-config.md) - 优化和配置 RabbitMQ
+- 🎯 [核心概念](/docs/rabbitmq/core-concepts) - 深入理解交换机、队列、绑定等概念
+- 🚀 [快速开始](/docs/rabbitmq/quick-start) - 动手实践 RabbitMQ
+- 💻 [Java 客户端](/docs/rabbitmq/java-client) - 在 Java 应用中使用 RabbitMQ
+- 🔧 [高级配置](/docs/rabbitmq/advanced-config) - 优化和配置 RabbitMQ
 
 ## 参考资源
 

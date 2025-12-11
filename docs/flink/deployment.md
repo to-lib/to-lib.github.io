@@ -266,6 +266,6 @@ grep -i "exception" log/*.log
 
 ## 下一步
 
-- 🚀 [性能优化](./performance-optimization.md) - 调优指南
-- 📋 [最佳实践](./best-practices.md) - 开发规范
-- ❓ [常见问题](./faq.md) - FAQ
+- 🚀 [性能优化](/docs/flink/performance-optimization) - 调优指南
+- 📋 [最佳实践](/docs/flink/best-practices) - 开发规范
+- ❓ [常见问题](/docs/flink/faq) - FAQ

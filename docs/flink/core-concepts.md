@@ -276,6 +276,6 @@ DataStream<Event> lateStream = result.getSideOutput(lateTag);
 
 ## 下一步学习
 
-- 💻 [DataStream API](./datastream-api.md) - 流处理编程详解
-- 📊 [Table API & SQL](./table-sql.md) - 声明式数据处理
-- 🚀 [快速开始](./quick-start.md) - 实际运行 Flink 作业
+- 💻 [DataStream API](/docs/flink/datastream-api) - 流处理编程详解
+- 📊 [Table API & SQL](/docs/flink/table-sql) - 声明式数据处理
+- 🚀 [快速开始](/docs/flink/quick-start) - 实际运行 Flink 作业

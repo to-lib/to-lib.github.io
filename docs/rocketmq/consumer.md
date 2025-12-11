@@ -460,9 +460,9 @@ Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 
 ## 下一步
 
-- 💻 [生产者详解](./producer.md) - 学习消息发送
-- 🔄 [消息类型](./message-types.md) - 了解各种消息类型
-- 📋 [快速参考](./quick-reference.md) - 常用 API 速查
+- 💻 [生产者详解](/docs/rocketmq/producer) - 学习消息发送
+- 🔄 [消息类型](/docs/rocketmq/message-types) - 了解各种消息类型
+- 📋 [快速参考](/docs/rocketmq/quick-reference) - 常用 API 速查
 
 ## 参考资料
 

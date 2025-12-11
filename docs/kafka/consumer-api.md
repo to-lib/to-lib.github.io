@@ -532,9 +532,9 @@ while (true) {
 
 ## 下一步
 
-- 💾 [消息存储机制](./message-storage.md) - 了解 Kafka 如何存储消息
-- 🔧 [集群管理](./cluster-management.md) - 学习集群管理
-- ⚡ [性能优化](./performance-optimization.md) - 优化消费性能
+- 💾 [消息存储机制](/docs/kafka/message-storage) - 了解 Kafka 如何存储消息
+- 🔧 [集群管理](/docs/kafka/cluster-management) - 学习集群管理
+- ⚡ [性能优化](/docs/kafka/performance-optimization) - 优化消费性能
 
 ## 参考资料
 

@@ -447,9 +447,9 @@ props.put("compression.type", "lz4");
 
 ## 下一步
 
-- 🚀 [快速开始](./quick-start.md) - 实践 Kafka 核心操作
-- 💻 [生产者 API](./producer-api.md) - 深入学习消息发送
-- 📊 [消费者 API](./consumer-api.md) - 深入学习消息消费
+- 🚀 [快速开始](/docs/kafka/quick-start) - 实践 Kafka 核心操作
+- 💻 [生产者 API](/docs/kafka/producer-api) - 深入学习消息发送
+- 📊 [消费者 API](/docs/kafka/consumer-api) - 深入学习消息消费
 
 ## 参考资料
 

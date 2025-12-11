@@ -383,6 +383,6 @@ psql -c "SHOW log_filename;"
 
 ## 📚 相关资源
 
-- [基础概念](./basic-concepts)
-- [性能优化](./performance-optimization)
-- [面试题](./interview-questions)
+- [基础概念](/docs/postgres/basic-concepts)
+- [性能优化](/docs/postgres/performance-optimization)
+- [面试题](/docs/postgres/interview-questions)

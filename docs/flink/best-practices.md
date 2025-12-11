@@ -300,6 +300,6 @@ public static MiniClusterResource flinkCluster =
 
 ## 下一步
 
-- 🔧 [部署与运维](./deployment.md) - 生产部署
-- 🚀 [性能优化](./performance-optimization.md) - 调优指南
-- 💼 [面试题精选](./interview-questions.md) - 面试准备
+- 🔧 [部署与运维](/docs/flink/deployment) - 生产部署
+- 🚀 [性能优化](/docs/flink/performance-optimization) - 调优指南
+- 💼 [面试题精选](/docs/flink/interview-questions) - 面试准备

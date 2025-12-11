@@ -416,8 +416,8 @@ CREATE INDEX idx_users_username_lower ON users(LOWER(username));
 
 ## 📚 相关资源
 
-- [基础概念](./basic-concepts) -了解数据库基础
-- [数据类型](./data-types) - 了解数据类型
-- [索引优化](./indexes) - 优化查询性能
+- [基础概念](/docs/postgres/basic-concepts) -了解数据库基础
+- [数据类型](/docs/postgres/data-types) - 了解数据类型
+- [索引优化](/docs/postgres/indexes) - 优化查询性能
 
-下一节：[索引优化](./indexes)
+下一节：[索引优化](/docs/postgres/indexes)

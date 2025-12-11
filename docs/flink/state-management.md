@@ -302,6 +302,6 @@ dataStream
 
 ## 下一步
 
-- 📊 [Table API & SQL](./table-sql.md) - 声明式处理
-- ⚡ [CEP 复杂事件处理](./cep.md) - 模式匹配
-- 🚀 [性能优化](./performance-optimization.md) - 调优指南
+- 📊 [Table API & SQL](/docs/flink/table-sql) - 声明式处理
+- ⚡ [CEP 复杂事件处理](/docs/flink/cep) - 模式匹配
+- 🚀 [性能优化](/docs/flink/performance-optimization) - 调优指南

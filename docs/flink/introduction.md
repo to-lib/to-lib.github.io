@@ -221,6 +221,6 @@ Pattern<Event, ?> pattern = Pattern.<Event>begin("start")
 
 ## 下一步学习
 
-- 🚀 [快速开始](./quick-start.md) - 实际搭建和运行 Flink
-- 🎯 [核心概念](./core-concepts.md) - 深入理解核心组件
-- 💻 [DataStream API](./datastream-api.md) - 流处理编程实战
+- 🚀 [快速开始](/docs/flink/quick-start) - 实际搭建和运行 Flink
+- 🎯 [核心概念](/docs/flink/core-concepts) - 深入理解核心组件
+- 💻 [DataStream API](/docs/flink/datastream-api) - 流处理编程实战

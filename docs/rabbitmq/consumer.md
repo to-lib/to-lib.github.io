@@ -479,9 +479,9 @@ for (int i = 0; i < 5; i++) {
 
 ## 下一步
 
-- ⚙️ [集群管理](./cluster-management.md) - 学习集群部署和管理
-- 🚀 [性能优化](./performance-optimization.md) - 优化消费性能
-- ✨ [最佳实践](./best-practices.md) - 生产环境建议
+- ⚙️ [集群管理](/docs/rabbitmq/cluster-management) - 学习集群部署和管理
+- 🚀 [性能优化](/docs/rabbitmq/performance-optimization) - 优化消费性能
+- ✨ [最佳实践](/docs/rabbitmq/best-practices) - 生产环境建议
 
 ## 参考资料
 

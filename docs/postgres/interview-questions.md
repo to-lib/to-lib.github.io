@@ -420,6 +420,6 @@ FROM users;
 
 ## 📚 相关资源
 
-- [基础概念](./basic-concepts)
-- [性能优化](./performance-optimization)
-- [事务管理](./transactions)
+- [基础概念](/docs/postgres/basic-concepts)
+- [性能优化](/docs/postgres/performance-optimization)
+- [事务管理](/docs/postgres/transactions)

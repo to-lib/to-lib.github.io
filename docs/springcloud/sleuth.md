@@ -538,4 +538,4 @@ try {
 - 合理设置采样率平衡性能和监控
 - 使用追踪数据分析性能瓶颈
 
-**下一步**：探索 [Spring Cloud Alibaba](../springcloud-alibaba/index)
+**下一步**：探索 [Spring Cloud Alibaba](/docs/springcloud-alibaba/index)

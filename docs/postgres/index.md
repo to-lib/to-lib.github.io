@@ -83,21 +83,21 @@ PostgreSQL 是一个功能强大的开源对象关系型数据库系统，具有
 
 ### 初学者
 
-1. [基础概念](./basic-concepts) - 了解数据库、表、字段等基本概念
-2. [数据类型](./data-types) - 掌握 PostgreSQL 的数据类型
-3. [SQL 语法](./sql-syntax) - 学习基本的 SQL 查询语句
+1. [基础概念](/docs/postgres/basic-concepts) - 了解数据库、表、字段等基本概念
+2. [数据类型](/docs/postgres/data-types) - 掌握 PostgreSQL 的数据类型
+3. [SQL 语法](/docs/postgres/sql-syntax) - 学习基本的 SQL 查询语句
 
 ### 进阶
 
-4. [索引优化](./indexes) - 理解索引原理和使用
-5. [事务管理](./transactions) - 掌握事务和并发控制
-6. [性能优化](./performance-optimization) - 提升数据库性能
+4. [索引优化](/docs/postgres/indexes) - 理解索引原理和使用
+5. [事务管理](/docs/postgres/transactions) - 掌握事务和并发控制
+6. [性能优化](/docs/postgres/performance-optimization) - 提升数据库性能
 
 ### 高级
 
-7. [备份恢复](./backup-recovery) - 学习数据备份和恢复策略
-8. [复制与高可用](./replication) - 配置主从复制和高可用
-9. [安全管理](./security) - 用户权限和安全最佳实践
+7. [备份恢复](/docs/postgres/backup-recovery) - 学习数据备份和恢复策略
+8. [复制与高可用](/docs/postgres/replication) - 配置主从复制和高可用
+9. [安全管理](/docs/postgres/security) - 用户权限和安全最佳实践
 
 ## 🛠️ 快速开始
 
@@ -188,8 +188,8 @@ SELECT * FROM users;
 
 现在你已经对 PostgreSQL 有了基本的了解，可以开始深入学习：
 
-- 📘 [基础概念](./basic-concepts) - 了解核心概念
-- 📘 [数据类型](./data-types) - 掌握数据类型
-- 📘 [SQL 语法](./sql-syntax) - 学习 SQL 查询
+- 📘 [基础概念](/docs/postgres/basic-concepts) - 了解核心概念
+- 📘 [数据类型](/docs/postgres/data-types) - 掌握数据类型
+- 📘 [SQL 语法](/docs/postgres/sql-syntax) - 学习 SQL 查询
 
 祝你学习愉快！🎉

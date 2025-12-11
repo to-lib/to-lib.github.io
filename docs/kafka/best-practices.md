@@ -374,9 +374,9 @@ void testProducerConsumer() {
 
 ## 下一步
 
-- ⚡ [性能优化](./performance-optimization.md) - 性能调优指南
-- 🔧 [集群管理](./cluster-management.md) - 集群管理操作
-- 📊 [监控与运维](./monitoring.md) - 监控告警配置
+- ⚡ [性能优化](/docs/kafka/performance-optimization) - 性能调优指南
+- 🔧 [集群管理](/docs/kafka/cluster-management) - 集群管理操作
+- 📊 [监控与运维](/docs/kafka/monitoring) - 监控告警配置
 
 ## 参考资料
 

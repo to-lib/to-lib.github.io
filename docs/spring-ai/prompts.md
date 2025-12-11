@@ -213,5 +213,5 @@ public class DynamicPromptService {
 
 ## 下一步
 
-- [输出解析](./output-parsing) - 将 AI 响应转换为结构化数据
-- [RAG 应用](./rag) - 构建检索增强生成应用
+- [输出解析](/docs/spring-ai/output-parsing) - 将 AI 响应转换为结构化数据
+- [RAG 应用](/docs/spring-ai/rag) - 构建检索增强生成应用

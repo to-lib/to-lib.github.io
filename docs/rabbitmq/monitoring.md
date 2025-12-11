@@ -271,8 +271,8 @@ grep -i "connection" /var/log/rabbitmq/*.log
 
 ## 下一步
 
-- ❓ [常见问题](./faq.md) - FAQ
-- 💼 [面试题集](./interview-questions.md) - 面试常见问题
+- ❓ [常见问题](/docs/rabbitmq/faq) - FAQ
+- 💼 [面试题集](/docs/rabbitmq/interview-questions) - 面试常见问题
 
 ## 参考资料
 

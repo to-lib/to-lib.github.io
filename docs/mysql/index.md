@@ -161,9 +161,9 @@ DELETE FROM users WHERE id = 1;
 
 ## 🔗 相关资源
 
-- [Java 编程](../java)
-- [Spring Framework](../spring)
-- [Spring Boot](../springboot)
+- [Java 编程](/docs/java)
+- [Spring Framework](/docs/spring)
+- [Spring Boot](/docs/springboot)
 
 ## 📖 推荐学习资源
 

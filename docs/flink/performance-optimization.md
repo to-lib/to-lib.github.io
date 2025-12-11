@@ -264,6 +264,6 @@ flink_taskmanager_job_task_operator_recordsLagMax
 
 ## 下一步
 
-- 📋 [最佳实践](./best-practices.md) - 开发规范
-- 🔧 [部署与运维](./deployment.md) - 生产部署
-- ❓ [常见问题](./faq.md) - FAQ
+- 📋 [最佳实践](/docs/flink/best-practices) - 开发规范
+- 🔧 [部署与运维](/docs/flink/deployment) - 生产部署
+- ❓ [常见问题](/docs/flink/faq) - FAQ

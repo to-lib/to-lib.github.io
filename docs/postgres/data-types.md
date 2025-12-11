@@ -317,8 +317,8 @@ SELECT TO_CHAR(1234.5, '9999.99');
 
 ## 📚 相关资源
 
-- [基础概念](./basic-concepts) - 了解数据库基础
-- [SQL 语法](./sql-syntax) - 学习 SQL 查询
-- [索引优化](./indexes) - 优化查询性能
+- [基础概念](/docs/postgres/basic-concepts) - 了解数据库基础
+- [SQL 语法](/docs/postgres/sql-syntax) - 学习 SQL 查询
+- [索引优化](/docs/postgres/indexes) - 优化查询性能
 
-下一节：[SQL 语法](./sql-syntax)
+下一节：[SQL 语法](/docs/postgres/sql-syntax)

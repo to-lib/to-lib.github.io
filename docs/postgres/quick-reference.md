@@ -294,6 +294,6 @@ EXPLAIN (BUFFERS, ANALYZE) SELECT * FROM users;
 
 ## 📚 相关资源
 
-- [基础概念](./basic-concepts)
-- [SQL 语法](./sql-syntax)
-- [索引优化](./indexes)
+- [基础概念](/docs/postgres/basic-concepts)
+- [SQL 语法](/docs/postgres/sql-syntax)
+- [索引优化](/docs/postgres/indexes)

@@ -290,6 +290,6 @@ Pattern<SensorReading, ?> warningPattern = Pattern.<SensorReading>begin("first")
 
 ## 下一步
 
-- 🔌 [连接器](./connectors.md) - 数据源与接收器
-- 🚀 [性能优化](./performance-optimization.md) - 调优指南
-- 📋 [最佳实践](./best-practices.md) - 开发规范
+- 🔌 [连接器](/docs/flink/connectors) - 数据源与接收器
+- 🚀 [性能优化](/docs/flink/performance-optimization) - 调优指南
+- 📋 [最佳实践](/docs/flink/best-practices) - 开发规范

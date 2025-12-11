@@ -28,5 +28,5 @@ Spring AI 旨在简化 AI 功能在 Java 企业级应用中的集成。它借鉴
 
 ## 下一步
 
-- [快速开始](./quick-start)
-- [核心概念](./core-concepts)
+- [快速开始](/docs/spring-ai/quick-start)
+- [核心概念](/docs/spring-ai/core-concepts)

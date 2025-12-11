@@ -720,4 +720,4 @@ PostgreSQL 最佳实践涵盖：
 - ✅ 性能优化：配置优化、连接池、定期维护
 - ✅ 备份监控：pg_dump、WAL 归档、关键指标
 
-继续学习 [实战案例](./practical-examples) 和 [性能优化](./performance-optimization)！
+继续学习 [实战案例](/docs/postgres/practical-examples) 和 [性能优化](/docs/postgres/performance-optimization)！

@@ -309,9 +309,9 @@ echo "vm.dirty_background_ratio=5" >> /etc/sysctl.conf
 
 ## 下一步
 
-- ⚡ [性能优化](./performance-optimization.md) - 深入性能调优
-- 🔒 [最佳实践](./best-practices.md) - 生产环境最佳实践
-- 📊 [监控与运维](./monitoring.md) - 监控和告警配置
+- ⚡ [性能优化](/docs/kafka/performance-optimization) - 深入性能调优
+- 🔒 [最佳实践](/docs/kafka/best-practices) - 生产环境最佳实践
+- 📊 [监控与运维](/docs/kafka/monitoring) - 监控和告警配置
 
 ## 参考资料
 

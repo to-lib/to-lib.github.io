@@ -303,6 +303,6 @@ JobExecutionResult result = client.getJobExecutionResult().get();
 
 ## 下一步
 
-- 📊 [Table API & SQL](./table-sql.md) - 声明式数据处理
-- 🎯 [核心概念](./core-concepts.md) - 深入理解 Flink 概念
-- 🔧 [状态管理](./state-management.md) - 有状态计算详解
+- 📊 [Table API & SQL](/docs/flink/table-sql) - 声明式数据处理
+- 🎯 [核心概念](/docs/flink/core-concepts) - 深入理解 Flink 概念
+- 🔧 [状态管理](/docs/flink/state-management) - 有状态计算详解

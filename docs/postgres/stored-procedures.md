@@ -556,4 +556,4 @@ PostgreSQL 的函数和存储过程功能强大：
 - ✅ 异常处理和动态 SQL
 - ✅ 丰富的性能优化选项
 
-继续学习 [视图与触发器](./views-triggers) 和 [最佳实践](./best-practices)！
+继续学习 [视图与触发器](/docs/postgres/views-triggers) 和 [最佳实践](/docs/postgres/best-practices)！

@@ -330,6 +330,6 @@ tableEnv.executeSql(
 
 ## 下一步
 
-- 💻 [DataStream API](./datastream-api.md) - 底层流处理 API
-- 🔧 [状态管理](./state-management.md) - 有状态计算
-- 🚀 [性能优化](./performance.md) - 性能调优指南
+- 💻 [DataStream API](/docs/flink/datastream-api) - 底层流处理 API
+- 🔧 [状态管理](/docs/flink/state-management) - 有状态计算
+- 🚀 [性能优化](/docs/flink/performance) - 性能调优指南

@@ -280,5 +280,5 @@ List<Document> results = vectorStore.similaritySearch(
 
 ## 下一步
 
-- [模型提供商](./model-providers) - 了解支持的 AI 提供商
-- [最佳实践](./best-practices) - 生产环境最佳实践
+- [模型提供商](/docs/spring-ai/model-providers) - 了解支持的 AI 提供商
+- [最佳实践](/docs/spring-ai/best-practices) - 生产环境最佳实践

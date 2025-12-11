@@ -419,8 +419,8 @@ SELECT pg_terminate_backend(pid);
 
 ## 📚 相关资源
 
-- [索引优化](./indexes) - 提升查询性能
-- [性能优化](./performance-optimization) - 全面优化
-- [并发控制](./concurrency) - 深入了解并发
+- [索引优化](/docs/postgres/indexes) - 提升查询性能
+- [性能优化](/docs/postgres/performance-optimization) - 全面优化
+- [并发控制](/docs/postgres/concurrency) - 深入了解并发
 
-下一节：[存储过程](./stored-procedures)
+下一节：[存储过程](/docs/postgres/stored-procedures)

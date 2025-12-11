@@ -246,12 +246,12 @@ public class MessageConsumer implements RocketMQListener<String> {
 
 ## 下一步
 
-- 📖 [RocketMQ 简介](./introduction.md) - 深入了解 RocketMQ 的基本概念
-- 🚀 [快速开始](./quick-start.md) - 快速搭建 RocketMQ 环境
-- 🎯 [核心概念](./core-concepts.md) - 理解 RocketMQ 的核心组件
-- 💻 [生产者详解](./producer.md) - 学习如何发送消息
-- 📊 [消费者详解](./consumer.md) - 学习如何消费消息
-- 🔄 [消息类型](./message-types.md) - 各种消息类型详解
+- 📖 [RocketMQ 简介](/docs/rocketmq/introduction) - 深入了解 RocketMQ 的基本概念
+- 🚀 [快速开始](/docs/rocketmq/quick-start) - 快速搭建 RocketMQ 环境
+- 🎯 [核心概念](/docs/rocketmq/core-concepts) - 理解 RocketMQ 的核心组件
+- 💻 [生产者详解](/docs/rocketmq/producer) - 学习如何发送消息
+- 📊 [消费者详解](/docs/rocketmq/consumer) - 学习如何消费消息
+- 🔄 [消息类型](/docs/rocketmq/message-types) - 各种消息类型详解
 
 ## 参考资源
 
@@ -261,4 +261,4 @@ public class MessageConsumer implements RocketMQListener<String> {
 
 ---
 
-**💡 提示：** 建议从 [快速开始](./quick-start.md) 章节开始，通过实际操作来学习 RocketMQ。
+**💡 提示：** 建议从 [快速开始](/docs/rocketmq/quick-start) 章节开始，通过实际操作来学习 RocketMQ。

@@ -175,11 +175,11 @@ graph TB
 
 ## 下一步
 
-- 📖 [Flink 简介](./introduction.md) - 深入了解 Flink 的基本概念
-- 🚀 [快速开始](./quick-start.md) - 快速搭建 Flink 环境
-- 🎯 [核心概念](./core-concepts.md) - 理解 Flink 的核心组件
-- 💻 [DataStream API](./datastream-api.md) - 学习流处理编程
-- 📊 [Table API & SQL](./table-sql.md) - 声明式数据处理
+- 📖 [Flink 简介](/docs/flink/introduction) - 深入了解 Flink 的基本概念
+- 🚀 [快速开始](/docs/flink/quick-start) - 快速搭建 Flink 环境
+- 🎯 [核心概念](/docs/flink/core-concepts) - 理解 Flink 的核心组件
+- 💻 [DataStream API](/docs/flink/datastream-api) - 学习流处理编程
+- 📊 [Table API & SQL](/docs/flink/table-sql) - 声明式数据处理
 
 ## 参考资源
 
@@ -189,4 +189,4 @@ graph TB
 
 ---
 
-**💡 提示：** 建议从 [快速开始](./quick-start.md) 章节开始，通过实际操作来学习 Flink。
+**💡 提示：** 建议从 [快速开始](/docs/flink/quick-start) 章节开始，通过实际操作来学习 Flink。

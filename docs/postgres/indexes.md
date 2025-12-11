@@ -387,8 +387,8 @@ AND indexrelname NOT LIKE 'pg_toast%';
 
 ## 📚 相关资源
 
-- [SQL 语法](./sql-syntax) - 学习 SQL 查询
-- [性能优化](./performance-optimization) - 全面优化指南
-- [事务管理](./transactions) - 了解事务
+- [SQL 语法](/docs/postgres/sql-syntax) - 学习 SQL 查询
+- [性能优化](/docs/postgres/performance-optimization) - 全面优化指南
+- [事务管理](/docs/postgres/transactions) - 了解事务
 
-下一节：[事务管理](./transactions)
+下一节：[事务管理](/docs/postgres/transactions)

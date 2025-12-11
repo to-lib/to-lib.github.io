@@ -411,10 +411,10 @@ rabbitmqctl set_permissions -p / username ".*" ".*" ".*"
 
 ## 下一步
 
-- 📖 [核心概念](./core-concepts.md) - 深入理解 RabbitMQ 架构
-- 💻 [生产者指南](./producer.md) - 学习生产者高级用法
-- 📊 [消费者指南](./consumer.md) - 学习消费者高级用法
-- ⚙️ [集群管理](./cluster-management.md) - 了解如何管理 RabbitMQ 集群
+- 📖 [核心概念](/docs/rabbitmq/core-concepts) - 深入理解 RabbitMQ 架构
+- 💻 [生产者指南](/docs/rabbitmq/producer) - 学习生产者高级用法
+- 📊 [消费者指南](/docs/rabbitmq/consumer) - 学习消费者高级用法
+- ⚙️ [集群管理](/docs/rabbitmq/cluster-management) - 了解如何管理 RabbitMQ 集群
 
 ## 参考资料
 

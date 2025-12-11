@@ -322,9 +322,9 @@ bin/kafka-server-start.sh config/kraft/server.properties
 
 ## 下一步
 
-- 🚀 [快速开始](./quick-start.md) - 快速搭建 Kafka 环境
-- 🎯 [核心概念](./core-concepts.md) - 深入理解 Kafka 架构
-- 💻 [生产者 API](./producer-api.md) - 学习如何发送消息
+- 🚀 [快速开始](/docs/kafka/quick-start) - 快速搭建 Kafka 环境
+- 🎯 [核心概念](/docs/kafka/core-concepts) - 深入理解 Kafka 架构
+- 💻 [生产者 API](/docs/kafka/producer-api) - 学习如何发送消息
 
 ## 参考资料
 
