@@ -664,8 +664,20 @@ const config: Config = {
                 "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>人工智能</div>",
             },
             {
-              label: "🤖 Spring AI",
+              label: "🤖 Spring AI 概览",
               to: "/docs/spring-ai",
+            },
+            {
+              label: "💬 ChatClient 详解",
+              to: "/docs/spring-ai/chat-client",
+            },
+            {
+              label: "🔍 RAG 应用",
+              to: "/docs/spring-ai/rag",
+            },
+            {
+              label: "🏢 模型提供商",
+              to: "/docs/spring-ai/model-providers",
             },
             {
               type: "html",

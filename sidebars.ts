@@ -886,13 +886,39 @@ const sidebars: SidebarsConfig = {
   springAi: [
     {
       type: "category",
-      label: "🤖 Spring AI",
+      label: "📖 快速入门",
       collapsed: false,
       items: [
         "spring-ai/index",
         "spring-ai/quick-start",
         "spring-ai/core-concepts",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "spring-ai/chat-client",
+        "spring-ai/prompts",
+        "spring-ai/output-parsing",
         "spring-ai/api-reference",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级主题",
+      collapsed: true,
+      items: ["spring-ai/rag", "spring-ai/model-providers"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "spring-ai/best-practices",
+        "spring-ai/faq",
+        "spring-ai/interview-questions",
       ],
     },
   ],
