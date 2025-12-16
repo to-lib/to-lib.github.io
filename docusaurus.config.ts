@@ -860,6 +860,10 @@ const config: Config = {
               to: "/docs/postgres",
             },
             {
+              label: "🔌 安装与连接",
+              to: "/docs/postgres/installation-and-connection",
+            },
+            {
               label: "📚 数据类型",
               to: "/docs/postgres/data-types",
             },
@@ -874,6 +878,10 @@ const config: Config = {
             {
               label: "🚀 性能优化",
               to: "/docs/postgres/performance-optimization",
+            },
+            {
+              label: "🩺 监控与排障",
+              to: "/docs/postgres/monitoring-and-troubleshooting",
             },
             {
               type: "html",

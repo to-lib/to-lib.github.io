@@ -83,21 +83,23 @@ PostgreSQL 是一个功能强大的开源对象关系型数据库系统，具有
 
 ### 初学者
 
-1. [基础概念](/docs/postgres/basic-concepts) - 了解数据库、表、字段等基本概念
-2. [数据类型](/docs/postgres/data-types) - 掌握 PostgreSQL 的数据类型
-3. [SQL 语法](/docs/postgres/sql-syntax) - 学习基本的 SQL 查询语句
+1. [安装与连接](/docs/postgres/installation-and-connection) - 搭建环境、掌握 psql 与连接串
+2. [基础概念](/docs/postgres/basic-concepts) - 了解数据库、表、字段等基本概念
+3. [数据类型](/docs/postgres/data-types) - 掌握 PostgreSQL 的数据类型
+4. [SQL 语法](/docs/postgres/sql-syntax) - 学习基本的 SQL 查询语句
 
 ### 进阶
 
-4. [索引优化](/docs/postgres/indexes) - 理解索引原理和使用
-5. [事务管理](/docs/postgres/transactions) - 掌握事务和并发控制
-6. [性能优化](/docs/postgres/performance-optimization) - 提升数据库性能
+5. [索引优化](/docs/postgres/indexes) - 理解索引原理和使用
+6. [事务管理](/docs/postgres/transactions) - 掌握事务和并发控制
+7. [性能优化](/docs/postgres/performance-optimization) - 提升数据库性能
+8. [监控与排障](/docs/postgres/monitoring-and-troubleshooting) - 慢查询、锁等待与连接耗尽排查
 
 ### 高级
 
-7. [备份恢复](/docs/postgres/backup-recovery) - 学习数据备份和恢复策略
-8. [复制与高可用](/docs/postgres/replication) - 配置主从复制和高可用
-9. [安全管理](/docs/postgres/security) - 用户权限和安全最佳实践
+9. [备份恢复](/docs/postgres/backup-recovery) - 学习数据备份和恢复策略
+10. [复制与高可用](/docs/postgres/replication) - 配置主从复制和高可用
+11. [安全管理](/docs/postgres/security) - 用户权限和安全最佳实践
 
 ## 🛠️ 快速开始
 
