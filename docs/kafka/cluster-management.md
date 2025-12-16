@@ -223,7 +223,7 @@ sasl.enabled.mechanisms=SCRAM-SHA-256
 ```bash
 # 创建用户
 kafka-configs.sh --alter \
-  --zookeeper localhost:2181 \
+  --bootstrap-server localhost:9092 \
   --entity-type users \
   --entity-name admin \
   --add-config 'SCRAM-SHA-256=[password=admin-secret]'

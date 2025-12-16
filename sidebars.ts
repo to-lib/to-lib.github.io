@@ -236,7 +236,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🎯 核心特性",
       collapsed: true,
-      items: ["netty/bytebuf", "netty/codec"],
+      items: ["netty/bytebuf", "netty/codec", "netty/websocket"],
     },
     {
       type: "category",
@@ -255,6 +255,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "netty/quick-reference",
         "netty/troubleshooting",
+        "netty/faq",
         "netty/interview-questions",
       ],
     },
@@ -407,13 +408,14 @@ const sidebars: SidebarsConfig = {
         "linux/cron-scheduling",
         "linux/log-management",
         "linux/disk-management",
+        "linux/backup-and-recovery",
       ],
     },
     {
       type: "category",
       label: "🚀 网络与安全",
       collapsed: true,
-      items: ["linux/networking", "linux/security"],
+      items: ["linux/networking", "linux/nftables-firewall", "linux/security"],
     },
     {
       type: "category",
@@ -509,6 +511,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "mysql/index",
+        "mysql/installation-and-connection",
         "mysql/basic-concepts",
         "mysql/data-types",
         "mysql/sql-syntax",
@@ -522,6 +525,7 @@ const sidebars: SidebarsConfig = {
         "mysql/indexes",
         "mysql/transactions",
         "mysql/locks",
+        "mysql/security-and-accounts",
         "mysql/stored-procedures",
         "mysql/views-triggers",
       ],
@@ -532,6 +536,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "mysql/performance-optimization",
+        "mysql/monitoring-and-troubleshooting",
         "mysql/partitioning",
         "mysql/replication",
         "mysql/high-availability",
@@ -618,6 +623,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "postgres/indexes",
         "postgres/transactions",
+        "postgres/locks",
         "postgres/stored-procedures",
         "postgres/views-triggers",
       ],
@@ -628,7 +634,11 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "postgres/performance-optimization",
+        "postgres/partitioning",
+        "postgres/replication",
+        "postgres/high-availability",
         "postgres/backup-recovery",
+        "postgres/security",
         "postgres/best-practices",
         "postgres/practical-examples",
       ],
@@ -791,6 +801,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "kafka/cluster-management",
+        "kafka/message-storage",
         "kafka/performance-optimization",
         "kafka/best-practices",
         "kafka/monitoring",

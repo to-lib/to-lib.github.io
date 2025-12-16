@@ -158,6 +158,8 @@ find / -perm -002 -type f 2>/dev/null  # 所有人可写
 
 ### 3. 备份策略
 
+建议同时具备可验证的恢复流程与演练机制，详见：[备份与恢复](/docs/linux/backup-and-recovery)。
+
 ```bash
 # ✅ 3-2-1 备份原则
 # - 3 份副本

@@ -7,37 +7,29 @@ title: MySQL 数据库学习指南
 
 欢迎来到 MySQL 数据库完整学习指南！本指南涵盖了 MySQL 数据库从基础到高级的核心知识和实践技巧。
 
-## 📚 学习内容
+## 学习内容
 
 ### 基础知识
 
 - **基础概念** - MySQL 架构、存储引擎、字符集与排序规则
 - **数据类型** - 数值、字符串、日期时间、JSON 等类型详解
 - **SQL 语法** - DDL、DML、查询语句、连接查询、子查询
-
-### 核心特性
-
-- **索引优化** - 索引类型、创建策略、性能优化
-- **事务处理** - ACID 特性、隔离级别、锁机制、MVCC
-- **性能优化** - 查询优化、EXPLAIN 分析、参数调优
-
-### 高级主题
-
-- **存储过程与函数** - 创建、调用、流程控制、游标处理
 - **视图与触发器** - 视图管理、触发器类型与应用
 - **备份与恢复** - 备份策略、主从复制、故障恢复
 
-## 🚀 快速开始
+## 快速开始
 
 如果你是 MySQL 初学者，建议按以下顺序学习：
 
-1. [基础概念](mysql/basic-concepts) - 了解 MySQL 架构和存储引擎
-2. [数据类型](mysql/data-types) - 掌握各种数据类型的使用
-3. [SQL 语法](mysql/sql-syntax) - 学习 SQL 基本语法和查询
-4. [索引优化](mysql/indexes) - 理解索引原理和优化策略
-5. [事务处理](mysql/transactions) - 掌握事务和锁机制
+1. [安装与连接](/docs/mysql/installation-and-connection) - 安装 MySQL、初始化账号与完成应用连接
+2. [基础概念](/docs/mysql/basic-concepts) - 了解 MySQL 架构和存储引擎
+3. [数据类型](/docs/mysql/data-types) - 掌握各种数据类型的使用
+4. [SQL 语法](/docs/mysql/sql-syntax) - 学习 SQL 基本语法和查询
+5. [索引优化](/docs/mysql/indexes) - 理解索引原理和优化策略
+6. [事务处理](/docs/mysql/transactions) - 掌握事务和锁机制
+7. [监控与排障](/docs/mysql/monitoring-and-troubleshooting) - 学会定位慢查询、锁等待、复制延迟等问题
 
-## 📖 学习路径
+## 学习路径
 
 ### 初级开发者
 
@@ -46,6 +38,8 @@ title: MySQL 数据库学习指南
 - 基本 SQL 语法（CRUD）
 - 简单查询和连接
 - 基础索引概念
+- 安装与连接
+- 账号、权限与安全
 
 ### 中级开发者
 
@@ -55,6 +49,7 @@ title: MySQL 数据库学习指南
 - 事务基础和隔离级别
 - 存储过程和函数
 - 视图和触发器
+- 监控与排障
 
 ### 高级开发者
 
@@ -66,7 +61,7 @@ title: MySQL 数据库学习指南
 - 主从复制和高可用架构
 - 备份恢复方案设计
 
-## 💡 核心概念速览
+## 核心概念速览
 
 ### 存储引擎
 
@@ -89,7 +84,7 @@ MySQL 支持多种存储引擎，最常用的是 InnoDB：
 - **隔离性 (Isolation)** - 并发事务相互隔离
 - **持久性 (Durability)** - 事务提交后永久保存
 
-## 🔧 常用命令速览
+## 常用命令速览
 
 ### 数据库操作
 
@@ -144,28 +139,31 @@ UPDATE users SET age = 25 WHERE username = '张三';
 DELETE FROM users WHERE id = 1;
 ```
 
-## 📚 完整学习资源
+## 完整学习资源
 
 | 主题                                       | 描述                                     |
 | ------------------------------------------ | ---------------------------------------- |
-| [基础概念](mysql/basic-concepts)           | MySQL 架构、存储引擎、字符集与排序规则   |
-| [数据类型](mysql/data-types)               | 数值、字符串、日期时间、JSON 类型详解    |
-| [SQL 语法](mysql/sql-syntax)               | DDL、DML、查询语句、连接查询完整指南     |
-| [索引优化](mysql/indexes)                  | 索引类型、创建策略、覆盖索引、索引优化   |
-| [事务处理](mysql/transactions)             | ACID 特性、隔离级别、锁机制、MVCC 原理   |
-| [性能优化](mysql/performance-optimization) | 查询优化、EXPLAIN 分析、参数调优、分区表 |
-| [存储过程与函数](mysql/stored-procedures)  | 存储过程创建、流程控制、游标、错误处理   |
-| [视图与触发器](mysql/views-triggers)       | 视图管理、可更新视图、触发器类型与应用   |
-| [备份与恢复](mysql/backup-recovery)        | 备份策略、mysqldump、主从复制、故障恢复  |
-| [面试题集](mysql/interview-questions)      | MySQL 常见面试题和答案详解               |
+| [安装与连接](/docs/mysql/installation-and-connection) | 安装、初始化、连接与基础配置             |
+| [账号、权限与安全](/docs/mysql/security-and-accounts) | 账号体系、最小权限、认证与安全基线       |
+| [监控与排障](/docs/mysql/monitoring-and-troubleshooting) | 慢查询、锁等待、复制延迟与常见故障排查   |
+| [基础概念](/docs/mysql/basic-concepts)           | MySQL 架构、存储引擎、字符集与排序规则   |
+| [数据类型](/docs/mysql/data-types)               | 数值、字符串、日期时间、JSON 类型详解    |
+| [SQL 语法](/docs/mysql/sql-syntax)               | DDL、DML、查询语句、连接查询完整指南     |
+| [索引优化](/docs/mysql/indexes)                  | 索引类型、创建策略、覆盖索引、索引优化   |
+| [事务处理](/docs/mysql/transactions)             | ACID 特性、隔离级别、锁机制、MVCC 原理   |
+| [性能优化](/docs/mysql/performance-optimization) | 查询优化、EXPLAIN 分析、参数调优、分区表 |
+| [存储过程与函数](/docs/mysql/stored-procedures)  | 存储过程创建、流程控制、游标、错误处理   |
+| [视图与触发器](/docs/mysql/views-triggers)       | 视图管理、可更新视图、触发器类型与应用   |
+| [备份与恢复](/docs/mysql/backup-recovery)        | 备份策略、mysqldump、主从复制、故障恢复  |
+| [面试题集](/docs/mysql/interview-questions)      | MySQL 常见面试题和答案详解               |
 
-## 🔗 相关资源
+## 相关资源
 
 - [Java 编程](/docs/java)
 - [Spring Framework](/docs/spring)
 - [Spring Boot](/docs/springboot)
 
-## 📖 推荐学习资源
+## 推荐学习资源
 
 - [MySQL 官方文档](https://dev.mysql.com/doc/)
 - [MySQL 8.0 参考手册](https://dev.mysql.com/doc/refman/8.0/en/)

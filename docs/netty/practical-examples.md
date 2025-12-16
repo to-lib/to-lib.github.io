@@ -7,7 +7,7 @@ sidebar_position: 6
 > [!TIP]
 > 本章节提供完整可运行的示例代码,涵盖 Echo 服务器、聊天系统和 HTTP 服务器等常见场景。建议跟随示例动手实践,加深理解。
 
-## 案例1：简单的 Echo 服务器和客户端
+## 案例 1：简单的 Echo 服务器和客户端
 
 ### Echo 服务器
 
@@ -32,7 +32,7 @@ public class EchoServer {
     public void start() throws InterruptedException {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
-        
+
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
@@ -90,12 +90,11 @@ public class EchoServerHandler extends SimpleChannelInboundHandler<String> {
 }
 ```
 
-> [!NOTE]
-> **代码要点:**
+> [!NOTE] > **代码要点:**
 >
 > - `bossGroup` 和 `workerGroup` 分离提高性能
-> - `SO_KEEPALIVE` 开启TCP保活机制
-> - `SimpleChannelInboundHandler` 自动释放ByteBuf
+> - `SO_KEEPALIVE` 开启 TCP 保活机制
+> - `SimpleChannelInboundHandler` 自动释放 ByteBuf
 > - `channelActive` 在连接建立时触发
 
 ### Echo 客户端
@@ -175,7 +174,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<String> {
 }
 ```
 
-## 案例2：聊天服务器
+## 案例 2：聊天服务器
 
 多客户端支持的聊天系统。
 
@@ -224,12 +223,12 @@ public class ChatServer {
                     @Override
                     protected void initChannel(SocketChannel ch) {
                         ChannelPipeline pipeline = ch.pipeline();
-                        
+
                         // 长度字段解码器
                         pipeline.addLast(
                             new LengthFieldBasedFrameDecoder(65535, 0, 4, 0, 4)
                         );
-                        
+
                         // 自定义解码器
                         pipeline.addLast(new ChatMessageDecoder());
                         pipeline.addLast(new ChatMessageEncoder());
@@ -280,8 +279,8 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<ChatMessage> 
 
         // 广播加入消息
         ChatMessage joinMsg = new ChatMessage(
-            ChatMessage.JOIN, 
-            "系统", 
+            ChatMessage.JOIN,
+            "系统",
             username + " 加入了聊天室"
         );
         broadcast(joinMsg);
@@ -294,8 +293,8 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<ChatMessage> 
 
         // 广播离开消息
         ChatMessage leaveMsg = new ChatMessage(
-            ChatMessage.LEAVE, 
-            "系统", 
+            ChatMessage.LEAVE,
+            "系统",
             username + " 离开了聊天室"
         );
         broadcast(leaveMsg);
@@ -341,7 +340,7 @@ public class ChatMessageEncoder extends MessageToByteEncoder<ChatMessage> {
     protected void encode(ChannelHandlerContext ctx, ChatMessage msg, ByteBuf out) {
         byte[] usernameBytes = msg.getUsername().getBytes(CharsetUtil.UTF_8);
         byte[] contentBytes = msg.getContent().getBytes(CharsetUtil.UTF_8);
-        
+
         int dataLength = 1 + 4 + usernameBytes.length + 4 + contentBytes.length;
         out.writeInt(dataLength);
         out.writeByte(msg.getType());
@@ -361,32 +360,32 @@ public class ChatMessageDecoder extends ByteToMessageDecoder {
 
         in.markReaderIndex();
         int dataLength = in.readInt();
-        
+
         if (in.readableBytes() < dataLength) {
             in.resetReaderIndex();
             return;
         }
 
         byte type = in.readByte();
-        
+
         int usernameLength = in.readInt();
         byte[] usernameBytes = new byte[usernameLength];
         in.readBytes(usernameBytes);
-        
+
         int contentLength = in.readInt();
         byte[] contentBytes = new byte[contentLength];
         in.readBytes(contentBytes);
-        
+
         String username = new String(usernameBytes, CharsetUtil.UTF_8);
         String content = new String(contentBytes, CharsetUtil.UTF_8);
-        
+
         ChatMessage msg = new ChatMessage(type, username, content);
         out.add(msg);
     }
 }
 ```
 
-## 案例3：HTTP 服务器
+## 案例 3：HTTP 服务器
 
 使用 Netty 实现简单的 HTTP 服务器。
 
@@ -410,13 +409,13 @@ public class HttpServer {
                     @Override
                     protected void initChannel(SocketChannel ch) {
                         ChannelPipeline pipeline = ch.pipeline();
-                        
+
                         // HTTP 编解码器
                         pipeline.addLast(new HttpServerCodec());
-                        
+
                         // HTTP 内容聚合器
                         pipeline.addLast(new HttpObjectAggregator(512 * 1024));
-                        
+
                         // 业务处理
                         pipeline.addLast(new HttpServerHandler());
                     }
@@ -449,15 +448,15 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
         String content = "Hello World from Netty!\n" +
                          "Method: " + method + "\n" +
                          "URI: " + uri;
-        
+
         ByteBuf buf = Unpooled.copiedBuffer(content, CharsetUtil.UTF_8);
-        
+
         FullHttpResponse response = new DefaultFullHttpResponse(
             HttpVersion.HTTP_1_1,
             HttpResponseStatus.OK,
             buf
         );
-        
+
         response.headers()
             .set(HttpHeaderNames.CONTENT_TYPE, "text/plain; charset=utf-8")
             .set(HttpHeaderNames.CONTENT_LENGTH, buf.readableBytes());
@@ -486,6 +485,5 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 7. **连接管理** - 设置合理的超时和心跳机制
 
 ---
-[下一章：高级特性](/docs/netty/advanced)
 
-```
+[下一章：高级特性](/docs/netty/advanced)

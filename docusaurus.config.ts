@@ -480,6 +480,14 @@ const config: Config = {
               to: "/docs/linux/networking",
             },
             {
+              label: "🛡️ nftables 防火墙",
+              to: "/docs/linux/nftables-firewall",
+            },
+            {
+              label: "💾 备份与恢复",
+              to: "/docs/linux/backup-and-recovery",
+            },
+            {
               label: "📜 Shell 脚本",
               to: "/docs/linux/shell-scripting",
             },
@@ -745,6 +753,18 @@ const config: Config = {
               to: "/docs/mysql",
             },
             {
+              label: "🔌 安装与连接",
+              to: "/docs/mysql/installation-and-connection",
+            },
+            {
+              label: "🔐 账号、权限与安全",
+              to: "/docs/mysql/security-and-accounts",
+            },
+            {
+              label: "🩺 监控与排障",
+              to: "/docs/mysql/monitoring-and-troubleshooting",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -946,6 +966,10 @@ const config: Config = {
               to: "/docs/kafka/cluster-management",
             },
             {
+              label: "💾 消息存储机制",
+              to: "/docs/kafka/message-storage",
+            },
+            {
               label: "⚡ 性能优化",
               to: "/docs/kafka/performance-optimization",
             },
@@ -956,6 +980,18 @@ const config: Config = {
             {
               label: "📊 监控与运维",
               to: "/docs/kafka/monitoring",
+            },
+            {
+              label: "🔒 安全配置",
+              to: "/docs/kafka/security",
+            },
+            {
+              label: "🔌 Kafka Connect",
+              to: "/docs/kafka/kafka-connect",
+            },
+            {
+              label: "🌊 Kafka Streams",
+              to: "/docs/kafka/kafka-streams",
             },
             {
               type: "html",

@@ -21,10 +21,11 @@ sidebar_position: 0
 
 - **[ByteBuf](/docs/netty/bytebuf)** - 高性能字节缓冲区的使用与优化
 - **[编解码](/docs/netty/codec)** - 协议设计与编解码器实现
+- **[WebSocket](/docs/netty/websocket)** - WebSocket 服务器开发指南
 
 ### 实战进阶
 
-- **[实战示例](/docs/netty/practical-examples)** - Echo、聊天室、HTTP服务器
+- **[实战示例](/docs/netty/practical-examples)** - Echo、聊天室、HTTP 服务器
 - **[高级特性](/docs/netty/advanced)** - 性能优化、内存管理、安全通信、监控方案
 - **[最佳实践](/docs/netty/best-practices)** - Spring Boot 集成、设计模式、版本升级指南
 
@@ -32,6 +33,7 @@ sidebar_position: 0
 
 - **[快速参考](/docs/netty/quick-reference)** - API 速查、配置模板
 - **[故障排除](/docs/netty/troubleshooting)** - 常见问题诊断与解决
+- **[FAQ](/docs/netty/faq)** - 常见问题解答
 
 ## 🎯 学习路径
 
@@ -48,7 +50,7 @@ graph LR
     H --> I[高级特性]
     I --> J[最佳实践]
     J --> K[完成学习]
-    
+
     style A fill:#e1f5ff
     style K fill:#c8e6c9
     style E fill:#fff9c4
@@ -56,25 +58,25 @@ graph LR
 
 ### 分阶段学习建议
 
-#### 🔰 第一阶段：入门（1-2天）
+#### 🔰 第一阶段：入门（1-2 天）
 
 1. 阅读 [概览](/docs/netty/overview)，理解 Netty 的核心价值
 2. 学习 [基础知识](/docs/netty/basics)，掌握 NIO 和事件驱动
 3. 运行第一个 Echo 服务器示例
 
-#### 🎓 第二阶段：核心（3-5天）
+#### 🎓 第二阶段：核心（3-5 天）
 
 1. 深入学习 [核心组件](/docs/netty/core-components)
 2. 理解 [ByteBuf](/docs/netty/bytebuf) 的内存管理
 3. 掌握 [编解码](/docs/netty/codec) 的协议设计
 
-#### 🚀 第三阶段：实战（1-2周）
+#### 🚀 第三阶段：实战（1-2 周）
 
 1. 完成 [实战示例](/docs/netty/practical-examples) 中的所有案例
 2. 学习 [高级特性](/docs/netty/advanced) 的性能优化和安全通信
 3. 尝试构建自己的网络应用
 
-#### 💡 第四阶段：精通（2-3周）
+#### 💡 第四阶段：精通（2-3 周）
 
 1. 学习 [最佳实践](/docs/netty/best-practices)，掌握工程规范和设计模式
 2. 参考 [快速参考](/docs/netty/quick-reference) 编写高质量代码

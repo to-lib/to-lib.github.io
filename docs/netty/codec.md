@@ -2,6 +2,15 @@
 sidebar_position: 5
 ---
 
+# 编码与解码
+
+> [!TIP]
+> 编解码器是 Netty 网络编程的核心，负责将字节数据与业务对象之间进行转换。本章讲解 Netty 内置编解码器的使用方法，以及如何自定义编解码器实现自定义协议。
+
+## 内置编解码器
+
+### 字符串编解码
+
 ```java
 // 在 Pipeline 中添加
 pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
@@ -74,7 +83,7 @@ public class FixedLengthDecoder extends ByteToMessageDecoder {
 }
 
 // 使用
-ChannelInitializer<SocketChannel> initializer = 
+ChannelInitializer<SocketChannel> initializer =
     new ChannelInitializer<SocketChannel>() {
     @Override
     protected void initChannel(SocketChannel ch) {
@@ -98,7 +107,7 @@ public class CustomEncoder extends MessageToByteEncoder<String> {
     protected void encode(ChannelHandlerContext ctx, String msg, ByteBuf out) {
         // 将字符串编码为字节
         byte[] bytes = msg.getBytes(CharsetUtil.UTF_8);
-        
+
         // 写入长度 + 内容
         out.writeInt(bytes.length);
         out.writeBytes(bytes);
@@ -176,7 +185,7 @@ pipeline.addLast(
 );
 
 // 完整例子
-ChannelInitializer<SocketChannel> initializer = 
+ChannelInitializer<SocketChannel> initializer =
     new ChannelInitializer<SocketChannel>() {
     @Override
     protected void initChannel(SocketChannel ch) {
@@ -225,10 +234,10 @@ public class MyMessageEncoder extends MessageToByteEncoder<MyMessage> {
 
         // 写入长度（包含类型字段 1 字节）
         out.writeInt(bytes.length + 1);
-        
+
         // 写入类型
         out.writeByte(msg.getType());
-        
+
         // 写入数据
         out.writeBytes(bytes);
     }
@@ -283,13 +292,13 @@ bootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
     @Override
     protected void initChannel(SocketChannel ch) {
         ChannelPipeline pipeline = ch.pipeline();
-        
+
         // 添加解码器
         pipeline.addLast(new MyMessageDecoder());
-        
+
         // 添加编码器
         pipeline.addLast(new MyMessageEncoder());
-        
+
         // 添加业务处理 Handler
         pipeline.addLast(new MyMessageHandler());
     }
@@ -300,7 +309,7 @@ public class MyMessageHandler extends SimpleChannelInboundHandler<MyMessage> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MyMessage msg) {
         System.out.println("类型: " + msg.getType() + ", 数据: " + msg.getData());
-        
+
         // 发送响应
         MyMessage response = new MyMessage((byte) 1, "服务器响应");
         ctx.writeAndFlush(response);
@@ -310,16 +319,16 @@ public class MyMessageHandler extends SimpleChannelInboundHandler<MyMessage> {
 
 ## 常用编解码器总结
 
-| 编解码器 | 用途 | 场景 |
-|---------|------|------|
-| **StringDecoder/Encoder** | 字符串编解码 | 文本协议 |
-| **ObjectDecoder/Encoder** | 对象序列化 | 简单场景（不推荐生产） |
-| **LineBasedFrameDecoder** | 按行分割 | HTTP、Redis 等 |
-| **DelimitedFrameDecoder** | 按分界符分割 | 自定义分界符 |
-| **FixedLengthFrameDecoder** | 固定长度帧 | 固定大小消息 |
-| **LengthFieldBasedFrameDecoder** | 长度字段帧 | 大多数二进制协议 |
-| **Base64Decoder/Encoder** | Base64 编解码 | Base64 数据 |
-| **ZlibCodecFactory** | 压缩编解码 | 压缩传输 |
+| 编解码器                         | 用途          | 场景                   |
+| -------------------------------- | ------------- | ---------------------- |
+| **StringDecoder/Encoder**        | 字符串编解码  | 文本协议               |
+| **ObjectDecoder/Encoder**        | 对象序列化    | 简单场景（不推荐生产） |
+| **LineBasedFrameDecoder**        | 按行分割      | HTTP、Redis 等         |
+| **DelimitedFrameDecoder**        | 按分界符分割  | 自定义分界符           |
+| **FixedLengthFrameDecoder**      | 固定长度帧    | 固定大小消息           |
+| **LengthFieldBasedFrameDecoder** | 长度字段帧    | 大多数二进制协议       |
+| **Base64Decoder/Encoder**        | Base64 编解码 | Base64 数据            |
+| **ZlibCodecFactory**             | 压缩编解码    | 压缩传输               |
 
 ## 最佳实践
 
@@ -352,4 +361,5 @@ protected void encode(ChannelHandlerContext ctx, MyMessage msg, ByteBuf out) {
 ```
 
 ---
+
 [下一章：实战案例](/docs/netty/practical-examples)

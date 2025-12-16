@@ -151,6 +151,8 @@ sudo systemctl restart sshd
 
 ## 防火墙
 
+更现代的防火墙方案可参考：[nftables 防火墙](/docs/linux/nftables-firewall)。
+
 ### UFW（Ubuntu）
 
 ```bash

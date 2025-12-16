@@ -143,6 +143,8 @@ sudo systemctl restart systemd-resolved
 
 ## 防火墙
 
+ 现代 Linux 推荐使用 `nftables` 作为新一代防火墙框架，见：[nftables 防火墙](/docs/linux/nftables-firewall)。
+
 ### firewalld（CentOS/RHEL）
 
 ```bash
