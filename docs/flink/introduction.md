@@ -6,6 +6,8 @@ description: "深入了解 Apache Flink 的基本原理和设计理念"
 
 # Flink 简介
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 发展历史
 
 Apache Flink 起源于 2010 年的柏林工业大学研究项目 **Stratosphere**。2014 年成为 Apache 孵化器项目，2015 年正式成为 Apache 顶级项目。
@@ -49,10 +51,7 @@ Flink 原生支持有状态计算，状态可以是：
 Flink 支持基于事件时间的处理：
 
 ```java
-// 配置事件时间
-env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
-
-// 分配水印
+// Flink 默认使用 Event Time；在 Source 上分配 WatermarkStrategy
 DataStream<Event> stream = source
     .assignTimestampsAndWatermarks(
         WatermarkStrategy

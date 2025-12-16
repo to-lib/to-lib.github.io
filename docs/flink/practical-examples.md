@@ -1,10 +1,12 @@
 ---
-sidebar_position: 16
+sidebar_position: 18
 title: "实战案例"
 description: "Flink 生产环境实战案例与最佳实践"
 ---
 
 # Flink 实战案例
+
+> 适用版本：Apache Flink v2.2.0
 
 ## 案例一：实时电商数仓
 

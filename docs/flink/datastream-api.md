@@ -6,6 +6,8 @@ description: "Flink DataStream API 流处理编程详解"
 
 # DataStream API
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 概述
 
 DataStream API 是 Flink 的核心流处理 API，提供了丰富的算子用于处理无界和有界数据流。
@@ -35,8 +37,15 @@ StreamExecutionEnvironment env =
 // 设置并行度
 env.setParallelism(4);
 
-// 设置时间特征（已弃用，默认 EventTime）
-env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+// 时间语义与水印：在 Source 上分配 WatermarkStrategy（无需显式设置 TimeCharacteristic）
+// 例如：
+// DataStream<Event> events = env.fromSource(
+//     source,
+//     WatermarkStrategy
+//         .<Event>forBoundedOutOfOrderness(Duration.ofSeconds(5))
+//         .withTimestampAssigner((e, ts) -> e.getTimestamp()),
+//     "my-source"
+// );
 
 // 设置重启策略
 env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, Time.seconds(10)));

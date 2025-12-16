@@ -6,6 +6,8 @@ description: "Flink 常用配置和命令速查"
 
 # Flink 快速参考
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 常用命令
 
 ### 集群管理

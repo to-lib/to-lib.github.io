@@ -427,7 +427,7 @@ public class ArraysExample {
 
         // 转换为 List
         Integer[] boxed = {1, 2, 3};
-        var list = Arrays.asList(boxed);
+        List<Integer> list = Arrays.asList(boxed);
 
         // 并行排序（大数组性能更好）
         int[] largeArray = new int[1000000];

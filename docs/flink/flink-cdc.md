@@ -6,6 +6,10 @@ description: "Flink CDC 变更数据捕获详解"
 
 # Flink CDC
 
+> 适用版本：Apache Flink v2.2.0
+
+> 注意：Flink CDC 连接器与 Flink 主版本独立发布，依赖版本与功能支持请以对应组件发布说明为准。
+
 ## 什么是 Flink CDC？
 
 Flink CDC（Change Data Capture）是基于数据库日志的变更数据捕获工具，可以实时将数据库变更同步到 Flink 进行处理。

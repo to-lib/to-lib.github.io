@@ -13,16 +13,16 @@ title: Java 基础语法
 
 Java 提供了 8 种基本数据类型：
 
-| 类型 | 大小 | 范围 | 默认值 | 示例 |
-|------|------|------|--------|------|
-| byte | 8位 | -128 ~ 127 | 0 | `byte b = 100;` |
-| short | 16位 | -32768 ~ 32767 | 0 | `short s = 1000;` |
-| int | 32位 | -2³¹ ~ 2³¹-1 | 0 | `int i = 100000;` |
-| long | 64位 | -2⁶³ ~ 2⁶³-1 | 0L | `long l = 100000L;` |
-| float | 32位 | IEEE 754 | 0.0f | `float f = 3.14f;` |
-| double | 64位 | IEEE 754 | 0.0d | `double d = 3.14159;` |
-| char | 16位 | 0 ~ 65535 | '\u0000' | `char c = 'A';` |
-| boolean | 1位 | true/false | false | `boolean b = true;` |
+| 类型    | 大小  | 范围           | 默认值   | 示例                  |
+| ------- | ----- | -------------- | -------- | --------------------- |
+| byte    | 8 位  | -128 ~ 127     | 0        | `byte b = 100;`       |
+| short   | 16 位 | -32768 ~ 32767 | 0        | `short s = 1000;`     |
+| int     | 32 位 | -2³¹ ~ 2³¹-1   | 0        | `int i = 100000;`     |
+| long    | 64 位 | -2⁶³ ~ 2⁶³-1   | 0L       | `long l = 100000L;`   |
+| float   | 32 位 | IEEE 754       | 0.0f     | `float f = 3.14f;`    |
+| double  | 64 位 | IEEE 754       | 0.0d     | `double d = 3.14159;` |
+| char    | 16 位 | 0 ~ 65535      | '\u0000' | `char c = 'A';`       |
+| boolean | 1 位  | true/false     | false    | `boolean b = true;`   |
 
 ```java
 // 基本数据类型示例
@@ -33,15 +33,15 @@ public class DataTypeExample {
         short year = 2024;
         int population = 1400000000;
         long distance = 384400000L; // 地月距离（米）
-        
+
         // 浮点类型
         float pi = 3.14f;
         double e = 2.718281828;
-        
+
         // 字符和布尔
         char grade = 'A';
         boolean isPassed = true;
-        
+
         System.out.println("年龄: " + age);
         System.out.println("圆周率: " + pi);
     }
@@ -77,16 +77,16 @@ int a = 1, b = 2;  // 同时声明多个变量
 public class VariableTypes {
     // 成员变量（实例变量）
     private String instanceVar = "实例变量";
-    
+
     // 静态变量（类变量）
     private static String classVar = "类变量";
-    
+
     public void method() {
         // 局部变量
         String localVar = "局部变量";
         System.out.println(localVar);
     }
-    
+
     public void parameterExample(String parameter) {
         // parameter 是参数变量
         System.out.println(parameter);
@@ -104,7 +104,7 @@ public class Constants {
     public static final double PI = 3.14159265359;
     public static final int MAX_SIZE = 100;
     public static final String COMPANY_NAME = "ABC公司";
-    
+
     public static void main(String[] args) {
         // PI = 3.14; // 编译错误：无法修改常量
         System.out.println("圆周率: " + PI);
@@ -120,13 +120,13 @@ public class Constants {
 public class ArithmeticOperators {
     public static void main(String[] args) {
         int a = 10, b = 3;
-        
+
         System.out.println("a + b = " + (a + b));  // 加法: 13
         System.out.println("a - b = " + (a - b));  // 减法: 7
         System.out.println("a * b = " + (a * b));  // 乘法: 30
         System.out.println("a / b = " + (a / b));  // 除法: 3
         System.out.println("a % b = " + (a % b));  // 取模: 1
-        
+
         // 自增自减
         int x = 5;
         System.out.println("x++ = " + (x++));  // 5 (后增)
@@ -142,7 +142,7 @@ public class ArithmeticOperators {
 public class RelationalOperators {
     public static void main(String[] args) {
         int a = 10, b = 5;
-        
+
         System.out.println("a == b: " + (a == b));  // false
         System.out.println("a != b: " + (a != b));  // true
         System.out.println("a > b: " + (a > b));    // true
@@ -159,11 +159,11 @@ public class RelationalOperators {
 public class LogicalOperators {
     public static void main(String[] args) {
         boolean x = true, y = false;
-        
+
         System.out.println("x && y: " + (x && y));  // 逻辑与: false
         System.out.println("x || y: " + (x || y));  // 逻辑或: true
         System.out.println("!x: " + (!x));          // 逻辑非: false
-        
+
         // 短路运算
         int a = 5, b = 0;
         if (b != 0 && a / b > 1) {  // b != 0 为 false，不执行 a / b
@@ -180,7 +180,7 @@ public class BitwiseOperators {
     public static void main(String[] args) {
         int a = 5;  // 0101
         int b = 3;  // 0011
-        
+
         System.out.println("a & b = " + (a & b));   // 按位与: 1 (0001)
         System.out.println("a | b = " + (a | b));   // 按位或: 7 (0111)
         System.out.println("a ^ b = " + (a ^ b));   // 按位异或: 6 (0110)
@@ -201,19 +201,19 @@ public class BitwiseOperators {
 public class IfElseExample {
     public static void main(String[] args) {
         int score = 85;
-        
+
         // 简单 if
         if (score >= 60) {
             System.out.println("及格");
         }
-        
+
         // if-else
         if (score >= 60) {
             System.out.println("及格");
         } else {
             System.out.println("不及格");
         }
-        
+
         // if-else if-else
         if (score >= 90) {
             System.out.println("优秀");
@@ -226,7 +226,7 @@ public class IfElseExample {
         } else {
             System.out.println("不及格");
         }
-        
+
         // 三元运算符
         String result = score >= 60 ? "及格" : "不及格";
         System.out.println(result);
@@ -240,7 +240,7 @@ public class IfElseExample {
 public class SwitchExample {
     public static void main(String[] args) {
         int dayOfWeek = 3;
-        
+
         // 传统 switch
         switch (dayOfWeek) {
             case 1:
@@ -256,22 +256,33 @@ public class SwitchExample {
                 System.out.println("其他");
                 break;
         }
-        
-        // Java 12+ 增强 switch 表达式
-        String day = switch (dayOfWeek) {
-            case 1 -> "星期一";
-            case 2 -> "星期二";
-            case 3 -> "星期三";
-            case 4 -> "星期四";
-            case 5 -> "星期五";
-            case 6 -> "星期六";
-            case 7 -> "星期日";
-            default -> "无效";
-        };
+
+        // 使用 Map 替代多分支 switch（JDK 8 推荐）
+        String[] days = {"", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"};
+        String day = (dayOfWeek >= 1 && dayOfWeek <= 7) ? days[dayOfWeek] : "无效";
         System.out.println(day);
     }
 }
 ```
+
+:::tip JDK 12+ 特性
+如果你使用 JDK 12 或更高版本，可以使用增强的 switch 表达式语法：
+
+```java
+// JDK 12+ 增强 switch 表达式（需要 JDK 12+）
+String day = switch (dayOfWeek) {
+    case 1 -> "星期一";
+    case 2 -> "星期二";
+    case 3 -> "星期三";
+    case 4 -> "星期四";
+    case 5 -> "星期五";
+    case 6 -> "星期六";
+    case 7 -> "星期日";
+    default -> "无效";
+};
+```
+
+:::
 
 ### 循环语句
 
@@ -284,13 +295,13 @@ public class ForLoopExample {
         for (int i = 0; i < 5; i++) {
             System.out.println("i = " + i);
         }
-        
+
         // 增强 for 循环（for-each）
         int[] numbers = {1, 2, 3, 4, 5};
         for (int num : numbers) {
             System.out.println("num = " + num);
         }
-        
+
         // 嵌套循环
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
@@ -312,7 +323,7 @@ public class WhileLoopExample {
             System.out.println("i = " + i);
             i++;
         }
-        
+
         // do-while 循环（至少执行一次）
         int j = 0;
         do {
@@ -335,7 +346,7 @@ public class JumpStatements {
             }
             System.out.println("i = " + i);
         }
-        
+
         // continue：跳过当前迭代
         for (int i = 0; i < 5; i++) {
             if (i == 2) {
@@ -343,7 +354,7 @@ public class JumpStatements {
             }
             System.out.println("i = " + i);
         }
-        
+
         // 标签配合 break/continue
         outer: for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -368,12 +379,12 @@ public class StringImmutability {
     public static void main(String[] args) {
         String str = "Hello";
         str = str + " World";  // 创建新的 String 对象
-        
+
         System.out.println(str);  // Hello World
-        
+
         // ❌ 不能这样做：没有 setChar 方法
         // str.setChar(0, 'h');
-        
+
         // ✅ 字符串虽然不可变，但变量可以重新赋值
         str = "Goodbye";
     }
@@ -391,12 +402,12 @@ public class StringPoolExample {
         String str1 = "Hello";
         String str2 = "Hello";
         System.out.println(str1 == str2);  // true（同一对象）
-        
+
         // 使用 new 创建新对象，不用常量池
         String str3 = new String("Hello");
         System.out.println(str1 == str3);      // false（不同对象）
         System.out.println(str1.equals(str3)); // true（内容相同）
-        
+
         // intern() 方法：强制放入常量池
         String str4 = new String("Hello").intern();
         System.out.println(str1 == str4);  // true（同一对象）
@@ -412,28 +423,28 @@ public class StringBasics {
         // 字符串创建
         String str1 = "Hello";
         String str2 = new String("World");
-        
+
         // 字符串连接
         String greeting = str1 + " " + str2;
         System.out.println(greeting);  // Hello World
-        
+
         // 字符串长度
         System.out.println("长度: " + greeting.length());
-        
+
         // 字符串比较
         System.out.println("相等: " + str1.equals("Hello"));
         System.out.println("相等(忽略大小写): " + str1.equalsIgnoreCase("hello"));
-        
+
         // 字符串查找
         System.out.println("包含: " + greeting.contains("World"));
         System.out.println("起始位置: " + greeting.indexOf("World"));
-        
+
         // 字符串截取
         System.out.println("子串: " + greeting.substring(0, 5));
-        
+
         // 字符串替换
         System.out.println("替换: " + greeting.replace("World", "Java"));
-        
+
         // 字符串分割
         String[] words = greeting.split(" ");
         for (String word : words) {
@@ -452,22 +463,22 @@ public class StringBuilderExample {
     public static void main(String[] args) {
         // StringBuilder：不同步，性能更好
         StringBuilder sb = new StringBuilder();
-        
+
         // append：追加字符
         sb.append("Hello");
         sb.append(" ");
         sb.append("World");
-        
+
         System.out.println(sb.toString());  // Hello World
-        
+
         // insert：插入字符
         sb.insert(5, ",");  // 在位置 5 插入 ","
         System.out.println(sb);  // Hello, World
-        
+
         // delete：删除字符
         sb.delete(5, 6);  // 删除位置 5-6 的字符
         System.out.println(sb);  // Hello World
-        
+
         // reverse：反转
         sb.reverse();
         System.out.println(sb);  // dlroW olleH
@@ -481,7 +492,7 @@ public class StringBuilderExample {
 public class StringPerformance {
     public static void main(String[] args) {
         // 性能测试：10000 次字符串操作
-        
+
         // ❌ 使用 String 连接（低效）
         long startTime = System.currentTimeMillis();
         String str = "";
@@ -490,7 +501,7 @@ public class StringPerformance {
         }
         long time1 = System.currentTimeMillis() - startTime;
         System.out.println("String 连接耗时: " + time1 + "ms");
-        
+
         // ✅ 使用 StringBuilder（高效）
         startTime = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
@@ -500,7 +511,7 @@ public class StringPerformance {
         String result = sb.toString();
         long time2 = System.currentTimeMillis() - startTime;
         System.out.println("StringBuilder 耗时: " + time2 + "ms");
-        
+
         System.out.println("性能提升: " + (time1 / time2) + " 倍");
     }
 }
@@ -508,12 +519,12 @@ public class StringPerformance {
 
 ### String vs StringBuilder vs StringBuffer
 
-| 特性 | String | StringBuilder | StringBuffer |
-|------|--------|---------------|--------------|
-| 可变性 | 不可变 | 可变 | 可变 |
-| 线程安全 | 是 | 否 | 是 |
-| 性能 | 低（频繁修改） | 高 | 中等 |
-| 使用场景 | 字符串不修改 | 单线程频繁修改 | 多线程频繁修改 |
+| 特性     | String         | StringBuilder  | StringBuffer   |
+| -------- | -------------- | -------------- | -------------- |
+| 可变性   | 不可变         | 可变           | 可变           |
+| 线程安全 | 是             | 否             | 是             |
+| 性能     | 低（频繁修改） | 高             | 中等           |
+| 使用场景 | 字符串不修改   | 单线程频繁修改 | 多线程频繁修改 |
 
 ```java
 public class StringComparison {
@@ -521,11 +532,11 @@ public class StringComparison {
         // StringBuffer：线程安全但性能稍差
         StringBuffer sbuf = new StringBuffer();
         sbuf.append("Hello");  // 同步方法
-        
+
         // StringBuilder：性能最好但非线程安全
         StringBuilder sbuilder = new StringBuilder();
         sbuilder.append("Hello");  // 非同步方法
-        
+
         System.out.println(sbuf.toString());     // Hello
         System.out.println(sbuilder.toString()); // Hello
     }
@@ -538,26 +549,26 @@ public class StringComparison {
 public class StringMethods {
     public static void main(String[] args) {
         String str = "  Hello Java World  ";
-        
+
         // 大小写转换
         System.out.println(str.toUpperCase());   // "  HELLO JAVA WORLD  "
         System.out.println(str.toLowerCase());   // "  hello java world  "
-        
+
         // 去掉首尾空格
         System.out.println(str.trim());  // "Hello Java World"
-        
+
         // 开始和结尾判断
         System.out.println(str.startsWith("  Hello"));  // true
         System.out.println(str.endsWith("World  "));    // true
-        
+
         // 字符替换
         System.out.println(str.replace(" ", ""));    // "HelloJavaWorld"
         System.out.println(str.replaceAll("\\s+", " "));  // " Hello Java World "
-        
+
         // 转换成字符数组
         char[] chars = str.toCharArray();
         System.out.println("首字符: " + chars[2]);  // 'H'
-        
+
         // 字符串拆分
         String[] words = str.trim().split(" ");
         for (String word : words) {
@@ -578,29 +589,29 @@ public class ArrayBasics {
         int[] arr1 = new int[5];           // 创建长度为5的数组
         int[] arr2 = {1, 2, 3, 4, 5};      // 声明并初始化
         int[] arr3 = new int[]{1, 2, 3};   // 另一种初始化方式
-        
+
         // 访问数组元素
         arr1[0] = 10;
         System.out.println("第一个元素: " + arr1[0]);
         System.out.println("数组长度: " + arr1.length);
-        
+
         // 遍历数组
         for (int i = 0; i < arr2.length; i++) {
             System.out.println("arr2[" + i + "] = " + arr2[i]);
         }
-        
+
         // 使用增强 for 循环
         for (int num : arr2) {
             System.out.println(num);
         }
-        
+
         // 多维数组
         int[][] matrix = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
-        
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " ");
@@ -637,18 +648,18 @@ public class CodeStyle {
     // 1. 使用有意义的变量名
     int age = 25;  // 好
     int a = 25;    // 不好
-    
+
     // 2. 适当使用空格和缩进
     public void goodExample() {
         if (age > 18) {
             System.out.println("成年人");
         }
     }
-    
+
     // 3. 一行代码不要过长
     String message = "这是一个很长的字符串，" +
                      "应该分成多行显示";
-    
+
     // 4. 及时释放资源
     public void resourceExample() {
         // 使用 try-with-resources

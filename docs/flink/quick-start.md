@@ -6,6 +6,8 @@ description: "快速搭建和运行 Apache Flink 应用"
 
 # Flink 快速开始
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 环境准备
 
 ### 系统要求
@@ -19,12 +21,12 @@ description: "快速搭建和运行 Apache Flink 应用"
 #### 下载 Flink
 
 ```bash
-# 下载 Flink 1.17
-wget https://archive.apache.org/dist/flink/flink-1.17.1/flink-1.17.1-bin-scala_2.12.tgz
+# 下载 Flink 2.2.0
+wget https://downloads.apache.org/flink/flink-2.2.0/flink-2.2.0-bin-scala_2.12.tgz
 
 # 解压
-tar -xzf flink-1.17.1-bin-scala_2.12.tgz
-cd flink-1.17.1
+tar -xzf flink-2.2.0-bin-scala_2.12.tgz
+cd flink-2.2.0
 ```
 
 #### 启动本地集群
@@ -57,7 +59,7 @@ jps
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <flink.version>1.17.1</flink.version>
+        <flink.version>2.2.0</flink.version>
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>

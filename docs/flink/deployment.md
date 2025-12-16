@@ -1,10 +1,12 @@
 ---
-sidebar_position: 13
+sidebar_position: 14
 title: "部署与运维"
 description: "Flink 集群部署与运维指南"
 ---
 
 # Flink 部署与运维
+
+> 适用版本：Apache Flink v2.2.0
 
 ## 部署模式
 
@@ -83,7 +85,7 @@ spec:
     spec:
       containers:
         - name: jobmanager
-          image: flink:1.17
+          image: flink:2.2.0
           args: ["jobmanager"]
           ports:
             - containerPort: 6123

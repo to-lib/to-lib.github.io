@@ -6,6 +6,8 @@ description: "Flink CEP 复杂事件处理库详解"
 
 # Flink CEP 复杂事件处理
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 概述
 
 Flink CEP（Complex Event Processing）是 Flink 提供的复杂事件处理库，用于在事件流中检测符合特定模式的事件序列。

@@ -6,6 +6,8 @@ description: "Apache Flink 核心概念详解：流、窗口、时间、状态"
 
 # Flink 核心概念
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 数据流模型
 
 ### 无界流 vs 有界流

@@ -6,6 +6,8 @@ description: "Flink 面试常见问题及答案"
 
 # Flink 面试题精选
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 基础概念
 
 ### 1. 什么是 Apache Flink？

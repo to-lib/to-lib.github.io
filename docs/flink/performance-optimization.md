@@ -1,10 +1,12 @@
 ---
-sidebar_position: 14
+sidebar_position: 16
 title: "性能优化"
 description: "Flink 性能优化与调优指南"
 ---
 
 # Flink 性能优化
+
+> 适用版本：Apache Flink v2.2.0
 
 ## 并行度优化
 

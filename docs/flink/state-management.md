@@ -6,6 +6,8 @@ description: "Flink 状态管理与容错机制详解"
 
 # Flink 状态管理
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 概述
 
 状态管理是 Flink 的核心能力之一，使得 Flink 能够处理复杂的有状态计算，如聚合、窗口、机器学习模型等。

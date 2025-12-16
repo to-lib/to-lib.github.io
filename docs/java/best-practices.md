@@ -614,11 +614,11 @@ public interface Shape {
 
 public class ShapeFactory {
     public static Shape createShape(String type) {
-        return switch (type) {
-            case "CIRCLE" -> new Circle();
-            case "SQUARE" -> new Square();
-            default -> throw new IllegalArgumentException("未知类型");
-        };
+        switch (type) {
+            case "CIRCLE": return new Circle();
+            case "SQUARE": return new Square();
+            default: throw new IllegalArgumentException("未知类型");
+        }
     }
 }
 ```

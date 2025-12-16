@@ -6,6 +6,8 @@ description: "Flink Table API 和 SQL 声明式数据处理"
 
 # Table API 与 SQL
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 概述
 
 Flink Table API 和 SQL 提供了统一的声明式 API，可以用类似关系型数据库的方式处理流和批数据。
@@ -332,4 +334,4 @@ tableEnv.executeSql(
 
 - 💻 [DataStream API](/docs/flink/datastream-api) - 底层流处理 API
 - 🔧 [状态管理](/docs/flink/state-management) - 有状态计算
-- 🚀 [性能优化](/docs/flink/performance) - 性能调优指南
+- 🚀 [性能优化](/docs/flink/performance-optimization) - 性能调优指南

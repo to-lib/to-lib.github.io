@@ -264,6 +264,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "java/index",
+        "java/environment-setup",
         "java/basic-syntax",
         "java/oop",
         "java/common-classes",

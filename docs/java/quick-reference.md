@@ -445,11 +445,11 @@ public enum Singleton {
 // 工厂模式
 public class Factory {
     public static Product create(String type) {
-        return switch (type) {
-            case "A" -> new ProductA();
-            case "B" -> new ProductB();
-            default -> throw new IllegalArgumentException();
-        };
+        switch (type) {
+            case "A": return new ProductA();
+            case "B": return new ProductB();
+            default: throw new IllegalArgumentException();
+        }
     }
 }
 

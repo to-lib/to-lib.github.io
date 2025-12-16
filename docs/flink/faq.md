@@ -6,6 +6,8 @@ description: "Flink 常见问题解答"
 
 # Flink 常见问题
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 基础概念
 
 ### Flink 和 Spark Streaming 有什么区别？

@@ -6,6 +6,8 @@ description: "Flink 数据源和接收器连接器详解"
 
 # Flink 连接器
 
+> 适用版本：Apache Flink v2.2.0
+
 ## 概述
 
 Flink 连接器用于与外部系统进行数据交互，包括数据源（Source）和数据接收器（Sink）。
@@ -93,7 +95,7 @@ CREATE TABLE kafka_sink (
 <dependency>
     <groupId>org.apache.flink</groupId>
     <artifactId>flink-connector-jdbc</artifactId>
-    <version>3.1.0-1.17</version>
+    <version>${flink.connector.jdbc.version}</version>
 </dependency>
 <dependency>
     <groupId>mysql</groupId>

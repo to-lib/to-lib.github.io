@@ -1,10 +1,12 @@
 ---
-sidebar_position: 15
+sidebar_position: 17
 title: "最佳实践"
 description: "Flink 开发与生产最佳实践"
 ---
 
 # Flink 最佳实践
+
+> 适用版本：Apache Flink v2.2.0
 
 ## 代码开发
 
@@ -58,9 +60,7 @@ descriptor.enableTimeToLive(ttlConfig);
 ### 时间处理
 
 ```java
-// ✅ 推荐：使用事件时间
-env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
-
+// ✅ 推荐：使用事件时间（无需显式设置 TimeCharacteristic）
 // ✅ 推荐：正确设置水印
 DataStream<Event> stream = source.assignTimestampsAndWatermarks(
     WatermarkStrategy
