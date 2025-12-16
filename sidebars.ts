@@ -465,6 +465,8 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "react/hooks",
+        "react/data-fetching",
+        "react/suspense-data-fetching",
         "react/event-handling",
         "react/conditional-rendering",
         "react/lists-and-keys",
@@ -481,6 +483,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "react/performance-optimization",
+        "react/react-compiler",
         "react/react19-features",
         "react/react-router",
         "react/state-management",
@@ -499,6 +502,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "react/quick-reference",
         "react/best-practices",
+        "react/accessibility",
         "react/faq",
         "react/practical-projects",
         "react/interview-questions",

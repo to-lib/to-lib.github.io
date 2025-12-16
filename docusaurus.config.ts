@@ -389,6 +389,14 @@ const config: Config = {
               to: "/docs/react/hooks",
             },
             {
+              label: "📡 数据获取（TanStack Query）",
+              to: "/docs/react/data-fetching",
+            },
+            {
+              label: "🧵 Suspense 与 use() 数据获取",
+              to: "/docs/react/suspense-data-fetching",
+            },
+            {
               label: "🔄 Context API",
               to: "/docs/react/context",
             },
@@ -410,6 +418,10 @@ const config: Config = {
               to: "/docs/react/performance-optimization",
             },
             {
+              label: "🤖 React Compiler",
+              to: "/docs/react/react-compiler",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -425,6 +437,10 @@ const config: Config = {
             {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "♿ 可访问性（a11y）",
+              to: "/docs/react/accessibility",
             },
             {
               label: "📋 面试题精选",

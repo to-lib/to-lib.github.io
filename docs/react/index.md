@@ -59,14 +59,18 @@ React 是一个用于构建用户界面的 JavaScript 库：
 ### 🎓 核心特性
 
 - **[Hooks 详解](/docs/react/hooks)** - useState、useEffect、自定义 Hooks、React 19 新 Hooks
+- **[数据获取（TanStack Query）](/docs/react/data-fetching)** - Server State 缓存、失效、重试与工程化实践
+- **[Suspense 与 use() 数据获取](/docs/react/suspense-data-fetching)** - 用 Suspense 统一管理加载态，理解 use() 读取 Promise
 
 ### 🚀 React 19 新特性
 
 - **[React 19 新特性](/docs/react/react19-features)** - Server Components、Actions、新 Hooks 详解
+- **[React Compiler](/docs/react/react-compiler)** - 构建期自动优化渲染，减少手动 memo 负担
 
 ### 💡 实战部分
 
 - **[面试题精选](/docs/react/interview-questions)** - React 面试题库
+- **[可访问性（a11y）](/docs/react/accessibility)** - 语义化、键盘支持、ARIA 与上线前自查
 
 ## 🎯 学习建议
 
