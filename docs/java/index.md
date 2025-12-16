@@ -38,6 +38,8 @@ title: Java 编程概述
 - **反射与注解** - 反射 API、自定义注解、注解处理
 - **JVM 基础** - JVM 架构、类加载、内存模型、垃圾回收
 - **性能优化** - 代码优化、并发优化、IO 优化、调优技巧
+- **JDK 8 新特性** - Lambda、Stream、Optional、新日期时间 API
+- **JDK 11 新特性** - HTTP Client、String 增强、文件读写增强
 - **JDK 17 新特性** - 密封类、记录类型、模式匹配、文本块
 - **JDK 21 新特性** - 虚拟线程、序列化集合、增强的模式匹配
 
@@ -46,11 +48,12 @@ title: Java 编程概述
 如果你是 Java 初学者，建议按以下顺序学习：
 
 1. [开发环境搭建](/docs/java/environment-setup) - 安装配置 JDK 1.8
-2. [基础语法](/docs/java/basic-syntax) - 掌握 Java 基本语法和字符串处理
-3. [面向对象](/docs/java/oop) - 理解面向对象编程思想、枚举和注解
-4. [集合框架](/docs/java/collections) - 学习常用数据结构
-5. [异常处理](/docs/java/exception-handling) - 掌握异常处理机制
-6. [多线程](/docs/java/multithreading) - 了解并发编程基础
+2. [构建与编译（Maven/Gradle）](/docs/java/build-tools) - 固定 Java 8 编译配置，打包与常用命令
+3. [基础语法](/docs/java/basic-syntax) - 掌握 Java 基本语法和字符串处理
+4. [面向对象](/docs/java/oop) - 理解面向对象编程思想、枚举和注解
+5. [集合框架](/docs/java/collections) - 学习常用数据结构
+6. [异常处理](/docs/java/exception-handling) - 掌握异常处理机制
+7. [多线程](/docs/java/multithreading) - 了解并发编程基础
 
 ## 📖 学习路径
 
@@ -97,6 +100,7 @@ title: Java 编程概述
 | 主题                                            | 描述                                              |
 | ----------------------------------------------- | ------------------------------------------------- |
 | [基础语法](/docs/java/basic-syntax)             | 数据类型、变量、运算符、流程控制、字符串处理      |
+| [构建与编译（Maven/Gradle）](/docs/java/build-tools) | Java 8 工程构建、编译配置、打包与常见问题排查     |
 | [面向对象](/docs/java/oop)                      | 类、对象、继承、多态、内部类、枚举、注解          |
 | [集合框架](/docs/java/collections)              | List、Set、Map 详解和性能对比                     |
 | [异常处理](/docs/java/exception-handling)       | 异常分类、处理机制、最佳实践                      |

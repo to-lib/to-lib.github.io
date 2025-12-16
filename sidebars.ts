@@ -268,6 +268,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "java/index",
         "java/environment-setup",
+        "java/build-tools",
         "java/basic-syntax",
         "java/oop",
         "java/common-classes",
@@ -785,6 +786,9 @@ const sidebars: SidebarsConfig = {
         "kafka/performance-optimization",
         "kafka/best-practices",
         "kafka/monitoring",
+        "kafka/security",
+        "kafka/kafka-connect",
+        "kafka/kafka-streams",
       ],
     },
     {

@@ -3,6 +3,6 @@
     "position": 2,
     "link": {
         "type": "generated-index",
-        "description": "Java 编程完整学习指南，涵盖基础语法、面向对象、集合框架、多线程、IO流、异常处理等核心内容"
+        "description": "Java 编程完整学习指南（默认基于 JDK 1.8 / Java 8），涵盖基础语法、面向对象、集合框架、多线程、IO流、异常处理等核心内容"
     }
 }

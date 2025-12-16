@@ -25,7 +25,7 @@ title: Java 快速参考
 ### 运算符优先级
 
 | 优先级 | 运算符            | 说明                 |
-| ------ | ----------------- | -------------------- | ---- | ------ |
+| ------ | ----------------- | -------------------- |
 | 1      | `()` `[]` `.`     | 括号、数组、成员访问 |
 | 2      | `++` `--` `!` `~` | 一元运算符           |
 | 3      | `*` `/` `%`       | 乘除模               |
@@ -35,9 +35,9 @@ title: Java 快速参考
 | 7      | `==` `!=`         | 相等                 |
 | 8      | `&`               | 位与                 |
 | 9      | `^`               | 位异或               |
-| 10     | `                 | `                    | 位或 |
+| 10     | `\|`              | 位或                 |
 | 11     | `&&`              | 逻辑与               |
-| 12     | `                 |                      | `    | 逻辑或 |
+| 12     | `||`              | 逻辑或               |
 | 13     | `?:`              | 三元运算符           |
 | 14     | `=` `+=` `-=` 等  | 赋值                 |
 
@@ -92,7 +92,7 @@ map.entrySet();                 // 获取所有键值对
 // 长度和判空
 str.length()                    // 字符串长度
 str.isEmpty()                   // 是否为空
-str.isBlank()                   // 是否为空白（JDK 11+）
+str.isBlank()                   // 是否为空白（JDK 11+，JDK 8 可用：str.trim().isEmpty()）
 
 // 查找
 str.indexOf("sub")              // 查找子串位置
@@ -105,7 +105,7 @@ str.endsWith("suf")             // 是否以...结尾
 str.substring(start, end)       // 截取子串
 str.split(",")                  // 拆分字符串
 str.trim()                      // 去除两端空白
-str.strip()                     // 去除空白（JDK 11+）
+str.strip()                     // 去除空白（JDK 11+，JDK 8 用 trim()；注意 trim() 对 Unicode 空白支持较弱）
 
 // 转换
 str.toUpperCase()               // 转大写
@@ -207,7 +207,7 @@ Optional.empty()                // 空
 
 // 判断
 optional.isPresent()            // 是否有值
-optional.isEmpty()              // 是否为空（JDK 11+）
+optional.isEmpty()              // 是否为空（JDK 11+，JDK 8 用：!optional.isPresent()）
 
 // 获取值
 optional.get()                  // 获取（可能抛异常）
@@ -260,13 +260,21 @@ date1.isEqual(date2)           // 是否相等
 ## 文件操作
 
 ```java
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Stream;
+
 // 读取文件
 String content = Files.readString(path);                    // JDK 11+
+String content8 = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);  // JDK 8
 List<String> lines = Files.readAllLines(path);
 Stream<String> lineStream = Files.lines(path);
 
 // 写入文件
 Files.writeString(path, content);                           // JDK 11+
+Files.write(path, content.getBytes(StandardCharsets.UTF_8)); // JDK 8
 Files.write(path, lines);
 
 // 复制、移动、删除
@@ -416,7 +424,7 @@ List<?> unknowns;                // 无界
 
 # 其他
 -XX:+UnlockExperimentalVMOptions # 解锁实验特性
--XX:+UseZGC                     # 使用 ZGC
+-XX:+UseZGC                     # 使用 ZGC（JDK 11+）
 -verbose:gc                      # 打印 GC 信息
 ```
 

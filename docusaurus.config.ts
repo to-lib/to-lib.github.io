@@ -110,6 +110,23 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>环境与构建</div>",
+            },
+            {
+              label: "🛠️ 环境搭建",
+              to: "/docs/java/environment-setup",
+            },
+            {
+              label: "🧰 构建与编译（JDK 8）",
+              to: "/docs/java/build-tools",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
             },
             {
@@ -178,6 +195,14 @@ const config: Config = {
               type: "html",
               value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>版本新特性</div>",
+            },
+            {
+              label: "📦 JDK 8 新特性",
+              to: "/docs/java/jdk8-features",
+            },
+            {
+              label: "📦 JDK 11 新特性",
+              to: "/docs/java/jdk11-features",
             },
             {
               label: "📦 JDK 17 新特性",

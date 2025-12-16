@@ -391,7 +391,7 @@ public class GarbageCollectors {
         // -XX:+UseG1GC
         // -XX:MaxGCPauseMillis=200
         
-        // 5. ZGC（低延迟收集器，JDK 11+）
+        // 5. ZGC（扩展内容：低延迟收集器，JDK 11+）
         // -XX:+UseZGC
         
         System.out.println("垃圾回收器信息:");

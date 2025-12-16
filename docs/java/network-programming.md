@@ -7,6 +7,10 @@ title: Java 网络编程
 
 Java 提供了强大的网络编程 API，支持 TCP、UDP 协议以及 HTTP 通信。本文介绍 Socket 编程、URL 连接和 HTTP Client 的使用。
 
+> [!IMPORTANT]
+> 本目录默认以 **JDK 1.8 (Java 8)** 为基线。
+> HTTP 通信在 JDK 8 下建议优先使用 `HttpURLConnection`；`HttpClient` 属于 **扩展内容（JDK 11+）**。
+
 ## TCP Socket 编程
 
 TCP 是面向连接的可靠传输协议，使用 Socket 和 ServerSocket 实现。
@@ -382,7 +386,100 @@ public class URLConnectionExample {
 }
 ```
 
-## HTTP Client（JDK 11+）
+## HTTP 通信（JDK 8：HttpURLConnection）
+
+JDK 8 没有内置 `java.net.http.HttpClient`，通常使用 `HttpURLConnection` 完成 HTTP 请求。
+
+### GET 请求
+
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class HttpUrlConnectionGet {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("https://api.github.com/users/octocat");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setConnectTimeout(5000);
+        conn.setReadTimeout(5000);
+        conn.setRequestProperty("Accept", "application/json");
+
+        int status = conn.getResponseCode();
+        System.out.println("状态码: " + status);
+
+        try (BufferedReader reader = new BufferedReader(
+            new InputStreamReader(
+                status >= 400 ? conn.getErrorStream() : conn.getInputStream(),
+                "UTF-8"
+            )
+        )) {
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            System.out.println("响应体: " + sb);
+        } finally {
+            conn.disconnect();
+        }
+    }
+}
+```
+
+### POST 请求（JSON）
+
+```java
+import java.io.BufferedReader;
+import java.io.OutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class HttpUrlConnectionPost {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("https://api.example.com/users");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setConnectTimeout(5000);
+        conn.setReadTimeout(5000);
+        conn.setDoOutput(true);
+        conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+
+        String json = "{\n" +
+            "  \"name\": \"张三\",\n" +
+            "  \"email\": \"zhangsan@example.com\"\n" +
+            "}";
+
+        try (OutputStream os = conn.getOutputStream()) {
+            os.write(json.getBytes("UTF-8"));
+        }
+
+        int status = conn.getResponseCode();
+        System.out.println("状态码: " + status);
+
+        try (BufferedReader reader = new BufferedReader(
+            new InputStreamReader(
+                status >= 400 ? conn.getErrorStream() : conn.getInputStream(),
+                "UTF-8"
+            )
+        )) {
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            System.out.println("响应体: " + sb);
+        } finally {
+            conn.disconnect();
+        }
+    }
+}
+```
+
+## HTTP Client（扩展：JDK 11+）
 
 JDK 11 引入了新的 HTTP Client API，提供了更现代和强大的 HTTP 通信功能。
 
@@ -437,13 +534,11 @@ public class HttpClientPostExample {
         try {
             HttpClient client = HttpClient.newHttpClient();
 
-            // JSON 数据
-            String json = """
-                {
-                    "name": "张三",
-                    "email": "zhangsan@example.com"
-                }
-                """;
+            // JSON 数据（示例使用普通字符串，避免依赖 Java 15+ 的文本块语法）
+            String json = "{\n" +
+                "  \"name\": \"张三\",\n" +
+                "  \"email\": \"zhangsan@example.com\"\n" +
+                "}";
 
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.example.com/users"))
@@ -755,7 +850,8 @@ try {
 - **TCP Socket**：面向连接的可靠传输，适用于需要可靠性的场景
 - **UDP Socket**：无连接的快速传输，适用于实时性要求高的场景
 - **URL/URLConnection**：访问 Web 资源的传统方式
-- **HTTP Client**：JDK 11+ 提供的现代 HTTP API，支持同步/异步请求
+- **HttpURLConnection**：JDK 8 下常用的 HTTP 通信方式
+- **HTTP Client**：扩展内容，JDK 11+ 提供的现代 HTTP API，支持同步/异步请求
 - **多线程服务器**：使用线程池处理并发连接
 - **资源管理**：使用 try-with-resources 确保资源正确释放
 

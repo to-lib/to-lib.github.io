@@ -93,13 +93,11 @@ public class HttpClientPost {
         HttpClient client = HttpClient.newHttpClient();
 
         // JSON 请求体
-        String json = """
-            {
-                "name": "张三",
-                "email": "zhangsan@example.com",
-                "age": 25
-            }
-            """;
+        String json = "{\n" +
+            "  \"name\": \"张三\",\n" +
+            "  \"email\": \"zhangsan@example.com\",\n" +
+            "  \"age\": 25\n" +
+            "}";
 
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create("https://api.example.com/users"))
@@ -435,12 +433,7 @@ public class RefactoringExample {
         var client = HttpClient.newHttpClient();
 
         // 使用 String.lines() 和 Stream API
-        var text = """
-            apple
-            banana
-
-            cherry
-            """;
+        var text = "apple\nbanana\n\ncherry\n";
 
         var fruits = text.lines()
             .filter(Predicate.not(String::isBlank))  // 过滤空行
