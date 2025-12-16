@@ -5,17 +5,32 @@ slug: /design-patterns-guide
 
 # Java 设计模式完全指南
 
-欢迎来到Java设计模式完全学习指南！本文档包含了23种经典设计模式的详细讲解、实际应用示例和最佳实践。
+> **适用版本**: JDK 1.8 (Java 8) 及以上
+>
+> 本文档所有代码示例基于 **JDK 1.8** 编写，充分利用了 Java 8 的新特性（Lambda 表达式、Stream API、函数式接口等），同时确保向后兼容更高版本的 JDK。
+
+:::tip 环境要求
+
+- **JDK 版本**: JDK 1.8 或更高版本
+- **构建工具**: Maven 3.6+ 或 Gradle 6.0+
+- **IDE**: IntelliJ IDEA / Eclipse / VS Code
+
+👉 详细配置请参考 [环境配置指南](java-design-patterns/environment-setup)
+:::
+
+欢迎来到 Java 设计模式完全学习指南！本文档包含了 23 种经典设计模式的详细讲解、实际应用示例和最佳实践。
 
 ## 📚 文档组织结构
 
 本指南分为以下几个部分：
 
 ### 📖 基础入门
-- [设计模式概述](java-design-patterns/overview) - 理解什么是设计模式及其分类
-- [快速参考](java-design-patterns/quick-reference) - 23种模式的快速查询表
 
-### 🏭 创建型模式 (5种)
+- [设计模式概述](java-design-patterns/overview) - 理解什么是设计模式及其分类
+- [快速参考](java-design-patterns/quick-reference) - 23 种模式的快速查询表
+
+### 🏭 创建型模式 (5 种)
+
 构造对象，隐藏创建逻辑
 
 1. [单例模式 (Singleton)](java-design-patterns/singleton-pattern) - 确保类仅有一个实例
@@ -24,7 +39,8 @@ slug: /design-patterns-guide
 4. [建造者模式 (Builder)](java-design-patterns/builder-pattern) - 分步构建复杂对象
 5. [原型模式 (Prototype)](java-design-patterns/prototype-pattern) - 通过克隆创建对象
 
-### 🔧 结构型模式 (7种)
+### 🔧 结构型模式 (7 种)
+
 组合对象，形成更大的结构
 
 6. [适配器模式 (Adapter)](java-design-patterns/adapter-pattern) - 转换接口实现兼容
@@ -35,7 +51,8 @@ slug: /design-patterns-guide
 11. [享元模式 (Flyweight)](java-design-patterns/flyweight-pattern) - 共享细粒度对象
 12. [桥接模式 (Bridge)](java-design-patterns/bridge-pattern) - 分离抽象和实现
 
-### 🎯 行为型模式 (11种)
+### 🎯 行为型模式 (11 种)
+
 处理对象间的通信和职责分配
 
 13. [观察者模式 (Observer)](java-design-patterns/observer-pattern) - 一对多通知
@@ -51,25 +68,29 @@ slug: /design-patterns-guide
 23. [解释器 (Interpreter)](java-design-patterns/interpreter-pattern) - 解析和执行语言
 
 ### 💡 最佳实践
-- [设计模式最佳实践](java-design-patterns/best-practices) - SOLID原则、反模式、应用清单
+
+- [设计模式最佳实践](java-design-patterns/best-practices) - SOLID 原则、反模式、应用清单
 
 ## 🎓 学习路径建议
 
-### 🌱 初级 (1-2周)
+### 🌱 初级 (1-2 周)
+
 如果你是设计模式新手，建议按以下顺序学习：
 
 1. **理解基础概念**
+
    - [设计模式概述](java-design-patterns/overview)
    - [快速参考](java-design-patterns/quick-reference)
 
-2. **学习最常用的5个模式**
+2. **学习最常用的 5 个模式**
    - [单例模式](java-design-patterns/singleton-pattern) - 最简单
    - [工厂方法](java-design-patterns/factory-pattern) - 对象创建
    - [策略模式](java-design-patterns/strategy-pattern) - 算法选择
    - [观察者模式](java-design-patterns/observer-pattern) - 事件系统
    - [装饰器模式](java-design-patterns/decorator-pattern) - 功能增强
 
-### 🌿 中级 (2-4周)
+### 🌿 中级 (2-4 周)
+
 掌握基础后，继续学习：
 
 6. [建造者模式](java-design-patterns/builder-pattern)
@@ -79,7 +100,8 @@ slug: /design-patterns-guide
 10. [状态模式](java-design-patterns/state-pattern)
 11. [命令模式](java-design-patterns/command-pattern)
 
-### 🌳 高级 (4周+)
+### 🌳 高级 (4 周+)
+
 深入理解剩余的模式：
 
 12. [抽象工厂](java-design-patterns/abstract-factory-pattern)
@@ -99,7 +121,9 @@ slug: /design-patterns-guide
 ## 📊 设计模式分类速览
 
 ### 按使用频率
+
 **高频** ⭐⭐⭐
+
 - Singleton（无处不在）
 - Factory Method（对象创建）
 - Strategy（算法选择）
@@ -107,6 +131,7 @@ slug: /design-patterns-guide
 - Decorator（功能增强）
 
 **中频** ⭐⭐
+
 - Abstract Factory
 - Builder
 - Template Method
@@ -114,9 +139,11 @@ slug: /design-patterns-guide
 - State
 
 **低频** ⭐
-- 其他11种模式（特定场景）
+
+- 其他 11 种模式（特定场景）
 
 ### 按复杂度
+
 - **简单** - 容易理解：Singleton, Factory Method, Strategy, Adapter, Observer
 - **中等** - 需要经验：Abstract Factory, Builder, Decorator, Proxy, State, Command, Template Method
 - **复杂** - 需要深入理解：Bridge, Composite, Facade, Flyweight, Chain of Responsibility, Mediator, Memento, Iterator, Visitor, Interpreter, Prototype
@@ -124,6 +151,7 @@ slug: /design-patterns-guide
 ## 🔍 快速查询
 
 **我需要创建对象？**
+
 - 单一对象 → [Singleton](java-design-patterns/singleton-pattern)
 - 多种类型 → [Factory Method](java-design-patterns/factory-pattern)
 - 产品族 → [Abstract Factory](java-design-patterns/abstract-factory-pattern)
@@ -131,6 +159,7 @@ slug: /design-patterns-guide
 - 克隆对象 → [Prototype](java-design-patterns/prototype-pattern)
 
 **我需要组织对象结构？**
+
 - 树形结构 → [Composite](java-design-patterns/composite-pattern)
 - 动态功能 → [Decorator](java-design-patterns/decorator-pattern)
 - 简化系统 → [Facade](java-design-patterns/facade-pattern)
@@ -139,6 +168,7 @@ slug: /design-patterns-guide
 - 分享对象 → [Flyweight](java-design-patterns/flyweight-pattern)
 
 **我需要处理对象交互？**
+
 - 一对多通知 → [Observer](java-design-patterns/observer-pattern)
 - 可换算法 → [Strategy](java-design-patterns/strategy-pattern)
 - 状态转换 → [State](java-design-patterns/state-pattern)
@@ -152,7 +182,7 @@ slug: /design-patterns-guide
 - ✅ **模式定义** - 清楚的概念解释
 - ✅ **问题分析** - 为什么需要这个模式
 - ✅ **解决方案** - 模式的核心思想
-- ✅ **代码实现** - 完整的Java实现示例
+- ✅ **代码实现** - 完整的 Java 实现示例
 - ✅ **实际应用** - 多个真实场景例子
 - ✅ **优缺点** - 权衡分析
 - ✅ **适用场景** - 何时使用
@@ -161,14 +191,17 @@ slug: /design-patterns-guide
 
 ## 🚀 如何使用本指南
 
-### 方式1：按顺序学习
+### 方式 1：按顺序学习
+
 从基础到高级，完整学习所有模式。
 
-### 方式2：按需查询
+### 方式 2：按需查询
+
 使用[快速参考](java-design-patterns/quick-reference)快速找到所需模式。
 
-### 方式3：按场景学习
-根据实际需求查找相关模式（如"我要实现undo功能"）。
+### 方式 3：按场景学习
+
+根据实际需求查找相关模式（如"我要实现 undo 功能"）。
 
 ## 📝 学习建议
 
@@ -180,7 +213,7 @@ slug: /design-patterns-guide
 
 ## 🎯 本指南的目标
 
-- ✨ 帮助你理解23种经典设计模式
+- ✨ 帮助你理解 23 种经典设计模式
 - 📚 提供清晰的讲解和完整的代码示例
 - 💡 展示实际的应用场景
 - 🔧 指导如何在项目中使用
