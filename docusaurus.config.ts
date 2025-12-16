@@ -810,6 +810,10 @@ const config: Config = {
               to: "/docs/redis",
             },
             {
+              label: "🚀 快速入门",
+              to: "/docs/redis/quick-start",
+            },
+            {
               label: "📚 数据类型",
               to: "/docs/redis/data-types",
             },
@@ -835,6 +839,14 @@ const config: Config = {
                 "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心功能</div>",
             },
             {
+              label: "📜 Lua 脚本",
+              to: "/docs/redis/lua-scripting",
+            },
+            {
+              label: "📍 地理位置",
+              to: "/docs/redis/geo",
+            },
+            {
               label: "📡 发布订阅",
               to: "/docs/redis/pubsub",
             },
@@ -849,6 +861,19 @@ const config: Config = {
             {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级应用</div>",
+            },
+            {
+              label: "🔐 安全配置",
+              to: "/docs/redis/security",
+            },
+            {
+              label: "🧠 内存管理",
+              to: "/docs/redis/memory-management",
             },
             {
               label: "📋 快速参考",

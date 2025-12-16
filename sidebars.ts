@@ -570,7 +570,12 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📖 基础知识",
       collapsed: false,
-      items: ["redis/index", "redis/introduction", "redis/data-types"],
+      items: [
+        "redis/index",
+        "redis/quick-start",
+        "redis/introduction",
+        "redis/data-types",
+      ],
     },
     {
       type: "category",
@@ -585,6 +590,8 @@ const sidebars: SidebarsConfig = {
         "redis/pubsub",
         "redis/streams",
         "redis/pipeline",
+        "redis/lua-scripting",
+        "redis/geo",
       ],
     },
     {
@@ -593,7 +600,9 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "redis/cache-strategies",
+        "redis/memory-management",
         "redis/performance-optimization",
+        "redis/security",
         "redis/best-practices",
       ],
     },
