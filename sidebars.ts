@@ -818,7 +818,12 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🎯 高级主题",
       collapsed: true,
-      items: ["flink/state-management", "flink/cep", "flink/connectors"],
+      items: [
+        "flink/state-management",
+        "flink/cep",
+        "flink/connectors",
+        "flink/flink-cdc",
+      ],
     },
     {
       type: "category",
@@ -826,6 +831,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "flink/deployment",
+        "flink/monitoring",
         "flink/performance-optimization",
         "flink/best-practices",
       ],
@@ -839,6 +845,12 @@ const sidebars: SidebarsConfig = {
         "flink/faq",
         "flink/interview-questions",
       ],
+    },
+    {
+      type: "category",
+      label: "🔥 实战案例",
+      collapsed: true,
+      items: ["flink/practical-examples"],
     },
   ],
   // RabbitMQ sidebar

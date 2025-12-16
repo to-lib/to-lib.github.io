@@ -168,3 +168,148 @@ CREATE TABLE mysql_source (
   'table-name' = 'users'
 );
 ```
+
+### 16. 如何处理 Flink 作业的反压？
+
+**诊断反压**：
+
+- 通过 Web UI 查看 Backpressure 指标
+- 检查 `isBackPressured` 监控值
+
+**解决方案**：
+
+1. 增加算子并行度
+2. 优化算子逻辑（减少耗时操作）
+3. 调整网络缓冲区配置
+4. 检查下游系统性能
+
+### 17. Flink SQL 和 DataStream API 如何选择？
+
+| 场景         | 推荐 API       |
+| ------------ | -------------- |
+| 简单 ETL     | Flink SQL      |
+| 复杂业务逻辑 | DataStream API |
+| 快速原型开发 | Flink SQL      |
+| 需要精细控制 | DataStream API |
+| 多表关联     | Flink SQL      |
+| CEP 模式匹配 | DataStream API |
+
+### 18. RocksDB 状态后端的优缺点？
+
+**优点**：
+
+- 支持超大状态（TB 级）
+- 支持增量检查点
+- 堆外存储，不影响 GC
+
+**缺点**：
+
+- 访问速度比内存慢
+- 需要序列化/反序列化
+- 配置相对复杂
+
+```java
+env.setStateBackend(new EmbeddedRocksDBStateBackend(true)); // 启用增量检查点
+```
+
+### 19. 如何保证 Flink 作业的幂等性？
+
+1. **Sink 端去重**：使用唯一键更新
+2. **Two-Phase Commit**：配合支持事务的 Sink
+3. **Upsert 模式**：使用 upsert-kafka 等连接器
+4. **业务幂等设计**：使用唯一业务 ID
+
+### 20. Flink 集群的部署模式有哪些？
+
+| 模式                 | 特点     | 适用场景     |
+| -------------------- | -------- | ------------ |
+| **Standalone**       | 简单部署 | 开发测试     |
+| **YARN Session**     | 共享资源 | 多作业环境   |
+| **YARN Per-Job**     | 资源隔离 | 生产环境     |
+| **Kubernetes**       | 云原生   | K8s 环境     |
+| **Application Mode** | 推荐模式 | 生产最佳实践 |
+
+### 21. 如何监控 Flink 作业？
+
+1. **Web UI**：内置监控界面
+2. **Metrics**：集成 Prometheus + Grafana
+3. **日志**：配置日志聚合
+4. **告警**：配置 AlertManager 规则
+
+**关键监控指标**：
+
+- 吞吐量：`numRecordsIn/Out`
+- 延迟：`latency` 指标
+- 检查点：持续时间和失败次数
+- 背压：`isBackPressured`
+
+### 22. Flink 如何实现端到端精确一次？
+
+1. **Source**：可重放（如 Kafka offset）
+2. **State**：检查点保证状态一致
+3. **Sink**：两阶段提交或幂等写入
+
+```java
+// Kafka 端到端精确一次
+KafkaSink<String> sink = KafkaSink.<String>builder()
+    .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
+    .setTransactionalIdPrefix("flink-")
+    .build();
+```
+
+### 23. 什么是 Flink 的 Unaligned Checkpoint？
+
+非对齐检查点允许在处理 Barrier 时继续处理数据，避免背压传播。
+
+**优点**：
+
+- 减少检查点时间
+- 避免背压时检查点超时
+
+**缺点**：
+
+- 状态恢复时间可能增加
+- 不支持所有场景
+
+```java
+env.getCheckpointConfig().enableUnalignedCheckpoints();
+```
+
+### 24. 如何优化 Flink SQL 作业性能？
+
+1. **使用 MiniBatch**：
+
+```sql
+SET 'table.exec.mini-batch.enabled' = 'true';
+SET 'table.exec.mini-batch.size' = '5000';
+```
+
+2. **本地聚合**：
+
+```sql
+SET 'table.optimizer.agg-phase-strategy' = 'TWO_PHASE';
+```
+
+3. **优化 Join**：
+
+- 使用 Lookup Join 代替 Regular Join
+- 配置维表缓存
+
+### 25. Flink 状态过期如何配置？
+
+```java
+StateTtlConfig ttlConfig = StateTtlConfig
+    .newBuilder(Time.days(7))
+    .setUpdateType(UpdateType.OnCreateAndWrite)
+    .setStateVisibility(StateVisibility.NeverReturnExpired)
+    .cleanupIncrementally(10, true)  // 增量清理
+    .build();
+
+stateDescriptor.enableTimeToLive(ttlConfig);
+```
+
+**清理策略**：
+
+- `cleanupFullSnapshot()`：检查点时清理
+- `cleanupIncrementally()`：访问时增量清理
+- `cleanupInRocksdbCompactFilter()`：RocksDB 压缩时清理
