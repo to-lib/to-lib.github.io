@@ -98,8 +98,8 @@ graph LR
 
 ### 相关技术
 
-- [Java NIO 编程基础](/docs/java-design-patterns/overview)
-- [Reactor 模式详解](/docs/java-design-patterns/overview)
+- [Java NIO 编程基础](/docs/java/network-programming)
+- [Reactor / 事件驱动模型](/docs/netty/basics)
 
 ---
 

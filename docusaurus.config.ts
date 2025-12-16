@@ -696,6 +696,18 @@ const config: Config = {
               to: "/docs/netty",
             },
             {
+              label: "🧩 Native Transport（Epoll/KQueue）",
+              to: "/docs/netty/native-transport",
+            },
+            {
+              label: "🧯 背压与可写性（Backpressure）",
+              to: "/docs/netty/backpressure",
+            },
+            {
+              label: "🧪 EmbeddedChannel 测试",
+              to: "/docs/netty/testing",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -728,6 +740,10 @@ const config: Config = {
               type: "html",
               value:
                 "\u003cdiv style='padding: 8px 12px; font-weight: bold; color: #ff9800;'\u003e消息中间件\u003c/div\u003e",
+            },
+            {
+              label: "🐰 RabbitMQ",
+              to: "/docs/rabbitmq",
             },
             {
               label: "🚀 RocketMQ",

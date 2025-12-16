@@ -244,6 +244,9 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "netty/practical-examples",
+        "netty/native-transport",
+        "netty/backpressure",
+        "netty/testing",
         "netty/advanced",
         "netty/best-practices",
       ],
@@ -611,6 +614,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "postgres/index",
+        "postgres/installation-and-connection",
         "postgres/basic-concepts",
         "postgres/data-types",
         "postgres/sql-syntax",
@@ -634,6 +638,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "postgres/performance-optimization",
+        "postgres/monitoring-and-troubleshooting",
         "postgres/partitioning",
         "postgres/replication",
         "postgres/high-availability",
@@ -897,7 +902,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🎯 核心特性",
       collapsed: true,
-      items: ["rabbitmq/producer", "rabbitmq/consumer"],
+      items: [
+        "rabbitmq/producer",
+        "rabbitmq/consumer",
+        "rabbitmq/message-types",
+      ],
     },
     {
       type: "category",
@@ -908,6 +917,8 @@ const sidebars: SidebarsConfig = {
         "rabbitmq/performance-optimization",
         "rabbitmq/best-practices",
         "rabbitmq/monitoring",
+        "rabbitmq/security",
+        "rabbitmq/spring-integration",
       ],
     },
     {

@@ -66,7 +66,7 @@ public class MyHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
 **常见原因：**
 
-1. 在 [EventLoop](/docs/netty/core-components.md#eventloop) 线程中执行阻塞操作
+1. 在 [EventLoop](/docs/netty/core-components#eventloop) 线程中执行阻塞操作
 2. 事件处理链过长
 3. 消息处理效率低
 
