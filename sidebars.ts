@@ -895,7 +895,10 @@ const sidebars: SidebarsConfig = {
         "rabbitmq/index",
         "rabbitmq/introduction",
         "rabbitmq/core-concepts",
+        "rabbitmq/exchanges",
+        "rabbitmq/queues",
         "rabbitmq/quick-start",
+        "rabbitmq/java-client",
       ],
     },
     {
@@ -913,6 +916,8 @@ const sidebars: SidebarsConfig = {
       label: "🚀 高级应用",
       collapsed: true,
       items: [
+        "rabbitmq/advanced-features",
+        "rabbitmq/advanced-config",
         "rabbitmq/cluster-management",
         "rabbitmq/performance-optimization",
         "rabbitmq/best-practices",

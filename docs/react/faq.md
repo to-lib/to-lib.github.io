@@ -243,7 +243,7 @@ useEffect(() => {
 
 - [官方文档](https://react.dev)
 - [React DevTools](https://react.dev/learn/react-developer-tools)
-- [本站其他文档](/docs/react/index)
+- [本站其他文档](/docs/react)
 
 ---
 

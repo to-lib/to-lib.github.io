@@ -924,6 +924,34 @@ const config: Config = {
               to: "/docs/rabbitmq/core-concepts",
             },
             {
+              label: "🚀 快速开始",
+              to: "/docs/rabbitmq/quick-start",
+            },
+            {
+              label: "💻 交换机详解",
+              to: "/docs/rabbitmq/exchanges",
+            },
+            {
+              label: "📊 队列管理",
+              to: "/docs/rabbitmq/queues",
+            },
+            {
+              label: "☕ Java 客户端",
+              to: "/docs/rabbitmq/java-client",
+            },
+            {
+              label: "📤 生产者指南",
+              to: "/docs/rabbitmq/producer",
+            },
+            {
+              label: "📥 消费者指南",
+              to: "/docs/rabbitmq/consumer",
+            },
+            {
+              label: "🌱 Spring 集成",
+              to: "/docs/rabbitmq/spring-integration",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },

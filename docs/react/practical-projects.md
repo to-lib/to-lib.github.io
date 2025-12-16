@@ -288,4 +288,4 @@ function SearchFilter() {
 
 ---
 
-**更多学习**：查看 [面试题](/docs/react/interview-questions) 或返回 [概览](/docs/react/index)
+**更多学习**：查看 [面试题](/docs/react/interview-questions) 或返回 [概览](/docs/react)
