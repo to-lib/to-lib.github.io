@@ -530,6 +530,251 @@ CREATE TABLE new_table (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
+## MySQL 8.0 升级问题
+
+### Q26: 从 MySQL 5.7 升级到 8.0 需要注意什么？
+
+**升级前检查**:
+
+```bash
+# 1. 使用升级检查器
+mysqlsh -- util check-for-server-upgrade root@localhost:3306
+
+# 2. 备份数据
+mysqldump -u root -p --all-databases --routines --events > full_backup.sql
+```
+
+**主要兼容性问题**:
+
+1. **保留字变化** - GROUP、RANK 成为保留字
+2. **caching_sha2_password** - 默认认证插件变更
+3. **utf8** - utf8mb3 的别名，建议使用 utf8mb4
+4. **查询缓存移除** - query*cache*\* 参数不再有效
+
+**升级步骤**:
+
+```bash
+# 1. 停止 MySQL 5.7
+systemctl stop mysql
+
+# 2. 安装 MySQL 8.0
+apt install mysql-server-8.0
+
+# 3. 运行升级
+mysql_upgrade -u root -p
+
+# 4. 重启服务
+systemctl restart mysql
+```
+
+### Q27: 升级后连接报错 "caching_sha2_password" 怎么办？
+
+**解决方案**:
+
+```sql
+-- 方法1: 修改用户认证方式
+ALTER USER 'username'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+
+-- 方法2: 配置文件中设置默认认证插件
+[mysqld]
+default-authentication-plugin = mysql_native_password
+
+-- 方法3: 升级客户端驱动
+-- 使用支持 caching_sha2_password 的驱动版本
+```
+
+## 大表操作问题
+
+### Q28: 如何安全地对大表执行 DDL？
+
+**问题**: 直接 ALTER TABLE 可能锁表数小时
+
+**解决方案**:
+
+```bash
+# 方法1: 使用 pt-online-schema-change
+pt-online-schema-change \
+    --alter "ADD COLUMN new_column INT" \
+    D=database,t=large_table \
+    --execute
+
+# 方法2: 使用 gh-ost
+gh-ost \
+    --alter="ADD COLUMN new_column INT" \
+    --database=database \
+    --table=large_table \
+    --execute
+```
+
+```sql
+-- 方法3: Online DDL（MySQL 5.6+）
+ALTER TABLE large_table ADD COLUMN new_column INT
+ALGORITHM=INPLACE, LOCK=NONE;
+
+-- 查看 DDL 进度
+SELECT * FROM performance_schema.events_stages_current;
+```
+
+### Q29: 大表加索引导致主从延迟怎么办？
+
+**解决方案**:
+
+```sql
+-- 1. 从库先加索引
+-- 在每个从库上执行
+ALTER TABLE users ADD INDEX idx_email (email);
+
+-- 2. 主库最后加索引（低峰期）
+ALTER TABLE users ADD INDEX idx_email (email)
+ALGORITHM=INPLACE, LOCK=NONE;
+
+-- 3. 监控进度
+SHOW PROCESSLIST;
+```
+
+## 数据迁移问题
+
+### Q30: 如何迁移大量数据到新表？
+
+**方法 1: INSERT ... SELECT（小数据量）**
+
+```sql
+INSERT INTO new_table SELECT * FROM old_table;
+```
+
+**方法 2: 分批迁移（大数据量）**
+
+```sql
+-- 使用存储过程分批迁移
+DELIMITER //
+CREATE PROCEDURE batch_migrate()
+BEGIN
+    DECLARE batch_size INT DEFAULT 10000;
+    DECLARE last_id BIGINT DEFAULT 0;
+    DECLARE done INT DEFAULT 0;
+
+    REPEAT
+        INSERT INTO new_table
+        SELECT * FROM old_table
+        WHERE id > last_id
+        ORDER BY id
+        LIMIT batch_size;
+
+        SET done = ROW_COUNT();
+        SELECT MAX(id) INTO last_id FROM new_table;
+
+        -- 控制迁移速度
+        DO SLEEP(0.1);
+    UNTIL done < batch_size
+    END REPEAT;
+END//
+DELIMITER ;
+```
+
+**方法 3: mysqldump + mysqlimport**
+
+```bash
+# 导出
+mysqldump -u root -p --single-transaction db table > table.sql
+
+# 导入
+mysql -u root -p db < table.sql
+```
+
+### Q31: 跨库迁移数据有哪些方法？
+
+**方法 1: mysqldump**
+
+```bash
+# 从源库导出
+mysqldump -h source_host -u root -p db > backup.sql
+
+# 导入目标库
+mysql -h target_host -u root -p db < backup.sql
+```
+
+**方法 2: MySQL Workbench 迁移向导**
+
+**方法 3: AWS DMS / 阿里云 DTS**（云环境）
+
+**方法 4: 自定义 ETL 脚本**
+
+## 容量规划问题
+
+### Q32: 单表多大需要分表？
+
+**经验参考**:
+
+| 数据量           | 建议方案           |
+| ---------------- | ------------------ |
+| < 500 万         | 无需特殊处理       |
+| 500 万 - 5000 万 | 添加索引、优化查询 |
+| 5000 万 - 5 亿   | 分区表或归档       |
+| > 5 亿           | 考虑分库分表       |
+
+**实际决策因素**:
+
+- 查询 QPS
+- 写入 TPS
+- 数据增长速度
+- 查询复杂度
+
+### Q33: 如何估算表的大小？
+
+```sql
+-- 查看表大小
+SELECT
+    table_name,
+    ROUND(data_length / 1024 / 1024, 2) AS data_mb,
+    ROUND(index_length / 1024 / 1024, 2) AS index_mb,
+    ROUND((data_length + index_length) / 1024 / 1024, 2) AS total_mb,
+    table_rows
+FROM information_schema.tables
+WHERE table_schema = 'your_database'
+ORDER BY total_mb DESC;
+
+-- 估算单行大小
+SELECT
+    SUM(
+        CASE data_type
+            WHEN 'int' THEN 4
+            WHEN 'bigint' THEN 8
+            WHEN 'varchar' THEN character_maximum_length
+            WHEN 'text' THEN 768
+            ELSE 8
+        END
+    ) AS estimated_row_size
+FROM information_schema.columns
+WHERE table_schema = 'your_database' AND table_name = 'your_table';
+```
+
+### Q34: 如何规划磁盘空间？
+
+**计算公式**:
+
+```
+所需空间 = 数据大小 + 索引大小 + binlog + 临时空间 + 冗余
+
+其中：
+- binlog: 通常保留 7 天，每天约 10-50GB
+- 临时空间: 预留 20%
+- 冗余: 预留 30%
+```
+
+**监控脚本**:
+
+```sql
+-- 数据库总大小
+SELECT
+    table_schema AS db,
+    ROUND(SUM(data_length + index_length) / 1024 / 1024 / 1024, 2) AS total_gb
+FROM information_schema.tables
+GROUP BY table_schema;
+
+-- 磁盘使用趋势
+SELECT * FROM sys.statement_analysis;
+```
+
 ## 错误代码速查
 
 | 错误代码 | 说明                          | 解决方案                 |

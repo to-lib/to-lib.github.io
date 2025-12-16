@@ -768,7 +768,7 @@ Logger → ConsoleHandler → FileHandler → DatabaseHandler
 
 ### 相关资源
 
-- [设计模式完整指南](/docs/java-design-patterns/index)
+- [设计模式完整指南](/docs/java-design-patterns)
 - [模式概览](/docs/java-design-patterns/overview)
 - [最佳实践](/docs/java-design-patterns/best-practices)
 - [模式对比分析](/docs/java-design-patterns/pattern-comparisons)

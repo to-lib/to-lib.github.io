@@ -347,6 +347,230 @@ curl http://example.com
 curl -I http://example.com
 ```
 
+## 高级网络工具
+
+### curl 高级用法
+
+```bash
+# 基本请求
+curl -X GET http://api.example.com
+curl -X POST http://api.example.com -d "data=value"
+curl -X PUT http://api.example.com -d '{"key":"value"}'
+curl -X DELETE http://api.example.com/id
+
+# 请求头和认证
+curl -H "Content-Type: application/json" http://api.example.com
+curl -H "Authorization: Bearer token" http://api.example.com
+curl -u username:password http://api.example.com
+
+# JSON 数据
+curl -X POST http://api.example.com \
+  -H "Content-Type: application/json" \
+  -d '{"name":"test","value":123}'
+
+# 文件上传/下载
+curl -O http://example.com/file.zip          # 下载文件
+curl -o newname.zip http://example.com/file  # 下载并重命名
+curl -F "file=@/path/to/file" http://upload  # 上传文件
+curl -C - -O http://example.com/largefile    # 断点续传
+
+# 调试选项
+curl -v http://example.com                    # 详细输出
+curl -s http://example.com                    # 静默模式
+curl -w "%{http_code}" http://example.com     # 只输出状态码
+curl --connect-timeout 5 http://example.com   # 连接超时
+```
+
+### wget 高级用法
+
+```bash
+# 基本下载
+wget http://example.com/file.zip
+
+# 断点续传
+wget -c http://example.com/largefile.zip
+
+# 后台下载
+wget -b http://example.com/file.zip
+
+# 下载整个网站
+wget -r -np -nd http://example.com/directory/
+
+# 限速下载
+wget --limit-rate=1m http://example.com/file.zip
+
+# 使用代理
+wget -e "http_proxy=http://proxy:8080" http://example.com
+
+# 镜像网站
+wget -m -k -p http://example.com
+```
+
+### 网络诊断工具
+
+```bash
+# mtr - 结合 ping 和 traceroute
+mtr google.com
+mtr -r -c 10 google.com    # 报告模式
+
+# nmap - 端口扫描
+nmap -sT localhost                # TCP 扫描
+nmap -sU localhost                # UDP 扫描
+nmap -p 1-1000 target             # 指定端口范围
+nmap -sV target                   # 版本检测
+nmap -O target                    # 操作系统检测
+
+# lsof - 查看网络连接
+lsof -i :80                       # 查看80端口
+lsof -i -P -n                     # 所有网络连接
+lsof -i @192.168.1.100            # 指定IP连接
+
+# 带宽测试
+speedtest-cli                     # 网络速度测试
+iperf3 -s                         # 服务器端
+iperf3 -c server_ip               # 客户端测试
+```
+
+## 网络代理配置
+
+### 系统代理
+
+```bash
+# 临时设置代理
+export http_proxy="http://proxy:8080"
+export https_proxy="http://proxy:8080"
+export no_proxy="localhost,127.0.0.1,.local"
+
+# 永久设置（添加到 ~/.bashrc）
+echo 'export http_proxy="http://proxy:8080"' >> ~/.bashrc
+echo 'export https_proxy="http://proxy:8080"' >> ~/.bashrc
+
+# 取消代理
+unset http_proxy https_proxy
+```
+
+### apt 代理配置
+
+```bash
+# 配置 apt 代理
+sudo vim /etc/apt/apt.conf.d/proxy.conf
+
+# 添加内容
+Acquire::http::Proxy "http://proxy:8080";
+Acquire::https::Proxy "http://proxy:8080";
+```
+
+### Git 代理配置
+
+```bash
+# HTTP 代理
+git config --global http.proxy http://proxy:8080
+git config --global https.proxy http://proxy:8080
+
+# SOCKS5 代理
+git config --global http.proxy socks5://127.0.0.1:1080
+
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+### SSH 代理
+
+```bash
+# SSH 配置（~/.ssh/config）
+Host github.com
+    HostName github.com
+    User git
+    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+```
+
+## 端口转发
+
+### SSH 端口转发
+
+```bash
+# 本地端口转发（访问远程服务）
+# 将本地8080端口转发到远程服务器的3306端口
+ssh -L 8080:localhost:3306 user@server
+
+# 远程端口转发（暴露本地服务）
+# 将远程服务器的8080端口转发到本地的80端口
+ssh -R 8080:localhost:80 user@server
+
+# 动态端口转发（SOCKS代理）
+ssh -D 1080 user@server
+
+# 后台运行
+ssh -fN -L 8080:localhost:3306 user@server
+ssh -fN -D 1080 user@server
+
+# 保持连接
+ssh -L 8080:localhost:3306 -o ServerAliveInterval=60 user@server
+```
+
+### iptables 端口转发
+
+```bash
+# 启用 IP 转发
+echo 1 > /proc/sys/net/ipv4/ip_forward
+# 永久启用
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+sysctl -p
+
+# 端口转发规则
+# 将本机的8080端口转发到192.168.1.100的80端口
+iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 192.168.1.100:80
+iptables -t nat -A POSTROUTING -j MASQUERADE
+
+# 查看 NAT 规则
+iptables -t nat -L -n -v
+
+# 删除规则
+iptables -t nat -D PREROUTING 1
+```
+
+### socat 端口转发
+
+```bash
+# TCP 端口转发
+socat TCP-LISTEN:8080,fork TCP:192.168.1.100:80
+
+# UDP 端口转发
+socat UDP-LISTEN:8080,fork UDP:192.168.1.100:80
+
+# 后台运行
+socat -d -d TCP-LISTEN:8080,fork TCP:192.168.1.100:80 &
+```
+
+## 虚拟网络
+
+### 网桥配置
+
+```bash
+# 创建网桥
+sudo ip link add name br0 type bridge
+sudo ip link set br0 up
+
+# 添加接口到网桥
+sudo ip link set eth0 master br0
+
+# 配置网桥 IP
+sudo ip addr add 192.168.1.100/24 dev br0
+```
+
+### VLAN 配置
+
+```bash
+# 加载 8021q 模块
+sudo modprobe 8021q
+
+# 创建 VLAN 接口
+sudo ip link add link eth0 name eth0.100 type vlan id 100
+sudo ip link set eth0.100 up
+sudo ip addr add 192.168.100.1/24 dev eth0.100
+```
+
 ## 总结
 
 本文介绍了 Linux 网络配置：
@@ -356,5 +580,8 @@ curl -I http://example.com
 - ✅ 防火墙管理
 - ✅ SSH 配置
 - ✅ 网络监控和故障排查
+- ✅ 高级网络工具（curl/wget/nmap）
+- ✅ 网络代理配置
+- ✅ 端口转发
 
-继续学习 [Shell 脚本](/docs/linux/shell-scripting)。
+继续学习 [系统安全](/docs/linux/security) 和 [性能调优](/docs/linux/performance-tuning)。

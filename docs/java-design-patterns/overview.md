@@ -38,6 +38,7 @@ sidebar_position: 1
 
 - **Chain of Responsibility（责任链模式）** - 传递处理请求
 - **Command（命令模式）** - 将请求封装为对象
+- **Interpreter（解释器模式）** - 解析和执行语言
 - **Iterator（迭代器模式）** - 遍历集合元素
 - **Mediator（中介者模式）** - 集中处理对象通信
 - **Memento（备忘录模式）** - 保存和恢复对象状态

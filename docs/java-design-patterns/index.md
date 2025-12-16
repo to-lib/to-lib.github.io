@@ -1,6 +1,5 @@
 ---
 sidebar_position: 0
-slug: /design-patterns-guide
 ---
 
 # Java 设计模式完全指南
@@ -15,7 +14,7 @@ slug: /design-patterns-guide
 - **构建工具**: Maven 3.6+ 或 Gradle 6.0+
 - **IDE**: IntelliJ IDEA / Eclipse / VS Code
 
-👉 详细配置请参考 [环境配置指南](java-design-patterns/environment-setup)
+👉 详细配置请参考 [环境配置指南](./environment-setup)
 :::
 
 欢迎来到 Java 设计模式完全学习指南！本文档包含了 23 种经典设计模式的详细讲解、实际应用示例和最佳实践。
@@ -26,50 +25,50 @@ slug: /design-patterns-guide
 
 ### 📖 基础入门
 
-- [设计模式概述](java-design-patterns/overview) - 理解什么是设计模式及其分类
-- [快速参考](java-design-patterns/quick-reference) - 23 种模式的快速查询表
+- [设计模式概述](./overview) - 理解什么是设计模式及其分类
+- [快速参考](./quick-reference) - 23 种模式的快速查询表
 
 ### 🏭 创建型模式 (5 种)
 
 构造对象，隐藏创建逻辑
 
-1. [单例模式 (Singleton)](java-design-patterns/singleton-pattern) - 确保类仅有一个实例
-2. [工厂方法 (Factory Method)](java-design-patterns/factory-pattern) - 创建对象的接口
-3. [抽象工厂 (Abstract Factory)](java-design-patterns/abstract-factory-pattern) - 创建产品族
-4. [建造者模式 (Builder)](java-design-patterns/builder-pattern) - 分步构建复杂对象
-5. [原型模式 (Prototype)](java-design-patterns/prototype-pattern) - 通过克隆创建对象
+1. [单例模式 (Singleton)](./singleton-pattern) - 确保类仅有一个实例
+2. [工厂方法 (Factory Method)](./factory-pattern) - 创建对象的接口
+3. [抽象工厂 (Abstract Factory)](./abstract-factory-pattern) - 创建产品族
+4. [建造者模式 (Builder)](./builder-pattern) - 分步构建复杂对象
+5. [原型模式 (Prototype)](./prototype-pattern) - 通过克隆创建对象
 
 ### 🔧 结构型模式 (7 种)
 
 组合对象，形成更大的结构
 
-6. [适配器模式 (Adapter)](java-design-patterns/adapter-pattern) - 转换接口实现兼容
-7. [装饰器模式 (Decorator)](java-design-patterns/decorator-pattern) - 动态添加功能
-8. [外观模式 (Facade)](java-design-patterns/facade-pattern) - 简化复杂子系统
-9. [代理模式 (Proxy)](java-design-patterns/proxy-pattern) - 控制对象访问
-10. [组合模式 (Composite)](java-design-patterns/composite-pattern) - 树形结构处理
-11. [享元模式 (Flyweight)](java-design-patterns/flyweight-pattern) - 共享细粒度对象
-12. [桥接模式 (Bridge)](java-design-patterns/bridge-pattern) - 分离抽象和实现
+6. [适配器模式 (Adapter)](./adapter-pattern) - 转换接口实现兼容
+7. [装饰器模式 (Decorator)](./decorator-pattern) - 动态添加功能
+8. [外观模式 (Facade)](./facade-pattern) - 简化复杂子系统
+9. [代理模式 (Proxy)](./proxy-pattern) - 控制对象访问
+10. [组合模式 (Composite)](./composite-pattern) - 树形结构处理
+11. [享元模式 (Flyweight)](./flyweight-pattern) - 共享细粒度对象
+12. [桥接模式 (Bridge)](./bridge-pattern) - 分离抽象和实现
 
 ### 🎯 行为型模式 (11 种)
 
 处理对象间的通信和职责分配
 
-13. [观察者模式 (Observer)](java-design-patterns/observer-pattern) - 一对多通知
-14. [策略模式 (Strategy)](java-design-patterns/strategy-pattern) - 可互换的算法
-15. [状态模式 (State)](java-design-patterns/state-pattern) - 状态改变行为
-16. [命令模式 (Command)](java-design-patterns/command-pattern) - 将请求对象化
-17. [模板方法 (Template Method)](java-design-patterns/template-method-pattern) - 定义算法骨架
-18. [责任链 (Chain of Responsibility)](java-design-patterns/chain-of-responsibility-pattern) - 请求沿链传递
-19. [迭代器 (Iterator)](java-design-patterns/iterator-pattern) - 遍历集合元素
-20. [中介者 (Mediator)](java-design-patterns/mediator-pattern) - 集中管理对象通信
-21. [备忘录 (Memento)](java-design-patterns/memento-pattern) - 保存/恢复状态
-22. [访问者 (Visitor)](java-design-patterns/visitor-pattern) - 为对象添加操作
-23. [解释器 (Interpreter)](java-design-patterns/interpreter-pattern) - 解析和执行语言
+13. [观察者模式 (Observer)](./observer-pattern) - 一对多通知
+14. [策略模式 (Strategy)](./strategy-pattern) - 可互换的算法
+15. [状态模式 (State)](./state-pattern) - 状态改变行为
+16. [命令模式 (Command)](./command-pattern) - 将请求对象化
+17. [模板方法 (Template Method)](./template-method-pattern) - 定义算法骨架
+18. [责任链 (Chain of Responsibility)](./chain-of-responsibility-pattern) - 请求沿链传递
+19. [迭代器 (Iterator)](./iterator-pattern) - 遍历集合元素
+20. [中介者 (Mediator)](./mediator-pattern) - 集中管理对象通信
+21. [备忘录 (Memento)](./memento-pattern) - 保存/恢复状态
+22. [访问者 (Visitor)](./visitor-pattern) - 为对象添加操作
+23. [解释器 (Interpreter)](./interpreter-pattern) - 解析和执行语言
 
 ### 💡 最佳实践
 
-- [设计模式最佳实践](java-design-patterns/best-practices) - SOLID 原则、反模式、应用清单
+- [设计模式最佳实践](./best-practices) - SOLID 原则、反模式、应用清单
 
 ## 🎓 学习路径建议
 
@@ -79,44 +78,44 @@ slug: /design-patterns-guide
 
 1. **理解基础概念**
 
-   - [设计模式概述](java-design-patterns/overview)
-   - [快速参考](java-design-patterns/quick-reference)
+   - [设计模式概述](./overview)
+   - [快速参考](./quick-reference)
 
 2. **学习最常用的 5 个模式**
-   - [单例模式](java-design-patterns/singleton-pattern) - 最简单
-   - [工厂方法](java-design-patterns/factory-pattern) - 对象创建
-   - [策略模式](java-design-patterns/strategy-pattern) - 算法选择
-   - [观察者模式](java-design-patterns/observer-pattern) - 事件系统
-   - [装饰器模式](java-design-patterns/decorator-pattern) - 功能增强
+   - [单例模式](./singleton-pattern) - 最简单
+   - [工厂方法](./factory-pattern) - 对象创建
+   - [策略模式](./strategy-pattern) - 算法选择
+   - [观察者模式](./observer-pattern) - 事件系统
+   - [装饰器模式](./decorator-pattern) - 功能增强
 
 ### 🌿 中级 (2-4 周)
 
 掌握基础后，继续学习：
 
-6. [建造者模式](java-design-patterns/builder-pattern)
-7. [适配器模式](java-design-patterns/adapter-pattern)
-8. [代理模式](java-design-patterns/proxy-pattern)
-9. [模板方法](java-design-patterns/template-method-pattern)
-10. [状态模式](java-design-patterns/state-pattern)
-11. [命令模式](java-design-patterns/command-pattern)
+6. [建造者模式](./builder-pattern)
+7. [适配器模式](./adapter-pattern)
+8. [代理模式](./proxy-pattern)
+9. [模板方法](./template-method-pattern)
+10. [状态模式](./state-pattern)
+11. [命令模式](./command-pattern)
 
 ### 🌳 高级 (4 周+)
 
 深入理解剩余的模式：
 
-12. [抽象工厂](java-design-patterns/abstract-factory-pattern)
-13. [原型模式](java-design-patterns/prototype-pattern)
-14. [外观模式](java-design-patterns/facade-pattern)
-15. [组合模式](java-design-patterns/composite-pattern)
-16. [责任链](java-design-patterns/chain-of-responsibility-pattern)
-17. [迭代器](java-design-patterns/iterator-pattern)
-18. [中介者](java-design-patterns/mediator-pattern)
-19. [备忘录](java-design-patterns/memento-pattern)
-20. [访问者](java-design-patterns/visitor-pattern)
-21. [解释器](java-design-patterns/interpreter-pattern)
-22. [享元模式](java-design-patterns/flyweight-pattern)
+12. [抽象工厂](./abstract-factory-pattern)
+13. [原型模式](./prototype-pattern)
+14. [外观模式](./facade-pattern)
+15. [组合模式](./composite-pattern)
+16. [责任链](./chain-of-responsibility-pattern)
+17. [迭代器](./iterator-pattern)
+18. [中介者](./mediator-pattern)
+19. [备忘录](./memento-pattern)
+20. [访问者](./visitor-pattern)
+21. [解释器](./interpreter-pattern)
+22. [享元模式](./flyweight-pattern)
 
-最后阅读[最佳实践](java-design-patterns/best-practices)总结所学。
+最后阅读[最佳实践](./best-practices)总结所学。
 
 ## 📊 设计模式分类速览
 
@@ -152,27 +151,27 @@ slug: /design-patterns-guide
 
 **我需要创建对象？**
 
-- 单一对象 → [Singleton](java-design-patterns/singleton-pattern)
-- 多种类型 → [Factory Method](java-design-patterns/factory-pattern)
-- 产品族 → [Abstract Factory](java-design-patterns/abstract-factory-pattern)
-- 复杂对象 → [Builder](java-design-patterns/builder-pattern)
-- 克隆对象 → [Prototype](java-design-patterns/prototype-pattern)
+- 单一对象 → [Singleton](./singleton-pattern)
+- 多种类型 → [Factory Method](./factory-pattern)
+- 产品族 → [Abstract Factory](./abstract-factory-pattern)
+- 复杂对象 → [Builder](./builder-pattern)
+- 克隆对象 → [Prototype](./prototype-pattern)
 
 **我需要组织对象结构？**
 
-- 树形结构 → [Composite](java-design-patterns/composite-pattern)
-- 动态功能 → [Decorator](java-design-patterns/decorator-pattern)
-- 简化系统 → [Facade](java-design-patterns/facade-pattern)
-- 隐藏实现 → [Proxy](java-design-patterns/proxy-pattern)
-- 转换接口 → [Adapter](java-design-patterns/adapter-pattern)
-- 分享对象 → [Flyweight](java-design-patterns/flyweight-pattern)
+- 树形结构 → [Composite](./composite-pattern)
+- 动态功能 → [Decorator](./decorator-pattern)
+- 简化系统 → [Facade](./facade-pattern)
+- 隐藏实现 → [Proxy](./proxy-pattern)
+- 转换接口 → [Adapter](./adapter-pattern)
+- 分享对象 → [Flyweight](./flyweight-pattern)
 
 **我需要处理对象交互？**
 
-- 一对多通知 → [Observer](java-design-patterns/observer-pattern)
-- 可换算法 → [Strategy](java-design-patterns/strategy-pattern)
-- 状态转换 → [State](java-design-patterns/state-pattern)
-- 多对多通信 → [Mediator](java-design-patterns/mediator-pattern)
+- 一对多通知 → [Observer](./observer-pattern)
+- 可换算法 → [Strategy](./strategy-pattern)
+- 状态转换 → [State](./state-pattern)
+- 多对多通信 → [Mediator](./mediator-pattern)
 - 其他...
 
 ## 💻 每个文档包含
@@ -197,7 +196,7 @@ slug: /design-patterns-guide
 
 ### 方式 2：按需查询
 
-使用[快速参考](java-design-patterns/quick-reference)快速找到所需模式。
+使用[快速参考](./quick-reference)快速找到所需模式。
 
 ### 方式 3：按场景学习
 
@@ -225,4 +224,4 @@ slug: /design-patterns-guide
 
 ---
 
-**现在就开始学习吧！** 👉 [从概述开始](java-design-patterns/overview)
+**现在就开始学习吧！** 👉 [从概述开始](./overview)

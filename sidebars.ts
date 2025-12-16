@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
         "java-design-patterns/environment-setup",
         "java-design-patterns/overview",
         "java-design-patterns/quick-reference",
+        "java-design-patterns/frameworks-in-practice",
         "java-design-patterns/best-practices",
         "java-design-patterns/scenarios",
         "java-design-patterns/selection-guide",
@@ -402,6 +403,8 @@ const sidebars: SidebarsConfig = {
       items: [
         "linux/process-management",
         "linux/system-admin",
+        "linux/service-management",
+        "linux/cron-scheduling",
         "linux/log-management",
         "linux/disk-management",
       ],
@@ -420,6 +423,7 @@ const sidebars: SidebarsConfig = {
         "linux/shell-scripting",
         "linux/performance-tuning",
         "linux/troubleshooting",
+        "linux/docker-basics",
       ],
     },
     {
@@ -517,6 +521,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "mysql/indexes",
         "mysql/transactions",
+        "mysql/locks",
         "mysql/stored-procedures",
         "mysql/views-triggers",
       ],
@@ -527,6 +532,9 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "mysql/performance-optimization",
+        "mysql/partitioning",
+        "mysql/replication",
+        "mysql/high-availability",
         "mysql/backup-recovery",
         "mysql/best-practices",
         "mysql/practical-examples",

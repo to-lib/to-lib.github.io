@@ -491,12 +491,20 @@ const config: Config = {
           position: "left",
           items: [
             {
-              label: "📘 模式概览",
+              label: "📗 完整指南",
+              to: "/docs/java-design-patterns",
+            },
+            {
+              label: "📚 模式概览",
               to: "/docs/java-design-patterns/overview",
             },
             {
               label: "⚡ 快速参考",
               to: "/docs/java-design-patterns/quick-reference",
+            },
+            {
+              label: "🏗️ 框架中的模式",
+              to: "/docs/java-design-patterns/frameworks-in-practice",
             },
             {
               label: "✨ 最佳实践",

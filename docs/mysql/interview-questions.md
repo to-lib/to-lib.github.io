@@ -459,6 +459,277 @@ ALTER TABLE users ADD INDEX idx_age (age) ALGORITHM=INPLACE, LOCK=NONE;
 
 - 监控 CPU、内存、磁盘 IO
 
+## MySQL 8.0 新特性
+
+### 23. MySQL 8.0 有哪些重要新特性？
+
+**答案**:
+
+1. **窗口函数**
+
+```sql
+SELECT
+    name,
+    department,
+    salary,
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) as rank
+FROM employees;
+```
+
+2. **CTE（公共表表达式）**
+
+```sql
+WITH dept_avg AS (
+    SELECT department, AVG(salary) as avg_salary
+    FROM employees
+    GROUP BY department
+)
+SELECT e.name, e.salary, d.avg_salary
+FROM employees e
+JOIN dept_avg d ON e.department = d.department;
+```
+
+3. **原子 DDL**
+
+- DDL 操作具有原子性
+- 即使服务器崩溃，DDL 也能保证完整性
+
+4. **不可见索引**
+
+```sql
+ALTER TABLE users ALTER INDEX idx_name INVISIBLE;
+-- 测试后如果性能没问题
+ALTER TABLE users DROP INDEX idx_name;
+```
+
+5. **降序索引**
+
+```sql
+CREATE INDEX idx_created_desc ON orders(created_at DESC);
+```
+
+### 24. 什么是窗口函数？常用的窗口函数有哪些？
+
+**答案**:
+
+窗口函数是在一组相关行（窗口）上执行计算，不会将结果合并为一行。
+
+**常用窗口函数**:
+
+| 函数               | 说明           |
+| ------------------ | -------------- |
+| ROW_NUMBER()       | 行号           |
+| RANK()             | 排名（有间隔） |
+| DENSE_RANK()       | 排名（无间隔） |
+| NTILE(n)           | 分组           |
+| LAG()              | 上一行值       |
+| LEAD()             | 下一行值       |
+| SUM()/AVG() OVER() | 累计/移动聚合  |
+
+```sql
+SELECT
+    name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) as row_num,
+    RANK() OVER (ORDER BY salary DESC) as rank,
+    DENSE_RANK() OVER (ORDER BY salary DESC) as dense_rank,
+    SUM(salary) OVER (ORDER BY id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as cumulative_sum
+FROM employees;
+```
+
+## 高级实战题
+
+### 25. 主从复制延迟的原因和解决方案？
+
+**答案**:
+
+**延迟原因**:
+
+1. 主库大事务
+2. 从库单线程回放
+3. 从库硬件配置低
+4. 网络延迟
+5. 从库有锁等待
+
+**解决方案**:
+
+1. **开启并行复制**
+
+```sql
+SET GLOBAL slave_parallel_workers = 8;
+SET GLOBAL slave_parallel_type = 'LOGICAL_CLOCK';
+```
+
+2. **拆分大事务**
+3. **升级从库配置**
+4. **使用 GTID 复制**
+5. **读写分离时对延迟敏感的读走主库**
+
+### 26. 分库分表的策略有哪些？
+
+**答案**:
+
+**垂直切分**:
+
+- **垂直分库**: 按业务拆分到不同数据库
+- **垂直分表**: 将大表按列拆分
+
+**水平切分**:
+
+- **范围分片**: 按 ID 范围（0-100 万一张表）
+- **Hash 分片**: ID % N
+- **时间分片**: 按月/年分表
+
+**分片键选择原则**:
+
+1. 高频查询条件中的字段
+2. 分布均匀
+3. 不可变或很少变化
+
+```sql
+-- 示例：按用户 ID 哈希分 4 张表
+-- user_id % 4 = 0 -> orders_0
+-- user_id % 4 = 1 -> orders_1
+-- ...
+```
+
+### 27. 如何设计一个高并发的秒杀系统（数据库角度）？
+
+**答案**:
+
+1. **库存预热到 Redis**
+
+```sql
+-- 预热库存
+SELECT stock FROM products WHERE id = 1;
+-- 存入 Redis: SET product:1:stock 1000
+```
+
+2. **Redis 预扣减库存**
+
+```
+DECR product:1:stock
+```
+
+3. **数据库乐观锁扣减**
+
+```sql
+UPDATE products
+SET stock = stock - 1, version = version + 1
+WHERE id = 1 AND version = 5 AND stock >= 1;
+```
+
+4. **异步写入订单**
+
+- 消息队列削峰
+- 异步处理订单落库
+
+5. **分库分表**
+
+- 按商品 ID 分片
+- 避免热点数据集中
+
+### 28. Online DDL 是什么？如何安全加索引？
+
+**答案**:
+
+**Online DDL** 是 MySQL 5.6+ 支持的在线 DDL 操作，允许在执行 DDL 时不阻塞 DML。
+
+**安全加索引方法**:
+
+```sql
+-- 1. INPLACE 算法（推荐）
+ALTER TABLE users ADD INDEX idx_email (email)
+ALGORITHM=INPLACE, LOCK=NONE;
+
+-- 2. 使用 pt-online-schema-change
+pt-online-schema-change --alter "ADD INDEX idx_email(email)" D=db,t=users
+
+-- 3. 使用 gh-ost
+gh-ost --alter="ADD INDEX idx_email(email)" --database=db --table=users
+```
+
+**注意事项**:
+
+- 选择业务低峰期
+- 监控主从延迟
+- 预估执行时间
+- 准备回滚方案
+
+### 29. 如何处理大表删除数据？
+
+**答案**:
+
+**❌ 错误方式**:
+
+```sql
+-- 直接删除（会锁表很长时间）
+DELETE FROM logs WHERE created_at < '2023-01-01';
+```
+
+**✅ 正确方式**:
+
+1. **分批删除**
+
+```sql
+-- 每次删除 1000 条
+REPEAT
+    DELETE FROM logs
+    WHERE created_at < '2023-01-01'
+    LIMIT 1000;
+    -- 可以在应用层加 sleep 降低压力
+UNTIL ROW_COUNT() = 0
+```
+
+2. **使用分区表**
+
+```sql
+-- 直接删除分区（秒级完成）
+ALTER TABLE logs DROP PARTITION p202301;
+```
+
+3. **交换表**
+
+```sql
+-- 创建新表，交换数据
+CREATE TABLE logs_new LIKE logs;
+INSERT INTO logs_new SELECT * FROM logs WHERE created_at >= '2023-01-01';
+RENAME TABLE logs TO logs_old, logs_new TO logs;
+DROP TABLE logs_old;
+```
+
+### 30. 如何排查和解决 MySQL CPU 100%？
+
+**答案**:
+
+**排查步骤**:
+
+```sql
+-- 1. 查看当前进程
+SHOW PROCESSLIST;
+
+-- 2. 找出耗时最长的 SQL
+SELECT * FROM information_schema.PROCESSLIST
+WHERE COMMAND != 'Sleep'
+ORDER BY TIME DESC;
+
+-- 3. 分析慢查询
+EXPLAIN SELECT ...;
+
+-- 4. 查看 InnoDB 状态
+SHOW ENGINE INNODB STATUS\G
+```
+
+**常见原因和解决**:
+
+| 原因     | 解决方案                 |
+| -------- | ------------------------ |
+| 慢查询   | 添加索引、优化 SQL       |
+| 锁等待   | 优化事务、减少锁持有时间 |
+| 全表扫描 | 添加索引                 |
+| 复杂计算 | 异步处理或缓存           |
+| 并发过高 | 读写分离、连接池         |
+
 ## 总结
 
 本文涵盖了 MySQL 常见面试题：
