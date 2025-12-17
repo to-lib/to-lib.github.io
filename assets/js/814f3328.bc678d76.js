@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkto_lib_github_io=globalThis.webpackChunkto_lib_github_io||[]).push([[67472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to TechLib Blog","permalink":"/blog/welcome","unlisted":false,"date":"2025-12-18T00:00:00.000Z"}]}')}}]);

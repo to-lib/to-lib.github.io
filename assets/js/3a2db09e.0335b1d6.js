@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkto_lib_github_io=globalThis.webpackChunkto_lib_github_io||[]).push([[18121],{68070:e=>{e.exports=JSON.parse('{"tags":[{"label":"General","permalink":"/blog/tags/general","description":"General blog posts","count":1},{"label":"Update","permalink":"/blog/tags/update","description":"Website updates and announcements","count":1}]}')}}]);
