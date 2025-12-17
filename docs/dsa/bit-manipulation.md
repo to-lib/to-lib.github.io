@@ -69,7 +69,7 @@ public int singleNumber(int[] nums) {
 
 ### 5) 枚举子集（位掩码）
 
-当元素个数较小（如 n <= 20）时，可以用 `mask` 表示选/不选。
+当元素个数较小（如 `n <= 20`）时，可以用 `mask` 表示选/不选。
 
 ```java
 public List<List<Integer>> subsetsByMask(int[] nums) {
