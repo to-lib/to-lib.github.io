@@ -792,6 +792,7 @@ const sidebars: SidebarsConfig = {
       label: "📚 实战与参考",
       collapsed: true,
       items: [
+        "springcloud-alibaba/quick-reference",
         "springcloud-alibaba/practical-project",
         "springcloud-alibaba/migration-guide",
         "springcloud-alibaba/faq",

@@ -48,12 +48,12 @@ public class AnalysisPromptService {
 
 **prompts/analysis.st:**
 
-````
+````text
 请分析以下代码并提供改进建议：
 
 ```java
 {code}
-````
+```
 
 请从以下几个方面进行分析：
 
@@ -61,7 +61,6 @@ public class AnalysisPromptService {
 2. 性能问题
 3. 安全隐患
 4. 最佳实践
-
 ````
 
 ## 消息类型
@@ -80,7 +79,7 @@ Message systemMessage = new SystemMessage("""
     2. 提供代码示例时使用 Markdown 格式
     3. 如果不确定，请明确说明
     """);
-````
+```
 
 ### UserMessage
 

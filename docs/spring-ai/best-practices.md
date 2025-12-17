@@ -118,7 +118,7 @@ public class TokenUsageAspect {
 
     private final MeterRegistry meterRegistry;
 
-    @Around("execution(* org.springframework.ai.chat.ChatClient+.call(..))")
+    @Around("execution(* org.springframework.ai.chat.client.ChatClient+.call(..))")
     public Object trackTokenUsage(ProceedingJoinPoint pjp) throws Throwable {
         Object result = pjp.proceed();
 
@@ -287,7 +287,7 @@ public class MetricsAdvisor implements RequestResponseAdvisor {
 @Component
 public class AiLoggingAspect {
 
-    @Around("execution(* org.springframework.ai.chat.ChatClient+.call(..))")
+    @Around("execution(* org.springframework.ai.chat.client.ChatClient+.call(..))")
     public Object logAiCall(ProceedingJoinPoint pjp) throws Throwable {
         long start = System.currentTimeMillis();
         String requestId = UUID.randomUUID().toString().substring(0, 8);

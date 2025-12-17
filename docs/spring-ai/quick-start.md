@@ -30,13 +30,21 @@ title: 快速开始
 
 ## 2. 配置 API Key
 
+推荐使用环境变量注入，避免在代码仓库中硬编码密钥。
+
 在 `application.properties` 或 `application.yml` 中配置你的 OpenAI API Key：
 
 ```yaml
 spring:
   ai:
     openai:
-      api-key: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      api-key: ${OPENAI_API_KEY}
+```
+
+在本地开发时，你可以先设置环境变量：
+
+```bash
+export OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ## 3. 编写代码
@@ -46,7 +54,7 @@ spring:
 ```java
 package com.example.demo;
 
-import org.springframework.ai.chat.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,13 +64,16 @@ public class ChatController {
 
     private final ChatClient chatClient;
 
-    public ChatController(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    public ChatController(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
     }
 
     @GetMapping("/chat")
     public String chat(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
-        return chatClient.call(message);
+        return chatClient.prompt()
+                .user(message)
+                .call()
+                .content();
     }
 }
 ```

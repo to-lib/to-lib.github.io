@@ -179,7 +179,7 @@ public String chatWithOptions(@RequestParam String message) {
 
 ```java
 @GetMapping("/chat/safe")
-public ResponseEntity<String> safeCaht(@RequestParam String message) {
+public ResponseEntity<String> safeChat(@RequestParam String message) {
     try {
         String response = chatClient.prompt()
                 .user(message)
