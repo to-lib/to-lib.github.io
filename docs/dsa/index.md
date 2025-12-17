@@ -25,6 +25,7 @@ title: 数据结构与算法概述
 - **查找算法** - 顺序查找、二分查找、哈希查找
 - **递归与分治** - 递归思想、分治策略、经典应用
 - **动态规划** - 状态转移、记忆化搜索、常见问题
+- **常用技巧** - 双指针、滑动窗口、前缀和、差分、位运算
 
 ### 高级算法
 
@@ -39,11 +40,14 @@ title: 数据结构与算法概述
 
 1. [时间空间复杂度](/docs/dsa/complexity) - 算法分析基础
 2. [数组与链表](/docs/dsa/array-linkedlist) - 基础线性结构
-3. [栈与队列](/docs/dsa/stack-queue) - 受限线性结构
-4. [排序算法](/docs/dsa/sorting) - 经典排序方法
-5. [查找算法](/docs/dsa/searching) - 高效检索技术
-6. [树结构](/docs/dsa/tree) - 层次数据组织
-7. [动态规划](/docs/dsa/dynamic-programming) - 问题优化方法
+3. [双指针](/docs/dsa/two-pointers) - 原地处理与有序数组技巧
+4. [滑动窗口](/docs/dsa/sliding-window) - 连续区间问题通用套路
+5. [前缀和与差分](/docs/dsa/prefix-sum-diff) - 区间统计与批量更新
+6. [栈与队列](/docs/dsa/stack-queue) - 受限线性结构
+7. [排序算法](/docs/dsa/sorting) - 经典排序方法
+8. [查找算法](/docs/dsa/searching) - 高效检索技术
+9. [树结构](/docs/dsa/tree) - 层次数据组织
+10. [动态规划](/docs/dsa/dynamic-programming) - 问题优化方法
 
 ## 📖 学习路径
 
@@ -89,9 +93,14 @@ title: 数据结构与算法概述
 | [数组与链表](/docs/dsa/array-linkedlist)  | 顺序存储、链式存储、常见操作     |
 | [栈与队列](/docs/dsa/stack-queue)         | LIFO、FIFO、双端队列、单调栈     |
 | [哈希表](/docs/dsa/hash-table)            | 哈希函数、冲突解决、应用场景     |
+| [双指针](/docs/dsa/two-pointers)          | 相向指针、快慢指针、原地过滤      |
+| [滑动窗口](/docs/dsa/sliding-window)      | 固定/可变窗口、窗口状态维护       |
+| [前缀和与差分](/docs/dsa/prefix-sum-diff) | 区间统计、区间更新、前缀和 + 哈希 |
+| [位运算](/docs/dsa/bit-manipulation)      | lowbit、异或、位掩码、子集枚举    |
 | [树结构](/docs/dsa/tree)                  | 二叉树、BST、AVL、红黑树、B 树   |
 | [堆](/docs/dsa/heap)                      | 最大堆、最小堆、堆排序、优先队列 |
 | [图](/docs/dsa/graph)                     | 图的表示、遍历、最短路径         |
+| [并查集](/docs/dsa/union-find)            | 连通性、判环、连通分量           |
 | [排序算法](/docs/dsa/sorting)             | 比较排序、线性排序、稳定性分析   |
 | [查找算法](/docs/dsa/searching)           | 顺序、二分、插值、斐波那契查找   |
 | [递归与分治](/docs/dsa/recursion-divide)  | 递归原理、分治策略、典型应用     |

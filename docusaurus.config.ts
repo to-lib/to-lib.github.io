@@ -665,6 +665,31 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>常用技巧</div>",
+            },
+            {
+              label: "👉 双指针",
+              to: "/docs/dsa/two-pointers",
+            },
+            {
+              label: "🪟 滑动窗口",
+              to: "/docs/dsa/sliding-window",
+            },
+            {
+              label: "🧮 前缀和与差分",
+              to: "/docs/dsa/prefix-sum-diff",
+            },
+            {
+              label: "🔣 位运算",
+              to: "/docs/dsa/bit-manipulation",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>高级数据结构</div>",
             },
             {
@@ -678,6 +703,10 @@ const config: Config = {
             {
               label: "🕸️ 图",
               to: "/docs/dsa/graph",
+            },
+            {
+              label: "🧩 并查集",
+              to: "/docs/dsa/union-find",
             },
             {
               type: "html",

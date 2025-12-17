@@ -5,6 +5,14 @@ title: 面试题集
 
 # 面试题集
 
+## 🧩 技巧模板速查
+
+- [双指针](/docs/dsa/two-pointers)
+- [滑动窗口](/docs/dsa/sliding-window)
+- [前缀和与差分](/docs/dsa/prefix-sum-diff)
+- [位运算](/docs/dsa/bit-manipulation)
+- [并查集](/docs/dsa/union-find)
+
 ## 📚 数组与字符串
 
 1. **两数之和** - 哈希表 O(n)

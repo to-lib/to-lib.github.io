@@ -521,6 +521,59 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // DSA sidebar
+  dsa: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "dsa/index",
+        "dsa/complexity",
+        "dsa/array-linkedlist",
+        "dsa/stack-queue",
+        "dsa/hash-table",
+      ],
+    },
+    {
+      type: "category",
+      label: "🧩 常用技巧",
+      collapsed: true,
+      items: [
+        "dsa/two-pointers",
+        "dsa/sliding-window",
+        "dsa/prefix-sum-diff",
+        "dsa/bit-manipulation",
+      ],
+    },
+    {
+      type: "category",
+      label: "🏗️ 高级数据结构",
+      collapsed: true,
+      items: ["dsa/tree", "dsa/heap", "dsa/graph", "dsa/union-find"],
+    },
+    {
+      type: "category",
+      label: "🎯 经典算法",
+      collapsed: true,
+      items: [
+        "dsa/sorting",
+        "dsa/searching",
+        "dsa/recursion-divide",
+        "dsa/dynamic-programming",
+        "dsa/greedy",
+        "dsa/backtracking",
+        "dsa/string-algorithms",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考与刷题",
+      collapsed: true,
+      items: ["dsa/quick-reference", "dsa/faq", "dsa/interview-questions"],
+    },
+  ],
+
   // MySQL sidebar
   mysql: [
     {
