@@ -16,13 +16,16 @@ sidebar_position: 1
 - **[Spring 核心概念](/docs/spring/core-concepts)** - IoC、DI、Bean 生命周期等基础概念
 - **[依赖注入详解](/docs/spring/dependency-injection)** - 深入理解 DI 的各种方式和最佳实践
 - **[Bean 管理](/docs/spring/bean-management)** - Bean 的定义、作用域、生命周期管理
+- **[配置与 Profiles](/docs/spring/configuration)** - JavaConfig、外部化配置、环境隔离与模块化配置
 
 ### 核心特性
 
 - **[面向切面编程(AOP)](/docs/spring/aop)** - 切点、通知、代理等 AOP 核心概念
 - **[事务管理](/docs/spring/transactions)** - 事务特性、传播行为、隔离级别
-- **[事件机制](/docs/spring/spring-events)** - 事件发布与监听、异步事件、事务事件
+- **[事件机制](/docs/spring/events)** - 事件发布与监听、异步事件、事务事件
 - **[资源管理](/docs/spring/resource-management)** - Resource 接口、ResourceLoader、配置文件加载
+- **[SpEL 表达式](/docs/spring/spel)** - 表达式语法、注解场景（缓存/事件/注入）与最佳实践
+- **[缓存抽象](/docs/spring/caching)** - Spring Cache 核心注解、key/condition/unless 与常见坑
 
 ### Web 应用开发
 
@@ -35,7 +38,8 @@ sidebar_position: 1
 ### 安全与测试
 
 - **[安全基础](/docs/spring/security-basics)** - Spring Security 认证授权、用户管理、方法安全
-- **[测试](/docs/spring/spring-testing)** - 单元测试、集成测试、MockMvc、数据层测试
+- **[测试](/docs/spring/testing)** - 单元测试、集成测试、MockMvc、数据层测试
+- **[参数校验](/docs/spring/validation)** - Bean Validation、方法级校验、分组校验与自定义约束
 
 ### 快速参考
 

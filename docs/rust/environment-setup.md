@@ -7,8 +7,9 @@ title: Rust 开发环境搭建
 
 本文档指导你在不同操作系统上安装和配置 Rust 开发环境。
 
-> [!IMPORTANT]
-> Rust 使用 **rustup** 作为官方工具链管理器，它可以轻松安装、更新和管理多个 Rust 版本。
+:::important
+Rust 使用 **rustup** 作为官方工具链管理器，它可以轻松安装、更新和管理多个 Rust 版本。
+:::
 
 ## 为什么选择 Rust
 
@@ -117,8 +118,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 brew install rust
 ```
 
-> [!NOTE]
-> 推荐使用 rustup 安装，因为它提供了更好的版本管理和工具链切换功能。
+:::note
+推荐使用 rustup 安装，因为它提供了更好的版本管理和工具链切换功能。
+:::
 
 ### 配置环境变量
 
@@ -225,6 +227,21 @@ rustup component add rust-analyzer
 # 添加目标平台（交叉编译）
 rustup target add wasm32-unknown-unknown
 rustup target add x86_64-unknown-linux-gnu
+```
+
+## WebAssembly 开发环境
+
+如果你计划将 Rust 编译到 WebAssembly（浏览器/边缘/插件等），建议准备以下工具：
+
+```bash
+# 1) 安装 wasm 目标
+rustup target add wasm32-unknown-unknown
+
+# 2) 安装 wasm-pack（用于 wasm-bindgen 工作流）
+cargo install wasm-pack
+
+# 3) 验证
+wasm-pack --version
 ```
 
 ### 项目级版本指定
@@ -538,8 +555,9 @@ Cargo.lock
 **/*.rs.bk
 ```
 
-> [!TIP]
-> 对于二进制项目，建议提交 `Cargo.lock`；对于库项目，建议在 `.gitignore` 中忽略它。
+:::tip
+对于二进制项目，建议提交 `Cargo.lock`；对于库项目，建议在 `.gitignore` 中忽略它。
+:::
 
 ## 下一步
 

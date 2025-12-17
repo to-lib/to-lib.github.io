@@ -763,9 +763,7 @@ fn main() {
     let c = 'c';
     match c {
         'a'..='j' => println!("前半部分字母"),
-        'k
-
-'..='z' => println!("后半部分字母"),
+        'k'..='z' => println!("后半部分字母"),
         _ => println!("其他"),
     }
 }

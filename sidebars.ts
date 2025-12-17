@@ -91,6 +91,7 @@ const sidebars: SidebarsConfig = {
         "spring/core-concepts",
         "spring/dependency-injection",
         "spring/bean-management",
+        "spring/configuration",
       ],
     },
     {
@@ -102,6 +103,8 @@ const sidebars: SidebarsConfig = {
         "spring/transactions",
         "spring/events",
         "spring/resource-management",
+        "spring/spel",
+        "spring/caching",
       ],
     },
     {
@@ -127,6 +130,12 @@ const sidebars: SidebarsConfig = {
       label: "🧪 测试",
       collapsed: true,
       items: ["spring/testing"],
+    },
+    {
+      type: "category",
+      label: "✅ 校验",
+      collapsed: true,
+      items: ["spring/validation"],
     },
     {
       type: "category",
@@ -694,6 +703,7 @@ const sidebars: SidebarsConfig = {
         "springcloud/index",
         "springcloud/core-concepts",
         "springcloud/eureka",
+        "springcloud/consul",
         "springcloud/config",
       ],
     },
@@ -701,7 +711,12 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🔧 核心组件",
       collapsed: true,
-      items: ["springcloud/gateway", "springcloud/feign", "springcloud/ribbon"],
+      items: [
+        "springcloud/gateway",
+        "springcloud/feign",
+        "springcloud/ribbon",
+        "springcloud/bus",
+      ],
     },
     {
       type: "category",
@@ -717,7 +732,22 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🛠 高级与维护",
       collapsed: true,
-      items: ["springcloud/hystrix", "springcloud/sleuth"],
+      items: [
+        "springcloud/hystrix",
+        "springcloud/sleuth",
+        "springcloud/zipkin",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "springcloud/quick-reference",
+        "springcloud/best-practices",
+        "springcloud/faq",
+        "springcloud/interview-questions",
+      ],
     },
   ],
 
@@ -802,6 +832,8 @@ const sidebars: SidebarsConfig = {
         "rocketmq/performance-optimization",
         "rocketmq/best-practices",
         "rocketmq/monitoring",
+        "rocketmq/security",
+        "rocketmq/troubleshooting",
       ],
     },
     {
@@ -992,7 +1024,10 @@ const sidebars: SidebarsConfig = {
         "spring-ai/chat-client",
         "spring-ai/prompts",
         "spring-ai/output-parsing",
-        "spring-ai/api-reference",
+        "spring-ai/function-calling",
+        "spring-ai/embedding",
+        "spring-ai/image-generation",
+        "spring-ai/advisors",
       ],
     },
     {
@@ -1006,6 +1041,8 @@ const sidebars: SidebarsConfig = {
       label: "📚 参考指南",
       collapsed: true,
       items: [
+        "spring-ai/api-reference",
+        "spring-ai/quick-reference",
         "spring-ai/best-practices",
         "spring-ai/faq",
         "spring-ai/interview-questions",

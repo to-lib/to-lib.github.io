@@ -239,9 +239,58 @@ serde_json = "1"
 - mpsc 通道广播消息
 - 消息类型（加入、离开、聊天）
 
+## WebAssembly 项目
+
+### 项目 5: Rust + WASM 前端工具库
+
+**难度：** ⭐⭐⭐⭐
+
+**目标：** 编写一个可在浏览器中运行的 WASM 模块（例如：字符串处理/加密摘要/图像处理的核心算法），并提供简单的 JavaScript/TypeScript 调用方式。
+
+**功能：**
+
+- 将 Rust 编译为 WebAssembly
+- 导出少量稳定 API（函数/结构体）
+- 通过 npm 包或本地 demo 页面使用
+
+**依赖与工具：**
+
+```bash
+rustup target add wasm32-unknown-unknown
+cargo install wasm-pack
+```
+
+**项目骨架：**
+
+```bash
+# 创建库项目
+cargo new wasm-utils --lib
+cd wasm-utils
+
+# 使用 wasm-pack 构建（会生成 pkg/）
+wasm-pack build --target web
+```
+
+**核心代码：**
+
+```rust
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub fn reverse(s: &str) -> String {
+    s.chars().rev().collect()
+}
+```
+
+**学习要点：**
+
+- Rust 的 `crate-type` 与导出边界
+- `wasm-bindgen` 的 ABI 约束与字符串/数组的传递
+- 版本管理与产物发布（npm / GitHub Release）
+
 ## 系统编程项目
 
-### 项目 5: 简单 Shell
+### 项目 6: 简单 Shell
 
 **难度：** ⭐⭐⭐⭐⭐
 
@@ -309,7 +358,7 @@ fn main() {
 }
 ```
 
-### 项目 6: 内存分配器
+### 项目 7: 内存分配器
 
 **难度：** ⭐⭐⭐⭐⭐
 
@@ -330,7 +379,7 @@ fn main() {
 
 ## 网络编程项目
 
-### 项目 7: HTTP 服务器
+### 项目 8: HTTP 服务器
 
 **难度：** ⭐⭐⭐⭐
 
@@ -399,7 +448,7 @@ fn handle_connection(mut stream: TcpStream) {
 }
 ```
 
-### 项目 8: TCP 聊天室
+### 项目 9: TCP 聊天室
 
 **难度：** ⭐⭐⭐⭐
 
@@ -420,7 +469,7 @@ fn handle_connection(mut stream: TcpStream) {
 
 ## 数据处理项目
 
-### 项目 9: JSON 解析器
+### 项目 10: JSON 解析器
 
 **难度：** ⭐⭐⭐⭐⭐
 
@@ -439,7 +488,7 @@ fn handle_connection(mut stream: TcpStream) {
 - 递归下降解析
 - 枚举表示 JSON 值类型
 
-### 项目 10: CSV 处理工具
+### 项目 11: CSV 处理工具
 
 **难度：** ⭐⭐⭐
 

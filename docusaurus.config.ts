@@ -745,6 +745,10 @@ const config: Config = {
               to: "/docs/spring-ai/chat-client",
             },
             {
+              label: "🔧 函数调用",
+              to: "/docs/spring-ai/function-calling",
+            },
+            {
               label: "🔍 RAG 应用",
               to: "/docs/spring-ai/rag",
             },
@@ -1114,6 +1118,38 @@ const config: Config = {
             {
               label: "🚀 RocketMQ 概述",
               to: "/docs/rocketmq",
+            },
+            {
+              label: "📖 RocketMQ 简介",
+              to: "/docs/rocketmq/introduction",
+            },
+            {
+              label: "🎯 核心概念",
+              to: "/docs/rocketmq/core-concepts",
+            },
+            {
+              label: "🚀 快速开始",
+              to: "/docs/rocketmq/quick-start",
+            },
+            {
+              label: "📤 生产者详解",
+              to: "/docs/rocketmq/producer",
+            },
+            {
+              label: "📥 消费者详解",
+              to: "/docs/rocketmq/consumer",
+            },
+            {
+              label: "🔒 安全与 ACL",
+              to: "/docs/rocketmq/security",
+            },
+            {
+              label: "🛠️ 排障手册",
+              to: "/docs/rocketmq/troubleshooting",
+            },
+            {
+              label: "📊 监控与运维",
+              to: "/docs/rocketmq/monitoring",
             },
             {
               type: "html",

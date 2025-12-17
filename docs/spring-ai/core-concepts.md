@@ -60,3 +60,102 @@ ActorsFilms actorsFilms = parser.parse(response);
 - Redis
 - Neo4j
 - PGvector
+
+## Advisors (增强器)
+
+Advisor 是 Spring AI 中用于拦截和增强 ChatClient 请求/响应的组件，类似于 Spring AOP 的切面概念。
+
+```mermaid
+flowchart LR
+    A[请求] --> B[Advisor 链]
+    B --> C[ChatClient]
+    C --> D[Advisor 链]
+    D --> E[响应]
+```
+
+常用内置 Advisor：
+
+- **MessageChatMemoryAdvisor**: 自动管理对话历史
+- **QuestionAnswerAdvisor**: 集成 RAG 功能
+- **SafeGuardAdvisor**: 内容安全过滤
+
+```java
+ChatClient client = ChatClient.builder(chatModel)
+    .defaultAdvisors(
+        new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+        new QuestionAnswerAdvisor(vectorStore)
+    )
+    .build();
+```
+
+详见 [Advisor 机制](/docs/spring-ai/advisors)。
+
+## Memory (记忆)
+
+Memory 用于在多轮对话中保持上下文。Spring AI 提供 `ChatMemory` 接口：
+
+```java
+public interface ChatMemory {
+    void add(String conversationId, List<Message> messages);
+    List<Message> get(String conversationId, int lastN);
+    void clear(String conversationId);
+}
+```
+
+常用实现：
+
+- **InMemoryChatMemory**: 内存存储，适合开发测试
+- **CassandraChatMemory**: Cassandra 持久化
+- **自定义实现**: 可以基于 Redis、数据库等实现
+
+配合 `MessageChatMemoryAdvisor` 使用：
+
+```java
+ChatClient client = ChatClient.builder(chatModel)
+    .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+    .build();
+
+// 使用时指定会话 ID
+client.prompt()
+    .user("你好")
+    .advisors(a -> a.param(CHAT_MEMORY_CONVERSATION_ID_KEY, "session-123"))
+    .call()
+    .content();
+```
+
+## Multimodality (多模态)
+
+Spring AI 支持多模态输入，即在一个请求中同时发送文本和图像：
+
+```java
+// 发送图像和文本
+UserMessage userMessage = new UserMessage(
+    "描述这张图片",
+    List.of(new Media(MimeTypeUtils.IMAGE_PNG, imageResource))
+);
+
+String response = chatClient.prompt()
+    .messages(userMessage)
+    .call()
+    .content();
+```
+
+支持多模态的模型：
+
+- GPT-4 Vision (OpenAI)
+- Claude 3 (Anthropic)
+- Gemini (Google)
+
+## Function Calling (函数调用)
+
+允许 AI 模型调用预定义的函数获取外部信息：
+
+```java
+@Bean
+@Description("获取天气信息")
+public Function<WeatherRequest, WeatherResponse> getWeather() {
+    return request -> weatherService.get(request.city());
+}
+```
+
+详见 [函数调用](/docs/spring-ai/function-calling)。
