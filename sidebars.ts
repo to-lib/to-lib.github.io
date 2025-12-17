@@ -19,7 +19,19 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🤖 AI 开发",
       collapsed: false,
-      items: ["ai/index", "ai/agent", "ai/mcp", "ai/rag"],
+      items: ["ai/index", "ai/llm-fundamentals", "ai/prompt-engineering"],
+    },
+    {
+      type: "category",
+      label: "🎯 核心技术",
+      collapsed: true,
+      items: ["ai/agent", "ai/function-calling", "ai/rag", "ai/mcp"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["ai/quick-reference", "ai/faq"],
     },
   ],
 
@@ -1287,7 +1299,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["nginx/quick-reference", "nginx/faq"],
+      items: [
+        "nginx/quick-reference",
+        "nginx/faq",
+        "nginx/interview-questions",
+      ],
     },
   ],
 };

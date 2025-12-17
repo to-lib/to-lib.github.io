@@ -315,19 +315,57 @@ const config: Config = {
             {
               type: "html",
               value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>核心概念</div>",
+                "<div style='padding: 8px 12px; font-weight: bold; color: #9c27b0;'>基础知识</div>",
+            },
+            {
+              label: "🧠 LLM 基础知识",
+              to: "/docs/ai/llm-fundamentals",
+            },
+            {
+              label: "✨ 提示工程",
+              to: "/docs/ai/prompt-engineering",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>核心技术</div>",
             },
             {
               label: "🤖 AI Agent (智能体)",
               to: "/docs/ai/agent",
             },
             {
-              label: "🔌 MCP (模型上下文协议)",
-              to: "/docs/ai/mcp",
+              label: "🔧 Function Calling",
+              to: "/docs/ai/function-calling",
             },
             {
               label: "📚 RAG (检索增强生成)",
               to: "/docs/ai/rag",
+            },
+            {
+              label: "🔌 MCP (模型上下文协议)",
+              to: "/docs/ai/mcp",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>参考指南</div>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/ai/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/ai/faq",
             },
           ],
         },

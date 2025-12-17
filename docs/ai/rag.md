@@ -60,3 +60,153 @@ RAG 的典型流程包含三个阶段：
 - **重排序 (Re-ranking)**：检索出较多结果后，使用专门的 Re-rank 模型进行精细排序。
 - **元数据过滤 (Metadata Filtering)**：在检索前通过时间、作者等标签过滤数据。
 - **查询重写 (Query Rewriting)**：将用户模糊的问题改写为更适合检索的形式。
+
+## 代码实现示例
+
+### 使用 LangChain 构建 RAG
+
+```python
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_community.document_loaders import TextLoader, DirectoryLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
+
+# 1. 加载文档
+loader = DirectoryLoader("./docs", glob="**/*.md", loader_cls=TextLoader)
+documents = loader.load()
+
+# 2. 切分文档
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200,
+    separators=["\n\n", "\n", "。", "！", "？", "；", " "]
+)
+chunks = text_splitter.split_documents(documents)
+
+# 3. 创建向量存储
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+vectorstore = Chroma.from_documents(chunks, embeddings, persist_directory="./chroma_db")
+
+# 4. 创建检索器
+retriever = vectorstore.as_retriever(
+    search_type="similarity",
+    search_kwargs={"k": 3}
+)
+
+# 5. 创建 RAG 链
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+
+prompt = ChatPromptTemplate.from_template("""
+请根据以下上下文回答问题。如果上下文中没有相关信息，请说"我没有找到相关信息"。
+
+上下文：
+{context}
+
+问题：{question}
+
+回答：
+""")
+
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
+rag_chain = (
+    {"context": retriever | format_docs, "question": RunnablePassthrough()}
+    | prompt
+    | llm
+    | StrOutputParser()
+)
+
+# 6. 使用
+answer = rag_chain.invoke("什么是 Spring Boot 的自动配置？")
+print(answer)
+```
+
+### 使用 LlamaIndex 构建 RAG
+
+```python
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.llms.openai import OpenAI
+
+# 配置模型
+Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+Settings.llm = OpenAI(model="gpt-4o", temperature=0)
+
+# 加载文档并创建索引
+documents = SimpleDirectoryReader("./docs").load_data()
+index = VectorStoreIndex.from_documents(documents)
+
+# 创建查询引擎
+query_engine = index.as_query_engine(similarity_top_k=3)
+
+# 查询
+response = query_engine.query("什么是 RAG？")
+print(response)
+```
+
+### 添加混合检索 (Hybrid Search)
+
+```python
+from langchain_community.retrievers import BM25Retriever
+from langchain.retrievers import EnsembleRetriever
+
+# 向量检索器
+vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+
+# BM25 关键词检索器
+bm25_retriever = BM25Retriever.from_documents(chunks)
+bm25_retriever.k = 3
+
+# 集成检索器 (权重可调)
+hybrid_retriever = EnsembleRetriever(
+    retrievers=[vector_retriever, bm25_retriever],
+    weights=[0.6, 0.4]  # 60% 向量 + 40% 关键词
+)
+
+# 使用
+docs = hybrid_retriever.invoke("Spring Boot 配置文件")
+```
+
+## Embedding 模型选择指南
+
+| 使用场景   | 推荐模型                 | 说明               |
+| ---------- | ------------------------ | ------------------ |
+| 英文通用   | `text-embedding-3-small` | 经济实惠           |
+| 英文高精度 | `text-embedding-3-large` | 更高准确率         |
+| 中文通用   | `bge-large-zh-v1.5`      | 开源最佳           |
+| 多语言     | `bge-m3`                 | 支持 100+ 语言     |
+| 本地部署   | `m3e-base`               | 轻量，适合边缘设备 |
+
+### 使用开源 Embedding 模型
+
+```python
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-large-zh-v1.5",
+    model_kwargs={"device": "cuda"},
+    encode_kwargs={"normalize_embeddings": True}
+)
+
+# 使用方式与 OpenAI Embeddings 相同
+vectorstore = Chroma.from_documents(chunks, embeddings)
+```
+
+## 最佳实践
+
+1. **文档预处理**：清理无关内容，保留结构化信息
+2. **合理切分**：chunk_size 500-1500，overlap 10-20%
+3. **元数据丰富**：添加来源、时间、类别等元数据
+4. **混合检索**：结合向量和关键词，提高召回
+5. **结果重排序**：使用 Re-ranker 提升精度
+6. **定期更新**：保持知识库时效性
+
+## 延伸阅读
+
+- [LangChain RAG 教程](https://python.langchain.com/docs/tutorials/rag/)
+- [LlamaIndex 文档](https://docs.llamaindex.ai/)
+- [RAG 论文](https://arxiv.org/abs/2005.11401)

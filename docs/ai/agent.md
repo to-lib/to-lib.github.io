@@ -61,3 +61,146 @@ AI Agent（人工智能代理/智能体）是指能够感知环境、进行推�
 - **幻觉问题**：Agent 可能会生成错误的计划或调用不存在的工具。
 - **循环陷阱**：Agent 可能陷入死循环无法跳出。
 - **安全性**：自主行动可能带来的安全风险。
+
+## 代码实现示例
+
+### 使用 LangChain 构建 ReAct Agent
+
+```python
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_react_agent
+from langchain_core.prompts import PromptTemplate
+from langchain_core.tools import tool
+
+# 定义工具
+@tool
+def search(query: str) -> str:
+    """搜索网络获取最新信息"""
+    # 实际应用中调用搜索 API
+    return f"搜索结果：关于 '{query}' 的信息..."
+
+@tool
+def calculator(expression: str) -> str:
+    """计算数学表达式"""
+    try:
+        return str(eval(expression))
+    except Exception as e:
+        return f"计算错误: {e}"
+
+tools = [search, calculator]
+
+# 创建 LLM
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+
+# ReAct Prompt 模板
+prompt = PromptTemplate.from_template("""
+Answer the following questions as best you can. You have access to the following tools:
+
+{tools}
+
+Use the following format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question
+
+Begin!
+
+Question: {input}
+Thought:{agent_scratchpad}
+""")
+
+# 创建 Agent
+agent = create_react_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+# 运行
+result = agent_executor.invoke({"input": "2024年诺贝尔物理学奖获得者是谁？"})
+print(result["output"])
+```
+
+### 使用 OpenAI Function Calling 构建简单 Agent
+
+```python
+from openai import OpenAI
+import json
+
+client = OpenAI()
+
+# 定义可用工具
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "获取城市天气",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "city": {"type": "string", "description": "城市名称"}
+                },
+                "required": ["city"]
+            }
+        }
+    }
+]
+
+def get_weather(city: str) -> dict:
+    """模拟天气查询"""
+    return {"city": city, "weather": "晴", "temp": "22°C"}
+
+def run_agent(user_input: str):
+    messages = [{"role": "user", "content": user_input}]
+
+    # Agent 循环
+    while True:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages,
+            tools=tools,
+            tool_choice="auto"
+        )
+
+        message = response.choices[0].message
+
+        # 检查是否需要调用工具
+        if not message.tool_calls:
+            return message.content
+
+        messages.append(message)
+
+        # 执行工具调用
+        for tool_call in message.tool_calls:
+            if tool_call.function.name == "get_weather":
+                args = json.loads(tool_call.function.arguments)
+                result = get_weather(**args)
+                messages.append({
+                    "role": "tool",
+                    "tool_call_id": tool_call.id,
+                    "content": json.dumps(result)
+                })
+
+# 使用
+print(run_agent("北京今天天气怎么样？"))
+```
+
+## 框架与工具推荐
+
+| 框架                          | 特点               | 适用场景        |
+| ----------------------------- | ------------------ | --------------- |
+| **LangChain**                 | 功能全面，生态丰富 | 通用 Agent 开发 |
+| **LangGraph**                 | 支持复杂工作流     | 多步骤任务编排  |
+| **AutoGPT**                   | 自主任务规划       | 研究探索        |
+| **CrewAI**                    | 多 Agent 协作      | 团队模拟        |
+| **Microsoft Semantic Kernel** | .NET/Python 支持   | 企业集成        |
+
+## 延伸阅读
+
+- [LangChain Agent 文档](https://python.langchain.com/docs/modules/agents/)
+- [ReAct 论文](https://arxiv.org/abs/2210.03629)
+- [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)
