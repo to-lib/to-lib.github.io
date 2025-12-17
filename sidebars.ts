@@ -337,6 +337,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "rust/index",
+        "rust/environment-setup",
         "rust/basic-syntax",
         "rust/ownership",
         "rust/structs-enums",
@@ -608,6 +609,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "🛠️ 运维与排障",
+      collapsed: true,
+      items: [
+        "redis/configuration",
+        "redis/monitoring-and-troubleshooting",
+        "redis/backup-and-recovery",
+      ],
+    },
+    {
+      type: "category",
       label: "📚 参考指南",
       collapsed: true,
       items: [
@@ -780,6 +791,17 @@ const sidebars: SidebarsConfig = {
         "rocketmq/producer",
         "rocketmq/consumer",
         "rocketmq/message-types",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级应用",
+      collapsed: true,
+      items: [
+        "rocketmq/cluster-management",
+        "rocketmq/performance-optimization",
+        "rocketmq/best-practices",
+        "rocketmq/monitoring",
       ],
     },
     {

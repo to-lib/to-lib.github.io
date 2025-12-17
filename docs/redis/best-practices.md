@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 19
 title: 最佳实践
 ---
 
@@ -142,7 +142,7 @@ JedisPool pool = new JedisPool(config, "localhost", 6379);
 
 ```bash
 # redis.conf
-require pass your_strong_password_here
+requirepass your_strong_password_here
 
 # 客户端连接
 AUTH your_strong_password_here

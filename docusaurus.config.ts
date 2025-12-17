@@ -233,6 +233,10 @@ const config: Config = {
                 "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
             },
             {
+              label: "🛠️ 环境搭建",
+              to: "/docs/rust/environment-setup",
+            },
+            {
               label: "📝 基础语法",
               to: "/docs/rust/basic-syntax",
             },
@@ -828,6 +832,18 @@ const config: Config = {
             {
               label: "🏛️ Redis 集群",
               to: "/docs/redis/cluster",
+            },
+            {
+              label: "⚙️ 配置与部署",
+              to: "/docs/redis/configuration",
+            },
+            {
+              label: "🩺 监控与排障",
+              to: "/docs/redis/monitoring-and-troubleshooting",
+            },
+            {
+              label: "🗄️ 备份与恢复",
+              to: "/docs/redis/backup-and-recovery",
             },
             {
               type: "html",

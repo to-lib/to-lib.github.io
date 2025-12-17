@@ -186,6 +186,9 @@ ZRANK leaderboard "player1"
 | [事务](/docs/redis/transactions)                 | MULTI/EXEC、WATCH、Lua 脚本            |
 | [缓存策略](/docs/redis/cache-strategies)         | 缓存穿透、击穿、雪崩、分布式锁         |
 | [性能优化](/docs/redis/performance-optimization) | 内存优化、慢查询分析、性能监控         |
+| [配置与部署](/docs/redis/configuration)          | 关键配置项与生产部署建议               |
+| [监控与排障](/docs/redis/monitoring-and-troubleshooting) | 指标、命令与常见故障排查路径           |
+| [备份与恢复](/docs/redis/backup-and-recovery)    | RDB/AOF 备份恢复与演练建议             |
 
 ## 🔗 相关资源
 
