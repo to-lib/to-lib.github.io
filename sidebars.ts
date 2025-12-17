@@ -210,6 +210,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "springboot/security",
         "springboot/health-monitoring",
+        "springboot/observability",
         "springboot/performance-optimization",
         "springboot/deployment",
         "springboot/docker",
@@ -1035,7 +1036,14 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🚀 高级主题",
       collapsed: true,
-      items: ["spring-ai/rag", "spring-ai/model-providers"],
+      items: [
+        "spring-ai/rag",
+        "spring-ai/document-ingestion",
+        "spring-ai/chat-memory",
+        "spring-ai/observability",
+        "spring-ai/evaluation",
+        "spring-ai/model-providers",
+      ],
     },
     {
       type: "category",
@@ -1048,6 +1056,32 @@ const sidebars: SidebarsConfig = {
         "spring-ai/faq",
         "spring-ai/interview-questions",
       ],
+    },
+  ],
+  // FFmpeg sidebar
+  ffmpeg: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: ["ffmpeg/index", "ffmpeg/installation", "ffmpeg/basic-commands"],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "ffmpeg/video-processing",
+        "ffmpeg/audio-processing",
+        "ffmpeg/filters",
+        "ffmpeg/streaming",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["ffmpeg/quick-reference", "ffmpeg/faq"],
     },
   ],
 };

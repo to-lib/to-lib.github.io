@@ -280,5 +280,9 @@ List<Document> results = vectorStore.similaritySearch(
 
 ## 下一步
 
+- [文档摄取与向量化](/docs/spring-ai/document-ingestion) - 构建高质量知识库的关键步骤
+- [对话记忆（ChatMemory）](/docs/spring-ai/chat-memory) - 多轮对话与会话上下文管理
+- [可观测性（Observability）](/docs/spring-ai/observability) - 监控 token、耗时与命中情况
+- [评测与回归测试（Evaluation）](/docs/spring-ai/evaluation) - 让质量可控、可回归
 - [模型提供商](/docs/spring-ai/model-providers) - 了解支持的 AI 提供商
 - [最佳实践](/docs/spring-ai/best-practices) - 生产环境最佳实践

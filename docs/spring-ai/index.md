@@ -30,3 +30,8 @@ Spring AI 旨在简化 AI 功能在 Java 企业级应用中的集成。它借鉴
 
 - [快速开始](/docs/spring-ai/quick-start)
 - [核心概念](/docs/spring-ai/core-concepts)
+- [RAG 应用](/docs/spring-ai/rag)
+- [文档摄取与向量化](/docs/spring-ai/document-ingestion)
+- [对话记忆（ChatMemory）](/docs/spring-ai/chat-memory)
+- [可观测性（Observability）](/docs/spring-ai/observability)
+- [评测与回归测试（Evaluation）](/docs/spring-ai/evaluation)

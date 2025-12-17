@@ -515,6 +515,71 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "🎬 FFmpeg",
+          position: "left",
+          items: [
+            {
+              label: "📖 FFmpeg 概述",
+              to: "/docs/ffmpeg",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础入门</div>",
+            },
+            {
+              label: "🛠️ 安装配置",
+              to: "/docs/ffmpeg/installation",
+            },
+            {
+              label: "💻 基础命令",
+              to: "/docs/ffmpeg/basic-commands",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
+            },
+            {
+              label: "🎥 视频处理",
+              to: "/docs/ffmpeg/video-processing",
+            },
+            {
+              label: "🎵 音频处理",
+              to: "/docs/ffmpeg/audio-processing",
+            },
+            {
+              label: "🎨 滤镜使用",
+              to: "/docs/ffmpeg/filters",
+            },
+            {
+              label: "📡 流媒体",
+              to: "/docs/ffmpeg/streaming",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/ffmpeg/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/ffmpeg/faq",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "📚 设计模式",
           position: "left",
           items: [
@@ -686,6 +751,10 @@ const config: Config = {
               to: "/docs/springboot",
             },
             {
+              label: "📈 可观测性",
+              to: "/docs/springboot/observability",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -751,6 +820,22 @@ const config: Config = {
             {
               label: "🔍 RAG 应用",
               to: "/docs/spring-ai/rag",
+            },
+            {
+              label: "📥 文档摄取",
+              to: "/docs/spring-ai/document-ingestion",
+            },
+            {
+              label: "🧠 对话记忆",
+              to: "/docs/spring-ai/chat-memory",
+            },
+            {
+              label: "📈 可观测性",
+              to: "/docs/spring-ai/observability",
+            },
+            {
+              label: "✅ 评测与回归",
+              to: "/docs/spring-ai/evaluation",
             },
             {
               label: "🏢 模型提供商",

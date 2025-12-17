@@ -63,6 +63,7 @@ graph TB
 ### 💼 生产级特性
 
 - **[健康检查与监控](/docs/springboot/health-monitoring)** - Actuator 和监控指标
+- **[可观测性](/docs/springboot/observability)** - 指标、日志与链路追踪（Metrics/Logs/Traces）
 - **[性能优化](/docs/springboot/performance-optimization)** - 应用性能调优
 - **[安全认证](/docs/springboot/security)** - Spring Security 集成
 - **[部署上线](/docs/springboot/deployment)** - 应用打包、部署和运维
@@ -101,7 +102,7 @@ mindmap
     开箱即用
       零配置快速启动
       智能默认设置
-      快速原型开��
+      快速原型开发
     自动配置
       条件装配
       智能依赖管理

@@ -19,7 +19,7 @@ function HomepageHeader() {
           </Heading>
           <p className={styles.heroSubtitle}>
             Java • Rust • React 19 • Linux • 设计模式 • Spring • Spring Cloud •
-            Netty • MySQL • Redis
+            Netty • MySQL • Redis • Spring AI • FFMPEG
           </p>
           <p className={styles.heroDescription}>
             全面覆盖前后端开发技术栈，从编程语言基础到框架应用实战。
@@ -133,6 +133,55 @@ function HomepageHeader() {
               <Link to="/docs/redis">
                 <h4>Redis</h4>
                 <p className={styles.navDesc}>高性能缓存</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🐘</span>
+              <Link to="/docs/postgres">
+                <h4>PostgreSQL</h4>
+                <p className={styles.navDesc}>对象关系型数据库</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🤖</span>
+              <Link to="/docs/spring-ai">
+                <h4>Spring AI</h4>
+                <p className={styles.navDesc}>Java AI 应用开发</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🐰</span>
+              <Link to="/docs/rabbitmq">
+                <h4>RabbitMQ</h4>
+                <p className={styles.navDesc}>企业级消息代理</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🚀</span>
+              <Link to="/docs/rocketmq">
+                <h4>RocketMQ</h4>
+                <p className={styles.navDesc}>阿里高性能消息</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>📊</span>
+              <Link to="/docs/kafka">
+                <h4>Kafka</h4>
+                <p className={styles.navDesc}>分布式流平台</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>⚡</span>
+              <Link to="/docs/flink">
+                <h4>Flink</h4>
+                <p className={styles.navDesc}>大数据处理引擎</p>
+              </Link>
+            </div>
+            <div className={styles.navCard}>
+              <span className={styles.navIcon}>🎬</span>
+              <Link to="/docs/ffmpeg">
+                <h4>FFmpeg</h4>
+                <p className={styles.navDesc}>音视频处理工具</p>
               </Link>
             </div>
           </div>
