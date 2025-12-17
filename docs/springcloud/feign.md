@@ -6,7 +6,13 @@ sidebar_position: 6
 
 # Feign 声明式 HTTP 客户端
 
-> [!TIP] > **简化服务调用**: Feign 通过声明式接口简化了 HTTP 客户端的开发，集成了 Ribbon 负载均衡和 Hystrix 熔断器。
+> [!TIP] > **简化服务调用**: OpenFeign 通过声明式接口简化了 HTTP 客户端的开发。在新版本 Spring Cloud 中，常见组合为 **OpenFeign + LoadBalancer + Resilience4j**。
+
+> [!IMPORTANT]
+> **版本说明**：Ribbon/Hystrix 已进入维护模式。本文保留相关内容用于理解旧方案，但新项目建议使用：
+> 
+> - 负载均衡：[LoadBalancer](/docs/springcloud/loadbalancer)
+> - 熔断降级：[Resilience4j](/docs/springcloud/resilience4j)
 
 ## 1. Feign 简介
 
@@ -17,8 +23,8 @@ sidebar_position: 6
 ### 核心特性
 
 - **声明式** - 通过接口和注解定义服务调用
-- **集成 Ribbon** - 自动实现负载均衡
-- **集成 Hystrix** - 支持熔断降级
+- **集成 LoadBalancer** - 自动实现客户端负载均衡
+- **集成容错** - 推荐使用 Resilience4j / Spring Cloud Circuit Breaker
 - **可插拔** - 支持多种编码器、解码器
 - **日志** - 提供详细的请求日志
 

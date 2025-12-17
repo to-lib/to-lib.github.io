@@ -8,6 +8,12 @@ sidebar_position: 9
 
 > [!TIP] > **分布式追踪**: Spring Cloud Sleuth 为分布式系统提供链路追踪功能，帮助理解服务间的调用关系和性能瓶颈。
 
+> [!IMPORTANT]
+> **版本说明**：如果你的项目是 **Spring Boot 3.x / Spring Cloud 2023.x**，请优先使用 **Micrometer Tracing**（Sleuth 已停止演进）。参考：
+> 
+> - [Micrometer Tracing 链路追踪](/docs/springcloud/micrometer-tracing)
+> - [Zipkin 追踪](/docs/springcloud/zipkin)
+
 ## 1. Sleuth 简介
 
 ### 什么是 Sleuth？
@@ -538,4 +544,4 @@ try {
 - 合理设置采样率平衡性能和监控
 - 使用追踪数据分析性能瓶颈
 
-**下一步**：探索 [Spring Cloud Alibaba](/docs/springcloud-alibaba/index)
+**下一步**：探索 [Spring Cloud Alibaba](/docs/springcloud-alibaba)

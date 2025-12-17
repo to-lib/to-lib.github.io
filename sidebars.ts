@@ -736,6 +736,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "springcloud/hystrix",
         "springcloud/sleuth",
+        "springcloud/micrometer-tracing",
         "springcloud/zipkin",
       ],
     },
@@ -746,6 +747,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "springcloud/quick-reference",
         "springcloud/best-practices",
+        "springcloud/troubleshooting",
         "springcloud/faq",
         "springcloud/interview-questions",
       ],

@@ -768,6 +768,14 @@ const config: Config = {
               to: "/docs/springcloud",
             },
             {
+              label: "🔎 Spring Cloud 排障手册",
+              to: "/docs/springcloud/troubleshooting",
+            },
+            {
+              label: "🧵 Micrometer Tracing",
+              to: "/docs/springcloud/micrometer-tracing",
+            },
+            {
               label: "☁️ Spring Cloud Alibaba",
               to: "/docs/springcloud-alibaba",
             },
