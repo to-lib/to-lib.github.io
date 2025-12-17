@@ -94,6 +94,7 @@ const config: Config = {
         src: "img/logo.svg",
       },
       items: [
+        { to: "/blog", label: "Blog", position: "left" },
         {
           type: "dropdown",
           label: "💻 编程语言",
