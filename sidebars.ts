@@ -1004,6 +1004,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "rabbitmq/quick-reference",
+
         "rabbitmq/faq",
         "rabbitmq/interview-questions",
       ],
@@ -1015,11 +1016,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📖 快速入门",
       collapsed: false,
-      items: [
-        "spring-ai/index",
-        "spring-ai/quick-start",
-        "spring-ai/core-concepts",
-      ],
+      items: ["spring-ai/index", "spring-ai/quick-start", "spring-ai/core-concepts"],
     },
     {
       type: "category",
@@ -1078,13 +1075,27 @@ const sidebars: SidebarsConfig = {
         "ffmpeg/audio-processing",
         "ffmpeg/filters",
         "ffmpeg/streaming",
+        "ffmpeg/subtitles",
       ],
     },
     {
       type: "category",
-      label: "📚 参考指南",
+      label: "🚀 进阶与优化",
       collapsed: true,
-      items: ["ffmpeg/quick-reference", "ffmpeg/faq"],
+      items: [
+        "ffmpeg/concat-and-split",
+        "ffmpeg/ffprobe",
+        "ffmpeg/encoding-parameters",
+        "ffmpeg/hardware-acceleration",
+        "ffmpeg/performance-optimization",
+        "ffmpeg/scripting",
+      ],
+    },
+    {
+      type: "category",
+      label: "🩺 排错与参考",
+      collapsed: true,
+      items: ["ffmpeg/troubleshooting", "ffmpeg/quick-reference", "ffmpeg/faq"],
     },
   ],
 };

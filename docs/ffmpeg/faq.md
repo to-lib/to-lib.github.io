@@ -35,7 +35,7 @@ ffmpeg -version
 sudo apt install libavcodec-extra
 
 # macOS 完整安装
-brew install ffmpeg --with-all-extras
+brew install ffmpeg
 
 # 查看支持的编解码器
 ffmpeg -codecs

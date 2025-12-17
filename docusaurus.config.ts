@@ -565,8 +565,54 @@ const config: Config = {
               to: "/docs/ffmpeg/streaming",
             },
             {
+              label: "💬 字幕处理",
+              to: "/docs/ffmpeg/subtitles",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶与优化</div>",
+            },
+            {
+              label: "🧩 拼接与切片",
+              to: "/docs/ffmpeg/concat-and-split",
+            },
+            {
+              label: "🔎 ffprobe 分析",
+              to: "/docs/ffmpeg/ffprobe",
+            },
+            {
+              label: "🎛️ 编码参数与码控",
+              to: "/docs/ffmpeg/encoding-parameters",
+            },
+            {
+              label: "⚡ 硬件加速",
+              to: "/docs/ffmpeg/hardware-acceleration",
+            },
+            {
+              label: "🚀 性能优化",
+              to: "/docs/ffmpeg/performance-optimization",
+            },
+            {
+              label: "🧰 脚本自动化",
+              to: "/docs/ffmpeg/scripting",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>排错与参考</div>",
+            },
+            {
+              label: "🩺 排错指南",
+              to: "/docs/ffmpeg/troubleshooting",
             },
             {
               label: "📋 快速参考",
@@ -575,6 +621,116 @@ const config: Config = {
             {
               label: "❓ 常见问题",
               to: "/docs/ffmpeg/faq",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🧮 数据结构与算法",
+          position: "left",
+          items: [
+            {
+              label: "📖 DSA 概述",
+              to: "/docs/dsa",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础数据结构</div>",
+            },
+            {
+              label: "⏱️ 时间空间复杂度",
+              to: "/docs/dsa/complexity",
+            },
+            {
+              label: "📊 数组与链表",
+              to: "/docs/dsa/array-linkedlist",
+            },
+            {
+              label: "📚 栈与队列",
+              to: "/docs/dsa/stack-queue",
+            },
+            {
+              label: "🔗 哈希表",
+              to: "/docs/dsa/hash-table",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>高级数据结构</div>",
+            },
+            {
+              label: "🌳 树结构",
+              to: "/docs/dsa/tree",
+            },
+            {
+              label: "⛰️ 堆",
+              to: "/docs/dsa/heap",
+            },
+            {
+              label: "🕸️ 图",
+              to: "/docs/dsa/graph",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>经典算法</div>",
+            },
+            {
+              label: "🔄 排序算法",
+              to: "/docs/dsa/sorting",
+            },
+            {
+              label: "🔍 查找算法",
+              to: "/docs/dsa/searching",
+            },
+            {
+              label: "🔁 递归与分治",
+              to: "/docs/dsa/recursion-divide",
+            },
+            {
+              label: "📈 动态规划",
+              to: "/docs/dsa/dynamic-programming",
+            },
+            {
+              label: "💰 贪心算法",
+              to: "/docs/dsa/greedy",
+            },
+            {
+              label: "↩️ 回溯算法",
+              to: "/docs/dsa/backtracking",
+            },
+            {
+              label: "🔤 字符串算法",
+              to: "/docs/dsa/string-algorithms",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/dsa/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/dsa/faq",
+            },
+            {
+              label: "💼 面试题集",
+              to: "/docs/dsa/interview-questions",
             },
           ],
         },

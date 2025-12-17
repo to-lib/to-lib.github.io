@@ -26,7 +26,12 @@ ffmpeg -version
 ### 完整版安装（包含所有编解码器）
 
 ```bash
-brew install ffmpeg --with-fdk-aac --with-sdl2 --with-freetype --with-libass --with-libvorbis --with-opus --with-x265
+# Homebrew 已移除大多数 --with-* 选项
+# 一般情况下 brew install ffmpeg 已包含常用编解码器
+brew install ffmpeg
+
+# 查看当前构建信息与支持能力
+brew info ffmpeg
 ```
 
 ## Linux 安装
