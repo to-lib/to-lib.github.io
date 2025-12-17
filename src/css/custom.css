@@ -50,3 +50,8 @@
 .button--primary {
   color: white !important; /* Ensure text is readable on primary buttons */
 }
+
+/* Navbar Tweaks */
+.navbar__item {
+  font-size: 0.9rem;
+}
