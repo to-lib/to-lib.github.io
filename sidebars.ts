@@ -1350,25 +1350,44 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📖 基础知识",
       collapsed: false,
-      items: ["networking/index", "networking/osi-tcp-ip"],
+      items: [
+        "networking/index",
+        "networking/osi-tcp-ip",
+        "networking/data-link-layer",
+        "networking/network-layer",
+      ],
     },
     {
       type: "category",
       label: "🔧 传输层协议",
       collapsed: true,
-      items: ["networking/tcp"],
+      items: [
+        "networking/tcp",
+        "networking/udp",
+        "networking/socket-programming",
+      ],
     },
     {
       type: "category",
       label: "🌐 应用层协议",
       collapsed: true,
-      items: ["networking/http"],
+      items: ["networking/http", "networking/dns", "networking/websocket"],
+    },
+    {
+      type: "category",
+      label: "🔒 网络安全",
+      collapsed: true,
+      items: ["networking/tls-ssl", "networking/security"],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["networking/quick-reference", "networking/faq"],
+      items: [
+        "networking/quick-reference",
+        "networking/faq",
+        "networking/interview-questions",
+      ],
     },
   ],
 };
