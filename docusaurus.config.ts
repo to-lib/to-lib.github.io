@@ -96,6 +96,38 @@ const config: Config = {
       items: [
         {
           type: "dropdown",
+          label: "🤖 AI 开发",
+          position: "left",
+          items: [
+            {
+              label: "📖 AI 概览",
+              to: "/docs/ai",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>核心概念</div>",
+            },
+            {
+              label: "🤖 AI Agent (智能体)",
+              to: "/docs/ai/agent",
+            },
+            {
+              label: "🔌 MCP (模型上下文协议)",
+              to: "/docs/ai/mcp",
+            },
+            {
+              label: "📚 RAG (检索增强生成)",
+              to: "/docs/ai/rag",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "☕ Java 编程",
           position: "left",
           items: [

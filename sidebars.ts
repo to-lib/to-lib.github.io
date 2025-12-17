@@ -13,6 +13,16 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
  * Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
+  // AI Development sidebar
+  ai: [
+    {
+      type: "category",
+      label: "🤖 AI 开发",
+      collapsed: false,
+      items: ["ai/index", "ai/agent", "ai/mcp", "ai/rag"],
+    },
+  ],
+
   // Java Design Patterns sidebar
   designPatterns: [
     {
