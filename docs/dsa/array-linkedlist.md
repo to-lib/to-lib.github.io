@@ -11,6 +11,14 @@ title: 数组与链表
 
 数组是**连续内存**存储的相同类型元素集合，支持**随机访问**。
 
+```mermaid
+graph LR
+    subgraph Array_Memory [数组内存 (连续)]
+        direction LR
+        A[addr: 100<br/>val: 10] --- B[addr: 104<br/>val: 20] --- C[addr: 108<br/>val: 30] --- D[addr: 112<br/>val: 40]
+    end
+```
+
 ### 特点
 
 - ✅ 随机访问 O(1)
@@ -121,6 +129,14 @@ public int maxSum(int[] arr, int k) {
 ## 🔗 链表 (Linked List)
 
 链表是**非连续内存**存储，通过指针连接的动态数据结构。
+
+```mermaid
+graph LR
+    subgraph Linked_List [链表 (非连续)]
+        direction LR
+        Node1((Val: 1<br/>Next)) --> Node2((Val: 2<br/>Next)) --> Node3((Val: 3<br/>Next)) --> Null[Null]
+    end
+```
 
 ### 链表类型
 

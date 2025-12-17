@@ -7,6 +7,19 @@ title: 查找算法
 
 ## 🔍 二分查找
 
+```mermaid
+graph TD
+    Start([开始]) --> Init[left = 0, right = n-1]
+    Init --> Check{left <= right?}
+    Check -- No --> NotFound([返回 -1])
+    Check -- Yes --> CalcMid[mid = left + (right-left)/2]
+    CalcMid --> Compare{arr[mid] == target?}
+    Compare -- Yes --> Found([返回 mid])
+    Compare -- No --> CheckSize{arr[mid] < target?}
+    CheckSize -- Yes --> MoveLeft[left = mid + 1] --> Check
+    CheckSize -- No --> MoveRight[right = mid - 1] --> Check
+```
+
 ```java
 public int binarySearch(int[] arr, int target) {
     int left = 0, right = arr.length - 1;

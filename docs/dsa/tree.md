@@ -9,6 +9,16 @@ title: 树结构
 
 ## 📖 二叉树基础
 
+```mermaid
+graph TD
+    A((Root)) --> B((Left Child))
+    A --> C((Right Child))
+    B --> D((Leaf))
+    B --> E((Leaf))
+    C --> F((Leaf))
+    C --> G((Leaf))
+```
+
 ### 节点定义
 
 ```java

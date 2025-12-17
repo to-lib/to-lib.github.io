@@ -15,6 +15,16 @@ title: 递归与分治
 
 ### 斐波那契
 
+```mermaid
+graph TD
+    Fib5[fib 5] --> Fib4[fib 4]
+    Fib5 --> Fib3_1[fib 3]
+    Fib4 --> Fib3_2[fib 3]
+    Fib4 --> Fib2_1[fib 2]
+    Fib3_1 --> Fib2_2[fib 2]
+    Fib3_1 --> Fib1_1[fib 1]
+```
+
 ```java
 // 带记忆化
 public int fib(int n, int[] memo) {

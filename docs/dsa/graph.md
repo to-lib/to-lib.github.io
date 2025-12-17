@@ -9,6 +9,15 @@ title: 图
 
 ## 📖 图的表示
 
+```mermaid
+graph LR
+    A((Node 0)) --- B((Node 1))
+    A --- C((Node 2))
+    B --- D((Node 3))
+    C --- D
+    B --- C
+```
+
 ### 邻接矩阵
 
 ```java

@@ -31,6 +31,21 @@ n=100:    1 < 7 < 100 < 664 < 10000 < 10³⁰ < 10¹⁵⁸
           O(1) O(logn) O(n) O(nlogn) O(n²) O(2ⁿ) O(n!)
 ```
 
+```mermaid
+graph LR
+    subgraph Complexity_Growth [复杂度增长趋势]
+        direction LR
+        O1[O(1)] --> Olog[O(log n)] --> On[O(n)] --> Onlog[O(n log n)] --> On2[O(n^2)] --> O2n[O(2^n)] --> Onfact[O(n!)]
+        style O1 fill:#e6fffa,stroke:#00bcd4
+        style Olog fill:#e6fffa,stroke:#00bcd4
+        style On fill:#e8f5e9,stroke:#4caf50
+        style Onlog fill:#fff3e0,stroke:#ff9800
+        style On2 fill:#ffebee,stroke:#f44336
+        style O2n fill:#ffebee,stroke:#b71c1c
+        style Onfact fill:#ffebee,stroke:#b71c1c
+    end
+```
+
 ## ⏱️ 时间复杂度
 
 ### O(1) - 常数时间

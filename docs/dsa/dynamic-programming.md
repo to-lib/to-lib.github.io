@@ -18,6 +18,13 @@ title: 动态规划
 
 ### 爬楼梯
 
+```mermaid
+graph LR
+    State1((i-2)) -->|+1 step| State3((i))
+    State2((i-1)) -->|+1 step| State3
+    State3 --> State4((i+1))
+```
+
 ```java
 public int climbStairs(int n) {
     if (n <= 2) return n;

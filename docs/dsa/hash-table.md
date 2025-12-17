@@ -29,6 +29,16 @@ public int hashString(String key, int capacity) {
 
 ### 冲突解决
 
+```mermaid
+graph LR
+    subgraph Hash_Table [哈希表 (链地址法)]
+        direction LR
+        idx0[Idx 0] --> A[Key: A, Val: 1] --> B[Key: B, Val: 2] --> Null0[Null]
+        idx1[Idx 1] --> C[Key: C, Val: 3] --> Null1[Null]
+        idx2[Idx 2] --> Null2[Null]
+    end
+```
+
 1. **链地址法** - 每个位置是一个链表
 2. **开放地址法** - 线性探测、二次探测
 

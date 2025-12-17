@@ -11,6 +11,16 @@ title: 栈与队列
 
 栈是**后进先出 (LIFO)** 的数据结构，只能在栈顶进行操作。
 
+```mermaid
+graph TD
+    subgraph Stack [栈 (First In Last Out)]
+        direction BT
+        A[Element 1] --> B[Element 2]
+        B --> C[Element 3]
+        C -->|Push/Pop| Top[栈顶]
+    end
+```
+
 ### 基本操作
 
 | 操作 | 描述     | 时间复杂度 |
@@ -103,6 +113,14 @@ public int[] nextGreaterElement(int[] nums) {
 ## 📬 队列 (Queue)
 
 队列是**先进先出 (FIFO)** 的数据结构。
+
+```mermaid
+graph LR
+    subgraph Queue [队列 (First In First Out)]
+        direction LR
+        Input[入队] --> A[Element 1] --> B[Element 2] --> C[Element 3] --> Output[出队]
+    end
+```
 
 ### Java 队列的使用
 
