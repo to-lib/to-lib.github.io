@@ -798,6 +798,7 @@ const sidebars: SidebarsConfig = {
         "springcloud-alibaba/quick-reference",
         "springcloud-alibaba/practical-project",
         "springcloud-alibaba/migration-guide",
+        "springcloud-alibaba/security-and-access",
         "springcloud-alibaba/faq",
         "springcloud-alibaba/interview-questions",
       ],

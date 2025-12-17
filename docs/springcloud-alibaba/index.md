@@ -23,6 +23,10 @@ sidebar_position: 1
 - **[RocketMQ](/docs/springcloud-alibaba/rocketmq)** - 消息队列、事务消息、顺序消息
 - **[Dubbo](/docs/springcloud-alibaba/dubbo)** - 高性能 RPC 框架、服务治理
 
+### 生产落地
+
+- **[安全与权限](/docs/springcloud-alibaba/security-and-access)** - Nacos/Sentinel/RocketMQ/Seata 的安全加固与权限控制
+
 ## 🎯 核心组件速览
 
 ### Nacos - 服务注册与配置中心

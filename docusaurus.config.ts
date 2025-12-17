@@ -780,6 +780,10 @@ const config: Config = {
               to: "/docs/springcloud-alibaba",
             },
             {
+              label: "🔐 Spring Cloud Alibaba 安全与权限",
+              to: "/docs/springcloud-alibaba/security-and-access",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -1544,6 +1548,10 @@ const config: Config = {
             {
               label: "Spring Cloud Alibaba",
               to: "/docs/springcloud-alibaba",
+            },
+            {
+              label: "Spring Cloud Alibaba 安全与权限",
+              to: "/docs/springcloud-alibaba/security-and-access",
             },
             {
               label: "Netty",
