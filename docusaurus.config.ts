@@ -626,6 +626,103 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "🐳 容器化",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Docker</div>",
+            },
+            {
+              label: "📖 Docker 概述",
+              to: "/docs/docker",
+            },
+            {
+              label: "🛠️ 安装配置",
+              to: "/docs/docker/installation",
+            },
+            {
+              label: "💻 基础命令",
+              to: "/docs/docker/basic-commands",
+            },
+            {
+              label: "📝 Dockerfile 编写",
+              to: "/docs/docker/dockerfile",
+            },
+            {
+              label: "🚀 Docker Compose",
+              to: "/docs/docker/compose",
+            },
+            {
+              label: "🌐 网络配置",
+              to: "/docs/docker/networking",
+            },
+            {
+              label: "💾 数据持久化",
+              to: "/docs/docker/volumes",
+            },
+            {
+              label: "✨ 最佳实践",
+              to: "/docs/docker/best-practices",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/docker/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/docker/faq",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Podman</div>",
+            },
+            {
+              label: "📖 Podman 概述",
+              to: "/docs/podman",
+            },
+            {
+              label: "🛠️ 安装配置",
+              to: "/docs/podman/installation",
+            },
+            {
+              label: "💻 基础命令",
+              to: "/docs/podman/basic-commands",
+            },
+            {
+              label: "📦 Pod 管理",
+              to: "/docs/podman/pods",
+            },
+            {
+              label: "🔓 Rootless 模式",
+              to: "/docs/podman/rootless",
+            },
+            {
+              label: "⚙️ Systemd 集成",
+              to: "/docs/podman/systemd",
+            },
+            {
+              label: "🔄 Docker 迁移",
+              to: "/docs/podman/docker-migration",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/podman/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/podman/faq",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "🧮 数据结构与算法",
           position: "left",
           items: [

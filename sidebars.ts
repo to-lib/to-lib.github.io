@@ -1069,7 +1069,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📖 快速入门",
       collapsed: false,
-      items: ["spring-ai/index", "spring-ai/quick-start", "spring-ai/core-concepts"],
+      items: [
+        "spring-ai/index",
+        "spring-ai/quick-start",
+        "spring-ai/core-concepts",
+      ],
     },
     {
       type: "category",
@@ -1149,6 +1153,58 @@ const sidebars: SidebarsConfig = {
       label: "🩺 排错与参考",
       collapsed: true,
       items: ["ffmpeg/troubleshooting", "ffmpeg/quick-reference", "ffmpeg/faq"],
+    },
+  ],
+  // Docker sidebar
+  docker: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: ["docker/index", "docker/installation", "docker/basic-commands"],
+    },
+    {
+      type: "category",
+      label: "🏗️ 镜像与构建",
+      collapsed: true,
+      items: ["docker/dockerfile", "docker/compose"],
+    },
+    {
+      type: "category",
+      label: "🎯 网络与存储",
+      collapsed: true,
+      items: ["docker/networking", "docker/volumes"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["docker/best-practices", "docker/quick-reference", "docker/faq"],
+    },
+  ],
+  // Podman sidebar
+  podman: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: ["podman/index", "podman/installation", "podman/basic-commands"],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: ["podman/pods", "podman/rootless", "podman/systemd"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "podman/docker-migration",
+        "podman/quick-reference",
+        "podman/faq",
+      ],
     },
   ],
 };
