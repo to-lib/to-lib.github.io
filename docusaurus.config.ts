@@ -515,6 +515,92 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "🌐 Nginx",
+          position: "left",
+          items: [
+            {
+              label: "📖 Nginx 概述",
+              to: "/docs/nginx",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础入门</div>",
+            },
+            {
+              label: "🛠️ 安装配置",
+              to: "/docs/nginx/installation",
+            },
+            {
+              label: "⚙️ 基础配置",
+              to: "/docs/nginx/basic-config",
+            },
+            {
+              label: "📁 静态文件服务",
+              to: "/docs/nginx/static-files",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
+            },
+            {
+              label: "🔄 反向代理",
+              to: "/docs/nginx/reverse-proxy",
+            },
+            {
+              label: "⚖️ 负载均衡",
+              to: "/docs/nginx/load-balancing",
+            },
+            {
+              label: "🔒 SSL/TLS 配置",
+              to: "/docs/nginx/ssl-tls",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶主题</div>",
+            },
+            {
+              label: "🛡️ 安全配置",
+              to: "/docs/nginx/security",
+            },
+            {
+              label: "🚀 性能优化",
+              to: "/docs/nginx/performance",
+            },
+            {
+              label: "📝 日志配置",
+              to: "/docs/nginx/logging",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/nginx/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/nginx/faq",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "🎬 FFmpeg",
           position: "left",
           items: [
@@ -718,6 +804,63 @@ const config: Config = {
             {
               label: "❓ 常见问题",
               to: "/docs/podman/faq",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #326ce5;'>Kubernetes</div>",
+            },
+            {
+              label: "📖 Kubernetes 概述",
+              to: "/docs/kubernetes",
+            },
+            {
+              label: "🛠️ 安装配置",
+              to: "/docs/kubernetes/installation",
+            },
+            {
+              label: "💻 基础命令",
+              to: "/docs/kubernetes/basic-commands",
+            },
+            {
+              label: "📦 Pod 详解",
+              to: "/docs/kubernetes/pods",
+            },
+            {
+              label: "🚀 Deployment",
+              to: "/docs/kubernetes/deployments",
+            },
+            {
+              label: "🌐 Service 服务发现",
+              to: "/docs/kubernetes/services",
+            },
+            {
+              label: "⚙️ ConfigMap 与 Secret",
+              to: "/docs/kubernetes/configmap-secret",
+            },
+            {
+              label: "💾 存储管理",
+              to: "/docs/kubernetes/storage",
+            },
+            {
+              label: "📦 Helm 包管理",
+              to: "/docs/kubernetes/helm",
+            },
+            {
+              label: "🔐 RBAC 权限控制",
+              to: "/docs/kubernetes/rbac",
+            },
+            {
+              label: "📋 快速参考",
+              to: "/docs/kubernetes/quick-reference",
+            },
+            {
+              label: "❓ 常见问题",
+              to: "/docs/kubernetes/faq",
             },
           ],
         },

@@ -1207,6 +1207,79 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+  // Kubernetes sidebar
+  kubernetes: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: [
+        "kubernetes/index",
+        "kubernetes/installation",
+        "kubernetes/basic-commands",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心资源",
+      collapsed: true,
+      items: [
+        "kubernetes/pods",
+        "kubernetes/deployments",
+        "kubernetes/services",
+      ],
+    },
+    {
+      type: "category",
+      label: "⚙️ 配置与存储",
+      collapsed: true,
+      items: ["kubernetes/configmap-secret", "kubernetes/storage"],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: ["kubernetes/helm", "kubernetes/rbac"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["kubernetes/quick-reference", "kubernetes/faq"],
+    },
+  ],
+  // Nginx sidebar
+  nginx: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: ["nginx/index", "nginx/installation", "nginx/basic-config"],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "nginx/static-files",
+        "nginx/reverse-proxy",
+        "nginx/load-balancing",
+        "nginx/ssl-tls",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: ["nginx/security", "nginx/performance", "nginx/logging"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["nginx/quick-reference", "nginx/faq"],
+    },
+  ],
 };
 
 export default sidebars;
