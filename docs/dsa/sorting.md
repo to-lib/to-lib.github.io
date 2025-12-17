@@ -22,12 +22,12 @@ title: 排序算法
 
 ```mermaid
 graph TD
-    Start([开始]) --> LoopI{i < n-1?}
-    LoopI -- Yes --> LoopJ{j < n-1-i?}
+    Start([开始]) --> LoopI{"i < n-1?"}
+    LoopI -- Yes --> LoopJ{"j < n-1-i?"}
     LoopI -- No --> End([结束])
-    LoopJ -- Yes --> Compare{arr[j] > arr[j+1]?}
-    LoopJ -- No --> IncI[i++] --> LoopI
-    Compare -- Yes --> Swap[交换 arr[j], arr[j+1]] --> IncJ[j++] --> LoopJ
+    LoopJ -- Yes --> Compare{"arr[j] > arr[j+1]?"}
+    LoopJ -- No --> IncI["i++"] --> LoopI
+    Compare -- Yes --> Swap["交换 arr[j], arr[j+1]"] --> IncJ["j++"] --> LoopJ
     Compare -- No --> IncJ --> LoopJ
 ```
 
@@ -49,12 +49,12 @@ public void bubbleSort(int[] arr) {
 
 ```mermaid
 graph TD
-    Start([Partition Start]) --> SetPivot[Pivot = arr[high]]
-    SetPivot --> InitI[i = low - 1]
-    InitI --> LoopJ{j < high?}
-    LoopJ -- Yes --> CheckPivot{arr[j] < Pivot?}
-    LoopJ -- No --> SwapPivot[Swap arr[i+1], arr[high]] --> End([Return i+1])
-    CheckPivot -- Yes --> IncI[i++] --> Swap[Swap arr[i], arr[j]] --> IncJ[j++] --> LoopJ
+    Start([Partition Start]) --> SetPivot["Pivot = arr[high]"]
+    SetPivot --> InitI["i = low - 1"]
+    InitI --> LoopJ{"j < high?"}
+    LoopJ -- Yes --> CheckPivot{"arr[j] < Pivot?"}
+    LoopJ -- No --> SwapPivot["Swap arr[i+1], arr[high]"] --> End([Return i+1])
+    CheckPivot -- Yes --> IncI["i++"] --> Swap["Swap arr[i], arr[j]"] --> IncJ["j++"] --> LoopJ
     CheckPivot -- No --> IncJ --> LoopJ
 ```
 
