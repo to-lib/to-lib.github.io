@@ -294,6 +294,10 @@ const config: Config = {
               to: "/docs/dsa",
             },
             {
+              label: "🌐 计算机网络",
+              to: "/docs/networking",
+            },
+            {
               label: "🎨 设计模式 (Java)",
               to: "/docs/java-design-patterns",
             },

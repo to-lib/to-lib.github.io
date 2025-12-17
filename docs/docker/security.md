@@ -118,12 +118,12 @@ docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE nginx
 
 常见 capabilities：
 
-| Capability       | 说明            | 是否必需 |
-| ---------------- | --------------- | -------- |
-| NET_BIND_SERVICE | 绑定 <1024 端口 | 通常需要 |
-| CHOWN            | 更改文件所有者  | 很少需要 |
-| DAC_OVERRIDE     | 绕过权限检查    | 避免使用 |
-| SETUID/SETGID    | 更改用户/组 ID  | 避免使用 |
+| Capability       | 说明               | 是否必需 |
+| ---------------- | ------------------ | -------- |
+| NET_BIND_SERVICE | 绑定小于 1024 端口 | 通常需要 |
+| CHOWN            | 更改文件所有者     | 很少需要 |
+| DAC_OVERRIDE     | 绕过权限检查       | 避免使用 |
+| SETUID/SETGID    | 更改用户/组 ID     | 避免使用 |
 
 ### 禁用特权模式
 

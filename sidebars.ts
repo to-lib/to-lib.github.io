@@ -1199,9 +1199,20 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: ["docker/swarm", "docker/security", "docker/monitoring"],
+    },
+    {
+      type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["docker/best-practices", "docker/quick-reference", "docker/faq"],
+      items: [
+        "docker/best-practices",
+        "docker/quick-reference",
+        "docker/faq",
+        "docker/interview-questions",
+      ],
     },
   ],
   // Podman sidebar
@@ -1216,7 +1227,19 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🎯 核心特性",
       collapsed: true,
-      items: ["podman/pods", "podman/rootless", "podman/systemd"],
+      items: [
+        "podman/pods",
+        "podman/rootless",
+        "podman/systemd",
+        "podman/networking",
+        "podman/image-building",
+      ],
+    },
+    {
+      type: "category",
+      label: "🔒 安全与运维",
+      collapsed: true,
+      items: ["podman/security", "podman/best-practices"],
     },
     {
       type: "category",
@@ -1226,6 +1249,7 @@ const sidebars: SidebarsConfig = {
         "podman/docker-migration",
         "podman/quick-reference",
         "podman/faq",
+        "podman/interview-questions",
       ],
     },
   ],
@@ -1248,6 +1272,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "kubernetes/pods",
         "kubernetes/deployments",
+        "kubernetes/statefulset",
         "kubernetes/services",
       ],
     },
@@ -1259,17 +1284,30 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "🌐 网络",
+      collapsed: true,
+      items: ["kubernetes/networking"],
+    },
+    {
+      type: "category",
       label: "🚀 进阶主题",
       collapsed: true,
-      items: ["kubernetes/helm", "kubernetes/rbac"],
+      items: ["kubernetes/helm", "kubernetes/rbac", "kubernetes/monitoring"],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["kubernetes/quick-reference", "kubernetes/faq"],
+      items: [
+        "kubernetes/quick-reference",
+        "kubernetes/best-practices",
+        "kubernetes/troubleshooting",
+        "kubernetes/faq",
+        "kubernetes/interview-questions",
+      ],
     },
   ],
+
   // Nginx sidebar
   nginx: [
     {
@@ -1304,6 +1342,33 @@ const sidebars: SidebarsConfig = {
         "nginx/faq",
         "nginx/interview-questions",
       ],
+    },
+  ],
+  // Networking sidebar
+  networking: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: ["networking/index", "networking/osi-tcp-ip"],
+    },
+    {
+      type: "category",
+      label: "🔧 传输层协议",
+      collapsed: true,
+      items: ["networking/tcp"],
+    },
+    {
+      type: "category",
+      label: "🌐 应用层协议",
+      collapsed: true,
+      items: ["networking/http"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["networking/quick-reference", "networking/faq"],
     },
   ],
 };
