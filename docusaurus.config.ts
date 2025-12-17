@@ -96,6 +96,211 @@ const config: Config = {
       items: [
         {
           type: "dropdown",
+          label: "💻 编程语言",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Java 编程</div>",
+            },
+            {
+              label: "📖 Java 概述",
+              to: "/docs/java",
+            },
+            {
+              label: "📦 JDK 8-21 新特性",
+              to: "/docs/java/jdk21-features",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>Rust 编程</div>",
+            },
+            {
+              label: "📖 Rust 概述",
+              to: "/docs/rust",
+            },
+            {
+              label: "📦 Cargo 指南",
+              to: "/docs/rust/cargo-guide",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Frontend</div>",
+            },
+            {
+              label: "⚛️ React 19",
+              to: "/docs/react",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🏗️ 框架与中间件",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>Spring 生态</div>",
+            },
+            {
+              label: "🍃 Spring Framework",
+              to: "/docs/spring",
+            },
+            {
+              label: "🚀 Spring Boot",
+              to: "/docs/springboot",
+            },
+            {
+              label: "☁️ Spring Cloud",
+              to: "/docs/springcloud",
+            },
+            {
+              label: "🛍️ Spring Cloud Alibaba",
+              to: "/docs/springcloud-alibaba",
+            },
+            {
+              label: "🤖 Spring AI",
+              to: "/docs/spring-ai",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>网络与消息</div>",
+            },
+            {
+              label: "⚡ Netty",
+              to: "/docs/netty",
+            },
+            {
+              label: "🐰 RabbitMQ",
+              to: "/docs/rabbitmq",
+            },
+            {
+              label: "📊 Kafka",
+              to: "/docs/kafka",
+            },
+            {
+              label: "🚀 RocketMQ",
+              to: "/docs/rocketmq",
+            },
+            {
+              label: "⚡ Flink",
+              to: "/docs/flink",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>数据库</div>",
+            },
+            {
+              label: "🐬 MySQL",
+              to: "/docs/mysql",
+            },
+            {
+              label: "💾 Redis",
+              to: "/docs/redis",
+            },
+            {
+              label: "🐘 PostgreSQL",
+              to: "/docs/postgres",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🐧 运维与工具",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #000;'>Linux System</div>",
+            },
+            {
+              label: "🐧 Linux",
+              to: "/docs/linux",
+            },
+            {
+              label: "🐚 Shell Scripting",
+              to: "/docs/linux/shell-scripting",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #009688;'>Web Server & Media</div>",
+            },
+            {
+              label: "🌐 Nginx",
+              to: "/docs/nginx",
+            },
+            {
+              label: "🎬 FFmpeg",
+              to: "/docs/ffmpeg",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Containers</div>",
+            },
+            {
+              label: "🐳 Docker",
+              to: "/docs/docker",
+            },
+            {
+              label: "🦭 Podman",
+              to: "/docs/podman",
+            },
+            {
+              label: "☸️ Kubernetes",
+              to: "/docs/kubernetes",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "🧠 CS 基础",
+          position: "left",
+          items: [
+            {
+              label: "🧮 数据结构与算法",
+              to: "/docs/dsa",
+            },
+            {
+              label: "🎨 设计模式 (Java)",
+              to: "/docs/java-design-patterns",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "🤖 AI 开发",
           position: "left",
           items: [
@@ -123,1748 +328,6 @@ const config: Config = {
             {
               label: "📚 RAG (检索增强生成)",
               to: "/docs/ai/rag",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "☕ Java 编程",
-          position: "left",
-          items: [
-            {
-              label: "📖 Java 概述",
-              to: "/docs/java",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>环境与构建</div>",
-            },
-            {
-              label: "🛠️ 环境搭建",
-              to: "/docs/java/environment-setup",
-            },
-            {
-              label: "🧰 构建与编译（JDK 8）",
-              to: "/docs/java/build-tools",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
-            },
-            {
-              label: "📝 基础语法",
-              to: "/docs/java/basic-syntax",
-            },
-            {
-              label: "🎯 面向对象",
-              to: "/docs/java/oop",
-            },
-            {
-              label: "❌ 异常处理",
-              to: "/docs/java/exception-handling",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
-            },
-            {
-              label: "📦 集合框架",
-              to: "/docs/java/collections",
-            },
-            {
-              label: "🔤 泛型编程",
-              to: "/docs/java/generics",
-            },
-            {
-              label: "💾 IO 流",
-              to: "/docs/java/io-streams",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级主题</div>",
-            },
-            {
-              label: "🧵 多线程",
-              to: "/docs/java/multithreading",
-            },
-            {
-              label: "⚡ 函数式编程",
-              to: "/docs/java/functional-programming",
-            },
-            {
-              label: "🖥️ JVM 基础",
-              to: "/docs/java/jvm-basics",
-            },
-            {
-              label: "🚀 性能优化",
-              to: "/docs/java/performance",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>版本新特性</div>",
-            },
-            {
-              label: "📦 JDK 8 新特性",
-              to: "/docs/java/jdk8-features",
-            },
-            {
-              label: "📦 JDK 11 新特性",
-              to: "/docs/java/jdk11-features",
-            },
-            {
-              label: "📦 JDK 17 新特性",
-              to: "/docs/java/jdk17-features",
-            },
-            {
-              label: "🎯 JDK 21 新特性",
-              to: "/docs/java/jdk21-features",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🦀 Rust 编程",
-          position: "left",
-          items: [
-            {
-              label: "📖 Rust 概述",
-              to: "/docs/rust",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
-            },
-            {
-              label: "🛠️ 环境搭建",
-              to: "/docs/rust/environment-setup",
-            },
-            {
-              label: "📝 基础语法",
-              to: "/docs/rust/basic-syntax",
-            },
-            {
-              label: "🔑 所有权系统",
-              to: "/docs/rust/ownership",
-            },
-            {
-              label: "📦 结构体和枚举",
-              to: "/docs/rust/structs-enums",
-            },
-            {
-              label: "📚 集合类型",
-              to: "/docs/rust/collections",
-            },
-            {
-              label: "🗂️ 项目组织",
-              to: "/docs/rust/project-structure",
-            },
-            {
-              label: "📦 Cargo 使用",
-              to: "/docs/rust/cargo-guide",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
-            },
-            {
-              label: "❌ 错误处理",
-              to: "/docs/rust/error-handling",
-            },
-            {
-              label: "🔤 泛型和 Trait",
-              to: "/docs/rust/generics-traits",
-            },
-            {
-              label: "⏱️ 生命周期",
-              to: "/docs/rust/lifetimes",
-            },
-            {
-              label: "🎯 闭包和迭代器",
-              to: "/docs/rust/closures-iterators",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级主题</div>",
-            },
-            {
-              label: "📌 智能指针",
-              to: "/docs/rust/smart-pointers",
-            },
-            {
-              label: "🧵 并发编程",
-              to: "/docs/rust/concurrency",
-            },
-            {
-              label: "⚡ 异步编程",
-              to: "/docs/rust/async-programming",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>参考指南</div>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/rust/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/rust/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/rust/interview-questions",
-            },
-            {
-              label: "🚀 实战项目",
-              to: "/docs/rust/practical-projects",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "⚛️ React 19",
-          position: "left",
-          items: [
-            {
-              label: "📖 React 概览",
-              to: "/docs/react",
-            },
-            {
-              label: "🚀 快速开始",
-              to: "/docs/react/getting-started",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
-            },
-            {
-              label: "🧩 组件基础",
-              to: "/docs/react/components",
-            },
-            {
-              label: "🔤 JSX 语法",
-              to: "/docs/react/jsx-syntax",
-            },
-            {
-              label: "📦 Props 和 State",
-              to: "/docs/react/props-and-state",
-            },
-            {
-              label: "🎯 事件处理",
-              to: "/docs/react/event-handling",
-            },
-            {
-              label: "🔀 条件渲染",
-              to: "/docs/react/conditional-rendering",
-            },
-            {
-              label: "📋 列表和 Keys",
-              to: "/docs/react/lists-and-keys",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心概念</div>",
-            },
-            {
-              label: "🎣 Hooks 详解",
-              to: "/docs/react/hooks",
-            },
-            {
-              label: "📡 数据获取（TanStack Query）",
-              to: "/docs/react/data-fetching",
-            },
-            {
-              label: "🧵 Suspense 与 use() 数据获取",
-              to: "/docs/react/suspense-data-fetching",
-            },
-            {
-              label: "🔄 Context API",
-              to: "/docs/react/context",
-            },
-            {
-              label: "📝 表单处理",
-              to: "/docs/react/forms",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>性能优化</div>",
-            },
-            {
-              label: "⚡ 性能优化",
-              to: "/docs/react/performance-optimization",
-            },
-            {
-              label: "🤖 React Compiler",
-              to: "/docs/react/react-compiler",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>React 19 新特性</div>",
-            },
-            {
-              label: "🆕 React 19 新特性",
-              to: "/docs/react/react19-features",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "♿ 可访问性（a11y）",
-              to: "/docs/react/accessibility",
-            },
-            {
-              label: "📋 面试题精选",
-              to: "/docs/react/interview-questions",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🐧 Linux",
-          position: "left",
-          items: [
-            {
-              label: "📖 Linux 概述",
-              to: "/docs/linux",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础知识</div>",
-            },
-            {
-              label: "💻 基础命令",
-              to: "/docs/linux/basic-commands",
-            },
-            {
-              label: "📁 文件系统",
-              to: "/docs/linux/file-system",
-            },
-            {
-              label: "🔐 权限管理",
-              to: "/docs/linux/permissions",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>系统管理</div>",
-            },
-            {
-              label: "⚙️ 进程管理",
-              to: "/docs/linux/process-management",
-            },
-            {
-              label: "🌐 网络配置",
-              to: "/docs/linux/networking",
-            },
-            {
-              label: "🛡️ nftables 防火墙",
-              to: "/docs/linux/nftables-firewall",
-            },
-            {
-              label: "💾 备份与恢复",
-              to: "/docs/linux/backup-and-recovery",
-            },
-            {
-              label: "📜 Shell 脚本",
-              to: "/docs/linux/shell-scripting",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🌐 Nginx",
-          position: "left",
-          items: [
-            {
-              label: "📖 Nginx 概述",
-              to: "/docs/nginx",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础入门</div>",
-            },
-            {
-              label: "🛠️ 安装配置",
-              to: "/docs/nginx/installation",
-            },
-            {
-              label: "⚙️ 基础配置",
-              to: "/docs/nginx/basic-config",
-            },
-            {
-              label: "📁 静态文件服务",
-              to: "/docs/nginx/static-files",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
-            },
-            {
-              label: "🔄 反向代理",
-              to: "/docs/nginx/reverse-proxy",
-            },
-            {
-              label: "⚖️ 负载均衡",
-              to: "/docs/nginx/load-balancing",
-            },
-            {
-              label: "🔒 SSL/TLS 配置",
-              to: "/docs/nginx/ssl-tls",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶主题</div>",
-            },
-            {
-              label: "🛡️ 安全配置",
-              to: "/docs/nginx/security",
-            },
-            {
-              label: "🚀 性能优化",
-              to: "/docs/nginx/performance",
-            },
-            {
-              label: "📝 日志配置",
-              to: "/docs/nginx/logging",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/nginx/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/nginx/faq",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🎬 FFmpeg",
-          position: "left",
-          items: [
-            {
-              label: "📖 FFmpeg 概述",
-              to: "/docs/ffmpeg",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础入门</div>",
-            },
-            {
-              label: "🛠️ 安装配置",
-              to: "/docs/ffmpeg/installation",
-            },
-            {
-              label: "💻 基础命令",
-              to: "/docs/ffmpeg/basic-commands",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心特性</div>",
-            },
-            {
-              label: "🎥 视频处理",
-              to: "/docs/ffmpeg/video-processing",
-            },
-            {
-              label: "🎵 音频处理",
-              to: "/docs/ffmpeg/audio-processing",
-            },
-            {
-              label: "🎨 滤镜使用",
-              to: "/docs/ffmpeg/filters",
-            },
-            {
-              label: "📡 流媒体",
-              to: "/docs/ffmpeg/streaming",
-            },
-            {
-              label: "💬 字幕处理",
-              to: "/docs/ffmpeg/subtitles",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶与优化</div>",
-            },
-            {
-              label: "🧩 拼接与切片",
-              to: "/docs/ffmpeg/concat-and-split",
-            },
-            {
-              label: "🔎 ffprobe 分析",
-              to: "/docs/ffmpeg/ffprobe",
-            },
-            {
-              label: "🎛️ 编码参数与码控",
-              to: "/docs/ffmpeg/encoding-parameters",
-            },
-            {
-              label: "⚡ 硬件加速",
-              to: "/docs/ffmpeg/hardware-acceleration",
-            },
-            {
-              label: "🚀 性能优化",
-              to: "/docs/ffmpeg/performance-optimization",
-            },
-            {
-              label: "🧰 脚本自动化",
-              to: "/docs/ffmpeg/scripting",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>排错与参考</div>",
-            },
-            {
-              label: "🩺 排错指南",
-              to: "/docs/ffmpeg/troubleshooting",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/ffmpeg/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/ffmpeg/faq",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🐳 容器化",
-          position: "left",
-          items: [
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Docker</div>",
-            },
-            {
-              label: "📖 Docker 概述",
-              to: "/docs/docker",
-            },
-            {
-              label: "🛠️ 安装配置",
-              to: "/docs/docker/installation",
-            },
-            {
-              label: "💻 基础命令",
-              to: "/docs/docker/basic-commands",
-            },
-            {
-              label: "📝 Dockerfile 编写",
-              to: "/docs/docker/dockerfile",
-            },
-            {
-              label: "🚀 Docker Compose",
-              to: "/docs/docker/compose",
-            },
-            {
-              label: "🌐 网络配置",
-              to: "/docs/docker/networking",
-            },
-            {
-              label: "💾 数据持久化",
-              to: "/docs/docker/volumes",
-            },
-            {
-              label: "✨ 最佳实践",
-              to: "/docs/docker/best-practices",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/docker/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/docker/faq",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Podman</div>",
-            },
-            {
-              label: "📖 Podman 概述",
-              to: "/docs/podman",
-            },
-            {
-              label: "🛠️ 安装配置",
-              to: "/docs/podman/installation",
-            },
-            {
-              label: "💻 基础命令",
-              to: "/docs/podman/basic-commands",
-            },
-            {
-              label: "📦 Pod 管理",
-              to: "/docs/podman/pods",
-            },
-            {
-              label: "🔓 Rootless 模式",
-              to: "/docs/podman/rootless",
-            },
-            {
-              label: "⚙️ Systemd 集成",
-              to: "/docs/podman/systemd",
-            },
-            {
-              label: "🔄 Docker 迁移",
-              to: "/docs/podman/docker-migration",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/podman/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/podman/faq",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #326ce5;'>Kubernetes</div>",
-            },
-            {
-              label: "📖 Kubernetes 概述",
-              to: "/docs/kubernetes",
-            },
-            {
-              label: "🛠️ 安装配置",
-              to: "/docs/kubernetes/installation",
-            },
-            {
-              label: "💻 基础命令",
-              to: "/docs/kubernetes/basic-commands",
-            },
-            {
-              label: "📦 Pod 详解",
-              to: "/docs/kubernetes/pods",
-            },
-            {
-              label: "🚀 Deployment",
-              to: "/docs/kubernetes/deployments",
-            },
-            {
-              label: "🌐 Service 服务发现",
-              to: "/docs/kubernetes/services",
-            },
-            {
-              label: "⚙️ ConfigMap 与 Secret",
-              to: "/docs/kubernetes/configmap-secret",
-            },
-            {
-              label: "💾 存储管理",
-              to: "/docs/kubernetes/storage",
-            },
-            {
-              label: "📦 Helm 包管理",
-              to: "/docs/kubernetes/helm",
-            },
-            {
-              label: "🔐 RBAC 权限控制",
-              to: "/docs/kubernetes/rbac",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/kubernetes/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/kubernetes/faq",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🧮 数据结构与算法",
-          position: "left",
-          items: [
-            {
-              label: "📖 DSA 概述",
-              to: "/docs/dsa",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>基础数据结构</div>",
-            },
-            {
-              label: "⏱️ 时间空间复杂度",
-              to: "/docs/dsa/complexity",
-            },
-            {
-              label: "📊 数组与链表",
-              to: "/docs/dsa/array-linkedlist",
-            },
-            {
-              label: "📚 栈与队列",
-              to: "/docs/dsa/stack-queue",
-            },
-            {
-              label: "🔗 哈希表",
-              to: "/docs/dsa/hash-table",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>常用技巧</div>",
-            },
-            {
-              label: "👉 双指针",
-              to: "/docs/dsa/two-pointers",
-            },
-            {
-              label: "🪟 滑动窗口",
-              to: "/docs/dsa/sliding-window",
-            },
-            {
-              label: "🧮 前缀和与差分",
-              to: "/docs/dsa/prefix-sum-diff",
-            },
-            {
-              label: "🔣 位运算",
-              to: "/docs/dsa/bit-manipulation",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>高级数据结构</div>",
-            },
-            {
-              label: "🌳 树结构",
-              to: "/docs/dsa/tree",
-            },
-            {
-              label: "⛰️ 堆",
-              to: "/docs/dsa/heap",
-            },
-            {
-              label: "🕸️ 图",
-              to: "/docs/dsa/graph",
-            },
-            {
-              label: "🧩 并查集",
-              to: "/docs/dsa/union-find",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>经典算法</div>",
-            },
-            {
-              label: "🔄 排序算法",
-              to: "/docs/dsa/sorting",
-            },
-            {
-              label: "🔍 查找算法",
-              to: "/docs/dsa/searching",
-            },
-            {
-              label: "🔁 递归与分治",
-              to: "/docs/dsa/recursion-divide",
-            },
-            {
-              label: "📈 动态规划",
-              to: "/docs/dsa/dynamic-programming",
-            },
-            {
-              label: "💰 贪心算法",
-              to: "/docs/dsa/greedy",
-            },
-            {
-              label: "↩️ 回溯算法",
-              to: "/docs/dsa/backtracking",
-            },
-            {
-              label: "🔤 字符串算法",
-              to: "/docs/dsa/string-algorithms",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/dsa/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/dsa/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/dsa/interview-questions",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "📚 设计模式",
-          position: "left",
-          items: [
-            {
-              label: "📗 完整指南",
-              to: "/docs/java-design-patterns",
-            },
-            {
-              label: "📚 模式概览",
-              to: "/docs/java-design-patterns/overview",
-            },
-            {
-              label: "⚡ 快速参考",
-              to: "/docs/java-design-patterns/quick-reference",
-            },
-            {
-              label: "🏗️ 框架中的模式",
-              to: "/docs/java-design-patterns/frameworks-in-practice",
-            },
-            {
-              label: "✨ 最佳实践",
-              to: "/docs/java-design-patterns/best-practices",
-            },
-            {
-              label: "🎯 使用场景对比",
-              to: "/docs/java-design-patterns/scenarios",
-            },
-            {
-              label: "🔍 模式选择指南",
-              to: "/docs/java-design-patterns/selection-guide",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>创建型模式 (5)</div>",
-            },
-            {
-              label: "📌 单例模式",
-              to: "/docs/java-design-patterns/singleton-pattern",
-            },
-            {
-              label: "🏭 工厂方法模式",
-              to: "/docs/java-design-patterns/factory-pattern",
-            },
-            {
-              label: "🏢 抽象工厂模式",
-              to: "/docs/java-design-patterns/abstract-factory-pattern",
-            },
-            {
-              label: "🔨 建造者模式",
-              to: "/docs/java-design-patterns/builder-pattern",
-            },
-            {
-              label: "🐑 原型模式",
-              to: "/docs/java-design-patterns/prototype-pattern",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>结构型模式 (7)</div>",
-            },
-            {
-              label: "🎭 代理模式",
-              to: "/docs/java-design-patterns/proxy-pattern",
-            },
-            {
-              label: "🔌 适配器模式",
-              to: "/docs/java-design-patterns/adapter-pattern",
-            },
-            {
-              label: "🎁 装饰器模式",
-              to: "/docs/java-design-patterns/decorator-pattern",
-            },
-            {
-              label: "🏛️ 外观模式",
-              to: "/docs/java-design-patterns/facade-pattern",
-            },
-            {
-              label: "🌳 组合模式",
-              to: "/docs/java-design-patterns/composite-pattern",
-            },
-            {
-              label: "♻️ 享元模式",
-              to: "/docs/java-design-patterns/flyweight-pattern",
-            },
-            {
-              label: "🌉 桥接模式",
-              to: "/docs/java-design-patterns/bridge-pattern",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>行为型模式 (11)</div>",
-            },
-            {
-              label: "👀 观察者模式",
-              to: "/docs/java-design-patterns/observer-pattern",
-            },
-            {
-              label: "🎲 策略模式",
-              to: "/docs/java-design-patterns/strategy-pattern",
-            },
-            {
-              label: "📋 模板方法模式",
-              to: "/docs/java-design-patterns/template-method-pattern",
-            },
-            {
-              label: "⚡ 命令模式",
-              to: "/docs/java-design-patterns/command-pattern",
-            },
-            {
-              label: "🔄 迭代器模式",
-              to: "/docs/java-design-patterns/iterator-pattern",
-            },
-            {
-              label: "🔀 状态模式",
-              to: "/docs/java-design-patterns/state-pattern",
-            },
-            {
-              label: "⛓️ 责任链模式",
-              to: "/docs/java-design-patterns/chain-of-responsibility-pattern",
-            },
-            {
-              label: "🤝 中介者模式",
-              to: "/docs/java-design-patterns/mediator-pattern",
-            },
-            {
-              label: "💾 备忘录模式",
-              to: "/docs/java-design-patterns/memento-pattern",
-            },
-            {
-              label: "🚶 访问者模式",
-              to: "/docs/java-design-patterns/visitor-pattern",
-            },
-            {
-              label: "🔤 解释器模式",
-              to: "/docs/java-design-patterns/interpreter-pattern",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "🛠️ 框架应用",
-          position: "left",
-          items: [
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>Spring 生态</div>",
-            },
-            {
-              label: "🍃 Spring Framework",
-              to: "/docs/spring",
-            },
-            {
-              label: "🚀 Spring Boot",
-              to: "/docs/springboot",
-            },
-            {
-              label: "📈 可观测性",
-              to: "/docs/springboot/observability",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>微服务框架</div>",
-            },
-            {
-              label: "☁️ Spring Cloud",
-              to: "/docs/springcloud",
-            },
-            {
-              label: "🔎 Spring Cloud 排障手册",
-              to: "/docs/springcloud/troubleshooting",
-            },
-            {
-              label: "🧵 Micrometer Tracing",
-              to: "/docs/springcloud/micrometer-tracing",
-            },
-            {
-              label: "☁️ Spring Cloud Alibaba",
-              to: "/docs/springcloud-alibaba",
-            },
-            {
-              label: "🔐 Spring Cloud Alibaba 安全与权限",
-              to: "/docs/springcloud-alibaba/security-and-access",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>网络框架</div>",
-            },
-            {
-              label: "⚡ Netty",
-              to: "/docs/netty",
-            },
-            {
-              label: "🧩 Native Transport（Epoll/KQueue）",
-              to: "/docs/netty/native-transport",
-            },
-            {
-              label: "🧯 背压与可写性（Backpressure）",
-              to: "/docs/netty/backpressure",
-            },
-            {
-              label: "🧪 EmbeddedChannel 测试",
-              to: "/docs/netty/testing",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>人工智能</div>",
-            },
-            {
-              label: "🤖 Spring AI 概览",
-              to: "/docs/spring-ai",
-            },
-            {
-              label: "💬 ChatClient 详解",
-              to: "/docs/spring-ai/chat-client",
-            },
-            {
-              label: "🔧 函数调用",
-              to: "/docs/spring-ai/function-calling",
-            },
-            {
-              label: "🔍 RAG 应用",
-              to: "/docs/spring-ai/rag",
-            },
-            {
-              label: "📥 文档摄取",
-              to: "/docs/spring-ai/document-ingestion",
-            },
-            {
-              label: "🧠 对话记忆",
-              to: "/docs/spring-ai/chat-memory",
-            },
-            {
-              label: "📈 可观测性",
-              to: "/docs/spring-ai/observability",
-            },
-            {
-              label: "✅ 评测与回归",
-              to: "/docs/spring-ai/evaluation",
-            },
-            {
-              label: "🏢 模型提供商",
-              to: "/docs/spring-ai/model-providers",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "\u003cdiv style='padding: 8px 12px; font-weight: bold; color: #ff9800;'\u003e消息中间件\u003c/div\u003e",
-            },
-            {
-              label: "🐰 RabbitMQ",
-              to: "/docs/rabbitmq",
-            },
-            {
-              label: "🚀 RocketMQ",
-              to: "/docs/rocketmq",
-            },
-            {
-              label: "📊 Kafka",
-              to: "/docs/kafka",
-            },
-            {
-              label: "⚡ Flink",
-              to: "/docs/flink",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "💾 数据库",
-          position: "left",
-          items: [
-            {
-              label: "🐬 MySQL",
-              to: "/docs/mysql",
-            },
-            {
-              label: "🔌 安装与连接",
-              to: "/docs/mysql/installation-and-connection",
-            },
-            {
-              label: "🔐 账号、权限与安全",
-              to: "/docs/mysql/security-and-accounts",
-            },
-            {
-              label: "🩺 监控与排障",
-              to: "/docs/mysql/monitoring-and-troubleshooting",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Redis 数据库</div>",
-            },
-            {
-              label: "📖 Redis 概述",
-              to: "/docs/redis",
-            },
-            {
-              label: "🚀 快速入门",
-              to: "/docs/redis/quick-start",
-            },
-            {
-              label: "📚 数据类型",
-              to: "/docs/redis/data-types",
-            },
-            {
-              label: "💾 持久化",
-              to: "/docs/redis/persistence",
-            },
-            {
-              label: "🔄 主从复制",
-              to: "/docs/redis/replication",
-            },
-            {
-              label: "🏛️ Redis 集群",
-              to: "/docs/redis/cluster",
-            },
-            {
-              label: "⚙️ 配置与部署",
-              to: "/docs/redis/configuration",
-            },
-            {
-              label: "🩺 监控与排障",
-              to: "/docs/redis/monitoring-and-troubleshooting",
-            },
-            {
-              label: "🗄️ 备份与恢复",
-              to: "/docs/redis/backup-and-recovery",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>核心功能</div>",
-            },
-            {
-              label: "📜 Lua 脚本",
-              to: "/docs/redis/lua-scripting",
-            },
-            {
-              label: "📍 地理位置",
-              to: "/docs/redis/geo",
-            },
-            {
-              label: "📡 发布订阅",
-              to: "/docs/redis/pubsub",
-            },
-            {
-              label: "🌊 Stream 数据流",
-              to: "/docs/redis/streams",
-            },
-            {
-              label: "🚀 Pipeline 批量操作",
-              to: "/docs/redis/pipeline",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>高级应用</div>",
-            },
-            {
-              label: "🔐 安全配置",
-              to: "/docs/redis/security",
-            },
-            {
-              label: "🧠 内存管理",
-              to: "/docs/redis/memory-management",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/redis/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/redis/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/redis/interview-questions",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>PostgreSQL 数据库</div>",
-            },
-            {
-              label: "🐘 PostgreSQL 概述",
-              to: "/docs/postgres",
-            },
-            {
-              label: "🔌 安装与连接",
-              to: "/docs/postgres/installation-and-connection",
-            },
-            {
-              label: "📚 数据类型",
-              to: "/docs/postgres/data-types",
-            },
-            {
-              label: "🎯 索引优化",
-              to: "/docs/postgres/indexes",
-            },
-            {
-              label: "🔄 事务管理",
-              to: "/docs/postgres/transactions",
-            },
-            {
-              label: "🚀 性能优化",
-              to: "/docs/postgres/performance-optimization",
-            },
-            {
-              label: "🩺 监控与排障",
-              to: "/docs/postgres/monitoring-and-troubleshooting",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/postgres/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/postgres/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/postgres/interview-questions",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "📨 消息队列",
-          position: "left",
-          items: [
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff6b6b;'>RabbitMQ</div>",
-            },
-            {
-              label: "🐰 RabbitMQ 概述",
-              to: "/docs/rabbitmq",
-            },
-            {
-              label: "📖 RabbitMQ 简介",
-              to: "/docs/rabbitmq/introduction",
-            },
-            {
-              label: "🎯 核心概念",
-              to: "/docs/rabbitmq/core-concepts",
-            },
-            {
-              label: "🚀 快速开始",
-              to: "/docs/rabbitmq/quick-start",
-            },
-            {
-              label: "💻 交换机详解",
-              to: "/docs/rabbitmq/exchanges",
-            },
-            {
-              label: "📊 队列管理",
-              to: "/docs/rabbitmq/queues",
-            },
-            {
-              label: "☕ Java 客户端",
-              to: "/docs/rabbitmq/java-client",
-            },
-            {
-              label: "📤 生产者指南",
-              to: "/docs/rabbitmq/producer",
-            },
-            {
-              label: "📥 消费者指南",
-              to: "/docs/rabbitmq/consumer",
-            },
-            {
-              label: "🌱 Spring 集成",
-              to: "/docs/rabbitmq/spring-integration",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Kafka</div>",
-            },
-            {
-              label: "📡 Kafka 概述",
-              to: "/docs/kafka",
-            },
-            {
-              label: "📖 Kafka 简介",
-              to: "/docs/kafka/introduction",
-            },
-            {
-              label: "🎯 核心概念",
-              to: "/docs/kafka/core-concepts",
-            },
-            {
-              label: "🚀 快速开始",
-              to: "/docs/kafka/quick-start",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "💻 生产者 API",
-              to: "/docs/kafka/producer-api",
-            },
-            {
-              label: "📊 消费者 API",
-              to: "/docs/kafka/consumer-api",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/kafka/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/kafka/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/kafka/interview-questions",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>高级应用</div>",
-            },
-            {
-              label: "🔧 集群管理",
-              to: "/docs/kafka/cluster-management",
-            },
-            {
-              label: "💾 消息存储机制",
-              to: "/docs/kafka/message-storage",
-            },
-            {
-              label: "⚡ 性能优化",
-              to: "/docs/kafka/performance-optimization",
-            },
-            {
-              label: "✨ 最佳实践",
-              to: "/docs/kafka/best-practices",
-            },
-            {
-              label: "📊 监控与运维",
-              to: "/docs/kafka/monitoring",
-            },
-            {
-              label: "🔒 安全配置",
-              to: "/docs/kafka/security",
-            },
-            {
-              label: "🔌 Kafka Connect",
-              to: "/docs/kafka/kafka-connect",
-            },
-            {
-              label: "🌊 Kafka Streams",
-              to: "/docs/kafka/kafka-streams",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>RocketMQ</div>",
-            },
-            {
-              label: "🚀 RocketMQ 概述",
-              to: "/docs/rocketmq",
-            },
-            {
-              label: "📖 RocketMQ 简介",
-              to: "/docs/rocketmq/introduction",
-            },
-            {
-              label: "🎯 核心概念",
-              to: "/docs/rocketmq/core-concepts",
-            },
-            {
-              label: "🚀 快速开始",
-              to: "/docs/rocketmq/quick-start",
-            },
-            {
-              label: "📤 生产者详解",
-              to: "/docs/rocketmq/producer",
-            },
-            {
-              label: "📥 消费者详解",
-              to: "/docs/rocketmq/consumer",
-            },
-            {
-              label: "🔒 安全与 ACL",
-              to: "/docs/rocketmq/security",
-            },
-            {
-              label: "🛠️ 排障手册",
-              to: "/docs/rocketmq/troubleshooting",
-            },
-            {
-              label: "📊 监控与运维",
-              to: "/docs/rocketmq/monitoring",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Flink</div>",
-            },
-            {
-              label: "⚡ Flink 概述",
-              to: "/docs/flink",
-            },
-            {
-              label: "📖 Flink 简介",
-              to: "/docs/flink/introduction",
-            },
-            {
-              label: "🎯 核心概念",
-              to: "/docs/flink/core-concepts",
-            },
-            {
-              label: "🚀 快速开始",
-              to: "/docs/flink/quick-start",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "💻 DataStream API",
-              to: "/docs/flink/datastream-api",
-            },
-            {
-              label: "📊 Table API & SQL",
-              to: "/docs/flink/table-sql",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>高级主题</div>",
-            },
-            {
-              label: "🔄 状态管理",
-              to: "/docs/flink/state-management",
-            },
-            {
-              label: "🎯 CEP 复杂事件处理",
-              to: "/docs/flink/cep",
-            },
-            {
-              label: "🔌 连接器",
-              to: "/docs/flink/connectors",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>生产部署</div>",
-            },
-            {
-              label: "🛠️ 部署与运维",
-              to: "/docs/flink/deployment",
-            },
-            {
-              label: "⚡ 性能优化",
-              to: "/docs/flink/performance-optimization",
-            },
-            {
-              label: "✨ 最佳实践",
-              to: "/docs/flink/best-practices",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              label: "📋 快速参考",
-              to: "/docs/flink/quick-reference",
-            },
-            {
-              label: "❓ 常见问题",
-              to: "/docs/flink/faq",
-            },
-            {
-              label: "💼 面试题集",
-              to: "/docs/flink/interview-questions",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "📝 面试题库",
-          position: "left",
-          items: [
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>Java 核心</div>",
-            },
-            {
-              label: "☕ Java 基础知识",
-              to: "/docs/java",
-            },
-            {
-              label: "📋 Java 面试题精选",
-              to: "/docs/java/interview-questions",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>框架应用</div>",
-            },
-            {
-              label: "🍃 Spring 框架",
-              to: "/docs/spring",
-            },
-            {
-              label: "📋 Spring 面试题精选",
-              to: "/docs/spring/interview-questions",
-            },
-            {
-              label: "� Spring Boot",
-              to: "/docs/springboot",
-            },
-            {
-              type: "html",
-              value: "<hr style='margin: 8px 0;'>",
-            },
-            {
-              type: "html",
-              value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>进阶主题</div>",
-            },
-            {
-              label: "�📚 设计模式",
-              to: "/docs/java-design-patterns/overview",
-            },
-            {
-              label: "📋 设计模式面试题精选",
-              to: "/docs/java-design-patterns/interview-questions",
-            },
-            {
-              label: "⚡ Netty 网络编程",
-              to: "/docs/netty",
-            },
-            {
-              label: "📋 Netty 面试题精选",
-              to: "/docs/netty/interview-questions",
             },
           ],
         },
