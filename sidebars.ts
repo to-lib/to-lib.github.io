@@ -588,7 +588,14 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🏗️ 高级数据结构",
       collapsed: true,
-      items: ["dsa/tree", "dsa/heap", "dsa/graph", "dsa/union-find"],
+      items: [
+        "dsa/tree",
+        "dsa/heap",
+        "dsa/graph",
+        "dsa/union-find",
+        "dsa/fenwick-tree",
+        "dsa/segment-tree",
+      ],
     },
     {
       type: "category",
@@ -1179,6 +1186,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "ffmpeg/concat-and-split",
+        "ffmpeg/stream-mapping",
         "ffmpeg/ffprobe",
         "ffmpeg/encoding-parameters",
         "ffmpeg/hardware-acceleration",

@@ -101,6 +101,8 @@ title: 数据结构与算法概述
 | [堆](/docs/dsa/heap)                      | 最大堆、最小堆、堆排序、优先队列 |
 | [图](/docs/dsa/graph)                     | 图的表示、遍历、最短路径         |
 | [并查集](/docs/dsa/union-find)            | 连通性、判环、连通分量           |
+| [树状数组（Fenwick Tree）](/docs/dsa/fenwick-tree) | 单点更新 + 前缀/区间查询         |
+| [线段树（Segment Tree）](/docs/dsa/segment-tree)   | 动态区间查询（和/最值等）        |
 | [排序算法](/docs/dsa/sorting)             | 比较排序、线性排序、稳定性分析   |
 | [查找算法](/docs/dsa/searching)           | 顺序、二分、插值、斐波那契查找   |
 | [递归与分治](/docs/dsa/recursion-divide)  | 递归原理、分治策略、典型应用     |

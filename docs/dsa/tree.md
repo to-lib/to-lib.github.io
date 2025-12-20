@@ -83,6 +83,45 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 }
 ```
 
+### 迭代遍历模板
+
+递归写法更直观，但面试中常会要求你能写出迭代版本（用栈模拟）。
+
+```java
+// 前序遍历（迭代）：根-左-右
+public List<Integer> preorderIter(TreeNode root) {
+    List<Integer> res = new ArrayList<>();
+    if (root == null) return res;
+
+    Deque<TreeNode> st = new ArrayDeque<>();
+    st.push(root);
+    while (!st.isEmpty()) {
+        TreeNode cur = st.pop();
+        res.add(cur.val);
+        if (cur.right != null) st.push(cur.right);
+        if (cur.left != null) st.push(cur.left);
+    }
+    return res;
+}
+
+// 中序遍历（迭代）：左-根-右
+public List<Integer> inorderIter(TreeNode root) {
+    List<Integer> res = new ArrayList<>();
+    Deque<TreeNode> st = new ArrayDeque<>();
+    TreeNode cur = root;
+    while (cur != null || !st.isEmpty()) {
+        while (cur != null) {
+            st.push(cur);
+            cur = cur.left;
+        }
+        cur = st.pop();
+        res.add(cur.val);
+        cur = cur.right;
+    }
+    return res;
+}
+```
+
 ## 🔍 二叉搜索树 (BST)
 
 左子树 < 根 < 右子树
@@ -100,6 +139,27 @@ public TreeNode insert(TreeNode root, int val) {
     if (val < root.val) root.left = insert(root.left, val);
     else root.right = insert(root.right, val);
     return root;
+}
+
+// 删除
+public TreeNode delete(TreeNode root, int val) {
+    if (root == null) return null;
+    if (val < root.val) root.left = delete(root.left, val);
+    else if (val > root.val) root.right = delete(root.right, val);
+    else {
+        if (root.left == null) return root.right;
+        if (root.right == null) return root.left;
+
+        TreeNode succ = minNode(root.right);
+        root.val = succ.val;
+        root.right = delete(root.right, succ.val);
+    }
+    return root;
+}
+
+private TreeNode minNode(TreeNode node) {
+    while (node.left != null) node = node.left;
+    return node;
 }
 ```
 
@@ -139,5 +199,36 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     TreeNode right = lowestCommonAncestor(root.right, p, q);
     if (left != null && right != null) return root;
     return left != null ? left : right;
+}
+```
+
+### 二叉树直径
+
+```java
+public int diameterOfBinaryTree(TreeNode root) {
+    int[] ans = new int[1];
+    depth(root, ans);
+    return ans[0];
+}
+
+private int depth(TreeNode node, int[] ans) {
+    if (node == null) return 0;
+    int left = depth(node.left, ans);
+    int right = depth(node.right, ans);
+    ans[0] = Math.max(ans[0], left + right);
+    return 1 + Math.max(left, right);
+}
+```
+
+### 路径总和（从根到叶）
+
+```java
+public boolean hasPathSum(TreeNode root, int targetSum) {
+    if (root == null) return false;
+    if (root.left == null && root.right == null) {
+        return root.val == targetSum;
+    }
+    return hasPathSum(root.left, targetSum - root.val)
+        || hasPathSum(root.right, targetSum - root.val);
 }
 ```

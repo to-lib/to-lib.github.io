@@ -104,26 +104,26 @@ ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4
 
 ```bash
 # 提取为 MP3
-ffmpeg -i input.mp4 -vn -acodec mp3 output.mp3
+ffmpeg -i input.mp4 -vn -c:a libmp3lame -b:a 192k output.mp3
 
 # 提取为 AAC
-ffmpeg -i input.mp4 -vn -acodec aac output.aac
+ffmpeg -i input.mp4 -vn -c:a aac -b:a 192k output.aac
 
 # 保持原始音频格式
-ffmpeg -i input.mp4 -vn -acodec copy output.aac
+ffmpeg -i input.mp4 -vn -c:a copy output.aac
 ```
 
 ### 音频转换
 
 ```bash
 # WAV 转 MP3
-ffmpeg -i input.wav -acodec mp3 -ab 192k output.mp3
+ffmpeg -i input.wav -c:a libmp3lame -b:a 192k output.mp3
 
 # 调整采样率
 ffmpeg -i input.mp3 -ar 44100 output.mp3
 
 # 调整比特率
-ffmpeg -i input.mp3 -ab 320k output.mp3
+ffmpeg -i input.mp3 -b:a 320k output.mp3
 ```
 
 ### 调整音量

@@ -295,6 +295,18 @@ const config: Config = {
               to: "/docs/dsa",
             },
             {
+              label: "📋 DSA 快速参考",
+              to: "/docs/dsa/quick-reference",
+            },
+            {
+              label: "🧠 DSA 面试题集",
+              to: "/docs/dsa/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
               label: "🌐 计算机网络",
               to: "/docs/networking",
             },
