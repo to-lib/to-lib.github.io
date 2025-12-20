@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 7
 title: 🤖 AI Agent (智能体)
 ---
 

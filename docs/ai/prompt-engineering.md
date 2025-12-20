@@ -243,8 +243,6 @@ final_answer = most_common(responses)
 ```
 ````
 
-```
-
 ## 调试技巧
 
 1. **从简单开始**：先用最简单的 prompt 测试，逐步添加复杂性
@@ -258,4 +256,3 @@ final_answer = most_common(responses)
 - [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
 - [Anthropic Prompt Engineering](https://docs.anthropic.com/claude/docs/prompt-engineering)
 - [Learn Prompting](https://learnprompting.org/)
-```
