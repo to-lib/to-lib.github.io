@@ -1205,7 +1205,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🏗️ 镜像与构建",
       collapsed: true,
-      items: ["docker/dockerfile", "docker/compose"],
+      items: ["docker/dockerfile", "docker/buildkit", "docker/compose", "docker/registry"],
     },
     {
       type: "category",
@@ -1226,6 +1226,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "docker/best-practices",
         "docker/quick-reference",
+        "docker/troubleshooting",
         "docker/faq",
         "docker/interview-questions",
       ],
