@@ -19,13 +19,29 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🤖 AI 开发",
       collapsed: false,
-      items: ["ai/index", "ai/llm-fundamentals", "ai/prompt-engineering"],
+      items: [
+        "ai/index",
+        "ai/llm-fundamentals",
+        "ai/prompt-engineering",
+        "ai/embeddings",
+      ],
     },
     {
       type: "category",
       label: "🎯 核心技术",
       collapsed: true,
-      items: ["ai/agent", "ai/function-calling", "ai/rag", "ai/mcp"],
+      items: ["ai/rag", "ai/function-calling", "ai/agent", "ai/mcp"],
+    },
+    {
+      type: "category",
+      label: "🛠️ 工程实践",
+      collapsed: true,
+      items: [
+        "ai/fine-tuning",
+        "ai/evaluation",
+        "ai/production",
+        "ai/security",
+      ],
     },
     {
       type: "category",

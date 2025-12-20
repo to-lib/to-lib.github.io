@@ -331,6 +331,10 @@ const config: Config = {
               to: "/docs/ai/prompt-engineering",
             },
             {
+              label: "🧩 Embeddings（向量表示）",
+              to: "/docs/ai/embeddings",
+            },
+            {
               type: "html",
               value: "<hr style='margin: 8px 0;'>",
             },
@@ -354,6 +358,31 @@ const config: Config = {
             {
               label: "🔌 MCP (模型上下文协议)",
               to: "/docs/ai/mcp",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>工程实践</div>",
+            },
+            {
+              label: "🧪 Fine-tuning（微调）",
+              to: "/docs/ai/fine-tuning",
+            },
+            {
+              label: "📏 Evaluation（评估与测试）",
+              to: "/docs/ai/evaluation",
+            },
+            {
+              label: "🚀 Production（生产化与部署）",
+              to: "/docs/ai/production",
+            },
+            {
+              label: "🔐 Security（安全与隐私）",
+              to: "/docs/ai/security",
             },
             {
               type: "html",
