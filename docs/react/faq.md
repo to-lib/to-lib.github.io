@@ -247,4 +247,4 @@ useEffect(() => {
 
 ---
 
-**还有问题？** 查看 [最佳实践](/docs/react/best-practices) 或 [面试题](/docs/react/interview-questions)
+**还有问题？** 查看 [最佳实践](/docs/react/best-practices) 或 [面试题](/docs/interview/react-interview-questions)

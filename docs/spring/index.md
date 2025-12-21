@@ -46,7 +46,7 @@ sidebar_position: 1
 - **[快速参考](/docs/spring/quick-reference)** - 常用注解、配置方式、代码片段
 - **[常见问题解答](/docs/spring/faq)** - 常见问题及解决方案
 - **[最佳实践](/docs/spring/best-practices)** - Spring 应用开发的最佳实践
-- **[面试题集](/docs/spring/interview-questions)** - Spring 相关面试题精选
+- **[面试题集](/docs/interview/spring-interview-questions)** - Spring 相关面试题精选
 
 ## 🎯 核心概念速览
 

@@ -353,7 +353,7 @@ function UserList() {
 
 1. [Hooks 详解](/docs/react/hooks) - 深入理解 React Hooks
 2. [React 19 新特性](/docs/react/react19-features) - 探索最新特性
-3. [面试题精选](/docs/react/interview-questions) - React 面试准备
+3. [面试题精选](/docs/interview/react-interview-questions) - React 面试准备
 
 ## 🆘 常见问题
 

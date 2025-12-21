@@ -155,7 +155,7 @@ DELETE FROM users WHERE id = 1;
 | [存储过程与函数](/docs/mysql/stored-procedures)  | 存储过程创建、流程控制、游标、错误处理   |
 | [视图与触发器](/docs/mysql/views-triggers)       | 视图管理、可更新视图、触发器类型与应用   |
 | [备份与恢复](/docs/mysql/backup-recovery)        | 备份策略、mysqldump、主从复制、故障恢复  |
-| [面试题集](/docs/mysql/interview-questions)      | MySQL 常见面试题和答案详解               |
+| [面试题集](/docs/interview/mysql-interview-questions)      | MySQL 常见面试题和答案详解               |
 
 ## 相关资源
 

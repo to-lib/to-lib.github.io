@@ -295,4 +295,4 @@ DELIMITER ;
 - ✅ NEW 和 OLD 关键字
 - ✅ 实用示例（审计日志、数据验证）
 
-继续学习 [备份与恢复](/docs/mysql/backup-recovery) 和 [面试题集](/docs/mysql/interview-questions)！
+继续学习 [备份与恢复](/docs/mysql/backup-recovery) 和 [面试题集](/docs/interview/mysql-interview-questions)！

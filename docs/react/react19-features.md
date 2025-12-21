@@ -562,7 +562,7 @@ function Form() {
 
 - [React 19 官方文档](https://react.dev/blog/2024/04/25/react-19)
 - [Hooks 详解](/docs/react/hooks)
-- [面试题精选](/docs/react/interview-questions)
+- [面试题精选](/docs/interview/react-interview-questions)
 - [快速开始](/docs/react/getting-started)
 
 ---

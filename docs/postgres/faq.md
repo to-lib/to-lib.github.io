@@ -385,4 +385,4 @@ psql -c "SHOW log_filename;"
 
 - [基础概念](/docs/postgres/basic-concepts)
 - [性能优化](/docs/postgres/performance-optimization)
-- [面试题](/docs/postgres/interview-questions)
+- [面试题](/docs/interview/postgres-interview-questions)

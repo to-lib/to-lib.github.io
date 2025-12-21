@@ -69,7 +69,7 @@ React 是一个用于构建用户界面的 JavaScript 库：
 
 ### 💡 实战部分
 
-- **[面试题精选](/docs/react/interview-questions)** - React 面试题库
+- **[面试题精选](/docs/interview/react-interview-questions)** - React 面试题库
 - **[可访问性（a11y）](/docs/react/accessibility)** - 语义化、键盘支持、ARIA 与上线前自查
 
 ## 🎯 学习建议

@@ -376,7 +376,7 @@ Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 ## 相关资源
 
 - [故障排除指南](/docs/netty/troubleshooting) - 更详细的问题排查
-- [面试题精选](/docs/netty/interview-questions) - 常见面试问题
+- [面试题精选](/docs/interview/netty-interview-questions) - 常见面试问题
 - [快速参考](/docs/netty/quick-reference) - API 速查表
 - [高级特性](/docs/netty/advanced) - 性能优化指南
 

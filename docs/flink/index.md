@@ -202,7 +202,7 @@ graph TB
 - 🧾 [速查表](/docs/flink/quick-reference) - 常用概念与命令速览
 - 🧪 [实战案例](/docs/flink/practical-examples) - 典型业务场景参考
 - ❓ [常见问题](/docs/flink/faq) - FAQ 与常见错误
-- 🧠 [面试题精选](/docs/flink/interview-questions) - 高频题与知识点
+- 🧠 [面试题精选](/docs/interview/flink-interview-questions) - 高频题与知识点
 
 ## 参考资源
 

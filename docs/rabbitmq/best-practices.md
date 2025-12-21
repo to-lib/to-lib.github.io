@@ -337,7 +337,7 @@ channel_max = 2047
 
 - 📊 [监控运维](/docs/rabbitmq/monitoring) - 监控 RabbitMQ
 - ❓ [常见问题](/docs/rabbitmq/faq) - FAQ
-- 💼 [面试题集](/docs/rabbitmq/interview-questions) - 面试常见问题
+- 💼 [面试题集](/docs/interview/rabbitmq-interview-questions) - 面试常见问题
 
 ## 参考资料
 

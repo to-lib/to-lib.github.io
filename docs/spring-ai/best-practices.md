@@ -359,4 +359,4 @@ class IntegrationTest {
 ## 下一步
 
 - [FAQ](/docs/spring-ai/faq) - 常见问题解答
-- [面试题](/docs/spring-ai/interview-questions) - Spring AI 面试题精选
+- [面试题](/docs/interview/spring-ai-interview-questions) - Spring AI 面试题精选

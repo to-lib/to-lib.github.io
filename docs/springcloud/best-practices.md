@@ -382,4 +382,4 @@ livenessProbe:
 
 - [快速参考](/docs/springcloud/quick-reference)
 - [常见问题](/docs/springcloud/faq)
-- [面试题集](/docs/springcloud/interview-questions)
+- [面试题集](/docs/interview/springcloud-interview-questions)

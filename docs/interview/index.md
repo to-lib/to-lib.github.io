@@ -15,62 +15,62 @@ slug: /interview
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [Java 基础面试题](/docs/java/interview-questions) | ⭐⭐ | Java 核心知识、集合、多线程基础 |
+| [Java 基础面试题](/docs/interview/java-interview-questions) | ⭐⭐ | Java 核心知识、集合、多线程基础 |
 | [Java 高级面试题](/docs/interview/java-senior) | ⭐⭐⭐⭐ | JVM、并发、性能调优、架构设计 |
-| [设计模式面试题](/docs/java-design-patterns/interview-questions) | ⭐⭐⭐ | 23种设计模式及应用场景 |
+| [设计模式面试题](/docs/interview/java-design-patterns-interview-questions) | ⭐⭐⭐ | 23种设计模式及应用场景 |
 
 ### 🍃 Spring 生态
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [Spring 面试题](/docs/spring/interview-questions) | ⭐⭐⭐ | IoC、AOP、事务、MVC |
-| [Spring Boot 面试题](/docs/springboot/interview-questions) | ⭐⭐⭐ | 自动配置、Starter、Actuator |
-| [Spring Cloud 面试题](/docs/springcloud/interview-questions) | ⭐⭐⭐⭐ | 微服务组件、服务治理 |
-| [Spring Cloud Alibaba 面试题](/docs/springcloud-alibaba/interview-questions) | ⭐⭐⭐⭐ | Nacos、Sentinel、Seata |
-| [Spring AI 面试题](/docs/spring-ai/interview-questions) | ⭐⭐⭐ | AI 集成、RAG、Function Calling |
+| [Spring 面试题](/docs/interview/spring-interview-questions) | ⭐⭐⭐ | IoC、AOP、事务、MVC |
+| [Spring Boot 面试题](/docs/interview/springboot-interview-questions) | ⭐⭐⭐ | 自动配置、Starter、Actuator |
+| [Spring Cloud 面试题](/docs/interview/springcloud-interview-questions) | ⭐⭐⭐⭐ | 微服务组件、服务治理 |
+| [Spring Cloud Alibaba 面试题](/docs/interview/springcloud-alibaba-interview-questions) | ⭐⭐⭐⭐ | Nacos、Sentinel、Seata |
+| [Spring AI 面试题](/docs/interview/spring-ai-interview-questions) | ⭐⭐⭐ | AI 集成、RAG、Function Calling |
 
 ### 💾 数据库
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [MySQL 面试题](/docs/mysql/interview-questions) | ⭐⭐⭐ | 索引、事务、锁、优化 |
-| [Redis 面试题](/docs/redis/interview-questions) | ⭐⭐⭐ | 数据结构、持久化、集群 |
-| [PostgreSQL 面试题](/docs/postgres/interview-questions) | ⭐⭐⭐ | 特性、优化、高可用 |
+| [MySQL 面试题](/docs/interview/mysql-interview-questions) | ⭐⭐⭐ | 索引、事务、锁、优化 |
+| [Redis 面试题](/docs/interview/redis-interview-questions) | ⭐⭐⭐ | 数据结构、持久化、集群 |
+| [PostgreSQL 面试题](/docs/interview/postgres-interview-questions) | ⭐⭐⭐ | 特性、优化、高可用 |
 
 ### 📨 消息队列
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [Kafka 面试题](/docs/kafka/interview-questions) | ⭐⭐⭐ | 架构、生产消费、可靠性 |
-| [RocketMQ 面试题](/docs/rocketmq/interview-questions) | ⭐⭐⭐ | 消息类型、事务消息 |
-| [RabbitMQ 面试题](/docs/rabbitmq/interview-questions) | ⭐⭐⭐ | Exchange、队列、可靠性 |
+| [Kafka 面试题](/docs/interview/kafka-interview-questions) | ⭐⭐⭐ | 架构、生产消费、可靠性 |
+| [RocketMQ 面试题](/docs/interview/rocketmq-interview-questions) | ⭐⭐⭐ | 消息类型、事务消息 |
+| [RabbitMQ 面试题](/docs/interview/rabbitmq-interview-questions) | ⭐⭐⭐ | Exchange、队列、可靠性 |
 
 ### 🐳 容器与运维
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [Linux 面试题](/docs/linux/interview-questions) | ⭐⭐ | 命令、Shell、系统管理 |
-| [Docker 面试题](/docs/docker/interview-questions) | ⭐⭐⭐ | 镜像、容器、网络 |
-| [Kubernetes 面试题](/docs/kubernetes/interview-questions) | ⭐⭐⭐⭐ | Pod、Service、部署 |
-| [Podman 面试题](/docs/podman/interview-questions) | ⭐⭐⭐ | 无守护进程容器 |
+| [Linux 面试题](/docs/interview/linux-interview-questions) | ⭐⭐ | 命令、Shell、系统管理 |
+| [Docker 面试题](/docs/interview/docker-interview-questions) | ⭐⭐⭐ | 镜像、容器、网络 |
+| [Kubernetes 面试题](/docs/interview/kubernetes-interview-questions) | ⭐⭐⭐⭐ | Pod、Service、部署 |
+| [Podman 面试题](/docs/interview/podman-interview-questions) | ⭐⭐⭐ | 无守护进程容器 |
 
 ### 🔧 框架与中间件
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [Netty 面试题](/docs/netty/interview-questions) | ⭐⭐⭐⭐ | NIO、线程模型、编解码 |
-| [Flink 面试题](/docs/flink/interview-questions) | ⭐⭐⭐⭐ | 流处理、状态管理 |
-| [微服务面试题](/docs/microservices/interview-questions) | ⭐⭐⭐⭐ | 架构设计、服务治理 |
-| [Nginx 面试题](/docs/nginx/interview-questions) | ⭐⭐⭐ | 反向代理、负载均衡 |
-| [计算机网络面试题](/docs/networking/interview-questions) | ⭐⭐⭐ | TCP/IP、HTTP、网络安全 |
+| [Netty 面试题](/docs/interview/netty-interview-questions) | ⭐⭐⭐⭐ | NIO、线程模型、编解码 |
+| [Flink 面试题](/docs/interview/flink-interview-questions) | ⭐⭐⭐⭐ | 流处理、状态管理 |
+| [微服务面试题](/docs/interview/microservices-interview-questions) | ⭐⭐⭐⭐ | 架构设计、服务治理 |
+| [Nginx 面试题](/docs/interview/nginx-interview-questions) | ⭐⭐⭐ | 反向代理、负载均衡 |
+| [计算机网络面试题](/docs/interview/networking-interview-questions) | ⭐⭐⭐ | TCP/IP、HTTP、网络安全 |
 
 ### 🌐 前端与其他
 
 | 主题 | 难度 | 说明 |
 |------|------|------|
-| [React 面试题](/docs/react/interview-questions) | ⭐⭐⭐ | Hooks、状态管理、性能优化 |
-| [数据结构与算法面试题](/docs/dsa/interview-questions) | ⭐⭐⭐⭐ | 常见算法、数据结构 |
-| [Rust 面试题](/docs/rust/interview-questions) | ⭐⭐⭐ | 所有权、生命周期、并发 |
+| [React 面试题](/docs/interview/react-interview-questions) | ⭐⭐⭐ | Hooks、状态管理、性能优化 |
+| [数据结构与算法面试题](/docs/interview/dsa-interview-questions) | ⭐⭐⭐⭐ | 常见算法、数据结构 |
+| [Rust 面试题](/docs/interview/rust-interview-questions) | ⭐⭐⭐ | 所有权、生命周期、并发 |
 
 ---
 

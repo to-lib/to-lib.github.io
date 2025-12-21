@@ -666,4 +666,4 @@ function getWindowSize() {} // 不是 Hook
 
 ---
 
-**下一步**: 查看 [React 19 新特性](/docs/react/react19-features) 了解最新的 Hook 功能，或浏览 [面试题精选](/docs/react/interview-questions) 巩固知识。
+**下一步**: 查看 [React 19 新特性](/docs/react/react19-features) 了解最新的 Hook 功能，或浏览 [面试题精选](/docs/interview/react-interview-questions) 巩固知识。

@@ -310,4 +310,4 @@ mysqlbinlog --start-position=12346 mysql-bin.000001 | mysql -u root -p
 - ✅ 备份策略和验证
 - ✅ 灾难恢复流程
 
-最后学习 [面试题集](/docs/mysql/interview-questions)！
+最后学习 [面试题集](/docs/interview/mysql-interview-questions)！

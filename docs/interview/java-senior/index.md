@@ -52,8 +52,8 @@ slug: /interview/java-senior
 
 ## 🔗 相关资源
 
-- [Java 基础面试题](/docs/java/interview-questions)
-- [Spring 面试题](/docs/spring/interview-questions)
+- [Java 基础面试题](/docs/interview/java-interview-questions)
+- [Spring 面试题](/docs/interview/spring-interview-questions)
 - [JVM 基础](/docs/java/jvm-basics)
 - [多线程详解](/docs/java/multithreading)
 - [性能优化](/docs/java/performance)
