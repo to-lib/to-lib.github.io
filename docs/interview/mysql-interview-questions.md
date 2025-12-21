@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title: MySQL 面试题集
+title: MySQL 面试题
 ---
 
 # MySQL 面试题集

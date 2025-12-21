@@ -1,6 +1,6 @@
 ---
 sidebar_position: 13
-title: 面试问题
+title: Nginx 面试题
 description: Nginx 常见面试问题与解答
 ---
 

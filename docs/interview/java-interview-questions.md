@@ -1,6 +1,6 @@
 ---
 sidebar_position: 100
-title: Java 面试题精选
+title: Java 面试题
 ---
 
 # Java 面试题精选

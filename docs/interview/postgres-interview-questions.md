@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title: 面试题
+title: PostgreSQL 面试题
 ---
 
 # PostgreSQL 面试题

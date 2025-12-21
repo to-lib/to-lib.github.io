@@ -1,6 +1,6 @@
 ---
 sidebar_position: 15
-title: "面试题集"
+title: RabbitMQ 面试题
 description: "RabbitMQ 面试常见问题"
 ---
 

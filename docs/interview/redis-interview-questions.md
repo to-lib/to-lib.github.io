@@ -1,6 +1,6 @@
 ---
 sidebar_position: 22
-title: 面试题集
+title: Redis 面试题
 ---
 
 # Redis 面试题集

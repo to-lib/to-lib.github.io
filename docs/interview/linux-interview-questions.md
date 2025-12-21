@@ -1,6 +1,6 @@
 ---
 sidebar_position: 20
-title: 面试题集
+title: Linux 面试题
 ---
 
 # Linux 面试题集

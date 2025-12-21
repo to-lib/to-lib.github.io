@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title: "面试题集"
+title: Kafka 面试题
 description: "Kafka 常见面试题及答案"
 ---
 

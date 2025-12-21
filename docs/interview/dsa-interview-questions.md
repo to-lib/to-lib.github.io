@@ -1,6 +1,6 @@
 ---
 sidebar_position: 18
-title: 面试题集
+title: DSA 面试题
 slug: /interview/dsa-interview-questions
 ---
 

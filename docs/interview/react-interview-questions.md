@@ -1,6 +1,6 @@
 ---
 sidebar_position: 100
-title: React 面试题精选
+title: React 面试题
 ---
 
 # React 面试题精选

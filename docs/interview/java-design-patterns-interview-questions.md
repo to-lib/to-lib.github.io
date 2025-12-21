@@ -1,6 +1,6 @@
 ---
 sidebar_position: 100
-title: 设计模式面试题精选
+title: 设计模式面试题
 ---
 
 # 设计模式面试题精选
