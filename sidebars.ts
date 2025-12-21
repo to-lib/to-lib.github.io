@@ -178,7 +178,6 @@ const sidebars: SidebarsConfig = {
         "java-design-patterns/pattern-comparisons",
         "java-design-patterns/exercises",
         "java-design-patterns/faq",
-        "interview/java-design-patterns-interview-questions",
       ],
     },
     {
@@ -288,12 +287,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "spring/quick-reference",
-        "spring/best-practices",
-        "spring/faq",
-        "interview/spring-interview-questions",
-      ],
+      items: ["spring/quick-reference", "spring/best-practices", "spring/faq"],
     },
   ],
 
@@ -372,7 +366,6 @@ const sidebars: SidebarsConfig = {
         "springboot/devtools",
         "springboot/quick-reference",
         "springboot/faq",
-        "interview/springboot-interview-questions",
       ],
     },
   ],
@@ -413,12 +406,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "netty/quick-reference",
-        "netty/troubleshooting",
-        "netty/faq",
-        "interview/netty-interview-questions",
-      ],
+      items: ["netty/quick-reference", "netty/troubleshooting", "netty/faq"],
     },
   ],
 
@@ -478,17 +466,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "java/best-practices",
-        "java/quick-reference",
-        "java/faq",
-        "interview/java-interview-questions",
-        {
-          type: "link",
-          label: "🎯 高级面试题",
-          href: "/docs/interview/java-senior",
-        },
-      ],
+      items: ["java/best-practices", "java/quick-reference", "java/faq"],
     },
   ],
 
@@ -542,7 +520,6 @@ const sidebars: SidebarsConfig = {
         "rust/best-practices",
         "rust/quick-reference",
         "rust/faq",
-        "interview/rust-interview-questions",
         "rust/practical-projects",
       ],
     },
@@ -599,12 +576,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "linux/quick-reference",
-        "linux/best-practices",
-        "linux/faq",
-        "interview/linux-interview-questions",
-      ],
+      items: ["linux/quick-reference", "linux/best-practices", "linux/faq"],
     },
   ],
 
@@ -669,7 +641,6 @@ const sidebars: SidebarsConfig = {
         "react/accessibility",
         "react/faq",
         "react/practical-projects",
-        "interview/react-interview-questions",
       ],
     },
   ],
@@ -730,11 +701,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考与刷题",
       collapsed: true,
-      items: [
-        "dsa/quick-reference",
-        "dsa/faq",
-        "interview/dsa-interview-questions",
-      ],
+      items: ["dsa/quick-reference", "dsa/faq"],
     },
   ],
 
@@ -784,11 +751,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "mysql/quick-reference",
-        "mysql/faq",
-        "interview/mysql-interview-questions",
-      ],
+      items: ["mysql/quick-reference", "mysql/faq"],
     },
   ],
 
@@ -848,12 +811,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "redis/quick-reference",
-        "redis/faq",
-        "interview/redis-interview-questions",
-        "redis/practical-examples",
-      ],
+      items: ["redis/quick-reference", "redis/faq", "redis/practical-examples"],
     },
   ],
 
@@ -903,11 +861,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "postgres/quick-reference",
-        "postgres/faq",
-        "interview/postgres-interview-questions",
-      ],
+      items: ["postgres/quick-reference", "postgres/faq"],
     },
   ],
 
@@ -966,7 +920,6 @@ const sidebars: SidebarsConfig = {
         "springcloud/best-practices",
         "springcloud/troubleshooting",
         "springcloud/faq",
-        "interview/springcloud-interview-questions",
       ],
     },
   ],
@@ -1017,7 +970,6 @@ const sidebars: SidebarsConfig = {
         "springcloud-alibaba/migration-guide",
         "springcloud-alibaba/security-and-access",
         "springcloud-alibaba/faq",
-        "interview/springcloud-alibaba-interview-questions",
       ],
     },
   ],
@@ -1062,11 +1014,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "rocketmq/quick-reference",
-        "rocketmq/faq",
-        "interview/rocketmq-interview-questions",
-      ],
+      items: ["rocketmq/quick-reference", "rocketmq/faq"],
     },
   ],
 
