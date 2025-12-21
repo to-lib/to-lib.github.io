@@ -822,6 +822,367 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // Spring Cloud sidebar
+  springcloud: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "springcloud/index",
+        "springcloud/core-concepts",
+        "springcloud/config",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心组件",
+      collapsed: true,
+      items: [
+        "springcloud/eureka",
+        "springcloud/ribbon",
+        "springcloud/feign",
+        "springcloud/hystrix",
+        "springcloud/resilience4j",
+        "springcloud/gateway",
+        "springcloud/loadbalancer",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 分布式追踪与监控",
+      collapsed: true,
+      items: [
+        "springcloud/sleuth",
+        "springcloud/zipkin",
+        "springcloud/micrometer-tracing",
+      ],
+    },
+    {
+      type: "category",
+      label: "⚡ 消息驱动",
+      collapsed: true,
+      items: ["springcloud/stream", "springcloud/bus"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "springcloud/consul",
+        "springcloud/best-practices",
+        "springcloud/troubleshooting",
+        "springcloud/quick-reference",
+        "springcloud/faq",
+      ],
+    },
+  ],
+
+  // Spring Cloud Alibaba sidebar
+  springcloudAlibaba: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "springcloud-alibaba/index",
+        "springcloud-alibaba/getting-started",
+        "springcloud-alibaba/core-concepts",
+        "springcloud-alibaba/migration-guide",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心组件",
+      collapsed: true,
+      items: [
+        "springcloud-alibaba/nacos",
+        "springcloud-alibaba/sentinel",
+        "springcloud-alibaba/seata",
+        "springcloud-alibaba/rocketmq",
+        "springcloud-alibaba/dubbo",
+        "springcloud-alibaba/gateway",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级特性",
+      collapsed: true,
+      items: [
+        "springcloud-alibaba/config-advanced",
+        "springcloud-alibaba/service-governance",
+        "springcloud-alibaba/monitoring",
+        "springcloud-alibaba/security-and-access",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 实战与参考",
+      collapsed: true,
+      items: [
+        "springcloud-alibaba/practical-project",
+        "springcloud-alibaba/best-practices",
+        "springcloud-alibaba/quick-reference",
+        "springcloud-alibaba/faq",
+      ],
+    },
+  ],
+
+  // Spring AI sidebar
+  springAi: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "spring-ai/index",
+        "spring-ai/quick-start",
+        "spring-ai/core-concepts",
+        "spring-ai/api-reference",
+      ],
+    },
+    {
+      type: "category",
+      label: "🤖 模型集成",
+      collapsed: true,
+      items: [
+        "spring-ai/chat-client",
+        "spring-ai/model-providers",
+        "spring-ai/embedding",
+        "spring-ai/image-generation",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心功能",
+      collapsed: true,
+      items: [
+        "spring-ai/prompts",
+        "spring-ai/output-parsing",
+        "spring-ai/function-calling",
+        "spring-ai/rag",
+        "spring-ai/chat-memory",
+        "spring-ai/document-ingestion",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 工程化",
+      collapsed: true,
+      items: [
+        "spring-ai/advisors",
+        "spring-ai/observability",
+        "spring-ai/evaluation",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "spring-ai/best-practices",
+        "spring-ai/quick-reference",
+        "spring-ai/faq",
+      ],
+    },
+  ],
+
+  // Kafka sidebar
+  kafka: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "kafka/index",
+        "kafka/quick-start",
+        "kafka/introduction",
+        "kafka/core-concepts",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心架构",
+      collapsed: true,
+      items: [
+        "kafka/producer-api",
+        "kafka/consumer-api",
+        "kafka/message-storage",
+        "kafka/cluster-management",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级特性",
+      collapsed: true,
+      items: [
+        "kafka/kafka-connect",
+        "kafka/kafka-streams",
+        "kafka/security",
+        "kafka/monitoring",
+        "kafka/performance-optimization",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["kafka/best-practices", "kafka/quick-reference", "kafka/faq"],
+    },
+  ],
+
+  // RabbitMQ sidebar
+  rabbitmq: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "rabbitmq/index",
+        "rabbitmq/quick-start",
+        "rabbitmq/introduction",
+        "rabbitmq/core-concepts",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心概念",
+      collapsed: true,
+      items: [
+        "rabbitmq/exchanges",
+        "rabbitmq/queues",
+        "rabbitmq/message-types",
+        "rabbitmq/producer",
+        "rabbitmq/consumer",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级特性",
+      collapsed: true,
+      items: [
+        "rabbitmq/advanced-features",
+        "rabbitmq/advanced-config",
+        "rabbitmq/cluster-management",
+        "rabbitmq/monitoring",
+        "rabbitmq/security",
+        "rabbitmq/performance-optimization",
+      ],
+    },
+    {
+      type: "category",
+      label: "⚡ 集成开发",
+      collapsed: true,
+      items: ["rabbitmq/java-client", "rabbitmq/spring-integration"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "rabbitmq/best-practices",
+        "rabbitmq/quick-reference",
+        "rabbitmq/faq",
+      ],
+    },
+  ],
+
+  // RocketMQ sidebar
+  rocketmq: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "rocketmq/index",
+        "rocketmq/introduction",
+        "rocketmq/quick-start",
+        "rocketmq/core-concepts",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心机制",
+      collapsed: true,
+      items: [
+        "rocketmq/message-types",
+        "rocketmq/producer",
+        "rocketmq/consumer",
+        "rocketmq/cluster-management",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 高级特性",
+      collapsed: true,
+      items: [
+        "rocketmq/monitoring",
+        "rocketmq/performance-optimization",
+        "rocketmq/security",
+        "rocketmq/troubleshooting",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "rocketmq/best-practices",
+        "rocketmq/quick-reference",
+        "rocketmq/faq",
+      ],
+    },
+  ],
+
+  // Flink sidebar
+  flink: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "flink/index",
+        "flink/introduction",
+        "flink/quick-start",
+        "flink/core-concepts",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心 API",
+      collapsed: true,
+      items: [
+        "flink/datastream-api",
+        "flink/table-sql",
+        "flink/state-management",
+        "flink/connectors",
+        "flink/cep",
+        "flink/flink-cdc",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 运维与优化",
+      collapsed: true,
+      items: [
+        "flink/deployment",
+        "flink/monitoring",
+        "flink/performance-optimization",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 实战与参考",
+      collapsed: true,
+      items: [
+        "flink/practical-examples",
+        "flink/best-practices",
+        "flink/quick-reference",
+        "flink/faq",
+      ],
+    },
+  ],
+
   // PostgreSQL sidebar
   postgres: [
     {
@@ -830,7 +1191,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "postgres/index",
-        "postgres/installation-and-connection",
+        "postgres/installation",
         "postgres/basic-concepts",
         "postgres/data-types",
         "postgres/sql-syntax",
@@ -844,8 +1205,9 @@ const sidebars: SidebarsConfig = {
         "postgres/indexes",
         "postgres/transactions",
         "postgres/locks",
-        "postgres/stored-procedures",
         "postgres/views-triggers",
+        "postgres/stored-procedures",
+        "postgres/json-support",
       ],
     },
     {
@@ -854,543 +1216,149 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "postgres/performance-optimization",
-        "postgres/monitoring-and-troubleshooting",
+        "postgres/monitoring",
         "postgres/partitioning",
         "postgres/replication",
         "postgres/high-availability",
         "postgres/backup-recovery",
         "postgres/security",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
         "postgres/best-practices",
-        "postgres/practical-examples",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["postgres/quick-reference", "postgres/faq"],
-    },
-  ],
-
-  // Spring Cloud sidebar
-  springcloud: [
-    {
-      type: "category",
-      label: "📖 概览与基础",
-      collapsed: false,
-      items: [
-        "springcloud/index",
-        "springcloud/core-concepts",
-        "springcloud/eureka",
-        "springcloud/consul",
-        "springcloud/config",
-      ],
-    },
-    {
-      type: "category",
-      label: "🔧 核心组件",
-      collapsed: true,
-      items: [
-        "springcloud/gateway",
-        "springcloud/feign",
-        "springcloud/ribbon",
-        "springcloud/bus",
-      ],
-    },
-    {
-      type: "category",
-      label: "🌟 现代组件 (推荐)",
-      collapsed: true,
-      items: [
-        "springcloud/loadbalancer",
-        "springcloud/resilience4j",
-        "springcloud/stream",
-      ],
-    },
-    {
-      type: "category",
-      label: "🛠 高级与维护",
-      collapsed: true,
-      items: [
-        "springcloud/hystrix",
-        "springcloud/sleuth",
-        "springcloud/micrometer-tracing",
-        "springcloud/zipkin",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: [
-        "springcloud/quick-reference",
-        "springcloud/best-practices",
-        "springcloud/troubleshooting",
-        "springcloud/faq",
+        "postgres/quick-reference",
+        "postgres/faq",
       ],
     },
   ],
 
-  // Spring Cloud Alibaba sidebar
-  springcloudAlibaba: [
-    {
-      type: "category",
-      label: "📖 概览与入门",
-      collapsed: false,
-      items: [
-        "springcloud-alibaba/springcloud-alibaba-index",
-        "springcloud-alibaba/core-concepts",
-        "springcloud-alibaba/getting-started",
-      ],
-    },
-    {
-      type: "category",
-      label: "🔧 核心组件",
-      collapsed: true,
-      items: [
-        "springcloud-alibaba/nacos",
-        "springcloud-alibaba/sentinel",
-        "springcloud-alibaba/seata",
-        "springcloud-alibaba/rocketmq",
-        "springcloud-alibaba/dubbo",
-        "springcloud-alibaba/gateway",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 进阶主题",
-      collapsed: true,
-      items: [
-        "springcloud-alibaba/config-advanced",
-        "springcloud-alibaba/service-governance",
-        "springcloud-alibaba/best-practices",
-        "springcloud-alibaba/monitoring",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 实战与参考",
-      collapsed: true,
-      items: [
-        "springcloud-alibaba/quick-reference",
-        "springcloud-alibaba/practical-project",
-        "springcloud-alibaba/migration-guide",
-        "springcloud-alibaba/security-and-access",
-        "springcloud-alibaba/faq",
-      ],
-    },
-  ],
-
-  // RocketMQ sidebar
-  rocketmq: [
-    {
-      type: "category",
-      label: "📖 基础入门",
-      collapsed: false,
-      items: [
-        "rocketmq/index",
-        "rocketmq/introduction",
-        "rocketmq/core-concepts",
-        "rocketmq/quick-start",
-      ],
-    },
-    {
-      type: "category",
-      label: "🎯 核心特性",
-      collapsed: true,
-      items: [
-        "rocketmq/producer",
-        "rocketmq/consumer",
-        "rocketmq/message-types",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 高级应用",
-      collapsed: true,
-      items: [
-        "rocketmq/cluster-management",
-        "rocketmq/performance-optimization",
-        "rocketmq/best-practices",
-        "rocketmq/monitoring",
-        "rocketmq/security",
-        "rocketmq/troubleshooting",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["rocketmq/quick-reference", "rocketmq/faq"],
-    },
-  ],
-
-  // Kafka sidebar
-  kafka: [
-    {
-      type: "category",
-      label: "📖 基础知识",
-      collapsed: false,
-      items: [
-        "kafka/index",
-        "kafka/introduction",
-        "kafka/core-concepts",
-        "kafka/quick-start",
-      ],
-    },
-    {
-      type: "category",
-      label: "🎯 核心特性",
-      collapsed: true,
-      items: ["kafka/producer-api", "kafka/consumer-api"],
-    },
-    {
-      type: "category",
-      label: "🚀 高级应用",
-      collapsed: true,
-      items: [
-        "kafka/cluster-management",
-        "kafka/message-storage",
-        "kafka/performance-optimization",
-        "kafka/best-practices",
-        "kafka/monitoring",
-        "kafka/security",
-        "kafka/kafka-connect",
-        "kafka/kafka-streams",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["kafka/quick-reference", "kafka/faq"],
-    },
-  ],
-
-  // Flink sidebar
-  flink: [
-    {
-      type: "category",
-      label: "📖 基础入门",
-      collapsed: false,
-      items: [
-        "flink/index",
-        "flink/introduction",
-        "flink/core-concepts",
-        "flink/quick-start",
-      ],
-    },
-    {
-      type: "category",
-      label: "💻 核心 API",
-      collapsed: true,
-      items: ["flink/datastream-api", "flink/table-sql"],
-    },
-    {
-      type: "category",
-      label: "🎯 高级主题",
-      collapsed: true,
-      items: [
-        "flink/state-management",
-        "flink/cep",
-        "flink/connectors",
-        "flink/flink-cdc",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 生产部署",
-      collapsed: true,
-      items: [
-        "flink/deployment",
-        "flink/monitoring",
-        "flink/performance-optimization",
-        "flink/best-practices",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["flink/quick-reference", "flink/faq"],
-    },
-    {
-      type: "category",
-      label: "🔥 实战案例",
-      collapsed: true,
-      items: ["flink/practical-examples"],
-    },
-  ],
-  // RabbitMQ sidebar
-  rabbitmq: [
-    {
-      type: "category",
-      label: "📖 基础知识",
-      collapsed: false,
-      items: [
-        "rabbitmq/index",
-        "rabbitmq/introduction",
-        "rabbitmq/core-concepts",
-        "rabbitmq/exchanges",
-        "rabbitmq/queues",
-        "rabbitmq/quick-start",
-        "rabbitmq/java-client",
-      ],
-    },
-    {
-      type: "category",
-      label: "🎯 核心特性",
-      collapsed: true,
-      items: [
-        "rabbitmq/producer",
-        "rabbitmq/consumer",
-        "rabbitmq/message-types",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 高级应用",
-      collapsed: true,
-      items: [
-        "rabbitmq/advanced-features",
-        "rabbitmq/advanced-config",
-        "rabbitmq/cluster-management",
-        "rabbitmq/performance-optimization",
-        "rabbitmq/best-practices",
-        "rabbitmq/monitoring",
-        "rabbitmq/security",
-        "rabbitmq/spring-integration",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["rabbitmq/quick-reference", "rabbitmq/faq"],
-    },
-  ],
-  // Spring AI sidebar
-  springAi: [
-    {
-      type: "category",
-      label: "📖 快速入门",
-      collapsed: false,
-      items: [
-        "spring-ai/index",
-        "spring-ai/quick-start",
-        "spring-ai/core-concepts",
-      ],
-    },
-    {
-      type: "category",
-      label: "🎯 核心特性",
-      collapsed: true,
-      items: [
-        "spring-ai/chat-client",
-        "spring-ai/prompts",
-        "spring-ai/output-parsing",
-        "spring-ai/function-calling",
-        "spring-ai/embedding",
-        "spring-ai/image-generation",
-        "spring-ai/advisors",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 高级主题",
-      collapsed: true,
-      items: [
-        "spring-ai/rag",
-        "spring-ai/document-ingestion",
-        "spring-ai/chat-memory",
-        "spring-ai/observability",
-        "spring-ai/evaluation",
-        "spring-ai/model-providers",
-      ],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: [
-        "spring-ai/api-reference",
-        "spring-ai/quick-reference",
-        "spring-ai/best-practices",
-        "spring-ai/faq",
-      ],
-    },
-  ],
-  // FFmpeg sidebar
-  ffmpeg: [
-    {
-      type: "category",
-      label: "📖 基础入门",
-      collapsed: false,
-      items: ["ffmpeg/index", "ffmpeg/installation", "ffmpeg/basic-commands"],
-    },
-    {
-      type: "category",
-      label: "🎯 核心特性",
-      collapsed: true,
-      items: [
-        "ffmpeg/video-processing",
-        "ffmpeg/audio-processing",
-        "ffmpeg/filters",
-        "ffmpeg/streaming",
-        "ffmpeg/subtitles",
-      ],
-    },
-    {
-      type: "category",
-      label: "🚀 进阶与优化",
-      collapsed: true,
-      items: [
-        "ffmpeg/concat-and-split",
-        "ffmpeg/stream-mapping",
-        "ffmpeg/ffprobe",
-        "ffmpeg/encoding-parameters",
-        "ffmpeg/hardware-acceleration",
-        "ffmpeg/performance-optimization",
-        "ffmpeg/scripting",
-      ],
-    },
-    {
-      type: "category",
-      label: "🩺 排错与参考",
-      collapsed: true,
-      items: ["ffmpeg/troubleshooting", "ffmpeg/quick-reference", "ffmpeg/faq"],
-    },
-  ],
   // Docker sidebar
   docker: [
     {
       type: "category",
-      label: "📖 基础入门",
+      label: "📖 基础知识",
       collapsed: false,
-      items: ["docker/index", "docker/installation", "docker/basic-commands"],
-    },
-    {
-      type: "category",
-      label: "🏗️ 镜像与构建",
-      collapsed: true,
       items: [
+        "docker/index",
+        "docker/installation",
+        "docker/basic-commands",
         "docker/dockerfile",
-        "docker/buildkit",
         "docker/compose",
-        "docker/registry",
       ],
-    },
-    {
-      type: "category",
-      label: "🎯 网络与存储",
-      collapsed: true,
-      items: ["docker/networking", "docker/volumes"],
-    },
-    {
-      type: "category",
-      label: "🚀 进阶主题",
-      collapsed: true,
-      items: ["docker/swarm", "docker/security", "docker/monitoring"],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: [
-        "docker/best-practices",
-        "docker/quick-reference",
-        "docker/troubleshooting",
-        "docker/faq",
-      ],
-    },
-  ],
-  // Podman sidebar
-  podman: [
-    {
-      type: "category",
-      label: "📖 基础入门",
-      collapsed: false,
-      items: ["podman/index", "podman/installation", "podman/basic-commands"],
     },
     {
       type: "category",
       label: "🎯 核心特性",
       collapsed: true,
       items: [
-        "podman/pods",
-        "podman/rootless",
-        "podman/systemd",
-        "podman/networking",
-        "podman/image-building",
+        "docker/volumes",
+        "docker/networking",
+        "docker/registry",
+        "docker/buildkit",
+        "docker/swarm",
       ],
     },
     {
       type: "category",
-      label: "🔒 安全与运维",
+      label: "🚀 运维与安全",
       collapsed: true,
-      items: ["podman/security", "podman/best-practices"],
+      items: ["docker/security", "docker/monitoring", "docker/troubleshooting"],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "podman/docker-migration",
-        "podman/quick-reference",
-        "podman/faq",
-      ],
+      items: ["docker/best-practices", "docker/quick-reference", "docker/faq"],
     },
   ],
+
   // Kubernetes sidebar
   kubernetes: [
     {
       type: "category",
-      label: "📖 基础入门",
+      label: "📖 基础知识",
       collapsed: false,
       items: [
         "kubernetes/index",
         "kubernetes/installation",
         "kubernetes/basic-commands",
+        "kubernetes/pods",
       ],
     },
     {
       type: "category",
-      label: "🎯 核心资源",
+      label: "🎯 核心组件",
       collapsed: true,
       items: [
-        "kubernetes/pods",
         "kubernetes/deployments",
-        "kubernetes/statefulset",
         "kubernetes/services",
+        "kubernetes/configmap-secret",
+        "kubernetes/statefulset",
+        "kubernetes/storage",
+        "kubernetes/networking",
+        "kubernetes/rbac",
       ],
     },
     {
       type: "category",
-      label: "⚙️ 配置与存储",
+      label: "🚀 高级特性",
       collapsed: true,
-      items: ["kubernetes/configmap-secret", "kubernetes/storage"],
-    },
-    {
-      type: "category",
-      label: "🌐 网络",
-      collapsed: true,
-      items: ["kubernetes/networking"],
-    },
-    {
-      type: "category",
-      label: "🚀 进阶主题",
-      collapsed: true,
-      items: ["kubernetes/helm", "kubernetes/rbac", "kubernetes/monitoring"],
+      items: [
+        "kubernetes/helm",
+        "kubernetes/monitoring",
+        "kubernetes/troubleshooting",
+      ],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
       items: [
-        "kubernetes/quick-reference",
         "kubernetes/best-practices",
-        "kubernetes/troubleshooting",
+        "kubernetes/quick-reference",
         "kubernetes/faq",
+      ],
+    },
+  ],
+
+  // Podman sidebar
+  podman: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "podman/index",
+        "podman/installation",
+        "podman/basic-commands",
+        "podman/pods",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "podman/image-building",
+        "podman/networking",
+        "podman/systemd",
+        "podman/rootless",
+        "podman/docker-migration",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 使用指南",
+      collapsed: true,
+      items: [
+        "podman/security",
+        "podman/best-practices",
+        "podman/quick-reference",
+        "podman/faq",
       ],
     },
   ],
@@ -1399,74 +1367,78 @@ const sidebars: SidebarsConfig = {
   nginx: [
     {
       type: "category",
-      label: "📖 基础入门",
+      label: "📖 基础知识",
       collapsed: false,
       items: ["nginx/index", "nginx/installation", "nginx/basic-config"],
     },
     {
       type: "category",
-      label: "🎯 核心特性",
+      label: "🎯 核心功能",
       collapsed: true,
       items: [
         "nginx/static-files",
         "nginx/reverse-proxy",
         "nginx/load-balancing",
         "nginx/ssl-tls",
+        "nginx/logging",
       ],
     },
     {
       type: "category",
-      label: "🚀 进阶主题",
+      label: "🚀 高级配置",
       collapsed: true,
-      items: ["nginx/security", "nginx/performance", "nginx/logging"],
-    },
-    {
-      type: "category",
-      label: "📚 参考指南",
-      collapsed: true,
-      items: ["nginx/quick-reference", "nginx/faq"],
+      items: [
+        "nginx/security",
+        "nginx/performance",
+        "nginx/quick-reference",
+        "nginx/faq",
+      ],
     },
   ],
-  // Networking sidebar
-  networking: [
+
+  // FFmpeg sidebar
+  ffmpeg: [
     {
       type: "category",
       label: "📖 基础知识",
       collapsed: false,
       items: [
-        "networking/index",
-        "networking/osi-tcp-ip",
-        "networking/data-link-layer",
-        "networking/network-layer",
+        "ffmpeg/index",
+        "ffmpeg/installation",
+        "ffmpeg/basic-commands",
+        "ffmpeg/ffprobe",
       ],
     },
     {
       type: "category",
-      label: "🔧 传输层协议",
+      label: "🎯 音视频处理",
       collapsed: true,
       items: [
-        "networking/tcp",
-        "networking/udp",
-        "networking/socket-programming",
+        "ffmpeg/video-processing",
+        "ffmpeg/audio-processing",
+        "ffmpeg/encoding-parameters",
+        "ffmpeg/concat-and-split",
+        "ffmpeg/subtitles",
+        "ffmpeg/filters",
+        "ffmpeg/hardware-acceleration",
       ],
     },
     {
       type: "category",
-      label: "🌐 应用层协议",
+      label: "🚀 流媒体与脚本",
       collapsed: true,
-      items: ["networking/http", "networking/dns", "networking/websocket"],
-    },
-    {
-      type: "category",
-      label: "🔒 网络安全",
-      collapsed: true,
-      items: ["networking/tls-ssl", "networking/security"],
+      items: ["ffmpeg/streaming", "ffmpeg/stream-mapping", "ffmpeg/scripting"],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["networking/quick-reference", "networking/faq"],
+      items: [
+        "ffmpeg/troubleshooting",
+        "ffmpeg/performance-optimization",
+        "ffmpeg/quick-reference",
+        "ffmpeg/faq",
+      ],
     },
   ],
 
@@ -1474,7 +1446,7 @@ const sidebars: SidebarsConfig = {
   microservices: [
     {
       type: "category",
-      label: "📖 基础入门",
+      label: "📖 架构基础",
       collapsed: false,
       items: [
         "microservices/index",
@@ -1484,18 +1456,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "🔧 服务治理",
+      label: "🎯 治理与运维",
       collapsed: true,
       items: [
         "microservices/service-governance",
+        "microservices/deployment",
         "microservices/observability",
+        "microservices/security",
       ],
-    },
-    {
-      type: "category",
-      label: "🚀 部署与安全",
-      collapsed: true,
-      items: ["microservices/deployment", "microservices/security"],
     },
     {
       type: "category",
@@ -1503,9 +1471,49 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "microservices/best-practices",
-        "microservices/faq",
         "microservices/quick-reference",
+        "microservices/faq",
       ],
+    },
+  ],
+
+  // Networking sidebar
+  networking: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "networking/index",
+        "networking/osi-tcp-ip",
+        "networking/network-layer",
+        "networking/data-link-layer",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 传输协议",
+      collapsed: true,
+      items: [
+        "networking/tcp",
+        "networking/udp",
+        "networking/http",
+        "networking/websocket",
+        "networking/dns",
+        "networking/tls-ssl",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 编程与安全",
+      collapsed: true,
+      items: ["networking/socket-programming", "networking/security"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["networking/quick-reference", "networking/faq"],
     },
   ],
 };
