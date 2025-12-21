@@ -190,51 +190,6 @@ public class OrderService {
 
 ---
 
-## 35. 这里有哪些常见的代码反模式（Anti-Patterns）？
-
-**答案要点：**
-
-| 反模式                         | 描述                           | 解决方案                     |
-| ------------------------------ | ------------------------------ | ---------------------------- |
-| **上帝类 (God Class)**         | 一个类包含过多功能，无所不能   | 拆分职责，应用单一职责原则   |
-| **意大利面条代码 (Spaghetti)** | 逻辑混乱，控制流复杂           | 重构，使用多态替代 `if-else` |
-| **黄金锤 (Golden Hammer)**     | 对所有问题都用同一种工具/模式  | 扩展技术栈，根据场景选择工具 |
-| **复制粘贴编程**               | 大量重复代码                   | 提取公共方法/类 (DRY)        |
-| **幽灵代码 (Poltergeist)**     | 仅用于传递信息，无实际职责的类 | 移除或合并到其他类           |
-| **死代码 (Dead Code)**         | 永远不会执行的代码             | 直接删除                     |
-
----
-
-## 36. Spring 或 JDK 中应用了哪些经典设计模式？
-
-**答案要点：**
-
-**Spring 框架：**
-
-- **工厂模式**：`BeanFactory`, `ApplicationContext`
-- **单例模式**：Spring Bean 默认是单例
-- **代理模式**：Spring AOP (JDK Proxy / CGLIB)
-- **模板方法**：`JdbcTemplate`, `RestTemplate`, `TransactionTemplate`
-- **观察者模式**：Spring Event (`ApplicationListener`, `ApplicationEvent`)
-- **适配器模式**：`HandlerAdapter` (Spring MVC)
-- **装饰器模式**：`HttpServletRequestWrapper`
-- **策略模式**：`Resource` 接口及其实现 (File, ClassPath, Url)
-
-**JDK 源码：**
-
-- **单例模式**：`java.lang.Runtime`
-- **工厂模式**：`Calendar.getInstance()`, `NumberFormat.getInstance()`
-- **原型模式**：`java.lang.Object.clone()`
-- **代理模式**：`java.lang.reflect.Proxy`
-- **迭代器模式**：`java.util.Iterator`, `java.util.Enumeration`
-- **适配器模式**：`java.util.Arrays.asList()`
-- **装饰器模式**：IO 流 (`BufferedReader` 包装 `FileReader`)
-- **观察者模式**：`java.util.Observer` / `Observable` (已过时，但经典)
-
-**延伸：** 参考 [Java 设计模式](/docs/java-design-patterns)
-
----
-
 ## 34. 如何进行代码重构？有哪些常见的坏味道？
 
 **答案要点：**
@@ -306,3 +261,48 @@ public class CreateUserRequest {
 ```
 
 **延伸：** 参考 [Java 最佳实践](/docs/java/best-practices)
+
+---
+
+## 35. 这里有哪些常见的代码反模式（Anti-Patterns）？
+
+**答案要点：**
+
+| 反模式                         | 描述                           | 解决方案                     |
+| ------------------------------ | ------------------------------ | ---------------------------- |
+| **上帝类 (God Class)**         | 一个类包含过多功能，无所不能   | 拆分职责，应用单一职责原则   |
+| **意大利面条代码 (Spaghetti)** | 逻辑混乱，控制流复杂           | 重构，使用多态替代 `if-else` |
+| **黄金锤 (Golden Hammer)**     | 对所有问题都用同一种工具/模式  | 扩展技术栈，根据场景选择工具 |
+| **复制粘贴编程**               | 大量重复代码                   | 提取公共方法/类 (DRY)        |
+| **幽灵代码 (Poltergeist)**     | 仅用于传递信息，无实际职责的类 | 移除或合并到其他类           |
+| **死代码 (Dead Code)**         | 永远不会执行的代码             | 直接删除                     |
+
+---
+
+## 36. Spring 或 JDK 中应用了哪些经典设计模式？
+
+**答案要点：**
+
+**Spring 框架：**
+
+- **工厂模式**：`BeanFactory`, `ApplicationContext`
+- **单例模式**：Spring Bean 默认是单例
+- **代理模式**：Spring AOP (JDK Proxy / CGLIB)
+- **模板方法**：`JdbcTemplate`, `RestTemplate`, `TransactionTemplate`
+- **观察者模式**：Spring Event (`ApplicationListener`, `ApplicationEvent`)
+- **适配器模式**：`HandlerAdapter` (Spring MVC)
+- **装饰器模式**：`HttpServletRequestWrapper`
+- **策略模式**：`Resource` 接口及其实现 (File, ClassPath, Url)
+
+**JDK 源码：**
+
+- **单例模式**：`java.lang.Runtime`
+- **工厂模式**：`Calendar.getInstance()`, `NumberFormat.getInstance()`
+- **原型模式**：`java.lang.Object.clone()`
+- **代理模式**：`java.lang.reflect.Proxy`
+- **迭代器模式**：`java.util.Iterator`, `java.util.Enumeration`
+- **适配器模式**：`java.util.Arrays.asList()`
+- **装饰器模式**：IO 流 (`BufferedReader` 包装 `FileReader`)
+- **观察者模式**：`java.util.Observer` / `Observable` (已过时，但经典)
+
+**延伸：** 参考 [Java 设计模式](/docs/java-design-patterns)

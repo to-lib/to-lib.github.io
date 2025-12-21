@@ -328,3 +328,29 @@ public String concat(String s1, String s2) {
 ```
 
 **延伸：** 参考 [JVM 基础 - JIT 编译](/docs/java/jvm-basics)
+
+---
+
+## 6. 什么是 SafePoint 和 OopMap？
+
+**答案要点：**
+
+**SafePoint（安全点）：**
+
+用户程序执行时，并非在任何位置都能暂停下来开始 GC，必须到达安全点才能暂停。
+
+- **作用**：保证 GC Roots 分析的准确性，确保在 GC 期间对象引用关系不会发生变化。
+- **位置**：方法调用、循环跳转、异常跳转等指令位置。
+
+**OopMap（对象引用映射）：**
+
+在 SafePoint 处，JVM 需要知道哪些是对象引用（Pointer），OopMap 就是记录栈上本地变量到堆上对象的引用关系结构。
+
+- **作用**：帮助 GC 快速找到 GC Roots，避免全栈扫描。
+
+**SafePoint 执行流程：**
+
+1.  GC 发生时，设置守护内存页（Polling Page）不可读。
+2.  线程执行到 SafePoint，尝试读取 Polling Page。
+3.  触发段违例异常（SIGSEGV），信号处理程序挂起线程。
+4.  等待所有线程挂起，开始 GC。

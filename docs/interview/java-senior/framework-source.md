@@ -16,37 +16,37 @@ title: 框架源码分析
 public void refresh() {
     // 1. 准备刷新
     prepareRefresh();
-    
+
     // 2. 获取 BeanFactory
     ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
-    
+
     // 3. 准备 BeanFactory
     prepareBeanFactory(beanFactory);
-    
+
     // 4. 后置处理 BeanFactory
     postProcessBeanFactory(beanFactory);
-    
+
     // 5. 调用 BeanFactoryPostProcessor
     invokeBeanFactoryPostProcessors(beanFactory);
-    
+
     // 6. 注册 BeanPostProcessor
     registerBeanPostProcessors(beanFactory);
-    
+
     // 7. 初始化消息源
     initMessageSource();
-    
+
     // 8. 初始化事件广播器
     initApplicationEventMulticaster();
-    
+
     // 9. 子类扩展点
     onRefresh();
-    
+
     // 10. 注册监听器
     registerListeners();
-    
+
     // 11. 实例化所有非懒加载的单例 Bean
     finishBeanFactoryInitialization(beanFactory);
-    
+
     // 12. 完成刷新
     finishRefresh();
 }
@@ -55,7 +55,7 @@ public void refresh() {
 **Bean 创建流程：**
 
 ```
-getBean() 
+getBean()
     → doGetBean()
         → getSingleton() // 从缓存获取
         → createBean()
@@ -94,10 +94,10 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>()
 
 **AOP 实现方式：**
 
-| 方式 | 条件 | 特点 |
-|------|------|------|
+| 方式         | 条件           | 特点         |
+| ------------ | -------------- | ------------ |
 | JDK 动态代理 | 目标类实现接口 | 基于接口代理 |
-| CGLIB 代理 | 目标类无接口 | 基于继承代理 |
+| CGLIB 代理   | 目标类无接口   | 基于继承代理 |
 
 **JDK 动态代理原理：**
 
@@ -105,13 +105,13 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>()
 public class JdkProxyDemo {
     public static void main(String[] args) {
         UserService target = new UserServiceImpl();
-        
+
         UserService proxy = (UserService) Proxy.newProxyInstance(
             target.getClass().getClassLoader(),
             target.getClass().getInterfaces(),
             new InvocationHandler() {
                 @Override
-                public Object invoke(Object proxy, Method method, Object[] args) 
+                public Object invoke(Object proxy, Method method, Object[] args)
                         throws Throwable {
                     System.out.println("Before: " + method.getName());
                     Object result = method.invoke(target, args);
@@ -120,7 +120,7 @@ public class JdkProxyDemo {
                 }
             }
         );
-        
+
         proxy.getUser("1");
     }
 }
@@ -135,7 +135,7 @@ public class CglibProxyDemo {
         enhancer.setSuperclass(UserServiceImpl.class);
         enhancer.setCallback(new MethodInterceptor() {
             @Override
-            public Object intercept(Object obj, Method method, Object[] args, 
+            public Object intercept(Object obj, Method method, Object[] args,
                     MethodProxy proxy) throws Throwable {
                 System.out.println("Before: " + method.getName());
                 Object result = proxy.invokeSuper(obj, args);
@@ -143,7 +143,7 @@ public class CglibProxyDemo {
                 return result;
             }
         });
-        
+
         UserServiceImpl proxy = (UserServiceImpl) enhancer.create();
         proxy.getUser("1");
     }
@@ -215,7 +215,7 @@ org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
 @ConditionalOnMissingBean(DataSource.class)  // 未自定义 DataSource Bean
 @EnableConfigurationProperties(DataSourceProperties.class)
 public class DataSourceAutoConfiguration {
-    
+
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
@@ -232,7 +232,7 @@ public class DataSourceAutoConfiguration {
 @ConditionalOnClass(MyService.class)
 @EnableConfigurationProperties(MyProperties.class)
 public class MyAutoConfiguration {
-    
+
     @Bean
     @ConditionalOnMissingBean
     public MyService myService(MyProperties properties) {
@@ -285,7 +285,7 @@ SqlSessionFactory factory = new SqlSessionFactoryBuilder()
 try (SqlSession session = factory.openSession()) {
     // 3. 获取 Mapper 代理
     UserMapper mapper = session.getMapper(UserMapper.class);
-    
+
     // 4. 执行查询
     User user = mapper.selectById(1L);
 }
@@ -320,7 +320,7 @@ try (SqlSession session = factory.openSession()) {
 <!-- UserMapper.xml -->
 <mapper namespace="com.example.mapper.UserMapper">
     <cache eviction="LRU" flushInterval="60000" size="512" readOnly="true"/>
-    
+
     <select id="selectById" resultType="User" useCache="true">
         SELECT * FROM user WHERE id = #{id}
     </select>
@@ -354,13 +354,13 @@ try (SqlSession session = factory.openSession()) {
 
 **核心组件：**
 
-| 组件 | 作用 |
-|------|------|
-| **Channel** | 网络连接通道 |
-| **EventLoop** | 事件循环，处理 IO 事件 |
-| **ChannelPipeline** | 处理器链 |
-| **ChannelHandler** | 事件处理器 |
-| **ByteBuf** | 字节缓冲区 |
+| 组件                | 作用                   |
+| ------------------- | ---------------------- |
+| **Channel**         | 网络连接通道           |
+| **EventLoop**       | 事件循环，处理 IO 事件 |
+| **ChannelPipeline** | 处理器链               |
+| **ChannelHandler**  | 事件处理器             |
+| **ByteBuf**         | 字节缓冲区             |
 
 **Netty 服务端示例：**
 
@@ -369,7 +369,7 @@ public class NettyServer {
     public static void main(String[] args) throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
-        
+
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
@@ -385,7 +385,7 @@ public class NettyServer {
                         pipeline.addLast(new MyServerHandler());
                     }
                 });
-            
+
             ChannelFuture future = bootstrap.bind(8080).sync();
             future.channel().closeFuture().sync();
         } finally {
@@ -405,3 +405,55 @@ class MyServerHandler extends SimpleChannelInboundHandler<String> {
 ```
 
 **延伸：** 参考 [Netty 核心组件](/docs/netty/core-components)
+
+---
+
+## 26. Spring Bean 的完整生命周期是怎样的？
+
+**答案要点：**
+
+Spring Bean 生命周期比通常理解的"初始化 -> 销毁"更复杂，主要分为以下阶段：
+
+**1. 实例化 (Instantiation)**
+
+- `createBeanInstance()`：通过构造方法或工厂方法创建 Bean 实例。
+
+**2. 属性赋值 (Populate Properties)**
+
+- `populateBean()`：注入依赖（@Autowired, property value）。
+
+**3. Aware 接口回调**
+
+- `BeanNameAware`: setBeanName
+- `BeanFactoryAware`: setBeanFactory
+- `ApplicationContextAware`: setApplicationContext
+
+**4. 初始化前 (Pre-Initialization)**
+
+- `BeanPostProcessor.postProcessBeforeInitialization()`：**重要扩展点**，如 AOP 代理可能会在此（或初始化后）创建。
+
+**5. 初始化 (Initialization)**
+
+- `@PostConstruct` 注解方法。
+- `InitializingBean.afterPropertiesSet()` 接口方法。
+- XML `init-method` 指定的方法。
+
+**6. 初始化后 (Post-Initialization)**
+
+- `BeanPostProcessor.postProcessAfterInitialization()`：**AOP 代理通常在此创建**（替换原对象）。
+
+**7. 使用 (Usage)**
+
+- Bean 处于就绪状态，被应用程序使用。
+
+**8. 销毁 (Destruction)**
+
+- `@PreDestroy` 注解方法。
+- `DisposableBean.destroy()` 接口方法。
+- XML `destroy-method` 指定的方法。
+
+**图示：**
+
+```
+Instantiation -> Populate -> Aware -> BPP(Before) -> Init -> BPP(After) -> Ready -> Destroy
+```
