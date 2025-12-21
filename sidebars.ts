@@ -1056,11 +1056,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "kafka/quick-reference",
-        "kafka/faq",
-        "interview/kafka-interview-questions",
-      ],
+      items: ["kafka/quick-reference", "kafka/faq"],
     },
   ],
 
@@ -1109,11 +1105,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "flink/quick-reference",
-        "flink/faq",
-        "interview/flink-interview-questions",
-      ],
+      items: ["flink/quick-reference", "flink/faq"],
     },
     {
       type: "category",
@@ -1167,12 +1159,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "rabbitmq/quick-reference",
-
-        "rabbitmq/faq",
-        "interview/rabbitmq-interview-questions",
-      ],
+      items: ["rabbitmq/quick-reference", "rabbitmq/faq"],
     },
   ],
   // Spring AI sidebar
@@ -1223,7 +1210,6 @@ const sidebars: SidebarsConfig = {
         "spring-ai/quick-reference",
         "spring-ai/best-practices",
         "spring-ai/faq",
-        "interview/spring-ai-interview-questions",
       ],
     },
   ],
@@ -1308,7 +1294,6 @@ const sidebars: SidebarsConfig = {
         "docker/quick-reference",
         "docker/troubleshooting",
         "docker/faq",
-        "interview/docker-interview-questions",
       ],
     },
   ],
@@ -1346,7 +1331,6 @@ const sidebars: SidebarsConfig = {
         "podman/docker-migration",
         "podman/quick-reference",
         "podman/faq",
-        "interview/podman-interview-questions",
       ],
     },
   ],
@@ -1400,7 +1384,6 @@ const sidebars: SidebarsConfig = {
         "kubernetes/best-practices",
         "kubernetes/troubleshooting",
         "kubernetes/faq",
-        "interview/kubernetes-interview-questions",
       ],
     },
   ],
@@ -1434,11 +1417,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "nginx/quick-reference",
-        "nginx/faq",
-        "interview/nginx-interview-questions",
-      ],
+      items: ["nginx/quick-reference", "nginx/faq"],
     },
   ],
   // Networking sidebar
@@ -1480,11 +1459,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "networking/quick-reference",
-        "networking/faq",
-        "interview/networking-interview-questions",
-      ],
+      items: ["networking/quick-reference", "networking/faq"],
     },
   ],
 
@@ -1522,7 +1497,6 @@ const sidebars: SidebarsConfig = {
       items: [
         "microservices/best-practices",
         "microservices/faq",
-        "interview/microservices-interview-questions",
         "microservices/quick-reference",
       ],
     },
