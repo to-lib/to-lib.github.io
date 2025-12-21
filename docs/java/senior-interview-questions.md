@@ -6,7 +6,7 @@ title: Java 高级面试题精选
 # Java 高级面试题精选
 
 > [!TIP]
-> 本文精选了 30+ 道 Java 高级开发工程师面试题，涵盖 JVM 深度、高级并发、性能调优、架构设计、框架源码等核心主题。适合 3-5 年以上经验的开发者面试准备。
+> 本文精选了 35+ 道 Java 高级开发工程师面试题，涵盖 JVM 深度、高级并发、性能调优、架构设计、框架源码、分布式中间件等核心主题。适合 3-5 年以上经验的开发者面试准备。
 
 ## 目录
 
@@ -15,6 +15,9 @@ title: Java 高级面试题精选
 - [🎯 性能调优（专家级）](#-性能调优专家级)
 - [🎯 架构设计（专家级）](#-架构设计专家级)
 - [🎯 框架源码分析（专家级）](#-框架源码分析专家级)
+- [🎯 分布式与中间件（专家级）](#-分布式与中间件专家级)
+- [🎯 设计模式与代码设计（高级）](#-设计模式与代码设计高级)
+- [🎯 场景设计题（专家级）](#-场景设计题专家级)
 - [📌 总结与学习建议](#-总结与学习建议)
 
 ---
@@ -27,13 +30,13 @@ title: Java 高级面试题精选
 
 **JDK 8+ 运行时数据区域：**
 
-| 区域              | 线程共享 | 作用                             | 异常                   |
-| ----------------- | -------- | -------------------------------- | ---------------------- |
-| **堆（Heap）**    | 共享     | 存储对象实例和数组               | OutOfMemoryError       |
-| **方法区/元空间** | 共享     | 存储类信息、常量、静态变量       | OutOfMemoryError       |
-| **虚拟机栈**      | 私有     | 存储局部变量、操作数栈、方法出口 | StackOverflowError/OOM |
-| **本地方法栈**    | 私有     | 为 native 方法服务               | StackOverflowError/OOM |
-| **程序计数器**    | 私有     | 记录当前执行的字节码指令地址     | 无                     |
+| 区域 | 线程共享 | 作用 | 异常 |
+|------|---------|------|------|
+| **堆（Heap）** | 共享 | 存储对象实例和数组 | OutOfMemoryError |
+| **方法区/元空间** | 共享 | 存储类信息、常量、静态变量 | OutOfMemoryError |
+| **虚拟机栈** | 私有 | 存储局部变量、操作数栈、方法出口 | StackOverflowError/OOM |
+| **本地方法栈** | 私有 | 为 native 方法服务 | StackOverflowError/OOM |
+| **程序计数器** | 私有 | 记录当前执行的字节码指令地址 | 无 |
 
 **堆内存分代结构：**
 
@@ -56,7 +59,7 @@ public class MemoryDemo {
         long maxMemory = runtime.maxMemory();      // 最大堆内存
         long totalMemory = runtime.totalMemory();  // 当前堆内存
         long freeMemory = runtime.freeMemory();    // 空闲堆内存
-
+        
         System.out.println("Max: " + maxMemory / 1024 / 1024 + "MB");
         System.out.println("Total: " + totalMemory / 1024 / 1024 + "MB");
         System.out.println("Free: " + freeMemory / 1024 / 1024 + "MB");
@@ -88,14 +91,14 @@ public class MemoryDemo {
 
 **答案要点：**
 
-| 特性         | CMS            | G1                             | ZGC              |
-| ------------ | -------------- | ------------------------------ | ---------------- |
-| **算法**     | 标记-清除      | 标记-整理                      | 染色指针+读屏障  |
-| **停顿时间** | 不可预测       | 可预测（-XX:MaxGCPauseMillis） | &lt;10ms         |
-| **内存碎片** | 有             | 无                             | 无               |
-| **堆大小**   | &lt;32GB       | 4GB-64GB                       | 8MB-16TB         |
-| **JDK 版本** | JDK 5+         | JDK 7+                         | JDK 11+          |
-| **适用场景** | 低延迟、中小堆 | 大堆、可控停顿                 | 超大堆、极低延迟 |
+| 特性 | CMS | G1 | ZGC |
+|------|-----|----|----|
+| **算法** | 标记-清除 | 标记-整理 | 染色指针+读屏障 |
+| **停顿时间** | 不可预测 | 可预测（-XX:MaxGCPauseMillis） | <10ms |
+| **内存碎片** | 有 | 无 | 无 |
+| **堆大小** | <32GB | 4GB-64GB | 8MB-16TB |
+| **JDK版本** | JDK 5+ | JDK 7+ | JDK 11+ |
+| **适用场景** | 低延迟、中小堆 | 大堆、可控停顿 | 超大堆、极低延迟 |
 
 **G1 收集器工作原理：**
 
@@ -174,9 +177,9 @@ G1 堆内存布局（Region 化）
 **GC 日志分析关键指标：**
 
 ```
-[GC (Allocation Failure) [PSYoungGen: 524288K->87654K(611840K)]
+[GC (Allocation Failure) [PSYoungGen: 524288K->87654K(611840K)] 
  524288K->87654K(2010112K), 0.0876543 secs]
-
+ 
 关键指标：
 - GC 原因：Allocation Failure
 - Young GC 前后：524288K -> 87654K
@@ -232,9 +235,9 @@ G1 堆内存布局（Region 化）
 
 ```java
 public class HotSwapClassLoader extends ClassLoader {
-
+    
     @Override
-    protected Class<?> loadClass(String name, boolean resolve)
+    protected Class<?> loadClass(String name, boolean resolve) 
             throws ClassNotFoundException {
         // 打破双亲委派：先尝试自己加载
         if (name.startsWith("com.myapp.")) {
@@ -243,7 +246,7 @@ public class HotSwapClassLoader extends ClassLoader {
         // 其他类仍走双亲委派
         return super.loadClass(name, resolve);
     }
-
+    
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] classData = loadClassData(name);
@@ -252,7 +255,7 @@ public class HotSwapClassLoader extends ClassLoader {
         }
         return defineClass(name, classData, 0, classData.length);
     }
-
+    
     private byte[] loadClassData(String name) {
         // 从文件/网络加载类字节码
         String path = name.replace('.', '/') + ".class";
@@ -281,13 +284,13 @@ public class HotSwapClassLoader extends ClassLoader {
 
 **JIT 主要优化技术：**
 
-| 优化技术     | 说明                       | 效果             |
-| ------------ | -------------------------- | ---------------- |
+| 优化技术 | 说明 | 效果 |
+|---------|------|------|
 | **方法内联** | 将小方法代码直接嵌入调用处 | 减少方法调用开销 |
-| **逃逸分析** | 分析对象作用域             | 栈上分配、锁消除 |
-| **锁消除**   | 消除不必要的同步           | 提升并发性能     |
-| **锁粗化**   | 合并连续的加锁操作         | 减少锁开销       |
-| **标量替换** | 将对象拆解为基本类型       | 减少内存分配     |
+| **逃逸分析** | 分析对象作用域 | 栈上分配、锁消除 |
+| **锁消除** | 消除不必要的同步 | 提升并发性能 |
+| **锁粗化** | 合并连续的加锁操作 | 减少锁开销 |
+| **标量替换** | 将对象拆解为基本类型 | 减少内存分配 |
 
 **逃逸分析详解：**
 
@@ -359,11 +362,11 @@ public String concat(String s1, String s2) {
 public abstract class AbstractQueuedSynchronizer {
     // 同步状态
     private volatile int state;
-
+    
     // CLH 队列头尾节点
     private transient volatile Node head;
     private transient volatile Node tail;
-
+    
     // 内部节点类
     static final class Node {
         volatile int waitStatus;
@@ -417,7 +420,7 @@ final boolean nonfairTryAcquire(int acquires) {
 ```java
 public class SimpleLock {
     private final Sync sync = new Sync();
-
+    
     private static class Sync extends AbstractQueuedSynchronizer {
         @Override
         protected boolean tryAcquire(int arg) {
@@ -427,20 +430,20 @@ public class SimpleLock {
             }
             return false;
         }
-
+        
         @Override
         protected boolean tryRelease(int arg) {
             setExclusiveOwnerThread(null);
             setState(0);
             return true;
         }
-
+        
         @Override
         protected boolean isHeldExclusively() {
             return getState() == 1;
         }
     }
-
+    
     public void lock() { sync.acquire(1); }
     public void unlock() { sync.release(1); }
 }
@@ -456,11 +459,11 @@ public class SimpleLock {
 
 **线程池参数配置原则：**
 
-| 场景           | corePoolSize         | maximumPoolSize | 队列   |
-| -------------- | -------------------- | --------------- | ------ |
-| **CPU 密集型** | CPU 核心数           | CPU 核心数      | 小队列 |
-| **IO 密集型**  | 2 \* CPU 核心数      | 2 \* CPU 核心数 | 大队列 |
-| **混合型**     | 根据 IO/CPU 比例调整 | -               | -      |
+| 场景 | corePoolSize | maximumPoolSize | 队列 |
+|------|-------------|-----------------|------|
+| **CPU 密集型** | CPU 核心数 | CPU 核心数 | 小队列 |
+| **IO 密集型** | 2 * CPU 核心数 | 2 * CPU 核心数 | 大队列 |
+| **混合型** | 根据 IO/CPU 比例调整 | - | - |
 
 **线程池参数计算公式：**
 
@@ -476,11 +479,11 @@ public class SimpleLock {
 ```java
 @Configuration
 public class ThreadPoolConfig {
-
+    
     @Bean("businessThreadPool")
     public ThreadPoolExecutor businessThreadPool() {
         int coreSize = Runtime.getRuntime().availableProcessors();
-
+        
         return new ThreadPoolExecutor(
             coreSize,                              // 核心线程数
             coreSize * 2,                          // 最大线程数
@@ -488,7 +491,7 @@ public class ThreadPoolConfig {
             new LinkedBlockingQueue<>(1000),       // 任务队列
             new ThreadFactoryBuilder()
                 .setNameFormat("business-pool-%d")
-                .setUncaughtExceptionHandler((t, e) ->
+                .setUncaughtExceptionHandler((t, e) -> 
                     log.error("Thread {} error", t.getName(), e))
                 .build(),
             new ThreadPoolExecutor.CallerRunsPolicy()  // 拒绝策略
@@ -503,20 +506,20 @@ public class ThreadPoolConfig {
 @Scheduled(fixedRate = 60000)
 public void monitorThreadPool() {
     ThreadPoolExecutor executor = businessThreadPool;
-
+    
     // 核心指标
     int poolSize = executor.getPoolSize();           // 当前线程数
     int activeCount = executor.getActiveCount();     // 活跃线程数
     int queueSize = executor.getQueue().size();      // 队列任务数
     long completedCount = executor.getCompletedTaskCount();  // 已完成任务数
     long taskCount = executor.getTaskCount();        // 总任务数
-
+    
     // 告警阈值
     double queueUsage = queueSize / 1000.0;
     if (queueUsage > 0.8) {
         log.warn("线程池队列使用率过高: {}%", queueUsage * 100);
     }
-
+    
     // 上报监控指标
     Metrics.gauge("threadpool.pool.size", poolSize);
     Metrics.gauge("threadpool.active.count", activeCount);
@@ -538,7 +541,7 @@ public void monitorThreadPool() {
 无锁 → 偏向锁 → 轻量级锁 → 重量级锁
 ```
 
-**对象头 Mark Word 结构（64 位）：**
+**对象头 Mark Word 结构（64位）：**
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -561,19 +564,19 @@ public void monitorThreadPool() {
 ```java
 public class LockEscalation {
     private Object lock = new Object();
-
+    
     public void method() {
         synchronized (lock) {
             // 1. 首次获取：偏向锁
             //    - 检查 Mark Word 是否为可偏向状态
             //    - CAS 将线程 ID 写入 Mark Word
             //    - 后续同一线程进入无需 CAS
-
+            
             // 2. 其他线程竞争：升级为轻量级锁
             //    - 撤销偏向锁
             //    - 在栈帧中创建 Lock Record
             //    - CAS 将 Mark Word 替换为 Lock Record 指针
-
+            
             // 3. CAS 自旋失败：升级为重量级锁
             //    - 自旋超过阈值（默认10次）
             //    - 膨胀为 Monitor 对象
@@ -623,7 +626,7 @@ boolean compareAndSwap(V* address, V expectedValue, V newValue) {
 ```java
 public class CASDemo {
     private AtomicInteger count = new AtomicInteger(0);
-
+    
     public void increment() {
         int oldValue, newValue;
         do {
@@ -648,14 +651,14 @@ public class CASDemo {
 ```java
 public class ABADemo {
     // 使用版本号解决 ABA 问题
-    private AtomicStampedReference<Integer> ref =
+    private AtomicStampedReference<Integer> ref = 
         new AtomicStampedReference<>(100, 0);
-
+    
     public void update() {
         int[] stampHolder = new int[1];
         Integer value = ref.get(stampHolder);
         int stamp = stampHolder[0];
-
+        
         // CAS 同时比较值和版本号
         boolean success = ref.compareAndSet(
             value,           // 期望值
@@ -676,11 +679,11 @@ public class ABADemo {
 public class LongAdderDemo {
     // 高并发场景推荐使用 LongAdder
     private LongAdder counter = new LongAdder();
-
+    
     public void increment() {
         counter.increment();  // 内部分散到多个 Cell
     }
-
+    
     public long get() {
         return counter.sum();  // 汇总所有 Cell
     }
@@ -697,19 +700,19 @@ public class LongAdderDemo {
 
 **方案对比：**
 
-| 方案          | 优点     | 缺点     | 适用场景   |
-| ------------- | -------- | -------- | ---------- |
-| wait/notify   | 简单     | 性能一般 | 简单场景   |
-| BlockingQueue | 易用     | 有锁开销 | 一般场景   |
-| Disruptor     | 极高性能 | 复杂     | 高性能场景 |
+| 方案 | 优点 | 缺点 | 适用场景 |
+|------|------|------|---------|
+| wait/notify | 简单 | 性能一般 | 简单场景 |
+| BlockingQueue | 易用 | 有锁开销 | 一般场景 |
+| Disruptor | 极高性能 | 复杂 | 高性能场景 |
 
 **BlockingQueue 实现：**
 
 ```java
 public class ProducerConsumer {
-    private final BlockingQueue<Task> queue =
+    private final BlockingQueue<Task> queue = 
         new ArrayBlockingQueue<>(1000);
-
+    
     // 生产者
     class Producer implements Runnable {
         @Override
@@ -725,7 +728,7 @@ public class ProducerConsumer {
             }
         }
     }
-
+    
     // 消费者
     class Consumer implements Runnable {
         @Override
@@ -748,7 +751,7 @@ public class ProducerConsumer {
 
 ```java
 public class DisruptorDemo {
-
+    
     public static void main(String[] args) {
         // 创建 Disruptor
         Disruptor<OrderEvent> disruptor = new Disruptor<>(
@@ -758,13 +761,13 @@ public class DisruptorDemo {
             ProducerType.MULTI,
             new YieldingWaitStrategy()  // 等待策略
         );
-
+        
         // 设置消费者
         disruptor.handleEventsWith(new OrderEventHandler());
-
+        
         // 启动
         RingBuffer<OrderEvent> ringBuffer = disruptor.start();
-
+        
         // 生产者发布事件
         long sequence = ringBuffer.next();
         try {
@@ -887,7 +890,7 @@ vmtool --action getInstances --className java.util.HashMap --limit 10
 // 1. 静态集合持有对象引用
 public class Cache {
     private static Map<String, Object> cache = new HashMap<>();
-
+    
     public void add(String key, Object value) {
         cache.put(key, value);  // 永远不会被 GC
     }
@@ -902,7 +905,7 @@ public void readFile() {
 // 3. 监听器未注销
 public class EventManager {
     private List<EventListener> listeners = new ArrayList<>();
-
+    
     public void addListener(EventListener listener) {
         listeners.add(listener);
     }
@@ -929,17 +932,17 @@ public void process() {
 
 **Arthas 核心命令：**
 
-| 命令        | 功能         | 示例                            |
-| ----------- | ------------ | ------------------------------- |
-| `dashboard` | 系统实时面板 | `dashboard`                     |
-| `thread`    | 线程信息     | `thread -n 3`                   |
-| `jvm`       | JVM 信息     | `jvm`                           |
-| `memory`    | 内存信息     | `memory`                        |
-| `watch`     | 方法监控     | `watch class method "{params}"` |
-| `trace`     | 方法调用链路 | `trace class method`            |
-| `stack`     | 方法调用栈   | `stack class method`            |
-| `tt`        | 时间隧道     | `tt -t class method`            |
-| `profiler`  | 火焰图       | `profiler start`                |
+| 命令 | 功能 | 示例 |
+|------|------|------|
+| `dashboard` | 系统实时面板 | `dashboard` |
+| `thread` | 线程信息 | `thread -n 3` |
+| `jvm` | JVM 信息 | `jvm` |
+| `memory` | 内存信息 | `memory` |
+| `watch` | 方法监控 | `watch class method "{params}"` |
+| `trace` | 方法调用链路 | `trace class method` |
+| `stack` | 方法调用栈 | `stack class method` |
+| `tt` | 时间隧道 | `tt -t class method` |
+| `profiler` | 火焰图 | `profiler start` |
 
 **实战示例：**
 
@@ -1049,10 +1052,10 @@ EXPLAIN SELECT * FROM users WHERE name = 'Tom';
 
 **答案要点：**
 
-| 问题         | 描述              | 解决方案               |
-| ------------ | ----------------- | ---------------------- |
-| **缓存穿透** | 查询不存在的数据  | 布隆过滤器、空值缓存   |
-| **缓存击穿** | 热点 key 过期     | 互斥锁、永不过期       |
+| 问题 | 描述 | 解决方案 |
+|------|------|---------|
+| **缓存穿透** | 查询不存在的数据 | 布隆过滤器、空值缓存 |
+| **缓存击穿** | 热点 key 过期 | 互斥锁、永不过期 |
 | **缓存雪崩** | 大量 key 同时过期 | 随机过期时间、多级缓存 |
 
 **缓存穿透解决方案：**
@@ -1065,7 +1068,7 @@ public class BloomFilterDemo {
         1000000,  // 预期元素数量
         0.01      // 误判率
     );
-
+    
     public User getUser(String id) {
         // 先检查布隆过滤器
         if (!bloomFilter.mightContain(id)) {
@@ -1080,7 +1083,7 @@ public class BloomFilterDemo {
 public User getUser(String id) {
     String cacheKey = "user:" + id;
     User user = cache.get(cacheKey);
-
+    
     if (user == null) {
         user = db.getUser(id);
         if (user == null) {
@@ -1101,7 +1104,7 @@ public User getUser(String id) {
 public User getUser(String id) {
     String cacheKey = "user:" + id;
     User user = cache.get(cacheKey);
-
+    
     if (user == null) {
         String lockKey = "lock:user:" + id;
         // 尝试获取分布式锁
@@ -1141,14 +1144,14 @@ public User getUser(String id) {
     // L1: 本地缓存（Caffeine）
     User user = localCache.get(id);
     if (user != null) return user;
-
+    
     // L2: 分布式缓存（Redis）
     user = redisCache.get(id);
     if (user != null) {
         localCache.put(id, user);
         return user;
     }
-
+    
     // L3: 数据库
     user = db.getUser(id);
     redisCache.set(id, user);
@@ -1190,12 +1193,12 @@ public User getUser(String id) {
 
 **实际系统选择：**
 
-| 系统          | 选择 | 说明                     |
-| ------------- | ---- | ------------------------ |
-| ZooKeeper     | CP   | 强一致性，可能短暂不可用 |
-| Eureka        | AP   | 高可用，允许数据不一致   |
-| Redis Cluster | AP   | 异步复制，可能丢数据     |
-| MySQL 主从    | CP   | 同步复制保证一致性       |
+| 系统 | 选择 | 说明 |
+|------|------|------|
+| ZooKeeper | CP | 强一致性，可能短暂不可用 |
+| Eureka | AP | 高可用，允许数据不一致 |
+| Redis Cluster | AP | 异步复制，可能丢数据 |
+| MySQL 主从 | CP | 同步复制保证一致性 |
 
 **BASE 理论（AP 的延伸）：**
 
@@ -1217,13 +1220,13 @@ E  - Eventually consistent（最终一致性）
 public Order createOrder(OrderRequest request) {
     // CP: 同步扣减库存
     inventoryService.deduct(request.getProductId(), request.getQuantity());
-
+    
     // AP: 创建订单
     Order order = orderRepository.save(new Order(request));
-
+    
     // 最终一致性: 异步发送通知
     messageQueue.send(new OrderCreatedEvent(order));
-
+    
     return order;
 }
 ```
@@ -1238,13 +1241,13 @@ public Order createOrder(OrderRequest request) {
 
 **分布式事务方案对比：**
 
-| 方案        | 一致性   | 性能 | 复杂度 | 适用场景         |
-| ----------- | -------- | ---- | ------ | ---------------- |
-| 2PC         | 强一致   | 低   | 中     | 数据库分布式事务 |
-| TCC         | 最终一致 | 中   | 高     | 资金交易         |
-| Saga        | 最终一致 | 高   | 中     | 长事务           |
-| 本地消息表  | 最终一致 | 高   | 低     | 异步场景         |
-| MQ 事务消息 | 最终一致 | 高   | 低     | 消息驱动         |
+| 方案 | 一致性 | 性能 | 复杂度 | 适用场景 |
+|------|--------|------|--------|---------|
+| 2PC | 强一致 | 低 | 中 | 数据库分布式事务 |
+| TCC | 最终一致 | 中 | 高 | 资金交易 |
+| Saga | 最终一致 | 高 | 中 | 长事务 |
+| 本地消息表 | 最终一致 | 高 | 低 | 异步场景 |
+| MQ 事务消息 | 最终一致 | 高 | 低 | 消息驱动 |
 
 **TCC 实现示例：**
 
@@ -1252,30 +1255,30 @@ public Order createOrder(OrderRequest request) {
 // TCC: Try-Confirm-Cancel
 public interface AccountService {
     // Try: 预留资源
-    @TwoPhaseBusinessAction(name = "deduct",
+    @TwoPhaseBusinessAction(name = "deduct", 
         commitMethod = "confirm", rollbackMethod = "cancel")
-    boolean tryDeduct(BusinessActionContext context,
+    boolean tryDeduct(BusinessActionContext context, 
                       @BusinessActionContextParameter("accountId") String accountId,
                       @BusinessActionContextParameter("amount") BigDecimal amount);
-
+    
     // Confirm: 确认提交
     boolean confirm(BusinessActionContext context);
-
+    
     // Cancel: 取消回滚
     boolean cancel(BusinessActionContext context);
 }
 
 @Service
 public class AccountServiceImpl implements AccountService {
-
+    
     @Override
-    public boolean tryDeduct(BusinessActionContext context,
+    public boolean tryDeduct(BusinessActionContext context, 
                              String accountId, BigDecimal amount) {
         // 冻结金额
         accountDao.freeze(accountId, amount);
         return true;
     }
-
+    
     @Override
     public boolean confirm(BusinessActionContext context) {
         String accountId = context.getActionContext("accountId");
@@ -1284,7 +1287,7 @@ public class AccountServiceImpl implements AccountService {
         accountDao.deductFrozen(accountId, amount);
         return true;
     }
-
+    
     @Override
     public boolean cancel(BusinessActionContext context) {
         String accountId = context.getActionContext("accountId");
@@ -1303,7 +1306,7 @@ public class AccountServiceImpl implements AccountService {
 public void createOrder(OrderRequest request) {
     // 1. 创建订单
     Order order = orderRepository.save(new Order(request));
-
+    
     // 2. 写入本地消息表（同一事务）
     LocalMessage message = new LocalMessage();
     message.setMessageId(UUID.randomUUID().toString());
@@ -1382,7 +1385,7 @@ MTTR: 平均修复时间
 
 ```java
 // Sentinel 限流配置
-@SentinelResource(value = "getUser",
+@SentinelResource(value = "getUser", 
     blockHandler = "getUserBlockHandler",
     fallback = "getUserFallback")
 public User getUser(String id) {
@@ -1425,7 +1428,7 @@ public void initStock() {
     List<SeckillProduct> products = productService.getSeckillProducts();
     for (SeckillProduct product : products) {
         redisTemplate.opsForValue().set(
-            "seckill:stock:" + product.getId(),
+            "seckill:stock:" + product.getId(), 
             product.getStock()
         );
     }
@@ -1450,10 +1453,10 @@ public void createOrder(SeckillRequest request) {
     if (!deductStock(request.getProductId())) {
         throw new SeckillException("库存不足");
     }
-
+    
     // 发送消息异步创建订单
     OrderMessage message = new OrderMessage(
-        request.getUserId(),
+        request.getUserId(), 
         request.getProductId()
     );
     kafkaTemplate.send("seckill-order", message);
@@ -1467,7 +1470,7 @@ public void handleOrder(OrderMessage message) {
     order.setUserId(message.getUserId());
     order.setProductId(message.getProductId());
     orderRepository.save(order);
-
+    
     // 扣减数据库库存
     productRepository.deductStock(message.getProductId());
 }
@@ -1498,13 +1501,13 @@ public void seckill(String ip, Long productId) { }
 
 **服务拆分原则：**
 
-| 原则             | 说明                             |
-| ---------------- | -------------------------------- |
-| **单一职责**     | 每个服务只负责一个业务领域       |
+| 原则 | 说明 |
+|------|------|
+| **单一职责** | 每个服务只负责一个业务领域 |
 | **高内聚低耦合** | 服务内部高度相关，服务间依赖最小 |
-| **业务边界清晰** | 基于领域驱动设计（DDD）划分      |
-| **数据独立**     | 每个服务拥有独立的数据存储       |
-| **可独立部署**   | 服务可以独立开发、测试、部署     |
+| **业务边界清晰** | 基于领域驱动设计（DDD）划分 |
+| **数据独立** | 每个服务拥有独立的数据存储 |
+| **可独立部署** | 服务可以独立开发、测试、部署 |
 
 **DDD 领域划分：**
 
@@ -1565,37 +1568,37 @@ OrderService --发布事件--> EventBus
 public void refresh() {
     // 1. 准备刷新
     prepareRefresh();
-
+    
     // 2. 获取 BeanFactory
     ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
-
+    
     // 3. 准备 BeanFactory
     prepareBeanFactory(beanFactory);
-
+    
     // 4. 后置处理 BeanFactory
     postProcessBeanFactory(beanFactory);
-
+    
     // 5. 调用 BeanFactoryPostProcessor
     invokeBeanFactoryPostProcessors(beanFactory);
-
+    
     // 6. 注册 BeanPostProcessor
     registerBeanPostProcessors(beanFactory);
-
+    
     // 7. 初始化消息源
     initMessageSource();
-
+    
     // 8. 初始化事件广播器
     initApplicationEventMulticaster();
-
+    
     // 9. 子类扩展点
     onRefresh();
-
+    
     // 10. 注册监听器
     registerListeners();
-
+    
     // 11. 实例化所有非懒加载的单例 Bean
     finishBeanFactoryInitialization(beanFactory);
-
+    
     // 12. 完成刷新
     finishRefresh();
 }
@@ -1604,7 +1607,7 @@ public void refresh() {
 **Bean 创建流程：**
 
 ```
-getBean()
+getBean() 
     → doGetBean()
         → getSingleton() // 从缓存获取
         → createBean()
@@ -1643,10 +1646,10 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>()
 
 **AOP 实现方式：**
 
-| 方式         | 条件           | 特点         |
-| ------------ | -------------- | ------------ |
+| 方式 | 条件 | 特点 |
+|------|------|------|
 | JDK 动态代理 | 目标类实现接口 | 基于接口代理 |
-| CGLIB 代理   | 目标类无接口   | 基于继承代理 |
+| CGLIB 代理 | 目标类无接口 | 基于继承代理 |
 
 **JDK 动态代理原理：**
 
@@ -1654,13 +1657,13 @@ private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>()
 public class JdkProxyDemo {
     public static void main(String[] args) {
         UserService target = new UserServiceImpl();
-
+        
         UserService proxy = (UserService) Proxy.newProxyInstance(
             target.getClass().getClassLoader(),
             target.getClass().getInterfaces(),
             new InvocationHandler() {
                 @Override
-                public Object invoke(Object proxy, Method method, Object[] args)
+                public Object invoke(Object proxy, Method method, Object[] args) 
                         throws Throwable {
                     System.out.println("Before: " + method.getName());
                     Object result = method.invoke(target, args);
@@ -1669,7 +1672,7 @@ public class JdkProxyDemo {
                 }
             }
         );
-
+        
         proxy.getUser("1");
     }
 }
@@ -1684,7 +1687,7 @@ public class CglibProxyDemo {
         enhancer.setSuperclass(UserServiceImpl.class);
         enhancer.setCallback(new MethodInterceptor() {
             @Override
-            public Object intercept(Object obj, Method method, Object[] args,
+            public Object intercept(Object obj, Method method, Object[] args, 
                     MethodProxy proxy) throws Throwable {
                 System.out.println("Before: " + method.getName());
                 Object result = proxy.invokeSuper(obj, args);
@@ -1692,7 +1695,7 @@ public class CglibProxyDemo {
                 return result;
             }
         });
-
+        
         UserServiceImpl proxy = (UserServiceImpl) enhancer.create();
         proxy.getUser("1");
     }
@@ -1764,7 +1767,7 @@ org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
 @ConditionalOnMissingBean(DataSource.class)  // 未自定义 DataSource Bean
 @EnableConfigurationProperties(DataSourceProperties.class)
 public class DataSourceAutoConfiguration {
-
+    
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
@@ -1781,7 +1784,7 @@ public class DataSourceAutoConfiguration {
 @ConditionalOnClass(MyService.class)
 @EnableConfigurationProperties(MyProperties.class)
 public class MyAutoConfiguration {
-
+    
     @Bean
     @ConditionalOnMissingBean
     public MyService myService(MyProperties properties) {
@@ -1834,7 +1837,7 @@ SqlSessionFactory factory = new SqlSessionFactoryBuilder()
 try (SqlSession session = factory.openSession()) {
     // 3. 获取 Mapper 代理
     UserMapper mapper = session.getMapper(UserMapper.class);
-
+    
     // 4. 执行查询
     User user = mapper.selectById(1L);
 }
@@ -1869,7 +1872,7 @@ try (SqlSession session = factory.openSession()) {
 <!-- UserMapper.xml -->
 <mapper namespace="com.example.mapper.UserMapper">
     <cache eviction="LRU" flushInterval="60000" size="512" readOnly="true"/>
-
+    
     <select id="selectById" resultType="User" useCache="true">
         SELECT * FROM user WHERE id = #{id}
     </select>
@@ -1903,13 +1906,13 @@ try (SqlSession session = factory.openSession()) {
 
 **核心组件：**
 
-| 组件                | 作用                   |
-| ------------------- | ---------------------- |
-| **Channel**         | 网络连接通道           |
-| **EventLoop**       | 事件循环，处理 IO 事件 |
-| **ChannelPipeline** | 处理器链               |
-| **ChannelHandler**  | 事件处理器             |
-| **ByteBuf**         | 字节缓冲区             |
+| 组件 | 作用 |
+|------|------|
+| **Channel** | 网络连接通道 |
+| **EventLoop** | 事件循环，处理 IO 事件 |
+| **ChannelPipeline** | 处理器链 |
+| **ChannelHandler** | 事件处理器 |
+| **ByteBuf** | 字节缓冲区 |
 
 **Netty 服务端示例：**
 
@@ -1918,7 +1921,7 @@ public class NettyServer {
     public static void main(String[] args) throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
-
+        
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
@@ -1934,7 +1937,7 @@ public class NettyServer {
                         pipeline.addLast(new MyServerHandler());
                     }
                 });
-
+            
             ChannelFuture future = bootstrap.bind(8080).sync();
             future.channel().closeFuture().sync();
         } finally {
@@ -1957,12 +1960,844 @@ class MyServerHandler extends SimpleChannelInboundHandler<String> {
 
 ---
 
+## 🎯 分布式与中间件（专家级）
+
+### 26. Redis 的持久化机制有哪些？如何选择？
+
+**答案要点：**
+
+**两种持久化方式对比：**
+
+| 特性 | RDB | AOF |
+|------|-----|-----|
+| **原理** | 快照，保存某时刻数据 | 追加写命令日志 |
+| **文件大小** | 小（二进制压缩） | 大（文本命令） |
+| **恢复速度** | 快 | 慢（需重放命令） |
+| **数据安全** | 可能丢失最后一次快照后的数据 | 最多丢失1秒数据 |
+| **性能影响** | fork 子进程时可能阻塞 | 每秒 fsync 影响小 |
+
+**RDB 配置：**
+
+```bash
+# redis.conf
+save 900 1      # 900秒内至少1个key变化则保存
+save 300 10     # 300秒内至少10个key变化则保存
+save 60 10000   # 60秒内至少10000个key变化则保存
+
+# 手动触发
+BGSAVE          # 后台异步保存
+SAVE            # 同步保存（阻塞）
+```
+
+**AOF 配置：**
+
+```bash
+# redis.conf
+appendonly yes
+appendfilename "appendonly.aof"
+
+# 同步策略
+appendfsync always    # 每次写入都同步（最安全，最慢）
+appendfsync everysec  # 每秒同步（推荐）
+appendfsync no        # 由操作系统决定（最快，不安全）
+
+# AOF 重写
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+```
+
+**混合持久化（Redis 4.0+）：**
+
+```bash
+aof-use-rdb-preamble yes
+# AOF 文件 = RDB 快照 + 增量 AOF 命令
+# 兼顾恢复速度和数据安全
+```
+
+**选择建议：**
+- 纯缓存场景：可以不开启持久化
+- 数据安全要求高：AOF + everysec
+- 快速恢复：RDB
+- 最佳实践：混合持久化
+
+**延伸：** 参考 [Redis 持久化](/docs/redis/persistence)
+
+---
+
+### 27. Kafka 如何保证消息不丢失？
+
+**答案要点：**
+
+**消息丢失的三个环节：**
+
+```
+Producer → Broker → Consumer
+   ↓          ↓         ↓
+ 发送丢失   存储丢失   消费丢失
+```
+
+**Producer 端保证：**
+
+```java
+Properties props = new Properties();
+// 1. acks 配置
+props.put("acks", "all");  // 等待所有副本确认
+
+// 2. 重试配置
+props.put("retries", 3);
+props.put("retry.backoff.ms", 1000);
+
+// 3. 幂等性（防止重复）
+props.put("enable.idempotence", true);
+
+// 4. 同步发送或回调确认
+producer.send(record, (metadata, exception) -> {
+    if (exception != null) {
+        // 发送失败，记录日志或重试
+        log.error("Send failed", exception);
+    }
+});
+```
+
+**Broker 端保证：**
+
+```bash
+# server.properties
+# 1. 副本数量
+default.replication.factor=3
+
+# 2. 最小同步副本数
+min.insync.replicas=2
+
+# 3. 禁止不完全选举
+unclean.leader.election.enable=false
+```
+
+**Consumer 端保证：**
+
+```java
+Properties props = new Properties();
+// 1. 手动提交 offset
+props.put("enable.auto.commit", false);
+
+// 2. 消费逻辑
+while (true) {
+    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord<String, String> record : records) {
+        try {
+            // 处理消息
+            processMessage(record);
+            // 处理成功后手动提交
+            consumer.commitSync();
+        } catch (Exception e) {
+            // 处理失败，不提交，下次重新消费
+            log.error("Process failed", e);
+        }
+    }
+}
+```
+
+**延伸：** 参考 [Kafka 最佳实践](/docs/kafka/best-practices)
+
+---
+
+### 28. 如何设计分布式 ID 生成方案？
+
+**答案要点：**
+
+**常见方案对比：**
+
+| 方案 | 优点 | 缺点 | 适用场景 |
+|------|------|------|---------|
+| UUID | 简单，无依赖 | 无序，存储大 | 非主键场景 |
+| 数据库自增 | 简单，有序 | 性能瓶颈，单点 | 小规模系统 |
+| Redis INCR | 性能高 | 依赖 Redis | 中等规模 |
+| 雪花算法 | 有序，高性能 | 时钟回拨问题 | 大规模分布式 |
+| Leaf | 高可用，高性能 | 复杂度高 | 大规模分布式 |
+
+**雪花算法（Snowflake）：**
+
+```
+64位 ID 结构：
+┌─────────────────────────────────────────────────────────────────┐
+│ 0 │ 41位时间戳 │ 10位机器ID │ 12位序列号 │
+└─────────────────────────────────────────────────────────────────┘
+  ↓       ↓            ↓            ↓
+符号位  毫秒级时间   机器标识    同毫秒序列
+```
+
+**Java 实现：**
+
+```java
+public class SnowflakeIdGenerator {
+    private final long epoch = 1609459200000L;  // 起始时间戳
+    private final long workerIdBits = 10L;
+    private final long sequenceBits = 12L;
+    
+    private final long maxWorkerId = ~(-1L << workerIdBits);
+    private final long sequenceMask = ~(-1L << sequenceBits);
+    
+    private final long workerIdShift = sequenceBits;
+    private final long timestampShift = sequenceBits + workerIdBits;
+    
+    private long workerId;
+    private long sequence = 0L;
+    private long lastTimestamp = -1L;
+    
+    public SnowflakeIdGenerator(long workerId) {
+        if (workerId > maxWorkerId || workerId < 0) {
+            throw new IllegalArgumentException("Worker ID out of range");
+        }
+        this.workerId = workerId;
+    }
+    
+    public synchronized long nextId() {
+        long timestamp = System.currentTimeMillis();
+        
+        if (timestamp < lastTimestamp) {
+            throw new RuntimeException("Clock moved backwards");
+        }
+        
+        if (timestamp == lastTimestamp) {
+            sequence = (sequence + 1) & sequenceMask;
+            if (sequence == 0) {
+                timestamp = waitNextMillis(lastTimestamp);
+            }
+        } else {
+            sequence = 0L;
+        }
+        
+        lastTimestamp = timestamp;
+        
+        return ((timestamp - epoch) << timestampShift)
+                | (workerId << workerIdShift)
+                | sequence;
+    }
+    
+    private long waitNextMillis(long lastTimestamp) {
+        long timestamp = System.currentTimeMillis();
+        while (timestamp <= lastTimestamp) {
+            timestamp = System.currentTimeMillis();
+        }
+        return timestamp;
+    }
+}
+```
+
+**延伸：** 参考 [分布式系统设计](/docs/microservices/design-patterns)
+
+---
+
+### 29. 如何实现分布式锁？有哪些方案？
+
+**答案要点：**
+
+**分布式锁方案对比：**
+
+| 方案 | 优点 | 缺点 |
+|------|------|------|
+| MySQL | 简单 | 性能差，单点 |
+| Redis | 性能高 | 主从切换可能丢锁 |
+| ZooKeeper | 可靠性高 | 性能一般 |
+| Etcd | 可靠性高，性能好 | 复杂度高 |
+
+**Redis 分布式锁实现：**
+
+```java
+public class RedisDistributedLock {
+    private StringRedisTemplate redisTemplate;
+    private String lockKey;
+    private String lockValue;
+    private long expireTime;
+    
+    public boolean tryLock() {
+        lockValue = UUID.randomUUID().toString();
+        Boolean success = redisTemplate.opsForValue()
+            .setIfAbsent(lockKey, lockValue, expireTime, TimeUnit.MILLISECONDS);
+        return Boolean.TRUE.equals(success);
+    }
+    
+    public void unlock() {
+        // Lua 脚本保证原子性
+        String script = 
+            "if redis.call('get', KEYS[1]) == ARGV[1] then " +
+            "   return redis.call('del', KEYS[1]) " +
+            "else " +
+            "   return 0 " +
+            "end";
+        redisTemplate.execute(
+            new DefaultRedisScript<>(script, Long.class),
+            Collections.singletonList(lockKey),
+            lockValue
+        );
+    }
+}
+```
+
+**Redisson 分布式锁（推荐）：**
+
+```java
+@Service
+public class OrderService {
+    @Autowired
+    private RedissonClient redissonClient;
+    
+    public void createOrder(String orderId) {
+        RLock lock = redissonClient.getLock("order:" + orderId);
+        try {
+            // 尝试获取锁，等待10秒，锁定30秒
+            if (lock.tryLock(10, 30, TimeUnit.SECONDS)) {
+                try {
+                    // 业务逻辑
+                    doCreateOrder(orderId);
+                } finally {
+                    lock.unlock();
+                }
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+```
+
+**ZooKeeper 分布式锁原理：**
+
+```
+/locks/order
+    ├── lock-0000000001  ← 客户端A（获得锁）
+    ├── lock-0000000002  ← 客户端B（监听上一个节点）
+    └── lock-0000000003  ← 客户端C（监听上一个节点）
+
+1. 创建临时顺序节点
+2. 获取所有子节点，判断自己是否最小
+3. 如果是最小，获得锁；否则监听前一个节点
+4. 前一个节点删除时，收到通知，重新判断
+```
+
+**延伸：** 参考 [Redis 分布式锁](/docs/redis/cache-strategies)
+
+---
+
+### 30. RPC 框架的核心原理是什么？
+
+**答案要点：**
+
+**RPC 调用流程：**
+
+```
+客户端                                    服务端
+   │                                        │
+   │  1. 调用本地代理                        │
+   ▼                                        │
+┌──────────┐                                │
+│ Proxy    │                                │
+└────┬─────┘                                │
+     │ 2. 序列化                             │
+     ▼                                      │
+┌──────────┐                                │
+│ Codec    │                                │
+└────┬─────┘                                │
+     │ 3. 网络传输                           │
+     ▼                                      ▼
+┌──────────┐    ─────────────────>    ┌──────────┐
+│ Transport│                          │ Transport│
+└──────────┘                          └────┬─────┘
+                                           │ 4. 反序列化
+                                           ▼
+                                     ┌──────────┐
+                                     │ Codec    │
+                                     └────┬─────┘
+                                           │ 5. 调用实际方法
+                                           ▼
+                                     ┌──────────┐
+                                     │ Service  │
+                                     └──────────┘
+```
+
+**核心组件：**
+
+| 组件 | 作用 |
+|------|------|
+| **动态代理** | 生成客户端代理对象 |
+| **序列化** | 对象与字节流转换 |
+| **网络通信** | 数据传输（Netty） |
+| **服务注册发现** | 服务地址管理 |
+| **负载均衡** | 请求分发策略 |
+
+**简易 RPC 框架实现：**
+
+```java
+// 1. 服务接口
+public interface UserService {
+    User getUser(Long id);
+}
+
+// 2. 客户端代理
+public class RpcProxy {
+    @SuppressWarnings("unchecked")
+    public static <T> T create(Class<T> interfaceClass) {
+        return (T) Proxy.newProxyInstance(
+            interfaceClass.getClassLoader(),
+            new Class[]{interfaceClass},
+            (proxy, method, args) -> {
+                // 构建请求
+                RpcRequest request = new RpcRequest();
+                request.setClassName(interfaceClass.getName());
+                request.setMethodName(method.getName());
+                request.setParameterTypes(method.getParameterTypes());
+                request.setParameters(args);
+                
+                // 发送请求
+                RpcResponse response = sendRequest(request);
+                
+                return response.getResult();
+            }
+        );
+    }
+}
+
+// 3. 服务端处理
+public class RpcServer {
+    private Map<String, Object> serviceMap = new HashMap<>();
+    
+    public void register(String serviceName, Object service) {
+        serviceMap.put(serviceName, service);
+    }
+    
+    public Object handle(RpcRequest request) throws Exception {
+        Object service = serviceMap.get(request.getClassName());
+        Method method = service.getClass().getMethod(
+            request.getMethodName(), 
+            request.getParameterTypes()
+        );
+        return method.invoke(service, request.getParameters());
+    }
+}
+```
+
+**延伸：** 参考 [Netty 实战](/docs/netty/practical-examples)
+
+---
+
+## 🎯 设计模式与代码设计（高级）
+
+### 31. 如何在项目中正确使用设计模式？
+
+**答案要点：**
+
+**常用设计模式场景：**
+
+| 模式 | 场景 | 框架应用 |
+|------|------|---------|
+| 单例 | 配置类、连接池 | Spring Bean |
+| 工厂 | 对象创建解耦 | BeanFactory |
+| 代理 | AOP、远程调用 | Spring AOP |
+| 模板方法 | 算法骨架 | JdbcTemplate |
+| 策略 | 算法切换 | Comparator |
+| 观察者 | 事件通知 | ApplicationEvent |
+| 责任链 | 请求处理链 | Filter、Interceptor |
+
+**策略模式实战 - 支付方式：**
+
+```java
+// 1. 策略接口
+public interface PaymentStrategy {
+    PaymentResult pay(PaymentRequest request);
+}
+
+// 2. 具体策略
+@Component("alipay")
+public class AlipayStrategy implements PaymentStrategy {
+    @Override
+    public PaymentResult pay(PaymentRequest request) {
+        // 支付宝支付逻辑
+    }
+}
+
+@Component("wechat")
+public class WechatPayStrategy implements PaymentStrategy {
+    @Override
+    public PaymentResult pay(PaymentRequest request) {
+        // 微信支付逻辑
+    }
+}
+
+// 3. 策略上下文
+@Service
+public class PaymentService {
+    @Autowired
+    private Map<String, PaymentStrategy> strategyMap;
+    
+    public PaymentResult pay(String payType, PaymentRequest request) {
+        PaymentStrategy strategy = strategyMap.get(payType);
+        if (strategy == null) {
+            throw new IllegalArgumentException("不支持的支付方式");
+        }
+        return strategy.pay(request);
+    }
+}
+```
+
+**责任链模式实战 - 订单校验：**
+
+```java
+// 1. 处理器接口
+public abstract class OrderValidator {
+    protected OrderValidator next;
+    
+    public OrderValidator setNext(OrderValidator next) {
+        this.next = next;
+        return next;
+    }
+    
+    public void validate(Order order) {
+        doValidate(order);
+        if (next != null) {
+            next.validate(order);
+        }
+    }
+    
+    protected abstract void doValidate(Order order);
+}
+
+// 2. 具体处理器
+public class StockValidator extends OrderValidator {
+    @Override
+    protected void doValidate(Order order) {
+        if (!checkStock(order)) {
+            throw new ValidationException("库存不足");
+        }
+    }
+}
+
+public class PriceValidator extends OrderValidator {
+    @Override
+    protected void doValidate(Order order) {
+        if (!checkPrice(order)) {
+            throw new ValidationException("价格异常");
+        }
+    }
+}
+
+// 3. 使用
+OrderValidator chain = new StockValidator();
+chain.setNext(new PriceValidator())
+     .setNext(new UserValidator());
+chain.validate(order);
+```
+
+**延伸：** 参考 [Java 设计模式](/docs/java-design-patterns)
+
+---
+
+### 32. 如何写出高质量的代码？有哪些原则？
+
+**答案要点：**
+
+**SOLID 原则：**
+
+| 原则 | 说明 | 示例 |
+|------|------|------|
+| **S** 单一职责 | 一个类只做一件事 | UserService 只处理用户逻辑 |
+| **O** 开闭原则 | 对扩展开放，对修改关闭 | 策略模式添加新策略 |
+| **L** 里氏替换 | 子类可以替换父类 | 正方形不应继承长方形 |
+| **I** 接口隔离 | 接口要小而专 | 拆分臃肿接口 |
+| **D** 依赖倒置 | 依赖抽象而非实现 | 依赖注入 |
+
+**代码规范示例：**
+
+```java
+// ❌ 不好的代码
+public class OrderService {
+    public void process(Order order) {
+        // 校验
+        if (order.getAmount() <= 0) throw new Exception("金额错误");
+        if (order.getUserId() == null) throw new Exception("用户为空");
+        
+        // 计算价格
+        double price = order.getAmount() * 0.9;
+        if (order.isVip()) price = price * 0.95;
+        
+        // 保存
+        orderDao.save(order);
+        
+        // 发送通知
+        emailService.send(order.getUserEmail(), "订单创建成功");
+        smsService.send(order.getUserPhone(), "订单创建成功");
+    }
+}
+
+// ✅ 好的代码
+@Service
+@RequiredArgsConstructor
+public class OrderService {
+    private final OrderValidator validator;
+    private final PriceCalculator priceCalculator;
+    private final OrderRepository orderRepository;
+    private final NotificationService notificationService;
+    
+    @Transactional
+    public Order createOrder(CreateOrderRequest request) {
+        // 1. 校验
+        validator.validate(request);
+        
+        // 2. 计算价格
+        BigDecimal price = priceCalculator.calculate(request);
+        
+        // 3. 创建订单
+        Order order = Order.builder()
+            .userId(request.getUserId())
+            .amount(request.getAmount())
+            .price(price)
+            .status(OrderStatus.CREATED)
+            .build();
+        
+        // 4. 保存
+        order = orderRepository.save(order);
+        
+        // 5. 异步通知
+        notificationService.notifyOrderCreated(order);
+        
+        return order;
+    }
+}
+```
+
+**延伸：** 参考 [Java 最佳实践](/docs/java/best-practices)
+
+---
+
+### 33. 如何进行代码重构？有哪些常见的坏味道？
+
+**答案要点：**
+
+**常见代码坏味道：**
+
+| 坏味道 | 描述 | 重构方法 |
+|--------|------|---------|
+| 过长方法 | 方法超过50行 | 提取方法 |
+| 过大类 | 类职责过多 | 拆分类 |
+| 重复代码 | 相同逻辑多处出现 | 提取公共方法 |
+| 过长参数列表 | 参数超过4个 | 引入参数对象 |
+| 数据泥团 | 多个数据总是一起出现 | 提取类 |
+| 基本类型偏执 | 过度使用基本类型 | 引入值对象 |
+
+**重构示例 - 过长方法：**
+
+```java
+// ❌ 重构前
+public void processOrder(Order order) {
+    // 50+ 行代码...
+    // 校验逻辑
+    // 价格计算
+    // 库存扣减
+    // 订单保存
+    // 消息发送
+}
+
+// ✅ 重构后
+public void processOrder(Order order) {
+    validateOrder(order);
+    calculatePrice(order);
+    deductInventory(order);
+    saveOrder(order);
+    sendNotification(order);
+}
+
+private void validateOrder(Order order) { /* ... */ }
+private void calculatePrice(Order order) { /* ... */ }
+private void deductInventory(Order order) { /* ... */ }
+private void saveOrder(Order order) { /* ... */ }
+private void sendNotification(Order order) { /* ... */ }
+```
+
+**重构示例 - 引入参数对象：**
+
+```java
+// ❌ 重构前
+public User createUser(String name, String email, String phone, 
+                       String address, Integer age, String gender) {
+    // ...
+}
+
+// ✅ 重构后
+public User createUser(CreateUserRequest request) {
+    // ...
+}
+
+@Data
+@Builder
+public class CreateUserRequest {
+    private String name;
+    private String email;
+    private String phone;
+    private String address;
+    private Integer age;
+    private String gender;
+}
+```
+
+**延伸：** 参考 [Java 最佳实践](/docs/java/best-practices)
+
+---
+
+## 🎯 场景设计题（专家级）
+
+### 34. 如何设计一个延迟任务系统？
+
+**答案要点：**
+
+**方案对比：**
+
+| 方案 | 优点 | 缺点 | 适用场景 |
+|------|------|------|---------|
+| 定时轮询 | 简单 | 精度低，性能差 | 小规模 |
+| DelayQueue | 精度高 | 单机，不持久化 | 单机场景 |
+| Redis ZSet | 分布式，持久化 | 需要轮询 | 中等规模 |
+| 时间轮 | 高性能 | 实现复杂 | 高性能场景 |
+| RocketMQ 延迟消息 | 可靠，分布式 | 延迟级别固定 | 大规模 |
+
+**Redis ZSet 实现：**
+
+```java
+@Service
+public class DelayTaskService {
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+    
+    private static final String DELAY_QUEUE = "delay:queue";
+    
+    // 添加延迟任务
+    public void addTask(String taskId, long delaySeconds) {
+        long executeTime = System.currentTimeMillis() + delaySeconds * 1000;
+        redisTemplate.opsForZSet().add(DELAY_QUEUE, taskId, executeTime);
+    }
+    
+    // 消费延迟任务
+    @Scheduled(fixedRate = 1000)
+    public void consumeTasks() {
+        long now = System.currentTimeMillis();
+        Set<String> tasks = redisTemplate.opsForZSet()
+            .rangeByScore(DELAY_QUEUE, 0, now);
+        
+        for (String taskId : tasks) {
+            // 原子性移除并处理
+            Long removed = redisTemplate.opsForZSet().remove(DELAY_QUEUE, taskId);
+            if (removed != null && removed > 0) {
+                processTask(taskId);
+            }
+        }
+    }
+}
+```
+
+**时间轮算法原理：**
+
+```
+时间轮（类似钟表）
+     0
+   7   1
+  6     2
+   5   3
+     4
+
+- 每个槽位存储该时刻到期的任务
+- 指针每隔固定时间移动一格
+- 支持多层时间轮处理长延迟
+```
+
+**延伸：** 参考 [消息队列](/docs/rocketmq)
+
+---
+
+### 35. 如何设计一个限流系统？
+
+**答案要点：**
+
+**限流算法对比：**
+
+| 算法 | 原理 | 优点 | 缺点 |
+|------|------|------|------|
+| 计数器 | 固定窗口计数 | 简单 | 临界问题 |
+| 滑动窗口 | 滑动时间窗口 | 平滑 | 内存占用 |
+| 漏桶 | 固定速率流出 | 平滑 | 无法应对突发 |
+| 令牌桶 | 固定速率生成令牌 | 允许突发 | 实现复杂 |
+
+**令牌桶算法实现：**
+
+```java
+public class TokenBucketRateLimiter {
+    private final long capacity;        // 桶容量
+    private final long refillRate;      // 每秒填充令牌数
+    private long tokens;                // 当前令牌数
+    private long lastRefillTime;        // 上次填充时间
+    
+    public TokenBucketRateLimiter(long capacity, long refillRate) {
+        this.capacity = capacity;
+        this.refillRate = refillRate;
+        this.tokens = capacity;
+        this.lastRefillTime = System.currentTimeMillis();
+    }
+    
+    public synchronized boolean tryAcquire() {
+        refill();
+        if (tokens > 0) {
+            tokens--;
+            return true;
+        }
+        return false;
+    }
+    
+    private void refill() {
+        long now = System.currentTimeMillis();
+        long elapsed = now - lastRefillTime;
+        long tokensToAdd = elapsed * refillRate / 1000;
+        tokens = Math.min(capacity, tokens + tokensToAdd);
+        lastRefillTime = now;
+    }
+}
+```
+
+**Redis + Lua 分布式限流：**
+
+```java
+public class RedisRateLimiter {
+    private static final String SCRIPT = 
+        "local key = KEYS[1] " +
+        "local limit = tonumber(ARGV[1]) " +
+        "local window = tonumber(ARGV[2]) " +
+        "local current = tonumber(redis.call('get', key) or '0') " +
+        "if current + 1 > limit then " +
+        "   return 0 " +
+        "else " +
+        "   redis.call('incrby', key, 1) " +
+        "   redis.call('expire', key, window) " +
+        "   return 1 " +
+        "end";
+    
+    public boolean tryAcquire(String key, int limit, int windowSeconds) {
+        Long result = redisTemplate.execute(
+            new DefaultRedisScript<>(SCRIPT, Long.class),
+            Collections.singletonList(key),
+            String.valueOf(limit),
+            String.valueOf(windowSeconds)
+        );
+        return result != null && result == 1;
+    }
+}
+```
+
+**延伸：** 参考 [微服务 - 服务治理](/docs/microservices/service-governance)
+
+---
+
 ## 📌 总结与学习建议
 
 ### 难度分级
 
-- **高级（3-5 年）：** JVM 深度、高级并发、框架源码基础
-- **专家级（5 年+）：** 性能调优、架构设计、源码深度分析
+- **高级（3-5年）：** JVM 深度、高级并发、框架源码基础
+- **专家级（5年+）：** 性能调优、架构设计、源码深度分析
 
 ### 学习路径
 
