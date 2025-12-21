@@ -1191,7 +1191,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "postgres/index",
-        "postgres/installation",
+        "postgres/installation-and-connection",
         "postgres/basic-concepts",
         "postgres/data-types",
         "postgres/sql-syntax",
@@ -1207,7 +1207,6 @@ const sidebars: SidebarsConfig = {
         "postgres/locks",
         "postgres/views-triggers",
         "postgres/stored-procedures",
-        "postgres/json-support",
       ],
     },
     {
@@ -1216,7 +1215,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "postgres/performance-optimization",
-        "postgres/monitoring",
+        "postgres/monitoring-and-troubleshooting",
         "postgres/partitioning",
         "postgres/replication",
         "postgres/high-availability",
