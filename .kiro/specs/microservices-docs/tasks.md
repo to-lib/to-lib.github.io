@@ -53,52 +53,52 @@
     - 健康检查实现
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [-] 6. 创建部署与运维文档
-  - [-] 6.1 创建 `docs/microservices/deployment.md`
+- [x] 6. 创建部署与运维文档
+  - [x] 6.1 创建 `docs/microservices/deployment.md`
     - 容器化部署最佳实践
     - Kubernetes 部署微服务
     - CI/CD 流水线配置
     - 蓝绿部署和金丝雀发布
     - _Requirements: 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 7. 创建安全文档
-  - [ ] 7.1 创建 `docs/microservices/security.md`
+- [x] 7. 创建安全文档
+  - [x] 7.1 创建 `docs/microservices/security.md`
     - 服务间认证（mTLS）
     - API 认证与授权（OAuth2/JWT）
     - 安全最佳实践清单
     - _Requirements: 8.1, 8.2, 8.3_
 
-- [ ] 8. 创建最佳实践文档
-  - [ ] 8.1 创建 `docs/microservices/best-practices.md`
+- [x] 8. 创建最佳实践文档
+  - [x] 8.1 创建 `docs/microservices/best-practices.md`
     - 服务拆分最佳实践
     - 数据管理最佳实践
     - 测试策略
     - 常见反模式和避免方法
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 9. 创建常见问题文档
-  - [ ] 9.1 创建 `docs/microservices/faq.md`
+- [x] 9. 创建常见问题文档
+  - [x] 9.1 创建 `docs/microservices/faq.md`
     - 至少 15 个常见问题及解答
     - 按主题分类组织
     - 包含代码示例
     - _Requirements: 10.1, 10.2, 10.3_
 
-- [ ] 10. 创建面试题文档
-  - [ ] 10.1 创建 `docs/microservices/interview-questions.md`
+- [x] 10. 创建面试题文档
+  - [x] 10.1 创建 `docs/microservices/interview-questions.md`
     - 基础概念面试题
     - 设计模式面试题
     - 实践经验面试题
     - 按难度分级
     - _Requirements: 11.1, 11.2, 11.3, 11.4_
 
-- [ ] 11. 创建快速参考文档
-  - [ ] 11.1 创建 `docs/microservices/quick-reference.md`
+- [x] 11. 创建快速参考文档
+  - [x] 11.1 创建 `docs/microservices/quick-reference.md`
     - 常用术语速查表
     - 常用工具和框架列表
     - 常用命令和配置速查
     - _Requirements: 12.1, 12.2, 12.3_
 
-- [ ] 12. Checkpoint - 验证文档构建
+- [x] 12. Checkpoint - 验证文档构建
   - 运行 `npm run build` 验证文档构建
   - 确保所有文件正确创建
   - 确保无构建错误

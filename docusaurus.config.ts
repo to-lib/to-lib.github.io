@@ -283,6 +283,19 @@ const config: Config = {
               label: "☸️ Kubernetes",
               to: "/docs/kubernetes",
             },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #9c27b0;'>架构</div>",
+            },
+            {
+              label: "🏛️ 微服务架构",
+              to: "/docs/microservices",
+            },
           ],
         },
         {
