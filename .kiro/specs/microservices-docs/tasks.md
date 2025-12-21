@@ -45,16 +45,16 @@
     - 限流和熔断实现
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [-] 5. 创建可观测性文档
-  - [-] 5.1 创建 `docs/microservices/observability.md`
+- [x] 5. 创建可观测性文档
+  - [x] 5.1 创建 `docs/microservices/observability.md`
     - 分布式链路追踪（Jaeger、Zipkin）
     - 日志聚合（ELK Stack）
     - 指标监控（Prometheus、Grafana）
     - 健康检查实现
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [ ] 6. 创建部署与运维文档
-  - [ ] 6.1 创建 `docs/microservices/deployment.md`
+- [-] 6. 创建部署与运维文档
+  - [-] 6.1 创建 `docs/microservices/deployment.md`
     - 容器化部署最佳实践
     - Kubernetes 部署微服务
     - CI/CD 流水线配置
