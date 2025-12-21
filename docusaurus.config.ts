@@ -331,6 +331,109 @@ const config: Config = {
         },
         {
           type: "dropdown",
+          label: "📝 面试题库",
+          position: "left",
+          items: [
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Java 面试</div>",
+            },
+            {
+              label: "☕ Java 基础面试题",
+              to: "/docs/java/interview-questions",
+            },
+            {
+              label: "🎯 Java 高级面试题",
+              to: "/docs/java/senior-interview",
+            },
+            {
+              label: "🎨 设计模式面试题",
+              to: "/docs/java-design-patterns/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #388e3c;'>Spring 生态</div>",
+            },
+            {
+              label: "🍃 Spring 面试题",
+              to: "/docs/spring/interview-questions",
+            },
+            {
+              label: "🚀 Spring Boot 面试题",
+              to: "/docs/springboot/faq",
+            },
+            {
+              label: "☁️ Spring Cloud 面试题",
+              to: "/docs/springcloud/interview-questions",
+            },
+            {
+              label: "🛍️ Spring Cloud Alibaba 面试题",
+              to: "/docs/springcloud-alibaba/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #1976d2;'>数据库 & 中间件</div>",
+            },
+            {
+              label: "🐬 MySQL 面试题",
+              to: "/docs/mysql/interview-questions",
+            },
+            {
+              label: "💾 Redis 面试题",
+              to: "/docs/redis/interview-questions",
+            },
+            {
+              label: "🐘 PostgreSQL 面试题",
+              to: "/docs/postgres/interview-questions",
+            },
+            {
+              label: "📊 Kafka 面试题",
+              to: "/docs/kafka/interview-questions",
+            },
+            {
+              label: "🚀 RocketMQ 面试题",
+              to: "/docs/rocketmq/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #9c27b0;'>其他</div>",
+            },
+            {
+              label: "🐧 Linux 面试题",
+              to: "/docs/linux/interview-questions",
+            },
+            {
+              label: "⚡ Netty 面试题",
+              to: "/docs/netty/interview-questions",
+            },
+            {
+              label: "🧮 数据结构与算法面试题",
+              to: "/docs/dsa/interview-questions",
+            },
+            {
+              label: "🦀 Rust 面试题",
+              to: "/docs/rust/interview-questions",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "🤖 AI 开发",
           position: "left",
           items: [
