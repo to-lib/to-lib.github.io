@@ -147,6 +147,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "ai/fine-tuning",
+        "ai/lora-fine-tuning",
         "ai/evaluation",
         "ai/production",
         "ai/security",
