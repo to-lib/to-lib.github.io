@@ -232,12 +232,342 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 ```
 
-**核心思路：**
+**完整实现：**
 
-- 使用 tokio 异步处理连接
-- HashMap 存储活跃连接
-- mpsc 通道广播消息
-- 消息类型（加入、离开、聊天）
+```rust
+use futures_util::{SinkExt, StreamExt};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::sync::Arc;
+use tokio::net::{TcpListener, TcpStream};
+use tokio::sync::{broadcast, RwLock};
+use tokio_tungstenite::{accept_async, tungstenite::Message};
+
+type Users = Arc<RwLock<HashMap<String, broadcast::Sender<String>>>>;
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(tag = "type")]
+enum ChatMessage {
+    Join { username: String },
+    Leave { username: String },
+    Chat { username: String, content: String },
+    Private { from: String, to: String, content: String },
+    UserList { users: Vec<String> },
+}
+
+#[tokio::main]
+async fn main() {
+    let listener = TcpListener::bind("127.0.0.1:9001").await.unwrap();
+    println!("WebSocket 服务器运行在 ws://127.0.0.1:9001");
+
+    let users: Users = Arc::new(RwLock::new(HashMap::new()));
+    let (broadcast_tx, _) = broadcast::channel::<String>(100);
+
+    while let Ok((stream, addr)) = listener.accept().await {
+        println!("新连接: {}", addr);
+        let users = Arc::clone(&users);
+        let broadcast_tx = broadcast_tx.clone();
+
+        tokio::spawn(async move {
+            if let Err(e) = handle_connection(stream, users, broadcast_tx).await {
+                eprintln!("连接处理错误: {}", e);
+            }
+        });
+    }
+}
+
+async fn handle_connection(
+    stream: TcpStream,
+    users: Users,
+    broadcast_tx: broadcast::Sender<String>,
+) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    let ws_stream = accept_async(stream).await?;
+    let (mut write, mut read) = ws_stream.split();
+
+    let mut username = String::new();
+    let mut broadcast_rx = broadcast_tx.subscribe();
+
+    // 等待用户加入消息
+    if let Some(Ok(Message::Text(text))) = read.next().await {
+        if let Ok(ChatMessage::Join { username: name }) = serde_json::from_str(&text) {
+            username = name.clone();
+
+            // 注册用户
+            {
+                let mut users_guard = users.write().await;
+                users_guard.insert(name.clone(), broadcast_tx.clone());
+            }
+
+            // 广播用户加入
+            let join_msg = serde_json::to_string(&ChatMessage::Join {
+                username: name.clone(),
+            })?;
+            let _ = broadcast_tx.send(join_msg);
+
+            // 发送用户列表
+            let user_list: Vec<String> = users.read().await.keys().cloned().collect();
+            let list_msg = serde_json::to_string(&ChatMessage::UserList { users: user_list })?;
+            write.send(Message::Text(list_msg)).await?;
+        }
+    }
+
+    if username.is_empty() {
+        return Ok(());
+    }
+
+    loop {
+        tokio::select! {
+            // 接收客户端消息
+            msg = read.next() => {
+                match msg {
+                    Some(Ok(Message::Text(text))) => {
+                        if let Ok(chat_msg) = serde_json::from_str::<ChatMessage>(&text) {
+                            match chat_msg {
+                                ChatMessage::Chat { content, .. } => {
+                                    let msg = serde_json::to_string(&ChatMessage::Chat {
+                                        username: username.clone(),
+                                        content,
+                                    })?;
+                                    let _ = broadcast_tx.send(msg);
+                                }
+                                ChatMessage::Private { to, content, .. } => {
+                                    let users_guard = users.read().await;
+                                    if let Some(tx) = users_guard.get(&to) {
+                                        let msg = serde_json::to_string(&ChatMessage::Private {
+                                            from: username.clone(),
+                                            to: to.clone(),
+                                            content,
+                                        })?;
+                                        let _ = tx.send(msg);
+                                    }
+                                }
+                                _ => {}
+                            }
+                        }
+                    }
+                    Some(Ok(Message::Close(_))) | None => break,
+                    _ => {}
+                }
+            }
+            // 接收广播消息
+            msg = broadcast_rx.recv() => {
+                if let Ok(msg) = msg {
+                    if write.send(Message::Text(msg)).await.is_err() {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    // 用户离开
+    {
+        let mut users_guard = users.write().await;
+        users_guard.remove(&username);
+    }
+
+    let leave_msg = serde_json::to_string(&ChatMessage::Leave {
+        username: username.clone(),
+    })?;
+    let _ = broadcast_tx.send(leave_msg);
+
+    Ok(())
+}
+```
+
+### 项目 4.5: 高并发短链服务
+
+**难度：** ⭐⭐⭐⭐
+
+**目标：** 实现一个高性能的短链接服务。
+
+**功能：**
+
+- 生成短链接
+- 重定向到原始 URL
+- 访问统计
+- Redis 缓存
+
+**依赖：**
+
+```toml
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres"] }
+deadpool-redis = "0.13"
+nanoid = "0.4"
+```
+
+**完整实现：**
+
+```rust
+use axum::{
+    extract::{Path, State},
+    http::StatusCode,
+    response::{IntoResponse, Redirect},
+    routing::{get, post},
+    Json, Router,
+};
+use deadpool_redis::{redis::AsyncCommands, Config as RedisConfig, Pool as RedisPool, Runtime};
+use nanoid::nanoid;
+use serde::{Deserialize, Serialize};
+use sqlx::{postgres::PgPoolOptions, PgPool};
+use std::sync::Arc;
+
+#[derive(Clone)]
+struct AppState {
+    db: PgPool,
+    redis: RedisPool,
+}
+
+#[derive(Deserialize)]
+struct CreateShortUrl {
+    url: String,
+}
+
+#[derive(Serialize)]
+struct ShortUrlResponse {
+    short_code: String,
+    short_url: String,
+}
+
+#[derive(Serialize)]
+struct UrlStats {
+    short_code: String,
+    original_url: String,
+    clicks: i64,
+}
+
+#[tokio::main]
+async fn main() {
+    // 初始化数据库
+    let db = PgPoolOptions::new()
+        .max_connections(50)
+        .connect("postgres://user:pass@localhost/shorturl")
+        .await
+        .unwrap();
+
+    // 初始化 Redis
+    let redis_cfg = RedisConfig::from_url("redis://localhost:6379");
+    let redis = redis_cfg.create_pool(Some(Runtime::Tokio1)).unwrap();
+
+    let state = AppState { db, redis };
+
+    let app = Router::new()
+        .route("/shorten", post(create_short_url))
+        .route("/:code", get(redirect_url))
+        .route("/stats/:code", get(get_stats))
+        .with_state(state);
+
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    axum::serve(listener, app).await.unwrap();
+}
+
+async fn create_short_url(
+    State(state): State<AppState>,
+    Json(payload): Json<CreateShortUrl>,
+) -> Result<Json<ShortUrlResponse>, StatusCode> {
+    let short_code = nanoid!(8);
+
+    // 存储到数据库
+    sqlx::query("INSERT INTO urls (short_code, original_url) VALUES ($1, $2)")
+        .bind(&short_code)
+        .bind(&payload.url)
+        .execute(&state.db)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+
+    // 缓存到 Redis
+    let mut redis = state.redis.get().await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    let _: () = redis
+        .set_ex(&format!("url:{}", short_code), &payload.url, 3600)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+
+    Ok(Json(ShortUrlResponse {
+        short_code: short_code.clone(),
+        short_url: format!("http://localhost:3000/{}", short_code),
+    }))
+}
+
+async fn redirect_url(
+    State(state): State<AppState>,
+    Path(code): Path<String>,
+) -> Result<impl IntoResponse, StatusCode> {
+    // 先从 Redis 查找
+    let mut redis = state.redis.get().await.map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+    let cached: Option<String> = redis
+        .get(&format!("url:{}", code))
+        .await
+        .ok();
+
+    let original_url = if let Some(url) = cached {
+        url
+    } else {
+        // 从数据库查找
+        let row: (String,) = sqlx::query_as("SELECT original_url FROM urls WHERE short_code = $1")
+            .bind(&code)
+            .fetch_one(&state.db)
+            .await
+            .map_err(|_| StatusCode::NOT_FOUND)?;
+
+        // 更新缓存
+        let _: () = redis
+            .set_ex(&format!("url:{}", code), &row.0, 3600)
+            .await
+            .unwrap_or(());
+
+        row.0
+    };
+
+    // 异步更新点击计数
+    let db = state.db.clone();
+    let code_clone = code.clone();
+    tokio::spawn(async move {
+        let _ = sqlx::query("UPDATE urls SET clicks = clicks + 1 WHERE short_code = $1")
+            .bind(&code_clone)
+            .execute(&db)
+            .await;
+    });
+
+    Ok(Redirect::temporary(&original_url))
+}
+
+async fn get_stats(
+    State(state): State<AppState>,
+    Path(code): Path<String>,
+) -> Result<Json<UrlStats>, StatusCode> {
+    let row: (String, String, i64) = sqlx::query_as(
+        "SELECT short_code, original_url, clicks FROM urls WHERE short_code = $1"
+    )
+    .bind(&code)
+    .fetch_one(&state.db)
+    .await
+    .map_err(|_| StatusCode::NOT_FOUND)?;
+
+    Ok(Json(UrlStats {
+        short_code: row.0,
+        original_url: row.1,
+        clicks: row.2,
+    }))
+}
+```
+
+**数据库表结构：**
+
+```sql
+CREATE TABLE urls (
+    id BIGSERIAL PRIMARY KEY,
+    short_code VARCHAR(10) UNIQUE NOT NULL,
+    original_url TEXT NOT NULL,
+    clicks BIGINT DEFAULT 0,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_urls_short_code ON urls(short_code);
+```
 
 ## WebAssembly 项目
 

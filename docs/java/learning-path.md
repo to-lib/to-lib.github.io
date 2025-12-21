@@ -1,262 +1,307 @@
 ---
 sidebar_position: 0
-title: Java 学习路线
+title: 后端工程师高阶 Spring 学习路线
 ---
 
-# 🧭 Java 学习路线（从零到高级后端）
+# 🧭 后端工程师高阶 Spring 学习路线
 
-这条路线适合想成为 Java 后端工程师的开发者，涵盖从基础语法到分布式系统的完整知识体系。每个阶段都有明确的目标、时间规划和实践建议。
+（偏并发、Netty、分布式、工程化）
+
+这条路线适合**有一定 Java 基础**的开发者，想要深入 Spring 生态系统，成为具备高性能、分布式架构设计能力的高级后端工程师。每个阶段都包含源码级的深度学习和企业级实践项目。
 
 > [!TIP]
-> 本学习路线基于 **JDK 1.8 (Java 8)** 版本，这是目前企业中最广泛使用的 Java 版本。建议按顺序学习，扎实掌握每个阶段后再进入下一阶段。
+> 本学习路线假设你已掌握 Java 基础语法、面向对象编程和基本的 Spring 使用。建议按顺序学习，每个阶段都要动手实践，理解原理后再进入下一阶段。
 
 ---
 
-## 阶段 1：Java 基础语法（1–2 周）
+## 阶段 1：Spring 核心机制深度掌握（源码级）
 
-**🎯 目标**：能写基础程序，理解语言核心机制
+**🎯 目标**：彻底理解 Spring 的运行机制，能在任何场景下自定义扩展
 
 ### 📌 必学内容
 
-- **基础语法**：变量、数据类型、运算符、流程控制（if/switch/for/while）
-- **面向对象**：类、对象、封装、继承、多态、接口、抽象类
-- **常用 API**：String、StringBuilder、Math、Arrays
-- **异常机制**：try/catch/finally、throw/throws、自定义异常
-- **I/O 基础**：File、InputStream、OutputStream、Reader、Writer
+#### IoC 容器核心
+
+- **`refresh()` 全流程**：理解容器启动的 12 个关键步骤
+- **BeanDefinition 解析与注册**：XML、注解、JavaConfig 三种方式的解析过程
+- **BeanFactory vs ApplicationContext**：接口层次、功能差异、使用场景
+
+#### Bean 生命周期
+
+- **完整生命周期**：实例化 → 属性填充 → 初始化 → 销毁
+- **三级缓存解决循环依赖**：singletonObjects、earlySingletonObjects、singletonFactories
+- **BeanPostProcessor 扩展点**：InstantiationAwareBeanPostProcessor、DestructionAwareBeanPostProcessor
+
+#### AOP 代理体系
+
+- **代理创建流程**：AnnotationAwareAspectJAutoProxyCreator
+- **代理链执行**：Advisor → MethodInterceptor → ProxyFactory
+- **JDK 动态代理 vs CGLib 代理**：选择策略与性能差异
+
+#### 事务管理
+
+- **事务切面**：TransactionInterceptor 工作原理
+- **PlatformTransactionManager**：不同数据源的事务管理器
+- **事务传播机制**：7 种传播行为的源码实现
+- **事务失效场景**：自调用、异常类型、非 public 方法等
 
 ### 📚 推荐文档
 
-| 主题                                      | 描述                               |
-| ----------------------------------------- | ---------------------------------- |
-| [基础语法](/docs/java/basic-syntax)       | 数据类型、变量、运算符、流程控制   |
-| [面向对象](/docs/java/oop)                | 类、对象、继承、多态、内部类、枚举 |
-| [异常处理](/docs/java/exception-handling) | 异常分类、处理机制、最佳实践       |
-| [IO 流](/docs/java/io-streams)            | 字节流、字符流、缓冲流基础         |
-| [常用类](/docs/java/common-classes)       | String、Math、包装类等常用类       |
+| 主题                                          | 描述                   |
+| --------------------------------------------- | ---------------------- |
+| [Spring 核心概念](/docs/spring/core-concepts) | IoC、DI、Bean 管理     |
+| [Spring AOP](/docs/spring/aop)                | 面向切面编程原理与实践 |
+| [Spring 事务](/docs/spring/transactions)      | 事务管理、传播机制     |
 
 ### 🛠 实践项目
 
-- 写一个**学生管理系统**（控制台版）：增删改查、文件存储
-- 写一个**个人记账本**：收支记录、统计分析、数据持久化
-- 熟练使用 **IntelliJ IDEA**：快捷键、调试、重构
+- **手写一个迷你版 Spring IoC + AOP**（支持注解配置、依赖注入、动态代理）
+- **自己实现一个 BeanPostProcessor**（如自动日志注入、属性加密解密）
+- **自己实现一个事务注解**（模拟 @Transactional，支持只读和超时配置）
+- **调试源码**：在 IDE 中逐步跟踪 `refresh()` 方法的执行过程
 
 ### ✅ 阶段目标检验
 
-- [ ] 能独立编写 200+ 行的控制台程序
-- [ ] 理解面向对象三大特性
-- [ ] 能正确处理异常并写入日志文件
+- [ ] 能画出 Spring 容器启动的完整流程图
+- [ ] 能讲清三级缓存解决循环依赖的原理
+- [ ] 能自定义 BeanPostProcessor 实现特定功能
+- [ ] 能分析事务失效的原因并给出解决方案
 
 ---
 
-## 阶段 2：Java 核心进阶（2–4 周）
+## 阶段 2：Spring Boot 自动装配体系（架构级理解）
 
-**🎯 目标**：掌握 Java 运行机制，能写高质量代码
+**🎯 目标**：掌握 Spring Boot 的"魔法"来源，能写企业级 Starter
 
 ### 📌 必学内容
 
-- **JVM 基础**：类加载机制、内存结构（堆/栈/方法区）、GC 原理
-- **泛型编程**：泛型类、泛型方法、通配符、类型擦除
-- **注解与反射**：自定义注解、反射 API、动态代理
-- **集合框架深入**：ArrayList/LinkedList 原理、HashMap/TreeMap 实现、Collections 工具类
-- **Lambda 与 Stream**：函数式接口、Lambda 表达式、Stream API
-- **单元测试**：JUnit 5、断言、Mock 测试
+#### 自动装配核心
+
+- **@SpringBootApplication 解析**：@Configuration、@EnableAutoConfiguration、@ComponentScan
+- **AutoConfigurationImportSelector**：自动配置类的加载机制
+- **SpringFactoriesLoader**：META-INF/spring.factories 文件解析
+- **Spring Boot 2.7+ 变化**：META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+
+#### 条件注解体系
+
+- **@ConditionalOnClass / @ConditionalOnMissingClass**：类存在条件
+- **@ConditionalOnBean / @ConditionalOnMissingBean**：Bean 存在条件
+- **@ConditionalOnProperty**：配置属性条件
+- **@ConditionalOnWebApplication**：Web 应用条件
+- **自定义 Condition**：实现 Condition 接口
+
+#### 配置绑定
+
+- **@ConfigurationProperties**：类型安全的配置绑定
+- **Binder API**：动态绑定配置到对象
+- **配置验证**：JSR-303 校验注解集成
+- **配置加密**：Jasypt 集成
+
+#### Starter 设计规范
+
+- **命名规范**：`{项目名}-spring-boot-starter`
+- **自动配置类设计**：条件注解、配置属性、健康检查
+- **依赖管理**：可选依赖与传递依赖
 
 ### 📚 推荐文档
 
-| 主题                                            | 描述                                     |
-| ----------------------------------------------- | ---------------------------------------- |
-| [JVM 基础](/docs/java/jvm-basics)               | JVM 架构、类加载、内存模型、垃圾回收     |
-| [泛型编程](/docs/java/generics)                 | 泛型类、泛型方法、通配符、类型擦除       |
-| [反射与注解](/docs/java/reflection-annotation)  | 反射 API、动态代理、自定义注解           |
-| [集合框架](/docs/java/collections)              | List、Set、Map 详解和性能对比            |
-| [函数式编程](/docs/java/functional-programming) | Lambda、Stream API、函数式接口           |
-| [JDK 8 新特性](/docs/java/jdk8-features)        | Lambda、Stream、Optional、新日期时间 API |
+| 主题                                                        | 描述                 |
+| ----------------------------------------------------------- | -------------------- |
+| [Spring Boot 入门](/docs/springboot/quick-start)            | 快速开始 Spring Boot |
+| [Spring Boot 自动装配](/docs/springboot/auto-configuration) | 自动装配原理         |
 
 ### 🛠 实践项目
 
-- 用 **Stream API** 重构阶段 1 的项目
-- 写一个简单的 **JSON 解析器**（手写递归下降解析）
-- 写一个 **文件扫描工具**（使用反射和注解）
-- 实现一个 **简易 IoC 容器**（理解 Spring 原理）
+- **写一个 Redis Starter**：
+  - 自动配置连接池（Lettuce/Jedis）
+  - 多种序列化方式支持（JSON/Protobuf）
+  - 健康检查端点
+  - 配置属性绑定与验证
+- **写一个 MQ Starter**：
+  - 自动装配消息生产者
+  - 消费监听器自动注册
+  - 重试机制与死信队列
+- **写一个分布式锁 Starter**：
+  - 基于 Redis 实现
+  - 注解式使用
+  - 支持可重入与超时
 
 ### ✅ 阶段目标检验
 
-- [ ] 能画出 JVM 内存结构图
-- [ ] 能用 Stream 写复杂的数据处理逻辑
-- [ ] 能用反射实现简单的框架功能
+- [ ] 能画出 Spring Boot 自动装配的完整流程
+- [ ] 能正确使用各种条件注解
+- [ ] 能独立开发一个企业级 Starter
+- [ ] 理解 Spring Boot 2.7+ 和 3.x 的配置变化
 
 ---
 
-## 阶段 3：Java 并发编程（4–6 周）
+## 阶段 3：Spring MVC 深度与高性能 Web 层
 
-**🎯 目标**：理解并发底层原理，能写高性能线程代码
+**🎯 目标**：掌握 Web 层底层机制，能做高性能优化
+
+### 📌 必学内容
+
+#### DispatcherServlet 全链路
+
+- **请求处理流程**：doDispatch 方法详解
+- **HandlerMapping**：RequestMappingHandlerMapping 原理
+- **HandlerAdapter**：RequestMappingHandlerAdapter 执行逻辑
+
+#### 参数解析与返回值处理
+
+- **HandlerMethodArgumentResolver**：参数解析器接口
+- **HandlerMethodReturnValueHandler**：返回值处理器
+- **HttpMessageConverter**：消息转换器（JSON、XML 等）
+- **自定义参数解析**：如自动注入当前登录用户
+
+#### 异常处理体系
+
+- **@ExceptionHandler**：方法级异常处理
+- **@ControllerAdvice**：全局异常处理
+- **HandlerExceptionResolver**：异常解析器链
+- **统一响应封装**：ResponseBodyAdvice
+
+#### 响应式编程（WebFlux）
+
+- **Reactor 核心**：Mono、Flux 操作符
+- **WebFlux vs Spring MVC**：编程模型差异
+- **性能对比**：阻塞 vs 非阻塞场景分析
+- **背压机制**：Backpressure 策略
+
+### 📚 推荐文档
+
+| 主题                                  | 描述               |
+| ------------------------------------- | ------------------ |
+| [Spring MVC](/docs/spring/spring-mvc) | Web 开发、请求处理 |
+
+### 🛠 实践项目
+
+- **自己实现一个参数解析器**：
+  - @CurrentUser 自动注入登录用户
+  - @RequestIP 自动注入请求 IP
+- **自己写一个全局异常处理框架**：
+  - 统一响应格式
+  - 异常码体系
+  - 异常日志记录
+- **用 WebFlux + Netty 写高并发接口**：
+  - 异步数据库访问（R2DBC）
+  - 响应式 Redis 操作
+  - 性能压测对比
+
+### ✅ 阶段目标检验
+
+- [ ] 能画出 DispatcherServlet 请求处理流程图
+- [ ] 能自定义参数解析器和返回值处理器
+- [ ] 理解 WebFlux 的适用场景与局限性
+- [ ] 能用 Reactor 编写复杂的异步处理链
+
+---
+
+## 阶段 4：Spring 与并发体系整合（高级）
+
+**🎯 目标**：让 Spring 与 Java 并发体系深度融合
 
 > [!IMPORTANT]
-> 并发编程是 Java 后端的核心技能，需要投入足够的时间深入理解。这部分内容在面试中出现频率极高。
+> 并发问题是生产环境最常见的问题之一，理解 Spring 与并发的关系至关重要。
 
 ### 📌 必学内容
 
-- **线程模型**：Thread、Runnable、Callable、Future
-- **线程池**：ThreadPoolExecutor 原理、核心参数、拒绝策略
-- **JUC 核心**：
-  - Lock 接口与 ReentrantLock
-  - AQS（AbstractQueuedSynchronizer）原理
-  - CAS 原理与原子类（AtomicInteger、AtomicReference）
-  - Condition 条件变量
-- **并发容器**：ConcurrentHashMap、CopyOnWriteArrayList、BlockingQueue
-- **内存模型**：
-  - JMM（Java Memory Model）
-  - volatile 语义与实现
-  - happens-before 规则
-- **锁机制深入**：
-  - synchronized 底层实现
-  - 对象头与 Mark Word
-  - 锁升级（偏向锁 → 轻量级锁 → 重量级锁）
+#### @Async 异步机制
+
+- **代理原理**：AsyncAnnotationBeanPostProcessor
+- **TaskExecutor 配置**：自定义线程池
+- **异常处理**：AsyncUncaughtExceptionHandler
+- **返回值处理**：Future、CompletableFuture
+
+#### Spring 线程池管理
+
+- **ThreadPoolTaskExecutor**：Spring 封装的线程池
+- **@Scheduled 调度**：定时任务线程池配置
+- **线程池监控**：暴露 Actuator 端点
+- **优雅关闭**：WaitForTasksToCompleteOnShutdown
+
+#### Spring 事务与多线程
+
+- **事务传播与线程边界**：事务不跨线程传播
+- **多线程事务失效**：子线程中事务不生效
+- **解决方案**：
+  - 编程式事务（TransactionTemplate）
+  - 分布式事务（Seata）
+  - 事件驱动（ApplicationEventPublisher）
+
+#### Bean 线程安全
+
+- **作用域与线程安全**：singleton vs prototype
+- **ThreadLocal 使用**：RequestContextHolder
+- **状态共享**：避免单例 Bean 中的可变状态
+
+#### Reactor 与背压
+
+- **背压策略**：onBackpressureBuffer、onBackpressureDrop
+- **调度器**：Schedulers.parallel()、Schedulers.boundedElastic()
+- **上下文传递**：Context API
 
 ### 📚 推荐文档
 
 | 主题                                | 描述                                     |
 | ----------------------------------- | ---------------------------------------- |
 | [多线程](/docs/java/multithreading) | 线程创建、同步、通信、线程池、并发工具类 |
-| [JVM 基础](/docs/java/jvm-basics)   | 内存模型、对象头、锁机制                 |
 | [性能优化](/docs/java/performance)  | 并发优化、锁优化策略                     |
 
 ### 🛠 实践项目
 
-- 实现一个 **简易线程池**（理解 ThreadPoolExecutor 原理）
-- 用 **Disruptor 思路** 写高性能无锁队列
-- 实现 **读写锁**（参考 ReentrantReadWriteLock）
-- 分析 **ConcurrentHashMap** 源码（JDK 7 vs JDK 8）
+- **自己实现一个可监控的线程池 Starter**：
+  - 线程池状态暴露（活跃线程数、队列大小等）
+  - Prometheus 指标集成
+  - 动态调整参数
+  - 拒绝策略告警
+- **解决"多线程下 @Transactional 失效"问题**：
+  - 编写测试用例复现问题
+  - 分析原因并给出多种解决方案
+- **用 Reactor 写高吞吐的异步链路**：
+  - 多数据源并行查询
+  - 结果聚合与超时处理
+  - 错误重试与降级
 
 ### ✅ 阶段目标检验
 
-- [ ] 能讲清 synchronized 和 ReentrantLock 的区别
-- [ ] 能画出 AQS 的核心数据结构
-- [ ] 能分析并解决死锁问题
+- [ ] 能正确配置和监控 Spring 线程池
+- [ ] 理解 Spring 事务与多线程的关系
+- [ ] 能识别和解决 Bean 的线程安全问题
+- [ ] 能用 Reactor 实现复杂的异步流程
 
 ---
 
-## 阶段 4：数据库与持久化（2–4 周）
+## 阶段 5：Spring 与 Netty 深度结合（高性能架构）
 
-**🎯 目标**：能写高性能 SQL，理解事务与索引原理
-
-### 📌 必学内容
-
-- **MySQL 核心**：
-  - 索引原理（B+ 树、聚簇索引、二级索引）
-  - 事务 ACID 与隔离级别
-  - 锁机制（行锁、表锁、间隙锁）
-  - 执行计划分析（EXPLAIN）
-  - 慢查询优化
-- **JDBC 基础**：Connection、Statement、ResultSet、连接池
-- **ORM 框架**：
-  - MyBatis：Mapper、动态 SQL、缓存机制
-  - JPA/Hibernate：实体映射、关联关系
-- **连接池**：HikariCP 原理与配置
-
-### 📚 推荐文档
-
-| 主题                                                   | 描述                 |
-| ------------------------------------------------------ | -------------------- |
-| [MySQL 基础](/docs/mysql/basic-concepts)               | 数据库基本概念       |
-| [MySQL 索引](/docs/mysql/indexes)                      | 索引原理与优化       |
-| [MySQL 事务](/docs/mysql/transactions)                 | 事务 ACID、隔离级别  |
-| [MySQL 锁](/docs/mysql/locks)                          | 行锁、表锁、死锁处理 |
-| [MySQL 性能优化](/docs/mysql/performance-optimization) | 慢查询分析、索引优化 |
-
-### 🛠 实践项目
-
-- 写一个 **小型 CRUD 服务**（Spring Boot + MyBatis）
-- 分析慢 SQL 并 **优化索引**
-- 实现 **分页查询优化**（深分页问题）
-- 模拟 **高并发下的库存扣减**（解决超卖问题）
-
-### ✅ 阶段目标检验
-
-- [ ] 能讲清 B+ 树索引的原理
-- [ ] 能分析 EXPLAIN 执行计划
-- [ ] 能正确处理事务边界
-
----
-
-## 阶段 5：Spring 全家桶（4–8 周）
-
-**🎯 目标**：掌握 Spring 生态，能写企业级后端服务
-
-> [!TIP]
-> Spring 是 Java 后端的核心框架，建议先理解原理再大量实践。
+**🎯 目标**：构建高性能网关、RPC、长连接服务
 
 ### 📌 必学内容
 
-#### Spring Framework
+#### Netty 基础回顾
 
-- **IoC / DI 原理**：BeanFactory、ApplicationContext、Bean 生命周期
-- **AOP 原理**：动态代理（JDK / CGLib）、切面、通知类型
-- **事务管理**：声明式事务、事务传播机制、事务失效场景
+- **EventLoop 模型**：线程模型与事件驱动
+- **Channel 生命周期**：ChannelHandler、ChannelPipeline
+- **ByteBuf**：零拷贝与内存管理
 
-#### Spring Boot
+#### Spring Boot + Netty 集成
 
-- **自动装配原理**：@EnableAutoConfiguration、spring.factories、条件注解
-- **Starter 机制**：自定义 Starter 开发
-- **配置体系**：application.yml、Profile、配置优先级
+- **自定义 TCP 服务**：与 Spring 生命周期整合
+- **自定义 HTTP 服务**：替代 Tomcat
+- **优雅启停**：SmartLifecycle 接口
 
-#### Spring MVC
+#### WebFlux 底层原理
 
-- **DispatcherServlet 流程**：请求处理全流程
-- **参数解析**：@RequestParam、@PathVariable、@RequestBody
-- **拦截器与过滤器**：区别与使用场景
+- **Reactor Netty**：底层网络实现
+- **HttpHandler 体系**：请求处理流程
+- **WebClient**：非阻塞 HTTP 客户端
 
-#### Spring Cloud（可选进阶）
+#### Spring Cloud Gateway
 
-- 注册中心：Nacos / Eureka
-- 服务调用：Feign
-- 网关：Gateway
-- 限流熔断：Sentinel
-- 配置中心：Config / Nacos
-
-### 📚 推荐文档
-
-| 主题                                                        | 描述                   |
-| ----------------------------------------------------------- | ---------------------- |
-| [Spring 核心概念](/docs/spring/core-concepts)               | IoC、DI、Bean 管理     |
-| [Spring AOP](/docs/spring/aop)                              | 面向切面编程原理与实践 |
-| [Spring 事务](/docs/spring/transactions)                    | 事务管理、传播机制     |
-| [Spring MVC](/docs/spring/spring-mvc)                       | Web 开发、请求处理     |
-| [Spring Boot 入门](/docs/springboot/quick-start)            | 快速开始 Spring Boot   |
-| [Spring Boot 自动装配](/docs/springboot/auto-configuration) | 自动装配原理           |
-| [Spring Cloud 入门](/docs/springcloud)                      | 微服务架构入门         |
-
-### 🛠 实践项目
-
-- 写一个 **完整的 RESTful 服务**（用户管理、权限控制）
-- 自己实现一个 **Spring Boot Starter**（如日志 Starter）
-- 用 **AOP 实现** 统一日志 / 监控框架
-- 实现 **自定义注解** 实现接口限流
-
-### ✅ 阶段目标检验
-
-- [ ] 能画出 Spring Bean 生命周期流程图
-- [ ] 能讲清动态代理的两种实现方式
-- [ ] 能独立完成一个企业级后端服务
-
----
-
-## 阶段 6：Netty 与网络编程（4–6 周）
-
-**🎯 目标**：掌握高性能网络编程，能写自定义协议服务
-
-### 📌 必学内容
-
-- **IO 模型**：BIO / NIO / AIO 对比
-- **NIO 核心**：Buffer、Channel、Selector
-- **Reactor 模型**：单线程 / 多线程 / 主从 Reactor
-- **Netty 核心组件**：
-  - EventLoop、EventLoopGroup
-  - Channel、ChannelPipeline
-  - ChannelHandler、ChannelHandlerContext
-- **编解码**：ByteBuf、Codec、MessageToByteEncoder
-- **粘包拆包**：DelimiterBasedFrameDecoder、LengthFieldBasedFrameDecoder
-- **心跳机制**：IdleStateHandler
+- **底层架构**：基于 Netty + WebFlux
+- **Filter 机制**：GlobalFilter、GatewayFilter
+- **高性能限流**：RequestRateLimiterGatewayFilterFactory
+- **动态路由**：配置中心集成
 
 ### 📚 推荐文档
 
@@ -264,198 +309,337 @@ title: Java 学习路线
 | --------------------------------------------- | ---------------------------- |
 | [Netty 概述](/docs/netty/overview)            | Netty 简介与核心概念         |
 | [Netty 核心组件](/docs/netty/core-components) | EventLoop、Channel、Pipeline |
-| [Netty ByteBuf](/docs/netty/bytebuf)          | 缓冲区管理                   |
-| [Netty 编解码](/docs/netty/codec)             | 编解码器原理与实践           |
-| [Netty 高级特性](/docs/netty/advanced)        | 高级用法与优化               |
 | [Netty 实战](/docs/netty/practical-examples)  | 实战案例                     |
 
 ### 🛠 实践项目
 
-- 写一个 **IM 即时通讯系统**（群聊、私聊、在线状态）
-- 写一个 **RPC 框架**（服务注册、负载均衡、序列化）
-- 实现 **自定义协议**（类似 Redis 的 RESP 协议）
-- 写一个 **HTTP 服务器**（简化版 Tomcat）
+- **用 Netty + Spring Boot 写一个长连接 IM 服务**：
+  - 用户上下线管理
+  - 私聊与群聊
+  - 心跳检测
+  - 消息持久化
+  - 集群方案（Redis Pub/Sub）
+- **用 Netty 写一个 RPC 框架并与 Spring 集成**：
+  - 服务注册与发现
+  - 负载均衡
+  - 序列化（Protobuf/Hessian）
+  - 超时与重试
+  - @RpcService/@RpcReference 注解
+- **自己实现一个 Gateway Filter（高性能限流）**：
+  - 令牌桶算法
+  - 分布式限流（Redis）
+  - 熔断降级
+  - 请求统计
 
 ### ✅ 阶段目标检验
 
-- [ ] 能画出 Netty 的线程模型
-- [ ] 能正确处理粘包拆包问题
-- [ ] 能实现自定义的应用层协议
+- [ ] 能将 Netty 服务与 Spring Boot 正确整合
+- [ ] 理解 WebFlux 的底层网络模型
+- [ ] 能编写高性能的自定义 Gateway Filter
+- [ ] 能设计和实现一个简单的 RPC 框架
 
 ---
 
-## 阶段 7：分布式系统（6–12 周）
+## 阶段 6：Spring Cloud 微服务体系（架构级）
 
-**🎯 目标**：掌握分布式系统核心原理，能设计高可用架构
+**🎯 目标**：掌握微服务核心能力，能做架构设计
+
+### 📌 必学内容
+
+#### 注册中心
+
+- **Nacos**：注册与发现、健康检查、元数据
+- **Eureka**：AP 模型、自我保护机制
+- **对比选择**：Nacos vs Eureka vs Consul vs Zookeeper
+
+#### 配置中心
+
+- **Nacos Config**：动态配置、配置分组、灰度发布
+- **配置加密**：敏感配置保护
+- **配置版本管理**：历史回滚
+
+#### 服务调用
+
+- **Feign 原理**：动态代理、契约解析
+- **拦截器链**：RequestInterceptor
+- **负载均衡**：Spring Cloud LoadBalancer
+- **超时与重试**：Retryer 配置
+
+#### 网关
+
+- **Spring Cloud Gateway**：路由、Filter、断言
+- **动态路由**：从配置中心加载
+- **灰度发布**：权重路由
+
+#### 熔断降级
+
+- **Sentinel**：流控规则、熔断规则、热点规则
+- **Resilience4j**：CircuitBreaker、RateLimiter、Bulkhead
+- **对比选择**：Sentinel vs Hystrix vs Resilience4j
+
+#### 链路追踪
+
+- **Sleuth + Zipkin**：Trace、Span 概念
+- **SkyWalking**：APM 监控
+- **日志关联**：TraceId 传递
+
+#### 分布式事务
+
+- **Seata**：AT、TCC、SAGA、XA 模式
+- **事务分组**：服务端配置
+- **最佳实践**：何时使用哪种模式
+
+### 📚 推荐文档
+
+| 主题                                              | 描述               |
+| ------------------------------------------------- | ------------------ |
+| [Spring Cloud 入门](/docs/springcloud)            | 微服务架构入门     |
+| [Spring Cloud Alibaba](/docs/springcloud-alibaba) | Nacos、Sentinel 等 |
+
+### 🛠 实践项目
+
+- **搭建一个完整的微服务架构**：
+  - 用户服务、订单服务、商品服务
+  - Nacos 注册与配置
+  - Gateway 网关
+  - Sentinel 限流
+  - Sleuth 链路追踪
+- **自己实现一个 Feign 拦截器链**：
+  - 请求签名
+  - Token 传递
+  - 请求日志
+- **用 Sentinel 做高并发限流**：
+  - QPS 限流
+  - 热点参数限流
+  - 系统自适应限流
+  - 黑白名单
+
+### ✅ 阶段目标检验
+
+- [ ] 能独立搭建完整的微服务架构
+- [ ] 理解各组件的工作原理和选型依据
+- [ ] 能实现自定义的 Feign 拦截器
+- [ ] 能配置合理的熔断降级策略
+
+---
+
+## 阶段 7：Spring 与分布式系统整合（高阶）
+
+**🎯 目标**：让 Spring 成为分布式架构的核心 glue layer
 
 > [!IMPORTANT]
-> 分布式系统是高级后端工程师的必备技能，需要理论与实践相结合。
+> 分布式系统是高级后端工程师的必备技能，需要深入理解 CAP 理论和各种一致性模型。
 
 ### 📌 必学内容
 
-- **分布式理论**：CAP 定理、BASE 理论、一致性模型
-- **RPC 原理**：序列化、网络传输、服务发现、负载均衡
-- **注册中心**：Nacos / Zookeeper / Consul
-- **配置中心**：Nacos Config / Apollo
-- **分布式锁**：Redis 分布式锁、Zookeeper 分布式锁、Redisson
-- **分布式事务**：2PC、3PC、TCC、SAGA、Seata
-- **消息队列**：
-  - Kafka：高吞吐、分区、消费者组
-  - RocketMQ：事务消息、延迟消息、顺序消息
-  - RabbitMQ：Exchange 类型、死信队列
-- **缓存**：
-  - Redis 数据结构与应用场景
-  - 缓存穿透、击穿、雪崩
-  - 缓存一致性
-- **限流熔断降级**：Sentinel、Hystrix、Resilience4j
+#### 分布式锁
+
+- **Redis 分布式锁**：SETNX + Lua 脚本
+- **Redisson**：看门狗机制、可重入、公平锁
+- **Zookeeper 分布式锁**：临时顺序节点
+- **对比选择**：Redis vs Zookeeper
+
+#### 分布式 ID
+
+- **Snowflake 算法**：时间戳 + 机器 ID + 序列号
+- **号段模式**：Leaf、Uid-generator
+- **数据库自增**：多实例方案
+
+#### 分布式缓存
+
+- **Redis + Spring Cache**：CacheManager 配置
+- **缓存策略**：Cache-Aside、Read/Write Through、Write Behind
+- **缓存问题**：穿透（布隆过滤器）、击穿（互斥锁）、雪崩（随机过期）
+- **缓存一致性**：延迟双删、Canal 订阅
+
+#### 消息队列
+
+- **Kafka**：高吞吐、分区、消费者组、Exactly-Once
+- **RocketMQ**：事务消息、延迟消息、顺序消息
+- **Spring Cloud Stream**：统一抽象层
+- **幂等消费**：消息去重方案
+
+#### 事件驱动架构（EDA）
+
+- **Spring ApplicationEvent**：进程内事件
+- **事件总线**：基于 MQ 的跨服务事件
+- **CQRS**：命令与查询分离
+- **Event Sourcing**：事件溯源
+
+#### 最终一致性
+
+- **TCC**：Try-Confirm-Cancel
+- **SAGA**：编排式与协调式
+- **本地消息表**：可靠消息最终一致性
+- **最大努力通知**：适用场景
 
 ### 📚 推荐文档
 
-| 主题                                              | 描述                 |
-| ------------------------------------------------- | -------------------- |
-| [Redis 入门](/docs/redis/introduction)            | Redis 基础与数据结构 |
-| [Redis 缓存策略](/docs/redis/cache-strategies)    | 缓存设计与问题处理   |
-| [Redis 分布式锁](/docs/redis/practical-examples)  | 分布式锁实现         |
-| [Kafka 入门](/docs/kafka)                         | Kafka 核心概念       |
-| [RocketMQ 入门](/docs/rocketmq)                   | RocketMQ 核心概念    |
-| [RabbitMQ 入门](/docs/rabbitmq)                   | RabbitMQ 核心概念    |
-| [微服务架构](/docs/microservices)                 | 微服务设计与实践     |
-| [Spring Cloud](/docs/springcloud)                 | Spring Cloud 组件    |
-| [Spring Cloud Alibaba](/docs/springcloud-alibaba) | Nacos、Sentinel 等   |
+| 主题                                             | 描述                 |
+| ------------------------------------------------ | -------------------- |
+| [Redis 入门](/docs/redis/introduction)           | Redis 基础与数据结构 |
+| [Redis 缓存策略](/docs/redis/cache-strategies)   | 缓存设计与问题处理   |
+| [Redis 分布式锁](/docs/redis/practical-examples) | 分布式锁实现         |
+| [Kafka 入门](/docs/kafka)                        | Kafka 核心概念       |
+| [RocketMQ 入门](/docs/rocketmq)                  | RocketMQ 核心概念    |
 
 ### 🛠 实践项目
 
-- 实现 **分布式 ID 生成器**（Snowflake 算法）
-- 实现 **Redis 分布式锁**（支持续期、可重入）
-- 用 **Kafka 实现异步削峰**（订单系统）
-- 实现 **分布式事务**（TCC 模式）
-- 设计一个 **秒杀系统**（高并发、防超卖）
+- **写一个 Redis 分布式锁 Starter**：
+  - 注解式使用：@DistributedLock
+  - 可重入支持
+  - 自动续期（看门狗）
+  - 锁等待与超时
+- **写一个基于 Kafka 的事件总线**：
+  - 事件发布与订阅
+  - 事件序列化
+  - 失败重试
+  - 事件追踪
+- **用 Spring + Redis 实现缓存一致性方案**：
+  - 延迟双删
+  - 订阅 MySQL binlog（Canal）
+  - 缓存预热
 
 ### ✅ 阶段目标检验
 
-- [ ] 能讲清 CAP 定理的含义
-- [ ] 能设计一个高可用的分布式系统
-- [ ] 能正确使用消息队列解决实际问题
+- [ ] 能选择合适的分布式锁方案
+- [ ] 能设计可靠的消息消费方案
+- [ ] 能解决缓存一致性问题
+- [ ] 理解各种最终一致性方案的适用场景
 
 ---
 
-## 阶段 8：工程化与 DevOps（持续提升）
+## 阶段 8：Spring 工程化与可观测性（生产级）
 
-**🎯 目标**：掌握工程化能力，能独立完成项目全流程
+**🎯 目标**：让 Spring 项目具备企业级可维护性
 
 ### 📌 必学内容
 
-- **版本控制**：Git 高级用法、分支策略、GitHub Actions
-- **构建工具**：Maven 生命周期、Gradle 配置
-- **容器化**：
-  - Docker：镜像构建、容器编排
-  - Docker Compose：多容器管理
-- **容器编排**：
-  - Kubernetes：Pod、Deployment、Service
-  - Helm：Chart 管理
-- **日志体系**：
-  - ELK（Elasticsearch + Logstash + Kibana）
-  - Loki + Grafana
-- **监控告警**：
-  - Prometheus + Grafana
-  - SkyWalking / Zipkin（链路追踪）
+#### Spring Boot Actuator
+
+- **内置端点**：/health、/info、/metrics、/beans
+- **自定义端点**：@Endpoint 注解
+- **端点安全**：暴露策略与权限控制
+
+#### Micrometer 指标体系
+
+- **指标类型**：Counter、Gauge、Timer、DistributionSummary
+- **自定义指标**：MeterRegistry 使用
+- **维度标签**：Tags 设计规范
+
+#### Prometheus + Grafana
+
+- **Prometheus 集成**：micrometer-registry-prometheus
+- **PromQL 查询**：常用查询语句
+- **Grafana 面板**：JVM、HTTP、自定义业务指标
+- **告警规则**：AlertManager 配置
+
+#### 日志体系
+
+- **Logback 配置**：日志级别、滚动策略、异步日志
+- **日志格式化**：JSON 格式化、TraceId 注入
+- **ELK Stack**：Elasticsearch + Logstash + Kibana
+- **Loki**：轻量级日志聚合
+
+#### 配置管理
+
+- **多环境配置**：dev / test / staging / prod
+- **配置外部化**：配置中心、环境变量、K8s ConfigMap
+- **敏感配置**：加密与密钥管理
+
+#### CI/CD
+
+- **GitHub Actions**：自动构建、测试、部署
+- **Docker 镜像构建**：多阶段构建、Jib 插件
+- **Kubernetes 部署**：Deployment、Service、Ingress
+- **蓝绿部署 / 金丝雀发布**：策略与实践
 
 ### 📚 推荐文档
 
-| 主题                                | 描述                 |
-| ----------------------------------- | -------------------- |
-| [构建工具](/docs/java/build-tools)  | Maven/Gradle 配置    |
-| [Docker 入门](/docs/docker)         | Docker 基础与实践    |
-| [Kubernetes 入门](/docs/kubernetes) | K8s 核心概念与实践   |
-| [Linux 基础](/docs/linux)           | Linux 常用命令与配置 |
-| [Nginx 入门](/docs/nginx)           | Nginx 配置与优化     |
+| 主题                                | 描述               |
+| ----------------------------------- | ------------------ |
+| [构建工具](/docs/java/build-tools)  | Maven/Gradle 配置  |
+| [Docker 入门](/docs/docker)         | Docker 基础与实践  |
+| [Kubernetes 入门](/docs/kubernetes) | K8s 核心概念与实践 |
 
 ### 🛠 实践项目
 
-- 给项目配置 **CI/CD 流水线**（GitHub Actions / Jenkins）
-- 用 **Docker** 部署 Spring Boot 服务
-- 用 **K8s** 部署微服务集群
-- 搭建 **完整的监控体系**（Prometheus + Grafana）
+- **给 Spring Boot 服务接入 Prometheus**：
+  - 自定义业务指标
+  - JVM 监控面板
+  - HTTP 请求监控
+  - 告警规则配置
+- **用 GitHub Actions 自动构建 + 部署**：
+  - 单元测试
+  - 代码质量检查
+  - Docker 镜像推送
+  - K8s 自动部署
+- **用 Docker Compose 管理微服务集群**：
+  - 多服务编排
+  - 网络配置
+  - 数据卷管理
+  - 健康检查
 
 ### ✅ 阶段目标检验
 
-- [ ] 能独立完成项目的 Docker 化
-- [ ] 能配置 CI/CD 自动化流水线
-- [ ] 能搭建基本的监控告警系统
+- [ ] 能配置完整的监控告警体系
+- [ ] 能设计合理的日志架构
+- [ ] 能配置 CI/CD 流水线
+- [ ] 能使用 Docker/K8s 部署服务
 
 ---
 
-## 阶段 9：高频面试方向（随时补充）
-
-**🎯 目标**：系统准备面试，查漏补缺
-
-### 📌 核心面试题方向
-
-| 方向          | 重点内容                                   |
-| ------------- | ------------------------------------------ |
-| **Java 并发** | 线程池、锁机制、JMM、volatile、CAS、AQS    |
-| **JVM**       | 内存模型、GC 算法、类加载、调优            |
-| **MySQL**     | 索引原理、事务隔离级别、锁、SQL 优化       |
-| **Redis**     | 数据结构、持久化、集群、分布式锁、缓存问题 |
-| **Spring**    | IoC/AOP 原理、Bean 生命周期、事务失效场景  |
-| **分布式**    | CAP、分布式锁、分布式事务、消息队列        |
-| **设计模式**  | 单例、工厂、代理、策略、模板方法、观察者   |
-| **系统设计**  | 秒杀系统、短链系统、feed 流、IM 系统       |
-
-### 📚 推荐文档
-
-| 主题                                        | 描述                |
-| ------------------------------------------- | ------------------- |
-| [Java 面试题](/docs/interview)              | 高频面试题汇总      |
-| [Java 设计模式](/docs/java-design-patterns) | 23 种设计模式详解   |
-| [最佳实践](/docs/java/best-practices)       | Java 编码规范与实践 |
-| [常见问题](/docs/java/faq)                  | 常见问题解答        |
-
----
-
-## 📚 总结：最精简的 Java 学习路径图
+## 📚 总结：高阶 Spring 学习路径图
 
 ```text
-┌────────────────────────────────────────────────────────────────┐
-│                    Java 后端工程师学习路径                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  阶段 1    阶段 2    阶段 3    阶段 4    阶段 5                  │
-│    │        │        │        │        │                       │
-│    ▼        ▼        ▼        ▼        ▼                       │
-│  基础语法 → 核心进阶 → 并发编程 → 数据库 → Spring                 │
-│  (1-2周)   (2-4周)   (4-6周)  (2-4周)  (4-8周)                  │
-│                                                                │
-│                         │                                      │
-│                         ▼                                      │
-│              ┌─────────────────────┐                           │
-│              │      阶段 6         │                           │
-│              │   Netty 网络编程    │                           │
-│              │     (4-6周)         │                           │
-│              └─────────────────────┘                           │
-│                         │                                      │
-│                         ▼                                      │
-│              ┌─────────────────────┐                           │
-│              │      阶段 7         │                           │
-│              │    分布式系统       │                           │
-│              │     (6-12周)        │                           │
-│              └─────────────────────┘                           │
-│                         │                                      │
-│                         ▼                                      │
-│              ┌─────────────────────┐                           │
-│              │      阶段 8         │                           │
-│              │   工程化 DevOps     │                           │
-│              │     (持续提升)       │                           │
-│              └─────────────────────┘                           │
-│                         │                                      │
-│                         ▼                                      │
-│              ┌─────────────────────┐                           │
-│              │      阶段 9         │                           │
-│              │    面试准备         │                           │
-│              │     (随时补充)       │                           │
-│              └─────────────────────┘                           │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│              后端工程师高阶 Spring 学习路径                            │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                      核心框架层                              │    │
+│  │                                                             │    │
+│  │    阶段 1              阶段 2              阶段 3            │    │
+│  │      │                  │                  │                │    │
+│  │      ▼                  ▼                  ▼                │    │
+│  │   Spring 核心    →   Spring Boot    →   Spring MVC         │    │
+│  │   (源码级)           (自动装配)          (高性能 Web)        │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                              │                                      │
+│                              ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                      高性能层                                │    │
+│  │                                                             │    │
+│  │           阶段 4              阶段 5                         │    │
+│  │             │                  │                            │    │
+│  │             ▼                  ▼                            │    │
+│  │        Spring 并发    →    Spring + Netty                   │    │
+│  │         (多线程整合)        (高性能架构)                      │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                              │                                      │
+│                              ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                      分布式层                                │    │
+│  │                                                             │    │
+│  │           阶段 6              阶段 7                         │    │
+│  │             │                  │                            │    │
+│  │             ▼                  ▼                            │    │
+│  │       Spring Cloud    →    分布式系统整合                    │    │
+│  │        (微服务)            (锁/缓存/MQ)                      │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                              │                                      │
+│                              ▼                                      │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                      工程化层                                │    │
+│  │                                                             │    │
+│  │                       阶段 8                                 │    │
+│  │                         │                                   │    │
+│  │                         ▼                                   │    │
+│  │                   工程化与可观测性                            │    │
+│  │                (监控/日志/CI/CD)                             │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -464,36 +648,51 @@ title: Java 学习路线
 
 > [!TIP] > **高效学习的关键**
 >
-> 1. **动手实践** > 单纯看书/视频
-> 2. **理解原理** > 死记硬背
-> 3. **写项目** > 只刷算法题
-> 4. **看源码** > 只用框架
+> 1. **源码阅读** > 只看文档（真正理解框架原理）
+> 2. **动手实践** > 单纯看视频（写 Starter、写框架）
+> 3. **问题驱动** > 漫无目的（带着问题去学习）
+> 4. **生产验证** > 只做 Demo（在真实项目中应用）
 
 ### 时间规划建议
 
-| 目标           | 预计时间   | 重点                           |
-| -------------- | ---------- | ------------------------------ |
-| **初级开发者** | 2-3 个月   | 阶段 1-2 + Spring Boot 基础    |
-| **中级开发者** | 6-8 个月   | 阶段 1-5 + 基础分布式          |
-| **高级开发者** | 12-18 个月 | 全部阶段 + 源码阅读 + 系统设计 |
+| 目标               | 预计时间   | 重点                       |
+| ------------------ | ---------- | -------------------------- |
+| **资深开发者**     | 3-6 个月   | 阶段 1-3 + 基础微服务      |
+| **高级后端工程师** | 6-12 个月  | 全部阶段 + 源码阅读        |
+| **架构师方向**     | 12-24 个月 | 全部阶段 + 系统设计 + 带队 |
 
 ### 推荐学习资源
 
-- **官方文档**：[Java Documentation](https://docs.oracle.com/javase/8/docs/)
-- **书籍**：《Java 核心技术》《深入理解 Java 虚拟机》《Java 并发编程实战》
-- **实践**：GitHub 开源项目、LeetCode 算法练习
+**官方文档**：
+
+- [Spring Framework](https://docs.spring.io/spring-framework/reference/)
+- [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [Spring Cloud](https://spring.io/projects/spring-cloud)
+
+**书籍**：
+
+- 《Spring 揭秘》（王福强）
+- 《Spring Boot 编程思想》（小马哥）
+- 《深入理解 Java 虚拟机》
+- 《Netty 实战》
+
+**源码阅读**：
+
+- Spring Framework 源码
+- Spring Boot 源码
+- 开源项目：RuoYi、mall、JeecgBoot
 
 ---
 
 ## 🔗 相关资源
 
-- [Java 设计模式](/docs/java-design-patterns) - 23 种设计模式详解
-- [Spring Framework](/docs/spring) - Spring 核心框架
+- [Spring 核心概念](/docs/spring/core-concepts) - IoC、DI、Bean 管理
+- [Spring AOP](/docs/spring/aop) - 面向切面编程
 - [Spring Boot](/docs/springboot) - Spring Boot 全教程
 - [Spring Cloud](/docs/springcloud) - 微服务架构
 - [Netty](/docs/netty) - 高性能网络框架
-- [MySQL](/docs/mysql) - MySQL 数据库
 - [Redis](/docs/redis) - Redis 缓存
 - [Kafka](/docs/kafka) - 消息队列
+- [MySQL](/docs/mysql) - MySQL 数据库
 
-> 祝你学习顺利，早日成为优秀的 Java 后端工程师！🚀
+> 🚀 祝你成为优秀的高级后端工程师！掌握 Spring 生态，驾驭分布式架构！

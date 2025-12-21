@@ -99,6 +99,212 @@ enum Poll<T> {
 }
 ```
 
+## Pin 和 Unpin 深度解析
+
+### 为什么需要 Pin？
+
+在异步编程中，编译器会将 `async` 块转换为状态机。这个状态机可能包含**自引用结构体**（一个字段引用另一个字段），如果这个结构体被移动，引用就会失效。
+
+```rust
+// async 块被编译成类似这样的状态机
+struct AsyncStateMachine {
+    data: String,
+    // 这是个自引用：指向 data 字段
+    reference: *const String,  // 如果结构体移动，这个指针失效！
+}
+```
+
+### Pin 的作用
+
+`Pin<P>` 保证被包裹的值**不会被移动**：
+
+```rust
+use std::pin::Pin;
+use std::marker::PhantomPinned;
+
+struct SelfReferential {
+    data: String,
+    self_ptr: *const String,
+    _marker: PhantomPinned,  // 标记为 !Unpin
+}
+
+impl SelfReferential {
+    fn new(data: String) -> Self {
+        SelfReferential {
+            data,
+            self_ptr: std::ptr::null(),
+            _marker: PhantomPinned,
+        }
+    }
+
+    fn init(self: Pin<&mut Self>) {
+        let self_ptr = &self.data as *const String;
+        // 安全：我们不会移动 self
+        unsafe {
+            self.get_unchecked_mut().self_ptr = self_ptr;
+        }
+    }
+
+    fn get_data(self: Pin<&Self>) -> &str {
+        &self.data
+    }
+}
+```
+
+### Unpin Trait
+
+- **Unpin**：类型可以安全地从 `Pin` 中移出（大多数类型默认实现）
+- **!Unpin**：类型不能从 `Pin` 中移出（自引用类型）
+
+```rust
+use std::marker::Unpin;
+
+// 大多数类型自动实现 Unpin
+fn is_unpin<T: Unpin>() {}
+
+fn main() {
+    is_unpin::<i32>();      // ✅ 基本类型
+    is_unpin::<String>();   // ✅ String
+    is_unpin::<Vec<i32>>(); // ✅ Vec
+
+    // async 块生成的 Future 通常是 !Unpin
+    // is_unpin::<impl Future<Output = ()>>();  // ❌ 通常不行
+}
+```
+
+### Pin 的创建和使用
+
+```rust
+use std::pin::Pin;
+
+fn main() {
+    // 方法 1：Box::pin（堆上固定）
+    let mut boxed = Box::pin(async {
+        println!("我被 pin 住了！");
+    });
+
+    // 方法 2：pin! 宏（栈上固定，需要 tokio）
+    // tokio::pin!(future);
+
+    // 方法 3：手动 pin（需要 unsafe）
+    let mut data = String::from("hello");
+    let pinned = unsafe { Pin::new_unchecked(&mut data) };
+}
+```
+
+### Future 为什么需要 Pin
+
+```rust
+use std::future::Future;
+use std::pin::Pin;
+use std::task::{Context, Poll};
+
+// Future trait 的 poll 方法接收 Pin<&mut Self>
+// 这确保 Future 在多次 poll 之间不会被移动
+trait MyFuture {
+    type Output;
+    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+}
+
+// 如果 Future 实现了 Unpin，可以安全移动
+async fn example() {
+    let future = async { 42 };
+
+    // 使用 Box::pin 将 Future 固定在堆上
+    let mut pinned = Box::pin(future);
+
+    // 现在可以安全地 poll
+    use std::task::{Context, RawWaker, RawWakerVTable, Waker};
+
+    fn dummy_waker() -> Waker {
+        fn no_op(_: *const ()) {}
+        fn clone(_: *const ()) -> RawWaker {
+            RawWaker::new(std::ptr::null(), &VTABLE)
+        }
+        static VTABLE: RawWakerVTable = RawWakerVTable::new(clone, no_op, no_op, no_op);
+        unsafe { Waker::from_raw(RawWaker::new(std::ptr::null(), &VTABLE)) }
+    }
+
+    let waker = dummy_waker();
+    let mut cx = Context::from_waker(&waker);
+
+    // poll 返回 Poll::Ready(42)
+    let _ = pinned.as_mut().poll(&mut cx);
+}
+```
+
+### async/await 编译器展开
+
+`async fn` 会被编译器转换为状态机：
+
+```rust
+// 原始代码
+async fn fetch_data() -> String {
+    let url = "https://example.com".to_string();
+    let response = http_get(&url).await;  // 第一个 await 点
+    let parsed = parse(response).await;    // 第二个 await 点
+    parsed
+}
+
+// 编译器大致展开为：
+enum FetchDataState {
+    Start,
+    WaitingHttpGet { url: String, future: HttpGetFuture },
+    WaitingParse { future: ParseFuture },
+    Done,
+}
+
+struct FetchDataFuture {
+    state: FetchDataState,
+}
+
+impl Future for FetchDataFuture {
+    type Output = String;
+
+    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
+        // 根据当前状态执行相应逻辑
+        // 每个 await 点对应一个状态转换
+        loop {
+            match &mut self.state {
+                FetchDataState::Start => {
+                    let url = "https://example.com".to_string();
+                    let future = http_get(&url);
+                    self.state = FetchDataState::WaitingHttpGet { url, future };
+                }
+                FetchDataState::WaitingHttpGet { future, .. } => {
+                    match Pin::new(future).poll(cx) {
+                        Poll::Ready(response) => {
+                            let future = parse(response);
+                            self.state = FetchDataState::WaitingParse { future };
+                        }
+                        Poll::Pending => return Poll::Pending,
+                    }
+                }
+                FetchDataState::WaitingParse { future } => {
+                    match Pin::new(future).poll(cx) {
+                        Poll::Ready(parsed) => {
+                            self.state = FetchDataState::Done;
+                            return Poll::Ready(parsed);
+                        }
+                        Poll::Pending => return Poll::Pending,
+                    }
+                }
+                FetchDataState::Done => panic!("polled after completion"),
+            }
+        }
+    }
+}
+```
+
+### Pin 最佳实践
+
+| 场景        | 推荐做法                                          |
+| ----------- | ------------------------------------------------- |
+| 创建 Future | 使用 `Box::pin()` 或 `tokio::pin!()`              |
+| 实现 Future | 如果不含自引用，添加 `impl Unpin for MyFuture {}` |
+| 存储 Future | 使用 `Pin<Box<dyn Future<Output = T>>>`           |
+| 传递 Future | 接受 `impl Future` 让编译器处理                   |
+
 ## Tokio 运行时
 
 Tokio 是 Rust 最流行的异步运行时。

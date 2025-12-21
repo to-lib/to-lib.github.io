@@ -42,13 +42,13 @@ fn main() {
             thread::sleep(Duration::from_millis(1));
         }
     });
-    
+
     // 主线程继续执行
     for i in 1..5 {
         println!("主线程中的数字 {}!", i);
         thread::sleep(Duration::from_millis(1));
     }
-    
+
     // 主线程结束时,所有线程都会被终止
 }
 ```
@@ -66,12 +66,12 @@ fn main() {
             thread::sleep(Duration::from_millis(1));
         }
     });
-    
+
     for i in 1..5 {
         println!("主线程中的数字 {}!", i);
         thread::sleep(Duration::from_millis(1));
     }
-    
+
     // 等待线程结束
     handle.join().unwrap();
     println!("所有线程执行完毕");
@@ -85,14 +85,14 @@ use std::thread;
 
 fn main() {
     let v = vec![1, 2, 3];
-    
+
     // move 关键字转移所有权
     let handle = thread::spawn(move || {
         println!("向量: {:?}", v);
     });
-    
+
     // println!("{:?}", v);  // 错误:v 已被移动
-    
+
     handle.join().unwrap();
 }
 ```
@@ -111,7 +111,7 @@ fn main() {
         }
         sum
     });
-    
+
     // 获取线程返回值
     let result = handle.join().unwrap();
     println!("结果: {}", result);  // 5050
@@ -127,11 +127,11 @@ fn main() {
     let builder = thread::Builder::new()
         .name("worker-1".to_string())
         .stack_size(4 * 1024 * 1024);  // 4MB 栈
-    
+
     let handle = builder.spawn(|| {
         println!("线程名: {:?}", thread::current().name());
     }).unwrap();
-    
+
     handle.join().unwrap();
 }
 ```
@@ -149,13 +149,13 @@ use std::thread;
 fn main() {
     // 创建通道
     let (tx, rx) = mpsc::channel();
-    
+
     thread::spawn(move || {
         let val = String::from("hi");
         tx.send(val).unwrap();
         // println!("{}", val);  // 错误:val 已被发送
     });
-    
+
     // 接收消息(阻塞)
     let received = rx.recv().unwrap();
     println!("收到: {}", received);
@@ -170,15 +170,15 @@ use std::thread;
 
 fn main() {
     let (tx, rx) = mpsc::channel();
-    
+
     thread::spawn(move || {
         tx.send("hello").unwrap();
     });
-    
+
     // recv():阻塞直到收到消息
     let msg = rx.recv().unwrap();
     println!("收到: {}", msg);
-    
+
     // try_recv():非阻塞,立即返回
     match rx.try_recv() {
         Ok(msg) => println!("收到: {}", msg),
@@ -196,7 +196,7 @@ use std::time::Duration;
 
 fn main() {
     let (tx, rx) = mpsc::channel();
-    
+
     thread::spawn(move || {
         let vals = vec![
             String::from("hi"),
@@ -204,13 +204,13 @@ fn main() {
             String::from("the"),
             String::from("thread"),
         ];
-        
+
         for val in vals {
             tx.send(val).unwrap();
             thread::sleep(Duration::from_secs(1));
         }
     });
-    
+
     // 将 rx 当作迭代器
     for received in rx {
         println!("收到: {}", received);
@@ -226,18 +226,18 @@ use std::thread;
 
 fn main() {
     let (tx, rx) = mpsc::channel();
-    
+
     // 克隆发送者
     let tx1 = tx.clone();
-    
+
     thread::spawn(move || {
         tx.send(String::from("线程1: hi")).unwrap();
     });
-    
+
     thread::spawn(move || {
         tx1.send(String::from("线程2: hello")).unwrap();
     });
-    
+
     for received in rx {
         println!("收到: {}", received);
     }
@@ -253,7 +253,7 @@ use std::thread;
 fn main() {
     // 创建容量为3的有界通道
     let (tx, rx) = mpsc::sync_channel(3);
-    
+
     thread::spawn(move || {
         for i in 1..=5 {
             println!("发送: {}", i);
@@ -261,9 +261,9 @@ fn main() {
             println!("已发送: {}", i);
         }
     });
-    
+
     thread::sleep(std::time::Duration::from_secs(2));
-    
+
     for received in rx {
         println!("收到: {}", received);
     }
@@ -279,13 +279,13 @@ use std::sync::Mutex;
 
 fn main() {
     let m = Mutex::new(5);
-    
+
     {
         // 获取锁
         let mut num = m.lock().unwrap();
         *num = 6;
     }  // 锁在这里自动释放
-    
+
     println!("m = {:?}", m);
 }
 ```
@@ -300,7 +300,7 @@ fn main() {
     // Arc: 原子引用计数
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
-    
+
     for _ in 0..10 {
         let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
@@ -309,11 +309,11 @@ fn main() {
         });
         handles.push(handle);
     }
-    
+
     for handle in handles {
         handle.join().unwrap();
     }
-    
+
     println!("结果: {}", *counter.lock().unwrap());  // 10
 }
 ```
@@ -325,13 +325,13 @@ use std::sync::Mutex;
 
 fn main() {
     let data = Mutex::new(vec![1, 2, 3]);
-    
+
     {
         let mut v = data.lock().unwrap();
         v.push(4);
         // 锁会在作用域结束时自动释放
     }
-    
+
     println!("{:?}", data);
 }
 ```
@@ -345,7 +345,7 @@ use std::thread;
 fn main() {
     let data = Arc::new(RwLock::new(vec![1, 2, 3]));
     let mut handles = vec![];
-    
+
     // 多个读线程可以同时访问
     for i in 0..5 {
         let data = Arc::clone(&data);
@@ -355,7 +355,7 @@ fn main() {
         });
         handles.push(handle);
     }
-    
+
     // 写线程需要独占访问
     let data_clone = Arc::clone(&data);
     let handle = thread::spawn(move || {
@@ -364,7 +364,7 @@ fn main() {
         println!("写入完成");
     });
     handles.push(handle);
-    
+
     for handle in handles {
         handle.join().unwrap();
     }
@@ -381,7 +381,7 @@ use std::thread;
 fn main() {
     let counter = Arc::new(AtomicUsize::new(0));
     let mut handles = vec![];
-    
+
     for _ in 0..10 {
         let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
@@ -392,11 +392,11 @@ fn main() {
         });
         handles.push(handle);
     }
-    
+
     for handle in handles {
         handle.join().unwrap();
     }
-    
+
     println!("结果: {}", counter.load(Ordering::SeqCst));
 }
 ```
@@ -415,16 +415,16 @@ use std::thread;
 
 fn main() {
     let rc = Rc::new(5);
-    
+
     // 错误: Rc<T> 没有实现 Send
     // thread::spawn(move || {
     //     println!("{}", rc);
     // });
-    
+
     // 使用 Arc<T> 代替
     use std::sync::Arc;
     let arc = Arc::new(5);
-    
+
     thread::spawn(move || {
         println!("{}", arc);
     });
@@ -463,7 +463,7 @@ fn main() {
     let fut = async {
         println!("异步块");
     };
-    
+
     // 注意:异步代码需要运行时执行
 }
 ```
@@ -524,12 +524,12 @@ async fn main() {
         sleep(Duration::from_secs(1)).await;
         println!("任务1完成");
     });
-    
+
     let task2 = tokio::spawn(async {
         sleep(Duration::from_secs(1)).await;
         println!("任务2完成");
     });
-    
+
     // 等待所有任务
     let _ = tokio::join!(task1, task2);
 }
@@ -545,13 +545,13 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let listener = TcpListener::bind("127.0.0.1:8080").await?;
     println!("服务器运行在 http://127.0.0.1:8080");
-    
+
     loop {
         let (mut socket, _) = listener.accept().await?;
-        
+
         tokio::spawn(async move {
             let mut buffer = [0; 1024];
-            
+
             match socket.read(&mut buffer).await {
                 Ok(_) => {
                     let response = "HTTP/1.1 200 OK\r\n\r\nHello from Tokio!";
@@ -581,7 +581,7 @@ async fn main() {
             "第二个完成"
         }
     };
-    
+
     println!("结果: {}", result);
 }
 ```
@@ -599,13 +599,13 @@ async fn main() {
         async { sleep(Duration::from_secs(1)).await; "B" }
     );
     println!("结果: {}, {}", a, b);
-    
+
     // try_join!: 任何一个失败则返回
     let result = tokio::try_join!(
         async { Ok::<_, &str>("成功1") },
         async { Ok::<_, &str>("成功2") }
     );
-    
+
     match result {
         Ok((a, b)) => println!("都成功: {}, {}", a, b),
         Err(e) => println!("失败: {}", e),
@@ -628,7 +628,7 @@ async fn main() {
             "完成"
         }
     ).await;
-    
+
     match result {
         Ok(msg) => println!("及时完成: {}", msg),
         Err(_) => println!("超时!"),
@@ -654,19 +654,19 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 impl ThreadPool {
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
-        
+
         let (sender, receiver) = mpsc::channel();
         let receiver = Arc::new(Mutex::new(receiver));
-        
+
         let mut workers = Vec::with_capacity(size);
-        
+
         for id in 0..size {
             workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
-        
+
         ThreadPool { workers, sender }
     }
-    
+
     pub fn execute<F>(&self, f: F)
     where
         F: FnOnce() + Send + 'static,
@@ -688,20 +688,20 @@ impl Worker {
             println!("Worker {} 执行任务", id);
             job();
         });
-        
+
         Worker { id, thread }
     }
 }
 
 fn main() {
     let pool = ThreadPool::new(4);
-    
+
     for i in 0..10 {
         pool.execute(move || {
             println!("执行任务 {}", i);
         });
     }
-    
+
     thread::sleep(std::time::Duration::from_secs(2));
 }
 ```
@@ -718,18 +718,18 @@ use rayon::prelude::*;
 
 fn main() {
     let numbers: Vec<i32> = (1..=1000).collect();
-    
+
     // 并行迭代
     let sum: i32 = numbers.par_iter().sum();
     println!("和: {}", sum);
-    
+
     // 并行过滤和映射
     let result: Vec<_> = numbers
         .par_iter()
         .filter(|&&x| x % 2 == 0)
         .map(|&x| x * x)
         .collect();
-    
+
     println!("前10个结果: {:?}", &result[..10]);
 }
 ```
@@ -745,11 +745,11 @@ use std::thread;
 // 好: 使用通道通信
 fn good_pattern() {
     let (tx, rx) = mpsc::channel();
-    
+
     thread::spawn(move || {
         tx.send("数据".to_string()).unwrap();
     });
-    
+
     let data = rx.recv().unwrap();
     println!("{}", data);
 }
@@ -765,7 +765,7 @@ use std::thread;
 fn shared_state_pattern() {
     let data = Arc::new(Mutex::new(Vec::new()));
     let data_clone = Arc::clone(&data);
-    
+
     thread::spawn(move || {
         data_clone.lock().unwrap().push(1);
     });
@@ -781,16 +781,16 @@ use std::thread;
 fn avoid_deadlock() {
     let lock1 = Arc::new(Mutex::new(1));
     let lock2 = Arc::new(Mutex::new(2));
-    
+
     // 好: 统一的锁获取顺序
     let lock1_clone = Arc::clone(&lock1);
     let lock2_clone = Arc::clone(&lock2);
-    
+
     thread::spawn(move || {
         let _l1 = lock1_clone.lock().unwrap();
         let _l2 = lock2_clone.lock().unwrap();
     });
-    
+
     // 使用相同的顺序
     let _l1 = lock1.lock().unwrap();
     let _l2 = lock2.lock().unwrap();
@@ -804,17 +804,17 @@ use std::thread;
 
 fn main() {
     let mut data = vec![1, 2, 3];
-    
+
     thread::scope(|s| {
         s.spawn(|| {
             println!("数据: {:?}", data);
         });
-        
+
         s.spawn(|| {
             data.push(4);
         });
     });
-    
+
     // 作用域结束后可以继续使用 data
     println!("最终数据: {:?}", data);
 }
@@ -822,13 +822,13 @@ fn main() {
 
 ### 5. 选择合适的同步原语
 
-| 场景 | 推荐方案 |
-|------|----------|
-| 简单计数器 | `AtomicUsize` |
-| 小数据保护 | `Mutex<T>` |
-| 读多写少 | `RwLock<T>` |
+| 场景       | 推荐方案        |
+| ---------- | --------------- |
+| 简单计数器 | `AtomicUsize`   |
+| 小数据保护 | `Mutex<T>`      |
+| 读多写少   | `RwLock<T>`     |
 | 线程间通信 | `mpsc::channel` |
-| 异步任务 | `tokio::spawn` |
+| 异步任务   | `tokio::spawn`  |
 
 ## 性能调优
 
@@ -839,7 +839,7 @@ fn main() {
 fn bad_locking() {
     use std::sync::Mutex;
     let data = Mutex::new(vec![1, 2, 3]);
-    
+
     let mut v = data.lock().unwrap();
     // 执行大量工作...
     v.push(4);
@@ -849,9 +849,9 @@ fn bad_locking() {
 fn good_locking() {
     use std::sync::Mutex;
     let data = Mutex::new(vec![1, 2, 3]);
-    
+
     // 执行大量工作...
-    
+
     // 只在必要时获取锁
     data.lock().unwrap().push(4);
 }
@@ -865,7 +865,7 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 fn main() {
     // 原子操作比 Mutex 更快
     let counter = AtomicUsize::new(0);
-    
+
     counter.fetch_add(1, Ordering::Relaxed);
     println!("计数: {}", counter.load(Ordering::Relaxed));
 }
@@ -878,12 +878,12 @@ use std::sync::mpsc;
 
 fn batch_processing() {
     let (tx, rx) = mpsc::channel();
-    
+
     // 批量发送
     for i in 0..1000 {
         tx.send(i).unwrap();
     }
-    
+
     // 批量处理
     let batch: Vec<_> = rx.try_iter().collect();
     println!("处理 {} 个项目", batch.len());
@@ -899,11 +899,11 @@ Rust 的类型系统在编译时防止数据竞争:
 ```rust
 // Rust 编译器会拒绝这段代码
 // let mut data = vec![1, 2, 3];
-// 
+//
 // thread::spawn(|| {
 //     data.push(4);  // 错误: 数据竞争
 // });
-// 
+//
 // data.push(5);  // 错误: 数据竞争
 ```
 
@@ -917,7 +917,7 @@ use std::thread;
 fn potential_deadlock() {
     let lock1 = Mutex::new(1);
     let lock2 = Mutex::new(2);
-    
+
     // 线程1: lock1 -> lock2
     // 线程2: lock2 -> lock1
     // 可能导致死锁
@@ -927,6 +927,211 @@ fn potential_deadlock() {
 ### 3. 优先级反转
 
 使用优先级继承或优先级天花板协议解决。
+
+## Crossbeam 高级并发
+
+crossbeam 是 Rust 生态中最强大的并发工具库，提供了比标准库更强大的并发原语。
+
+### 安装依赖
+
+```toml
+[dependencies]
+crossbeam = "0.8"
+# 或单独使用
+crossbeam-channel = "0.5"
+crossbeam-utils = "0.8"
+```
+
+### crossbeam-channel
+
+crossbeam-channel 提供比 `std::sync::mpsc` 更强大的通道实现：
+
+```rust
+use crossbeam_channel::{bounded, unbounded, select};
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    // 无界通道（类似 std::mpsc::channel）
+    let (s, r) = unbounded();
+    s.send("hello").unwrap();
+    println!("{}", r.recv().unwrap());
+
+    // 有界通道（缓冲区满时阻塞）
+    let (s, r) = bounded(3);
+    s.send(1).unwrap();
+    s.send(2).unwrap();
+    s.send(3).unwrap();
+    // s.send(4).unwrap();  // 会阻塞，直到有空间
+
+    // 多生产者多消费者（MPMC）
+    let (s, r) = unbounded();
+    let r2 = r.clone();  // 可以克隆接收端！
+
+    thread::spawn(move || {
+        println!("消费者1: {}", r.recv().unwrap());
+    });
+
+    thread::spawn(move || {
+        println!("消费者2: {}", r2.recv().unwrap());
+    });
+
+    s.send("msg1").unwrap();
+    s.send("msg2").unwrap();
+}
+```
+
+#### select! 宏 - 多通道选择
+
+```rust
+use crossbeam_channel::{bounded, select, Receiver};
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    let (s1, r1) = bounded(1);
+    let (s2, r2) = bounded(1);
+
+    thread::spawn(move || {
+        thread::sleep(Duration::from_millis(100));
+        s1.send("快消息").unwrap();
+    });
+
+    thread::spawn(move || {
+        thread::sleep(Duration::from_millis(200));
+        s2.send("慢消息").unwrap();
+    });
+
+    // 等待任意一个通道有消息
+    select! {
+        recv(r1) -> msg => println!("通道1: {:?}", msg),
+        recv(r2) -> msg => println!("通道2: {:?}", msg),
+        default(Duration::from_secs(1)) => println!("超时"),
+    }
+}
+```
+
+#### 超时和非阻塞操作
+
+```rust
+use crossbeam_channel::{bounded, RecvTimeoutError};
+use std::time::Duration;
+
+fn main() {
+    let (s, r) = bounded::<i32>(1);
+
+    // 非阻塞接收
+    match r.try_recv() {
+        Ok(msg) => println!("收到: {}", msg),
+        Err(_) => println!("没有消息"),
+    }
+
+    // 带超时的接收
+    match r.recv_timeout(Duration::from_millis(100)) {
+        Ok(msg) => println!("收到: {}", msg),
+        Err(RecvTimeoutError::Timeout) => println!("超时"),
+        Err(RecvTimeoutError::Disconnected) => println!("通道关闭"),
+    }
+}
+```
+
+### std::mpsc vs crossbeam-channel
+
+| 特性        | std::mpsc | crossbeam-channel |
+| ----------- | --------- | ----------------- |
+| 多生产者    | ✅        | ✅                |
+| 多消费者    | ❌        | ✅                |
+| select 支持 | ❌        | ✅                |
+| 超时操作    | ❌        | ✅                |
+| 零容量通道  | ❌        | ✅                |
+| 性能        | 一般      | 更好              |
+
+### crossbeam-utils 作用域线程
+
+```rust
+use crossbeam_utils::thread;
+
+fn main() {
+    let mut data = vec![1, 2, 3, 4, 5];
+
+    // 作用域线程可以借用栈上数据
+    thread::scope(|s| {
+        // 分片并行处理
+        for chunk in data.chunks_mut(2) {
+            s.spawn(move |_| {
+                for x in chunk {
+                    *x *= 2;
+                }
+            });
+        }
+    }).unwrap();
+
+    println!("结果: {:?}", data);  // [2, 4, 6, 8, 10]
+}
+```
+
+### crossbeam 无锁数据结构
+
+```rust
+use crossbeam::queue::ArrayQueue;
+use std::sync::Arc;
+use std::thread;
+
+fn main() {
+    // 无锁有界队列
+    let queue = Arc::new(ArrayQueue::new(100));
+
+    let queue_clone = Arc::clone(&queue);
+    let producer = thread::spawn(move || {
+        for i in 0..50 {
+            while queue_clone.push(i).is_err() {
+                // 队列满，重试
+            }
+        }
+    });
+
+    let consumer = thread::spawn(move || {
+        let mut sum = 0;
+        for _ in 0..50 {
+            while let Some(v) = queue.pop() {
+                sum += v;
+            }
+        }
+        sum
+    });
+
+    producer.join().unwrap();
+    // consumer.join().unwrap();
+}
+```
+
+### crossbeam Epoch 垃圾回收
+
+用于实现无锁数据结构的内存回收：
+
+```rust
+use crossbeam::epoch::{self, Atomic, Owned};
+use std::sync::atomic::Ordering;
+
+fn main() {
+    let data: Atomic<String> = Atomic::new(String::from("hello"));
+
+    // 进入 epoch
+    let guard = epoch::pin();
+
+    // 安全地读取
+    let current = data.load(Ordering::SeqCst, &guard);
+    if let Some(s) = unsafe { current.as_ref() } {
+        println!("当前值: {}", s);
+    }
+
+    // 安全地更新
+    let new = Owned::new(String::from("world"));
+    data.store(new, Ordering::SeqCst);
+
+    // guard 离开作用域时，旧数据可能被回收
+}
+```
 
 ## 总结
 

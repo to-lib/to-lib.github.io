@@ -493,6 +493,224 @@ jobs:
         run: cargo test --all-features
 ```
 
+## Rustdoc 文档生成
+
+Rust 内置了强大的文档系统，使用 `rustdoc` 从代码注释生成 HTML 文档。
+
+### 文档注释语法
+
+````rust
+//! 模块级文档（放在文件开头）
+//! 这个模块提供用户管理功能。
+
+/// 用户结构体
+///
+/// # 示例
+///
+/// ```
+/// use mylib::User;
+///
+/// let user = User::new("Alice", 30);
+/// assert_eq!(user.name(), "Alice");
+/// ```
+pub struct User {
+    name: String,
+    age: u32,
+}
+
+impl User {
+    /// 创建新用户
+    ///
+    /// # 参数
+    ///
+    /// * `name` - 用户名
+    /// * `age` - 年龄
+    ///
+    /// # 返回值
+    ///
+    /// 返回一个新的 `User` 实例
+    ///
+    /// # 示例
+    ///
+    /// ```
+    /// # use mylib::User;
+    /// let user = User::new("Bob", 25);
+    /// ```
+    ///
+    /// # Panics
+    ///
+    /// 如果年龄超过 150 岁会 panic
+    ///
+    /// # Errors
+    ///
+    /// 此函数不会返回错误
+    pub fn new(name: &str, age: u32) -> Self {
+        assert!(age <= 150, "年龄不合理");
+        User {
+            name: name.to_string(),
+            age,
+        }
+    }
+
+    /// 获取用户名
+    #[must_use]
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+}
+````
+
+### 文档测试
+
+文档中的代码示例会作为测试运行：
+
+````rust
+/// 将两个数相加
+///
+/// ```
+/// assert_eq!(mylib::add(2, 3), 5);
+/// ```
+///
+/// # 隐藏的代码
+///
+/// ```
+/// # // 以 # 开头的行会运行但不显示
+/// # use mylib::add;
+/// let result = add(1, 1);
+/// assert_eq!(result, 2);
+/// ```
+///
+/// # 忽略测试
+///
+/// ```ignore
+/// // 这个测试会被忽略
+/// unimplemented!()
+/// ```
+///
+/// # 预期失败
+///
+/// ```should_panic
+/// panic!("这会 panic");
+/// ```
+///
+/// # 编译但不运行
+///
+/// ```no_run
+/// loop {
+///     // 无限循环，只检查编译
+/// }
+/// ```
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+````
+
+运行文档测试：
+
+```bash
+# 运行所有测试（包括文档测试）
+cargo test
+
+# 只运行文档测试
+cargo test --doc
+```
+
+### 使用 cargo doc
+
+```bash
+# 生成文档
+cargo doc
+
+# 生成并在浏览器中打开
+cargo doc --open
+
+# 包含私有项的文档
+cargo doc --document-private-items
+
+# 包含依赖项的文档
+cargo doc --no-deps  # 默认不包含，这是明确排除
+
+# 为所有目标生成文档
+cargo doc --all-features
+```
+
+### 文档属性
+
+```rust
+/// 一个已弃用的函数
+#[deprecated(since = "1.0.0", note = "请使用 new_function 代替")]
+pub fn old_function() {}
+
+/// 仅在文档中显示此函数
+#[doc(hidden)]
+pub fn internal_function() {}
+
+/// 为模块添加别名
+#[doc(alias = "别名")]
+pub fn function_with_alias() {}
+
+// 重新导出并添加文档
+#[doc(inline)]
+pub use other_module::SomeType;
+
+/// 在文档中隐藏
+#[doc(hidden)]
+pub mod internal;
+```
+
+### 链接到其他项
+
+```rust
+/// 使用 [`User`] 结构体创建用户
+///
+/// 参见 [`User::new`] 获取更多信息
+///
+/// 链接到模块：[`crate::user`]
+///
+/// 完整路径链接：[`crate::user::User::name`]
+pub fn create_user() -> User {
+    User::new("test", 20)
+}
+```
+
+### 发布到 docs.rs
+
+当你发布 crate 到 crates.io 时，文档会自动发布到 docs.rs。
+
+在 `Cargo.toml` 中配置 docs.rs 构建：
+
+```toml
+[package.metadata.docs.rs]
+# 启用所有特性
+all-features = true
+
+# 或指定特性
+features = ["full", "async"]
+
+# 构建目标
+targets = ["x86_64-unknown-linux-gnu"]
+
+# Rustdoc 参数
+rustdoc-args = ["--cfg", "docsrs"]
+```
+
+在代码中使用 `docsrs` cfg 标记仅在文档构建时显示的内容：
+
+```rust
+#[cfg(docsrs)]
+#[doc(cfg(feature = "async"))]
+pub mod async_support {
+    //! 此模块需要 `async` 特性
+}
+```
+
+### README 作为 crate 文档
+
+```rust
+// src/lib.rs
+#![doc = include_str!("../README.md")]
+```
+
 ## 完整项目示例
 
 ```

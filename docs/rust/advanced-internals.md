@@ -371,6 +371,242 @@ fn main() {
 }
 ```
 
+## Java FFI (JNI)
+
+Rust 可以通过 JNI (Java Native Interface) 与 Java 代码交互，这对于需要高性能计算的 Java 应用特别有用。
+
+### 准备工作
+
+```toml
+# Cargo.toml
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+jni = "0.21"
+```
+
+### Rust 调用示例
+
+首先定义 Java 类和 native 方法：
+
+```java
+// Java: com/example/RustLib.java
+package com.example;
+
+public class RustLib {
+    static {
+        System.loadLibrary("rust_jni");
+    }
+
+    // 声明 native 方法
+    public static native String hello(String name);
+    public static native int add(int a, int b);
+    public static native byte[] processData(byte[] data);
+
+    public static void main(String[] args) {
+        System.out.println(hello("World"));
+        System.out.println("2 + 3 = " + add(2, 3));
+    }
+}
+```
+
+然后在 Rust 中实现这些 native 方法：
+
+```rust
+use jni::objects::{JByteArray, JClass, JString};
+use jni::sys::{jbyteArray, jint, jstring};
+use jni::JNIEnv;
+
+// 方法命名规则：Java_包名_类名_方法名
+// 包名中的 . 替换为 _
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_hello(
+    mut env: JNIEnv,
+    _class: JClass,
+    name: JString,
+) -> jstring {
+    // 从 Java String 获取 Rust String
+    let name: String = env.get_string(&name)
+        .expect("Couldn't get java string!")
+        .into();
+
+    // 创建返回的 Java String
+    let output = format!("Hello, {}! From Rust", name);
+    env.new_string(output)
+        .expect("Couldn't create java string!")
+        .into_raw()
+}
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_add(
+    _env: JNIEnv,
+    _class: JClass,
+    a: jint,
+    b: jint,
+) -> jint {
+    a + b
+}
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_processData(
+    env: JNIEnv,
+    _class: JClass,
+    data: JByteArray,
+) -> jbyteArray {
+    // 获取 Java 字节数组
+    let input = env.convert_byte_array(&data)
+        .expect("Couldn't convert byte array");
+
+    // 处理数据（示例：每个字节 +1）
+    let output: Vec<u8> = input.iter().map(|&b| b.wrapping_add(1)).collect();
+
+    // 返回新的 Java 字节数组
+    env.byte_array_from_slice(&output)
+        .expect("Couldn't create byte array")
+        .into_raw()
+}
+```
+
+### 处理复杂对象
+
+```rust
+use jni::objects::{JClass, JObject, JValue};
+use jni::JNIEnv;
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_createUser(
+    mut env: JNIEnv,
+    _class: JClass,
+    name: JString,
+    age: jint,
+) -> jobject {
+    // 获取 Java 类
+    let user_class = env.find_class("com/example/User")
+        .expect("Couldn't find User class");
+
+    // 获取构造函数
+    let constructor = env.get_method_id(&user_class, "<init>", "(Ljava/lang/String;I)V")
+        .expect("Couldn't find constructor");
+
+    // 创建对象
+    let name = env.get_string(&name).expect("Couldn't get string");
+    let user = env.new_object_unchecked(
+        &user_class,
+        constructor,
+        &[JValue::Object(&JObject::from(name)), JValue::Int(age)],
+    ).expect("Couldn't create User object");
+
+    user.into_raw()
+}
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_processUser(
+    mut env: JNIEnv,
+    _class: JClass,
+    user: JObject,
+) {
+    // 获取字段值
+    let name_field = env.get_field(&user, "name", "Ljava/lang/String;")
+        .expect("Couldn't get name field");
+
+    // 调用方法
+    let result = env.call_method(&user, "getName", "()Ljava/lang/String;", &[])
+        .expect("Couldn't call getName");
+
+    if let JValue::Object(name_obj) = result {
+        let name: String = env.get_string(&JString::from(name_obj))
+            .expect("Couldn't get string")
+            .into();
+        println!("User name from Rust: {}", name);
+    }
+}
+```
+
+### 异常处理
+
+```rust
+use jni::objects::{JClass, JThrowable};
+use jni::JNIEnv;
+
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_riskyOperation(
+    mut env: JNIEnv,
+    _class: JClass,
+    value: jint,
+) -> jint {
+    if value < 0 {
+        // 抛出 Java 异常
+        env.throw_new("java/lang/IllegalArgumentException", "Value must be non-negative")
+            .expect("Couldn't throw exception");
+        return -1;
+    }
+
+    // 检查是否有异常
+    if env.exception_check().unwrap() {
+        env.exception_describe().unwrap();
+        env.exception_clear().unwrap();
+        return -1;
+    }
+
+    value * 2
+}
+```
+
+### 编译和使用
+
+```bash
+# 编译 Rust 库
+cargo build --release
+
+# macOS 上的库名
+# target/release/librust_jni.dylib
+
+# Linux 上的库名
+# target/release/librust_jni.so
+
+# Windows 上的库名
+# target/release/rust_jni.dll
+
+# 编译 Java
+javac -d target com/example/RustLib.java
+
+# 运行（需要指定库路径）
+java -Djava.library.path=target/release -cp target com.example.RustLib
+```
+
+### 内存管理注意事项
+
+| 问题         | 解决方案                                                 |
+| ------------ | -------------------------------------------------------- |
+| 局部引用限制 | 使用 `env.push_local_frame()` 和 `env.pop_local_frame()` |
+| 长期持有对象 | 使用 `env.new_global_ref()` 创建全局引用                 |
+| 字符串内存   | JString 转换后及时释放                                   |
+| 异常安全     | 在调用 Java 方法后检查异常                               |
+
+```rust
+// 处理大量局部引用
+#[no_mangle]
+pub extern "system" fn Java_com_example_RustLib_processMany(
+    mut env: JNIEnv,
+    _class: JClass,
+    count: jint,
+) {
+    for i in 0..count {
+        // 创建局部引用帧，避免引用溢出
+        env.push_local_frame(10).expect("Couldn't push frame");
+
+        let s = env.new_string(format!("Item {}", i))
+            .expect("Couldn't create string");
+        // 使用 s...
+
+        // 弹出帧，自动释放所有局部引用
+        env.pop_local_frame(&JObject::null()).expect("Couldn't pop frame");
+    }
+}
+```
+
 ## 总结
 
 | 主题     | 关键点                                  |
