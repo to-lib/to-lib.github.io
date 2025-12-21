@@ -57,33 +57,28 @@ title: Java 编程概述
 
 ## 📖 学习路径
 
-### 初级开发者
+> [!TIP]
+> 查看完整的 [**Java 学习路线**](/docs/java/learning-path)，获取从零到高级后端的详细学习计划。
 
-- 基础语法和数据类型
-- 面向对象基础
-- 常用集合类
-- 异常处理基础
-- 字符串和正则表达式
+### 阶段概览
 
-### 中级开发者
+| 阶段       | 内容                                     | 预计时间 |
+| ---------- | ---------------------------------------- | -------- |
+| **阶段 1** | Java 基础语法                            | 1-2 周   |
+| **阶段 2** | Java 核心进阶（JVM、泛型、反射、Stream） | 2-4 周   |
+| **阶段 3** | Java 并发编程                            | 4-6 周   |
+| **阶段 4** | 数据库与持久化（MySQL、MyBatis）         | 2-4 周   |
+| **阶段 5** | Spring 全家桶                            | 4-8 周   |
+| **阶段 6** | Netty 与网络编程                         | 4-6 周   |
+| **阶段 7** | 分布式系统                               | 6-12 周  |
+| **阶段 8** | 工程化与 DevOps                          | 持续提升 |
+| **阶段 9** | 高频面试方向                             | 随时补充 |
 
-- 深入面向对象（接口、抽象类、内部类、枚举）
-- 集合框架深入
-- 多线程基础
-- IO 流操作
-- 泛型编程
-- 日期时间 API
+### 快速定位
 
-### 高级开发者
-
-- 反射和动态代理
-- 并发编程深入（线程池、并发工具类）
-- 函数式编程
-- 自定义注解和注解处理
-- JVM 原理和调优
-- 性能优化技巧
-- NIO 非阻塞 IO
-- JDK 17 和 JDK 21 新特性
+- **初级开发者**（2-3 个月）：阶段 1-2 + Spring Boot 基础
+- **中级开发者**（6-8 个月）：阶段 1-5 + 基础分布式
+- **高级开发者**（12-18 个月）：全部阶段 + 源码阅读 + 系统设计
 
 ## 💡 最佳实践
 
@@ -97,30 +92,52 @@ title: Java 编程概述
 
 ## 📚 完整学习资源
 
-| 主题                                            | 描述                                              |
-| ----------------------------------------------- | ------------------------------------------------- |
-| [基础语法](/docs/java/basic-syntax)             | 数据类型、变量、运算符、流程控制、字符串处理      |
+| 主题                                                 | 描述                                              |
+| ---------------------------------------------------- | ------------------------------------------------- |
+| [🧭 学习路线](/docs/java/learning-path)              | **从零到高级后端的完整学习路径**                  |
+| [基础语法](/docs/java/basic-syntax)                  | 数据类型、变量、运算符、流程控制、字符串处理      |
 | [构建与编译（Maven/Gradle）](/docs/java/build-tools) | Java 8 工程构建、编译配置、打包与常见问题排查     |
-| [面向对象](/docs/java/oop)                      | 类、对象、继承、多态、内部类、枚举、注解          |
-| [集合框架](/docs/java/collections)              | List、Set、Map 详解和性能对比                     |
-| [异常处理](/docs/java/exception-handling)       | 异常分类、处理机制、最佳实践                      |
-| [泛型编程](/docs/java/generics)                 | 泛型类、泛型方法、通配符、类型擦除                |
-| [多线程](/docs/java/multithreading)             | 线程创建、同步、通信、线程池、并发工具类          |
-| [IO 流](/docs/java/io-streams)                  | 字节流、字符流、缓冲流、NIO 详解                  |
-| [函数式编程](/docs/java/functional-programming) | Lambda、Stream API、函数式接口                    |
-| [字符串与日期](/docs/java/date-time)            | LocalDate、LocalTime、格式化、时间计算            |
-| [反射与注解](/docs/java/reflection-annotation)  | 反射 API、动态代理、自定义注解                    |
-| [正则表达式](/docs/java/regex)                  | 正则语法、Pattern、Matcher、常见验证              |
-| [JVM 基础](/docs/java/jvm-basics)               | JVM 架构、类加载、内存模型、垃圾回收、调优        |
-| [性能优化](/docs/java/performance)              | 代码优化、并发优化、缓存策略、监控分析            |
-| [JDK 17 新特性](/docs/java/jdk17-features)      | 密封类、记录类型、模式匹配、文本块、Switch 表达式 |
-| [JDK 21 新特性](/docs/java/jdk21-features)      | 虚拟线程、序列化集合、增强模式匹配、记录模式      |
+| [面向对象](/docs/java/oop)                           | 类、对象、继承、多态、内部类、枚举、注解          |
+| [集合框架](/docs/java/collections)                   | List、Set、Map 详解和性能对比                     |
+| [异常处理](/docs/java/exception-handling)            | 异常分类、处理机制、最佳实践                      |
+| [泛型编程](/docs/java/generics)                      | 泛型类、泛型方法、通配符、类型擦除                |
+| [多线程](/docs/java/multithreading)                  | 线程创建、同步、通信、线程池、并发工具类          |
+| [IO 流](/docs/java/io-streams)                       | 字节流、字符流、缓冲流、NIO 详解                  |
+| [函数式编程](/docs/java/functional-programming)      | Lambda、Stream API、函数式接口                    |
+| [字符串与日期](/docs/java/date-time)                 | LocalDate、LocalTime、格式化、时间计算            |
+| [反射与注解](/docs/java/reflection-annotation)       | 反射 API、动态代理、自定义注解                    |
+| [正则表达式](/docs/java/regex)                       | 正则语法、Pattern、Matcher、常见验证              |
+| [JVM 基础](/docs/java/jvm-basics)                    | JVM 架构、类加载、内存模型、垃圾回收、调优        |
+| [性能优化](/docs/java/performance)                   | 代码优化、并发优化、缓存策略、监控分析            |
+| [JDK 17 新特性](/docs/java/jdk17-features)           | 密封类、记录类型、模式匹配、文本块、Switch 表达式 |
+| [JDK 21 新特性](/docs/java/jdk21-features)           | 虚拟线程、序列化集合、增强模式匹配、记录模式      |
 
 ## 🔗 相关资源
 
-- [Java 设计模式](/docs/java-design-patterns)
-- [Spring Framework](/docs/spring)
-- [Spring Boot](/docs/springboot)
-- [Netty](/docs/netty)
+### 框架与中间件
 
-开始你的 Java 学习之旅吧！
+- [Java 设计模式](/docs/java-design-patterns) - 23 种设计模式详解
+- [Spring Framework](/docs/spring) - Spring 核心框架
+- [Spring Boot](/docs/springboot) - 快速构建企业应用
+- [Spring Cloud](/docs/springcloud) - 微服务架构
+- [Netty](/docs/netty) - 高性能网络框架
+
+### 数据库与缓存
+
+- [MySQL](/docs/mysql) - 关系型数据库
+- [Redis](/docs/redis) - 高性能缓存
+- [PostgreSQL](/docs/postgres) - 开源数据库
+
+### 消息队列
+
+- [Kafka](/docs/kafka) - 分布式消息系统
+- [RocketMQ](/docs/rocketmq) - 阿里消息中间件
+- [RabbitMQ](/docs/rabbitmq) - 消息代理
+
+### 容器与运维
+
+- [Docker](/docs/docker) - 容器化技术
+- [Kubernetes](/docs/kubernetes) - 容器编排
+- [Linux](/docs/linux) - 服务器基础
+
+开始你的 Java 学习之旅吧！🚀

@@ -478,6 +478,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         "rust/index",
+        "rust/learning-path",
         "rust/environment-setup",
         "rust/basic-syntax",
         "rust/ownership",
@@ -509,19 +510,25 @@ const sidebars: SidebarsConfig = {
         "rust/async-programming",
         "rust/macros",
         "rust/unsafe-rust",
+        "rust/advanced-internals",
+      ],
+    },
+    {
+      type: "category",
+      label: "🏗️ 工程化与实战",
+      collapsed: true,
+      items: [
+        "rust/engineering",
+        "rust/web-development",
+        "rust/testing",
+        "rust/practical-projects",
       ],
     },
     {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: [
-        "rust/testing",
-        "rust/best-practices",
-        "rust/quick-reference",
-        "rust/faq",
-        "rust/practical-projects",
-      ],
+      items: ["rust/best-practices", "rust/quick-reference", "rust/faq"],
     },
   ],
 

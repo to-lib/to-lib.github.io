@@ -93,6 +93,7 @@ cargo test
 
 ### 初级开发者
 
+0. [Rust 学习路线](/docs/rust/learning-path) - **推荐：从入门到进阶的系统路线**
 1. [基础语法](/docs/rust/basic-syntax) - 掌握 Rust 基本语法
 2. [所有权系统](/docs/rust/ownership) - 理解 Rust 核心概念
 3. [结构体和枚举](/docs/rust/structs-enums) - 学习自定义类型
@@ -156,11 +157,11 @@ let s2 = s1;  // s1 的所有权移动到 s2
 ```rust
 fn main() {
     let s1 = String::from("hello");
-    
+
     // 不可变借用
     let len = calculate_length(&s1);
     println!("'{}' 的长度是 {}", s1, len);
-    
+
     // 可变借用
     let mut s2 = String::from("hello");
     change(&mut s2);
