@@ -373,6 +373,7 @@ const sidebars: SidebarsConfig = {
         "java/quick-reference",
         "java/faq",
         "java/interview-questions",
+        "java/senior-interview-questions",
       ],
     },
   ],
