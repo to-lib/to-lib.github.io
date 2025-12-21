@@ -335,6 +335,14 @@ const config: Config = {
           position: "left",
           items: [
             {
+              label: "📚 面试题库首页",
+              to: "/docs/interview",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
               type: "html",
               value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Java 面试</div>",
@@ -345,7 +353,7 @@ const config: Config = {
             },
             {
               label: "🎯 Java 高级面试题",
-              to: "/docs/java/senior-interview",
+              to: "/docs/interview/java-senior",
             },
             {
               label: "🎨 设计模式面试题",

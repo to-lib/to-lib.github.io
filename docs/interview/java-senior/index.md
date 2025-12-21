@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Java 高级面试题精选
+slug: /interview/java-senior
 ---
 
 # Java 高级面试题精选
