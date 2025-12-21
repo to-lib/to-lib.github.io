@@ -312,8 +312,8 @@ const config: Config = {
               to: "/docs/dsa/quick-reference",
             },
             {
-              label: "🧠 DSA 面试题集",
-              to: "/docs/dsa/interview-questions",
+              label: "🧠 DSA 面试题",
+              to: "/docs/interview/dsa-interview-questions",
             },
             {
               type: "html",
@@ -357,7 +357,7 @@ const config: Config = {
             },
             {
               label: "🎨 设计模式面试题",
-              to: "/docs/java-design-patterns/interview-questions",
+              to: "/docs/interview/java-design-patterns-interview-questions",
             },
             {
               type: "html",
