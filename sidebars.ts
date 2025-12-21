@@ -26,11 +26,7 @@ const sidebars: SidebarsConfig = {
       label: "☕ Java 技术栈",
       collapsed: false,
       items: [
-        {
-          type: "link",
-          label: "Java 基础面试题",
-          href: "/docs/interview/java-interview-questions",
-        },
+        "interview/java-interview-questions",
         {
           type: "category",
           label: "🎯 Java 高级面试题",
@@ -47,11 +43,7 @@ const sidebars: SidebarsConfig = {
             "interview/java-senior/system-design",
           ],
         },
-        {
-          type: "link",
-          label: "设计模式面试题",
-          href: "/docs/java-design-patterns/interview-questions",
-        },
+        "interview/java-design-patterns-interview-questions",
       ],
     },
     {
@@ -59,31 +51,11 @@ const sidebars: SidebarsConfig = {
       label: "🍃 Spring 生态",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "Spring 面试题",
-          href: "/docs/interview/spring-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Spring Boot 面试题",
-          href: "/docs/interview/springboot-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Spring Cloud 面试题",
-          href: "/docs/interview/springcloud-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Spring Cloud Alibaba 面试题",
-          href: "/docs/interview/springcloud-alibaba-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Spring AI 面试题",
-          href: "/docs/interview/spring-ai-interview-questions",
-        },
+        "interview/spring-interview-questions",
+        "interview/springboot-interview-questions",
+        "interview/springcloud-interview-questions",
+        "interview/springcloud-alibaba-interview-questions",
+        "interview/spring-ai-interview-questions",
       ],
     },
     {
@@ -91,21 +63,9 @@ const sidebars: SidebarsConfig = {
       label: "💾 数据库",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "MySQL 面试题",
-          href: "/docs/interview/mysql-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Redis 面试题",
-          href: "/docs/interview/redis-interview-questions",
-        },
-        {
-          type: "link",
-          label: "PostgreSQL 面试题",
-          href: "/docs/interview/postgres-interview-questions",
-        },
+        "interview/mysql-interview-questions",
+        "interview/redis-interview-questions",
+        "interview/postgres-interview-questions",
       ],
     },
     {
@@ -113,21 +73,9 @@ const sidebars: SidebarsConfig = {
       label: "📨 消息队列",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "Kafka 面试题",
-          href: "/docs/interview/kafka-interview-questions",
-        },
-        {
-          type: "link",
-          label: "RocketMQ 面试题",
-          href: "/docs/interview/rocketmq-interview-questions",
-        },
-        {
-          type: "link",
-          label: "RabbitMQ 面试题",
-          href: "/docs/interview/rabbitmq-interview-questions",
-        },
+        "interview/kafka-interview-questions",
+        "interview/rocketmq-interview-questions",
+        "interview/rabbitmq-interview-questions",
       ],
     },
     {
@@ -135,26 +83,10 @@ const sidebars: SidebarsConfig = {
       label: "🐳 容器与运维",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "Linux 面试题",
-          href: "/docs/interview/linux-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Docker 面试题",
-          href: "/docs/interview/docker-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Kubernetes 面试题",
-          href: "/docs/interview/kubernetes-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Podman 面试题",
-          href: "/docs/interview/podman-interview-questions",
-        },
+        "interview/linux-interview-questions",
+        "interview/docker-interview-questions",
+        "interview/kubernetes-interview-questions",
+        "interview/podman-interview-questions",
       ],
     },
     {
@@ -162,31 +94,11 @@ const sidebars: SidebarsConfig = {
       label: "🔧 框架与中间件",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "Netty 面试题",
-          href: "/docs/interview/netty-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Flink 面试题",
-          href: "/docs/interview/flink-interview-questions",
-        },
-        {
-          type: "link",
-          label: "微服务面试题",
-          href: "/docs/interview/microservices-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Nginx 面试题",
-          href: "/docs/interview/nginx-interview-questions",
-        },
-        {
-          type: "link",
-          label: "计算机网络面试题",
-          href: "/docs/interview/networking-interview-questions",
-        },
+        "interview/netty-interview-questions",
+        "interview/flink-interview-questions",
+        "interview/microservices-interview-questions",
+        "interview/nginx-interview-questions",
+        "interview/networking-interview-questions",
       ],
     },
     {
@@ -194,21 +106,9 @@ const sidebars: SidebarsConfig = {
       label: "🌐 前端与其他",
       collapsed: true,
       items: [
-        {
-          type: "link",
-          label: "React 面试题",
-          href: "/docs/interview/react-interview-questions",
-        },
-        {
-          type: "link",
-          label: "数据结构与算法面试题",
-          href: "/docs/interview/dsa-interview-questions",
-        },
-        {
-          type: "link",
-          label: "Rust 面试题",
-          href: "/docs/interview/rust-interview-questions",
-        },
+        "interview/react-interview-questions",
+        "interview/dsa-interview-questions",
+        "interview/rust-interview-questions",
       ],
     },
     {
