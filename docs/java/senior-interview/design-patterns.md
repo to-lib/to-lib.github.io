@@ -5,21 +5,21 @@ title: 设计模式与代码设计
 
 # 🎯 设计模式与代码设计（高级）
 
-## 31. 如何在项目中正确使用设计模式？
+## 32. 如何在项目中正确使用设计模式？
 
 **答案要点：**
 
 **常用设计模式场景：**
 
-| 模式 | 场景 | 框架应用 |
-|------|------|---------|
-| 单例 | 配置类、连接池 | Spring Bean |
-| 工厂 | 对象创建解耦 | BeanFactory |
-| 代理 | AOP、远程调用 | Spring AOP |
-| 模板方法 | 算法骨架 | JdbcTemplate |
-| 策略 | 算法切换 | Comparator |
-| 观察者 | 事件通知 | ApplicationEvent |
-| 责任链 | 请求处理链 | Filter、Interceptor |
+| 模式     | 场景           | 框架应用            |
+| -------- | -------------- | ------------------- |
+| 单例     | 配置类、连接池 | Spring Bean         |
+| 工厂     | 对象创建解耦   | BeanFactory         |
+| 代理     | AOP、远程调用  | Spring AOP          |
+| 模板方法 | 算法骨架       | JdbcTemplate        |
+| 策略     | 算法切换       | Comparator          |
+| 观察者   | 事件通知       | ApplicationEvent    |
+| 责任链   | 请求处理链     | Filter、Interceptor |
 
 **策略模式实战 - 支付方式：**
 
@@ -51,7 +51,7 @@ public class WechatPayStrategy implements PaymentStrategy {
 public class PaymentService {
     @Autowired
     private Map<String, PaymentStrategy> strategyMap;
-    
+
     public PaymentResult pay(String payType, PaymentRequest request) {
         PaymentStrategy strategy = strategyMap.get(payType);
         if (strategy == null) {
@@ -68,19 +68,19 @@ public class PaymentService {
 // 1. 处理器接口
 public abstract class OrderValidator {
     protected OrderValidator next;
-    
+
     public OrderValidator setNext(OrderValidator next) {
         this.next = next;
         return next;
     }
-    
+
     public void validate(Order order) {
         doValidate(order);
         if (next != null) {
             next.validate(order);
         }
     }
-    
+
     protected abstract void doValidate(Order order);
 }
 
@@ -114,19 +114,19 @@ chain.validate(order);
 
 ---
 
-## 32. 如何写出高质量的代码？有哪些原则？
+## 33. 如何写出高质量的代码？有哪些原则？
 
 **答案要点：**
 
 **SOLID 原则：**
 
-| 原则 | 说明 | 示例 |
-|------|------|------|
-| **S** 单一职责 | 一个类只做一件事 | UserService 只处理用户逻辑 |
-| **O** 开闭原则 | 对扩展开放，对修改关闭 | 策略模式添加新策略 |
-| **L** 里氏替换 | 子类可以替换父类 | 正方形不应继承长方形 |
-| **I** 接口隔离 | 接口要小而专 | 拆分臃肿接口 |
-| **D** 依赖倒置 | 依赖抽象而非实现 | 依赖注入 |
+| 原则           | 说明                   | 示例                       |
+| -------------- | ---------------------- | -------------------------- |
+| **S** 单一职责 | 一个类只做一件事       | UserService 只处理用户逻辑 |
+| **O** 开闭原则 | 对扩展开放，对修改关闭 | 策略模式添加新策略         |
+| **L** 里氏替换 | 子类可以替换父类       | 正方形不应继承长方形       |
+| **I** 接口隔离 | 接口要小而专           | 拆分臃肿接口               |
+| **D** 依赖倒置 | 依赖抽象而非实现       | 依赖注入                   |
 
 **代码规范示例：**
 
@@ -138,14 +138,14 @@ public class OrderService {
         // 校验
         if (order.getAmount() <= 0) throw new Exception("金额错误");
         if (order.getUserId() == null) throw new Exception("用户为空");
-        
+
         // 计算价格
         double price = order.getAmount() * 0.9;
         if (order.isVip()) price = price * 0.95;
-        
+
         // 保存
         orderDao.save(order);
-        
+
         // 发送通知
         emailService.send(order.getUserEmail(), "订单创建成功");
         smsService.send(order.getUserPhone(), "订单创建成功");
@@ -160,15 +160,15 @@ public class OrderService {
     private final PriceCalculator priceCalculator;
     private final OrderRepository orderRepository;
     private final NotificationService notificationService;
-    
+
     @Transactional
     public Order createOrder(CreateOrderRequest request) {
         // 1. 校验
         validator.validate(request);
-        
+
         // 2. 计算价格
         BigDecimal price = priceCalculator.calculate(request);
-        
+
         // 3. 创建订单
         Order order = Order.builder()
             .userId(request.getUserId())
@@ -176,36 +176,79 @@ public class OrderService {
             .price(price)
             .status(OrderStatus.CREATED)
             .build();
-        
+
         // 4. 保存
         order = orderRepository.save(order);
-        
+
         // 5. 异步通知
         notificationService.notifyOrderCreated(order);
-        
+
         return order;
     }
 }
 ```
 
-**延伸：** 参考 [Java 最佳实践](/docs/java/best-practices)
+---
+
+## 35. 这里有哪些常见的代码反模式（Anti-Patterns）？
+
+**答案要点：**
+
+| 反模式                         | 描述                           | 解决方案                     |
+| ------------------------------ | ------------------------------ | ---------------------------- |
+| **上帝类 (God Class)**         | 一个类包含过多功能，无所不能   | 拆分职责，应用单一职责原则   |
+| **意大利面条代码 (Spaghetti)** | 逻辑混乱，控制流复杂           | 重构，使用多态替代 `if-else` |
+| **黄金锤 (Golden Hammer)**     | 对所有问题都用同一种工具/模式  | 扩展技术栈，根据场景选择工具 |
+| **复制粘贴编程**               | 大量重复代码                   | 提取公共方法/类 (DRY)        |
+| **幽灵代码 (Poltergeist)**     | 仅用于传递信息，无实际职责的类 | 移除或合并到其他类           |
+| **死代码 (Dead Code)**         | 永远不会执行的代码             | 直接删除                     |
 
 ---
 
-## 33. 如何进行代码重构？有哪些常见的坏味道？
+## 36. Spring 或 JDK 中应用了哪些经典设计模式？
+
+**答案要点：**
+
+**Spring 框架：**
+
+- **工厂模式**：`BeanFactory`, `ApplicationContext`
+- **单例模式**：Spring Bean 默认是单例
+- **代理模式**：Spring AOP (JDK Proxy / CGLIB)
+- **模板方法**：`JdbcTemplate`, `RestTemplate`, `TransactionTemplate`
+- **观察者模式**：Spring Event (`ApplicationListener`, `ApplicationEvent`)
+- **适配器模式**：`HandlerAdapter` (Spring MVC)
+- **装饰器模式**：`HttpServletRequestWrapper`
+- **策略模式**：`Resource` 接口及其实现 (File, ClassPath, Url)
+
+**JDK 源码：**
+
+- **单例模式**：`java.lang.Runtime`
+- **工厂模式**：`Calendar.getInstance()`, `NumberFormat.getInstance()`
+- **原型模式**：`java.lang.Object.clone()`
+- **代理模式**：`java.lang.reflect.Proxy`
+- **迭代器模式**：`java.util.Iterator`, `java.util.Enumeration`
+- **适配器模式**：`java.util.Arrays.asList()`
+- **装饰器模式**：IO 流 (`BufferedReader` 包装 `FileReader`)
+- **观察者模式**：`java.util.Observer` / `Observable` (已过时，但经典)
+
+**延伸：** 参考 [Java 设计模式](/docs/java-design-patterns)
+
+---
+
+## 34. 如何进行代码重构？有哪些常见的坏味道？
 
 **答案要点：**
 
 **常见代码坏味道：**
 
-| 坏味道 | 描述 | 重构方法 |
-|--------|------|---------|
-| 过长方法 | 方法超过50行 | 提取方法 |
-| 过大类 | 类职责过多 | 拆分类 |
-| 重复代码 | 相同逻辑多处出现 | 提取公共方法 |
-| 过长参数列表 | 参数超过4个 | 引入参数对象 |
-| 数据泥团 | 多个数据总是一起出现 | 提取类 |
-| 基本类型偏执 | 过度使用基本类型 | 引入值对象 |
+| 坏味道       | 描述                 | 重构方法     |
+| ------------ | -------------------- | ------------ |
+| 过长方法     | 方法超过 50 行       | 提取方法     |
+| 过大类       | 类职责过多           | 拆分类       |
+| 重复代码     | 相同逻辑多处出现     | 提取公共方法 |
+| 过长参数列表 | 参数超过 4 个        | 引入参数对象 |
+| 数据泥团     | 多个数据总是一起出现 | 提取类       |
+| 基本类型偏执 | 过度使用基本类型     | 引入值对象   |
 
 **重构示例 - 过长方法：**
 
@@ -240,7 +283,7 @@ private void sendNotification(Order order) { /* ... */ }
 
 ```java
 // ❌ 重构前
-public User createUser(String name, String email, String phone, 
+public User createUser(String name, String email, String phone,
                        String address, Integer age, String gender) {
     // ...
 }

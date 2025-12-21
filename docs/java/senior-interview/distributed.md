@@ -11,13 +11,13 @@ title: 分布式与中间件
 
 **两种持久化方式对比：**
 
-| 特性 | RDB | AOF |
-|------|-----|-----|
-| **原理** | 快照，保存某时刻数据 | 追加写命令日志 |
-| **文件大小** | 小（二进制压缩） | 大（文本命令） |
-| **恢复速度** | 快 | 慢（需重放命令） |
-| **数据安全** | 可能丢失最后一次快照后的数据 | 最多丢失1秒数据 |
-| **性能影响** | fork 子进程时可能阻塞 | 每秒 fsync 影响小 |
+| 特性         | RDB                          | AOF               |
+| ------------ | ---------------------------- | ----------------- |
+| **原理**     | 快照，保存某时刻数据         | 追加写命令日志    |
+| **文件大小** | 小（二进制压缩）             | 大（文本命令）    |
+| **恢复速度** | 快                           | 慢（需重放命令）  |
+| **数据安全** | 可能丢失最后一次快照后的数据 | 最多丢失 1 秒数据 |
+| **性能影响** | fork 子进程时可能阻塞        | 每秒 fsync 影响小 |
 
 **RDB 配置：**
 
@@ -58,6 +58,7 @@ aof-use-rdb-preamble yes
 ```
 
 **选择建议：**
+
 - 纯缓存场景：可以不开启持久化
 - 数据安全要求高：AOF + everysec
 - 快速恢复：RDB
@@ -150,13 +151,13 @@ while (true) {
 
 **常见方案对比：**
 
-| 方案 | 优点 | 缺点 | 适用场景 |
-|------|------|------|---------|
-| UUID | 简单，无依赖 | 无序，存储大 | 非主键场景 |
-| 数据库自增 | 简单，有序 | 性能瓶颈，单点 | 小规模系统 |
-| Redis INCR | 性能高 | 依赖 Redis | 中等规模 |
-| 雪花算法 | 有序，高性能 | 时钟回拨问题 | 大规模分布式 |
-| Leaf | 高可用，高性能 | 复杂度高 | 大规模分布式 |
+| 方案       | 优点           | 缺点           | 适用场景     |
+| ---------- | -------------- | -------------- | ------------ |
+| UUID       | 简单，无依赖   | 无序，存储大   | 非主键场景   |
+| 数据库自增 | 简单，有序     | 性能瓶颈，单点 | 小规模系统   |
+| Redis INCR | 性能高         | 依赖 Redis     | 中等规模     |
+| 雪花算法   | 有序，高性能   | 时钟回拨问题   | 大规模分布式 |
+| Leaf       | 高可用，高性能 | 复杂度高       | 大规模分布式 |
 
 **雪花算法（Snowflake）：**
 
@@ -176,31 +177,31 @@ public class SnowflakeIdGenerator {
     private final long epoch = 1609459200000L;  // 起始时间戳
     private final long workerIdBits = 10L;
     private final long sequenceBits = 12L;
-    
+
     private final long maxWorkerId = ~(-1L << workerIdBits);
     private final long sequenceMask = ~(-1L << sequenceBits);
-    
+
     private final long workerIdShift = sequenceBits;
     private final long timestampShift = sequenceBits + workerIdBits;
-    
+
     private long workerId;
     private long sequence = 0L;
     private long lastTimestamp = -1L;
-    
+
     public SnowflakeIdGenerator(long workerId) {
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException("Worker ID out of range");
         }
         this.workerId = workerId;
     }
-    
+
     public synchronized long nextId() {
         long timestamp = System.currentTimeMillis();
-        
+
         if (timestamp < lastTimestamp) {
             throw new RuntimeException("Clock moved backwards");
         }
-        
+
         if (timestamp == lastTimestamp) {
             sequence = (sequence + 1) & sequenceMask;
             if (sequence == 0) {
@@ -209,14 +210,14 @@ public class SnowflakeIdGenerator {
         } else {
             sequence = 0L;
         }
-        
+
         lastTimestamp = timestamp;
-        
+
         return ((timestamp - epoch) << timestampShift)
                 | (workerId << workerIdShift)
                 | sequence;
     }
-    
+
     private long waitNextMillis(long lastTimestamp) {
         long timestamp = System.currentTimeMillis();
         while (timestamp <= lastTimestamp) {
@@ -237,12 +238,12 @@ public class SnowflakeIdGenerator {
 
 **分布式锁方案对比：**
 
-| 方案 | 优点 | 缺点 |
-|------|------|------|
-| MySQL | 简单 | 性能差，单点 |
-| Redis | 性能高 | 主从切换可能丢锁 |
-| ZooKeeper | 可靠性高 | 性能一般 |
-| Etcd | 可靠性高，性能好 | 复杂度高 |
+| 方案      | 优点             | 缺点             |
+| --------- | ---------------- | ---------------- |
+| MySQL     | 简单             | 性能差，单点     |
+| Redis     | 性能高           | 主从切换可能丢锁 |
+| ZooKeeper | 可靠性高         | 性能一般         |
+| Etcd      | 可靠性高，性能好 | 复杂度高         |
 
 **Redis 分布式锁实现：**
 
@@ -252,17 +253,17 @@ public class RedisDistributedLock {
     private String lockKey;
     private String lockValue;
     private long expireTime;
-    
+
     public boolean tryLock() {
         lockValue = UUID.randomUUID().toString();
         Boolean success = redisTemplate.opsForValue()
             .setIfAbsent(lockKey, lockValue, expireTime, TimeUnit.MILLISECONDS);
         return Boolean.TRUE.equals(success);
     }
-    
+
     public void unlock() {
         // Lua 脚本保证原子性
-        String script = 
+        String script =
             "if redis.call('get', KEYS[1]) == ARGV[1] then " +
             "   return redis.call('del', KEYS[1]) " +
             "else " +
@@ -284,7 +285,7 @@ public class RedisDistributedLock {
 public class OrderService {
     @Autowired
     private RedissonClient redissonClient;
-    
+
     public void createOrder(String orderId) {
         RLock lock = redissonClient.getLock("order:" + orderId);
         try {
@@ -360,13 +361,13 @@ public class OrderService {
 
 **核心组件：**
 
-| 组件 | 作用 |
-|------|------|
-| **动态代理** | 生成客户端代理对象 |
-| **序列化** | 对象与字节流转换 |
-| **网络通信** | 数据传输（Netty） |
-| **服务注册发现** | 服务地址管理 |
-| **负载均衡** | 请求分发策略 |
+| 组件             | 作用               |
+| ---------------- | ------------------ |
+| **动态代理**     | 生成客户端代理对象 |
+| **序列化**       | 对象与字节流转换   |
+| **网络通信**     | 数据传输（Netty）  |
+| **服务注册发现** | 服务地址管理       |
+| **负载均衡**     | 请求分发策略       |
 
 **简易 RPC 框架实现：**
 
@@ -390,10 +391,10 @@ public class RpcProxy {
                 request.setMethodName(method.getName());
                 request.setParameterTypes(method.getParameterTypes());
                 request.setParameters(args);
-                
+
                 // 发送请求
                 RpcResponse response = sendRequest(request);
-                
+
                 return response.getResult();
             }
         );
@@ -403,20 +404,76 @@ public class RpcProxy {
 // 3. 服务端处理
 public class RpcServer {
     private Map<String, Object> serviceMap = new HashMap<>();
-    
+
     public void register(String serviceName, Object service) {
         serviceMap.put(serviceName, service);
     }
-    
+
     public Object handle(RpcRequest request) throws Exception {
         Object service = serviceMap.get(request.getClassName());
         Method method = service.getClass().getMethod(
-            request.getMethodName(), 
+            request.getMethodName(),
             request.getParameterTypes()
         );
         return method.invoke(service, request.getParameters());
     }
 }
 ```
+
+## 31. 分布式共识算法（Paxos/Raft）是如何工作的？
+
+**答案要点：**
+
+**共识问题：** 在分布式系统中，如何让多个节点对某个值（或日志）达成一致。
+
+**Raft 算法核心（易于理解）：**
+
+Raft 将一致性问题分解为三个子问题：
+
+1.  **Leader 选举（Leader Election）**
+2.  **日志复制（Log Replication）**
+3.  **安全性（Safety）**
+
+**节点状态：**
+
+- **Follower**：随从，被动接收请求。
+- **Candidate**：候选人，竞选 Leader。
+- **Leader**：领导者，处理所有客户端请求，同步日志给 Follower。
+
+**选举过程：**
+
+1.  节点启动时默认为 Follower。
+2.  若超时未收到 Leader 心跳，转为 Candidate，发起投票。
+3.  获得大多数（N/2 + 1）选票则成为 Leader。
+4.  Leader 周期性发送心跳维持统治。
+
+**日志复制过程：**
+
+```
+Client -> Leader -> (AppendEntries) -> Followers
+         (Receive Command)
+            |
+            v
+     (Write to Local Log)
+            |
+            v
+     (Replicate to Followers)
+            |
+            v
+     (Majority Acknowledge?) -> Yes -> Commit & Apply -> Response to Client
+                                    -> Notify Followers to Commit
+```
+
+**Paxos vs Raft：**
+
+| 特性         | Paxos                          | Raft               |
+| ------------ | ------------------------------ | ------------------ |
+| **理解难度** | 极难（理论性强）               | 较易（工程导向）   |
+| **实现难度** | 极难                           | 有详细参考实现     |
+| **应用**     | Zookeeper (ZAB), Google Chubby | Etcd, Consul, TIKV |
+
+**延伸：** 参考 [分布式系统 - Raft 详解](/docs/distributed/raft)
+
+---
 
 **延伸：** 参考 [Netty 实战](/docs/netty/practical-examples)
