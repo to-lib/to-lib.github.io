@@ -349,7 +349,7 @@ const config: Config = {
             },
             {
               label: "☕ Java 基础面试题",
-              to: "/docs/java/interview-questions",
+              to: "/docs/interview/java-interview-questions",
             },
             {
               label: "🎯 Java 高级面试题",
@@ -370,19 +370,19 @@ const config: Config = {
             },
             {
               label: "🍃 Spring 面试题",
-              to: "/docs/spring/interview-questions",
+              to: "/docs/interview/spring-interview-questions",
             },
             {
               label: "🚀 Spring Boot 面试题",
-              to: "/docs/springboot/interview-questions",
+              to: "/docs/interview/springboot-interview-questions",
             },
             {
               label: "☁️ Spring Cloud 面试题",
-              to: "/docs/springcloud/interview-questions",
+              to: "/docs/interview/springcloud-interview-questions",
             },
             {
               label: "🛍️ Spring Cloud Alibaba 面试题",
-              to: "/docs/springcloud-alibaba/interview-questions",
+              to: "/docs/interview/springcloud-alibaba-interview-questions",
             },
             {
               type: "html",
@@ -395,23 +395,23 @@ const config: Config = {
             },
             {
               label: "🐬 MySQL 面试题",
-              to: "/docs/mysql/interview-questions",
+              to: "/docs/interview/mysql-interview-questions",
             },
             {
               label: "💾 Redis 面试题",
-              to: "/docs/redis/interview-questions",
+              to: "/docs/interview/redis-interview-questions",
             },
             {
               label: "🐘 PostgreSQL 面试题",
-              to: "/docs/postgres/interview-questions",
+              to: "/docs/interview/postgres-interview-questions",
             },
             {
               label: "📊 Kafka 面试题",
-              to: "/docs/kafka/interview-questions",
+              to: "/docs/interview/kafka-interview-questions",
             },
             {
               label: "🚀 RocketMQ 面试题",
-              to: "/docs/rocketmq/interview-questions",
+              to: "/docs/interview/rocketmq-interview-questions",
             },
             {
               type: "html",
@@ -424,31 +424,31 @@ const config: Config = {
             },
             {
               label: "🐧 Linux 面试题",
-              to: "/docs/linux/interview-questions",
+              to: "/docs/interview/linux-interview-questions",
             },
             {
               label: "⚡ Netty 面试题",
-              to: "/docs/netty/interview-questions",
+              to: "/docs/interview/netty-interview-questions",
             },
             {
               label: "🐳 Docker 面试题",
-              to: "/docs/docker/interview-questions",
+              to: "/docs/interview/docker-interview-questions",
             },
             {
               label: "☸️ Kubernetes 面试题",
-              to: "/docs/kubernetes/interview-questions",
+              to: "/docs/interview/kubernetes-interview-questions",
             },
             {
               label: "🐰 RabbitMQ 面试题",
-              to: "/docs/rabbitmq/interview-questions",
+              to: "/docs/interview/rabbitmq-interview-questions",
             },
             {
               label: "⚡ Flink 面试题",
-              to: "/docs/flink/interview-questions",
+              to: "/docs/interview/flink-interview-questions",
             },
             {
               label: "🏛️ 微服务面试题",
-              to: "/docs/microservices/interview-questions",
+              to: "/docs/interview/microservices-interview-questions",
             },
             {
               type: "html",
@@ -461,15 +461,32 @@ const config: Config = {
             },
             {
               label: "⚛️ React 面试题",
-              to: "/docs/react/interview-questions",
+              to: "/docs/interview/react-interview-questions",
             },
             {
               label: "🧮 数据结构与算法面试题",
-              to: "/docs/dsa/interview-questions",
+              to: "/docs/interview/dsa-interview-questions",
             },
             {
               label: "🦀 Rust 面试题",
-              to: "/docs/rust/interview-questions",
+              to: "/docs/interview/rust-interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #ff9800;'>架构与软技能</div>",
+            },
+            {
+              label: "🏗️ 系统设计面试题",
+              to: "/docs/interview/system-design-interview-questions",
+            },
+            {
+              label: "🗣️ 行为面试题 (BQ)",
+              to: "/docs/interview/behavioral-interview-questions",
             },
           ],
         },

@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "Java 基础面试题",
-          href: "/docs/java/interview-questions",
+          href: "/docs/interview/java-interview-questions",
         },
         {
           type: "category",
@@ -62,27 +62,27 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "Spring 面试题",
-          href: "/docs/spring/interview-questions",
+          href: "/docs/interview/spring-interview-questions",
         },
         {
           type: "link",
           label: "Spring Boot 面试题",
-          href: "/docs/springboot/interview-questions",
+          href: "/docs/interview/springboot-interview-questions",
         },
         {
           type: "link",
           label: "Spring Cloud 面试题",
-          href: "/docs/springcloud/interview-questions",
+          href: "/docs/interview/springcloud-interview-questions",
         },
         {
           type: "link",
           label: "Spring Cloud Alibaba 面试题",
-          href: "/docs/springcloud-alibaba/interview-questions",
+          href: "/docs/interview/springcloud-alibaba-interview-questions",
         },
         {
           type: "link",
           label: "Spring AI 面试题",
-          href: "/docs/spring-ai/interview-questions",
+          href: "/docs/interview/spring-ai-interview-questions",
         },
       ],
     },
@@ -94,17 +94,17 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "MySQL 面试题",
-          href: "/docs/mysql/interview-questions",
+          href: "/docs/interview/mysql-interview-questions",
         },
         {
           type: "link",
           label: "Redis 面试题",
-          href: "/docs/redis/interview-questions",
+          href: "/docs/interview/redis-interview-questions",
         },
         {
           type: "link",
           label: "PostgreSQL 面试题",
-          href: "/docs/postgres/interview-questions",
+          href: "/docs/interview/postgres-interview-questions",
         },
       ],
     },
@@ -116,17 +116,17 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "Kafka 面试题",
-          href: "/docs/kafka/interview-questions",
+          href: "/docs/interview/kafka-interview-questions",
         },
         {
           type: "link",
           label: "RocketMQ 面试题",
-          href: "/docs/rocketmq/interview-questions",
+          href: "/docs/interview/rocketmq-interview-questions",
         },
         {
           type: "link",
           label: "RabbitMQ 面试题",
-          href: "/docs/rabbitmq/interview-questions",
+          href: "/docs/interview/rabbitmq-interview-questions",
         },
       ],
     },
@@ -138,17 +138,17 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "Linux 面试题",
-          href: "/docs/linux/interview-questions",
+          href: "/docs/interview/linux-interview-questions",
         },
         {
           type: "link",
           label: "Docker 面试题",
-          href: "/docs/docker/interview-questions",
+          href: "/docs/interview/docker-interview-questions",
         },
         {
           type: "link",
           label: "Kubernetes 面试题",
-          href: "/docs/kubernetes/interview-questions",
+          href: "/docs/interview/kubernetes-interview-questions",
         },
       ],
     },
@@ -160,17 +160,17 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "Netty 面试题",
-          href: "/docs/netty/interview-questions",
+          href: "/docs/interview/netty-interview-questions",
         },
         {
           type: "link",
           label: "Flink 面试题",
-          href: "/docs/flink/interview-questions",
+          href: "/docs/interview/flink-interview-questions",
         },
         {
           type: "link",
           label: "微服务面试题",
-          href: "/docs/microservices/interview-questions",
+          href: "/docs/interview/microservices-interview-questions",
         },
       ],
     },
@@ -182,18 +182,27 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           label: "React 面试题",
-          href: "/docs/react/interview-questions",
+          href: "/docs/interview/react-interview-questions",
         },
         {
           type: "link",
           label: "数据结构与算法面试题",
-          href: "/docs/dsa/interview-questions",
+          href: "/docs/interview/dsa-interview-questions",
         },
         {
           type: "link",
           label: "Rust 面试题",
-          href: "/docs/rust/interview-questions",
+          href: "/docs/interview/rust-interview-questions",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "🏛️ 架构与软技能",
+      collapsed: false,
+      items: [
+        "interview/system-design-interview-questions",
+        "interview/behavioral-interview-questions",
       ],
     },
   ],
@@ -1404,7 +1413,12 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🏗️ 镜像与构建",
       collapsed: true,
-      items: ["docker/dockerfile", "docker/buildkit", "docker/compose", "docker/registry"],
+      items: [
+        "docker/dockerfile",
+        "docker/buildkit",
+        "docker/compose",
+        "docker/registry",
+      ],
     },
     {
       type: "category",
@@ -1632,10 +1646,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "🚀 部署与安全",
       collapsed: true,
-      items: [
-        "microservices/deployment",
-        "microservices/security",
-      ],
+      items: ["microservices/deployment", "microservices/security"],
     },
     {
       type: "category",
