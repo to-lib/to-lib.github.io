@@ -11,13 +11,13 @@ title: JVM 深度
 
 **JDK 8+ 运行时数据区域：**
 
-| 区域 | 线程共享 | 作用 | 异常 |
-|------|---------|------|------|
-| **堆（Heap）** | 共享 | 存储对象实例和数组 | OutOfMemoryError |
-| **方法区/元空间** | 共享 | 存储类信息、常量、静态变量 | OutOfMemoryError |
-| **虚拟机栈** | 私有 | 存储局部变量、操作数栈、方法出口 | StackOverflowError/OOM |
-| **本地方法栈** | 私有 | 为 native 方法服务 | StackOverflowError/OOM |
-| **程序计数器** | 私有 | 记录当前执行的字节码指令地址 | 无 |
+| 区域              | 线程共享 | 作用                             | 异常                   |
+| ----------------- | -------- | -------------------------------- | ---------------------- |
+| **堆（Heap）**    | 共享     | 存储对象实例和数组               | OutOfMemoryError       |
+| **方法区/元空间** | 共享     | 存储类信息、常量、静态变量       | OutOfMemoryError       |
+| **虚拟机栈**      | 私有     | 存储局部变量、操作数栈、方法出口 | StackOverflowError/OOM |
+| **本地方法栈**    | 私有     | 为 native 方法服务               | StackOverflowError/OOM |
+| **程序计数器**    | 私有     | 记录当前执行的字节码指令地址     | 无                     |
 
 **堆内存分代结构：**
 
@@ -40,7 +40,7 @@ public class MemoryDemo {
         long maxMemory = runtime.maxMemory();      // 最大堆内存
         long totalMemory = runtime.totalMemory();  // 当前堆内存
         long freeMemory = runtime.freeMemory();    // 空闲堆内存
-        
+
         System.out.println("Max: " + maxMemory / 1024 / 1024 + "MB");
         System.out.println("Total: " + totalMemory / 1024 / 1024 + "MB");
         System.out.println("Free: " + freeMemory / 1024 / 1024 + "MB");
@@ -72,14 +72,14 @@ public class MemoryDemo {
 
 **答案要点：**
 
-| 特性 | CMS | G1 | ZGC |
-|------|-----|----|----|
-| **算法** | 标记-清除 | 标记-整理 | 染色指针+读屏障 |
-| **停顿时间** | 不可预测 | 可预测（-XX:MaxGCPauseMillis） | <10ms |
-| **内存碎片** | 有 | 无 | 无 |
-| **堆大小** | <32GB | 4GB-64GB | 8MB-16TB |
-| **JDK版本** | JDK 5+ | JDK 7+ | JDK 11+ |
-| **适用场景** | 低延迟、中小堆 | 大堆、可控停顿 | 超大堆、极低延迟 |
+| 特性         | CMS            | G1                             | ZGC              |
+| ------------ | -------------- | ------------------------------ | ---------------- |
+| **算法**     | 标记-清除      | 标记-整理                      | 染色指针+读屏障  |
+| **停顿时间** | 不可预测       | 可预测（-XX:MaxGCPauseMillis） | &lt;10ms         |
+| **内存碎片** | 有             | 无                             | 无               |
+| **堆大小**   | &lt;32GB       | 4GB-64GB                       | 8MB-16TB         |
+| **JDK 版本** | JDK 5+         | JDK 7+                         | JDK 11+          |
+| **适用场景** | 低延迟、中小堆 | 大堆、可控停顿                 | 超大堆、极低延迟 |
 
 **G1 收集器工作原理：**
 
@@ -158,9 +158,9 @@ G1 堆内存布局（Region 化）
 **GC 日志分析关键指标：**
 
 ```
-[GC (Allocation Failure) [PSYoungGen: 524288K->87654K(611840K)] 
+[GC (Allocation Failure) [PSYoungGen: 524288K->87654K(611840K)]
  524288K->87654K(2010112K), 0.0876543 secs]
- 
+
 关键指标：
 - GC 原因：Allocation Failure
 - Young GC 前后：524288K -> 87654K
@@ -216,9 +216,9 @@ G1 堆内存布局（Region 化）
 
 ```java
 public class HotSwapClassLoader extends ClassLoader {
-    
+
     @Override
-    protected Class<?> loadClass(String name, boolean resolve) 
+    protected Class<?> loadClass(String name, boolean resolve)
             throws ClassNotFoundException {
         // 打破双亲委派：先尝试自己加载
         if (name.startsWith("com.myapp.")) {
@@ -227,7 +227,7 @@ public class HotSwapClassLoader extends ClassLoader {
         // 其他类仍走双亲委派
         return super.loadClass(name, resolve);
     }
-    
+
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] classData = loadClassData(name);
@@ -236,7 +236,7 @@ public class HotSwapClassLoader extends ClassLoader {
         }
         return defineClass(name, classData, 0, classData.length);
     }
-    
+
     private byte[] loadClassData(String name) {
         // 从文件/网络加载类字节码
         String path = name.replace('.', '/') + ".class";
@@ -265,13 +265,13 @@ public class HotSwapClassLoader extends ClassLoader {
 
 **JIT 主要优化技术：**
 
-| 优化技术 | 说明 | 效果 |
-|---------|------|------|
+| 优化技术     | 说明                       | 效果             |
+| ------------ | -------------------------- | ---------------- |
 | **方法内联** | 将小方法代码直接嵌入调用处 | 减少方法调用开销 |
-| **逃逸分析** | 分析对象作用域 | 栈上分配、锁消除 |
-| **锁消除** | 消除不必要的同步 | 提升并发性能 |
-| **锁粗化** | 合并连续的加锁操作 | 减少锁开销 |
-| **标量替换** | 将对象拆解为基本类型 | 减少内存分配 |
+| **逃逸分析** | 分析对象作用域             | 栈上分配、锁消除 |
+| **锁消除**   | 消除不必要的同步           | 提升并发性能     |
+| **锁粗化**   | 合并连续的加锁操作         | 减少锁开销       |
+| **标量替换** | 将对象拆解为基本类型       | 减少内存分配     |
 
 **逃逸分析详解：**
 
