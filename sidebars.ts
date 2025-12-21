@@ -150,6 +150,11 @@ const sidebars: SidebarsConfig = {
           label: "Kubernetes 面试题",
           href: "/docs/interview/kubernetes-interview-questions",
         },
+        {
+          type: "link",
+          label: "Podman 面试题",
+          href: "/docs/interview/podman-interview-questions",
+        },
       ],
     },
     {
@@ -171,6 +176,16 @@ const sidebars: SidebarsConfig = {
           type: "link",
           label: "微服务面试题",
           href: "/docs/interview/microservices-interview-questions",
+        },
+        {
+          type: "link",
+          label: "Nginx 面试题",
+          href: "/docs/interview/nginx-interview-questions",
+        },
+        {
+          type: "link",
+          label: "计算机网络面试题",
+          href: "/docs/interview/networking-interview-questions",
         },
       ],
     },
