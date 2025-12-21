@@ -1,6 +1,6 @@
 ---
 sidebar_position: 100
-title: Spring Boot 面试题精选
+title: Spring Boot 面试题
 ---
 
 # Spring Boot 面试题精选
@@ -27,12 +27,12 @@ title: Spring Boot 面试题精选
 
 Spring Boot 是基于 Spring 框架的快速开发脚手架，主要解决以下问题：
 
-| 问题 | Spring Boot 解决方案 |
-|------|---------------------|
-| 配置繁琐 | 自动配置（Auto-Configuration） |
-| 依赖管理复杂 | Starter 依赖简化 |
-| 部署麻烦 | 内嵌服务器，可执行 JAR |
-| 缺乏标准化 | 约定优于配置 |
+| 问题         | Spring Boot 解决方案           |
+| ------------ | ------------------------------ |
+| 配置繁琐     | 自动配置（Auto-Configuration） |
+| 依赖管理复杂 | Starter 依赖简化               |
+| 部署麻烦     | 内嵌服务器，可执行 JAR         |
+| 缺乏标准化   | 约定优于配置                   |
 
 **核心特性：**
 
@@ -65,11 +65,11 @@ public class MyApplication {
 
 **各注解作用：**
 
-| 注解 | 作用 |
-|------|------|
-| `@SpringBootConfiguration` | 标识当前类为配置类 |
-| `@EnableAutoConfiguration` | 启用自动配置机制 |
-| `@ComponentScan` | 扫描当前包及子包的组件 |
+| 注解                       | 作用                   |
+| -------------------------- | ---------------------- |
+| `@SpringBootConfiguration` | 标识当前类为配置类     |
+| `@EnableAutoConfiguration` | 启用自动配置机制       |
+| `@ComponentScan`           | 扫描当前包及子包的组件 |
 
 ---
 
@@ -146,14 +146,14 @@ org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
 
 **答案要点：**
 
-| 注解 | 条件 |
-|------|------|
-| `@ConditionalOnClass` | 类路径存在指定类 |
-| `@ConditionalOnMissingClass` | 类路径不存在指定类 |
-| `@ConditionalOnBean` | 容器中存在指定 Bean |
-| `@ConditionalOnMissingBean` | 容器中不存在指定 Bean |
-| `@ConditionalOnProperty` | 配置属性满足条件 |
-| `@ConditionalOnWebApplication` | 是 Web 应用 |
+| 注解                           | 条件                  |
+| ------------------------------ | --------------------- |
+| `@ConditionalOnClass`          | 类路径存在指定类      |
+| `@ConditionalOnMissingClass`   | 类路径不存在指定类    |
+| `@ConditionalOnBean`           | 容器中存在指定 Bean   |
+| `@ConditionalOnMissingBean`    | 容器中不存在指定 Bean |
+| `@ConditionalOnProperty`       | 配置属性满足条件      |
+| `@ConditionalOnWebApplication` | 是 Web 应用           |
 
 **示例：**
 
@@ -162,7 +162,7 @@ org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
 @ConditionalOnClass(DataSource.class)
 @ConditionalOnProperty(prefix = "spring.datasource", name = "url")
 public class DataSourceAutoConfiguration {
-    
+
     @Bean
     @ConditionalOnMissingBean
     public DataSource dataSource() {
@@ -200,10 +200,10 @@ public class MyServiceProperties {
 @EnableConfigurationProperties(MyServiceProperties.class)
 @ConditionalOnClass(MyService.class)
 public class MyServiceAutoConfiguration {
-    
+
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnProperty(prefix = "my.service", name = "enabled", 
+    @ConditionalOnProperty(prefix = "my.service", name = "enabled",
                            havingValue = "true", matchIfMissing = true)
     public MyService myService(MyServiceProperties properties) {
         return new MyService(properties.getName());
@@ -249,16 +249,16 @@ spring:
 
 **答案要点：**
 
-| 注解 | 返回值处理 | 适用场景 |
-|------|-----------|---------|
-| `@Controller` | 返回视图名称 | 传统 MVC，返回页面 |
-| `@RestController` | 返回 JSON/XML | RESTful API |
+| 注解              | 返回值处理    | 适用场景           |
+| ----------------- | ------------- | ------------------ |
+| `@Controller`     | 返回视图名称  | 传统 MVC，返回页面 |
+| `@RestController` | 返回 JSON/XML | RESTful API        |
 
 ```java
 // @RestController = @Controller + @ResponseBody
 @RestController
 public class UserController {
-    
+
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.findById(id);  // 自动序列化为 JSON
@@ -275,12 +275,12 @@ public class UserController {
 ```java
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    
+
     @ExceptionHandler(BusinessException.class)
     public Result<Void> handleBusinessException(BusinessException e) {
         return Result.error(e.getCode(), e.getMessage());
     }
-    
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<Void> handleValidationException(MethodArgumentNotValidException e) {
         String message = e.getBindingResult().getFieldErrors().stream()
@@ -288,7 +288,7 @@ public class GlobalExceptionHandler {
             .collect(Collectors.joining(", "));
         return Result.error(400, message);
     }
-    
+
     @ExceptionHandler(Exception.class)
     public Result<Void> handleException(Exception e) {
         log.error("系统异常", e);
@@ -310,14 +310,14 @@ public class GlobalExceptionHandler {
 ```java
 @Configuration
 public class DataSourceConfig {
-    
+
     @Bean
     @Primary
     @ConfigurationProperties("spring.datasource.primary")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }
-    
+
     @Bean
     @ConfigurationProperties("spring.datasource.secondary")
     public DataSource secondaryDataSource() {
@@ -350,13 +350,13 @@ spring:
 ```java
 @Service
 public class UserService {
-    
+
     @Transactional(rollbackFor = Exception.class)
     public void createUser(User user) {
         userRepository.save(user);
         // 发生异常会回滚
     }
-    
+
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void logOperation(String operation) {
         // 独立事务，不受外部事务影响
@@ -366,12 +366,12 @@ public class UserService {
 
 **事务传播行为：**
 
-| 传播行为 | 说明 |
-|---------|------|
-| `REQUIRED` | 默认，有则加入，无则新建 |
-| `REQUIRES_NEW` | 总是新建事务 |
-| `NESTED` | 嵌套事务 |
-| `SUPPORTS` | 有则加入，无则非事务执行 |
+| 传播行为       | 说明                     |
+| -------------- | ------------------------ |
+| `REQUIRED`     | 默认，有则加入，无则新建 |
+| `REQUIRES_NEW` | 总是新建事务             |
+| `NESTED`       | 嵌套事务                 |
+| `SUPPORTS`     | 有则加入，无则非事务执行 |
 
 **延伸：** 参考 [Spring Boot 事务管理](/docs/springboot/transaction)
 
@@ -381,13 +381,13 @@ public class UserService {
 
 **答案要点：**
 
-| 特性 | JPA/Hibernate | MyBatis |
-|------|--------------|---------|
-| SQL 控制 | 自动生成 | 手写 SQL |
-| 学习曲线 | 较陡 | 平缓 |
-| 复杂查询 | 较弱 | 强 |
-| 缓存 | 一级+二级缓存 | 需配置 |
-| 适用场景 | 简单 CRUD | 复杂查询 |
+| 特性     | JPA/Hibernate | MyBatis  |
+| -------- | ------------- | -------- |
+| SQL 控制 | 自动生成      | 手写 SQL |
+| 学习曲线 | 较陡          | 平缓     |
+| 复杂查询 | 较弱          | 强       |
+| 缓存     | 一级+二级缓存 | 需配置   |
+| 适用场景 | 简单 CRUD     | 复杂查询 |
 
 ---
 
@@ -401,7 +401,7 @@ public class UserService {
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -419,7 +419,7 @@ public class SecurityConfig {
             );
         return http.build();
     }
-    
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -435,16 +435,16 @@ public class SecurityConfig {
 
 **答案要点：**
 
-| 端点 | 说明 |
-|------|------|
-| `/actuator/health` | 健康检查 |
-| `/actuator/info` | 应用信息 |
-| `/actuator/metrics` | 指标数据 |
-| `/actuator/env` | 环境变量 |
-| `/actuator/beans` | Bean 列表 |
-| `/actuator/mappings` | 请求映射 |
-| `/actuator/threaddump` | 线程转储 |
-| `/actuator/heapdump` | 堆转储 |
+| 端点                   | 说明      |
+| ---------------------- | --------- |
+| `/actuator/health`     | 健康检查  |
+| `/actuator/info`       | 应用信息  |
+| `/actuator/metrics`    | 指标数据  |
+| `/actuator/env`        | 环境变量  |
+| `/actuator/beans`      | Bean 列表 |
+| `/actuator/mappings`   | 请求映射  |
+| `/actuator/threaddump` | 线程转储  |
+| `/actuator/heapdump`   | 堆转储    |
 
 **配置：**
 
@@ -470,10 +470,10 @@ management:
 ```java
 @Component
 public class DatabaseHealthIndicator implements HealthIndicator {
-    
+
     @Autowired
     private DataSource dataSource;
-    
+
     @Override
     public Health health() {
         try (Connection conn = dataSource.getConnection()) {
@@ -643,15 +643,15 @@ management:
 ```java
 @Component
 public class OrderMetrics {
-    
+
     private final Counter orderCounter;
-    
+
     public OrderMetrics(MeterRegistry registry) {
         this.orderCounter = Counter.builder("orders.created")
             .description("Number of orders created")
             .register(registry);
     }
-    
+
     public void recordOrder() {
         orderCounter.increment();
     }

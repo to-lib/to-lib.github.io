@@ -1,6 +1,6 @@
 ---
 sidebar_position: 17
-title: 面试题集
+title: Rust 面试题
 ---
 
 # Rust 面试题集

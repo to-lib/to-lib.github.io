@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: "面试题集"
+title: RocketMQ 面试题
 description: "RocketMQ 面试题精选及详细解答"
 ---
 

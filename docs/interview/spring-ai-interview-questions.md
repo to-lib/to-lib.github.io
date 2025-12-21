@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title: 面试题精选
+title: Spring AI 面试题
 ---
 
 # Spring AI 面试题精选

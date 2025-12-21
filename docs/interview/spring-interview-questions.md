@@ -1,6 +1,6 @@
 ---
 sidebar_position: 100
-title: Spring 面试题精选
+title: Spring 面试题
 ---
 
 # Spring 面试题精选
