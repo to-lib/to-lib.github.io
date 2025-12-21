@@ -1415,6 +1415,49 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+
+  // Microservices sidebar
+  microservices: [
+    {
+      type: "category",
+      label: "📖 基础入门",
+      collapsed: false,
+      items: [
+        "microservices/index",
+        "microservices/core-concepts",
+        "microservices/design-patterns",
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 服务治理",
+      collapsed: true,
+      items: [
+        "microservices/service-governance",
+        "microservices/observability",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 部署与安全",
+      collapsed: true,
+      items: [
+        "microservices/deployment",
+        "microservices/security",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: [
+        "microservices/best-practices",
+        "microservices/faq",
+        "microservices/interview-questions",
+        "microservices/quick-reference",
+      ],
+    },
+  ],
 };
 
 export default sidebars;
