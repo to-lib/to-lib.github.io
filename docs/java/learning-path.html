@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-java/learning-path" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Java 学习路线 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/java/learning-path"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Java 学习路线 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="这条路线适合想成为 Java 后端工程师的开发者，涵盖从基础语法到分布式系统的完整知识体系。每个阶段都有明确的目标、时间规划和实践建议。"><meta data-rh="true" property="og:description" content="这条路线适合想成为 Java 后端工程师的开发者，涵盖从基础语法到分布式系统的完整知识体系。每个阶段都有明确的目标、时间规划和实践建议。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/java/learning-path"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/learning-path" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/learning-path" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
+<script src="/assets/js/runtime~main.f080d481.js" defer="defer"></script>
+<script src="/assets/js/main.6294f037.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_k978" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="to-lib Logo" class="themedComponent_FW6w themedComponent--light_ZYRo"><img src="/img/logo.svg" alt="to-lib Logo" class="themedComponent_FW6w themedComponent--dark_Rd3V"></div><b class="navbar__title text--truncate">to-lib</b></a><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">💻 编程语言</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">Java 编程</div></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/docs/java">📖 Java 概述</a></li><li><a class="dropdown__link" href="/docs/java/jdk21-features">📦 JDK 8-21 新特性</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Rust 编程</div></li><li><a class="dropdown__link" href="/docs/rust">📖 Rust 概述</a></li><li><a class="dropdown__link" href="/docs/rust/cargo-guide">📦 Cargo 指南</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">Frontend</div></li><li><a class="dropdown__link" href="/docs/react">⚛️ React 19</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🏗️ 框架与中间件</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Spring 生态</div></li><li><a class="dropdown__link" href="/docs/spring">🍃 Spring Framework</a></li><li><a class="dropdown__link" href="/docs/springboot">🚀 Spring Boot</a></li><li><a class="dropdown__link" href="/docs/springcloud">☁️ Spring Cloud</a></li><li><a class="dropdown__link" href="/docs/springcloud-alibaba">🛍️ Spring Cloud Alibaba</a></li><li><a class="dropdown__link" href="/docs/spring-ai">🤖 Spring AI</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">网络与消息</div></li><li><a class="dropdown__link" href="/docs/netty">⚡ Netty</a></li><li><a class="dropdown__link" href="/docs/rabbitmq">🐰 RabbitMQ</a></li><li><a class="dropdown__link" href="/docs/kafka">📊 Kafka</a></li><li><a class="dropdown__link" href="/docs/rocketmq">🚀 RocketMQ</a></li><li><a class="dropdown__link" href="/docs/flink">⚡ Flink</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">数据库</div></li><li><a class="dropdown__link" href="/docs/mysql">🐬 MySQL</a></li><li><a class="dropdown__link" href="/docs/redis">💾 Redis</a></li><li><a class="dropdown__link" href="/docs/postgres">🐘 PostgreSQL</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🐧 运维与工具</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #000;">Linux System</div></li><li><a class="dropdown__link" href="/docs/linux">🐧 Linux</a></li><li><a class="dropdown__link" href="/docs/linux/shell-scripting">🐚 Shell Scripting</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #009688;">Web Server & Media</div></li><li><a class="dropdown__link" href="/docs/nginx">🌐 Nginx</a></li><li><a class="dropdown__link" href="/docs/ffmpeg">🎬 FFmpeg</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">Containers</div></li><li><a class="dropdown__link" href="/docs/docker">🐳 Docker</a></li><li><a class="dropdown__link" href="/docs/podman">🦭 Podman</a></li><li><a class="dropdown__link" href="/docs/kubernetes">☸️ Kubernetes</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">架构</div></li><li><a class="dropdown__link" href="/docs/microservices">🏛️ 微服务架构</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🧠 CS 基础</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dsa">🧮 数据结构与算法</a></li><li><a class="dropdown__link" href="/docs/dsa/quick-reference">📋 DSA 快速参考</a></li><li><a class="dropdown__link" href="/docs/interview/dsa-interview-questions">🧠 DSA 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li><a class="dropdown__link" href="/docs/networking">🌐 计算机网络</a></li><li><a class="dropdown__link" href="/docs/java-design-patterns">🎨 设计模式 (Java)</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">📝 面试题库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/interview">📚 面试题库首页</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">Java 面试</div></li><li><a class="dropdown__link" href="/docs/interview/java-interview-questions">☕ Java 基础面试题</a></li><li><a class="dropdown__link" href="/docs/interview/java-senior">🎯 Java 高级面试题</a></li><li><a class="dropdown__link" href="/docs/interview/java-design-patterns-interview-questions">🎨 设计模式面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Spring 生态</div></li><li><a class="dropdown__link" href="/docs/interview/spring-interview-questions">🍃 Spring 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springboot-interview-questions">🚀 Spring Boot 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springcloud-interview-questions">☁️ Spring Cloud 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springcloud-alibaba-interview-questions">🛍️ Spring Cloud Alibaba 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">数据库 & 中间件</div></li><li><a class="dropdown__link" href="/docs/interview/mysql-interview-questions">🐬 MySQL 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/redis-interview-questions">💾 Redis 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/postgres-interview-questions">🐘 PostgreSQL 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/kafka-interview-questions">📊 Kafka 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rocketmq-interview-questions">🚀 RocketMQ 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">其他</div></li><li><a class="dropdown__link" href="/docs/interview/linux-interview-questions">🐧 Linux 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/netty-interview-questions">⚡ Netty 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/docker-interview-questions">🐳 Docker 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/kubernetes-interview-questions">☸️ Kubernetes 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rabbitmq-interview-questions">🐰 RabbitMQ 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/flink-interview-questions">⚡ Flink 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/microservices-interview-questions">🏛️ 微服务面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #61dafb;">前端 & 其他</div></li><li><a class="dropdown__link" href="/docs/interview/react-interview-questions">⚛️ React 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/dsa-interview-questions">🧮 数据结构与算法面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rust-interview-questions">🦀 Rust 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #ff9800;">架构与软技能</div></li><li><a class="dropdown__link" href="/docs/interview/system-design-interview-questions">🏗️ 系统设计面试题</a></li><li><a class="dropdown__link" href="/docs/interview/behavioral-interview-questions">🗣️ 行为面试题 (BQ)</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🤖 AI 开发</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/ai">📖 AI 概览</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">基础知识</div></li><li><a class="dropdown__link" href="/docs/ai/llm-fundamentals">🧠 LLM 基础知识</a></li><li><a class="dropdown__link" href="/docs/ai/prompt-engineering">✨ 提示工程</a></li><li><a class="dropdown__link" href="/docs/ai/embeddings">🧩 Embeddings（向量表示）</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">核心技术</div></li><li><a class="dropdown__link" href="/docs/ai/agent">🤖 AI Agent (智能体)</a></li><li><a class="dropdown__link" href="/docs/ai/function-calling">🔧 Function Calling</a></li><li><a class="dropdown__link" href="/docs/ai/rag">📚 RAG (检索增强生成)</a></li><li><a class="dropdown__link" href="/docs/ai/mcp">🔌 MCP (模型上下文协议)</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #ff9800;">工程实践</div></li><li><a class="dropdown__link" href="/docs/ai/fine-tuning">🧪 Fine-tuning（微调）</a></li><li><a class="dropdown__link" href="/docs/ai/evaluation">📏 Evaluation（评估与测试）</a></li><li><a class="dropdown__link" href="/docs/ai/production">🚀 Production（生产化与部署）</a></li><li><a class="dropdown__link" href="/docs/ai/security">🔐 Security（安全与隐私）</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">参考指南</div></li><li><a class="dropdown__link" href="/docs/ai/quick-reference">📋 快速参考</a></li><li><a class="dropdown__link" href="/docs/ai/faq">❓ 常见问题</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_lwka colorModeToggle_SVpo"><button class="clean-btn toggleButton_Mbg6 toggleButtonDisabled_dsJi" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ lightToggleIcon_iZ7o"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ darkToggleIcon_sbHe"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ systemToggleIcon_rNLr"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_bxl4"><div class="navbar__search searchBarContainer_klkp" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_AuBj" value=""><div class="loadingRing_Allz searchBarLoadingRing_DNDh"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_CSSr"><div class="docsWrapper_b3o4"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_ngaE" type="button"></button><div class="docRoot_vnET"><main class="docMainContainer_WeUM docMainContainerEnhanced_GPOT"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_qoff"><div class="docItemContainer_phNv"><article><div class="tocCollapsible_Jjm_ theme-doc-toc-mobile tocMobile_KLro"><button type="button" class="clean-btn tocCollapsibleButton_ibvO">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>🧭 Java 学习路线（从零到高级后端）</h1></header>
+<p>这条路线适合想成为 Java 后端工程师的开发者，涵盖从基础语法到分布式系统的完整知识体系。每个阶段都有明确的目标、时间规划和实践建议。</p>
+<blockquote>
+<p>[!TIP]
+本学习路线基于 <strong>JDK 1.8 (Java 8)</strong> 版本，这是目前企业中最广泛使用的 Java 版本。建议按顺序学习，扎实掌握每个阶段后再进入下一阶段。</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-1java-基础语法12-周">阶段 1：Java 基础语法（1–2 周）<a href="#阶段-1java-基础语法12-周" class="hash-link" aria-label="Direct link to 阶段 1：Java 基础语法（1–2 周）" title="Direct link to 阶段 1：Java 基础语法（1–2 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：能写基础程序，理解语言核心机制</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容">📌 必学内容<a href="#-必学内容" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>基础语法</strong>：变量、数据类型、运算符、流程控制（if/switch/for/while）</li>
+<li class=""><strong>面向对象</strong>：类、对象、封装、继承、多态、接口、抽象类</li>
+<li class=""><strong>常用 API</strong>：String、StringBuilder、Math、Arrays</li>
+<li class=""><strong>异常机制</strong>：try/catch/finally、throw/throws、自定义异常</li>
+<li class=""><strong>I/O 基础</strong>：File、InputStream、OutputStream、Reader、Writer</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档">📚 推荐文档<a href="#-推荐文档" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/basic-syntax">基础语法</a></td><td>数据类型、变量、运算符、流程控制</td></tr><tr><td><a class="" href="/docs/java/oop">面向对象</a></td><td>类、对象、继承、多态、内部类、枚举</td></tr><tr><td><a class="" href="/docs/java/exception-handling">异常处理</a></td><td>异常分类、处理机制、最佳实践</td></tr><tr><td><a class="" href="/docs/java/io-streams">IO 流</a></td><td>字节流、字符流、缓冲流基础</td></tr><tr><td><a class="" href="/docs/java/common-classes">常用类</a></td><td>String、Math、包装类等常用类</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目">🛠 实践项目<a href="#-实践项目" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">写一个<strong>学生管理系统</strong>（控制台版）：增删改查、文件存储</li>
+<li class="">写一个<strong>个人记账本</strong>：收支记录、统计分析、数据持久化</li>
+<li class="">熟练使用 <strong>IntelliJ IDEA</strong>：快捷键、调试、重构</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验">✅ 阶段目标检验<a href="#-阶段目标检验" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能独立编写 200+ 行的控制台程序</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解面向对象三大特性</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确处理异常并写入日志文件</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-2java-核心进阶24-周">阶段 2：Java 核心进阶（2–4 周）<a href="#阶段-2java-核心进阶24-周" class="hash-link" aria-label="Direct link to 阶段 2：Java 核心进阶（2–4 周）" title="Direct link to 阶段 2：Java 核心进阶（2–4 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：掌握 Java 运行机制，能写高质量代码</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-1">📌 必学内容<a href="#-必学内容-1" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>JVM 基础</strong>：类加载机制、内存结构（堆/栈/方法区）、GC 原理</li>
+<li class=""><strong>泛型编程</strong>：泛型类、泛型方法、通配符、类型擦除</li>
+<li class=""><strong>注解与反射</strong>：自定义注解、反射 API、动态代理</li>
+<li class=""><strong>集合框架深入</strong>：ArrayList/LinkedList 原理、HashMap/TreeMap 实现、Collections 工具类</li>
+<li class=""><strong>Lambda 与 Stream</strong>：函数式接口、Lambda 表达式、Stream API</li>
+<li class=""><strong>单元测试</strong>：JUnit 5、断言、Mock 测试</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-1">📚 推荐文档<a href="#-推荐文档-1" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/jvm-basics">JVM 基础</a></td><td>JVM 架构、类加载、内存模型、垃圾回收</td></tr><tr><td><a class="" href="/docs/java/generics">泛型编程</a></td><td>泛型类、泛型方法、通配符、类型擦除</td></tr><tr><td><a class="" href="/docs/java/reflection-annotation">反射与注解</a></td><td>反射 API、动态代理、自定义注解</td></tr><tr><td><a class="" href="/docs/java/collections">集合框架</a></td><td>List、Set、Map 详解和性能对比</td></tr><tr><td><a class="" href="/docs/java/functional-programming">函数式编程</a></td><td>Lambda、Stream API、函数式接口</td></tr><tr><td><a class="" href="/docs/java/jdk8-features">JDK 8 新特性</a></td><td>Lambda、Stream、Optional、新日期时间 API</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-1">🛠 实践项目<a href="#-实践项目-1" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">用 <strong>Stream API</strong> 重构阶段 1 的项目</li>
+<li class="">写一个简单的 <strong>JSON 解析器</strong>（手写递归下降解析）</li>
+<li class="">写一个 <strong>文件扫描工具</strong>（使用反射和注解）</li>
+<li class="">实现一个 <strong>简易 IoC 容器</strong>（理解 Spring 原理）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-1">✅ 阶段目标检验<a href="#-阶段目标检验-1" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 JVM 内存结构图</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能用 Stream 写复杂的数据处理逻辑</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能用反射实现简单的框架功能</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-3java-并发编程46-周">阶段 3：Java 并发编程（4–6 周）<a href="#阶段-3java-并发编程46-周" class="hash-link" aria-label="Direct link to 阶段 3：Java 并发编程（4–6 周）" title="Direct link to 阶段 3：Java 并发编程（4–6 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：理解并发底层原理，能写高性能线程代码</p>
+<blockquote>
+<p>[!IMPORTANT]
+并发编程是 Java 后端的核心技能，需要投入足够的时间深入理解。这部分内容在面试中出现频率极高。</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-2">📌 必学内容<a href="#-必学内容-2" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>线程模型</strong>：Thread、Runnable、Callable、Future</li>
+<li class=""><strong>线程池</strong>：ThreadPoolExecutor 原理、核心参数、拒绝策略</li>
+<li class=""><strong>JUC 核心</strong>：<!-- -->
+<ul>
+<li class="">Lock 接口与 ReentrantLock</li>
+<li class="">AQS（AbstractQueuedSynchronizer）原理</li>
+<li class="">CAS 原理与原子类（AtomicInteger、AtomicReference）</li>
+<li class="">Condition 条件变量</li>
+</ul>
+</li>
+<li class=""><strong>并发容器</strong>：ConcurrentHashMap、CopyOnWriteArrayList、BlockingQueue</li>
+<li class=""><strong>内存模型</strong>：<!-- -->
+<ul>
+<li class="">JMM（Java Memory Model）</li>
+<li class="">volatile 语义与实现</li>
+<li class="">happens-before 规则</li>
+</ul>
+</li>
+<li class=""><strong>锁机制深入</strong>：<!-- -->
+<ul>
+<li class="">synchronized 底层实现</li>
+<li class="">对象头与 Mark Word</li>
+<li class="">锁升级（偏向锁 → 轻量级锁 → 重量级锁）</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-2">📚 推荐文档<a href="#-推荐文档-2" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/multithreading">多线程</a></td><td>线程创建、同步、通信、线程池、并发工具类</td></tr><tr><td><a class="" href="/docs/java/jvm-basics">JVM 基础</a></td><td>内存模型、对象头、锁机制</td></tr><tr><td><a class="" href="/docs/java/performance">性能优化</a></td><td>并发优化、锁优化策略</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-2">🛠 实践项目<a href="#-实践项目-2" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">实现一个 <strong>简易线程池</strong>（理解 ThreadPoolExecutor 原理）</li>
+<li class="">用 <strong>Disruptor 思路</strong> 写高性能无锁队列</li>
+<li class="">实现 <strong>读写锁</strong>（参考 ReentrantReadWriteLock）</li>
+<li class="">分析 <strong>ConcurrentHashMap</strong> 源码（JDK 7 vs JDK 8）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-2">✅ 阶段目标检验<a href="#-阶段目标检验-2" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能讲清 synchronized 和 ReentrantLock 的区别</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 AQS 的核心数据结构</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能分析并解决死锁问题</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-4数据库与持久化24-周">阶段 4：数据库与持久化（2–4 周）<a href="#阶段-4数据库与持久化24-周" class="hash-link" aria-label="Direct link to 阶段 4：数据库与持久化（2–4 周）" title="Direct link to 阶段 4：数据库与持久化（2–4 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：能写高性能 SQL，理解事务与索引原理</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-3">📌 必学内容<a href="#-必学内容-3" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>MySQL 核心</strong>：<!-- -->
+<ul>
+<li class="">索引原理（B+ 树、聚簇索引、二级索引）</li>
+<li class="">事务 ACID 与隔离级别</li>
+<li class="">锁机制（行锁、表锁、间隙锁）</li>
+<li class="">执行计划分析（EXPLAIN）</li>
+<li class="">慢查询优化</li>
+</ul>
+</li>
+<li class=""><strong>JDBC 基础</strong>：Connection、Statement、ResultSet、连接池</li>
+<li class=""><strong>ORM 框架</strong>：<!-- -->
+<ul>
+<li class="">MyBatis：Mapper、动态 SQL、缓存机制</li>
+<li class="">JPA/Hibernate：实体映射、关联关系</li>
+</ul>
+</li>
+<li class=""><strong>连接池</strong>：HikariCP 原理与配置</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-3">📚 推荐文档<a href="#-推荐文档-3" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/mysql/basic-concepts">MySQL 基础</a></td><td>数据库基本概念</td></tr><tr><td><a class="" href="/docs/mysql/indexes">MySQL 索引</a></td><td>索引原理与优化</td></tr><tr><td><a class="" href="/docs/mysql/transactions">MySQL 事务</a></td><td>事务 ACID、隔离级别</td></tr><tr><td><a class="" href="/docs/mysql/locks">MySQL 锁</a></td><td>行锁、表锁、死锁处理</td></tr><tr><td><a class="" href="/docs/mysql/performance-optimization">MySQL 性能优化</a></td><td>慢查询分析、索引优化</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-3">🛠 实践项目<a href="#-实践项目-3" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">写一个 <strong>小型 CRUD 服务</strong>（Spring Boot + MyBatis）</li>
+<li class="">分析慢 SQL 并 <strong>优化索引</strong></li>
+<li class="">实现 <strong>分页查询优化</strong>（深分页问题）</li>
+<li class="">模拟 <strong>高并发下的库存扣减</strong>（解决超卖问题）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-3">✅ 阶段目标检验<a href="#-阶段目标检验-3" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能讲清 B+ 树索引的原理</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能分析 EXPLAIN 执行计划</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确处理事务边界</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-5spring-全家桶48-周">阶段 5：Spring 全家桶（4–8 周）<a href="#阶段-5spring-全家桶48-周" class="hash-link" aria-label="Direct link to 阶段 5：Spring 全家桶（4–8 周）" title="Direct link to 阶段 5：Spring 全家桶（4–8 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：掌握 Spring 生态，能写企业级后端服务</p>
+<blockquote>
+<p>[!TIP]
+Spring 是 Java 后端的核心框架，建议先理解原理再大量实践。</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-4">📌 必学内容<a href="#-必学内容-4" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar__9bU" id="spring-framework">Spring Framework<a href="#spring-framework" class="hash-link" aria-label="Direct link to Spring Framework" title="Direct link to Spring Framework" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>IoC / DI 原理</strong>：BeanFactory、ApplicationContext、Bean 生命周期</li>
+<li class=""><strong>AOP 原理</strong>：动态代理（JDK / CGLib）、切面、通知类型</li>
+<li class=""><strong>事务管理</strong>：声明式事务、事务传播机制、事务失效场景</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar__9bU" id="spring-boot">Spring Boot<a href="#spring-boot" class="hash-link" aria-label="Direct link to Spring Boot" title="Direct link to Spring Boot" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>自动装配原理</strong>：@EnableAutoConfiguration、spring.factories、条件注解</li>
+<li class=""><strong>Starter 机制</strong>：自定义 Starter 开发</li>
+<li class=""><strong>配置体系</strong>：application.yml、Profile、配置优先级</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar__9bU" id="spring-mvc">Spring MVC<a href="#spring-mvc" class="hash-link" aria-label="Direct link to Spring MVC" title="Direct link to Spring MVC" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>DispatcherServlet 流程</strong>：请求处理全流程</li>
+<li class=""><strong>参数解析</strong>：@RequestParam、@PathVariable、@RequestBody</li>
+<li class=""><strong>拦截器与过滤器</strong>：区别与使用场景</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar__9bU" id="spring-cloud可选进阶">Spring Cloud（可选进阶）<a href="#spring-cloud可选进阶" class="hash-link" aria-label="Direct link to Spring Cloud（可选进阶）" title="Direct link to Spring Cloud（可选进阶）" translate="no">​</a></h4>
+<ul>
+<li class="">注册中心：Nacos / Eureka</li>
+<li class="">服务调用：Feign</li>
+<li class="">网关：Gateway</li>
+<li class="">限流熔断：Sentinel</li>
+<li class="">配置中心：Config / Nacos</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-4">📚 推荐文档<a href="#-推荐文档-4" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/spring/core-concepts">Spring 核心概念</a></td><td>IoC、DI、Bean 管理</td></tr><tr><td><a class="" href="/docs/spring/aop">Spring AOP</a></td><td>面向切面编程原理与实践</td></tr><tr><td><a class="" href="/docs/spring/transactions">Spring 事务</a></td><td>事务管理、传播机制</td></tr><tr><td><a class="" href="/docs/spring/spring-mvc">Spring MVC</a></td><td>Web 开发、请求处理</td></tr><tr><td><a class="" href="/docs/springboot/quick-start">Spring Boot 入门</a></td><td>快速开始 Spring Boot</td></tr><tr><td><a class="" href="/docs/springboot/auto-configuration">Spring Boot 自动装配</a></td><td>自动装配原理</td></tr><tr><td><a class="" href="/docs/springcloud">Spring Cloud 入门</a></td><td>微服务架构入门</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-4">🛠 实践项目<a href="#-实践项目-4" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">写一个 <strong>完整的 RESTful 服务</strong>（用户管理、权限控制）</li>
+<li class="">自己实现一个 <strong>Spring Boot Starter</strong>（如日志 Starter）</li>
+<li class="">用 <strong>AOP 实现</strong> 统一日志 / 监控框架</li>
+<li class="">实现 <strong>自定义注解</strong> 实现接口限流</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-4">✅ 阶段目标检验<a href="#-阶段目标检验-4" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 Spring Bean 生命周期流程图</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能讲清动态代理的两种实现方式</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能独立完成一个企业级后端服务</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-6netty-与网络编程46-周">阶段 6：Netty 与网络编程（4–6 周）<a href="#阶段-6netty-与网络编程46-周" class="hash-link" aria-label="Direct link to 阶段 6：Netty 与网络编程（4–6 周）" title="Direct link to 阶段 6：Netty 与网络编程（4–6 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：掌握高性能网络编程，能写自定义协议服务</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-5">📌 必学内容<a href="#-必学内容-5" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>IO 模型</strong>：BIO / NIO / AIO 对比</li>
+<li class=""><strong>NIO 核心</strong>：Buffer、Channel、Selector</li>
+<li class=""><strong>Reactor 模型</strong>：单线程 / 多线程 / 主从 Reactor</li>
+<li class=""><strong>Netty 核心组件</strong>：<!-- -->
+<ul>
+<li class="">EventLoop、EventLoopGroup</li>
+<li class="">Channel、ChannelPipeline</li>
+<li class="">ChannelHandler、ChannelHandlerContext</li>
+</ul>
+</li>
+<li class=""><strong>编解码</strong>：ByteBuf、Codec、MessageToByteEncoder</li>
+<li class=""><strong>粘包拆包</strong>：DelimiterBasedFrameDecoder、LengthFieldBasedFrameDecoder</li>
+<li class=""><strong>心跳机制</strong>：IdleStateHandler</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-5">📚 推荐文档<a href="#-推荐文档-5" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/netty/overview">Netty 概述</a></td><td>Netty 简介与核心概念</td></tr><tr><td><a class="" href="/docs/netty/core-components">Netty 核心组件</a></td><td>EventLoop、Channel、Pipeline</td></tr><tr><td><a class="" href="/docs/netty/bytebuf">Netty ByteBuf</a></td><td>缓冲区管理</td></tr><tr><td><a class="" href="/docs/netty/codec">Netty 编解码</a></td><td>编解码器原理与实践</td></tr><tr><td><a class="" href="/docs/netty/advanced">Netty 高级特性</a></td><td>高级用法与优化</td></tr><tr><td><a class="" href="/docs/netty/practical-examples">Netty 实战</a></td><td>实战案例</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-5">🛠 实践项目<a href="#-实践项目-5" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">写一个 <strong>IM 即时通讯系统</strong>（群聊、私聊、在线状态）</li>
+<li class="">写一个 <strong>RPC 框架</strong>（服务注册、负载均衡、序列化）</li>
+<li class="">实现 <strong>自定义协议</strong>（类似 Redis 的 RESP 协议）</li>
+<li class="">写一个 <strong>HTTP 服务器</strong>（简化版 Tomcat）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-5">✅ 阶段目标检验<a href="#-阶段目标检验-5" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 Netty 的线程模型</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确处理粘包拆包问题</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能实现自定义的应用层协议</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-7分布式系统612-周">阶段 7：分布式系统（6–12 周）<a href="#阶段-7分布式系统612-周" class="hash-link" aria-label="Direct link to 阶段 7：分布式系统（6–12 周）" title="Direct link to 阶段 7：分布式系统（6–12 周）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：掌握分布式系统核心原理，能设计高可用架构</p>
+<blockquote>
+<p>[!IMPORTANT]
+分布式系统是高级后端工程师的必备技能，需要理论与实践相结合。</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-6">📌 必学内容<a href="#-必学内容-6" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>分布式理论</strong>：CAP 定理、BASE 理论、一致性模型</li>
+<li class=""><strong>RPC 原理</strong>：序列化、网络传输、服务发现、负载均衡</li>
+<li class=""><strong>注册中心</strong>：Nacos / Zookeeper / Consul</li>
+<li class=""><strong>配置中心</strong>：Nacos Config / Apollo</li>
+<li class=""><strong>分布式锁</strong>：Redis 分布式锁、Zookeeper 分布式锁、Redisson</li>
+<li class=""><strong>分布式事务</strong>：2PC、3PC、TCC、SAGA、Seata</li>
+<li class=""><strong>消息队列</strong>：<!-- -->
+<ul>
+<li class="">Kafka：高吞吐、分区、消费者组</li>
+<li class="">RocketMQ：事务消息、延迟消息、顺序消息</li>
+<li class="">RabbitMQ：Exchange 类型、死信队列</li>
+</ul>
+</li>
+<li class=""><strong>缓存</strong>：<!-- -->
+<ul>
+<li class="">Redis 数据结构与应用场景</li>
+<li class="">缓存穿透、击穿、雪崩</li>
+<li class="">缓存一致性</li>
+</ul>
+</li>
+<li class=""><strong>限流熔断降级</strong>：Sentinel、Hystrix、Resilience4j</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-6">📚 推荐文档<a href="#-推荐文档-6" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/redis/introduction">Redis 入门</a></td><td>Redis 基础与数据结构</td></tr><tr><td><a class="" href="/docs/redis/cache-strategies">Redis 缓存策略</a></td><td>缓存设计与问题处理</td></tr><tr><td><a class="" href="/docs/redis/practical-examples">Redis 分布式锁</a></td><td>分布式锁实现</td></tr><tr><td><a class="" href="/docs/kafka">Kafka 入门</a></td><td>Kafka 核心概念</td></tr><tr><td><a class="" href="/docs/rocketmq">RocketMQ 入门</a></td><td>RocketMQ 核心概念</td></tr><tr><td><a class="" href="/docs/rabbitmq">RabbitMQ 入门</a></td><td>RabbitMQ 核心概念</td></tr><tr><td><a class="" href="/docs/microservices">微服务架构</a></td><td>微服务设计与实践</td></tr><tr><td><a class="" href="/docs/springcloud">Spring Cloud</a></td><td>Spring Cloud 组件</td></tr><tr><td><a class="" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></td><td>Nacos、Sentinel 等</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-6">🛠 实践项目<a href="#-实践项目-6" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">实现 <strong>分布式 ID 生成器</strong>（Snowflake 算法）</li>
+<li class="">实现 <strong>Redis 分布式锁</strong>（支持续期、可重入）</li>
+<li class="">用 <strong>Kafka 实现异步削峰</strong>（订单系统）</li>
+<li class="">实现 <strong>分布式事务</strong>（TCC 模式）</li>
+<li class="">设计一个 <strong>秒杀系统</strong>（高并发、防超卖）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-6">✅ 阶段目标检验<a href="#-阶段目标检验-6" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能讲清 CAP 定理的含义</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能设计一个高可用的分布式系统</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确使用消息队列解决实际问题</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-8工程化与-devops持续提升">阶段 8：工程化与 DevOps（持续提升）<a href="#阶段-8工程化与-devops持续提升" class="hash-link" aria-label="Direct link to 阶段 8：工程化与 DevOps（持续提升）" title="Direct link to 阶段 8：工程化与 DevOps（持续提升）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：掌握工程化能力，能独立完成项目全流程</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-必学内容-7">📌 必学内容<a href="#-必学内容-7" class="hash-link" aria-label="Direct link to 📌 必学内容" title="Direct link to 📌 必学内容" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>版本控制</strong>：Git 高级用法、分支策略、GitHub Actions</li>
+<li class=""><strong>构建工具</strong>：Maven 生命周期、Gradle 配置</li>
+<li class=""><strong>容器化</strong>：<!-- -->
+<ul>
+<li class="">Docker：镜像构建、容器编排</li>
+<li class="">Docker Compose：多容器管理</li>
+</ul>
+</li>
+<li class=""><strong>容器编排</strong>：<!-- -->
+<ul>
+<li class="">Kubernetes：Pod、Deployment、Service</li>
+<li class="">Helm：Chart 管理</li>
+</ul>
+</li>
+<li class=""><strong>日志体系</strong>：<!-- -->
+<ul>
+<li class="">ELK（Elasticsearch + Logstash + Kibana）</li>
+<li class="">Loki + Grafana</li>
+</ul>
+</li>
+<li class=""><strong>监控告警</strong>：<!-- -->
+<ul>
+<li class="">Prometheus + Grafana</li>
+<li class="">SkyWalking / Zipkin（链路追踪）</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-7">📚 推荐文档<a href="#-推荐文档-7" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/build-tools">构建工具</a></td><td>Maven/Gradle 配置</td></tr><tr><td><a class="" href="/docs/docker">Docker 入门</a></td><td>Docker 基础与实践</td></tr><tr><td><a class="" href="/docs/kubernetes">Kubernetes 入门</a></td><td>K8s 核心概念与实践</td></tr><tr><td><a class="" href="/docs/linux">Linux 基础</a></td><td>Linux 常用命令与配置</td></tr><tr><td><a class="" href="/docs/nginx">Nginx 入门</a></td><td>Nginx 配置与优化</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-7">🛠 实践项目<a href="#-实践项目-7" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
+<ul>
+<li class="">给项目配置 <strong>CI/CD 流水线</strong>（GitHub Actions / Jenkins）</li>
+<li class="">用 <strong>Docker</strong> 部署 Spring Boot 服务</li>
+<li class="">用 <strong>K8s</strong> 部署微服务集群</li>
+<li class="">搭建 <strong>完整的监控体系</strong>（Prometheus + Grafana）</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-7">✅ 阶段目标检验<a href="#-阶段目标检验-7" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_uYv3">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能独立完成项目的 Docker 化</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能配置 CI/CD 自动化流水线</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能搭建基本的监控告警系统</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-9高频面试方向随时补充">阶段 9：高频面试方向（随时补充）<a href="#阶段-9高频面试方向随时补充" class="hash-link" aria-label="Direct link to 阶段 9：高频面试方向（随时补充）" title="Direct link to 阶段 9：高频面试方向（随时补充）" translate="no">​</a></h2>
+<p><strong>🎯 目标</strong>：系统准备面试，查漏补缺</p>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-核心面试题方向">📌 核心面试题方向<a href="#-核心面试题方向" class="hash-link" aria-label="Direct link to 📌 核心面试题方向" title="Direct link to 📌 核心面试题方向" translate="no">​</a></h3>
+<table><thead><tr><th>方向</th><th>重点内容</th></tr></thead><tbody><tr><td><strong>Java 并发</strong></td><td>线程池、锁机制、JMM、volatile、CAS、AQS</td></tr><tr><td><strong>JVM</strong></td><td>内存模型、GC 算法、类加载、调优</td></tr><tr><td><strong>MySQL</strong></td><td>索引原理、事务隔离级别、锁、SQL 优化</td></tr><tr><td><strong>Redis</strong></td><td>数据结构、持久化、集群、分布式锁、缓存问题</td></tr><tr><td><strong>Spring</strong></td><td>IoC/AOP 原理、Bean 生命周期、事务失效场景</td></tr><tr><td><strong>分布式</strong></td><td>CAP、分布式锁、分布式事务、消息队列</td></tr><tr><td><strong>设计模式</strong></td><td>单例、工厂、代理、策略、模板方法、观察者</td></tr><tr><td><strong>系统设计</strong></td><td>秒杀系统、短链系统、feed 流、IM 系统</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-8">📚 推荐文档<a href="#-推荐文档-8" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+<table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/interview">Java 面试题</a></td><td>高频面试题汇总</td></tr><tr><td><a class="" href="/docs/java-design-patterns">Java 设计模式</a></td><td>23 种设计模式详解</td></tr><tr><td><a class="" href="/docs/java/best-practices">最佳实践</a></td><td>Java 编码规范与实践</td></tr><tr><td><a class="" href="/docs/java/faq">常见问题</a></td><td>常见问题解答</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="-总结最精简的-java-学习路径图">📚 总结：最精简的 Java 学习路径图<a href="#-总结最精简的-java-学习路径图" class="hash-link" aria-label="Direct link to 📚 总结：最精简的 Java 学习路径图" title="Direct link to 📚 总结：最精简的 Java 学习路径图" translate="no">​</a></h2>
+<div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">┌────────────────────────────────────────────────────────────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                    Java 后端工程师学习路径                       │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├────────────────────────────────────────────────────────────────┤</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                                                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  阶段 1    阶段 2    阶段 3    阶段 4    阶段 5                  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│    │        │        │        │        │                       │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│    ▼        ▼        ▼        ▼        ▼                       │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  基础语法 → 核心进阶 → 并发编程 → 数据库 → Spring                 │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│  (1-2周)   (2-4周)   (4-6周)  (2-4周)  (4-8周)                  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                                                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         │                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         ▼                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              ┌─────────────────────┐                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │      阶段 6         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │   Netty 网络编程    │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │     (4-6周)         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              └─────────────────────┘                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         │                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         ▼                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              ┌─────────────────────┐                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │      阶段 7         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │    分布式系统       │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │     (6-12周)        │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              └─────────────────────┘                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         │                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         ▼                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              ┌─────────────────────┐                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │      阶段 8         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │   工程化 DevOps     │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │     (持续提升)       │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              └─────────────────────┘                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         │                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                         ▼                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              ┌─────────────────────┐                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │      阶段 9         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │    面试准备         │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              │     (随时补充)       │                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│              └─────────────────────┘                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│                                                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└────────────────────────────────────────────────────────────────┘</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="-学习建议">🎯 学习建议<a href="#-学习建议" class="hash-link" aria-label="Direct link to 🎯 学习建议" title="Direct link to 🎯 学习建议" translate="no">​</a></h2>
+<blockquote>
+<p>[!TIP] &gt; <strong>高效学习的关键</strong></p>
+<ol>
+<li class=""><strong>动手实践</strong> &gt; 单纯看书/视频</li>
+<li class=""><strong>理解原理</strong> &gt; 死记硬背</li>
+<li class=""><strong>写项目</strong> &gt; 只刷算法题</li>
+<li class=""><strong>看源码</strong> &gt; 只用框架</li>
+</ol>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="时间规划建议">时间规划建议<a href="#时间规划建议" class="hash-link" aria-label="Direct link to 时间规划建议" title="Direct link to 时间规划建议" translate="no">​</a></h3>
+<table><thead><tr><th>目标</th><th>预计时间</th><th>重点</th></tr></thead><tbody><tr><td><strong>初级开发者</strong></td><td>2-3 个月</td><td>阶段 1-2 + Spring Boot 基础</td></tr><tr><td><strong>中级开发者</strong></td><td>6-8 个月</td><td>阶段 1-5 + 基础分布式</td></tr><tr><td><strong>高级开发者</strong></td><td>12-18 个月</td><td>全部阶段 + 源码阅读 + 系统设计</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="推荐学习资源">推荐学习资源<a href="#推荐学习资源" class="hash-link" aria-label="Direct link to 推荐学习资源" title="Direct link to 推荐学习资源" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>官方文档</strong>：<a href="https://docs.oracle.com/javase/8/docs/" target="_blank" rel="noopener noreferrer" class="">Java Documentation</a></li>
+<li class=""><strong>书籍</strong>：《Java 核心技术》《深入理解 Java 虚拟机》《Java 并发编程实战》</li>
+<li class=""><strong>实践</strong>：GitHub 开源项目、LeetCode 算法练习</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="-相关资源">🔗 相关资源<a href="#-相关资源" class="hash-link" aria-label="Direct link to 🔗 相关资源" title="Direct link to 🔗 相关资源" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs/java-design-patterns">Java 设计模式</a> - 23 种设计模式详解</li>
+<li class=""><a class="" href="/docs/spring">Spring Framework</a> - Spring 核心框架</li>
+<li class=""><a class="" href="/docs/springboot">Spring Boot</a> - Spring Boot 全教程</li>
+<li class=""><a class="" href="/docs/springcloud">Spring Cloud</a> - 微服务架构</li>
+<li class=""><a class="" href="/docs/netty">Netty</a> - 高性能网络框架</li>
+<li class=""><a class="" href="/docs/mysql">MySQL</a> - MySQL 数据库</li>
+<li class=""><a class="" href="/docs/redis">Redis</a> - Redis 缓存</li>
+<li class=""><a class="" href="/docs/kafka">Kafka</a> - 消息队列</li>
+</ul>
+<blockquote>
+<p>祝你学习顺利，早日成为优秀的 Java 后端工程师！🚀</p>
+</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java/learning-path.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#阶段-1java-基础语法12-周" class="table-of-contents__link toc-highlight">阶段 1：Java 基础语法（1–2 周）</a><ul><li><a href="#-必学内容" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-2java-核心进阶24-周" class="table-of-contents__link toc-highlight">阶段 2：Java 核心进阶（2–4 周）</a><ul><li><a href="#-必学内容-1" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-1" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-1" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-1" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-3java-并发编程46-周" class="table-of-contents__link toc-highlight">阶段 3：Java 并发编程（4–6 周）</a><ul><li><a href="#-必学内容-2" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-2" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-2" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-2" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-4数据库与持久化24-周" class="table-of-contents__link toc-highlight">阶段 4：数据库与持久化（2–4 周）</a><ul><li><a href="#-必学内容-3" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-3" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-3" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-3" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-5spring-全家桶48-周" class="table-of-contents__link toc-highlight">阶段 5：Spring 全家桶（4–8 周）</a><ul><li><a href="#-必学内容-4" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-4" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-4" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-4" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-6netty-与网络编程46-周" class="table-of-contents__link toc-highlight">阶段 6：Netty 与网络编程（4–6 周）</a><ul><li><a href="#-必学内容-5" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-5" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-5" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-5" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-7分布式系统612-周" class="table-of-contents__link toc-highlight">阶段 7：分布式系统（6–12 周）</a><ul><li><a href="#-必学内容-6" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-6" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-6" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-6" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-8工程化与-devops持续提升" class="table-of-contents__link toc-highlight">阶段 8：工程化与 DevOps（持续提升）</a><ul><li><a href="#-必学内容-7" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-7" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-7" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-7" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-9高频面试方向随时补充" class="table-of-contents__link toc-highlight">阶段 9：高频面试方向（随时补充）</a><ul><li><a href="#-核心面试题方向" class="table-of-contents__link toc-highlight">📌 核心面试题方向</a></li><li><a href="#-推荐文档-8" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li></ul></li><li><a href="#-总结最精简的-java-学习路径图" class="table-of-contents__link toc-highlight">📚 总结：最精简的 Java 学习路径图</a></li><li><a href="#-学习建议" class="table-of-contents__link toc-highlight">🎯 学习建议</a><ul><li><a href="#时间规划建议" class="table-of-contents__link toc-highlight">时间规划建议</a></li><li><a href="#推荐学习资源" class="table-of-contents__link toc-highlight">推荐学习资源</a></li></ul></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">🔗 相关资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
