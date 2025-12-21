@@ -85,7 +85,7 @@ class FenwickTree {
 示例（从左到右统计“前面有多少个比当前大”）：
 
 - `seen = i - 1`
-- `le = bit.sum(rank)`（<= 当前的数量）
+- `le = bit.sum(rank)`（&lt;= 当前的数量）
 - `greater = seen - le`
 
 ### 3) 区间加 + 单点查（差分 BIT）

@@ -6,12 +6,12 @@
 
 ## Tasks
 
-- [-] 1. 创建文档目录和配置文件
+- [x] 1. 创建文档目录和配置文件
   - [x] 1.1 创建 `docs/microservices/_category_.json` 侧边栏配置
     - 设置 label 为 "微服务"
     - 设置合适的 position
     - _Requirements: 1.1, 1.2_
-  - [-] 1.2 创建 `docs/microservices/index.md` 概述页面
+  - [x] 1.2 创建 `docs/microservices/index.md` 概述页面
     - 包含微服务定义和核心特性
     - 包含微服务 vs 单体架构对比表格
     - 包含微服务架构 Mermaid 图
@@ -19,16 +19,16 @@
     - 包含 DocCardList 导航组件
     - _Requirements: 1.3, 2.1, 2.2, 2.3, 2.4, 2.5_
 
-- [ ] 2. 创建核心概念文档
-  - [ ] 2.1 创建 `docs/microservices/core-concepts.md`
+- [x] 2. 创建核心概念文档
+  - [x] 2.1 创建 `docs/microservices/core-concepts.md`
     - 服务拆分原则（单一职责、领域驱动设计）
     - 服务通信方式（同步 REST/gRPC、异步消息队列）
     - API 设计最佳实践
     - 服务注册与发现概念
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-- [ ] 3. 创建设计模式文档
-  - [ ] 3.1 创建 `docs/microservices/design-patterns.md`
+- [x] 3. 创建设计模式文档
+  - [x] 3.1 创建 `docs/microservices/design-patterns.md`
     - API 网关模式
     - 服务网格（Service Mesh）
     - 断路器模式（Circuit Breaker）
@@ -37,16 +37,16 @@
     - 包含代码示例和架构图
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
-- [ ] 4. 创建服务治理文档
-  - [ ] 4.1 创建 `docs/microservices/service-governance.md`
+- [x] 4. 创建服务治理文档
+  - [x] 4.1 创建 `docs/microservices/service-governance.md`
     - 服务注册与发现实现（Consul、Eureka、Nacos）
     - 配置中心（Spring Cloud Config、Apollo）
     - 负载均衡策略
     - 限流和熔断实现
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 5. 创建可观测性文档
-  - [ ] 5.1 创建 `docs/microservices/observability.md`
+- [-] 5. 创建可观测性文档
+  - [-] 5.1 创建 `docs/microservices/observability.md`
     - 分布式链路追踪（Jaeger、Zipkin）
     - 日志聚合（ELK Stack）
     - 指标监控（Prometheus、Grafana）
