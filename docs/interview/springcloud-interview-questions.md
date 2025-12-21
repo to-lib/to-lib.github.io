@@ -1,6 +1,5 @@
 ---
-title: Spring Cloud 面试题集
-sidebar_label: 面试题集
+title: Spring Cloud 面试题
 sidebar_position: 23
 ---
 

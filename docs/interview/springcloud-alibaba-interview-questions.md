@@ -1,6 +1,5 @@
 ---
-title: Spring Cloud Alibaba 面试题精选
-sidebar_label: 面试题精选
+title: Spring Cloud Alibaba 面试题
 sidebar_position: 15
 ---
 
