@@ -263,6 +263,7 @@ const sidebars: SidebarsConfig = {
         "springboot/devtools",
         "springboot/quick-reference",
         "springboot/faq",
+        "springboot/interview-questions",
       ],
     },
   ],

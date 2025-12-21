@@ -366,7 +366,7 @@ const config: Config = {
             },
             {
               label: "🚀 Spring Boot 面试题",
-              to: "/docs/springboot/faq",
+              to: "/docs/springboot/interview-questions",
             },
             {
               label: "☁️ Spring Cloud 面试题",
@@ -421,6 +421,39 @@ const config: Config = {
             {
               label: "⚡ Netty 面试题",
               to: "/docs/netty/interview-questions",
+            },
+            {
+              label: "🐳 Docker 面试题",
+              to: "/docs/docker/interview-questions",
+            },
+            {
+              label: "☸️ Kubernetes 面试题",
+              to: "/docs/kubernetes/interview-questions",
+            },
+            {
+              label: "🐰 RabbitMQ 面试题",
+              to: "/docs/rabbitmq/interview-questions",
+            },
+            {
+              label: "⚡ Flink 面试题",
+              to: "/docs/flink/interview-questions",
+            },
+            {
+              label: "🏛️ 微服务面试题",
+              to: "/docs/microservices/interview-questions",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #61dafb;'>前端 & 其他</div>",
+            },
+            {
+              label: "⚛️ React 面试题",
+              to: "/docs/react/interview-questions",
             },
             {
               label: "🧮 数据结构与算法面试题",
