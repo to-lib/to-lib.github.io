@@ -34,6 +34,7 @@ slug: /interview
 | 主题                                                              | 难度   | 说明                   |
 | ----------------------------------------------------------------- | ------ | ---------------------- |
 | [MySQL 面试题](/docs/interview/mysql-interview-questions)         | ⭐⭐⭐ | 索引、事务、锁、优化   |
+| [MyBatis 面试题](/docs/interview/mybatis-interview-questions)     | ⭐⭐⭐ | 缓存、动态SQL、源码原理 |
 | [Redis 面试题](/docs/interview/redis-interview-questions)         | ⭐⭐⭐ | 数据结构、持久化、集群 |
 | [PostgreSQL 面试题](/docs/interview/postgres-interview-questions) | ⭐⭐⭐ | 特性、优化、高可用     |
 

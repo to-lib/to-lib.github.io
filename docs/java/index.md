@@ -125,6 +125,7 @@ title: Java 编程概述
 ### 数据库与缓存
 
 - [MySQL](/docs/mysql) - 关系型数据库
+- [MyBatis](/docs/mybatis) - 持久层框架
 - [Redis](/docs/redis) - 高性能缓存
 - [PostgreSQL](/docs/postgres) - 开源数据库
 

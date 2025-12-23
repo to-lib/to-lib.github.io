@@ -64,6 +64,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         "interview/mysql-interview-questions",
+        "interview/mybatis-interview-questions",
         "interview/redis-interview-questions",
         "interview/postgres-interview-questions",
       ],
@@ -1474,6 +1475,47 @@ const sidebars: SidebarsConfig = {
         "microservices/quick-reference",
         "microservices/faq",
       ],
+    },
+  ],
+
+  // MyBatis sidebar
+  mybatis: [
+    {
+      type: "category",
+      label: "📖 基础知识",
+      collapsed: false,
+      items: [
+        "mybatis/index",
+        "mybatis/core-concepts",
+        "mybatis/configuration",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心特性",
+      collapsed: true,
+      items: [
+        "mybatis/xml-mapping",
+        "mybatis/dynamic-sql",
+        "mybatis/annotations",
+        "mybatis/caching",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶应用",
+      collapsed: true,
+      items: [
+        "mybatis/spring-integration",
+        "mybatis/plugins",
+        "mybatis/best-practices",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["mybatis/quick-reference", "mybatis/faq"],
     },
   ],
 

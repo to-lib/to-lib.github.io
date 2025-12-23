@@ -225,6 +225,10 @@ const config: Config = {
               label: "🐘 PostgreSQL",
               to: "/docs/postgres",
             },
+            {
+              label: "🗃️ MyBatis",
+              to: "/docs/mybatis",
+            },
           ],
         },
         {
@@ -396,6 +400,10 @@ const config: Config = {
             {
               label: "🐬 MySQL 面试题",
               to: "/docs/interview/mysql-interview-questions",
+            },
+            {
+              label: "🗃️ MyBatis 面试题",
+              to: "/docs/interview/mybatis-interview-questions",
             },
             {
               label: "💾 Redis 面试题",
