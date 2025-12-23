@@ -158,7 +158,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["ai/quick-reference", "ai/faq"],
+      items: [
+        "ai/quick-reference",
+        "ai/gemini-for-google-workspace-prompting-guide-101",
+        "ai/faq",
+      ],
     },
   ],
 

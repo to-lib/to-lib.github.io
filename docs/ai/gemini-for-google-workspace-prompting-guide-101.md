@@ -834,29 +834,40 @@ and renewal dates. (Gemini in Sheets)
 请创建一张员工软件许可证追踪表，并包含以下列：许可证类型、使用权限，以及续订日期。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Chief Human Resources Officer
+首席人力资源官（Chief Human Resources Officer）
 Use case: Demonstrate employee appreciation
+用例：表达对员工的认可与感谢
 
 You want to set up a new program to help everyone feel included, appreciated, and acknowledged across the organization. To brainstorm, you open a new Google Doc and prompt Gemini in the Docs side panel. You type:
+你想建立一个新项目，让组织内每个人都感到被接纳、被重视并得到认可。为了头脑风暴，你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Brainstorm 10 employee appreciation ideas based on diverse employee interests such as cooking,
 gardening, sports, reading, and traveling. (Gemini in Docs)
+请基于员工多元兴趣（如烹饪、园艺、运动、阅读和旅行）头脑风暴 10 个员工关怀/表彰创意。（Gemini in Docs／Google 文档中的 Gemini）
 
 Gemini in Docs kick-starts your creativity, and now you have ideas for employee interest clubs and events. You also want to ensure your leadership team is regularly encouraging managers to recognize talent on their teams, so you create email templates they can use as inspiration. You prompt Gemini in Docs by selecting Help me write, and you type:
+Gemini in Docs（Google 文档中的 Gemini）为你打开思路，你现在有了关于员工兴趣社团与活动的想法。你还希望确保领导团队能定期鼓励管理者认可团队人才，因此你创建一些可供参考的邮件模板。你在 Docs（Google 文档）中选择 Help me write（帮我写）来提示 Gemini，并输入：
 
 Draft an email template that thanks [employee] for their hard work and [recent accomplishments]. Offer them an extra perk for their dedication, such as [a coffee gift card]. Use an upbeat and professional tone.
 (Gemini in Docs)
+请起草一封邮件模板，感谢 [employee] 的辛勤工作与 [recent accomplishments]（近期成果）。为其付出提供一项额外福利，例如 [a coffee gift card]（咖啡礼品卡）。语气要积极、专业。（Gemini in Docs／Google 文档中的 Gemini）
 （Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Assess employee satisfaction
+## 用例：评估员工满意度
 
 You want to draft an anonymous survey that allows people to openly and honestly assess how they are feeling. To draft questions, you open a new Google Doc and prompt Gemini in the Docs side panel. You type:
+你想起草一份匿名问卷，让大家能够开放、坦诚地评估自己的感受。为了撰写问题，你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Draft an anonymous employee satisfaction survey with questions and answer options that touch upon key areas like workload, work-life balance, compensation, and career growth opportunities. Ensure the
 questions are clear, concise, and avoid leading answers. (Gemini in Docs)
+请起草一份匿名员工满意度问卷，包含问题及答案选项，覆盖工作量、工作与生活平衡、薪酬、以及职业成长机会等关键领域。确保问题清晰、简洁，并避免诱导性答案。（Gemini in Docs／Google 文档中的 Gemini）
 
 You received feedback from 15 senior leaders, and you’ve gathered all of the anonymous results in a Doc. You want to create a summary that you can use in your next call. You prompt Gemini in the Docs side panel. You type:
+你收到了 15 位高级领导的反馈，并已将所有匿名结果汇总到一个 Doc（Google Docs／Google 文档）中。你想创建一份总结用于下一次会议。你在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Summarize the results of the employee feedback to identify key themes. (Gemini in Docs)
+请总结员工反馈结果，并识别关键主题。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Frontline management
 
