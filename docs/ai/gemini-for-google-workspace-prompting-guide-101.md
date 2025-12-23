@@ -818,7 +818,6 @@ Your team just provided a lengthy technical report. You need to summarize it for
 Summarize the key findings and implications of this report for [audience]. Focus on the main [vulnerabilities] identified and the recommended actions to address them. Use a formal tone.
 (Gemini in Docs)
 请总结这份报告对 [audience] 的关键发现与影响。聚焦报告中识别出的主要 [vulnerabilities]（漏洞/薄弱点）以及建议采取的应对措施。语气要正式。（Gemini in Docs／Google 文档中的 Gemini）
-（Gemini in Docs／Google 文档中的 Gemini）
 
 You make light edits to the summary and include it as an executive summary.
 你对摘要做少量编辑，并将其作为高管摘要（executive summary）加入文档。
@@ -851,7 +850,6 @@ Gemini in Docs（Google 文档中的 Gemini）为你打开思路，你现在有�
 Draft an email template that thanks [employee] for their hard work and [recent accomplishments]. Offer them an extra perk for their dedication, such as [a coffee gift card]. Use an upbeat and professional tone.
 (Gemini in Docs)
 请起草一封邮件模板，感谢 [employee] 的辛勤工作与 [recent accomplishments]（近期成果）。为其付出提供一项额外福利，例如 [a coffee gift card]（咖啡礼品卡）。语气要积极、专业。（Gemini in Docs／Google 文档中的 Gemini）
-（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Assess employee satisfaction
 ## 用例：评估员工满意度
@@ -870,8 +868,10 @@ Summarize the results of the employee feedback to identify key themes. (Gemini i
 请总结员工反馈结果，并识别关键主题。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Frontline management
+## 一线管理
 
 As a frontline worker manager, your team’s work is indispensable to your organization — your team may not primarily complete its day’s work on a computer, but communication and collaboration remains key.
+作为一线岗位管理者（Frontline management），你的团队对组织至关重要——他们可能并不主要在电脑上完成日常工作，但沟通与协作依然是关键。
 
 This section provides you with simple ways to integrate prompts in your daily tasks.
 本节将提供一些简单的方法，帮助你把提示词融入日常工作。
@@ -888,80 +888,111 @@ Each prompt below is presented with an accompanying scenario to serve as inspira
 Prompt iteration example
 提示词迭代示例 (Prompt iteration example)
 NEW Use case: Find accurate information quickly
+新用例：快速找到准确信息
 
 A customer just approached you with a question about an ongoing sale. You could use help navigating the numerous files you have access to so that you find the right information quickly. You prompt Gemini in the Drive side panel. You type:
+一位顾客刚向你咨询正在进行的促销活动。你可以借助帮助来快速浏览你有权限访问的大量文件，以便迅速找到正确信息。你在 Drive（Google Drive／Google 云端硬盘）侧边栏提示 Gemini。你输入：
 
 Find the document that details the [company name]’s [holiday] sale details. (Gemini in Drive)
+请找到包含 [company name] 的 [holiday] 促销活动细则的文档。（Gemini in Drive／Google 云端硬盘中的 Gemini）
 
 - Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
 ## Gemini in Drive
+## Gemini in Drive（Google 云端硬盘中的 Gemini）
 
 Gemini in Drive returns suggested relevant files. From the side panel, you can directly summarize the files or you can click into a specific document. You open a suggested Doc to help answer the question. You prompt Gemini in the Docs side panel. You type:
+Gemini in Drive（Google 云端硬盘中的 Gemini）会返回建议的相关文件。你可以在侧边栏直接总结这些文件，也可以点击打开某个具体文档。你打开一份建议的 Doc（Google Docs／Google 文档）来回答问题，然后在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 How much can customers save on [product type] during this sale? (Gemini in Docs)
+在这次促销中，顾客购买 [product type] 最多能节省多少？（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Gemini in Docs
 ## Gemini in Docs（Google 文档中的 Gemini）
 
 Gemini returns a response, which helps you answer your customer’s question in a timely manner.
+Gemini 会返回回复，帮助你及时回答顾客的问题。
 
 ## Example use cases
 ## 示例用例
 
 Retail associate
+零售店员（Retail associate）
 NEW Use case: Improve team collaboration by finding and sharing information easily
+新用例：通过查找与分享信息轻松提升团队协作
 
 Your store recently updated its return and exchange policies. To find the information, you prompt Gemini in the Drive side panel. You type:
+你的门店最近更新了退换货政策。为了找到相关信息，你在 Drive（Google Drive／Google 云端硬盘）侧边栏提示 Gemini。你输入：
 
 Find the document that discusses our new return and exchange policies. (Gemini in Drive)
+请找到讨论我们最新退换货政策的文档。（Gemini in Drive／Google 云端硬盘中的 Gemini）
 
 Gemini returns suggested files that are related to the new policies. You directly click into the relevant file. Now, you want to send an email summarizing the document for your colleagues’ future reference. You open your email and prompt Gemini in the Gmail side panel. You type:
+Gemini 会返回与新政策相关的建议文件，你直接点击打开相关文件。接下来，你想给同事发一封邮件，总结该文档以便日后查阅。你打开邮件，在 Gmail（Gmail 邮箱）侧边栏提示 Gemini。你输入：
 
 Write an email to my new colleagues summarizing @[Updated Return and Exchange Policy H2 2024].
 (Gemini in Gmail)
+请给我的新同事写一封邮件，总结 @[Updated Return and Exchange Policy H2 2024]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 You select Insert and further personalize the message before sending it.
+你选择 Insert（插入），并在发送前进一步个性化这封邮件。
 
 ## NEW Use case: Streamline task management
+## 新用例：简化任务管理
 
 You have a list of opening and closing duties that you must perform depending on what shift you are working. You want to keep yourself organized, so you create a tracker using the duties listed in your onboarding Doc. You open a new Google Sheet and prompt Gemini in the Sheets side panel and tag relevant files by typing @file name. You type:
+你有一份开店/闭店职责清单，会因你当班的班次而变化。为了保持井然有序，你想基于入职培训文档里的职责列表创建一个追踪表。你打开一个 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini，通过输入 `@文件名` 引用相关文件。你输入：
 
 I am a retail manager and I need to create a checklist for my opening and closing duties. Create a template with columns for [opening and closing duties] from @[Onboarding New Hire Information].
 (Gemini in Sheets)
-（Gemini in Sheets／Google 表格中的 Gemini）
+我是零售经理，我需要为开店和闭店职责创建一份清单。请基于 @[Onboarding New Hire Information] 中的 [opening and closing duties] 创建一个模板，并包含相应列。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Gemini creates a spreadsheet. As you go through your day, you mark different tasks as complete. You have to leave your shift early, but you first need to communicate to the rest of the team what still needs to be done. You open your Gmail and prompt Gemini in the Gmail side panel and tag the spreadsheet you just created. You type:
+Gemini 会生成一张电子表格。你在一天工作过程中将不同任务标记为已完成。你需要提前离开班次，但在离开前必须告知团队还有哪些事项未完成。你打开 Gmail（Gmail 邮箱），在 Gmail 侧边栏提示 Gemini，并通过输入 `@文件名` 引用你刚创建的表格。你输入：
 
 Write an email to the team telling them what still needs to be done from the AM shift from @[Opening and
 Closing Duties Tracker]. (Gemini in Gmail)
+请给团队写一封邮件，说明 AM 班次中还有哪些事项尚未完成，信息来自 @[Opening and Closing Duties Tracker]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Warehouse worker
+仓库员工（Warehouse worker）
 NEW Use case: Manage inventory
+新用例：管理库存
 
 A customer wants to place a bulk order. You need to check the store’s inventory to see if you have enough to fulfill it. You open your inventory spreadsheet that tracks this information and prompt Gemini in the Sheets side panel. You type:
+一位顾客想下一个大额批量订单。你需要检查门店库存，确认是否足够履约。你打开用于追踪库存信息的表格，并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 How many [units] of [product] do we have left in our inventory? (Gemini in Sheets)
+我们的库存里还剩多少 [product] 的 [units]？（Gemini in Sheets／Google 表格中的 Gemini）
 
 ## NEW Use case: Manage audits
+## 新用例：管理盘点审计
 
 Your warehouse is undergoing an inventory audit, and you’re in charge of verifying any numbers that are misaligned between your inventory tracker product total and what was counted during the audit. You prompt Gemini in the Sheets side panel. You type:
+你的仓库正在进行库存盘点审计。你负责核对：库存追踪表中的产品总量与审计盘点结果之间不一致的数字。你在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 Create a formula that helps me calculate the difference between two columns. Which items have a discrepancy in [the total number counted] versus [the quantity on hand]? (Gemini in Sheets)
+请创建一个公式，帮助我计算两列数据的差值。哪些商品在 [the total number counted]（盘点数量）与 [the quantity on hand]（账面/现有数量）之间存在差异？（Gemini in Sheets／Google 表格中的 Gemini）
 
 You verify Gemini’s response that there are only a few items whose count did not align to your inventory tracker’s total. You need to write a message to your supervisor telling them that you’re looking into the issue. You open your Gmail and prompt Gemini in the Gmail side panel. You type:
+你核对了 Gemini 的回复，确认只有少数商品的数量与库存追踪表总量不一致。你需要给主管写一条消息，说明你正在调查该问题。你打开 Gmail（Gmail 邮箱），并在 Gmail 侧边栏提示 Gemini。你输入：
 
 I’m a warehouse worker managing an audit. Write a message to my supervisor to let them know that I am
 looking into the products whose counts are incorrect. (Gemini in Gmail)
+我是负责审计的仓库员工。请给我的主管写一条消息，告知我正在调查那些数量不正确的商品。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 The drafted email looks good to go, so you hit send after reviewing.
+草拟的邮件看起来没问题，你审阅后点击发送。
 
 ## Human resources
+## 人力资源
 
 As an HR professional, you’re the backbone of your organization, and you deal with a large volume of confidential and sensitive information. You shape company culture, find and nurture talent, and ensure a positive employee experience. These are no small feats.
+作为人力资源（Human resources）从业者，你是组织的中坚力量，需要处理大量机密和敏感信息。你塑造公司文化，发掘并培养人才，并确保员工获得积极体验——这些都并非易事。
 
 This section provides you with simple ways to integrate prompts in your day-to-day tasks.
+本节将提供一些简单的方法，帮助你把提示词融入日常工作。
 
 ## Getting started
 ## 开始上手
@@ -975,74 +1006,99 @@ Each prompt below is presented with an accompanying scenario to serve as inspira
 Prompt iteration example
 提示词迭代示例 (Prompt iteration example)
 Use case: Welcome new employees
+用例：欢迎新员工
 
 You’re an HR manager working on a presentation script. You have a Google Doc full of notes, bullet points, and topics that you would like to cover. You begin by opening your Google Doc with notes, and you prompt Gemini in Docs.
+你是一名 HR 经理，正在准备一份面向新员工的演示稿脚本。你有一份 Google Doc（Google Docs／Google 文档），里面包含笔记、要点和你希望覆盖的主题。你先打开这份笔记文档，然后在 Docs（Google 文档）中提示 Gemini。
 
 I am an HR manager, and I am developing a script for my presentation for new hires. I need to create the script for an onboarding presentation about our company’s commitment to employee development and well-being. Help me draft talking points that showcase why employee mentorship and development are
 core values for our company using @[Mission Statement and Core Values]. (Gemini in Docs)
+我是 HR 经理，正在为新员工演示制作一份讲稿。我需要为入职培训演示创建脚本，主题是我们公司对员工发展与福祉（well-being）的承诺。请使用 @[Mission Statement and Core Values] 帮我起草要点式话术，说明为什么员工导师制（mentorship）与员工发展是我们公司的核心价值。（Gemini in Docs／Google 文档中的 Gemini）
 
 - Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
 ## Gemini in Docs: [Drafts talking points]
+## Gemini in Docs（Google 文档中的 Gemini）：[起草要点]
 
 ## Gemini in Docs
 ## Gemini in Docs（Google 文档中的 Gemini）
 
 You select Insert. Now, you want to add more targeted talking points. You type:
+你选择 Insert（插入）。接下来你想补充更有针对性的要点。你输入：
 
 Add four talking points for a new section of the presentation script that explains how we support our employees’ development. Mention our training and certification programs and mentorship opportunities using @[Learning and Development Paths], and write a strong closing statement about our expectation that everyone contributes to a respectful and welcoming workplace. Use a professional tone.
 (Gemini in Docs)
+请为演示脚本新增一节内容，补充 4 条要点，解释我们如何支持员工发展。请使用 @[Learning and Development Paths] 提及我们的培训与认证项目以及导师机会，并写一句有力的结尾陈述，强调我们期望每个人都为尊重且友好的工作环境做出贡献。语气要专业。（Gemini in Docs／Google 文档中的 Gemini）
 （Gemini in Docs／Google 文档中的 Gemini）
 
 ## Gemini in Docs: [Adds talking points]
+## Gemini in Docs（Google 文档中的 Gemini）：[补充要点]
 
 You add in more details and then you’re ready to create a draft of the Google Slides that will accompany your talking points.
+你补充了更多细节，然后准备创建一份与这些要点配套的 Google Slides（Google 幻灯片）草稿。
 
 ## Example use cases
 ## 示例用例
 
 Recruiter
+招聘专员（Recruiter）
 NEW Use case: Report on recruitment metrics
+新用例：汇报招聘指标
 
 The business is growing, and you have a large hiring effort underway. You want to see a holistic view of how your hiring efforts are going. You open your Google Sheet and prompt Gemini in the Sheets side panel. You type:
+业务正在增长，你正在推进一项大规模招聘工作。你想从整体上了解招聘进展。你打开 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 Help me create a formula to calculate the total total number of [hires] by [department].
 (Gemini in Sheets)
+请帮我创建一个公式，用来按 [department] 统计 [hires] 的总人数。（Gemini in Sheets／Google 表格中的 Gemini）
 （Gemini in Sheets／Google 表格中的 Gemini）
 
 You continue your conversation by prompting additional questions. You type:
+你继续对话并提出更多问题。你输入：
 
 In what month did we hire the most people? (Gemini in Sheets)
+我们在哪个月招聘人数最多？（Gemini in Sheets／Google 表格中的 Gemini）
 
 You continue with your line of questions until you feel ready to write your report.
+你沿着这个问题链继续追问，直到你觉得已经准备好撰写报告。
 
 ## Use case: Manage the recruiting process
+## 用例：管理招聘流程
 
 You want to brainstorm potential ways the company can better manage the recruiting process. You open the team’s Google Doc with recruiting strategies. You prompt Gemini in the Docs side panel. You type:
+你想头脑风暴：公司可以如何更好地管理招聘流程。你打开团队关于招聘策略的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Create a list of strategies our recruiters can use to improve our existing recruiting process and identify
 potential job candidates. (Gemini in Docs)
+请列出一份策略清单，帮助招聘人员改进现有招聘流程并识别潜在候选人。（Gemini in Docs／Google 文档中的 Gemini）
 
 After creating a short recommendation for leadership on how the team will improve existing recruiting processes, the team receives guidance for a job opening for a content marketing manager. You open a new Doc and prompt Gemini in Docs. You type:
+在为管理层写了一份简短建议（说明团队将如何改进现有招聘流程）之后，团队收到了一份内容营销经理岗位的招聘需求指导。你打开一个新的 Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
 I am opening a new job position on the marketing team. Write a compelling role description for a content marketing manager. Highlight key responsibilities [insert] and requirements, including B2B and B2C content creation, a minimum of five years experience, and a portfolio of writing examples.
 (Gemini in Docs)
+我正在为市场团队新增一个岗位。请为“内容营销经理（content marketing manager）”撰写一份有吸引力的岗位描述，突出关键职责 [insert] 与要求，包括 B2B 和 B2C 内容创作、至少五年工作经验，以及写作作品集。（Gemini in Docs／Google 文档中的 Gemini）
 （Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Manage the interview process
+## 用例：管理面试流程
 
 You want to prepare questions for phone screen interviews. You decide to prepare by using Gemini Advanced. You upload the relevant file and type:
+你想为电话初筛面试准备问题。你决定使用 Gemini Advanced（Gemini 高级版）来准备。你上传相关文件并输入：
 
 I am a recruiter, and I am preparing for candidate interviews. Using the job description in the file I’m uploading, write a list of 20 open-ended interview questions that I can use to screen candidates.
+我是一名招聘专员，正在准备候选人面试。请基于我上传文件中的岗位描述，生成 20 个开放式面试问题，用于筛选候选人。（Gemini Advanced／Gemini 高级版）
 (Gemini Advanced)
 
 ## Use case: Communicate with candidates
+## 用例：与候选人沟通
 
 The team has made its hiring decisions. You open the Google Doc with notes on each candidate. You prompt Gemini in Docs by selecting Help me write. You type:
 
 I am writing an email to a job candidate who just finished the interview process. Create a template for an offer letter for the [selected candidate] for the [position] with a request to schedule a call to discuss
 benefits, compensation, and start date. (Gemini in Docs)
+我正在给刚完成面试流程的候选人写邮件。请为 [selected candidate] 的 [position] 创建一份 offer letter（录用通知）模板，并请求对方安排一次电话沟通，以讨论福利、薪酬与入职日期。（Gemini in Docs／Google 文档中的 Gemini）
 
 Now, you want to generate personalized, empathetic email copy to send to the job candidates who will not receive an offer. You prompt Gemini in Docs by selecting Help me write. You type:
 
