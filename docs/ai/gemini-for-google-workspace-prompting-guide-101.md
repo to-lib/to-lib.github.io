@@ -111,253 +111,130 @@ Gemini for Workspace (Workspace 版 Gemini) 是一个 AI 助手，已集成到�
 
 - 发现趋势、综合信息并识别商业机会
 
-For 25 years, Google has built helpful, secure products that give users choice and control over their data. It’s a bedrock principle for us. This was the case back when we first launched Gmail in 2004, and it remains true in the era of generative AI. This means your data is your data and does not belong to Google. Your data stays in your Workspace environment. Your privacy is protected. Your content is never used for targeting ads or to train or improve Gemini or any other generative AI models.
-
 25 年来，Google 一直在打造既好用又安全的产品，让用户能够对自己的数据拥有选择权与控制权。这是我们的基本原则。从 2004 年首次推出 Gmail (Gmail 邮箱) 时如此，进入生成式 AI 时代仍然如此。这意味着你的数据属于你自己，而不属于 Google；你的数据会留在 Workspace (工作区) 环境中；你的隐私受到保护；你的内容不会被用于广告定向，也不会被用于训练或改进 Gemini 或其他任何生成式 AI 模型。
-
-## How to use this prompt guide
 
 ## 如何使用本提示词指南
 
-This guide introduces you to prompting with Gemini for Workspace. It includes strong prompt design examples to help you get started. Additionally, it covers scenarios for different personas, use cases, and potential prompts.
-
 本指南将为你提供在使用 Gemini for Workspace (Workspace 版 Gemini) 时编写高效提示词所需的基础技能。其中包含高质量的提示词设计示例，帮助你快速上手；同时也覆盖不同角色 (personas)、不同使用场景 (use cases) 以及可参考的提示词范例。
-
-You will notice a variety of prompt styles. Some prompts have brackets, which indicate where you would fill in specific details or tag your own personal files by typing @file name. Other prompts are presented without variables highlighted to show you what a full prompt could look like. All of the prompts in this guide are meant to inspire you, but ultimately they will need to be customized to help you with your specific work.
 
 你会看到多种提示词写法。有些提示词带有方括号，表示你需要在这些位置填入具体信息，或通过输入 `@文件名` 来引用你的个人文件。另一些提示词则不突出变量，用于展示一条完整提示词可能是什么样子。本指南中的所有提示词都旨在启发你，但最终仍需要根据你的具体工作进行定制。
 
-To get started, use the role-specific suggested prompts as inspiration to help you unlock a new and powerful way of working.
-
 开始使用时，你可以先参考与自身角色相关的建议提示词，以此为灵感，解锁一种更强大、更高效的工作方式。
-
-Next, learn how you can get started with different features by visiting g.co/gemini/features.
 
 接下来，你可以访问 g.co/gemini/features，了解如何开始使用不同功能。
 
-## Administrative support
-
 ## 行政支持
 
-As an administrative support professional, you are responsible for keeping teams on track. You’re required to stay organized and efficient — even under pressure — while juggling many priority tasks.
 作为行政支持 (Administrative support) 从业者，你需要让团队保持在正确轨道上推进工作。即使在压力之下，你也必须保持有条理与高效率，同时处理多项高优先级任务。
 
-This section provides you with simple ways to integrate prompts in your daily tasks.
-
-本节将提供一些简单的方法，帮助你把提示词融入日常工作。
 本节将提供一些简单的方法，帮助你把提示词更自然地融入日常工作。
-
-## Getting started
+本节将提供一些简单的方法，帮助你把提示词更自然地融入日常工作。
 
 ## 开始上手
 
-First, review the general prompt-writing tips on page 2 and the Prompting 101 section at the beginning of this guide.
-
-首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101（提示词入门 101）部分。
 首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101 (提示词入门 101) 部分。
 
-Each prompt below is presented with an accompanying scenario to serve as inspiration for how you can collaborate with Gemini for Google Workspace (Google Workspace 版 Gemini). The prompt iteration example shows how you could write follow-up prompts to build on the initial generated response.
-
-下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace (Google Workspace 版 Gemini) 协作。“提示词迭代示例 (Prompt iteration example)”展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
-
-Prompt iteration example
+下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace (Google Workspace 版 Gemini) 协作。"提示词迭代示例 (Prompt iteration example)"展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
 
 提示词迭代示例 (Prompt iteration example)
-NEW Use case: Plan agendas (offsite, meetings, and more)
 
 新用例：规划议程（团建、会议等）
 
-You’re planning a three-day offsite meeting. To build an agenda, you brainstorm with Gemini Advanced. You type:
-
 你正在规划一个为期三天的线下团建/异地会议（offsite）。为了制定议程，你与 Gemini Advanced（Gemini 高级版）进行头脑风暴。你输入：
-
-I am an executive administrator to a team director. Our newly formed team now consists of content marketers, digital marketers, and product marketers. We are gathering for the first time at a three-day offsite in Washington, DC. Plan activities for each day that include team bonding activities and time for
-deeper strategic work. Create a sample agenda for me. (Gemini Advanced)
 
 我是某团队负责人的行政助理。我们新组建的团队由内容营销人员、数字营销人员和产品营销人员组成。我们将首次在华盛顿特区（Washington, DC）进行为期三天的线下团建/异地会议。请为每天规划活动，既包含团队联结/团建活动，也包含更深入的战略工作时间。请为我创建一个示例议程。（Gemini Advanced／Gemini 高级版）
 
-- Persona • Task • Context • Format
-
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
-## Gemini Advanced
-
 ## Gemini Advanced（Gemini 高级版）
-
-This is a helpful start to your planning. You need to generate specific ideas for the team bonding activities. You type:
 
 这为你的规划提供了一个不错的起点。你还需要生成更具体的团建活动点子。你输入：
 
-Suggest three different icebreaker activities that encourage people to learn about their teammates’ preferred working styles, strengths, and goals. Make sure the icebreaker ideas are engaging and can be
-completed by a group of 25 people in 30 minutes or less. (Gemini Advanced)
-
 请建议三种不同的破冰活动（icebreaker），帮助大家了解队友偏好的工作风格、优势与目标。请确保这些破冰活动有趣且吸引人，并且适合 25 人团队在 30 分钟内完成。（Gemini Advanced／Gemini 高级版）
 
-## Gemini Advanced
-
 ## Gemini Advanced（Gemini 高级版）
-
-You are happy with the agenda as a starting point. You now want to reformat Gemini’s response into a table. You type:
 
 你对这份议程作为起点感到满意。现在你希望把 Gemini 的回复重新整理成表格。你输入：
 
-Organize this agenda in a table format. Include one of your suggested icebreakers for each day.
-(Gemini Advanced)
-
 请把这份议程整理成表格形式。每天都包含你建议的一项破冰活动。（Gemini Advanced／Gemini 高级版）
-
-## Gemini Advanced
 
 ## Gemini Advanced（Gemini 高级版）
 
-You select Export to Docs. You open the newly created Doc. Now, you want to bring in detailed summaries for the strategy sessions using your existing files in Google Drive to provide more context for what will be discussed. You prompt Gemini in Docs and tag your relevant files by typing @file name.
-
 你选择导出到 Docs（Google Docs／Google 文档），并打开新创建的文档。现在，你希望通过 Google Drive（Google 云端硬盘）中的现有文件，为战略讨论环节补充更详细的摘要，以提供更多讨论背景。你在 Docs（Google 文档）的侧边栏中提示 Gemini，并通过输入 `@文件名` 来引用相关文件。
 
-Use @[2024 H2 Team Vision] to generate a summary for the opening remarks on Day 1 of this agenda.
-(Gemini in Docs)
-
-（Gemini in Docs／Google 文档中的 Gemini）
 请使用 @[2024 H2 Team Vision] 为本议程第 1 天的开场致辞生成一段摘要。（Gemini in Docs／Google 文档中的 Gemini）
-
-## Example use cases
 
 ## 示例用例
 
-Executive administrators and executive business partners
 高管行政助理与高管业务伙伴
-NEW Use case: Manage multiple email inboxes
-新用例：管理多个邮箱收件箱
 
-After returning from vacation, you have many unread, unsorted emails. You prompt Gemini in the Gmail side panel. You type:
+新用例：管理多个邮箱收件箱
 
 假期结束后，你有大量未读、未整理的邮件。你在 Gmail（Gmail 邮箱）侧边栏中提示 Gemini。你输入：
 
-Summarize emails from [manager] from the last week. (Gemini in Gmail)
-
 请汇总过去一周来自 [经理] 的邮件。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-Gemini returns short summaries of each message. To directly access a message, you click on Sources and see tiles that bring you to specific emails. You select the most important one. Once the email thread opens, you see that many messages were exchanged. You prompt Gemini in Gmail:
-
-Gemini 会为每封邮件返回简短摘要。若要直接打开某封邮件，你可以点击 Sources（来源），看到能跳转到具体邮件的卡片。你选择了最重要的一封。打开邮件会话线程后，你发现其中来往消息很多，于是你在 Gmail（Gmail 邮箱）中继续提示 Gemini：
-
-Summarize this email thread and list all action items and deadlines. (Gemini in Gmail)
+Gemini 返回每封邮件的简短摘要。若要直接打开某封邮件，你可以点击 Sources（来源），看到能跳转到具体邮件的卡片。你选择了最重要的一封。打开邮件会话线程后，你发现其中来往消息很多，于是你在 Gmail（Gmail 邮箱）中继续提示 Gemini：
 
 请总结这条邮件线程，并列出所有待办事项与截止日期。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-You owe a response to a question, which you believe is best answered by a document in your Drive. You prompt Gemini in the Gmail side panel. You type:
-
 你需要回复对方的一个问题，而你认为最好的回答依据在 Drive（Google Drive／Google 云端硬盘）中的某份文档里。你在 Gmail（Gmail 邮箱）侧边栏中提示 Gemini。你输入：
-
-Generate a response to this email and use @[file name] to describe how the [initiative] can complement
-the workstream outlined in [colleague’s name]’s message. (Gemini in Gmail)
 
 请生成对这封邮件的回复，并使用 @[file name] 说明 [initiative] 如何与 [同事姓名] 邮件中描述的工作流/工作流线 (workstream) 互补。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-Gemini in Gmail returns a suggested email that pulls directly from your own Doc. After reading it over, you select the Copy icon in the side panel and paste it directly into your message.
+Gemini in Gmail 返回一个直接从你自己的文档中提取的建议邮件。在仔细阅读后，你选择侧边栏中的复制图标，直接将内容粘贴到你的消息中。
 
 Gmail（Gmail 邮箱）中的 Gemini 会返回一封建议邮件，并直接引用你自己的 Doc（Google Docs／Google 文档）内容。你阅读确认后，点击侧边栏的复制图标，将内容直接粘贴到你的邮件中。
 
-## NEW Use case: Plan business travel
-
 ## 新用例：规划商务差旅
 
-Your manager has an upcoming meeting that is out of town. You are responsible for booking travel arrangements and creating a personalized itinerary. You need to research places to eat. You brainstorm with Gemini Advanced. You type:
 你的经理即将参加一次外地会议。你负责预订出行安排并制定个性化行程；同时需要调研用餐地点。你与 Gemini Advanced（Gemini 高级版）进行头脑风暴。你输入：
-
-I am an executive assistant. I need to create an itinerary for a two-day business trip in [location] during [dates]. My manager is staying at [hotel]. Suggest different options for breakfast and dinner within a 10-minute walk of the hotel, and find one entertainment option such as a movie theater, a local art show,
-or a popular tourist attraction. Put it in a table for me. (Gemini Advanced)
 
 我是行政助理。我需要为 [日期] 在 [地点] 的两天商务旅行制定行程安排。我的经理将住在 [酒店]。请推荐酒店 10 分钟步行范围内不同的早餐与晚餐选项，并提供一个娱乐选项，例如电影院、本地艺术展，或热门景点。请用表格形式呈现。（Gemini Advanced／Gemini 高级版）
 
-You continue your conversation until you are happy with the itinerary. Before you make reservations, you want to share the draft with your manager. You select Share & export and select Draft in Gmail. Once the drafted email is created, you put the final touches on the message and send.
-
 你继续对话，直到对行程满意为止。在预订之前，你想把草稿分享给经理。你选择 Share & export（分享与导出），并选择 Draft in Gmail（在 Gmail 中生成草稿）。草稿邮件生成后，你做最后润色并发送。
-
-## NEW Use case: Track travel and entertainment budget
 
 ## 新用例：追踪差旅与招待预算
 
-You want to create a spreadsheet to keep track of all of the travel expenses incurred. You open a new Google Sheet and prompt Gemini in the Sheets side panel. You type:
 你想创建一张电子表格来追踪全部差旅费用。你打开一个新的 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏中提示 Gemini。你输入：
-
-Create a budget tracker for business travel. It should include columns for: date, expense type (meal,
-entertainment, transportation), vendor name, and a description. (Gemini in Sheets)
 
 请创建一个商务差旅预算追踪表。需要包含以下列：日期、费用类型（餐饮/招待/交通）、供应商名称，以及费用说明。（Gemini in Sheets／Google 表格中的 Gemini）
 
-Gemini returns a tracker that is now ready for you to enter data.
-
 Gemini 会返回一张可直接使用的追踪表，方便你立刻开始录入数据。
-
-## Communications
 
 ## 传播与沟通
 
-As a communications professional, you are responsible for ensuring your business is well understood by the public. You have to stay up to date with the trends, communicate clearly and effectively with many stakeholders, and build compelling narratives.
 作为传播与沟通（Communications）从业者，你负责确保公众能够准确理解你的业务。你需要紧跟趋势，与众多利益相关方清晰、高效地沟通，并构建有说服力的叙事与故事线。
 
-This section provides you with simple ways to integrate prompts in your daily tasks.
-
 本节将提供一些简单的方法，帮助你把提示词融入日常工作。
-本节将提供一些简单方法，帮助你把提示词融入日常工作。
-
-## Getting started
 
 ## 开始上手
 
-First, review the general prompt-writing tips on page 2 and the Prompting 101 section at the beginning of this guide.
 首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101（提示词入门 101）部分。
 
-Each prompt below is presented with an accompanying scenario to serve as inspiration for how you can collaborate with Gemini for Google Workspace. The prompt iteration example shows how you could write follow-up prompts to build on the initial generated response.
-
-下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace（Google Workspace 版 Gemini）协作。“提示词迭代示例（Prompt iteration example）”展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
-
-Prompt iteration example
+每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace（Google Workspace 版 Gemini）协作。
 
 提示词迭代示例 (Prompt iteration example)
-NEW Use case: Create a press release
 
 新用例：撰写新闻稿
 
-You are in charge of public relations at a company in the personal care industry. The company you work for has just acquired a smaller brand, and you need to craft a press release. You’ve completed interviews with your company’s CEO, CFO, and the acquired company’s CEO. You’ve stored all of the most important quotes in one Doc. You also have a Doc with all of the information about the acquired brand, its vision, how it got started, and stats. You open a new Doc and prompt Gemini in the Docs side panel and type @file name to reference your relevant files. You type:
-
 你是个人护理行业公司的公关负责人。你的公司刚刚收购了一家小型品牌，你需要撰写一份新闻稿。你已经完成了与公司 CEO、CFO 以及被收购公司 CEO 的访谈，并将所有重要的引用语存储在一个文档中。你还有一份文档，包含被收购品牌的信息、愿景、创立过程以及统计数据。你打开一个新文档，并在 Docs（Google Docs／Google 文档）的侧边栏中提示 Gemini，输入 `@文件名` 来引用相关文件。你输入：
-
-I’m a PR manager. I need to create a press release with a catchy title. Include quotes from
-@[VIP Quotes Acquisition]. (Gemini in Docs)
 
 我是一名公关经理。我需要创建一份新闻稿，标题要吸引人。请包含 @[VIP Quotes Acquisition] 中的引用语。（Gemini in Docs／Google 文档中的 Gemini）
 
-- Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
-## Gemini in Docs
-
 ## Gemini in Docs（Google 文档中的 Gemini）
-
-## [Gemini returns a response]
 
 ## [Gemini 返回回复]
 
-Now you have a starting place for the press release, but you want to include more details about the brand that is being acquired and its founder. This information is stored in your Drive in another file. In the press release Doc, you prompt Gemini in the Docs side panel. You type:
-
 现在你已经有了新闻稿的初稿起点，但你希望加入更多关于被收购品牌及其创始人的细节。这些信息存放在 Drive（Google Drive／Google 云端硬盘）的另一个文件中。在新闻稿文档里，你在 Docs（Google Docs／Google 文档）侧边栏提示 Gemini。你输入：
-
-Use @[Biography and Mission Statement] to add more information about the company that is being
-acquired, its mission, and how it got started. (Gemini in Docs)
 
 请使用 @[Biography and Mission Statement] 补充关于被收购公司的信息、使命，以及它是如何创立的。（Gemini in Docs／Google 文档中的 Gemini）
 
-## Gemini in Docs
-
 ## Gemini in Docs（Google 文档中的 Gemini）
 
-The generated paragraphs are a good starting place, so you select Insert to add them into your draft, and you begin making edits to the press release.
-
 生成的段落是一个不错的起点，因此你选择 Insert（插入）将其加入草稿，并开始对新闻稿进行编辑完善。
-
-## Example use cases
 
 ## 示例用例
 
