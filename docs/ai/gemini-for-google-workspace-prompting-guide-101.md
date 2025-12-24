@@ -241,317 +241,152 @@ Gemini 会返回一张可直接使用的追踪表，方便你立刻开始录入�
 Analyst and public relations
 
 分析师与公共关系
-NEW Use case: Prepare for analyst or press briefings
-
 新用例：为分析师或媒体简报做准备
-
-You need to create a brief to prepare a spokesperson for an upcoming meeting with analysts and the media for a new product launch. You open a new Doc and prompt Gemini in the Docs side panel. You type:
 
 你需要创建一份简报，用于帮助发言人为即将到来的分析师与媒体会议（围绕新产品发布）做准备。你打开一个 Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
-Generate a brief template to prepare [spokesperson] for an upcoming media and analyst briefing for @[Product Launch]. Include space for a synopsis, key messages, and supporting data. (Gemini in Docs)
-
 请生成一个简报模板，用于让 [spokesperson] 为即将到来的媒体与分析师简报（@[Product Launch]）做准备。模板中需要留出：概要 (synopsis)、关键信息 (key messages) 以及支撑数据 (supporting data) 的空间。（Gemini in Docs／Google 文档中的 Gemini）
-
-This gives you a starting point to pull in additional information from your files. You prompt Gemini in the Docs side panel and tag your relevant files by typing @file name. You type:
 
 这为你从文件中补充更多信息提供了起点。你在 Docs（Google Docs／Google 文档）侧边栏提示 Gemini，并通过输入 `@文件名` 来引用相关文件。你输入：
 
-Craft a synopsis of the product launch in three main points using @[Product Launch - Notes].
-(Gemini in Docs)
-
-（Gemini in Docs／Google 文档中的 Gemini）
 请使用 @[Product Launch - Notes] 将这次产品发布的概要提炼为 3 个要点。（Gemini in Docs／Google 文档中的 Gemini）
-
-You click Insert before repeating the process to fill out the rest of the briefing document. Next, you need to create a spreadsheet of media and analyst contacts. You open a new Google Sheet and prompt Gemini in the Sheets side panel. You type:
 
 你点击 Insert（插入），然后重复该流程以补齐简报文档的其余部分。接下来，你需要创建一张媒体与分析师联系人表格。你打开一个新的 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
-Organize my media and analyst contacts from @[Analyst and Journalist Contact Notes] for a new product briefing. I need to keep track of their names, type of contact (analyst or journalist), focus area, the name of the outlet, agency or firm that they work for, and a place where I can indicate the priority level of their
-attendance at this briefing (low, medium, high). (Gemini in Sheets)
-
 请将 @[Analyst and Journalist Contact Notes] 中的媒体与分析师联系人整理成适用于新产品简报的表格。我需要追踪：姓名、联系人类型（分析师或记者）、关注领域、媒体/机构名称、其所在的代理公司或机构/公司，以及一个位置用于标注他们参加本次简报的优先级（低/中/高）。（Gemini in Sheets／Google 表格中的 Gemini）
-
-Gemini in Sheets returns a spreadsheet, and you can go through and indicate priority level for each contact. Next, you want to create a slideshow to use during the briefing. You open a new Google Slide and prompt Gemini in the Slides side panel. You tag relevant files by typing @file name in the prompt. You type:
 
 Gemini in Sheets（Google 表格中的 Gemini）会返回一张电子表格，你可以逐一为每位联系人标注优先级。接下来，你想创建在简报中使用的幻灯片。你打开一个新的 Google Slide（Google Slides／Google 幻灯片），并在 Slides（Google 幻灯片）侧边栏提示 Gemini。在提示词中通过输入 `@文件名` 引用相关文件。你输入：
 
-Create a slide describing what [product] is from @[Product Launch - Notes]. Make sure it is short and
-easily understood by a broad audience. (Gemini in Slides)
-
 请根据 @[Product Launch - Notes] 创建一张幻灯片，说明 [product] 是什么。确保内容简短，并能被广泛受众轻松理解。（Gemini in Slides／Google 幻灯片中的 Gemini）
-
-Gemini returns a Slide. You continue to build your presentation by using this method to generate additional Slides.
 
 Gemini 会返回一张幻灯片。你继续用这种方法生成更多幻灯片，从而逐步搭建完整演示文稿。
 
-## NEW Use case: Create mock interview questions to prepare spokespeople
-
 ## 新用例：创建模拟面试题以帮助发言人准备
-
-Now, you need to prepare your company’s spokesperson for interviews that will follow the briefing. To generate a list of mock interview questions, you decide to chat with Gemini Advanced. You type:
 
 现在，你需要为公司发言人准备简报之后即将到来的采访。为了生成一份模拟面试问题清单，你决定与 Gemini Advanced（Gemini 高级版）对话。你输入：
 
-I am a [PR/AR] manager at [company name]. We just launched [product] and had a briefing where we discussed [key messages]. I am preparing [spokesperson and role/title] for interviews. Generate a list of mock interview questions to help [spokesperson] prepare. Include a mixture of easy and hard questions, with some asking about the basics of [product] and some asking about the long-term vision of [product].
-(Gemini Advanced)
-
 我是 [company name] 的一名 [PR/AR] 经理。我们刚刚发布了 [product]，并举办了一场简报会，讨论了 [key messages]。我正在为 [spokesperson and role/title] 的采访做准备。请生成一份模拟面试问题清单，帮助 [spokesperson] 做准备。问题要有难易搭配：既包含关于 [product] 基础信息的问题，也包含关于 [product] 长期愿景的问题。（Gemini Advanced／Gemini 高级版）
-
-Gemini returns a list of questions that can help you prepare your company’s spokesperson. You refine the suggested questions by continuing the conversation with Gemini. Then you select Share & export and Export to Docs. You open the newly created Doc, prompt Gemini in the Docs side panel, and tag relevant files by typing @file name. You type:
 
 Gemini 会返回一份问题清单，帮助你为公司发言人做准备。你继续与 Gemini 对话以优化这些建议问题。随后你选择 Share & export（分享与导出）并 Export to Docs（导出到 Google Docs／Google 文档）。打开新创建的文档后，你在 Docs（Google 文档）侧边栏提示 Gemini，并通过输入 `@文件名` 引用相关文件。你输入：
 
-Use @[Product Launch Notes] to write suggested answers for these questions. Write the talking points
-as if you are [title of spokesperson] at [company]. (Gemini in Docs)
-
 请使用 @[Product Launch Notes] 为这些问题撰写建议答案。请以你是 [company] 的 [title of spokesperson] 的口吻来写要点式话术（talking points）。（Gemini in Docs／Google 文档中的 Gemini）
-
-Gemini in Docs returns suggested talking points, and you select Insert to add them into your draft. Now you’re ready to continue tweaking the interview prep for your spokesperson.
 
 Gemini in Docs（Google 文档中的 Gemini）会返回建议的话术要点，你选择 Insert（插入）将其加入草稿。现在你可以继续打磨发言人的采访准备材料。
 
-Communications manager
+## 新用例：撰写内部沟通内容
 
 传播与沟通经理
-NEW Use case: Craft internal communications
+
+你的公司重新设计了内网（intranet），让其更易用。你负责此次上线的内部沟通工作，希望获得起草消息的帮助。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 新用例：撰写内部沟通内容
 
-Your company has redesigned its intranet to be more user friendly. You’re in charge of internal communications for the launch. You want help drafting this message. You open a new Google Doc and prompt Gemini in the Docs side panel. You type:
-
 你们公司重新设计了内网（intranet），让其更易用。你负责此次上线的内部沟通工作，希望获得起草消息的帮助。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
-
-I need to draft a company-wide memo unveiling our relaunched intranet. The [new page] addresses [common feedback we heard from employees] and aims to create a more user friendly experience. Draft an upbeat memo announcing [the new site] using @[Intranet Launch Plan Notes]. (Gemini in Docs)
 
 我需要起草一份全公司范围的备忘录，宣布我们重新上线的内网。新的页面解决了我们从员工那里听到的 [common feedback we heard from employees]，目标是提供更友好的使用体验。请使用 @[Intranet Launch Plan Notes] 起草一封语气积极、令人振奋的备忘录来宣布 [the new site]。（Gemini in Docs／Google 文档中的 Gemini）
 
-Gemini in Docs returns a drafted memo. You refine and edit the text to be exactly as you need it.
-
 Gemini in Docs（Google 文档中的 Gemini）会返回一份备忘录草稿。你继续润色和编辑，使其完全符合你的需求。
-
-## Customer service
 
 ## 客户服务
 
-As a customer service professional, you strive to deliver service that’s effortlessly efficient, consistently delightful, and powered by a proactive, helpful team. This section provides you with simple ways to integrate prompts in your daily tasks.
-
 作为客户服务（Customer service）从业者，你致力于提供“高效且省心、稳定且令人愉悦”的服务体验，并依靠一支积极主动、乐于助人的团队来实现。本节将提供一些简单的方法，帮助你把提示词融入日常工作。
-
-## Getting started
 
 ## 开始上手
 
-First, review the general prompt-writing tips on page 2 and the Prompting 101 section at the beginning of this guide.
 首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101（提示词入门 101）部分。
-
-Each prompt below is presented with an accompanying scenario to serve as inspiration for how you can collaborate with Gemini for Google Workspace. The prompt iteration example shows how you could write follow-up prompts to build on the initial generated response.
 
 下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace（Google Workspace 版 Gemini）协作。“提示词迭代示例（Prompt iteration example）”展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
 
-Prompt iteration example
 提示词迭代示例 (Prompt iteration example)
-Use case: Draft customer communications
-
 用例：撰写客户沟通内容
-
-You’re a customer service representative, and you’re responsible for responding directly to customer inquiries and concerns. You just received an email from a customer who received damaged goods. You open a new Google Doc and click on Help me write to prompt Gemini in Docs. Type the following:
 
 你是一名客户服务代表，负责直接回复客户咨询与关切。你刚收到一封邮件：客户表示收到的商品有损坏。你打开一个新的 Google Doc（Google Docs／Google 文档），点击 Help me write（帮我写）来在 Docs（Google 文档）中提示 Gemini。输入如下内容：
 
-Help me craft an empathetic email response. I am a customer service representative, and I need to create a response to a customer complaint. The customer ordered a pair of headphones that arrived damaged. They’ve already contacted us via email and provided pictures of the damage. I’ve offered a replacement, but they’re requesting an expedited shipping option that isn’t typically included with their order. Include a paragraph that acknowledges their frustration and three bullet points with potential
-
 请帮我起草一封富有同理心的邮件回复。我是一名客户服务代表，需要回复一位客户的投诉。该客户订购了一副耳机，但到货时已损坏。他们已通过邮件联系并提供了损坏照片。我已经提出补发，但他们要求加急配送（通常不包含在订单中）。请包含一段文字来认可他们的挫败感，并给出三个可能的解决方案要点：
-resolutions. (Gemini in Docs)
 
-（Gemini in Docs／Google 文档中的 Gemini）
-
-- Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
-## Gemini in Docs: [Drafts email copy]
-
-## Gemini in Docs（Google 文档中的 Gemini）：[起草邮件文案]
-
-## Gemini in Docs
-
 ## Gemini in Docs（Google 文档中的 Gemini）
-
-You like the email that Gemini in Docs created so you select Insert. But you want to brainstorm ways to resolve the issue without offering expedited shipping. You prompt by selecting Help me write. You type:
 
 你很喜欢 Gemini in Docs（Google 文档中的 Gemini）生成的邮件，于是选择 Insert（插入）。但你还想头脑风暴一些不提供加急配送也能解决问题的方式。你点击 Help me write（帮我写）继续提示。你输入：
 
-Suggest 10 alternative options in place of expedited shipping to resolve the customer’s frustration about
-receiving the damaged package. (Gemini in Docs)
-
 请提供 10 个替代方案，用来替代加急配送，以缓解客户对收到损坏包裹的失望与不满。（Gemini in Docs／Google 文档中的 Gemini）
-
-## Gemini in Docs: [List of alternative solutions]
-
-## Gemini in Docs（Google 文档中的 Gemini）：[替代方案列表]
-
-## Gemini in Docs
 
 ## Gemini in Docs（Google 文档中的 Gemini）
 
-These 10 suggestions are helpful. You click Insert to add the text into your draft.
-
 这 10 条建议很有帮助。你点击 Insert（插入），将文本加入草稿。
-
-## Example use cases
 
 ## 示例用例
 
-Customer Service Manager or Representative
-
 客户服务经理或客户服务代表
-NEW Use case: Respond to complex customer issues using FAQ documents
 
 新用例：借助 FAQ 文档回应复杂客户问题
 
-A customer has reached out with a multi-part, complex question. You need to find and use information that is spread across multiple documents in order to respond accurately. You prompt Gemini in the Drive side panel. You type:
-
 一位客户提出了一个包含多部分、较为复杂的问题。为了准确回复，你需要查找并使用分散在多份文档中的信息。你在 Drive（Google Drive／Google 云端硬盘）侧边栏提示 Gemini。你输入：
-
-Summarize information about [product name] including the product’s specific [return policy],
-[ingredients], and [certifications]. (Gemini in Drive)
 
 请汇总关于 [product name] 的信息，包括该产品的具体 [return policy]（退货政策）、[ingredients]（成分）以及 [certifications]（认证）。（Gemini in Drive／Google 云端硬盘中的 Gemini）
 
-Gemini returns a summary and links to relevant files, which you can directly click into from the side panel. You read the information before returning to your email to generate a response to the customer. You open the message and prompt Gemini in the Gmail side panel and tag relevant files by typing @file name. You type:
-
 Gemini 会返回摘要及相关文件链接，你可以在侧边栏直接点击打开。你阅读相关信息后回到邮件，准备给客户生成回复。你打开邮件，在 Gmail（Gmail 邮箱）侧边栏提示 Gemini，并通过输入 `@文件名` 引用相关文件。你输入：
-
-Generate a response to the customer question about our [return policy] and [product certifications]
-based on @[Customer FAQ Document]. Use a helpful and professional tone. (Gemini in Gmail)
 
 请基于 @[Customer FAQ Document] 生成对客户问题的回复，内容涉及我们的 [return policy]（退货政策）与 [product certifications]（产品认证）。语气要专业且乐于助人。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-## Use case: Standardize communication frameworks
-
 ## 用例：标准化沟通框架
-
-You’re a customer service team manager. You need to create scalable resources to standardize your team’s communications. You open a new Google Doc. You brainstorm by prompting Gemini in the Docs side panel. You type:
 
 你是客户服务团队经理，需要创建可规模化的资源来标准化团队沟通方式。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini 进行头脑风暴。你输入：
 
-Draft templates for three different types of customer communication. Create templates for apology emails, order confirmation messages, and thank you notes for loyal customers. Keep each template to
-one paragraph and use a friendly tone. (Gemini in Docs)
-
 请为三种不同类型的客户沟通撰写模板：道歉邮件、订单确认消息、以及给忠诚客户的感谢便条。每个模板请控制为一段，并使用友好语气。（Gemini in Docs／Google 文档中的 Gemini）
-
-The suggested templates offer a starting point for you to begin editing and personalizing with elements consistent with your company’s brand and policies. Now you want to outline your team’s communication best practices for onboarding. You open a new Doc and prompt Gemini in Docs. You type:
 
 这些建议模板为你提供了编辑和个性化的起点，你可以结合公司品牌与政策进行调整。现在你想整理一份可用于新人入职培训的团队沟通最佳实践。你打开一个新的 Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
-Craft a list of customer communication best practices that can be used to train new team members. Outline three sections, including how to handle happy customer inquiries, neutral customer inquiries,
-and dissatisfied customer inquiries. (Gemini in Docs)
-
 请整理一份客户沟通最佳实践清单，用于培训新团队成员。请划分三部分：如何处理满意客户的咨询、如何处理中立客户的咨询、以及如何处理不满意客户的咨询。（Gemini in Docs／Google 文档中的 Gemini）
-
-You also want to support the team with standardized language that they can use when interacting with customers on phone calls. You prompt Gemini Advanced:
 
 你还希望为团队提供一套标准化话术，以便他们在电话沟通中与客户互动时使用。你提示 Gemini Advanced（Gemini 高级版）：
 
-I am a [customer service manager]. I am trying to create standardized language that the team can use when interacting with customers on phone calls. Generate templates for common call openings, greetings, and closures for a customer service representative at a retail store. These templates should allow for personalization with customer details. The goal is to ensure consistency and professionalism
-
-我是 [customer service manager]（客户服务经理）。我想创建一套标准化话术，供团队在与客户电话沟通时使用。请为零售门店的客户服务代表生成常见的电话开场、问候、以及结束语模板。这些模板应允许根据客户细节进行个性化。目标是在保持一致性与专业性的同时，
-while allowing for differentiation with specific customer information. (Gemini Advanced)
-
-并能够结合具体客户信息做出差异化表达。（Gemini Advanced／Gemini 高级版）
-
-## Use case: Improve customer service
+我是 [customer service manager]（客户服务经理）。我想创建一套标准化话术，供团队在与客户电话沟通时使用。请为零售门店的客户服务代表生成常见的电话开场、问候、以及结束语模板。这些模板应允许根据客户细节进行个性化。目标是在保持一致性与专业性的同时，能够结合具体客户信息做出差异化表达。（Gemini Advanced／Gemini 高级版）
 
 ## 用例：提升客户服务
 
-You’ve noticed an uptick in customer complaints. You need to collaborate across departments to address recurring issues. You prompt Gemini in Gmail. You type:
-
 你注意到客户投诉有所上升。你需要跨部门协作来解决反复出现的问题。你在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
-
-Draft an email to my colleagues proposing a meeting to discuss customer experience improvement initiatives. Request that marketing, sales, and product stakeholders meet in the next week to get a clear
-sense of roles and responsibilities. (Gemini in Gmail)
 
 请起草一封邮件给我的同事，提议召开一次会议讨论提升客户体验的举措。请邀请市场、销售与产品相关方在下周内开会，以明确角色与职责分工。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-You edit the email and send it to your colleagues. Now you want to create a spreadsheet that you can use to track progress on this cross-departmental initiative. You open a Google Sheet and prompt Gemini in the Sheets side panel. You type:
-
 你编辑邮件并发送给同事。现在你想创建一张电子表格来追踪这项跨部门计划的进展。你打开一个 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
-Create a table to track the progress and impact of different customer experience improvement tactics using relevant metrics, including support ticket volume and priority level (high, medium, low).
+请创建一个表格来追踪不同客户体验改进举措的进展情况和影响。请使用相关指标，包括支持工单数量和优先级（高、中、低）。（Gemini in Sheets／Google 表格中的 Gemini）
 
-请创建一张表格，用相关指标来追踪不同客户体验改进策略的进展与影响，指标包括支持工单数量，以及优先级（高/中/低）。
-(Gemini in Sheets)
-（Gemini in Sheets／Google 表格中的 Gemini）
-
-Customer Support Specialist
 客户支持专员
-NEW Use case: Analyze customer feedback
 
 新用例：分析客户反馈
 
-You have a spreadsheet that tracks customer feedback. You want to analyze it and brainstorm potential reasons for the trends. You chat with Gemini Advanced. You upload the file and type:
-
 你有一张追踪客户反馈的电子表格。你想分析数据并头脑风暴这些趋势可能的原因。你与 Gemini Advanced（Gemini 高级版）对话，上传文件并输入：
-
-I am a customer support specialist. Using the attached spreadsheet, identify trends and patterns in our [customer feedback] by [category] over [time period]. Identify areas where [customer outreach] has
-increased significantly and investigate potential reasons. (Gemini Advanced)
 
 我是客户支持专员。请使用附件电子表格，按 [category]（类别）在 [time period]（时间范围）内识别我们 [customer feedback]（客户反馈）的趋势与模式。请找出 [customer outreach]（客户触达/外联）显著增加的领域，并分析可能原因。（Gemini Advanced／Gemini 高级版）
 
-## Use case: Enable customer self-service
-
 ## 用例：启用客户自助服务
-
-Customer feedback has consistently said your return policy guidelines are unclear. You open a Doc that states the return, refund, and store credit policies. You prompt Gemini in Docs by selecting Help me write. You type:
 
 客户反馈长期指出你们的退货政策指引不够清晰。你打开一份 Doc（Google Docs／Google 文档），其中包含退货、退款与门店购物金（store credit）政策。你点击 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
-Summarize this content to write a clear and concise product return policy and outline 5 steps for
-customers to take in sequential order. (Gemini Docs)
-
 请总结这段内容，写出一份清晰简明的产品退货政策，并以顺序方式列出客户需要采取的 5 个步骤。（Gemini in Docs／Google 文档中的 Gemini）
 
-You like how simple the steps are. You repeat the process for your refund policy and store credit policy. Now, you want to use the newly simplified content to create a blog post for customers. Using your Google Doc with the newly written guidance, you prompt Gemini in Google Docs. You type:
-
 你很喜欢这些步骤的简洁明了。你对退款政策与门店购物金政策也重复同样的流程。现在，你想用这些新简化的内容为客户创建一篇博客文章。你使用包含新指导内容的 Google Doc（Google Docs／Google 文档），并在 Google Docs（Google 文档）中提示 Gemini。你输入：
-
-Take this content and turn it into a short blog with the title “Resolve Common Issues Without Agent Assistance.” Have separate sections for our return policy, our refund policy, and our store credit policy.
 
 请将这段内容改写成一篇短博客，标题为“Resolve Common Issues Without Agent Assistance.”（无需客服人员介入即可解决常见问题）。请分别为我们的退货政策、退款政策、以及门店购物金政策设置独立小节。
 (Gemini in Docs)
 （Gemini in Docs／Google 文档中的 Gemini）
 
-Now you want to create an email template that the team can use when they receive customer questions around these three areas. You open a new Google Doc and prompt Gemini in Docs using Help me write. You type:
-
 现在你想创建一个邮件模板，供团队在收到围绕这三个主题的客户问题时使用。你打开一个新的 Google Doc（Google Docs／Google 文档），使用 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
-
-Draft an email template to a customer that highlights self-service resources referencing [blog link] for [support issues]. Thank the customer for their business and assure them of our commitment to meeting
-their needs. (Gemini in Docs)
 
 请起草一封给客户的邮件模板，突出自助资源，并针对 [support issues]（支持问题）引用 [blog link]（博客链接）。感谢客户的支持，并向其保证我们会致力于满足他们的需求。（Gemini in Docs／Google 文档中的 Gemini）
 
-## Use case: Conduct voice of the customer research
-
 ## 用例：开展 VOC（客户之声）研究
-
-You want to email a dissatisfied customer to attempt to make things right. You open an email that includes a customer complaint. You prompt Gemini in Gmail by selecting Help me write. You type:
 
 你想给一位不满意的客户发邮件，尝试补救并解决问题。你打开一封包含客户投诉的邮件。你点击 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
-Request a follow-up conversation on [date] at [time] with this customer who provided negative feedback to understand their concern and offer resolutions. Include example solutions. (Gemini in Gmail)
-
 请向这位提供了负面反馈的客户请求在 [date]（日期）[time]（时间）进行一次跟进沟通，以了解其关切并提供解决方案。请包含示例解决方案。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
-
-The drafted response is a nice start, but you want to refine the language. You iterate by prompting Gemini in Gmail using Refine and Elaborate. Next, you want to create a short survey that you can send after each follow-up customer call. You open a new Google Doc and prompt Gemini in Docs. You type:
 
 这份草拟回复是个不错的开始，但你想进一步润色措辞。你在 Gmail（Gmail 邮箱）中使用 Refine（优化）与 Elaborate（扩写）继续迭代。接下来，你想创建一份简短问卷，在每次跟进客户电话后发送。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
-Create five different questions to customers who have just spoken to an agent on the phone. Questions should gauge how effective the call was, if the customer’s concern was addressed, and if they would
-recommend our business to others. (Gemini in Docs)
-
 请为刚刚与客服人员通话过的客户创建 5 个不同的问题。问题应衡量：通话是否有效、客户关切是否得到解决，以及他们是否愿意向他人推荐我们的业务。（Gemini in Docs／Google 文档中的 Gemini）
-
-## Executives
 
 ## 高管
 
@@ -590,51 +425,23 @@ minutes to [urgent topics]. (Gemini in Gmail)
 - Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
-## Gemini in Gmail: [Drafts an email]
-
-## Gemini in Gmail（Gmail 邮箱中的 Gemini）：[起草邮件]
-
-## Gemini in Gmail
-
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
-
-The email looks good, but you want to make sure the tone is as formal as possible. You select Refine and Formalize.
 
 邮件看起来不错，但你希望语气尽可能正式。你选择 Refine（优化）与 Formalize（正式化）。
 
-## Gemini in Gmail: [Formalizes tone]
-
-## Gemini in Gmail（Gmail 邮箱中的 Gemini）：[正式化语气]
-
-## Gemini in Gmail
-
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
-
-You read the email and select Insert. Before sending it, you make a light edit to thank the team for keeping you on track while traveling.
 
 你阅读邮件并选择 Insert（插入）。在发送之前，你做了少量编辑，感谢团队在你出行期间帮助你保持进度。
 
-## Example use cases
-
 ## 示例用例
 
-Chief Executive Officer
-
 首席执行官 (Chief Executive Officer)
-NEW Use case: Enhance personal productivity and time management
 
 新用例：提升个人效率与时间管理
 
-You have important email threads that have numerous responses. You need to quickly catch up. You open the message in Gmail and read the automatically generated summary from Gemini in the Gmail side panel. To respond, you prompt Gemini in the Gmail side panel and tag relevant files by typing @file name. You type:
-
 你有一些重要的邮件线程，回复很多，需要快速跟进。你在 Gmail（Gmail 邮箱）中打开邮件，阅读 Gmail 侧边栏里由 Gemini 自动生成的摘要。要回复邮件，你在 Gmail 侧边栏提示 Gemini，并通过输入 `@文件名` 引用相关文件。你输入：
 
-Generate a response to [person] about [topic]. Include details on [deliverable] and [timeline] using
-@[Project A Status Report]. (Gemini in Gmail)
-
 请就 [topic] 给 [person] 生成一封回复，并使用 @[Project A Status Report] 补充 [deliverable] 与 [timeline] 的细节。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
-
-## NEW Use case: Create outlines of presentations in seconds
 
 ## 新用例：快速生成演示文稿大纲
 
