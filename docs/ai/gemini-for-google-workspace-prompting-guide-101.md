@@ -455,6 +455,7 @@ Gemini 会返回一张幻灯片。你继续用这种方法生成更多幻灯片�
 ## 新用例：创建模拟面试题以帮助发言人准备
 
 Now, you need to prepare your company’s spokesperson for interviews that will follow the briefing. To generate a list of mock interview questions, you decide to chat with Gemini Advanced. You type:
+
 现在，你需要为公司发言人准备简报之后即将到来的采访。为了生成一份模拟面试问题清单，你决定与 Gemini Advanced（Gemini 高级版）对话。你输入：
 
 I am a [PR/AR] manager at [company name]. We just launched [product] and had a briefing where we discussed [key messages]. I am preparing [spokesperson and role/title] for interviews. Generate a list of mock interview questions to help [spokesperson] prepare. Include a mixture of easy and hard questions, with some asking about the basics of [product] and some asking about the long-term vision of [product].
@@ -474,12 +475,14 @@ Gemini in Docs returns suggested talking points, and you select Insert to add th
 Gemini in Docs（Google 文档中的 Gemini）会返回建议的话术要点，你选择 Insert（插入）将其加入草稿。现在你可以继续打磨发言人的采访准备材料。
 
 Communications manager
+
 传播与沟通经理
 NEW Use case: Craft internal communications
 
 新用例：撰写内部沟通内容
 
 Your company has redesigned its intranet to be more user friendly. You’re in charge of internal communications for the launch. You want help drafting this message. You open a new Google Doc and prompt Gemini in the Docs side panel. You type:
+
 你们公司重新设计了内网（intranet），让其更易用。你负责此次上线的内部沟通工作，希望获得起草消息的帮助。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 I need to draft a company-wide memo unveiling our relaunched intranet. The [new page] addresses [common feedback we heard from employees] and aims to create a more user friendly experience. Draft an upbeat memo announcing [the new site] using @[Intranet Launch Plan Notes]. (Gemini in Docs)
@@ -634,6 +637,7 @@ sense of roles and responsibilities. (Gemini in Gmail)
 请起草一封邮件给我的同事，提议召开一次会议讨论提升客户体验的举措。请邀请市场、销售与产品相关方在下周内开会，以明确角色与职责分工。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 You edit the email and send it to your colleagues. Now you want to create a spreadsheet that you can use to track progress on this cross-departmental initiative. You open a Google Sheet and prompt Gemini in the Sheets side panel. You type:
+
 你编辑邮件并发送给同事。现在你想创建一张电子表格来追踪这项跨部门计划的进展。你打开一个 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 Create a table to track the progress and impact of different customer experience improvement tactics using relevant metrics, including support ticket volume and priority level (high, medium, low).
@@ -647,6 +651,7 @@ NEW Use case: Analyze customer feedback
 新用例：分析客户反馈
 
 You have a spreadsheet that tracks customer feedback. You want to analyze it and brainstorm potential reasons for the trends. You chat with Gemini Advanced. You upload the file and type:
+
 你有一张追踪客户反馈的电子表格。你想分析数据并头脑风暴这些趋势可能的原因。你与 Gemini Advanced（Gemini 高级版）对话，上传文件并输入：
 
 I am a customer support specialist. Using the attached spreadsheet, identify trends and patterns in our [customer feedback] by [category] over [time period]. Identify areas where [customer outreach] has
@@ -658,6 +663,7 @@ increased significantly and investigate potential reasons. (Gemini Advanced)
 ## 用例：启用客户自助服务
 
 Customer feedback has consistently said your return policy guidelines are unclear. You open a Doc that states the return, refund, and store credit policies. You prompt Gemini in Docs by selecting Help me write. You type:
+
 客户反馈长期指出你们的退货政策指引不够清晰。你打开一份 Doc（Google Docs／Google 文档），其中包含退货、退款与门店购物金（store credit）政策。你点击 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Summarize this content to write a clear and concise product return policy and outline 5 steps for
@@ -665,6 +671,7 @@ customers to take in sequential order. (Gemini Docs)
 请总结这段内容，写出一份清晰简明的产品退货政策，并以顺序方式列出客户需要采取的 5 个步骤。（Gemini in Docs／Google 文档中的 Gemini）
 
 You like how simple the steps are. You repeat the process for your refund policy and store credit policy. Now, you want to use the newly simplified content to create a blog post for customers. Using your Google Doc with the newly written guidance, you prompt Gemini in Google Docs. You type:
+
 你很喜欢这些步骤的简洁明了。你对退款政策与门店购物金政策也重复同样的流程。现在，你想用这些新简化的内容为客户创建一篇博客文章。你使用包含新指导内容的 Google Doc（Google Docs／Google 文档），并在 Google Docs（Google 文档）中提示 Gemini。你输入：
 
 Take this content and turn it into a short blog with the title “Resolve Common Issues Without Agent Assistance.” Have separate sections for our return policy, our refund policy, and our store credit policy.
@@ -673,6 +680,7 @@ Take this content and turn it into a short blog with the title “Resolve Common
 （Gemini in Docs／Google 文档中的 Gemini）
 
 Now you want to create an email template that the team can use when they receive customer questions around these three areas. You open a new Google Doc and prompt Gemini in Docs using Help me write. You type:
+
 现在你想创建一个邮件模板，供团队在收到围绕这三个主题的客户问题时使用。你打开一个新的 Google Doc（Google Docs／Google 文档），使用 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft an email template to a customer that highlights self-service resources referencing [blog link] for [support issues]. Thank the customer for their business and assure them of our commitment to meeting
@@ -684,12 +692,14 @@ their needs. (Gemini in Docs)
 ## 用例：开展 VOC（客户之声）研究
 
 You want to email a dissatisfied customer to attempt to make things right. You open an email that includes a customer complaint. You prompt Gemini in Gmail by selecting Help me write. You type:
+
 你想给一位不满意的客户发邮件，尝试补救并解决问题。你打开一封包含客户投诉的邮件。你点击 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Request a follow-up conversation on [date] at [time] with this customer who provided negative feedback to understand their concern and offer resolutions. Include example solutions. (Gemini in Gmail)
 请向这位提供了负面反馈的客户请求在 [date]（日期）[time]（时间）进行一次跟进沟通，以了解其关切并提供解决方案。请包含示例解决方案。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 The drafted response is a nice start, but you want to refine the language. You iterate by prompting Gemini in Gmail using Refine and Elaborate. Next, you want to create a short survey that you can send after each follow-up customer call. You open a new Google Doc and prompt Gemini in Docs. You type:
+
 这份草拟回复是个不错的开始，但你想进一步润色措辞。你在 Gmail（Gmail 邮箱）中使用 Refine（优化）与 Elaborate（扩写）继续迭代。接下来，你想创建一份简短问卷，在每次跟进客户电话后发送。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Create five different questions to customers who have just spoken to an agent on the phone. Questions should gauge how effective the call was, if the customer’s concern was addressed, and if they would
@@ -722,6 +732,7 @@ Use case: Communicate on the go
 用例：在路上进行沟通
 
 You are an executive about to board a long flight, and you just received an invitation for the next board meeting with an agenda. You have a couple of comments, and you want to propose adding a few topics to the agenda. You open Gmail, and you prompt Gemini in Gmail. You type:
+
 你即将登上一段长途航班，刚收到下一次董事会会议的邀请（含议程）。你有一些意见，希望提议在议程中加入几个话题。你打开 Gmail（Gmail 邮箱），并在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Draft an email confirming that I will be at the board meeting. Ask if we can adjust the agenda to give 15
@@ -740,6 +751,7 @@ minutes to [urgent topics]. (Gemini in Gmail)
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
 
 The email looks good, but you want to make sure the tone is as formal as possible. You select Refine and Formalize.
+
 邮件看起来不错，但你希望语气尽可能正式。你选择 Refine（优化）与 Formalize（正式化）。
 
 ## Gemini in Gmail: [Formalizes tone]
@@ -751,6 +763,7 @@ The email looks good, but you want to make sure the tone is as formal as possibl
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
 
 You read the email and select Insert. Before sending it, you make a light edit to thank the team for keeping you on track while traveling.
+
 你阅读邮件并选择 Insert（插入）。在发送之前，你做了少量编辑，感谢团队在你出行期间帮助你保持进度。
 
 ## Example use cases
@@ -767,6 +780,7 @@ You have important email threads that have numerous responses. You need to quick
 
 Generate a response to [person] about [topic]. Include details on [deliverable] and [timeline] using
 @[Project A Status Report]. (Gemini in Gmail)
+
 请就 [topic] 给 [person] 生成一封回复，并使用 @[Project A Status Report] 补充 [deliverable] 与 [timeline] 的细节。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 ## NEW Use case: Create outlines of presentations in seconds
@@ -774,6 +788,7 @@ Generate a response to [person] about [topic]. Include details on [deliverable] 
 ## 新用例：快速生成演示文稿大纲
 
 Your team will pull together a presentation for you, and you want to provide an outline to get them started. You want to generate an outline using Gemini Advanced. You select the microphone icon and use your voice to prompt. You say:
+
 你的团队将为你制作一份演示文稿，你希望先提供一个大纲帮助他们快速开始。你想使用 Gemini Advanced（Gemini 高级版）生成大纲。你点击麦克风图标，用语音进行提示。你说：
 
 I’m the CEO giving a presentation to [audience] at [event], and I want to create a detailed outline for my team to get started. I want to include a few important topics, including [areas of focus] and how our company is innovating with [company initiatives]. I’m envisioning time for a customer Q&A to end the presentation. Include suggested questions we could ask of a customer from the [industry] industry about
@@ -786,17 +801,21 @@ Use case: Prepare challenging employee communications
 用例：准备棘手的员工沟通内容
 
 You’re hosting a quarterly town hall meeting with the entire company. You want to write uplifting remarks to open the meeting. You open a new Doc and prompt Gemini in the Docs side panel. You type:
+
 你要为全公司主持一次季度全员大会（town hall）。你希望写一些鼓舞人心的开场致辞。你打开一个新的 Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Write two uplifting paragraphs for employees who have just finished a challenging quarter. Acknowledge [difficulties] and emphasize [positives] for the upcoming quarter. Use a tone that is motivating, optimistic,
 and fosters a sense of unity and collaboration. (Gemini in Docs)
+
 请为刚经历了一个艰难季度的员工写两段鼓舞人心的文字。认可 [difficulties]（困难），并强调下个季度的 [positives]（积极因素）。语气要激励、乐观，并营造团结与协作的氛围。（Gemini in Docs／Google 文档中的 Gemini）
 
 You want to brainstorm and practice how you will respond empathetically to potentially tough questions. You go to Gemini Advanced and type:
+
 你希望头脑风暴并练习：当员工提出可能比较尖锐/棘手的问题时，你该如何以同理心进行回应。你打开 Gemini Advanced（Gemini 高级版）并输入：
 
 I’m the COO of a mid-sized company. I am hosting a quarterly town hall meeting with the entire company. I want to brainstorm and practice how I will respond to potentially tough questions. Help me write challenging questions that employees may ask at the upcoming town hall about [URL of company announcement]. Generate potential answers for each question that use a confident but firm tone. The responses should acknowledge the concern and let the employees know that we are striving to do our
 best for the entire company. (Gemini Advanced)
+
 我是某家中型公司的 COO。我要为全公司主持一次季度全员大会（town hall）。我想头脑风暴并练习如何回应可能比较棘手的问题。请帮我写出员工在即将到来的全员大会上，可能会围绕 [URL of company announcement] 提出的尖锐问题，并为每个问题生成一个可能的回答，语气要自信但坚定。回答应认可员工的担忧，并让员工知道我们正在努力为整个公司做到最好。（Gemini Advanced／Gemini 高级版）
 
 ## Use case: Streamline responses on the go
@@ -808,6 +827,7 @@ Your plans have changed, and you can’t attend a meeting. You need to provide t
 
 Draft an email to [project lead] letting them know I will not be in the meeting due to an urgent matter. Ask them to take detailed notes and to ensure the team arrives at a decision on [key topic] in addition
 to assigning ownership of the postmortem report to [colleague]. (Gemini in Gmail)
+
 请起草一封邮件给 [project lead]，告知我因紧急事项无法参会。请对方做详细会议记录，并确保团队就 [key topic] 做出决策，同时把复盘报告（postmortem report）的负责人与所有权分配给 [colleague]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Chief Marketing Officer
@@ -820,12 +840,14 @@ You’re starting annual planning. You want to conduct research on your target a
 
 I’m a marketing leader conducting analysis in preparation for next year’s [launch]. Define my target audiences [audiences], for my new line of [product]. Include interests, relevant marketing channels, and
 top trends that drive their consideration and purchase behavior. (Gemini Advanced)
+
 我是一名市场负责人，正在为明年的 [launch] 做分析准备。请为我的新产品线 [product] 定义目标受众 [audiences]：包括他们的兴趣点、相关营销渠道，以及推动他们产生考虑与购买行为的关键趋势。（Gemini Advanced／Gemini 高级版）
 
 Next, you export your findings to a Doc by selecting Share & export and Export to Docs. Now, you want to pull in relevant data from your own files by typing @file name. You prompt Gemini in the Docs side panel. You type:
 接下来，你选择 Share & export（分享与导出）并 Export to Docs（导出到 Google Docs／Google 文档），把调研结果导出到文档中。现在，你希望通过输入 `@文件名` 引用自己文件中的相关数据。你在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Brainstorm value props for my [target audiences] based on features from @[Product Requirements Document]. Include a section on campaign learnings from @[Campaign Performance]. (Gemini in Docs)
+
 请基于 @[Product Requirements Document] 中的功能，为我的 [target audiences] 头脑风暴价值主张（value props）。并加入一节内容，总结来自 @[Campaign Performance] 的活动经验与洞察。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Brainstorm content and thought leadership
@@ -837,6 +859,7 @@ You finished a meeting with your social media team leads. You took notes in a Do
 
 Generate a list of four relevant and engaging thought leadership blog post ideas for [company] based on
 trending topics, target audience analysis, and brand keywords. (Gemini in Docs)
+
 请基于热门话题、目标受众分析和品牌关键词，为 [company] 生成 4 个相关且有吸引力的思想领导力博客选题。（Gemini in Docs／Google 文档中的 Gemini）
 
 During the same conversation, the team discussed launching a new brand campaign. You know that your customers value your reliable and unique services, and your company has a long history of delivering for customers. You need help getting started with ideas on a new campaign tagline. You open a new Google Doc and select Help me write. You type:
@@ -844,6 +867,7 @@ During the same conversation, the team discussed launching a new brand campaign.
 
 Generate three options for a new slogan emphasizing reliability, innovation, and a long history of
 popularity for [company]. (Gemini in Docs)
+
 请生成 3 个新的口号（slogan）选项，强调可靠性、创新性，以及 [company] 长期以来的受欢迎程度。（Gemini in Docs／Google 文档中的 Gemini）
 
 The slogans help you get started with the creative process. You have upcoming events that could be the perfect place to test elements of a new campaign. You want to mock up ideas for booth graphics for your events team. You open a new presentation in Google Slides and select Create image with Gemini. You type:
@@ -851,6 +875,7 @@ The slogans help you get started with the creative process. You have upcoming ev
 
 Create an image of a trade show booth using orange and blue colors. The booth should be modern and
 showcase interactive computer stations. (Gemini in Slides)
+
 请创建一张使用橙色与蓝色配色的展会展位图片。展位风格应现代，并展示可交互的电脑工作站。（Gemini in Slides／Google 幻灯片中的 Gemini）
 
 ## Use case: Conduct competitive analysis
@@ -862,6 +887,7 @@ Your team is considering expanding into a new line of business. To research, you
 
 I am a CMO conducting a competitive analysis. My company is considering expanding into [a new line of business]. Generate a list of the top five competitors in the [industry] industry and include their pricing,
 strengths, weaknesses, and target audience. (Gemini Advanced)
+
 我是 CMO，正在进行竞争分析。我的公司正在考虑拓展到 [a new line of business]。请列出 [industry] 行业的 5 个主要竞争对手，并包含他们的定价、优势、劣势以及目标受众。（Gemini Advanced／Gemini 高级版）
 
 After going deeper in your research, you decide to create a five-year strategy to see what this could look like for the company. You type:
@@ -869,6 +895,7 @@ After going deeper in your research, you decide to create a five-year strategy t
 
 Okay, I am going to try to convince my CEO that we should expand into [line of business]. Draft a concise, competitive strategy outline for the next five years for the [industry] industry across North America
 markets with potential goals, strategies, and tactics. (Gemini Advanced)
+
 好的，我要尝试说服 CEO 我们应该拓展到 [line of business]。请为北美市场的 [industry] 行业起草一份未来五年的简洁竞争战略大纲，包含可能的目标、战略与战术。（Gemini Advanced／Gemini 高级版）
 
 After iterating to generate an appropriate outline, you fill in additional details and thoughts to make the document your own.
@@ -884,6 +911,7 @@ You need to catch up on emerging technology trends as the landscape is shifting 
 
 I am the CTO of [company] in [industry]. I want to understand emerging technology trends. Summarize the top five emerging technologies with the most significant potential impact on [industry]. For each technology, list its potential benefits and challenges, and suggest how it could impact [company] in the
 next two to three years. (Gemini Advanced)
+
 我是 [industry] 行业 [company] 的 CTO。我想了解新兴技术趋势。请总结对 [industry] 可能产生最重大影响的 5 项新兴技术。对于每项技术，请列出潜在收益与挑战，并建议它在未来 2-3 年可能如何影响 [company]。（Gemini Advanced／Gemini 高级版）
 
 You want to dig deeper on specific topics, so you continue the conversation by typing:
@@ -891,6 +919,7 @@ You want to dig deeper on specific topics, so you continue the conversation by t
 
 Recommend three areas where [my company] can take proactive steps to stay ahead of the curve on
 [specific areas]. (Gemini Advanced)
+
 请推荐 3 个领域，让 [my company] 能采取主动行动，在以下方面保持领先：[specific areas]。（Gemini Advanced／Gemini 高级版）
 
 Chief Information Officer
@@ -903,6 +932,7 @@ You’re making the case to digitally transform your company by adopting generat
 
 I am the CIO at [company], and I am trying to build the case to [adopt generative AI solutions]. I need to explain the technical concept of generative AI to a non-technical audience (the CEO and board). Help me write talking points that will help me convey what generative AI is, ways it could help us digitally transform, and why it’s important to our growth as a company. Include details about how it could potentially refocus our technical talent on more strategic work, help enhance our workforce’s productivity, and help us better
 serve our global workforce and customers. (Gemini Advanced)
+
 我是 [company] 的 CIO，我正在为 [adopt generative AI solutions] 建立论证。我需要向非技术受众（CEO 与董事会）解释“生成式 AI”的技术概念。请帮我写一组要点式话术（talking points），说明：什么是生成式 AI、它如何帮助我们进行数字化转型，以及它为何对公司增长很重要。请包含细节：它如何让技术人才从日常事务转向更具战略性的工作、如何提升员工生产力，以及如何更好地服务全球员工与客户。（Gemini Advanced／Gemini 高级版）
 
 Gemini provides suggested ways to discuss the topic. You continue your brainstorm and then export your conversation by clicking Share & export and Export to Docs. Then, to build a presentation, you open a new Google Slide and prompt Gemini in the Slides side panel and tag relevant files by typing @file name. You type:
@@ -910,6 +940,7 @@ Gemini 会给出一些建议的讨论方式。你继续头脑风暴，并点击 
 
 I need to build a presentation to explain a technical topic to a non-technical audience. Generate an [introduction slide] that [describes what generative AI is] using @[Gen AI Explanation Notes].
 (Gemini in Slides)
+
 我需要制作一份演示文稿，用于向非技术受众解释技术主题。请使用 @[Gen AI Explanation Notes] 生成一张 [introduction slide]（引言页），用来[描述什么是生成式 AI]。（Gemini in Slides／Google 幻灯片中的 Gemini）
 
 You continue to use the same prompt, adjusting the topic to generate more slides for your presentation based on your notes.
@@ -924,6 +955,7 @@ You’re working on a report to make a vendor recommendation. You visit Gemini A
 
 I am the CIO at [company]. We are currently evaluating vendor options to [replatform our intranet]. Right now, we use [vendor], but we are looking to switch because [we are unhappy with limited functionality and account support]. Suggest additional vendor options to consider and include descriptions of their product
 and services and key features. (Gemini Advanced)
+
 我是 [company] 的 CIO。我们正在评估供应商选项以 [replatform our intranet]（重构/迁移我们的内网平台）。目前我们使用 [vendor]，但我们考虑更换，因为 [we are unhappy with limited functionality and account support]（对功能受限与客户支持不满意）。请建议可考虑的其他供应商，并包含其产品与服务描述，以及关键功能。（Gemini Advanced／Gemini 高级版）
 
 ## Use case: Develop technical summaries
@@ -935,6 +967,7 @@ Your team just provided a lengthy technical report. You need to summarize it for
 
 Summarize the key findings and implications of this report for [audience]. Focus on the main [vulnerabilities] identified and the recommended actions to address them. Use a formal tone.
 (Gemini in Docs)
+
 请总结这份报告对 [audience] 的关键发现与影响。聚焦报告中识别出的主要 [vulnerabilities]（漏洞/薄弱点）以及建议采取的应对措施。语气要正式。（Gemini in Docs／Google 文档中的 Gemini）
 
 You make light edits to the summary and include it as an executive summary.
@@ -949,6 +982,7 @@ Your company needs a quick way to track software access for new hires. You open 
 
 Create a tracker of software licenses for employees and include columns for license types, usage rights,
 and renewal dates. (Gemini in Sheets)
+
 请创建一张员工软件许可证追踪表，并包含以下列：许可证类型、使用权限，以及续订日期。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Chief Human Resources Officer
@@ -961,6 +995,7 @@ You want to set up a new program to help everyone feel included, appreciated, an
 
 Brainstorm 10 employee appreciation ideas based on diverse employee interests such as cooking,
 gardening, sports, reading, and traveling. (Gemini in Docs)
+
 请基于员工多元兴趣（如烹饪、园艺、运动、阅读和旅行）头脑风暴 10 个员工关怀/表彰创意。（Gemini in Docs／Google 文档中的 Gemini）
 
 Gemini in Docs kick-starts your creativity, and now you have ideas for employee interest clubs and events. You also want to ensure your leadership team is regularly encouraging managers to recognize talent on their teams, so you create email templates they can use as inspiration. You prompt Gemini in Docs by selecting Help me write, and you type:
@@ -968,6 +1003,7 @@ Gemini in Docs（Google 文档中的 Gemini）为你打开思路，你现在有�
 
 Draft an email template that thanks [employee] for their hard work and [recent accomplishments]. Offer them an extra perk for their dedication, such as [a coffee gift card]. Use an upbeat and professional tone.
 (Gemini in Docs)
+
 请起草一封邮件模板，感谢 [employee] 的辛勤工作与 [recent accomplishments]（近期成果）。为其付出提供一项额外福利，例如 [a coffee gift card]（咖啡礼品卡）。语气要积极、专业。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Assess employee satisfaction
@@ -979,12 +1015,14 @@ You want to draft an anonymous survey that allows people to openly and honestly 
 
 Draft an anonymous employee satisfaction survey with questions and answer options that touch upon key areas like workload, work-life balance, compensation, and career growth opportunities. Ensure the
 questions are clear, concise, and avoid leading answers. (Gemini in Docs)
+
 请起草一份匿名员工满意度问卷，包含问题及答案选项，覆盖工作量、工作与生活平衡、薪酬、以及职业成长机会等关键领域。确保问题清晰、简洁，并避免诱导性答案。（Gemini in Docs／Google 文档中的 Gemini）
 
 You received feedback from 15 senior leaders, and you’ve gathered all of the anonymous results in a Doc. You want to create a summary that you can use in your next call. You prompt Gemini in the Docs side panel. You type:
 你收到了 15 位高级领导的反馈，并已将所有匿名结果汇总到一个 Doc（Google Docs／Google 文档）中。你想创建一份总结用于下一次会议。你在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Summarize the results of the employee feedback to identify key themes. (Gemini in Docs)
+
 请总结员工反馈结果，并识别关键主题。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Frontline management
@@ -1016,6 +1054,7 @@ A customer just approached you with a question about an ongoing sale. You could 
 一位顾客刚向你咨询正在进行的促销活动。你可以借助帮助来快速浏览你有权限访问的大量文件，以便迅速找到正确信息。你在 Drive（Google Drive／Google 云端硬盘）侧边栏提示 Gemini。你输入：
 
 Find the document that details the [company name]’s [holiday] sale details. (Gemini in Drive)
+
 请找到包含 [company name] 的 [holiday] 促销活动细则的文档。（Gemini in Drive／Google 云端硬盘中的 Gemini）
 
 - Persona • Task • Context • Format
@@ -1029,6 +1068,7 @@ Gemini in Drive returns suggested relevant files. From the side panel, you can d
 Gemini in Drive（Google 云端硬盘中的 Gemini）会返回建议的相关文件。你可以在侧边栏直接总结这些文件，也可以点击打开某个具体文档。你打开一份建议的 Doc（Google Docs／Google 文档）来回答问题，然后在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 How much can customers save on [product type] during this sale? (Gemini in Docs)
+
 在这次促销中，顾客购买 [product type] 最多能节省多少？（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Gemini in Docs
@@ -1058,6 +1098,7 @@ Gemini 会返回与新政策相关的建议文件，你直接点击打开相关�
 
 Write an email to my new colleagues summarizing @[Updated Return and Exchange Policy H2 2024].
 (Gemini in Gmail)
+
 请给我的新同事写一封邮件，总结 @[Updated Return and Exchange Policy H2 2024]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 You select Insert and further personalize the message before sending it.
@@ -1072,6 +1113,7 @@ You have a list of opening and closing duties that you must perform depending on
 
 I am a retail manager and I need to create a checklist for my opening and closing duties. Create a template with columns for [opening and closing duties] from @[Onboarding New Hire Information].
 (Gemini in Sheets)
+
 我是零售经理，我需要为开店和闭店职责创建一份清单。请基于 @[Onboarding New Hire Information] 中的 [opening and closing duties] 创建一个模板，并包含相应列。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Gemini creates a spreadsheet. As you go through your day, you mark different tasks as complete. You have to leave your shift early, but you first need to communicate to the rest of the team what still needs to be done. You open your Gmail and prompt Gemini in the Gmail side panel and tag the spreadsheet you just created. You type:
@@ -1079,6 +1121,7 @@ Gemini 会生成一张电子表格。你在一天工作过程中将不同任务�
 
 Write an email to the team telling them what still needs to be done from the AM shift from @[Opening and
 Closing Duties Tracker]. (Gemini in Gmail)
+
 请给团队写一封邮件，说明 AM 班次中还有哪些事项尚未完成，信息来自 @[Opening and Closing Duties Tracker]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Warehouse worker
@@ -1090,6 +1133,7 @@ A customer wants to place a bulk order. You need to check the store’s inventor
 一位顾客想下一个大额批量订单。你需要检查门店库存，确认是否足够履约。你打开用于追踪库存信息的表格，并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 How many [units] of [product] do we have left in our inventory? (Gemini in Sheets)
+
 我们的库存里还剩多少 [product] 的 [units]？（Gemini in Sheets／Google 表格中的 Gemini）
 
 ## NEW Use case: Manage audits
@@ -1100,6 +1144,7 @@ Your warehouse is undergoing an inventory audit, and you’re in charge of verif
 你的仓库正在进行库存盘点审计。你负责核对：库存追踪表中的产品总量与审计盘点结果之间不一致的数字。你在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 Create a formula that helps me calculate the difference between two columns. Which items have a discrepancy in [the total number counted] versus [the quantity on hand]? (Gemini in Sheets)
+
 请创建一个公式，帮助我计算两列数据的差值。哪些商品在 [the total number counted]（盘点数量）与 [the quantity on hand]（账面/现有数量）之间存在差异？（Gemini in Sheets／Google 表格中的 Gemini）
 
 You verify Gemini’s response that there are only a few items whose count did not align to your inventory tracker’s total. You need to write a message to your supervisor telling them that you’re looking into the issue. You open your Gmail and prompt Gemini in the Gmail side panel. You type:
@@ -1107,6 +1152,7 @@ You verify Gemini’s response that there are only a few items whose count did n
 
 I’m a warehouse worker managing an audit. Write a message to my supervisor to let them know that I am
 looking into the products whose counts are incorrect. (Gemini in Gmail)
+
 我是负责审计的仓库员工。请给我的主管写一条消息，告知我正在调查那些数量不正确的商品。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 The drafted email looks good to go, so you hit send after reviewing.
@@ -1142,6 +1188,7 @@ You’re an HR manager working on a presentation script. You have a Google Doc f
 
 I am an HR manager, and I am developing a script for my presentation for new hires. I need to create the script for an onboarding presentation about our company’s commitment to employee development and well-being. Help me draft talking points that showcase why employee mentorship and development are
 core values for our company using @[Mission Statement and Core Values]. (Gemini in Docs)
+
 我是 HR 经理，正在为新员工演示制作一份讲稿。我需要为入职培训演示创建脚本，主题是我们公司对员工发展与福祉（well-being）的承诺。请使用 @[Mission Statement and Core Values] 帮我起草要点式话术，说明为什么员工导师制（mentorship）与员工发展是我们公司的核心价值。（Gemini in Docs／Google 文档中的 Gemini）
 
 - Persona • Task • Context • Format
@@ -1160,6 +1207,7 @@ You select Insert. Now, you want to add more targeted talking points. You type:
 
 Add four talking points for a new section of the presentation script that explains how we support our employees’ development. Mention our training and certification programs and mentorship opportunities using @[Learning and Development Paths], and write a strong closing statement about our expectation that everyone contributes to a respectful and welcoming workplace. Use a professional tone.
 (Gemini in Docs)
+
 请为演示脚本新增一节内容，补充 4 条要点，解释我们如何支持员工发展。请使用 @[Learning and Development Paths] 提及我们的培训与认证项目以及导师机会，并写一句有力的结尾陈述，强调我们期望每个人都为尊重且友好的工作环境做出贡献。语气要专业。（Gemini in Docs／Google 文档中的 Gemini）
 （Gemini in Docs／Google 文档中的 Gemini）
 
@@ -1184,6 +1232,7 @@ The business is growing, and you have a large hiring effort underway. You want t
 
 Help me create a formula to calculate the total total number of [hires] by [department].
 (Gemini in Sheets)
+
 请帮我创建一个公式，用来按 [department] 统计 [hires] 的总人数。（Gemini in Sheets／Google 表格中的 Gemini）
 （Gemini in Sheets／Google 表格中的 Gemini）
 
