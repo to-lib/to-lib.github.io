@@ -1225,9 +1225,11 @@ You add in more details and then you’re ready to create a draft of the Google 
 Recruiter
 招聘专员（Recruiter）
 NEW Use case: Report on recruitment metrics
+
 新用例：汇报招聘指标
 
 The business is growing, and you have a large hiring effort underway. You want to see a holistic view of how your hiring efforts are going. You open your Google Sheet and prompt Gemini in the Sheets side panel. You type:
+
 业务正在增长，你正在推进一项大规模招聘工作。你想从整体上了解招聘进展。你打开 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏提示 Gemini。你输入：
 
 Help me create a formula to calculate the total total number of [hires] by [department].
@@ -1240,6 +1242,7 @@ You continue your conversation by prompting additional questions. You type:
 你继续对话并提出更多问题。你输入：
 
 In what month did we hire the most people? (Gemini in Sheets)
+
 我们在哪个月招聘人数最多？（Gemini in Sheets／Google 表格中的 Gemini）
 
 You continue with your line of questions until you feel ready to write your report.
@@ -1250,17 +1253,21 @@ You continue with your line of questions until you feel ready to write your repo
 ## 用例：管理招聘流程
 
 You want to brainstorm potential ways the company can better manage the recruiting process. You open the team’s Google Doc with recruiting strategies. You prompt Gemini in the Docs side panel. You type:
+
 你想头脑风暴：公司可以如何更好地管理招聘流程。你打开团队关于招聘策略的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏提示 Gemini。你输入：
 
 Create a list of strategies our recruiters can use to improve our existing recruiting process and identify
 potential job candidates. (Gemini in Docs)
+
 请列出一份策略清单，帮助招聘人员改进现有招聘流程并识别潜在候选人。（Gemini in Docs／Google 文档中的 Gemini）
 
 After creating a short recommendation for leadership on how the team will improve existing recruiting processes, the team receives guidance for a job opening for a content marketing manager. You open a new Doc and prompt Gemini in Docs. You type:
+
 在为管理层写了一份简短建议（说明团队将如何改进现有招聘流程）之后，团队收到了一份内容营销经理岗位的招聘需求指导。你打开一个新的 Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
 I am opening a new job position on the marketing team. Write a compelling role description for a content marketing manager. Highlight key responsibilities [insert] and requirements, including B2B and B2C content creation, a minimum of five years experience, and a portfolio of writing examples.
 (Gemini in Docs)
+
 我正在为市场团队新增一个岗位。请为“内容营销经理（content marketing manager）”撰写一份有吸引力的岗位描述，突出关键职责 [insert] 与要求，包括 B2B 和 B2C 内容创作、至少五年工作经验，以及写作作品集。（Gemini in Docs／Google 文档中的 Gemini）
 （Gemini in Docs／Google 文档中的 Gemini）
 
@@ -1269,9 +1276,11 @@ I am opening a new job position on the marketing team. Write a compelling role d
 ## 用例：管理面试流程
 
 You want to prepare questions for phone screen interviews. You decide to prepare by using Gemini Advanced. You upload the relevant file and type:
+
 你想为电话初筛面试准备问题。你决定使用 Gemini Advanced（Gemini 高级版）来准备。你上传相关文件并输入：
 
 I am a recruiter, and I am preparing for candidate interviews. Using the job description in the file I’m uploading, write a list of 20 open-ended interview questions that I can use to screen candidates.
+
 我是一名招聘专员，正在准备候选人面试。请基于我上传文件中的岗位描述，生成 20 个开放式面试问题，用于筛选候选人。（Gemini Advanced／Gemini 高级版）
 (Gemini Advanced)
 
@@ -1283,31 +1292,38 @@ The team has made its hiring decisions. You open the Google Doc with notes on ea
 
 I am writing an email to a job candidate who just finished the interview process. Create a template for an offer letter for the [selected candidate] for the [position] with a request to schedule a call to discuss
 benefits, compensation, and start date. (Gemini in Docs)
+
 我正在给刚完成面试流程的候选人写邮件。请为 [selected candidate] 的 [position] 创建一份 offer letter（录用通知）模板，并请求对方安排一次电话沟通，以讨论福利、薪酬与入职日期。（Gemini in Docs／Google 文档中的 Gemini）
 
 Now, you want to generate personalized, empathetic email copy to send to the job candidates who will not receive an offer. You prompt Gemini in Docs by selecting Help me write. You type:
 
 I am writing an email to job candidates who finished the interview process, but who were not selected. Help me write a rejection letter for [candidate] for the [position]. Use an empathetic tone.
 (Gemini in Docs)
+
 （Gemini in Docs／Google 文档中的 Gemini）
 
 HR Manager
 人力资源经理
 NEW Use case: Conduct employee engagement and satisfaction surveys
+
 新用例：开展员工敬业度与满意度调查
 
 You are in charge of building a survey that will go out to all employees. You want to brainstorm ideas on questions to ask. You visit Gemini Advanced and type:
+
 你负责创建一份面向全体员工的问卷。你想头脑风暴一下可以问哪些问题。你访问 Gemini Advanced（Gemini 高级版）并输入：
 
 I am an HR manager in charge of running our enterprise-wide survey at [company] to gauge employee engagement and satisfaction. Generate a list of questions I can use to build the survey.
 (Gemini Advanced)
+
 我是 HR 经理，负责在 [company] 开展全公司范围的调查，以评估员工敬业度与满意度。请生成一份我可以用来构建问卷的问题清单。（Gemini Advanced／Gemini 高级版）
 
 Your company has completed its annual employee engagement and satisfaction survey. Now, you want to clean up the data before you analyze it. You go to Gemini Advanced, upload the relevant file, and type:
+
 贵公司已完成年度员工敬业度与满意度调查。现在，你想在分析数据之前清理数据。你打开 Gemini Advanced（Gemini 高级版），上传相关文件并输入：
 
 Help me clean my employee survey spreadsheet. Specifically, fill any blank values in the name column with “Anonymous,” and if the region column shows Headquarters, replace that with HQ. Finally, remove any rows where the satisfaction column is blank. Please generate a new file for me with my cleaned data.
 (Gemini Advanced)
+
 请帮我清理员工调查电子表格。具体来说，如果有姓名栏为空，请填入“Anonymous”（匿名）；如果地区栏显示“Headquarters”，请替换为“HQ”。最后，删除满意度栏为空的所有行。请为我生成一个包含清理后数据的新文件。（Gemini Advanced／Gemini 高级版）
 
 ## NEW Use case: Create individualized learning and development plans
@@ -1315,10 +1331,12 @@ Help me clean my employee survey spreadsheet. Specifically, fill any blank value
 ## 新用例：制定个性化学习与发展计划
 
 You have all of your company’s learning resources stored in your Google Drive. For each new hire, you want to create a tailored learning and development plan. To do this, you prompt Gemini in the Drive side panel. You type:
+
 你已将公司所有学习资源存储在 Google Drive（Google 云端硬盘）中。你想为每位新员工制定量身定制的学习与发展计划。为此，你在 Drive（Google 云端硬盘）侧边栏中提示 Gemini。你输入：
 
 Create a personalized learning and development plan for a new hire who needs to learn about [topic].
 Organize it by day and suggest relevant files. (Gemini in Drive)
+
 请为需要学习 [topic] 的新员工创建一个个性化的学习与发展计划。按天安排，并建议相关文件。（Gemini in Drive／Google 云端硬盘中的 Gemini）
 
 ## Use case: Onboard employees
@@ -1326,24 +1344,30 @@ Organize it by day and suggest relevant files. (Gemini in Drive)
 ## 用例：员工入职
 
 The recruiters have just filled the company’s two open roles. Now, you’re in charge of ensuring the candidates have a smooth onboarding experience. You need help in structuring information for the new hires, so you open a Google Sheet and prompt Gemini in the Sheets side panel. You type:
+
 招聘人员刚刚填补了公司的两个空缺职位。现在，你负责确保候选人拥有顺畅的入职体验。你需要帮助构建新员工信息，因此你打开 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏中提示 Gemini。你输入：
 
 Create a table that outlines a new employee’s first-week schedule, including key meetings, training sessions, and introductions. Provide a column for key contacts and priority level (low, medium, high) for
 each activity. (Gemini in Sheets)
+
 请创建一张表格，列出新员工第一周的日程安排，包括关键会议、培训课程和介绍会。为每个活动提供关键联系人和优先级（低、中、高）列。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Gemini in Sheets returns a formatted Google Sheet that you can now fill in with key contacts, meetings, and activities. The conditional formatting makes it easy for you to sort tasks by priority level with color-coded visual cues. Next, you need to create ways for the team to bond. You open a new Google Doc and prompt Gemini in the Docs side panel. You type:
+
 Gemini in Sheets（Google 表格中的 Gemini）返回一个格式化的 Google Sheet，你现在可以在其中填入关键联系人、会议和活动。条件格式使你可以轻松地通过颜色编码的视觉提示按优先级对任务进行排序。接下来，你需要创造团队联结的方式。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）侧边栏中提示 Gemini。你输入：
 
 Design a team-bonding activity, such as an office scavenger hunt, to have team members work together
 during their team meeting. (Gemini in Docs)
+
 设计一个团队联结活动，例如办公室寻宝游戏，让团队成员在团队会议期间协同工作。（Gemini in Docs／Google 文档中的 Gemini）
 
 Gemini in Docs provides suggestions that help you brainstorm about the scavenger hunt. You tweak the outputs and get the idea approved by the team lead. Now, you need to communicate with the new hires about their first day when they will meet the team. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+
 Gemini in Docs（Google 文档中的 Gemini）提供的建议帮助你头脑风暴寻宝游戏。你调整了输出内容，并获得了团队负责人的批准。现在，你需要与新员工沟通他们第一天与团队见面的事宜。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Draft an email to the new employees on the [team] to meet the rest of their team and explain the team-
 building purposes of the meeting. (Gemini in Gmail)
+
 起草一封发给 [team] 新员工的邮件，以此会见团队其他成员，并解释会议的团队建设目的。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 ## Use case: Communicate key findings and draft follow-up surveys
@@ -1351,17 +1375,21 @@ building purposes of the meeting. (Gemini in Gmail)
 ## 用例：沟通关键发现并起草后续调查
 
 Now that you’ve finished onboarding new employees, you need to focus on ensuring that the latest company research data is easily understood by leadership. You’re committed to creating a welcoming environment for all employees where they can develop their skills. You open the Google Doc with the finalized report. You prompt Gemini in Docs by selecting Help me write. You type:
+
 既然完成了新员工入职，你需要专注于确保领导层能够轻松理解最新的公司研究数据。你致力于为所有员工创造一个受欢迎的环境，让他们能够发展技能。你打开包含最终报告的 Google Doc（Google Docs／Google 文档）。你通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft an email to senior leadership that summarizes the key findings from our [report]. Include a short
 introductory paragraph with bullet points on the most important findings. (Gemini in Docs)
+
 起草一封发给高层领导的邮件，总结我们 [report] 中的关键发现。包含简短的介绍段落，并用要点列出最重要的发现。（Gemini in Docs／Google 文档中的 Gemini）
 
 Gemini in Docs returns a summary with bullet points. You edit it and then use it to email the leadership team. As a follow-up action, you want to understand how changes made to company policies impact the employee experience. You open Gemini in Docs to begin drafting a survey. You select Help me write and type:
+
 Gemini in Docs（Google 文档中的 Gemini）返回带有要点的摘要。你对其进行编辑，然后将其通过邮件发送给领导团队。作为后续行动，你想了解公司政策的变更如何影响员工体验。你打开 Gemini in Docs（Google 文档中的 Gemini）开始起草调查。你选择 Help me write（帮我写）并输入：
 
 Draft an anonymous employee survey with questions and answer options to monitor company progress on
 [topics]. (Gemini in Docs)
+
 起草一份包含问题和答案选项的匿名员工调查，以监控公司在 [topics] 上的进展。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Marketing
@@ -1369,9 +1397,11 @@ Draft an anonymous employee survey with questions and answer options to monitor 
 ## 市场营销
 
 As a marketing professional, you’re the creative force behind captivating campaigns, brand experiences, lead generation, and more. You understand the power of data-driven insights, compelling messaging, and connecting with your audience on a deeper level.
+
 作为营销专业人员，你是引人入胜的营销活动、品牌体验、潜在客户开发等背后的创意力量。你了解数据驱动洞察、令人信服的信息以及与受众建立更深层联系的力量。
 
 This section provides you with simple ways to integrate prompts in your day-to-day tasks. For chief marketing officer (CMO) use cases, visit the Executives section of the guide.
+
 本节提供了一些简单的方法，帮助你将提示词整合到日常任务中。有关首席营销官 (CMO) 的用例，请访问指南的高管部分。
 
 ## Getting started
@@ -1379,22 +1409,28 @@ This section provides you with simple ways to integrate prompts in your day-to-d
 ## 开始上手
 
 First, review the general prompt-writing tips on page 2 and the Prompting 101 section at the beginning of this guide.
+
 首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101（提示词入门 101）部分。
 
 Each prompt below is presented with an accompanying scenario to serve as inspiration for how you can collaborate with Gemini for Google Workspace. The prompt iteration example shows how you could write follow-up prompts to build on the initial generated response.
+
 下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Google Workspace（Google Workspace 版 Gemini）协作。“提示词迭代示例（Prompt iteration example）”展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
 
 Prompt iteration example
+
 提示词迭代示例 (Prompt iteration example)
 Use case: Develop a visual identity
 
 You own your own consulting business and are often hired to function as a brand manager for your clients. You help businesses in a variety of industries. Your customer is getting ready to launch a coffee shop and video game cafe, and you need to kick-start the creative process by developing a visual identity. You want to ideate and provide early thoughts to the rest of the team. You decide to chat with Gemini Advanced. You type:
+
 你拥有一家自己的咨询公司，经常被客户聘请担任品牌经理。你帮助各行各业的企业。你的客户正准备开设一家咖啡店和视频游戏网咖，你需要通过开发视觉识别系统来启动创意流程。你想构思并将初步想法提供给团队的其他成员。你决定与 Gemini Advanced（Gemini 高级版）聊天。你输入：
 
 Generate ideas for a creative and eye-catching logo for my new business, a coffee shop combined with a video game cafe. Generate a logo considering the following:
+
 请为我的新业务——一家结合了咖啡店与视频游戏网咖的店铺，构思一个富有创意且引人注目的 Logo。生成 Logo 时请考虑以下几点：
 
 Dual Concept: The logo needs to clearly signal both the coffee and gaming aspects of the business without being too cluttered.
+
 双重概念：Logo 需要清晰地传达咖啡和游戏这两个业务方面，同时不能显得过于杂乱。
 
 Target Audience: Appeal to a wide range of gamers (casual and enthusiast), as well as coffee lovers seeking a unique hangout spot.
