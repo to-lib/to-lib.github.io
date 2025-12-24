@@ -2345,9 +2345,11 @@ You like the suggestions Gemini provided, so you select Share & export and Expor
 
 What are some other effective [event/sale] tactics I can use to bring in new customers? I don’t always want
 to offer discounts. Are there other incentives I am overlooking? (Gemini Advanced)
+
 我还能使用哪些其他有效的 [event/sale] 策略来吸引新客户？我不想总是提供折扣。我是否忽略了其他激励措施？（Gemini Advanced／Gemini 高级版）
 
 You continue your conversation with Gemini and are able to create a solid list of marketing tactics to try.
+
 你继续与 Gemini 对话，并能够创建一个可靠的营销策略列表以供尝试。
 
 ## Use case: Develop a competitive analysis
@@ -2355,17 +2357,21 @@ You continue your conversation with Gemini and are able to create a solid list o
 ## 用例：开展竞争分析
 
 You started a company, and your online business is gaining traction. You have always dreamed of opening a brick-and-mortar store, and now might be the perfect time. You want a thought partner to help you better understand the current landscape. You open Gemini Advanced, and you type:
+
 你创办了一家公司，你的在线业务正获得关注。你一直梦想开一家实体店，现在可能是最佳时机。你需要一个思维伙伴来帮助你更好地了解当前的市场格局。你打开 Gemini Advanced（Gemini 高级版），然后输入：
 
 I am an online business owner. I am considering opening a brick-and-mortar store. Conduct an analysis into the competitive landscape focusing on [focus area]. Provide the strengths and weaknesses of [key competitors] in this area, including their specific strategies, tactics, and results. Identify actionable insights and recommendations for how [my company] can improve its approach and gain a competitive
 advantage. (Gemini Advanced)
+
 我是一名在线企业主。我正在考虑开一家实体店。针对竞争格局进行分析，重点关注 [focus area]。提供 [key competitors] 在该领域的优势和劣势，包括他们的具体战略、策略和结果。找出可操作的见解和建议，说明 [my company] 如何改进其方法并获得竞争优势。（Gemini Advanced／Gemini 高级版）
 
 You gathered useful information from your discussion with Gemini Advanced. You want to go deeper in your brainstorming around two competitors in particular. You type:
+
 你从与 Gemini Advanced 的讨论中收集了有用的信息。你想特别针对两个竞争对手进行更深入的头脑风暴。你输入：
 
 Generate a competitive analysis of [company] versus [competitor] within the current market landscape.
 (Gemini Advanced)
+
 在当前市场格局下，生成 [company] 与 [competitor] 的竞争分析。（Gemini Advanced／Gemini 高级版）
 
 You select Share & export and Export to Docs.
@@ -2376,17 +2382,21 @@ You select Share & export and Export to Docs.
 ## 用例：进行各种筹款和投资者关系活动
 
 You’re ready to reach out to potential investors to make your brick-and-mortar store a reality. You want help getting started on an email to investors, so in the same Google Doc with your competitive analysis research, you prompt Gemini in Docs. You type:
+
 你准备联系潜在投资者，让你实体店的梦想成为现实。你需要帮助开始撰写给投资者的邮件，因此在包含竞争分析调查的同一个 Google Doc（Google Docs／Google 文档）中，你在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft a personalized email template to potential investors, highlighting [company’s] unique value proposition and recent progress on [initiatives]. Request a time to meet to discuss opportunities to
 collaborate in the next month. (Gemini in Docs)
+
 起草一封发给潜在投资者的个性化邮件模板，重点介绍 [company’s] 独特的价值主张和 [initiatives] 的近期进展。请求在下个月见面讨论合作机会的时间。（Gemini in Docs／Google 文档中的 Gemini）
 
 The email template gives you a starting place. You tweak the draft and continue to add a few personal touches before sending the email to the potential investors. After a successful meeting with them a month later, you want to draft a thank you message. You open your Google Doc with the meeting transcript and notes. You prompt Gemini in Docs to help you write an email draft. You type:
+
 邮件模板为你提供了一个起点。你调整了草稿，并在发送给潜在投资者之前继续添加一些个人风格。一个月后，与他们成功会面，你想起草一封感谢信。你打开包含会议转录和笔记的 Google Doc（Google Docs／Google 文档）。你在 Docs（Google 文档）中提示 Gemini 帮你写一封邮件草稿。你输入：
 
 Draft an email thanking a potential investor for the call and ask for time to schedule a follow-up meeting to
 address [questions and concerns]. (Gemini in Docs)
+
 起草一封邮件感谢潜在投资者的通话，并请求安排后续会议的时间以解决 [questions and concerns]。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Manage time off policies and tracking
@@ -2394,24 +2404,30 @@ address [questions and concerns]. (Gemini in Docs)
 ## 用例：管理休假政策和跟踪
 
 You have a lengthy handbook detailing all of your company’s policies and procedures. You want to make the time-off request policy easily digestible for new hires. You open the Google Doc with the handbook. You prompt Gemini in Docs by selecting Help me write. You type:
+
 你有一本详细说明公司所有政策和程序的长手册。你想让新员工容易理解休假申请政策。你打开包含手册的 Google Doc（Google Docs／Google 文档）。你通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Generate a step-by-step checklist summarizing the company’s time-off request policy. Ensure it is written
 in plain language and easy for employees to understand. (Gemini in Docs)
+
 生成一个总结公司休假申请政策的逐步清单。确保使用通俗易懂的语言，便于员工理解。（Gemini in Docs／Google 文档中的 Gemini）
 
 You need a quick way to track staffing each week because many of your employees are shift-based. You open Gemini in the Sheets side panel. You type:
+
 你需要一种快速跟踪每周人员配备的方法，因为你的许多员工是轮班制的。你打开 Sheets（Google 表格）侧边栏中的 Gemini。你输入：
 
 Create a table that tracks weekly staffing. Create columns for date, name, shift (AM or PM), and notes.
 (Gemini in Sheets)
+
 创建一个跟踪每周人员配备的表格。创建日期、姓名、班次（上午或下午）和备注列。（Gemini in Sheets／Google 表格中的 Gemini）
 （Gemini in Sheets／Google 表格中的 Gemini）
 
 Startup leaders You thrive in fast-paced, dynamic environments where you can wear many hats and make a tangible impact. You’re driven by a passion for innovation, a desire to learn and grow, and a tolerance for risk. Your work is unique in its variety, its potential for high reward, and its direct connection to the company’s success. You’re not just executing tasks; you’re building something from the ground up, shaping the future of your company, and potentially disrupting entire industries.
+
 创业公司领导者 你在快节奏、充满活力的环境中如鱼得水，身兼数职并产生切实的影响。你被创新的激情、学习和成长的渴望以及对风险的包容所驱动。你的工作在多样性、高回报潜力和与公司成功直接相关方面是独一无二的。你不仅仅是在执行任务；你是从零开始建立某种东西，塑造公司的未来，并可能颠覆整个行业。
 
 Gemini for Google Workspace can help you redefine productivity and foster meaningful connections with investors, customers, and coworkers. This section provides practical prompts and real-world use cases designed specifically for you and your team. Learning to write effective prompts with Gemini for Workspace will help improve your productivity and streamline your everyday tasks, giving you more time to focus on strategic work.
+
 Gemini for Google Workspace（Google Workspace 版 Gemini）可以帮助你重新定义生产力，并与投资者、客户和同事建立有意义的联系。本节提供专门为你和你的团队设计的实用提示词和真实用例。学习用 Gemini for Workspace（Workspace 版 Gemini）编写有效的提示词将有助于提高你的生产力并简化你的日常任务，让你有更多时间专注于战略工作。
 
 ## Getting started
@@ -2419,21 +2435,28 @@ Gemini for Google Workspace（Google Workspace 版 Gemini）可以帮助你重�
 ## 开始上手
 
 First, review the general prompt-writing tips on page 2 and the Prompting 101 section at the beginning of this guide.
+
 首先，请回顾第 2 页的通用提示词写作技巧，以及本指南开头的 Prompting 101（提示词入门 101）部分。
 
 Each prompt below is presented with an accompanying scenario to serve as inspiration for how you can collaborate with Gemini for Workspace. The prompt iteration example shows how you could write follow-up prompts to build on the initial generated response.
+
 下面每条提示词都配有相应场景，用于启发你如何与 Gemini for Workspace（Workspace 版 Gemini）协作。“提示词迭代示例（Prompt iteration example）”展示了你如何在初次生成结果的基础上，通过追加提示词进行追问与完善。
 
 Prompt iteration example
+
 提示词迭代示例 (Prompt iteration example)
+
 Use case: Brainstorm business and strategy
+
 用例：头脑风暴业务和战略
 
 You just had a productive planning and strategy brainstorming session with colleagues and you took many notes physically on a whiteboard. You snap a quick image with your phone and upload it directly to Gemini Advanced. You type:
+
 你刚刚与同事进行了一次富有成效的规划和战略头脑风暴会议，你在白板上做了许多笔记。你用手机拍了一张快照，并直接上传到 Gemini Advanced（Gemini 高级版）。你输入：
 
 I am a founder at a startup focused on [industry]. I was brainstorming with colleagues about [topic], and
 we took notes on this whiteboard. Turn these notes into text. (Gemini Advanced)
+
 我是一家专注于 [industry] 行业的创业公司的创始人。我和同事们就 [topic] 进行了头脑风暴，我们在白板上做了笔记。把这些笔记转换成文本。（Gemini Advanced／Gemini 高级版）
 
 - Persona • Task • Context • Format
@@ -2444,10 +2467,12 @@ we took notes on this whiteboard. Turn these notes into text. (Gemini Advanced)
 ## Gemini Advanced（Gemini 高级版）
 
 Now you want to proactively continue brainstorming before you recap all of the ideas and notes for the group in a follow-up email. You continue the conversation and type:
+
 现在你想在后续邮件中向小组回顾所有想法和笔记之前，主动继续头脑风暴。你继续对话并输入：
 
 Suggest follow-up items we could discuss for our [topic of brainstorm session]. What was not covered
 that could have been, and what are we potentially missing? (Gemini Advanced)
+
 建议我们可以为 [topic of brainstorm session] 讨论的后续项目。有什么本来应该涉及但没有涉及的内容，我们可能遗漏了什么？（Gemini Advanced／Gemini 高级版）
 
 ## Gemini Advanced
@@ -2455,14 +2480,12 @@ that could have been, and what are we potentially missing? (Gemini Advanced)
 ## Gemini Advanced（Gemini 高级版）
 
 You save all of your notes by clicking Share & export and Export to Docs. You are ready to send the recap message to the team, so you open your email and prompt Gemini in the Gmail side panel and tag the relevant file of notes by typing @file name. You type:
+
 你通过点击 Share & export（分享并导出）和 Export to Docs（导出到 Google 文档）保存所有笔记。你准备给团队发送回顾信息，所以你打开邮箱并在 Gmail（Gmail 邮箱）侧边栏中提示 Gemini，并通过输入 `@文件名` 标记相关的笔记文件。你输入：
 
 Use @[Brainstorm Notes and Ideas 9/1/24] to write a meeting recap to the team using an upbeat and friendly tone. Share some of the ideas I have for our next meeting to discuss [topic]. (Gemini in Gmail)
+
 使用 @[Brainstorm Notes and Ideas 9/1/24] 给团队写一份会议回顾，使用乐观友好的语气。分享我为下次会议讨论 [topic] 的一些想法。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
-
-## Gemini in Gmail
-
-## Gemini in Gmail（Gmail 邮箱中的 Gemini）
 
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
 
