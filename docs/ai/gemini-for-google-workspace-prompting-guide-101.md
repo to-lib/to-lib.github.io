@@ -1806,129 +1806,188 @@ budget, and when is a response due by? (Gemini Advanced)
 
 ## NEW Use case: Access information and tools on your phone while on the go
 
+## 新用例：随时随地通过手机访问信息和工具
+
 You are working remotely from your phone. From the mobile app, you open a thread in Gmail and select the Gemini chip to Summarize this email. Gemini quickly provides you with a summary of the back and forth so
 that you can focus on the most important points. (Gemini in Gmail)
+你正通过手机远程办公。在移动应用中，你打开 Gmail 中的一个会话，并选择 Gemini 芯片来 Summarize this email（总结这封邮件）。Gemini 会快速为你提供往来邮件的摘要，以便你关注最重要的点。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Now, you want to generate a response acknowledging the latest developments. You prompt Gemini in Gmail. You type:
+现在，你想生成一个回复，确认最新的进展。你在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Write a response to this email letting [them] know that I’ve received the message and will take [action]
 by [Friday]. (Gemini in Gmail)
+回复这封邮件，告知 [them] 我已收到信息，并将在 [Friday] 前采取 [action]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 ## Use case: Develop customer relationships
 
+## 用例：发展客户关系
+
 Your annual conference is coming up, and your most important prospects will be there. You want to personally invite them to a happy hour. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+你的年度会议即将召开，你最重要的潜在客户将会出席。你想亲自邀请他们参加欢乐时光 (Happy Hour)。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Write an email inviting people interested in [focus area] to our happy hour taking place on [date, time] at
 [trade show event]. Include that we specialize in [focus area]. (Gemini in Gmail)
+写一封邮件，邀请对 [focus area] 感兴趣的人参加我们在 [trade show event] 举办的欢乐时光，时间是 [date, time]。包括我们要说明我们专注于 [focus area]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Now that the event is over, you want to follow up with customers who came to the happy hour. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+现在活动结束了，你想跟进参加欢乐时光的客户。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Draft an email thanking customers for their time at the happy hour on [date, time, location]. End with an invitation to continue the conversations in the next few weeks. Use a friendly tone. (Gemini in Gmail)
+起草一封邮件，感谢客户在 [date, time, location] 参加欢乐时光。最后邀请他们在接下来的几周内继续对话。使用友好的语气。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 You want to check in with the customers who attended workshops at the conference because their early feedback is important. You prompt Gemini in Docs. You type:
+你想跟进参加会议研讨会的客户，因为他们的早期反馈很重要。你在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft 10 questions that I can use to survey customers about their recent experience with our [product/ service]. Include questions to gauge how useful [the product] is, what they liked, and what they thought
 could use improvement. (Gemini in Docs)
+起草 10 个问题，用于调查客户对我们 [product/ service] 的近期体验。包括评估 [the product] 有多大用处、他们喜欢什么以及他们认为哪些方面可以改进的问题。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Support the sales team
 
+## 用例：支持销售团队
+
 You need to contact all of your team leads in the Southeast region to provide immediate guidance on how to proactively reach out to customers about an ongoing issue. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+你需要联系东南大区的所有团队负责人，就如何主动联系客户解决当前问题提供即时指导。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Draft an email to all Southeast region sales leads. Inform them of [issues]. Advise them to communicate with their teams to contact their customers and offer a 20% discount on a future order as an apology.
 (Gemini in Gmail)
+起草一封发给所有东南大区销售负责人的邮件。通知他们 [issues]。建议他们与其团队沟通，联系客户并提供 20% 的未来订单折扣作为致歉。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Now, you need to email all of the regional team members. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+现在，你需要给所有区域团队成员发邮件。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Draft an email to the regional sales representatives about an urgent meeting that needs to take place next week about the [issues]. Ask them to provide availability on Monday or Tuesday. (Gemini in Gmail)
+起草一封发给区域销售代表的邮件，关于下周需要就 [issues] 召开的紧急会议。请他们提供周一或周二的空闲时间。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 ## Use case: Coach and train the sales team
 
-You’ve heard from many team members that they want more learning opportunities. You’re organizing a half-day learning program to support this request. You need to create a schedule, so you open a new Google Doc and
+## 用例：辅导和培训销售团队
 
+You’ve heard from many team members that they want more learning opportunities. You’re organizing a half-day learning program to support this request. You need to create a schedule, so you open a new Google Doc and
 prompt Gemini in Docs by selecting Help me write. You type:
+你从许多团队成员那里听说他们想要更多的学习机会。你正在组织一个半天的学习项目来支持这一请求。你需要创建一个时间表，所以你打开一个新的 Google Doc（Google Docs／Google 文档），并通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Create a half-day agenda for an educational session on our latest technology [products] for sales teams. Include time for the product development team to present and include time for lunch. (Gemini in Docs)
+为销售团队创建一个关于我们最新技术 [products] 的半天教育课程议程。包括产品开发团队演示的时间和午餐时间。（Gemini in Docs／Google 文档中的 Gemini）
 
 As a follow up to the team meeting, you want to highlight different learning opportunities available. You open Google Sheets and prompt Gemini in the Sheets side panel. You type:
+作为团队会议的后续，你想重点介绍可用的不同学习机会。你打开 Google Sheets（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏中提示 Gemini。你输入：
 
 Create a spreadsheet that tracks online courses for sellers. Include columns for the course’s main topic,
 price, duration, and priority level. (Gemini in Sheets)
+创建一个跟踪销售人员在线课程的电子表格。包括课程主题、价格、时长和优先级列。（Gemini in Sheets／Google 表格中的 Gemini）
 
 Account Manager and Account Executive
+客户经理和客户主管
 NEW Use case: Improve collaboration and execution by customizing
 
 ## sales materials
 
+新用例：通过定制销售材料来改善协作和执行
+
 You are having an important meeting with a customer. From Google Meet, you turn on Transcription and activate Gemini in Meet by selecting Take notes with Gemini. The transcript provides an unedited Doc of what was said. The Take notes with Gemini file will generate notes recapping the meeting, important topics discussed, and action items. Now, you can fully engage with the customer conversation. (Gemini in Meet)
+你正在与客户进行一次重要会议。在 Google Meet 中，你开启转录功能，并通过选择 Take notes with Gemini（用 Gemini 做笔记）激活 Meet 中的 Gemini。转录提供了所说内容的未编辑文档。Take notes with Gemini（用 Gemini 做笔记）文件将生成回顾会议、讨论的重要主题和行动项的笔记。现在，你可以完全投入到与客户的对话中。（Gemini in Meet／Google Meet 中的 Gemini）
 
 After the call, you want to send a recap message to the customer. You open a new message and prompt Gemini in the Gmail side panel and tag relevant files by typing @file name. You type:
+通话结束后，你想给客户发送一条回顾信息。你打开一条新信息，并在 Gmail（Gmail 邮箱）侧边栏中提示 Gemini，通过输入 `@文件名` 标记相关文件。你输入：
 
 Write a message to [customer] thanking them for their time at our last [meeting]. Provide a quick summary of the meeting and acknowledge any pain points discussed. Ask for additional time to
 discuss our [solution] using @[Customer Meeting Gemini Notes]. (Gemini in Gmail)
+给 [customer] 写一条信息，感谢他们参加上次的 [meeting]。提供会议的快速总结，并确认讨论的任何痛点。使用 @[Customer Meeting Gemini Notes] 请求额外的时间来讨论我们的 [solution]。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 In preparation for your next meeting, you want to use the transcript and your existing sales materials to generate a customized asset that showcases how your company’s product solves the customer’s pain points mentioned during the call. To do this, you open a new Doc and prompt Gemini in the Docs side panel and tag relevant files by typing @file name. You type:
+为了准备下次会议，你想利用转录和你现有的销售材料生成一份定制资产，展示你公司的产品如何解决客户在通话中提到的痛点。为此，你打开一个新的 Doc（Google 文档），并在 Docs（Google 文档）侧边栏中提示 Gemini，通过输入 `@文件名` 标记相关文件。你输入：
 
 I am an [account manager] and I just finished a call with [customer]. I want to summarize the [pain points] mentioned by [customer] during our last meeting. Provide a list of direct quotes from @[Customer Call
 Transcript] where [customer] discusses what they are trying to solve. (Gemini in Docs)
+我是 [account manager]，刚结束与 [customer] 的通话。我想总结一下 [customer] 在上次会议中提到的 [pain points]。请提供 @[Customer Call Transcript] 中 [customer] 讨论他们试图解决的问题的直接引语列表。（Gemini in Docs／Google 文档中的 Gemini）
 
 You read through the summary of pain points and see that they capture what was discussed. You click Insert from the side panel. Then, you want to use your existing files to generate custom responses to each of their pain points. You prompt Gemini in the Docs side panel again and tag relevant files. You type:
+你通读痛点总结，发现它们捕捉到了讨论的内容。你点击侧边栏中的 Insert（插入）。然后，你想利用现有文件针对每个痛点生成定制的回复。你再次在 Docs（Google 文档）侧边栏中提示 Gemini 并标记相关文件。你输入：
 
 I need to create convincing reasons why [customer] should adopt [product] to solve for [their pain points]. Write specific reasons why [product] from [company] could help them achieve their [business goals] using
 @[Product Sales Kit Full Assets]. (Gemini in Docs)
+我需要创建令人信服的理由，说明为什么 [customer] 应该采用 [product] 来解决 [their pain points]。使用 @[Product Sales Kit Full Assets] 写出具体的理由，说明 [company] 的 [product] 如何帮助他们实现 [business goals]。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Build customer relationships
 
+## 用例：建立客户关系
+
 You just had a great call with a customer and now you want to use the notes you took from the meeting in Google Docs to draft an email to the customer. In the Google Doc with your notes, you prompt Gemini in Docs by selecting Help me write. You type:
+你刚刚与客户进行了一次愉快的通话，现在你想用在 Google Docs（Google 文档）中做的会议笔记起草一封给客户的邮件。在包含笔记的 Google Doc（Google 文档）中，你通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Compose a personalized follow-up email to [client] following an initial conversation. Summarize the key
 points we discussed and address any outstanding questions. (Gemini in Docs)
+在初步交谈后，给 [client] 写一封个性化的后续邮件。总结我们讨论的关键点，并回答任何遗留问题。（Gemini in Docs／Google 文档中的 Gemini）
 
 The account has just adopted one of the company’s service offerings and you need to ensure that they feel supported during the onboarding process. You want to make sure you check in on how things are progressing once a week, but you want to explore what the emails could look like. You open a new Google Doc and prompt Gemini in Docs by selecting Help me write. You type:
+该客户刚刚采用了公司的某项服务，你需要确保他们在入职过程中感到受到支持。你想确保每周检查一次进展情况，但你想探索邮件应该是什么样子的。你打开一个新的 Google Doc（Google Docs／Google 文档），并通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft four email templates to check in on my customer weekly now that they have purchased our new [service]. Use one value proposition (cost, ease of use, security, availability, and customization) as the
 main topic for each email, and include [call to action] in each message. (Gemini in Docs)
+既然客户已经购买了我们的新 [service]，起草四封邮件模板每周跟进。每一封邮件以一个价值主张（成本、易用性、安全性、可用性和定制化）为主题，并在每条信息中包含 [call to action]。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Prepare for new customer calls
 
+## 用例：准备新客户通话
+
 You have an upcoming call with a prospect. This is a brand new use case for you, and you need help preparing for the call. You visit Gemini Advanced, and you type:
+你即将与一位潜在客户通话。这对你来说是一个全新的用例，你需要帮助准备这次通话。你访问 Gemini Advanced（Gemini 高级版），然后输入：
 
 Draft a customized script for me to follow during my sales call with a prospect. The call will happen over a video call and is set to last 30 minutes. Make sure to add the following in the script: how [company products/solutions] can help address potential customer’s pain points, how [company]’s delivery system guarantees seamless and timely delivery, competitive pricing and volume-discount table, and space for
 a customer reference in the [customer’s industry] industry. (Gemini Advanced)
+为我起草一份在与潜在客户销售通话时使用的定制脚本。通话将通过视频进行，预计持续 30 分钟。确保在脚本中添加以下内容：[company products/solutions] 如何帮助解决潜在客户的痛点，[company] 的交付系统如何保证无缝和及时交付，具有竞争力的定价和批量折扣表，以及在 [customer’s industry] 行业中的客户推荐空间。（Gemini Advanced／Gemini 高级版）
 
 Now that you’ve done initial research, you export your findings to a new Google Doc. You open the Google Doc and continue working. Now, you want to create a tailored pitch. Using the Google Doc with all of your research notes, you prompt Gemini in Docs by selecting Help me write. You type:
+完成初步调查后，你将发现导出到新的 Google Doc。你打开 Google Doc（Google Docs／Google 文档）继续工作。现在，你想创建一个定制的推介。使用包含所有调查笔记的 Google Doc（Google Docs／Google 文档），你通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Generate an elevator pitch for [product name] and include key benefits, competitive points of
 differentiation, and the pain points that [product name] solves for. (Gemini in Docs)
+为 [product name] 生成一个电梯游说（elevator pitch），包括关键利益、竞争差异化点，以及 [product name] 解决的痛点。（Gemini in Docs／Google 文档中的 Gemini）
 
 You have a great start to your elevator pitch and short talking points. You want to use this to further anticipate how the customer call might go. You resume your meeting preparation by returning to Gemini Advanced. You type:
+你的电梯游说和简短谈话要点有了一个很好的开端。你想用它来进一步预测客户通话的走向。你回到 Gemini Advanced（Gemini 高级版）继续准备会议。你输入：
 
 I have an upcoming call with a prospect. [Use case] is a new use case for me, and I need help preparing for the call. List the most likely objections [customer] might have for me during a sales call, with suggestions on how to respond to them. I work in [industry], and I am trying to sell [product]. Also provide ideas on how
 to handle objections and suggest ways to respond. (Gemini Advanced)
+我即将与一位潜在客户通话。[Use case] 对我来说是一个新用例，我需要帮助准备这次通话。列出 [customer] 在销售通话中可能提出的最可能的异议，并提供回应建议。我在 [industry] 工作，正试图销售 [product]。还请提供处理异议的想法和建议的回应方式。（Gemini Advanced／Gemini 高级版）
 
 Business Development Manager Use case: Nurture relationships, personalized outreach, and
 thought leadership
+业务发展经理用例：培养关系、个性化外展和思想领导力
 
 You’re hoping to build deeper relationships with prospective customers that you recently met. You want to draft a template that you can customize for multiple contacts. You open a new Google Doc, and you prompt Gemini in Docs. You type:
+你希望与最近结识的潜在客户建立更深层次的关系。你想起草一个可以针对多个联系人进行定制的模板。你打开一个新的 Google Doc（Google Docs／Google 文档），并在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Draft an outreach email template to industry influencers. Express gratitude that we connected at [event],
 and propose collaboration opportunities such as [opportunities]. (Gemini in Docs)
+起草一封发给行业影响者的外展邮件模板。对我们在 [event] 上建立联系表示感谢，并提出合作机会，如 [opportunities]。（Gemini in Docs／Google 文档中的 Gemini）
 
 After having a successful call with prospective customers, you want to follow up with thought leadership content from your founder that they may find interesting. You open the Google Doc with the blog post, and prompt Gemini in Docs by selecting Help me write. You type:
+在与潜在客户成功通话后，你想跟进你的创始人撰写的思想领导力内容，他们可能会感兴趣。你打开包含博客文章的 Google Doc（Google Docs／Google 文档），并通过选择 Help me write（帮我写）在 Docs（Google 文档）中提示 Gemini。你输入：
 
 Summarize this blog content in bullet points and generate three ideas for follow-up questions I can ask my
 customers about their thoughts. (Gemini in Docs)
+用要点总结这篇博客内容，并生成三个后续问题的想法，我可以询问客户他们的想法。（Gemini in Docs／Google 文档中的 Gemini）
 
 ## Use case: Generate personalized customer appreciation materials
 
+## 用例：生成个性化客户答谢材料
+
 You want to personally thank your customers and check in. You open Gmail and prompt Gemini in Gmail by selecting Help me write. You type:
+你想亲自感谢客户并进行问候。你打开 Gmail（Gmail 邮箱），并通过选择 Help me write（帮我写）在 Gmail（Gmail 邮箱）中提示 Gemini。你输入：
 
 Generate a personalized email for [customer] on their one-month anniversary working with [company]. Thank them for being a customer. Ask them if they have any questions. Include information about [other
 product]. (Gemini in Gmail)
+为 [customer] 与 [company] 合作一个月纪念日生成一封个性化邮件。感谢他们成为客户。询问他们是否有任何问题。包含关于 [other product] 的信息。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 You also want to send these customers a gift to thank them. You open a Google Sheet and prompt Gemini in the Sheets side panel. You type:
+你还想送这些客户一份礼物以表示感谢。你打开 Google Sheet（Google Sheets／Google 表格），并在 Sheets（Google 表格）侧边栏中提示 Gemini。你输入：
 
 Give me a list of gifts to send new clients that are under $200 and can be shipped to offices.
 (Gemini in Sheets)
+给我一份送给新客户的礼物清单，价格在 200 美元以下，并且可以运送到办公室。（Gemini in Sheets／Google 表格中的 Gemini）
 （Gemini in Sheets／Google 表格中的 Gemini）
 
 Small business owners and entrepreneurs As the owner of a business, getting the most out of your working hours is critical when you’re juggling multiple roles and responsibilities. Understanding your market, delivering for your customers, and staying on top of many competing priorities is critical.
