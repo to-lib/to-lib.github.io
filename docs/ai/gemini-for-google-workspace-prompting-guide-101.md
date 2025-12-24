@@ -392,7 +392,6 @@ minutes to [urgent topics]. (Gemini in Gmail)
 
 请起草一封邮件确认我会参加董事会会议，并询问我们是否可以调整议程，为 [urgent topics] 预留 15 分钟时间。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
-- Persona • Task • Context • Format
 - 角色（Persona）• 任务（Task）• 上下文（Context）• 格式（Format）
 
 ## Gemini in Gmail（Gmail 邮箱中的 Gemini）
