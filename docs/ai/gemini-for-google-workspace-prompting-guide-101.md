@@ -2471,15 +2471,19 @@ Use @[Brainstorm Notes and Ideas 9/1/24] to write a meeting recap to the team us
 ## 示例用例
 
 Founder
+
 创始人
 Use case: Create an elevator pitch (speech to text)
+
 用例：创建电梯游说（语音转文本）
 
 You’re scheduled to present to a group of prospective investors. This will be your first time discussing your business with this audience. You need to work on your elevator pitch, so you chat with Gemini Advanced using your voice to prompt. You select the microphone icon and say:
+
 你计划向一群潜在投资者进行演示。这将是你第一次与这群听众讨论你的业务。你需要准备电梯游说，所以你用语音与 Gemini Advanced（Gemini 高级版）聊天。你选择麦克风图标并说：
 
 I’m the founder of [startup] in [industry], and I need help creating a short elevator pitch for [company and product description]. I need to make the pitch relevant to [audience] and I want to especially highlight [key features of product] because I want them to [take this action]. Include a compelling hook and anticipate questions an investor might have. Make the tone professional but relaxed and confident.
 (Gemini Advanced)
+
 我是 [industry] 行业 [startup] 的创始人，我需要帮助为 [company and product description] 创建一个简短的电梯游说。我需要使游说与 [audience] 相关，我特别想强调 [key features of product]，因为我希望他们 [take this action]。包括一个引人注目的钩子，并预测投资者可能提出的问题。语气要专业，但要轻松自信。（Gemini Advanced／Gemini 高级版）
 
 ## Use case: Develop your personal brand
@@ -2487,34 +2491,44 @@ I’m the founder of [startup] in [industry], and I need help creating a short e
 ## 用例：发展你的个人品牌
 
 As your company grows, you’re working on increasing your social media presence, so you want to define and hone your personal brand. To brainstorm, you turn to Gemini Advanced. You type:
+
 随着公司的成长，你正致力于增加你在社交媒体上的影响力，所以你想定义和磨练你的个人品牌。为了进行头脑风暴，你求助于 Gemini Advanced（Gemini 高级版）。你输入：
 
 Help me grow my personal brand. I am the founder of [a startup] in [industry]. I am passionate about [topics]. I want to inspire [audience] with business tips and lessons I’ve learned from starting my own company. My goals are to build a following so that I can [generate more media] for the business.
 What are some ideas you have for how to accomplish this? (Gemini Advanced)
+
 帮我发展我的个人品牌。我是 [industry] 行业 [a startup] 的创始人。我对 [topics] 充满热情。我想用我从创办自己公司中学到的商业技巧和教训来激励 [audience]。我的目标是建立追随者群体，以便我能为企业 [generate more media]。对于如何实现这一目标，你有什么想法？（Gemini Advanced／Gemini 高级版）
 
 Gemini returns insights into how you can begin to build messaging and content that aligns to your personal brand and that can help you achieve your goals.
+
 Gemini 返回关于如何开始构建符合你个人品牌并能帮助你实现目标的信息和内容的见解。
 
 Head of Operations
+
 运营主管
 Use case: Communicate and negotiate with vendors
+
 用例：与供应商沟通和谈判
 
 You’ve received a quote from two different manufacturers to create packaging for the company’s new product. You want to compare and contrast the offers before you negotiate. You open a new Doc and prompt Gemini in the Docs side panel and reference relevant files by typing @file name. You type:
+
 你收到了两家不同制造商为公司新产品制作包装的报价。你想在谈判前比较和对比这些报价。你打开一个新的 Doc（Google 文档），并在 Docs（Google 文档）侧边栏中提示 Gemini，通过输入 `@文件名` 引用相关文件。你输入：
 
 I need to make a vendor decision for packaging manufacturing. Create a table that compares the two proposals I’ve received @[Company A’s Proposal] and @[Company B’s Proposal]. (Gemini in Docs)
+
 我需要对包装制造供应商做出决定。创建一个表格，比较我收到的两个提案 @[Company A’s Proposal] 和 @[Company B’s Proposal]。（Gemini in Docs／Google 文档中的 Gemini）
 
 Gemini creates a table comparing the two different proposals. You make a decision, but now you want to see if you can negotiate with your preferred vendor. You go to your inbox and start a new email draft. You prompt Gemini in the Gmail side panel. You type:
+
 Gemini 创建了一个比较两个不同提案的表格。你做出了决定，但现在你想看看是否可以与你首选的供应商进行谈判。你进入邮箱并开始起草一封新邮件。你在 Gmail（Gmail 邮箱）侧边栏中提示 Gemini。你输入：
 
 Create an email draft to [selected vendor] telling them that I’ve decided to move forward with them as the [packaging] vendor, but I would like to negotiate [a bulk pricing discount]. Use a collaborative tone.
 (Gemini in Gmail)
+
 给 [selected vendor] 起草一封邮件，告诉他们我已决定选择他们作为 [packaging] 供应商，但我想商谈 [a bulk pricing discount]。使用合作的语气。（Gemini in Gmail／Gmail 邮箱中的 Gemini）
 
 Gemini in Gmail returns a drafted message that is ready to send. You select Insert and send the email.
+
 Gmail（Gmail 邮箱）中的 Gemini 返回一封准备发送的草拟邮件。你选择 Insert（插入）并发送邮件。
 
 ## Use case: Plan and track budgets
@@ -2522,33 +2536,43 @@ Gmail（Gmail 邮箱）中的 Gemini 返回一封准备发送的草拟邮件。�
 ## 用例：规划和跟踪预算
 
 You’re in planning mode and you first want to understand where previous years’ budgets were spent. You have all of this data in a Sheet. You decide to chat with Gemini Advanced. You upload the Sheet and prompt Gemini by typing:
+
 你处于规划模式，首先想了解往年的预算都花在哪里了。这一张 Sheet（Google Sheets／Google 表格）里有所有这些数据。你决定与 Gemini Advanced（Gemini 高级版）聊天。你上传 Sheet（Google Sheets／Google 表格）并通过输入提示 Gemini：
 
 Using the attached spreadsheet, identify trends and patterns in our expenses by category over the last three years. Identify areas where costs have increased significantly and investigate potential reasons.
 (Gemini Advanced)
+
 使用附带的电子表格，识别过去三年我们按类别支出的趋势和模式。找出成本显著增加的领域，并调查潜在原因。（Gemini Advanced／Gemini 高级版）
 
 Gemini returns a response that helps inform your budget proposal for next year.
+
 Gemini 返回一个回复，有助于为你的明年预算提案提供信息。
 
 Head of Product
+
 产品主管
 Use case: Develop a product launch plan
+
 用例：制定产品发布计划
 
 Your team is creating a new product, and you want to conduct research to inform your launch plan in collaboration with the marketing team. Using Gemini, you want to simulate different launch scenarios based on factors like pricing, marketing strategies, and target audience. You go to Gemini Advanced to conduct research and type:
+
 你的团队正在开发一款新产品，你想进行调查，以便与营销团队合作制定发布计划。利用 Gemini，你想根据定价、营销策略和目标受众等因素模拟不同的发布场景。你前往 Gemini Advanced（Gemini 高级版）进行调查并输入：
 
 I am head of product at [startup] in [industry] industry. We are building a product launch plan for [product]. I want to brainstorm a few different scenarios. We are considering offering the [product] at two different price points [A and B] and we are considering launching in [December or January]. Provide pros and cons of each scenario and suggest different ideas we may not have considered. (Gemini Advanced)
+
 我是 [industry] 行业 [startup] 的产品主管。我们正在为 [product] 制定产品发布计划。我想头脑风暴几个不同的场景。我们正在考虑以两个不同的价格点 [A and B] 提供 [product]，并且我们正在考虑在 [December or January] 发布。提供每个场景的优缺点，并建议我们可能没有考虑到的不同想法。（Gemini Advanced／Gemini 高级版）
 
 You want to continue market research brainstorming. You type:
+
 你想继续市场调查头脑风暴。你输入：
 
 How do these prices compare to [competitor products’] prices? Detail what pricing strategies [competitors] use for [products], and list any common tactics they use (such as free trials, discounts, etc.). Summarize how they position the product to [audience]. Cite your sources. (Gemini Advanced)
+
 这些价格与 [competitor products’] 的价格相比如何？详细说明 [competitors] 对 [products] 使用的定价策略，并列出他们使用的任何常见策略（如免费试用、折扣等）。总结他们如何向 [audience] 定位产品。引用你的来源。（Gemini Advanced／Gemini 高级版）
 
 Your research helps you refine your pricing structure and go-to-market strategy for your most important target audience.
+
 你的调查有助于你为最重要的目标受众完善定价结构和进入市场策略。
 
 ## Use case: Develop product strategy and roadmap
@@ -2556,23 +2580,29 @@ Your research helps you refine your pricing structure and go-to-market strategy 
 ## 用例：制定产品战略和路线图
 
 You want to refine your product strategy and roadmap. You’ve collected user feedback in a spreadsheet, and you want to clean it up so that it is ready for deeper analysis. You chat with Gemini Advanced and upload a file. You type:
+
 你想完善产品战略和路线图。你在电子表格中收集了用户反馈，你想整理它以便进行更深入的分析。你与 Gemini Advanced（Gemini 高级版）聊天并上传文件。你输入：
 
 Help me clean my [user feedback] survey spreadsheet. Specifically, fill any blank values in the name column with “Anonymous,” then if the [recommend] column shows [Yes], replace that with [Y]. Finally, remove any rows where the satisfaction column is blank. Please generate a new file for me with my
 cleaned data. (Gemini Advanced)
+
 帮我整理我的 [user feedback] 调查电子表格。具体来说，将姓名列中的任何空白值填充为“Anonymous”，然后如果 [recommend] 列显示 [Yes]，将其替换为 [Y]。最后，删除满意度列为空的任何行。请为我生成一个包含整理后数据的新文件。（Gemini Advanced／Gemini 高级版）
 
 Gemini returns a clean file for you to conduct deeper analysis on, and from this file, you notice a few trends. You have alignment from the team on features to address recurring user feedback, and now you want to build a high-level roadmap that you can use as a starting point. You continue your conversation with Gemini Advanced. You type:
+
 Gemini 返回一个干净的文件供你进行更深入的分析，从这个文件中，你注意到了一些趋势。团队对解决经常性用户反馈的功能达成了一致，现在你想构建一个高层路线图作为起点。你继续与 Gemini Advanced（Gemini 高级版）对话。你输入：
 
 I am head of product at [startup] in the [industry] industry. We are adding [features] to our [product] to address recurring user feedback, including [feedback trends]. Build a high-level roadmap that will keep us
 on track for a Q4 delivery. Put it in a table format. (Gemini Advanced)
+
 我是 [industry] 行业 [startup] 的产品主管。我们正在向我们的 [product] 添加 [features] 以解决经常性的用户反馈，包括 [feedback trends]。构建一个高层路线图，确保我们按计划在第四季度交付。将其设为表格格式。（Gemini Advanced／Gemini 高级版）
 
 Gemini returns a helpful starting point. You want to save the work so you click Export to Docs.
+
 Gemini 返回一个有帮助的起点。你想保存工作，于是点击 Export to Docs（导出到 Google 文档）。
 
 Leveling up your prompt writing This guide is meant to serve as inspiration, and the possibilities are nearly endless with Gemini for Google Workspace. Build on your prompt-writing skills using these tips.
+
 提示词写作进阶 本指南旨在提供灵感，Gemini for Google Workspace（Google Workspace 版 Gemini）的可能性几乎是无限的。利用这些技巧提升你的提示词写作技能。
 
 - Break it up. If you want Gemini for Workspace to perform several related tasks, break them into
@@ -2601,9 +2631,11 @@ Leveling up your prompt writing This guide is meant to serve as inspiration, and
 - 换种说法。如果结果不符合你的预期，或者你认为还有改进的空间，请微调你的提示词。审查和完善的迭代过程通常会产生更好的结果。
 
 Generative AI and all of its possibilities are exciting, but it’s still new. Even though our models are getting better every day, prompts can sometimes have unpredictable responses.
+
 生成式 AI 及其所有可能性令人兴奋，但它仍然是新鲜事物。尽管我们的模型每天都在变得更好，但提示词有时可能会得到不可预测的回复。
 
 Before putting an output from Gemini for Workspace into action, review it to ensure clarity, relevance, and accuracy. And of course, keep the most important thing in mind: Generative AI is meant to help humans, but the final output is yours.
+
 在将 Gemini for Workspace（Workspace 版 Gemini）的输出付诸行动之前，请对其进行审查，以确保清晰度、相关性和准确性。当然，请牢记最重要的一点：生成式 AI 旨在帮助人类，但最终输出归你所有。
 
 The example prompts in this guide are meant for illustrative purposes.
