@@ -13,201 +13,103 @@ title: 📋 Gemini Workspace 提示词指南
 
 ## 编写高效提示词
 
-From the very beginning, Google Workspace (Google 工作区) was built to allow you to collaborate in real time with other people. Now, you can also collaborate with AI using Gemini for Google Workspace (Google Workspace 版 Gemini) to help boost your productivity and creativity without sacrificing privacy or security. The embedded generative AI-powered features can help you write, organize information, create images, accelerate workflows, have richer meetings, and much more, all while using your favorite apps like Gmail (Gmail 邮箱), Google Docs (Google 文档), Google Drive (Google 云端硬盘), Google Sheets (Google 表格), Google Meet (Google 会议), Google Slides (Google 幻灯片), and Gemini Advanced (Gemini 高级版; the standalone chat experience available at gemini.google.com with enterprise-grade security). Gemini is accessible right where you are doing your work — with access to your personal knowledge base in Drive, Docs, Gmail, and more — so you can enhance and create powerful workflows across the Workspace apps with less tab switching and interruption.
-
 从一开始，Google Workspace (Google 工作区) 的设计理念就是让你能够与他人进行实时协作。现在，你也可以借助 AI——Gemini for Google Workspace (Google Workspace 版 Gemini) 与 AI 协作，在不牺牲隐私与安全的前提下提升效率与创造力。这些内嵌的生成式 AI 功能可以帮助你写作、整理信息、生成图片、加速工作流、提升会议质量等，同时仍可在你熟悉的应用中使用，例如 Gmail (Gmail 邮箱)、Google Docs (Google 文档)、Google Drive (Google 云端硬盘)、Google Sheets (Google 表格)、Google Meet (Google 会议)、Google Slides (Google 幻灯片)，以及 Gemini Advanced (Gemini 高级版；可在 gemini.google.com 使用、具备企业级安全保障的独立对话体验）。Gemini 能在你工作的原处直接使用——它可以访问你在 Drive (云端硬盘)、Docs (文档)、Gmail (邮箱) 等中的个人知识库——因此你可以在 Workspace (工作区) 各应用之间构建强大的工作流，减少切换标签页带来的打断。
-
-This guide provides you with the foundational skills to write effective prompts when using Gemini for Workspace. You can think of a prompt as a conversation starter with your AI-powered assistant. You might write several prompts as the conversation progresses. While the possibilities are virtually endless, you can put consistent best practices to work today.
 
 本指南将为你提供在使用 Gemini for Workspace (Workspace 版 Gemini) 时编写高效提示词所需的基础技能。你可以把提示词 (prompt) 理解为与 AI 助手开启对话的“开场白”。随着对话推进，你可能会连续输入多个提示词。虽然可能性几乎无穷无尽，但你今天就可以开始应用一些稳定、通用的最佳实践。
 
-The four main areas to consider when writing an effective prompt are:
-
 编写高效提示词时需要考虑的四个核心要素是：
 
-- Persona
+- 角色
 
-  角色 (Persona)
+- 任务
 
-- Task
+- 上下文
 
-  任务 (Task)
-
-- Context
-
-  上下文 (Context)
-
-- Format
-
-  输出格式 (Format)
-
-Here is an example of a prompt using all four areas that could work well in Gmail and Google Docs:
+- 输出格式
 
 下面是一个同时包含四个要素的提示词示例，适用于 Gmail (Gmail 邮箱) 和 Google Docs (Google 文档)：
 
-You are a program manager in [industry]. Draft an executive summary email to [persona] based on [details about relevant program docs]. Limit to bullet points.
-
 你是一名 [行业] 的项目经理。请基于 [相关项目文档的要点/细节]，为 [目标对象/角色] 起草一封高管摘要邮件。请限制为要点列表 (bullet points)。
-
-You don’t need to use all four in every prompt, but using a few will help! Always remember to include a verb or command as part of your task; this is the most important component of a prompt.
 
 你不必在每一次提示词里都用到这四个要素，但至少用其中几个会更有帮助。务必记得：在“任务 (Task)”里包含一个动词或明确指令 (例如“总结”“撰写”“改写”)，这是提示词中最关键的组成部分。
 
-Contact sales to get started with Gemini for Workspace today.
-
 如需开始使用 Gemini for Workspace (Workspace 版 Gemini)，请联系销售团队。
 
-Here are quick tips to get you started with Gemini for Google Workspace:
+以下是帮助你快速上手的小技巧：
 
-以下是帮助你快速上手 Gemini for Google Workspace (Google Workspace 版 Gemini) 的小技巧：
+1. 使用自然语言。像在和另一个人说话一样写提示词，用完整句子表达完整想法。
 
-1. Use natural language. Write as if you’re speaking to another person. Express complete thoughts in full sentences.
+2. 具体明确并持续迭代。告诉 Gemini 你希望它做什么 (总结、撰写、改变语气、创作等)，并尽可能提供充足的上下文信息。
 
-   使用自然语言。像在和另一个人说话一样写提示词，用完整句子表达完整想法。
+3. 简洁清晰，避免复杂表达。用简短但具体的语言提出请求，尽量避免行话或晦涩术语。
 
-2. Be specific and iterate. Tell Gemini what you need it to do (summarize, write, change the tone, create). Provide as much context as possible.
+4. 把它当作对话。如果结果不符合预期，或你认为仍可改进，就继续微调提示词；使用追问式提示词，并通过“审阅—改写—再审阅”的迭代过程获得更好的结果。
 
-   具体明确并持续迭代。告诉 Gemini 你希望它做什么 (总结、撰写、改变语气、创作等)，并尽可能提供充足的上下文信息。
+5. 善用你的文档。将 Google Drive (Google 云端硬盘) 中你自己的文件信息加入提示词，让 Gemini 的输出更贴合你的实际情况。
 
-3. Be concise and avoid complexity. State your request in brief — but specific — language. Avoid jargon.
-
-   简洁清晰，避免复杂表达。用简短但具体的语言提出请求，尽量避免行话或晦涩术语。
-
-4. Make it a conversation. Fine-tune your prompts if the results don’t meet your expectations or if you believe there’s room for improvement. Use follow-up prompts and an iterative process of review and refinement to yield better results.
-
-   把它当作对话。如果结果不符合预期，或你认为仍可改进，就继续微调提示词；使用追问式提示词，并通过“审阅—改写—再审阅”的迭代过程获得更好的结果。
-
-5. Use your documents. Personalize Gemini’s output with information from your own files in Google Drive.
-
-   善用你的文档。将 Google Drive (Google 云端硬盘) 中你自己的文件信息加入提示词，让 Gemini 的输出更贴合你的实际情况。
-
-6. Make Gemini your prompt editor. When using Gemini Advanced, start your prompts with: “Make this a power prompt: [original prompt text here].” Gemini will make suggestions on how to improve your prompt. Ensure it says what you need, and then paste it back into Gemini Advanced to get an output.
-
-   让 Gemini 帮你“润色提示词”。在使用 Gemini Advanced (Gemini 高级版) 时，你可以用这样的开头："Make this a power prompt: [original prompt text here]." Gemini 会给出如何改进提示词的建议。确认改写后的提示词表达了你的真实需求后，再将其粘贴回 Gemini Advanced (Gemini 高级版) 获取输出。
-
-Prompting is a skill we can all learn. You don’t have to be a prompt engineer to use generative AI. However, you will likely need to try a few different approaches for your prompt if you don’t get your desired outcome the first time. Based on what we’ve learned from our users so far, the most fruitful prompts average around 21 words with relevant context, yet the prompts people try are usually less than nine words.
+6. 让 Gemini 帮你“润色提示词”。在使用 Gemini Advanced (Gemini 高级版) 时，你可以用这样的开头："Make this a power prompt: [original prompt text here]." Gemini 会给出如何改进提示词的建议。确认改写后的提示词表达了你的真实需求后，再将其粘贴回 Gemini Advanced (Gemini 高级版) 获取输出。
 
 提示词写作是一项人人都能学习的技能。你不必成为“提示词工程师”才能使用生成式 AI。不过，如果第一次没有得到理想结果，你往往需要尝试几种不同的表达方式。根据我们目前从用户那里得到的经验，效果最好的提示词平均约 21 个词，并包含相关上下文；但人们实际尝试的提示词往往少于 9 个词。
 
-Generative AI and all of its possibilities are exciting, but it’s still new. Even though our models are getting better every day, prompts can sometimes have unpredictable responses.
-
 生成式 AI 及其无限可能令人兴奋，但它仍处于较新的阶段。即使模型每天都在进步，提示词有时仍会得到不可预测的回应。
-
-Before putting an output from Gemini for Workspace into action, review it to ensure clarity, relevance, and accuracy. And of course, keep the most important thing in mind: Generative AI is meant to help humans but the final output is yours.
 
 在将 Gemini for Workspace (Workspace 版 Gemini) 的输出付诸行动前，请先审阅以确保表达清晰、内容相关且准确。当然，最重要的一点是：生成式 AI 的目的是辅助人类，但最终产出责任仍在你自己。
 
-The example prompts in this guide are meant for illustrative purposes.
-
 本指南中的示例提示词仅用于说明与启发。
-
-## Table of contents
 
 ## 目录
 
-- Writing effective prompts (Page 2)
+- 编写高效提示词（第 2 页）
 
-  编写高效提示词（第 2 页）
+- 引言（第 5 页）
 
-- Introduction (Page 5)
+- 行政支持（第 7 页）
 
-  引言（第 5 页）
+- 传播与沟通（第 11 页）
 
-- Administrative support (Page 7)
+- 客户服务（第 15 页）
 
-  行政支持（第 7 页）
+- 高管（第 20 页）
 
-- Communications (Page 11)
+- 一线管理（第 28 页）
 
-  传播与沟通（第 11 页）
+- 人力资源（第 32 页）
 
-- Customer service (Page 15)
+- 市场营销（第 37 页）
 
-  客户服务（第 15 页）
+- 项目管理（第 46 页）
 
-- Executives (Page 20)
+- 销售（第 50 页）
 
-  高管（第 20 页）
+- 小企业主与创业者（第 58 页）
 
-- Frontline management (Page 28)
+- 初创企业领导者（第 62 页）
 
-  一线管理（第 28 页）
-
-- Human resources (Page 32)
-
-  人力资源（第 32 页）
-
-- Marketing (Page 37)
-
-  市场营销（第 37 页）
-
-- Project management (Page 46)
-
-  项目管理（第 46 页）
-
-- Sales (Page 50)
-
-  销售（第 50 页）
-
-- Small business owners and entrepreneurs (Page 58)
-
-  小企业主与创业者（第 58 页）
-
-- Startup leaders (Page 62)
-
-  初创企业领导者（第 62 页）
-
-- Leveling up your prompt writing (Page 67)
-
-  提示词进阶（第 67 页）
-
-## Introduction
+- 提示词进阶（第 67 页）
 
 ## 引言
 
-### Gemini for Google Workspace: Prompting 101
-
 ### Google Workspace 版 Gemini：提示词入门 101
 
-Gemini for Workspace is your AI-powered assistant integrated into the apps you use every day — Gmail, Google Docs, Google Sheets, Google Meet, Google Slides, and Gemini Advanced (the standalone chat experience available at gemini.google.com with enterprise-grade security). This means the apps you know and use will work together smoothly so you can collaborate with Gemini right where you are. You can have fewer interruptions to your focus and workflow, helping you complete tasks and do things you might not have initially known how to do.
-
-Gemini for Workspace (Workspace 版 Gemini) 是一个 AI 助手，已集成到你每天使用的应用中——Gmail (Gmail 邮箱)、Google Docs (Google 文档)、Google Sheets (Google 表格)、Google Meet (Google 会议)、Google Slides (Google 幻灯片)，以及 Gemini Advanced (Gemini 高级版；可在 gemini.google.com 使用、具备企业级安全保障的独立对话体验）。这意味着你熟悉的应用可以无缝协同，让你在工作的原位置就能与 Gemini 协作。你可以减少对专注与工作流的打断，更高效地完成任务，并做到一些你原本可能不知道如何着手的事情。
-
-You can access the features of Gemini for Workspace in multiple ways. Engaging with Gemini in the side panel of your Workspace apps allows you to create highly personalized generative AI outputs that are based on your own files and documents — even if they aren’t Google Docs. You can generate personalized emails in seconds referencing your own Docs to pull in relevant context, generate Slides that are based on information directly from your own briefs or reports, and so much more.
+Gemini for Workspace (Workspace 版 Gemini) 是一个 AI 助手，已集成到你每天使用的应用中——Gmail (Gmail 邮箱)、Google Docs (Google 文档)、Google Sheets (Google 表格)、Google Meet (Google 会议)、Google Slides (Google 幻灯片)，以及 Gemini Advanced (Gemini 高级版；可在 gemini.google.com 使用、具备企业级安全保障的独立对话体验)。这意味着你熟悉的应用可以无缝协同，让你在工作的原位置就能与 Gemini 协作。你可以减少对专注与工作流的打断，更高效地完成任务，并做到一些你原本可能不知道如何着手的事情。
 
 你可以通过多种方式使用 Gemini for Workspace (Workspace 版 Gemini) 的功能。在 Workspace (工作区) 应用中与 Gemini 交互，可以让你基于自己的文件与文档生成高度个性化的内容——即使这些文件并不是 Google Docs (Google 文档)。你可以在几秒钟内引用自己的 Docs (文档) 提取相关上下文生成个性化邮件，也可以根据你的简报或报告中的信息直接生成 Slides (幻灯片)，以及更多。
 
-Understanding what makes an effective prompt and learning to craft prompts on the fly can boost your productivity and creativity. Gemini for Workspace can help you:
-
 理解什么是“有效的提示词”，并学会随时随地快速写出提示词，可以显著提升你的效率与创造力。Gemini for Workspace (Workspace 版 Gemini) 可以帮助你：
 
-- Improve your writing
+- 改进写作
 
-  改进写作
+- 整理数据
 
-- Organize data
+- 创作原创图片
 
-  整理数据
+- 总结信息并提炼洞见
 
-- Create original images
+- 通过自动记录要点提升会议质量
 
-  创作原创图片
+- 更轻松地研究陌生主题
 
-- Summarize information and surface insights
-
-  总结信息并提炼洞见
-
-- Have better meetings with automatic note taking
-
-  通过自动记录要点提升会议质量
-
-- Research unfamiliar topics easily
-
-  更轻松地研究陌生主题
-
-- Spot trends, synthesize information, and identify business opportunities
-
-  发现趋势、综合信息并识别商业机会
+- 发现趋势、综合信息并识别商业机会
 
 For 25 years, Google has built helpful, secure products that give users choice and control over their data. It’s a bedrock principle for us. This was the case back when we first launched Gmail in 2004, and it remains true in the era of generative AI. This means your data is your data and does not belong to Google. Your data stays in your Workspace environment. Your privacy is protected. Your content is never used for targeting ads or to train or improve Gemini or any other generative AI models.
 
