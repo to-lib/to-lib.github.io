@@ -1,6 +1,9 @@
-# A quick-start handbook for effective prompts
+---
+sidebar_position: 4
+title: 📋 Gemini Workspace 提示词指南
+---
 
-# 高效提示词快速入门手册
+# Gemini for Google Workspace 提示词指南
 
 ## October 2024 edition
 
