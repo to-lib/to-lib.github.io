@@ -11,6 +11,7 @@ Docker 提供 REST API 用于程序化管理容器、镜像、网络等资源。
 ## API 概述
 
 Docker API 通过 Unix socket 或 TCP 端口暴露：
+
 - 本地：`/var/run/docker.sock`
 - 远程：`tcp://host:2376`（带 TLS）
 
@@ -71,27 +72,27 @@ curl --cacert ca.pem --cert cert.pem --key key.pem \
 
 ### 容器操作
 
-| 方法 | 端点 | 说明 |
-|------|------|------|
-| GET | /containers/json | 列出容器 |
-| POST | /containers/create | 创建容器 |
-| POST | /containers/{id}/start | 启动容器 |
-| POST | /containers/{id}/stop | 停止容器 |
-| POST | /containers/{id}/restart | 重启容器 |
-| DELETE | /containers/{id} | 删除容器 |
-| GET | /containers/{id}/logs | 获取日志 |
-| GET | /containers/{id}/stats | 获取统计 |
-| POST | /containers/{id}/exec | 创建 exec |
+| 方法   | 端点                      | 说明      |
+| ------ | ------------------------- | --------- |
+| GET    | `/containers/json`        | 列出容器  |
+| POST   | `/containers/create`      | 创建容器  |
+| POST   | `/containers/:id/start`   | 启动容器  |
+| POST   | `/containers/:id/stop`    | 停止容器  |
+| POST   | `/containers/:id/restart` | 重启容器  |
+| DELETE | `/containers/:id`         | 删除容器  |
+| GET    | `/containers/:id/logs`    | 获取日志  |
+| GET    | `/containers/:id/stats`   | 获取统计  |
+| POST   | `/containers/:id/exec`    | 创建 exec |
 
 ### 镜像操作
 
-| 方法 | 端点 | 说明 |
-|------|------|------|
-| GET | /images/json | 列出镜像 |
-| POST | /images/create | 拉取镜像 |
-| POST | /build | 构建镜像 |
-| DELETE | /images/{name} | 删除镜像 |
-| POST | /images/{name}/push | 推送镜像 |
+| 方法   | 端点                 | 说明     |
+| ------ | -------------------- | -------- |
+| GET    | `/images/json`       | 列出镜像 |
+| POST   | `/images/create`     | 拉取镜像 |
+| POST   | `/build`             | 构建镜像 |
+| DELETE | `/images/:name`      | 删除镜像 |
+| POST   | `/images/:name/push` | 推送镜像 |
 
 ## Python SDK
 
@@ -295,13 +296,13 @@ npm install dockerode
 ### 基本使用
 
 ```javascript
-const Docker = require('dockerode');
-const docker = new Docker({ socketPath: '/var/run/docker.sock' });
+const Docker = require("dockerode");
+const docker = new Docker({ socketPath: "/var/run/docker.sock" });
 
 // 列出容器
 async function listContainers() {
   const containers = await docker.listContainers();
-  containers.forEach(c => {
+  containers.forEach((c) => {
     console.log(`${c.Names[0]}: ${c.State}`);
   });
 }
@@ -309,12 +310,12 @@ async function listContainers() {
 // 运行容器
 async function runContainer() {
   const container = await docker.createContainer({
-    Image: 'nginx',
-    name: 'my-nginx',
-    ExposedPorts: { '80/tcp': {} },
+    Image: "nginx",
+    name: "my-nginx",
+    ExposedPorts: { "80/tcp": {} },
     HostConfig: {
-      PortBindings: { '80/tcp': [{ HostPort: '8080' }] }
-    }
+      PortBindings: { "80/tcp": [{ HostPort: "8080" }] },
+    },
   });
   await container.start();
   return container;
@@ -326,7 +327,7 @@ async function execCommand(containerId, cmd) {
   const exec = await container.exec({
     Cmd: cmd,
     AttachStdout: true,
-    AttachStderr: true
+    AttachStderr: true,
   });
   const stream = await exec.start();
   stream.pipe(process.stdout);

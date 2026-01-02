@@ -457,7 +457,7 @@ function ThemedComponent() {
 
 ### useFormStatus - 表单状态
 
-```jsx
+````jsx
 import { useFormStatus } from "react-dom";
 
 function SubmitButton() {
@@ -469,7 +469,7 @@ function SubmitButton() {
     </button>
   );
 }
-```
+````
 
 ### useOptimistic - 乐观更新
 
