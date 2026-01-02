@@ -109,6 +109,21 @@ graph TD
 ### 💻 开发者体验
 - [开发者体验](./dev-experience) - Dev Containers、Testcontainers
 
+### 🔌 扩展与工具
+- [Docker Context](./context) - 多环境管理、远程主机切换
+- [Docker Plugins](./plugins) - 网络、存储、授权插件
+- [Docker API](./api) - REST API 与 SDK 编程
+- [Rootless Docker](./rootless) - 无 root 权限运行
+- [Docker Init](./docker-init) - 自动生成 Dockerfile
+- [Docker Scout](./scout) - 镜像安全扫描
+- [Docker Extensions](./extensions) - Desktop 扩展开发
+- [Windows Containers](./windows-containers) - Windows 容器
+
+### 🔒 安全与合规
+- [Docker Bake](./bake) - BuildKit 高级构建配置
+- [Docker Bench](./bench) - CIS 安全基准检测
+- [镜像签名](./signing) - Cosign、Notary 签名验证
+
 ## 文档导航
 
 import DocCardList from '@theme/DocCardList';
