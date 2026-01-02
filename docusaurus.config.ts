@@ -157,7 +157,32 @@ const config: Config = {
             {
               type: "html",
               value:
-                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>Frontend</div>",
+                "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>前端开发</div>",
+            },
+            {
+              label: "📖 前端概述",
+              to: "/docs/frontend",
+            },
+            {
+              label: "🌐 HTML",
+              to: "/docs/frontend/html",
+            },
+            {
+              label: "🎨 CSS",
+              to: "/docs/frontend/css",
+            },
+            {
+              label: "📜 JavaScript",
+              to: "/docs/frontend/javascript",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #61dafb;'>框架</div>",
             },
             {
               label: "⚛️ React 19",

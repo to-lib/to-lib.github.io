@@ -1659,6 +1659,92 @@ const sidebars: SidebarsConfig = {
       items: ["networking/quick-reference", "networking/faq"],
     },
   ],
+
+  // Frontend sidebar
+  frontend: [
+    {
+      type: "category",
+      label: "📖 前端基础",
+      collapsed: false,
+      items: ["frontend/index"],
+    },
+    {
+      type: "category",
+      label: "🌐 HTML",
+      collapsed: true,
+      items: [
+        "frontend/html/index",
+        "frontend/html/elements",
+        "frontend/html/semantic",
+        "frontend/html/forms",
+        "frontend/html/accessibility",
+        "frontend/html/canvas-svg",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎨 CSS",
+      collapsed: true,
+      items: [
+        "frontend/css/index",
+        "frontend/css/selectors",
+        "frontend/css/layout",
+        "frontend/css/responsive",
+        "frontend/css/animation",
+        "frontend/css/mobile",
+        "frontend/css/modern-css",
+      ],
+    },
+    {
+      type: "category",
+      label: "📜 JavaScript",
+      collapsed: true,
+      items: [
+        "frontend/javascript/index",
+        "frontend/javascript/fundamentals",
+        "frontend/javascript/data-structures",
+        "frontend/javascript/dom",
+        "frontend/javascript/es6",
+        "frontend/javascript/async",
+        "frontend/javascript/closure",
+        "frontend/javascript/prototype",
+        "frontend/javascript/this",
+        "frontend/javascript/modules",
+        "frontend/javascript/error-handling",
+        "frontend/javascript/regex",
+        "frontend/javascript/typescript",
+        "frontend/javascript/functional",
+        "frontend/javascript/copy",
+        "frontend/javascript/design-patterns",
+        "frontend/javascript/implementations",
+      ],
+    },
+    {
+      type: "category",
+      label: "🌍 浏览器",
+      collapsed: true,
+      items: [
+        "frontend/browser/index",
+        "frontend/browser/network",
+        "frontend/browser/storage",
+        "frontend/browser/cors",
+        "frontend/browser/websocket",
+        "frontend/browser/workers",
+        "frontend/browser/debugging",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: [
+        "frontend/advanced/performance",
+        "frontend/advanced/security",
+        "frontend/advanced/engineering",
+        "frontend/advanced/monitoring",
+      ],
+    },
+  ],
 };
 
 export default sidebars;
