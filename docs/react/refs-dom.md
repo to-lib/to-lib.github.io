@@ -170,7 +170,37 @@ function Counter() {
 
 父组件可能需要访问子组件的 DOM 节点：
 
-### 基础用法
+### React 19 新特性：Ref 作为 Props
+
+> [!TIP]
+> React 19 允许直接将 ref 作为 props 传递给函数组件，不再需要 `forwardRef`！
+
+```jsx
+// ✅ React 19 - ref 作为普通 prop
+function CustomInput({ ref, placeholder, ...props }) {
+  return <input ref={ref} placeholder={placeholder} {...props} />;
+}
+
+// 使用方式不变
+function App() {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <CustomInput ref={inputRef} placeholder="输入文本" />
+      <button onClick={focusInput}>聚焦</button>
+    </div>
+  );
+}
+```
+
+### 传统方式（React 18 及更早版本）
+
+如果你需要支持旧版本 React，仍然可以使用 `forwardRef`：
 
 ```jsx
 import { forwardRef, useRef } from "react";

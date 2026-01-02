@@ -30,6 +30,8 @@ sidebar_position: 1
 
 ### 🤖 人工智能
 
+- **[机器学习](ml)** - 从入门到进阶的机器学习核心概念、算法原理和实战技巧
+- **[AI 开发](ai)** - LLM 应用开发、Prompt Engineering、RAG、Agent
 - **[Spring AI](spring-ai)** - Java 领域的 AI 应用开发框架，支持 OpenAI, Azure, Ollama 等
 
 ### 📨 消息中间件

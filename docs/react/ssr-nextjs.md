@@ -510,6 +510,157 @@ npm run build   # 生成 out/ 目录
 | 实时数据      | 客户端渲染 + SWR |
 | 需要 SEO      | SSR 或 SSG       |
 
+## 🔧 水合问题排查
+
+### 什么是水合错误？
+
+水合（Hydration）是指 React 将服务端渲染的 HTML 与客户端 JavaScript 连接起来的过程。当服务端和客户端渲染结果不一致时，会出现水合错误。
+
+```
+Warning: Text content did not match. Server: "服务端" Client: "客户端"
+```
+
+### 常见水合错误及解决方案
+
+#### 1. 使用浏览器专有 API
+
+```jsx
+// ❌ 错误：服务端没有 window
+function BadComponent() {
+  const width = window.innerWidth; // 服务端报错
+  return <div>Width: {width}</div>;
+}
+
+// ✅ 正确：使用 useEffect
+function GoodComponent() {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
+  return <div>Width: {width}</div>;
+}
+```
+
+#### 2. 使用当前时间/日期
+
+```jsx
+// ❌ 错误：服务端和客户端时间不同
+function BadDate() {
+  return <div>{new Date().toLocaleString()}</div>; // 水合不匹配
+}
+
+// ✅ 正确：客户端渲染日期
+function GoodDate() {
+  const [date, setDate] = useState(null);
+
+  useEffect(() => {
+    setDate(new Date().toLocaleString());
+  }, []);
+
+  return <div>{date ?? "加载中..."}</div>;
+}
+```
+
+#### 3. 随机数/ID
+
+```jsx
+// ❌ 错误：每次渲染结果不同
+function BadRandom() {
+  const id = Math.random().toString(36); // 服务端和客户端不同
+  return <div id={id}>...</div>;
+}
+
+// ✅ 正确：使用 useId
+function GoodId() {
+  const id = useId();
+  return <div id={id}>...</div>;
+}
+```
+
+#### 4. localStorage/sessionStorage
+
+```jsx
+// ❌ 错误：服务端没有 localStorage
+function BadStorage() {
+  const theme = localStorage.getItem("theme"); // 服务端报错
+  return <div className={theme}>...</div>;
+}
+
+// ✅ 正确：客户端检测
+function GoodStorage() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) setTheme(saved);
+  }, []);
+
+  return <div className={theme}>...</div>;
+}
+```
+
+#### 5. 浏览器扩展注入内容
+
+React 19 已改进处理，但仍建议：
+
+```jsx
+// 使用 suppressHydrationWarning 忽略特定元素
+<time dateTime={date} suppressHydrationWarning>
+  {formattedDate}
+</time>
+```
+
+### 调试技巧
+
+#### 1. 定位问题组件
+
+```jsx
+// 临时添加 suppressHydrationWarning 逐个排查
+<div suppressHydrationWarning>
+  <PossiblyProblematicComponent />
+</div>
+```
+
+#### 2. 使用客户端组件
+
+```tsx
+"use client"; // 跳过服务端渲染
+
+function ClientOnlyComponent() {
+  // 只在客户端运行
+}
+```
+
+#### 3. 动态导入禁用 SSR
+
+```jsx
+import dynamic from "next/dynamic";
+
+const NoSSRComponent = dynamic(() => import("./Component"), {
+  ssr: false,
+});
+```
+
+### 完整排查流程
+
+```mermaid
+graph TD
+    A[水合错误] --> B{错误类型?}
+    B -->|Text mismatch| C[检查动态内容]
+    B -->|Missing element| D[检查条件渲染]
+    B -->|Extra element| E[检查浏览器扩展]
+
+    C --> F[使用 useEffect]
+    D --> G[使用 useId]
+    E --> H[suppressHydrationWarning]
+
+    F --> I[问题解决]
+    G --> I
+    H --> I
+```
+
 ---
 
-**了解更多**：查看 [Next.js 官方文档](https://nextjs.org/docs) | [React Router](/docs/react/react-router)
+**了解更多**：查看 [Next.js 官方文档](https://nextjs.org/docs) | [React Router](/docs/react/react-router) | [严格模式](/docs/react/strict-mode)

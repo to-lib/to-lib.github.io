@@ -1,0 +1,8 @@
+{
+  "label": "JavaScript",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "frontend/javascript/index"
+  }
+}

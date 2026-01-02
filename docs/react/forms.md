@@ -6,7 +6,114 @@ title: 表单处理
 # React 表单处理
 
 > [!TIP]
-> 表单是 Web 应用的重要组成部分，React 提供了受控组件和非受控组件两种方式处理表单。
+> 表单是 Web 应用的重要组成部分，React 提供了受控组件和非受控组件两种方式处理表单。React 19 引入了强大的 **Actions** 特性，进一步简化了表单处理。
+
+## 🆕 React 19 Actions（推荐）
+
+React 19 引入了表单 Actions，可以直接将异步函数传递给 `<form>` 的 `action` 属性，自动处理 pending 状态和错误。
+
+### 使用 useActionState
+
+```jsx
+import { useActionState } from "react";
+
+function ContactForm() {
+  async function submitForm(prevState, formData) {
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    if (!email.includes("@")) {
+      return { error: "请输入有效的邮箱地址" };
+    }
+
+    await sendMessage({ email, message });
+    return { success: "消息已发送！" };
+  }
+
+  const [state, formAction, isPending] = useActionState(submitForm, {});
+
+  return (
+    <form action={formAction}>
+      <input name="email" type="email" placeholder="邮箱" required />
+      <textarea name="message" placeholder="留言内容" required />
+      <button type="submit" disabled={isPending}>
+        {isPending ? "发送中..." : "发送"}
+      </button>
+      {state.error && <p className="error">{state.error}</p>}
+      {state.success && <p className="success">{state.success}</p>}
+    </form>
+  );
+}
+```
+
+### 使用 useFormStatus
+
+`useFormStatus` 可以在子组件中获取父表单的状态，无需传递 props：
+
+```jsx
+"use client";
+
+import { useFormStatus } from "react-dom";
+
+function SubmitButton() {
+  const { pending, data } = useFormStatus();
+
+  return (
+    <button type="submit" disabled={pending}>
+      {pending ? "提交中..." : "提交"}
+    </button>
+  );
+}
+
+function MyForm({ action }) {
+  return (
+    <form action={action}>
+      <input name="name" placeholder="姓名" />
+      <SubmitButton />
+    </form>
+  );
+}
+```
+
+### 使用 useOptimistic
+
+实现乐观 UI 更新，让用户立即看到操作结果：
+
+```jsx
+import { useOptimistic, useState } from "react";
+
+function Messages({ messages, sendMessage }) {
+  const [optimisticMessages, addOptimisticMessage] = useOptimistic(
+    messages,
+    (state, newMessage) => [...state, { ...newMessage, sending: true }]
+  );
+
+  async function handleSubmit(formData) {
+    const text = formData.get("message");
+    const newMessage = { id: Date.now(), text };
+
+    addOptimisticMessage(newMessage); // 立即显示
+    await sendMessage(newMessage); // 后台发送
+  }
+
+  return (
+    <div>
+      <ul>
+        {optimisticMessages.map((msg) => (
+          <li key={msg.id} style={{ opacity: msg.sending ? 0.5 : 1 }}>
+            {msg.text}
+            {msg.sending && " (发送中...)"}
+          </li>
+        ))}
+      </ul>
+      <form action={handleSubmit}>
+        <input name="message" placeholder="输入消息" />
+        <button type="submit">发送</button>
+      </form>
+    </div>
+  );
+}
+```
 
 ## 🎯 受控组件
 

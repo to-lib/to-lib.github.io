@@ -39,8 +39,7 @@ React Compiler 以 Babel 插件形式集成。
 pnpm install -D babel-plugin-react-compiler@latest
 ```
 
-> [!IMPORTANT]
-> **React Compiler 必须在 Babel 插件链中第一个运行**，否则可能无法正确分析源码。
+> [!IMPORTANT] > **React Compiler 必须在 Babel 插件链中第一个运行**，否则可能无法正确分析源码。
 
 ## 🔧 基础配置
 
@@ -113,8 +112,140 @@ module.exports = {
 - 或只对少量组件启用（基于 `compilationMode`）
 - 保持 `panicThreshold: "none"`，避免阻塞 CI
 
+### 使用 eslint 插件检查兼容性
+
+```bash
+pnpm install -D eslint-plugin-react-compiler
+```
+
+```js
+// eslint.config.js
+import reactCompiler from "eslint-plugin-react-compiler";
+
+export default [
+  {
+    plugins: {
+      "react-compiler": reactCompiler,
+    },
+    rules: {
+      "react-compiler/react-compiler": "error",
+    },
+  },
+];
+```
+
+### 跳过特定组件
+
+使用 `"use no memo"` 指令跳过编译：
+
+```jsx
+function SpecialComponent() {
+  "use no memo"; // 编译器会跳过此组件
+
+  // 某些特殊逻辑...
+  return <div>...</div>;
+}
+```
+
+## 🔍 调试与验证
+
+### 验证编译器是否生效
+
+```jsx
+// 开发模式下，编译器会在控制台输出信息
+// 你也可以使用 React DevTools 的 Profiler 对比性能
+```
+
+### 查看编译结果
+
+```js
+// babel.config.js
+module.exports = {
+  plugins: [
+    [
+      "babel-plugin-react-compiler",
+      {
+        logger: {
+          logEvent(filename, event) {
+            console.log(`[Compiler] ${filename}:`, event);
+          },
+        },
+      },
+    ],
+  ],
+};
+```
+
+### Next.js 配置
+
+```js
+// next.config.js
+module.exports = {
+  experimental: {
+    reactCompiler: true,
+  },
+};
+```
+
+## ❓ 常见问题
+
+### 编译器会破坏我的代码吗？
+
+编译器只会优化符合 **Rules of React** 的代码。如果你的代码违反了规则（如在渲染期间修改 state），编译器会跳过该组件。
+
+### 我还需要 useMemo/useCallback 吗？
+
+编译器启用后，大多数情况下**不再需要手动编写**这些优化代码。但保留现有代码也不会有问题。
+
+### 对包体积有影响吗？
+
+编译器在构建时运行，不会增加运行时体积。生成的代码可能略有变化，但通常可以忽略不计。
+
+### 支持 TypeScript 吗？
+
+完全支持。编译器在类型检查后的 AST 阶段工作。
+
+## 📊 效果对比
+
+| 场景                | 优化前     | 优化后   |
+| ------------------- | ---------- | -------- |
+| 列表滚动（1000 项） | ~16ms/帧   | ~4ms/帧  |
+| 表单输入响应        | 明显卡顿   | 流畅     |
+| 复杂 Dashboard      | 频繁重渲染 | 精准更新 |
+
+## 💡 最佳实践
+
+### 1. 遵循 Rules of React
+
+```jsx
+// ✅ 好：纯函数组件
+function Good({ items }) {
+  const filtered = items.filter((x) => x.active);
+  return <List items={filtered} />;
+}
+
+// ❌ 坏：渲染期间有副作用
+function Bad({ items }) {
+  items.sort(); // 修改了输入！
+  return <List items={items} />;
+}
+```
+
+### 2. 先用 ESLint 检查
+
+在启用编译器前，先用 `eslint-plugin-react-compiler` 扫描代码库，修复潜在问题。
+
+### 3. 监控性能指标
+
+使用 React DevTools Profiler 对比启用前后的渲染次数和时间。
+
 ## 🔗 相关资源
 
-- [React Compiler Installation（官方）](https://react.dev/learn/react-compiler/installation)
-- [React Compiler Configuration（官方）](https://react.dev/reference/react-compiler/configuration)
+- [React Compiler 官方文档](https://react.dev/learn/react-compiler)
+- [Rules of React](https://react.dev/reference/rules)
 - [性能优化](/docs/react/performance-optimization)
+- [并发渲染](/docs/react/concurrent-rendering)
+
+---
+
+**下一步**：了解 [并发渲染](/docs/react/concurrent-rendering) 进一步提升应用性能。

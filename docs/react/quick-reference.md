@@ -145,10 +145,10 @@ function SubmitButton() {
 }
 ```
 
-### useFormState
+### useActionState
 
 ```jsx
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 
 async function createUser(prevState, formData) {
   const name = formData.get("name");
@@ -157,11 +157,15 @@ async function createUser(prevState, formData) {
 }
 
 function Form() {
-  const [state, formAction] = useFormState(createUser, { message: "" });
+  const [state, formAction, isPending] = useActionState(createUser, {
+    message: "",
+  });
   return (
     <form action={formAction}>
       <input name="name" />
-      <button type="submit">创建</button>
+      <button type="submit" disabled={isPending}>
+        {isPending ? "创建中..." : "创建"}
+      </button>
       {state.message && <p>{state.message}</p>}
     </form>
   );

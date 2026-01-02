@@ -503,6 +503,126 @@ function TodoList({ todos }) {
 }
 ```
 
+### useActionState - 管理 Action 状态
+
+```jsx
+import { useActionState } from "react";
+
+function TodoForm() {
+  async function createTodo(prevState, formData) {
+    const title = formData.get("title");
+
+    if (!title) {
+      return { error: "请输入标题" };
+    }
+
+    await saveTodo({ title });
+    return { success: true };
+  }
+
+  const [state, formAction, isPending] = useActionState(createTodo, {});
+
+  return (
+    <form action={formAction}>
+      <input name="title" placeholder="新待办事项" />
+      <button type="submit" disabled={isPending}>
+        {isPending ? "添加中..." : "添加"}
+      </button>
+      {state.error && <p style={{ color: "red" }}>{state.error}</p>}
+    </form>
+  );
+}
+```
+
+### useTransition - 标记非紧急更新
+
+```jsx
+import { useState, useTransition } from "react";
+
+function SearchPage() {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [isPending, startTransition] = useTransition();
+
+  function handleChange(e) {
+    const value = e.target.value;
+    setQuery(value); // 紧急更新
+
+    startTransition(() => {
+      // 非紧急更新，可被中断
+      setResults(filterLargeList(value));
+    });
+  }
+
+  return (
+    <div>
+      <input value={query} onChange={handleChange} />
+      {isPending && <span>搜索中...</span>}
+      <ul style={{ opacity: isPending ? 0.7 : 1 }}>
+        {results.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### useDeferredValue - 延迟值更新
+
+```jsx
+import { useState, useDeferredValue, useMemo } from "react";
+
+function SearchResults({ query }) {
+  const deferredQuery = useDeferredValue(query);
+  const isStale = query !== deferredQuery;
+
+  const results = useMemo(() => searchDatabase(deferredQuery), [deferredQuery]);
+
+  return (
+    <div style={{ opacity: isStale ? 0.7 : 1 }}>
+      {results.map((item) => (
+        <div key={item.id}>{item.title}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+### useId - 生成唯一 ID
+
+```jsx
+import { useId } from "react";
+
+function FormField({ label }) {
+  const id = useId();
+
+  return (
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} type="text" />
+    </div>
+  );
+}
+
+// 多个相关 ID
+function PasswordField() {
+  const id = useId();
+
+  return (
+    <div>
+      <label htmlFor={`${id}-password`}>密码</label>
+      <input
+        id={`${id}-password`}
+        type="password"
+        aria-describedby={`${id}-hint`}
+      />
+      <p id={`${id}-hint`}>密码至少 8 个字符</p>
+    </div>
+  );
+}
+```
+
 ## 🛠️ 自定义 Hook
 
 ### 基础示例
@@ -609,15 +729,19 @@ function UserList() {
 
 ## 📊 Hooks 对比表
 
-| Hook        | 用途            | 返回值               |
-| ----------- | --------------- | -------------------- |
-| useState    | 状态管理        | [state, setState]    |
-| useEffect   | 副作用处理      | undefined            |
-| useContext  | 读取 Context    | context value        |
-| useReducer  | 复杂状态管理    | [state, dispatch]    |
-| useMemo     | 缓存计算结果    | memoized value       |
-| useCallback | 缓存函数        | memoized function    |
-| useRef      | DOM 引用/保存值 | `{ current: value }` |
+| Hook           | 用途                 | 返回值                            |
+| -------------- | -------------------- | --------------------------------- |
+| useState       | 状态管理             | [state, setState]                 |
+| useEffect      | 副作用处理           | undefined                         |
+| useContext     | 读取 Context         | context value                     |
+| useReducer     | 复杂状态管理         | [state, dispatch]                 |
+| useMemo        | 缓存计算结果         | memoized value                    |
+| useCallback    | 缓存函数             | memoized function                 |
+| useRef         | DOM 引用/保存值      | `{ current: value }`              |
+| use            | 读取 Promise/Context | resolved value                    |
+| useActionState | 管理 Action 状态     | [state, action, pending]          |
+| useOptimistic  | 乐观更新             | [optimisticState, addOptimistic]  |
+| useFormStatus  | 表单状态             | { pending, data, method, action } |
 
 ## 💡 最佳实践
 

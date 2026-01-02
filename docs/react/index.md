@@ -181,5 +181,6 @@ npm run dev
 
 ## 📝 更新日志
 
+- **2026-01**: 更新 React 19 正式版内容（useActionState、ref 作为 props 等）
 - **2025-12**: 创建 React 19 完整学习指南
 - **React 19 特性**: Server Components, Actions, 新 Hooks

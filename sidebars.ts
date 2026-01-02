@@ -166,6 +166,103 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // Machine Learning sidebar
+  ml: [
+    {
+      type: "category",
+      label: "🧠 机器学习",
+      collapsed: false,
+      items: [
+        "ml/index",
+        "ml/fundamentals",
+        "ml/math-basics",
+        "ml/data-preprocessing",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 核心算法",
+      collapsed: true,
+      items: [
+        "ml/supervised-learning",
+        "ml/unsupervised-learning",
+        "ml/ensemble-learning",
+        "ml/bayesian-methods",
+        "ml/reinforcement-learning",
+      ],
+    },
+    {
+      type: "category",
+      label: "🧠 深度学习",
+      collapsed: true,
+      items: ["ml/neural-networks", "ml/deep-learning"],
+    },
+    {
+      type: "category",
+      label: "📊 应用领域",
+      collapsed: true,
+      items: [
+        "ml/time-series",
+        "ml/recommendation-system",
+        "ml/nlp-basics",
+        "ml/computer-vision",
+      ],
+    },
+    {
+      type: "category",
+      label: "🛠️ 工程实践",
+      collapsed: true,
+      items: [
+        "ml/model-evaluation",
+        "ml/model-tuning",
+        "ml/interpretability",
+        "ml/automl",
+        "ml/model-deployment",
+        "ml/practical-projects",
+      ],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["ml/quick-reference", "ml/faq"],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: [
+        "ml/graph-neural-networks",
+        "ml/generative-models",
+        "ml/contrastive-learning",
+        "ml/multi-task-learning",
+        "ml/meta-learning",
+        "ml/federated-learning",
+        "ml/causal-inference",
+        "ml/multimodal-learning",
+        "ml/active-learning",
+        "ml/online-learning",
+        "ml/continual-learning",
+        "ml/model-compression",
+        "ml/adversarial-robustness",
+        "ml/uncertainty-quantification",
+        "ml/anomaly-detection",
+        "ml/advanced-rl",
+        "ml/advanced-feature-engineering",
+        "ml/distributed-training",
+        "ml/mlops-tools",
+        "ml/data-labeling",
+        "ml/domain-specific-ml",
+        "ml/transfer-learning",
+        "ml/domain-adaptation",
+        "ml/privacy-computing",
+        "ml/evolutionary-algorithms",
+        "ml/neuro-symbolic",
+        "ml/trustworthy-ai",
+      ],
+    },
+  ],
+
   // Java Design Patterns sidebar
   designPatterns: [
     {

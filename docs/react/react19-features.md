@@ -18,7 +18,7 @@ title: React 19 新特性
 | **Actions**                 | 简化表单和数据变更      | ✅ 稳定 |
 | **use() Hook**              | 读取 Promise 和 Context | ✅ 稳定 |
 | **useFormStatus**           | 表单状态管理            | ✅ 稳定 |
-| **useFormState**            | 表单状态和 Actions      | ✅ 稳定 |
+| **useActionState**          | 管理 Action 状态        | ✅ 稳定 |
 | **useOptimistic**           | 乐观 UI 更新            | ✅ 稳定 |
 | **Document Metadata**       | 文档元数据支持          | ✅ 稳定 |
 | **Asset Loading**           | 资源加载优化            | ✅ 稳定 |
@@ -158,12 +158,12 @@ export default function TodoForm({ createTodo }) {
 }
 ```
 
-### 使用 useFormState
+### 使用 useActionState
 
 ```jsx
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 
 function ContactForm() {
   async function submitForm(prevState, formData) {
@@ -179,12 +179,14 @@ function ContactForm() {
     return { success: "已发送！" };
   }
 
-  const [state, formAction] = useFormState(submitForm, {});
+  const [state, formAction, isPending] = useActionState(submitForm, {});
 
   return (
     <form action={formAction}>
       <input name="email" type="email" />
-      <button type="submit">发送</button>
+      <button type="submit" disabled={isPending}>
+        {isPending ? "发送中..." : "发送"}
+      </button>
       {state.error && <p style={{ color: "red" }}>{state.error}</p>}
       {state.success && <p style={{ color: "green" }}>{state.success}</p>}
     </form>
@@ -408,6 +410,96 @@ function MyApp() {
 
   return <div>...</div>;
 }
+```
+
+### 样式表加载优先级
+
+```jsx
+import { preinit } from "react-dom";
+
+function App() {
+  // 预初始化关键样式
+  preinit("/critical.css", { as: "style", precedence: "high" });
+
+  // 预初始化脚本
+  preinit("/analytics.js", { as: "script" });
+
+  return <div>...</div>;
+}
+```
+
+### 资源加载 API 一览
+
+| API                     | 用途                      |
+| ----------------------- | ------------------------- |
+| `prefetchDNS(url)`      | DNS 预解析                |
+| `preconnect(url)`       | 预连接（DNS + TCP + TLS） |
+| `preload(url, options)` | 预加载资源                |
+| `preloadModule(url)`    | 预加载 ES 模块            |
+| `preinit(url, options)` | 预初始化并执行            |
+| `preinitModule(url)`    | 预初始化 ES 模块          |
+
+## 🌐 Web Components 支持
+
+React 19 改进了与 Web Components（Custom Elements）的兼容性。
+
+### 使用自定义元素
+
+```jsx
+function App() {
+  return (
+    <div>
+      {/* React 19 正确处理 Custom Elements 的属性 */}
+      <my-custom-element
+        customProp="value"
+        onCustomEvent={(e) => console.log(e)}
+      />
+    </div>
+  );
+}
+```
+
+### 属性处理改进
+
+```jsx
+// React 19 自动区分属性（attribute）和属性（property）
+<custom-slider
+  value={50} // 作为 property 设置
+  min="0" // 作为 attribute 设置
+  max="100"
+  onChange={handleChange}
+/>
+```
+
+## 💧 改进的 Hydration
+
+React 19 改进了水合（Hydration）过程，更优雅地处理服务端和客户端的差异。
+
+### 自动处理第三方脚本
+
+```jsx
+// React 19 可以优雅处理浏览器扩展或第三方脚本插入的元素
+// 不会因为 DOM 不匹配而报错
+function App() {
+  return (
+    <html>
+      <head>
+        {/* React 19 会忽略浏览器扩展插入的 <script> 等元素 */}
+        <title>My App</title>
+      </head>
+      <body>
+        <div id="root">{/* 应用内容 */}</div>
+      </body>
+    </html>
+  );
+}
+```
+
+### 更好的错误信息
+
+```jsx
+// React 19 hydration 错误会显示更详细的 diff
+// 帮助快速定位服务端/客户端不匹配的位置
 ```
 
 ## 🎯 Ref 作为 Props
