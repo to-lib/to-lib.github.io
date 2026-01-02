@@ -1,5 +1,4 @@
 ---
-id: events
 title: Spring 事件机制
 sidebar_label: 事件机制
 sidebar_position: 6
@@ -7,8 +6,7 @@ sidebar_position: 6
 
 # Spring 事件机制
 
-> [!IMPORTANT]
-> **事件驱动架构**: Spring 事件机制实现组件间的松耦合通信。理解 ApplicationEvent 和 @EventListener 是构建事件驱动应用的基础。
+> [!IMPORTANT] > **事件驱动架构**: Spring 事件机制实现组件间的松耦合通信。理解 ApplicationEvent 和 @EventListener 是构建事件驱动应用的基础。
 
 ## 1. 事件机制概述
 
@@ -16,13 +14,13 @@ sidebar_position: 6
 
 ### 1.1 核心组件
 
-| 组件 | 说明 |
-|------|------|
-| **ApplicationEvent** | 事件对象，携带事件数据 |
-| **ApplicationListener** | 事件监听器接口 |
-| **ApplicationEventPublisher** | 事件发布器 |
-| **@EventListener** | 监听器注解（推荐） |
-| **@Async** | 异步事件处理 |
+| 组件                          | 说明                   |
+| ----------------------------- | ---------------------- |
+| **ApplicationEvent**          | 事件对象，携带事件数据 |
+| **ApplicationListener**       | 事件监听器接口         |
+| **ApplicationEventPublisher** | 事件发布器             |
+| **@EventListener**            | 监听器注解（推荐）     |
+| **@Async**                    | 异步事件处理           |
 
 ### 1.2 事件流程
 
@@ -39,17 +37,17 @@ sidebar_position: 6
 public class UserRegisteredEvent extends ApplicationEvent {
     private String username;
     private String email;
-    
+
     public UserRegisteredEvent(Object source, String username, String email) {
         super(source);
         this.username = username;
         this.email = email;
     }
-    
+
     public String getUsername() {
         return username;
     }
-    
+
     public String getEmail() {
         return email;
     }
@@ -60,13 +58,13 @@ public class OrderCreatedEvent {
     private Long orderId;
     private String orderNumber;
     private BigDecimal amount;
-    
+
     public OrderCreatedEvent(Long orderId, String orderNumber, BigDecimal amount) {
         this.orderId = orderId;
         this.orderNumber = orderNumber;
         this.amount = amount;
     }
-    
+
     // getters
 }
 ```
@@ -76,19 +74,19 @@ public class OrderCreatedEvent {
 ```java
 @Service
 public class UserService {
-    
+
     @Autowired
     private ApplicationEventPublisher eventPublisher;
-    
+
     public void registerUser(String username, String email) {
         // 业务逻辑
         User user = new User(username, email);
         // 保存用户...
-        
+
         // 发布事件
         UserRegisteredEvent event = new UserRegisteredEvent(this, username, email);
         eventPublisher.publishEvent(event);
-        
+
         // 或者发布 POJO 事件
         // eventPublisher.publishEvent(new OrderCreatedEvent(1L, "ORD001", new BigDecimal("100.00")));
     }
@@ -102,16 +100,16 @@ public class UserService {
 ```java
 @Component
 public class UserEventListener {
-    
+
     @EventListener
     public void handleUserRegistered(UserRegisteredEvent event) {
         System.out.println("用户注册成功: " + event.getUsername());
         System.out.println("邮箱: " + event.getEmail());
-        
+
         // 发送欢迎邮件
         sendWelcomeEmail(event.getEmail());
     }
-    
+
     private void sendWelcomeEmail(String email) {
         // 发送邮件逻辑
     }
@@ -123,7 +121,7 @@ public class UserEventListener {
 ```java
 @Component
 public class UserRegisteredListener implements ApplicationListener<UserRegisteredEvent> {
-    
+
     @Override
     public void onApplicationEvent(UserRegisteredEvent event) {
         System.out.println("用户注册: " + event.getUsername());
@@ -140,14 +138,14 @@ public class UserRegisteredListener implements ApplicationListener<UserRegistere
 ```java
 @Component
 public class OrderEventListener {
-    
+
     // 只处理金额大于 1000 的订单
     @EventListener(condition = "#event.amount > 1000")
     public void handleLargeOrder(OrderCreatedEvent event) {
         System.out.println("大额订单: " + event.getOrderNumber());
         // 特殊处理逻辑
     }
-    
+
     // 只处理特定状态的事件
     @EventListener(condition = "#event.status == 'COMPLETED'")
     public void handleCompletedOrder(OrderEvent event) {
@@ -161,7 +159,7 @@ public class OrderEventListener {
 ```java
 @Component
 public class NotificationListener {
-    
+
     // 监听多种事件类型
     @EventListener({UserRegisteredEvent.class, OrderCreatedEvent.class})
     public void handleMultipleEvents(Object event) {
@@ -183,19 +181,19 @@ public class NotificationListener {
 ```java
 @Component
 public class OrderedEventListeners {
-    
+
     @EventListener
     @Order(1)
     public void firstListener(UserRegisteredEvent event) {
         System.out.println("第一个监听器");
     }
-    
+
     @EventListener
     @Order(2)
     public void secondListener(UserRegisteredEvent event) {
         System.out.println("第二个监听器");
     }
-    
+
     @EventListener
     @Order(3)
     public void thirdListener(UserRegisteredEvent event) {
@@ -212,7 +210,7 @@ public class OrderedEventListeners {
 @Configuration
 @EnableAsync
 public class AsyncConfig {
-    
+
     @Bean
     public TaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -231,13 +229,13 @@ public class AsyncConfig {
 ```java
 @Component
 public class AsyncEventListener {
-    
+
     @Async
     @EventListener
     public void handleUserRegisteredAsync(UserRegisteredEvent event) {
         System.out.println("异步处理用户注册: " + event.getUsername());
         System.out.println("当前线程: " + Thread.currentThread().getName());
-        
+
         // 耗时操作，如发送邮件
         try {
             Thread.sleep(2000);
@@ -246,7 +244,7 @@ public class AsyncEventListener {
             e.printStackTrace();
         }
     }
-    
+
     private void sendWelcomeEmail(String email) {
         System.out.println("发送欢迎邮件到: " + email);
     }
@@ -258,14 +256,14 @@ public class AsyncEventListener {
 ```java
 @Component
 public class MixedEventListeners {
-    
+
     // 同步监听器 - 阻塞发布者
     @EventListener
     public void syncListener(UserRegisteredEvent event) {
         System.out.println("同步处理: " + event.getUsername());
         // 如果这里很慢，会阻塞发布者
     }
-    
+
     // 异步监听器 - 不阻塞发布者
     @Async
     @EventListener
@@ -285,26 +283,26 @@ public class MixedEventListeners {
 ```java
 @Component
 public class TransactionalEventListener {
-    
+
     // 事务提交后执行（默认）
     @TransactionalEventListener
     public void handleAfterCommit(OrderCreatedEvent event) {
         System.out.println("事务提交后处理订单: " + event.getOrderNumber());
         // 发送通知、更新缓存等
     }
-    
+
     // 事务提交前执行
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void handleBeforeCommit(OrderCreatedEvent event) {
         System.out.println("事务提交前检查");
     }
-    
+
     // 事务回滚后执行
     @TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK)
     public void handleAfterRollback(OrderCreatedEvent event) {
         System.out.println("事务回滚，记录日志");
     }
-    
+
     // 事务完成后执行（无论提交还是回滚）
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMPLETION)
     public void handleAfterCompletion(OrderCreatedEvent event) {
@@ -315,38 +313,38 @@ public class TransactionalEventListener {
 
 ### 5.2 事务阶段说明
 
-| 阶段 | 说明 | 使用场景 |
-|------|------|----------|
-| **AFTER_COMMIT** | 事务提交后（默认） | 发送通知、更新缓存 |
-| **BEFORE_COMMIT** | 事务提交前 | 最后的验证检查 |
-| **AFTER_ROLLBACK** | 事务回滚后 | 记录错误日志 |
-| **AFTER_COMPLETION** | 事务完成后 | 清理资源 |
+| 阶段                 | 说明               | 使用场景           |
+| -------------------- | ------------------ | ------------------ |
+| **AFTER_COMMIT**     | 事务提交后（默认） | 发送通知、更新缓存 |
+| **BEFORE_COMMIT**    | 事务提交前         | 最后的验证检查     |
+| **AFTER_ROLLBACK**   | 事务回滚后         | 记录错误日志       |
+| **AFTER_COMPLETION** | 事务完成后         | 清理资源           |
 
 ### 5.3 实际示例
 
 ```java
 @Service
 public class OrderService {
-    
+
     @Autowired
     private ApplicationEventPublisher eventPublisher;
-    
+
     @Autowired
     private OrderRepository orderRepository;
-    
+
     @Transactional
     public void createOrder(Order order) {
         // 保存订单
         orderRepository.save(order);
-        
+
         // 发布事件
         OrderCreatedEvent event = new OrderCreatedEvent(
-            order.getId(), 
-            order.getOrderNumber(), 
+            order.getId(),
+            order.getOrderNumber(),
             order.getAmount()
         );
         eventPublisher.publishEvent(event);
-        
+
         // 如果后续代码抛异常，事务会回滚
         // 但 @TransactionalEventListener 会在回滚后执行
     }
@@ -354,14 +352,14 @@ public class OrderService {
 
 @Component
 public class OrderEventHandler {
-    
+
     @TransactionalEventListener
     public void sendOrderConfirmation(OrderCreatedEvent event) {
         // 只有在事务成功提交后才发送确认邮件
         System.out.println("发送订单确认邮件: " + event.getOrderNumber());
         emailService.sendOrderConfirmation(event);
     }
-    
+
     @TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK)
     public void handleOrderFailure(OrderCreatedEvent event) {
         // 事务回滚后记录失败
@@ -380,31 +378,31 @@ Spring 提供了一些内置事件：
 ```java
 @Component
 public class ApplicationLifecycleListener {
-    
+
     // 应用启动完成
     @EventListener
     public void onApplicationReady(ApplicationReadyEvent event) {
         System.out.println("应用已启动，可以接收请求");
     }
-    
+
     // 容器刷新
     @EventListener
     public void onContextRefreshed(ContextRefreshedEvent event) {
         System.out.println("Spring 容器已刷新");
     }
-    
+
     // 容器启动
     @EventListener
     public void onContextStarted(ContextStartedEvent event) {
         System.out.println("Spring 容器已启动");
     }
-    
+
     // 容器停止
     @EventListener
     public void onContextStopped(ContextStoppedEvent event) {
         System.out.println("Spring 容器已停止");
     }
-    
+
     // 容器关闭
     @EventListener
     public void onContextClosed(ContextClosedEvent event) {
@@ -418,7 +416,7 @@ public class ApplicationLifecycleListener {
 ```java
 @Component
 public class WebApplicationListener {
-    
+
     // Servlet 容器初始化
     @EventListener
     public void onServletContainerReady(ServletWebServerInitializedEvent event) {
@@ -438,34 +436,34 @@ public class UserRegisteredEvent {
     private Long userId;
     private String username;
     private String email;
-    
+
     public UserRegisteredEvent(Long userId, String username, String email) {
         this.userId = userId;
         this.username = username;
         this.email = email;
     }
-    
+
     // getters
 }
 
 // 发布事件
 @Service
 public class UserService {
-    
+
     @Autowired
     private ApplicationEventPublisher eventPublisher;
-    
+
     @Transactional
     public User registerUser(String username, String email, String password) {
         // 1. 创建用户
         User user = new User(username, email, password);
         userRepository.save(user);
-        
+
         // 2. 发布事件
         eventPublisher.publishEvent(
             new UserRegisteredEvent(user.getId(), username, email)
         );
-        
+
         return user;
     }
 }
@@ -473,29 +471,29 @@ public class UserService {
 // 多个监听器处理不同任务
 @Component
 public class UserRegistrationHandlers {
-    
+
     @Autowired
     private EmailService emailService;
-    
+
     @Autowired
     private CouponService couponService;
-    
+
     @Autowired
     private AnalyticsService analyticsService;
-    
+
     // 发送欢迎邮件
     @Async
     @TransactionalEventListener
     public void sendWelcomeEmail(UserRegisteredEvent event) {
         emailService.sendWelcomeEmail(event.getEmail());
     }
-    
+
     // 赠送新人优惠券
     @TransactionalEventListener
     public void grantNewUserCoupon(UserRegisteredEvent event) {
         couponService.grantCoupon(event.getUserId(), "NEWUSER100");
     }
-    
+
     // 记录用户行为分析
     @Async
     @TransactionalEventListener
@@ -513,31 +511,31 @@ public class OrderStatusChangedEvent {
     private Long orderId;
     private OrderStatus oldStatus;
     private OrderStatus newStatus;
-    
+
     public OrderStatusChangedEvent(Long orderId, OrderStatus oldStatus, OrderStatus newStatus) {
         this.orderId = orderId;
         this.oldStatus = oldStatus;
         this.newStatus = newStatus;
     }
-    
+
     // getters
 }
 
 // 订单服务
 @Service
 public class OrderService {
-    
+
     @Autowired
     private ApplicationEventPublisher eventPublisher;
-    
+
     @Transactional
     public void changeOrderStatus(Long orderId, OrderStatus newStatus) {
         Order order = orderRepository.findById(orderId).orElseThrow();
         OrderStatus oldStatus = order.getStatus();
-        
+
         order.setStatus(newStatus);
         orderRepository.save(order);
-        
+
         // 发布状态变更事件
         eventPublisher.publishEvent(
             new OrderStatusChangedEvent(orderId, oldStatus, newStatus)
@@ -548,14 +546,14 @@ public class OrderService {
 // 处理不同状态的监听器
 @Component
 public class OrderStatusHandlers {
-    
+
     // 订单完成时发送确认
     @TransactionalEventListener(condition = "#event.newStatus.name() == 'COMPLETED'")
     public void handleOrderCompleted(OrderStatusChangedEvent event) {
         System.out.println("订单已完成: " + event.getOrderId());
         notificationService.sendOrderCompletedNotification(event.getOrderId());
     }
-    
+
     // 订单取消时退款
     @TransactionalEventListener(condition = "#event.newStatus.name() == 'CANCELLED'")
     public void handleOrderCancelled(OrderStatusChangedEvent event) {
@@ -576,7 +574,7 @@ public class UserPasswordChangedEvent { }
 public class UserProfileUpdatedEvent { }
 
 // ❌ 避免：粗粒度事件
-public class UserUpdatedEvent { 
+public class UserUpdatedEvent {
     // 包含所有更新类型，难以区分
 }
 ```
@@ -588,16 +586,16 @@ public class UserUpdatedEvent {
 public class OrderCreatedEvent {
     private final Long orderId;
     private final String orderNumber;
-    
+
     public OrderCreatedEvent(Long orderId, String orderNumber) {
         this.orderId = orderId;
         this.orderNumber = orderNumber;
     }
-    
+
     public Long getOrderId() {
         return orderId;
     }
-    
+
     public String getOrderNumber() {
         return orderNumber;
     }
@@ -609,7 +607,7 @@ public class OrderCreatedEvent {
 ```java
 @Component
 public class SafeEventListener {
-    
+
     @EventListener
     public void handleEvent(UserRegisteredEvent event) {
         try {
@@ -643,13 +641,13 @@ public void handleUserCreated(UserCreatedEvent event) {
 
 ## 9. 总结
 
-| 特性 | 说明 | 使用场景 |
-|------|------|----------|
-| @EventListener | 事件监听注解 | 简单事件处理 |
-| @Async | 异步处理 | 耗时操作 |
-| @TransactionalEventListener | 事务事件 | 需要事务保证 |
-| condition | 条件监听 | 过滤特定事件 |
-| @Order | 执行顺序 | 控制监听器顺序 |
+| 特性                        | 说明         | 使用场景       |
+| --------------------------- | ------------ | -------------- |
+| @EventListener              | 事件监听注解 | 简单事件处理   |
+| @Async                      | 异步处理     | 耗时操作       |
+| @TransactionalEventListener | 事务事件     | 需要事务保证   |
+| condition                   | 条件监听     | 过滤特定事件   |
+| @Order                      | 执行顺序     | 控制监听器顺序 |
 
 ---
 

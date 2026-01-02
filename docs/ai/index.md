@@ -1,6 +1,19 @@
 ---
 sidebar_position: 1
 title: 🤖 AI 开发概览
+description: AI 应用开发完整指南，涵盖 LLM 基础、Prompt 工程、RAG、Agent、多模态等核心技术，助你构建现代 AI 应用。
+keywords:
+  [
+    AI 开发,
+    LLM,
+    大语言模型,
+    RAG,
+    Agent,
+    Prompt Engineering,
+    向量数据库,
+    LangChain,
+    LlamaIndex,
+  ]
 ---
 
 # AI 开发概览
@@ -126,22 +139,22 @@ graph LR
 
 ## 技术栈推荐
 
-| 类型         | 推荐                          | 备选               |
-| ------------ | ----------------------------- | ------------------ |
-| **框架**     | LangChain                     | LlamaIndex         |
-| **工作流**   | LangGraph                     | Prefect, Airflow   |
-| **模型**     | GPT-4o / Claude 3.5           | Qwen2.5 / LLaMA 3  |
-| **推理模型** | o1-mini / o1                  | Claude 3.5 Sonnet  |
-| **向量库**   | Chroma (开发) / Milvus (生产) | Pinecone, pgvector |
-| **图数据库** | Neo4j                         | ArangoDB           |
-| **评估**     | Langsmith                     | Arize, Deepeval    |
-| **多模态**   | GPT-4o / Gemini 1.5           | Claude 3.5 Vision  |
-| **语音**     | OpenAI Realtime API           | Azure Speech       |
-| **微调**     | OpenAI Fine-tuning            | LoRA + PEFT        |
-| **本地部署** | Ollama (开发) / vLLM (生产)   | llama.cpp, TGI     |
-| **量化**     | GGUF (CPU) / AWQ (GPU)        | GPTQ, bitsandbytes |
-| **MoE 模型** | Mixtral                       | DeepSeek, Qwen-MoE |
-| **蒸馏**     | OpenAI Distillation           | 数据蒸馏           |
-| **对齐**     | DPO                           | RLHF, ORPO         |
-| **护栏**     | NeMo Guardrails               | Guardrails AI      |
+| 类型         | 推荐                          | 备选                 |
+| ------------ | ----------------------------- | -------------------- |
+| **框架**     | LangChain                     | LlamaIndex           |
+| **工作流**   | LangGraph                     | Prefect, Airflow     |
+| **模型**     | GPT-4o / Claude 3.5           | Qwen2.5 / LLaMA 3    |
+| **推理模型** | o1-mini / o1                  | Claude 3.5 Sonnet    |
+| **向量库**   | Chroma (开发) / Milvus (生产) | Pinecone, pgvector   |
+| **图数据库** | Neo4j                         | ArangoDB             |
+| **评估**     | Langsmith                     | Arize, Deepeval      |
+| **多模态**   | GPT-4o / Gemini 1.5           | Claude 3.5 Vision    |
+| **语音**     | OpenAI Realtime API           | Azure Speech         |
+| **微调**     | OpenAI Fine-tuning            | LoRA + PEFT          |
+| **本地部署** | Ollama (开发) / vLLM (生产)   | llama.cpp, TGI       |
+| **量化**     | GGUF (CPU) / AWQ (GPU)        | GPTQ, bitsandbytes   |
+| **MoE 模型** | Mixtral                       | DeepSeek, Qwen-MoE   |
+| **蒸馏**     | OpenAI Distillation           | 数据蒸馏             |
+| **对齐**     | DPO                           | RLHF, ORPO           |
+| **护栏**     | NeMo Guardrails               | Guardrails AI        |
 | **可观测性** | LangSmith                     | Arize, OpenTelemetry |

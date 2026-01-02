@@ -1,6 +1,19 @@
 ---
 sidebar_position: 2
 title: 🧠 LLM 基础知识
+description: 深入理解大语言模型 (LLM) 的核心概念、Transformer 架构、Token 计算、生成参数以及主流模型（如 GPT-4o, Claude 3.5, Llama 3）的对比。
+keywords:
+  [
+    LLM 基础,
+    Transformer,
+    Token,
+    上下文窗口,
+    Temperature,
+    Top-P,
+    GPT-4o,
+    Claude 3.5,
+    Llama 3,
+  ]
 ---
 
 # LLM 基础知识
@@ -52,20 +65,20 @@ Token 是模型处理文本的基本单位。一个 token 可能是：
 
 上下文窗口是模型一次能处理的最大 token 数量。
 
-| 模型           | 上下文长度      |
-| -------------- | --------------- |
-| GPT-3.5        | 4K / 16K        |
-| GPT-4          | 8K / 32K / 128K |
-| Claude 3       | 200K            |
-| Gemini 1.5 Pro | 1M              |
-| LLaMA 3        | 8K              |
+| 模型           | 上下文长度 |
+| -------------- | ---------- |
+| GPT-4o         | 128K       |
+| Claude 3.5     | 200K       |
+| Gemini 1.5 Pro | 1M - 2M    |
+| LLaMA 3.1      | 128K       |
+| Qwen 2.5       | 32K - 128K |
 
 :::tip 计算 Token
 使用 tiktoken (OpenAI) 或 Hugging Face tokenizers 库计算 token 数量：
 
 ```python
 import tiktoken
-enc = tiktoken.encoding_for_model("gpt-4")
+enc = tiktoken.encoding_for_model("gpt-4o")
 tokens = enc.encode("Hello, world!")
 print(len(tokens))  # 4
 ```
@@ -108,13 +121,13 @@ top_p=0.9 → 只考虑累积概率前 90% 的 tokens
 
 ### 商业模型
 
-| 模型                  | 提供商    | 特点                         |
-| --------------------- | --------- | ---------------------------- |
-| **GPT-4o**            | OpenAI    | 多模态，速度快，性价比高     |
-| **Claude 3.5 Sonnet** | Anthropic | 长上下文，强推理，代码能力强 |
-| **Gemini 1.5 Pro**    | Google    | 超长上下文 (1M)，多模态      |
-| **文心一言**          | 百度      | 中文优化，国产首选           |
-| **通义千问**          | 阿里      | 开源版本可用，多模态         |
+| 模型                  | 提供商    | 特点                                    |
+| --------------------- | --------- | --------------------------------------- |
+| **GPT-4o**            | OpenAI    | 多模态，速度快，性价比极高，综合能力强  |
+| **Claude 3.5 Sonnet** | Anthropic | 编码能力极强，逻辑推理出色，UI 设计友好 |
+| **Gemini 1.5 Pro**    | Google    | 2M 超长上下文，原生多模态，生态集成好   |
+| **DeepSeek V3**       | DeepSeek  | 国产之光，开源闭源皆强，编码与推理一流  |
+| **Doubao (豆包)**     | 字节跳动  | 语音交互强，C 端应用广泛，API 价格低    |
 
 ### 开源模型
 

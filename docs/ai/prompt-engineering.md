@@ -1,6 +1,17 @@
 ---
 sidebar_position: 3
 title: ✨ 提示工程
+description: 全面解析 Prompt Engineering 核心原则与技巧（Zero-shot, Few-shot, CoT），提供实用的 Prompt 模板与调试指南，助你掌握 LLM 交互艺术。
+keywords:
+  [
+    提示工程,
+    Prompt Engineering,
+    Prompt 技巧,
+    CoT,
+    Few-shot,
+    提示词模板,
+    LLM 交互,
+  ]
 ---
 
 # 提示工程 (Prompt Engineering)

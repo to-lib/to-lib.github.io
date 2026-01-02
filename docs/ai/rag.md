@@ -1,6 +1,8 @@
 ---
 sidebar_position: 5
 title: 📚 RAG (检索增强生成)
+description: 详解 RAG (检索增强生成) 技术原理、架构流程（索引、检索、生成）以及基于 LangChain 和 LlamaIndex 的代码实现与最佳实践。
+keywords: [RAG, 检索增强生成, 向量数据库, LangChain RAG, LlamaIndex, 知识库问答]
 ---
 
 # RAG (检索增强生成)

@@ -1,6 +1,16 @@
 ---
 sidebar_position: 4
 title: 📋 Gemini Workspace 提示词指南
+description: Google Workspace 版 Gemini 官方提示词指南（2024 年 10 月版），包含大量实用的提示词示例和技巧，涵盖 HR、行政、销售、营销等多个场景。
+keywords:
+  [
+    Gemini Workspace,
+    提示词指南,
+    Prompting Guide,
+    Google Workspace,
+    AI 办公,
+    提示词技巧,
+  ]
 ---
 
 # Gemini for Google Workspace 提示词指南

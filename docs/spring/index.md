@@ -1,5 +1,4 @@
 ---
-id: spring-index
 title: Spring Framework 学习指南
 sidebar_label: 概览
 sidebar_position: 1
