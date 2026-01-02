@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">基础配置 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/nginx/basic-config"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="基础配置 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Nginx 核心配置详解，包括指令、上下文和配置语法"><meta data-rh="true" property="og:description" content="Nginx 核心配置详解，包括指令、上下文和配置语法"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/nginx/basic-config"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/nginx/basic-config" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/nginx/basic-config" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"基础配置","item":"https://to-lib.github.io/docs/nginx/basic-config"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -33,12 +40,144 @@
 <div class="language-nginx codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-nginx codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    listen 80;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    server_name example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 1. 最高优先级：精确匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    location = / {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return 200 &quot;精确匹配 /&quot;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 2. 次高优先级：^~ 前缀</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    location ^~ /static/ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        root /var/www;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 3. 正则匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    location ~* \.(css|js)$ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        expires 7d;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 4. 普通前缀匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    location /api/ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        proxy_pass http://backend;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 5. 默认匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    location / {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        try_files $uri $uri/ /index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常用变量">常用变量<a href="#常用变量" class="hash-link" aria-label="Direct link to 常用变量" title="Direct link to 常用变量" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="请求相关变量">请求相关变量<a href="#请求相关变量" class="hash-link" aria-label="Direct link to 请求相关变量" title="Direct link to 请求相关变量" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>变量</th><th>说明</th></tr></thead><tbody><tr><td><code>$request</code></td><td>完整请求行</td></tr><tr><td><code>$request_uri</code></td><td>包含参数的原始 URI</td></tr><tr><td><code>$uri</code></td><td>当前 URI（可能被 rewrite 修改）</td></tr><tr><td><code>$args</code></td><td>查询字符串参数</td></tr><tr><td><code>$arg_name</code></td><td>获取指定参数值</td></tr><tr><td><code>$request_method</code></td><td>请求方法（GET/POST 等）</td></tr><tr><td><code>$host</code></td><td>请求的主机名</td></tr><tr><td><code>$http_header</code></td><td>获取请求头（如 <code>$http_user_agent</code>）</td></tr><tr><td><code>$content_type</code></td><td>Content-Type 请求头</td></tr><tr><td><code>$content_length</code></td><td>Content-Length 请求头</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="客户端相关变量">客户端相关变量<a href="#客户端相关变量" class="hash-link" aria-label="Direct link to 客户端相关变量" title="Direct link to 客户端相关变量" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>变量</th><th>说明</th></tr></thead><tbody><tr><td><code>$remote_addr</code></td><td>客户端 IP</td></tr><tr><td><code>$remote_port</code></td><td>客户端端口</td></tr><tr><td><code>$remote_user</code></td><td>认证用户名</td></tr><tr><td><code>$http_x_forwarded_for</code></td><td>代理链 IP</td></tr><tr><td><code>$http_x_real_ip</code></td><td>真实客户端 IP</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="服务器相关变量">服务器相关变量<a href="#服务器相关变量" class="hash-link" aria-label="Direct link to 服务器相关变量" title="Direct link to 服务器相关变量" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>变量</th><th>说明</th></tr></thead><tbody><tr><td><code>$server_addr</code></td><td>服务器 IP</td></tr><tr><td><code>$server_port</code></td><td>服务器端口</td></tr><tr><td><code>$server_name</code></td><td>服务器名称</td></tr><tr><td><code>$document_root</code></td><td>根目录路径</td></tr><tr><td><code>$nginx_version</code></td><td>Nginx 版本</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="响应相关变量">响应相关变量<a href="#响应相关变量" class="hash-link" aria-label="Direct link to 响应相关变量" title="Direct link to 响应相关变量" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>变量</th><th>说明</th></tr></thead><tbody><tr><td><code>$status</code></td><td>响应状态码</td></tr><tr><td><code>$body_bytes_sent</code></td><td>发送的字节数</td></tr><tr><td><code>$request_time</code></td><td>请求处理时间</td></tr><tr><td><code>$upstream_response_time</code></td><td>上游响应时间</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="rewrite-规则">Rewrite 规则<a href="#rewrite-规则" class="hash-link" aria-label="Direct link to Rewrite 规则" title="Direct link to Rewrite 规则" translate="no">​</a></h2>
 <div class="language-nginx codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-nginx codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 基本语法</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rewrite regex replacement [flag];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 标志位说明：</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># last     - 停止当前 rewrite，重新匹配 location</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># break    - 停止所有 rewrite，在当前 location 继续处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># redirect - 302 临时重定向</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># permanent - 301 永久重定向</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 示例</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 301 永久重定向：非 www 到 www</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if ($host !~* ^www\.) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        rewrite ^(.*)$ http://www.$host$1 permanent;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 重写 URL</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rewrite ^/old-page$ /new-page permanent;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 使用正则捕获组</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rewrite ^/user/(\d+)$ /profile?id=$1 last;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 移除 .html 后缀</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rewrite ^(.+)\.html$ $1 permanent;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -61,6 +200,6 @@
 <li class=""><strong>修改前备份</strong>：<code>cp nginx.conf nginx.conf.backup</code></li>
 <li class=""><strong>修改后测试</strong>：<code>nginx -t</code> 验证语法</li>
 <li class=""><strong>优雅重载</strong>：<code>nginx -s reload</code> 不中断服务</li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/nginx/basic-config.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/nginx/installation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">安装配置</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/nginx/static-files"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">静态文件服务</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#配置文件结构" class="table-of-contents__link toc-highlight">配置文件结构</a></li><li><a href="#配置上下文层级" class="table-of-contents__link toc-highlight">配置上下文层级</a></li><li><a href="#全局指令" class="table-of-contents__link toc-highlight">全局指令</a></li><li><a href="#events-配置" class="table-of-contents__link toc-highlight">Events 配置</a></li><li><a href="#http-核心配置" class="table-of-contents__link toc-highlight">HTTP 核心配置</a></li><li><a href="#server-配置" class="table-of-contents__link toc-highlight">Server 配置</a></li><li><a href="#location-匹配规则" class="table-of-contents__link toc-highlight">Location 匹配规则</a><ul><li><a href="#匹配优先级示例" class="table-of-contents__link toc-highlight">匹配优先级示例</a></li></ul></li><li><a href="#常用变量" class="table-of-contents__link toc-highlight">常用变量</a><ul><li><a href="#请求相关变量" class="table-of-contents__link toc-highlight">请求相关变量</a></li><li><a href="#客户端相关变量" class="table-of-contents__link toc-highlight">客户端相关变量</a></li><li><a href="#服务器相关变量" class="table-of-contents__link toc-highlight">服务器相关变量</a></li><li><a href="#响应相关变量" class="table-of-contents__link toc-highlight">响应相关变量</a></li></ul></li><li><a href="#rewrite-规则" class="table-of-contents__link toc-highlight">Rewrite 规则</a></li><li><a href="#return-指令" class="table-of-contents__link toc-highlight">Return 指令</a></li><li><a href="#try_files-指令" class="table-of-contents__link toc-highlight">Try_files 指令</a></li><li><a href="#条件判断" class="table-of-contents__link toc-highlight">条件判断</a></li><li><a href="#map-指令" class="table-of-contents__link toc-highlight">Map 指令</a></li><li><a href="#include-指令" class="table-of-contents__link toc-highlight">Include 指令</a></li><li><a href="#配置最佳实践" class="table-of-contents__link toc-highlight">配置最佳实践</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/nginx/basic-config.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/nginx/installation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">安装配置</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/nginx/static-files"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">静态文件服务</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#配置文件结构" class="table-of-contents__link toc-highlight">配置文件结构</a></li><li><a href="#配置上下文层级" class="table-of-contents__link toc-highlight">配置上下文层级</a></li><li><a href="#全局指令" class="table-of-contents__link toc-highlight">全局指令</a></li><li><a href="#events-配置" class="table-of-contents__link toc-highlight">Events 配置</a></li><li><a href="#http-核心配置" class="table-of-contents__link toc-highlight">HTTP 核心配置</a></li><li><a href="#server-配置" class="table-of-contents__link toc-highlight">Server 配置</a></li><li><a href="#location-匹配规则" class="table-of-contents__link toc-highlight">Location 匹配规则</a><ul><li><a href="#匹配优先级示例" class="table-of-contents__link toc-highlight">匹配优先级示例</a></li></ul></li><li><a href="#常用变量" class="table-of-contents__link toc-highlight">常用变量</a><ul><li><a href="#请求相关变量" class="table-of-contents__link toc-highlight">请求相关变量</a></li><li><a href="#客户端相关变量" class="table-of-contents__link toc-highlight">客户端相关变量</a></li><li><a href="#服务器相关变量" class="table-of-contents__link toc-highlight">服务器相关变量</a></li><li><a href="#响应相关变量" class="table-of-contents__link toc-highlight">响应相关变量</a></li></ul></li><li><a href="#rewrite-规则" class="table-of-contents__link toc-highlight">Rewrite 规则</a></li><li><a href="#return-指令" class="table-of-contents__link toc-highlight">Return 指令</a></li><li><a href="#try_files-指令" class="table-of-contents__link toc-highlight">Try_files 指令</a></li><li><a href="#条件判断" class="table-of-contents__link toc-highlight">条件判断</a></li><li><a href="#map-指令" class="table-of-contents__link toc-highlight">Map 指令</a></li><li><a href="#include-指令" class="table-of-contents__link toc-highlight">Include 指令</a></li><li><a href="#配置最佳实践" class="table-of-contents__link toc-highlight">配置最佳实践</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

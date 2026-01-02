@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Spring Cloud 快速参考 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/springcloud/quick-reference"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Spring Cloud 快速参考 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP]"><meta data-rh="true" property="og:description" content="[!TIP]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/springcloud/quick-reference"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/springcloud/quick-reference" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/springcloud/quick-reference" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"快速参考","item":"https://to-lib.github.io/docs/springcloud/quick-reference"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,22 +25,243 @@
 本页面提供 Spring Cloud 常用配置、注解、依赖的速查表，方便快速查阅。</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="1-版本兼容对照表">1. 版本兼容对照表<a href="#1-版本兼容对照表" class="hash-link" aria-label="Direct link to 1. 版本兼容对照表" title="Direct link to 1. 版本兼容对照表" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Spring Cloud</th><th>Spring Boot</th><th>Java</th></tr></thead><tbody><tr><td>2023.0.x (Leyton)</td><td>3.2.x, 3.3.x</td><td>17+</td></tr><tr><td>2022.0.x (Kilburn)</td><td>3.0.x, 3.1.x</td><td>17+</td></tr><tr><td>2021.0.x (Jubilee)</td><td>2.6.x, 2.7.x</td><td>8, 11, 17</td></tr><tr><td>2020.0.x (Ilford)</td><td>2.4.x, 2.5.x</td><td>8, 11</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="2-常用注解速查">2. 常用注解速查<a href="#2-常用注解速查" class="hash-link" aria-label="Direct link to 2. 常用注解速查" title="Direct link to 2. 常用注解速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="服务注册发现">服务注册发现<a href="#服务注册发现" class="hash-link" aria-label="Direct link to 服务注册发现" title="Direct link to 服务注册发现" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>说明</th><th>所属组件</th></tr></thead><tbody><tr><td><code>@EnableEurekaServer</code></td><td>启用 Eureka 服务端</td><td>Eureka</td></tr><tr><td><code>@EnableEurekaClient</code></td><td>启用 Eureka 客户端</td><td>Eureka</td></tr><tr><td><code>@EnableDiscoveryClient</code></td><td>启用服务发现（通用）</td><td>Spring Cloud</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="配置中心">配置中心<a href="#配置中心" class="hash-link" aria-label="Direct link to 配置中心" title="Direct link to 配置中心" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>说明</th><th>所属组件</th></tr></thead><tbody><tr><td><code>@EnableConfigServer</code></td><td>启用配置中心服务端</td><td>Config</td></tr><tr><td><code>@RefreshScope</code></td><td>支持配置动态刷新</td><td>Config</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="服务调用">服务调用<a href="#服务调用" class="hash-link" aria-label="Direct link to 服务调用" title="Direct link to 服务调用" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>说明</th><th>所属组件</th></tr></thead><tbody><tr><td><code>@EnableFeignClients</code></td><td>启用 Feign 客户端</td><td>OpenFeign</td></tr><tr><td><code>@FeignClient</code></td><td>声明 Feign 客户端</td><td>OpenFeign</td></tr><tr><td><code>@LoadBalanced</code></td><td>启用负载均衡</td><td>LoadBalancer</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="容错保护">容错保护<a href="#容错保护" class="hash-link" aria-label="Direct link to 容错保护" title="Direct link to 容错保护" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>说明</th><th>所属组件</th></tr></thead><tbody><tr><td><code>@CircuitBreaker</code></td><td>声明熔断</td><td>Resilience4j</td></tr><tr><td><code>@RateLimiter</code></td><td>声明限流</td><td>Resilience4j</td></tr><tr><td><code>@Retry</code></td><td>声明重试</td><td>Resilience4j</td></tr><tr><td><code>@Bulkhead</code></td><td>声明舱壁隔离</td><td>Resilience4j</td></tr><tr><td><code>@HystrixCommand</code></td><td>定义熔断方法</td><td>Hystrix (维护)</td></tr><tr><td><code>@EnableCircuitBreaker</code></td><td>启用熔断器</td><td>Hystrix (维护)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消息驱动">消息驱动<a href="#消息驱动" class="hash-link" aria-label="Direct link to 消息驱动" title="Direct link to 消息驱动" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>说明</th><th>所属组件</th></tr></thead><tbody><tr><td><code>@EnableBinding</code></td><td>启用消息绑定 (旧)</td><td>Stream</td></tr><tr><td><code>@StreamListener</code></td><td>消息监听器 (旧)</td><td>Stream</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="3-常用依赖速查">3. 常用依赖速查<a href="#3-常用依赖速查" class="hash-link" aria-label="Direct link to 3. 常用依赖速查" title="Direct link to 3. 常用依赖速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="spring-cloud-bom">Spring Cloud BOM<a href="#spring-cloud-bom" class="hash-link" aria-label="Direct link to Spring Cloud BOM" title="Direct link to Spring Cloud BOM" translate="no">​</a></h3>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependencyManagement</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependencies</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.springframework.cloud</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">spring-cloud-dependencies</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">2023.0.0</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">type</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">pom</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">type</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">scope</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">import</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">scope</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependencies</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependencyManagement</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="核心组件依赖">核心组件依赖<a href="#核心组件依赖" class="hash-link" aria-label="Direct link to 核心组件依赖" title="Direct link to 核心组件依赖" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>依赖</th></tr></thead><tbody><tr><td>Eureka Server</td><td><code>spring-cloud-starter-netflix-eureka-server</code></td></tr><tr><td>Eureka Client</td><td><code>spring-cloud-starter-netflix-eureka-client</code></td></tr><tr><td>Config Server</td><td><code>spring-cloud-config-server</code></td></tr><tr><td>Config Client</td><td><code>spring-cloud-starter-config</code></td></tr><tr><td>Gateway</td><td><code>spring-cloud-starter-gateway</code></td></tr><tr><td>OpenFeign</td><td><code>spring-cloud-starter-openfeign</code></td></tr><tr><td>LoadBalancer</td><td><code>spring-cloud-starter-loadbalancer</code></td></tr><tr><td>Resilience4j</td><td><code>spring-cloud-starter-circuitbreaker-resilience4j</code></td></tr><tr><td>Stream (RabbitMQ)</td><td><code>spring-cloud-starter-stream-rabbit</code></td></tr><tr><td>Stream (Kafka)</td><td><code>spring-cloud-starter-stream-kafka</code></td></tr><tr><td>Sleuth</td><td><code>spring-cloud-starter-sleuth</code></td></tr><tr><td>Bus (RabbitMQ)</td><td><code>spring-cloud-starter-bus-amqp</code></td></tr><tr><td>Consul Discovery</td><td><code>spring-cloud-starter-consul-discovery</code></td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="4-常用配置速查">4. 常用配置速查<a href="#4-常用配置速查" class="hash-link" aria-label="Direct link to 4. 常用配置速查" title="Direct link to 4. 常用配置速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="eureka-server">Eureka Server<a href="#eureka-server" class="hash-link" aria-label="Direct link to Eureka Server" title="Direct link to Eureka Server" translate="no">​</a></h3>
@@ -53,10 +281,125 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="stream">Stream<a href="#stream" class="hash-link" aria-label="Direct link to Stream" title="Direct link to Stream" translate="no">​</a></h3>
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">spring</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">cloud</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">stream</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">function</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">definition</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> process</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">bindings</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">process-in-0</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">          </span><span class="token key atrule" style="color:#00a4db">destination</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> input</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">topic</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">          </span><span class="token key atrule" style="color:#00a4db">group</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> my</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">group</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">process-out-0</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">          </span><span class="token key atrule" style="color:#00a4db">destination</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> output</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">topic</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="5-端口规划建议">5. 端口规划建议<a href="#5-端口规划建议" class="hash-link" aria-label="Direct link to 5. 端口规划建议" title="Direct link to 5. 端口规划建议" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>服务</th><th>建议端口</th></tr></thead><tbody><tr><td>Eureka Server</td><td>8761</td></tr><tr><td>Config Server</td><td>8888</td></tr><tr><td>API Gateway</td><td>8080</td></tr><tr><td>Zipkin</td><td>9411</td></tr><tr><td>业务服务</td><td>8001-8999</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="6-actuator-常用端点">6. Actuator 常用端点<a href="#6-actuator-常用端点" class="hash-link" aria-label="Direct link to 6. Actuator 常用端点" title="Direct link to 6. Actuator 常用端点" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>端点</th><th>说明</th></tr></thead><tbody><tr><td><code>/actuator/health</code></td><td>健康检查</td></tr><tr><td><code>/actuator/info</code></td><td>应用信息</td></tr><tr><td><code>/actuator/refresh</code></td><td>刷新配置 (需 @RefreshScope)</td></tr><tr><td><code>/actuator/bus-refresh</code></td><td>全局配置刷新 (需 Bus)</td></tr><tr><td><code>/actuator/circuitbreakers</code></td><td>熔断器状态</td></tr><tr><td><code>/actuator/metrics</code></td><td>应用指标</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="7-组件选型对照">7. 组件选型对照<a href="#7-组件选型对照" class="hash-link" aria-label="Direct link to 7. 组件选型对照" title="Direct link to 7. 组件选型对照" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>功能</th><th>Netflix (旧)</th><th>Spring Cloud (新)</th><th>阿里巴巴</th></tr></thead><tbody><tr><td>服务注册</td><td>Eureka</td><td>Consul</td><td>Nacos</td></tr><tr><td>配置中心</td><td>Config</td><td>Config</td><td>Nacos</td></tr><tr><td>负载均衡</td><td>Ribbon</td><td><strong>LoadBalancer</strong></td><td>Dubbo</td></tr><tr><td>服务调用</td><td>Feign</td><td><strong>OpenFeign</strong></td><td>Dubbo</td></tr><tr><td>熔断降级</td><td>Hystrix</td><td><strong>Resilience4j</strong></td><td>Sentinel</td></tr><tr><td>API 网关</td><td>Zuul</td><td><strong>Gateway</strong></td><td>Gateway</td></tr><tr><td>链路追踪</td><td>Sleuth+Zipkin</td><td>Micrometer Tracing</td><td>SkyWalking</td></tr></tbody></table>
 <hr>
 <p><strong>相关文档</strong>：</p>
@@ -64,6 +407,6 @@
 <li class=""><a class="" href="/docs/springcloud/core-concepts">核心概念</a></li>
 <li class=""><a class="" href="/docs/springcloud/best-practices">最佳实践</a></li>
 <li class=""><a class="" href="/docs/springcloud/faq">常见问题</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/springcloud/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/springcloud/troubleshooting"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">排障手册</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/springcloud/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-版本兼容对照表" class="table-of-contents__link toc-highlight">1. 版本兼容对照表</a></li><li><a href="#2-常用注解速查" class="table-of-contents__link toc-highlight">2. 常用注解速查</a><ul><li><a href="#服务注册发现" class="table-of-contents__link toc-highlight">服务注册发现</a></li><li><a href="#配置中心" class="table-of-contents__link toc-highlight">配置中心</a></li><li><a href="#服务调用" class="table-of-contents__link toc-highlight">服务调用</a></li><li><a href="#容错保护" class="table-of-contents__link toc-highlight">容错保护</a></li><li><a href="#消息驱动" class="table-of-contents__link toc-highlight">消息驱动</a></li></ul></li><li><a href="#3-常用依赖速查" class="table-of-contents__link toc-highlight">3. 常用依赖速查</a><ul><li><a href="#spring-cloud-bom" class="table-of-contents__link toc-highlight">Spring Cloud BOM</a></li><li><a href="#核心组件依赖" class="table-of-contents__link toc-highlight">核心组件依赖</a></li></ul></li><li><a href="#4-常用配置速查" class="table-of-contents__link toc-highlight">4. 常用配置速查</a><ul><li><a href="#eureka-server" class="table-of-contents__link toc-highlight">Eureka Server</a></li><li><a href="#eureka-client" class="table-of-contents__link toc-highlight">Eureka Client</a></li><li><a href="#config-client" class="table-of-contents__link toc-highlight">Config Client</a></li><li><a href="#gateway" class="table-of-contents__link toc-highlight">Gateway</a></li><li><a href="#resilience4j-circuitbreaker" class="table-of-contents__link toc-highlight">Resilience4j CircuitBreaker</a></li><li><a href="#resilience4j-ratelimiter" class="table-of-contents__link toc-highlight">Resilience4j RateLimiter</a></li><li><a href="#loadbalancer" class="table-of-contents__link toc-highlight">LoadBalancer</a></li><li><a href="#stream" class="table-of-contents__link toc-highlight">Stream</a></li></ul></li><li><a href="#5-端口规划建议" class="table-of-contents__link toc-highlight">5. 端口规划建议</a></li><li><a href="#6-actuator-常用端点" class="table-of-contents__link toc-highlight">6. Actuator 常用端点</a></li><li><a href="#7-组件选型对照" class="table-of-contents__link toc-highlight">7. 组件选型对照</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/springcloud/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/springcloud/troubleshooting"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">排障手册</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/springcloud/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-版本兼容对照表" class="table-of-contents__link toc-highlight">1. 版本兼容对照表</a></li><li><a href="#2-常用注解速查" class="table-of-contents__link toc-highlight">2. 常用注解速查</a><ul><li><a href="#服务注册发现" class="table-of-contents__link toc-highlight">服务注册发现</a></li><li><a href="#配置中心" class="table-of-contents__link toc-highlight">配置中心</a></li><li><a href="#服务调用" class="table-of-contents__link toc-highlight">服务调用</a></li><li><a href="#容错保护" class="table-of-contents__link toc-highlight">容错保护</a></li><li><a href="#消息驱动" class="table-of-contents__link toc-highlight">消息驱动</a></li></ul></li><li><a href="#3-常用依赖速查" class="table-of-contents__link toc-highlight">3. 常用依赖速查</a><ul><li><a href="#spring-cloud-bom" class="table-of-contents__link toc-highlight">Spring Cloud BOM</a></li><li><a href="#核心组件依赖" class="table-of-contents__link toc-highlight">核心组件依赖</a></li></ul></li><li><a href="#4-常用配置速查" class="table-of-contents__link toc-highlight">4. 常用配置速查</a><ul><li><a href="#eureka-server" class="table-of-contents__link toc-highlight">Eureka Server</a></li><li><a href="#eureka-client" class="table-of-contents__link toc-highlight">Eureka Client</a></li><li><a href="#config-client" class="table-of-contents__link toc-highlight">Config Client</a></li><li><a href="#gateway" class="table-of-contents__link toc-highlight">Gateway</a></li><li><a href="#resilience4j-circuitbreaker" class="table-of-contents__link toc-highlight">Resilience4j CircuitBreaker</a></li><li><a href="#resilience4j-ratelimiter" class="table-of-contents__link toc-highlight">Resilience4j RateLimiter</a></li><li><a href="#loadbalancer" class="table-of-contents__link toc-highlight">LoadBalancer</a></li><li><a href="#stream" class="table-of-contents__link toc-highlight">Stream</a></li></ul></li><li><a href="#5-端口规划建议" class="table-of-contents__link toc-highlight">5. 端口规划建议</a></li><li><a href="#6-actuator-常用端点" class="table-of-contents__link toc-highlight">6. Actuator 常用端点</a></li><li><a href="#7-组件选型对照" class="table-of-contents__link toc-highlight">7. 组件选型对照</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

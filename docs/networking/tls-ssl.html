@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">TLS/SSL 安全协议 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/tls-ssl"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TLS/SSL 安全协议 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="TLS/SSL协议详解，包括握手流程、证书、加密套件"><meta data-rh="true" property="og:description" content="TLS/SSL协议详解，包括握手流程、证书、加密套件"><meta data-rh="true" name="keywords" content="TLS,SSL,HTTPS,证书,加密,握手,CA"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/tls-ssl"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/tls-ssl" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/tls-ssl" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TLS/SSL 安全协议","item":"https://to-lib.github.io/docs/networking/tls-ssl"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -16,12 +23,111 @@
 <p>TLS（Transport Layer Security）是保护网络通信安全的加密协议，SSL（Secure Sockets Layer）是其前身。</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="版本演进">版本演进<a href="#版本演进" class="hash-link" aria-label="Direct link to 版本演进" title="Direct link to 版本演进" translate="no">​</a></h2>
 <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>版本</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>SSL 2.0</td><td>❌ 废弃</td><td>严重安全漏洞</td></tr><tr><td>SSL 3.0</td><td>❌ 废弃</td><td>POODLE 攻击</td></tr><tr><td>TLS 1.0</td><td>⚠️ 弃用</td><td>不建议使用</td></tr><tr><td>TLS 1.1</td><td>⚠️ 弃用</td><td>不建议使用</td></tr><tr><td>TLS 1.2</td><td>✅ 推荐</td><td>当前主流</td></tr><tr><td>TLS 1.3</td><td>✅ 推荐</td><td>最新最安全</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="核心概念">核心概念<a href="#核心概念" class="hash-link" aria-label="Direct link to 核心概念" title="Direct link to 核心概念" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="安全目标">安全目标<a href="#安全目标" class="hash-link" aria-label="Direct link to 安全目标" title="Direct link to 安全目标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>目标</th><th>描述</th><th>实现方式</th></tr></thead><tbody><tr><td>机密性</td><td>数据不被窃听</td><td>对称加密</td></tr><tr><td>完整性</td><td>数据不被篡改</td><td>MAC/HMAC</td></tr><tr><td>身份验证</td><td>确认对方身份</td><td>数字证书</td></tr><tr><td>前向安全</td><td>密钥泄露不影响历史数据</td><td>临时密钥交换</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="加密类型">加密类型<a href="#加密类型" class="hash-link" aria-label="Direct link to 加密类型" title="Direct link to 加密类型" translate="no">​</a></h3>
 <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>算法</th><th>特点</th><th>用途</th></tr></thead><tbody><tr><td>对称加密</td><td>AES-256-GCM</td><td>快速</td><td>数据加密</td></tr><tr><td>非对称</td><td>RSA-2048</td><td>安全但慢</td><td>密钥交换、签名</td></tr><tr><td>非对称</td><td>ECDHE</td><td>更快、前向安全</td><td>密钥交换</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="tls-握手流程">TLS 握手流程<a href="#tls-握手流程" class="hash-link" aria-label="Direct link to TLS 握手流程" title="Direct link to TLS 握手流程" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="tls-12-握手">TLS 1.2 握手<a href="#tls-12-握手" class="hash-link" aria-label="Direct link to TLS 1.2 握手" title="Direct link to TLS 1.2 握手" translate="no">​</a></h3>
@@ -29,6 +135,36 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="tls-13-握手-更快">TLS 1.3 握手 (更快)<a href="#tls-13-握手-更快" class="hash-link" aria-label="Direct link to TLS 1.3 握手 (更快)" title="Direct link to TLS 1.3 握手 (更快)" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="tls-13-改进">TLS 1.3 改进<a href="#tls-13-改进" class="hash-link" aria-label="Direct link to TLS 1.3 改进" title="Direct link to TLS 1.3 改进" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>改进</th><th>TLS 1.2</th><th>TLS 1.3</th></tr></thead><tbody><tr><td>握手时间</td><td>2-RTT</td><td>1-RTT</td></tr><tr><td>0-RTT 恢复</td><td>不支持</td><td>支持</td></tr><tr><td>加密套件</td><td>200+ 种</td><td>5 种</td></tr><tr><td>前向安全</td><td>可选</td><td>强制</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="数字证书">数字证书<a href="#数字证书" class="hash-link" aria-label="Direct link to 数字证书" title="Direct link to 数字证书" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="证书结构">证书结构<a href="#证书结构" class="hash-link" aria-label="Direct link to 证书结构" title="Direct link to 证书结构" translate="no">​</a></h3>
@@ -36,6 +172,35 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="证书链">证书链<a href="#证书链" class="hash-link" aria-label="Direct link to 证书链" title="Direct link to 证书链" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="证书类型">证书类型<a href="#证书类型" class="hash-link" aria-label="Direct link to 证书类型" title="Direct link to 证书类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>缩写</th><th>验证内容</th><th>信任度</th></tr></thead><tbody><tr><td>DV</td><td>Domain Validation</td><td>域名所有权</td><td>低</td></tr><tr><td>OV</td><td>Organization Validation</td><td>域名 + 组织</td><td>中</td></tr><tr><td>EV</td><td>Extended Validation</td><td>完整企业验证</td><td>高</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="加密套件">加密套件<a href="#加密套件" class="hash-link" aria-label="Direct link to 加密套件" title="Direct link to 加密套件" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="命名规则">命名规则<a href="#命名规则" class="hash-link" aria-label="Direct link to 命名规则" title="Direct link to 命名规则" translate="no">​</a></h3>
@@ -54,6 +219,35 @@
 <div class="language-nginx codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-nginx codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    listen 443 ssl http2;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    server_name example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 证书配置</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_certificate /etc/ssl/certs/example.com.crt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_certificate_key /etc/ssl/private/example.com.key;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 协议版本</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_protocols TLSv1.2 TLSv1.3;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # 加密套件</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_ciphers &#x27;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256&#x27;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_prefer_server_ciphers on;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # HSTS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    add_header Strict-Transport-Security &quot;max-age=31536000&quot; always;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    # OCSP Stapling</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_stapling on;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ssl_stapling_verify on;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># HTTP 重定向到 HTTPS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    listen 80;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    server_name example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    return 301 https://$server_name$request_uri;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="安全最佳实践">安全最佳实践<a href="#安全最佳实践" class="hash-link" aria-label="Direct link to 安全最佳实践" title="Direct link to 安全最佳实践" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="配置检查">配置检查<a href="#配置检查" class="hash-link" aria-label="Direct link to 配置检查" title="Direct link to 配置检查" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>检查项</th><th>建议</th></tr></thead><tbody><tr><td>协议版本</td><td>仅启用 TLS 1.2+</td></tr><tr><td>加密套件</td><td>禁用弱加密（RC4, 3DES）</td></tr><tr><td>密钥长度</td><td>RSA ≥ 2048, ECDSA ≥ 256</td></tr><tr><td>证书链</td><td>完整且有效</td></tr><tr><td>HSTS</td><td>启用</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="测试工具">测试工具<a href="#测试工具" class="hash-link" aria-label="Direct link to 测试工具" title="Direct link to 测试工具" translate="no">​</a></h3>
 <ul>
@@ -79,6 +273,6 @@
 <ul>
 <li class="">了解 <a class="" href="/docs/networking/security">网络安全</a> 攻防知识</li>
 <li class="">学习 <a class="" href="/docs/networking/http">HTTP 协议</a> HTTPS 部分</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/tls-ssl.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/dns"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">DNS 域名解析</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/socket-programming"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Socket 编程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#版本演进" class="table-of-contents__link toc-highlight">版本演进</a></li><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a><ul><li><a href="#安全目标" class="table-of-contents__link toc-highlight">安全目标</a></li><li><a href="#加密类型" class="table-of-contents__link toc-highlight">加密类型</a></li></ul></li><li><a href="#tls-握手流程" class="table-of-contents__link toc-highlight">TLS 握手流程</a><ul><li><a href="#tls-12-握手" class="table-of-contents__link toc-highlight">TLS 1.2 握手</a></li><li><a href="#tls-13-握手-更快" class="table-of-contents__link toc-highlight">TLS 1.3 握手 (更快)</a></li><li><a href="#tls-13-改进" class="table-of-contents__link toc-highlight">TLS 1.3 改进</a></li></ul></li><li><a href="#数字证书" class="table-of-contents__link toc-highlight">数字证书</a><ul><li><a href="#证书结构" class="table-of-contents__link toc-highlight">证书结构</a></li><li><a href="#证书链" class="table-of-contents__link toc-highlight">证书链</a></li><li><a href="#证书类型" class="table-of-contents__link toc-highlight">证书类型</a></li></ul></li><li><a href="#加密套件" class="table-of-contents__link toc-highlight">加密套件</a><ul><li><a href="#命名规则" class="table-of-contents__link toc-highlight">命名规则</a></li><li><a href="#推荐配置" class="table-of-contents__link toc-highlight">推荐配置</a></li></ul></li><li><a href="#证书操作" class="table-of-contents__link toc-highlight">证书操作</a><ul><li><a href="#查看证书" class="table-of-contents__link toc-highlight">查看证书</a></li><li><a href="#生成自签名证书" class="table-of-contents__link toc-highlight">生成自签名证书</a></li><li><a href="#lets-encrypt-免费证书" class="table-of-contents__link toc-highlight">Let&#39;s Encrypt 免费证书</a></li></ul></li><li><a href="#https-配置" class="table-of-contents__link toc-highlight">HTTPS 配置</a><ul><li><a href="#nginx-完整配置" class="table-of-contents__link toc-highlight">Nginx 完整配置</a></li></ul></li><li><a href="#安全最佳实践" class="table-of-contents__link toc-highlight">安全最佳实践</a><ul><li><a href="#配置检查" class="table-of-contents__link toc-highlight">配置检查</a></li><li><a href="#测试工具" class="table-of-contents__link toc-highlight">测试工具</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-https-比-http-慢吗" class="table-of-contents__link toc-highlight">Q: HTTPS 比 HTTP 慢吗？</a></li><li><a href="#q-证书过期怎么办" class="table-of-contents__link toc-highlight">Q: 证书过期怎么办？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/tls-ssl.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/dns"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">DNS 域名解析</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/socket-programming"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Socket 编程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#版本演进" class="table-of-contents__link toc-highlight">版本演进</a></li><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a><ul><li><a href="#安全目标" class="table-of-contents__link toc-highlight">安全目标</a></li><li><a href="#加密类型" class="table-of-contents__link toc-highlight">加密类型</a></li></ul></li><li><a href="#tls-握手流程" class="table-of-contents__link toc-highlight">TLS 握手流程</a><ul><li><a href="#tls-12-握手" class="table-of-contents__link toc-highlight">TLS 1.2 握手</a></li><li><a href="#tls-13-握手-更快" class="table-of-contents__link toc-highlight">TLS 1.3 握手 (更快)</a></li><li><a href="#tls-13-改进" class="table-of-contents__link toc-highlight">TLS 1.3 改进</a></li></ul></li><li><a href="#数字证书" class="table-of-contents__link toc-highlight">数字证书</a><ul><li><a href="#证书结构" class="table-of-contents__link toc-highlight">证书结构</a></li><li><a href="#证书链" class="table-of-contents__link toc-highlight">证书链</a></li><li><a href="#证书类型" class="table-of-contents__link toc-highlight">证书类型</a></li></ul></li><li><a href="#加密套件" class="table-of-contents__link toc-highlight">加密套件</a><ul><li><a href="#命名规则" class="table-of-contents__link toc-highlight">命名规则</a></li><li><a href="#推荐配置" class="table-of-contents__link toc-highlight">推荐配置</a></li></ul></li><li><a href="#证书操作" class="table-of-contents__link toc-highlight">证书操作</a><ul><li><a href="#查看证书" class="table-of-contents__link toc-highlight">查看证书</a></li><li><a href="#生成自签名证书" class="table-of-contents__link toc-highlight">生成自签名证书</a></li><li><a href="#lets-encrypt-免费证书" class="table-of-contents__link toc-highlight">Let&#39;s Encrypt 免费证书</a></li></ul></li><li><a href="#https-配置" class="table-of-contents__link toc-highlight">HTTPS 配置</a><ul><li><a href="#nginx-完整配置" class="table-of-contents__link toc-highlight">Nginx 完整配置</a></li></ul></li><li><a href="#安全最佳实践" class="table-of-contents__link toc-highlight">安全最佳实践</a><ul><li><a href="#配置检查" class="table-of-contents__link toc-highlight">配置检查</a></li><li><a href="#测试工具" class="table-of-contents__link toc-highlight">测试工具</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-https-比-http-慢吗" class="table-of-contents__link toc-highlight">Q: HTTPS 比 HTTP 慢吗？</a></li><li><a href="#q-证书过期怎么办" class="table-of-contents__link toc-highlight">Q: 证书过期怎么办？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

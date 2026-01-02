@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">PostgreSQL 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/postgres-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PostgreSQL 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="精选 PostgreSQL 常见面试题及答案。"><meta data-rh="true" property="og:description" content="精选 PostgreSQL 常见面试题及答案。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/postgres-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/postgres-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/postgres-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PostgreSQL 面试题","item":"https://to-lib.github.io/docs/interview/postgres-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -17,6 +24,46 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-基础题">📚 基础题<a href="#-基础题" class="hash-link" aria-label="Direct link to 📚 基础题" title="Direct link to 📚 基础题" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-postgresql-与-mysql-的主要区别">1. PostgreSQL 与 MySQL 的主要区别？<a href="#1-postgresql-与-mysql-的主要区别" class="hash-link" aria-label="Direct link to 1. PostgreSQL 与 MySQL 的主要区别？" title="Direct link to 1. PostgreSQL 与 MySQL 的主要区别？" translate="no">​</a></h3>
 <p><strong>答案：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>PostgreSQL</th><th>MySQL</th></tr></thead><tbody><tr><td><strong>ACID 支持</strong></td><td>完全支持</td><td>部分支持（取决于存储引擎）</td></tr><tr><td><strong>并发控制</strong></td><td>MVCC</td><td>锁机制</td></tr><tr><td><strong>复杂查询</strong></td><td>优秀（窗口函数、CTE、递归查询）</td><td>良好</td></tr><tr><td><strong>数据类型</strong></td><td>非常丰富（JSON、数组、范围类型）</td><td>基本</td></tr><tr><td><strong>全文搜索</strong></td><td>内置强大的全文搜索</td><td>基础支持</td></tr><tr><td><strong>扩展性</strong></td><td>强大（可自定义类型、函数）</td><td>一般</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="2-什么是-mvcc">2. 什么是 MVCC？<a href="#2-什么是-mvcc" class="hash-link" aria-label="Direct link to 2. 什么是 MVCC？" title="Direct link to 2. 什么是 MVCC？" translate="no">​</a></h3>
 <p><strong>答案：</strong></p>
@@ -45,6 +92,41 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-中级题">🎯 中级题<a href="#-中级题" class="hash-link" aria-label="Direct link to 🎯 中级题" title="Direct link to 🎯 中级题" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="4-postgresql-有哪些索引类型各适用于什么场景">4. PostgreSQL 有哪些索引类型？各适用于什么场景？<a href="#4-postgresql-有哪些索引类型各适用于什么场景" class="hash-link" aria-label="Direct link to 4. PostgreSQL 有哪些索引类型？各适用于什么场景？" title="Direct link to 4. PostgreSQL 有哪些索引类型？各适用于什么场景？" translate="no">​</a></h3>
 <p><strong>答案：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>索引类型</th><th>适用场景</th><th>示例</th></tr></thead><tbody><tr><td><strong>B-Tree</strong></td><td>大多数场景，支持排序和范围查询</td><td><code>CREATE INDEX idx ON users(name)</code></td></tr><tr><td><strong>Hash</strong></td><td>等值查询</td><td><code>CREATE INDEX idx ON users USING HASH(email)</code></td></tr><tr><td><strong>GIN</strong></td><td>数组、JSON、全文搜索</td><td><code>CREATE INDEX idx ON users USING GIN(tags)</code></td></tr><tr><td><strong>GiST</strong></td><td>几何数据、全文搜索</td><td><code>CREATE INDEX idx ON locations USING GIST(coords)</code></td></tr><tr><td><strong>BRIN</strong></td><td>大表中有自然顺序的列</td><td><code>CREATE INDEX idx ON logs USING BRIN(created_at)</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-什么是索引失效如何避免">5. 什么是索引失效？如何避免？<a href="#5-什么是索引失效如何避免" class="hash-link" aria-label="Direct link to 5. 什么是索引失效？如何避免？" title="Direct link to 5. 什么是索引失效？如何避免？" translate="no">​</a></h3>
 <p><strong>答案：</strong></p>
@@ -63,6 +145,41 @@
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 索引：(last_name, first_name)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- ❌ 不能使用索引</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> first_name </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;John&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- ✅ 可以使用索引</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> last_name </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;Smith&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="6-postgresql-的隔离级别有哪些">6. PostgreSQL 的隔离级别有哪些？<a href="#6-postgresql-的隔离级别有哪些" class="hash-link" aria-label="Direct link to 6. PostgreSQL 的隔离级别有哪些？" title="Direct link to 6. PostgreSQL 的隔离级别有哪些？" translate="no">​</a></h3>
 <p><strong>答案：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>隔离级别</th><th>脏读</th><th>不可重复读</th><th>幻读</th></tr></thead><tbody><tr><td><strong>Read Uncommitted</strong></td><td>可能</td><td>可能</td><td>可能</td></tr><tr><td><strong>Read Committed</strong>（默认）</td><td>-</td><td>可能</td><td>可能</td></tr><tr><td><strong>Repeatable Read</strong></td><td>-</td><td>-</td><td>-</td></tr><tr><td><strong>Serializable</strong></td><td>-</td><td>-</td><td>-</td></tr></tbody></table>
 <p><strong>注意：</strong> PostgreSQL 的 Read Uncommitted 实际上等同于 Read Committed。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="7-vacuum-的作用是什么">7. VACUUM 的作用是什么？<a href="#7-vacuum-的作用是什么" class="hash-link" aria-label="Direct link to 7. VACUUM 的作用是什么？" title="Direct link to 7. VACUUM 的作用是什么？" translate="no">​</a></h3>
@@ -220,6 +337,6 @@
 <li class=""><a class="" href="/docs/postgres/basic-concepts">基础概念</a></li>
 <li class=""><a class="" href="/docs/postgres/performance-optimization">性能优化</a></li>
 <li class=""><a class="" href="/docs/postgres/transactions">事务管理</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/postgres-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/redis-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Redis 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/kafka-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Kafka 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-基础题" class="table-of-contents__link toc-highlight">📚 基础题</a><ul><li><a href="#1-postgresql-与-mysql-的主要区别" class="table-of-contents__link toc-highlight">1. PostgreSQL 与 MySQL 的主要区别？</a></li><li><a href="#2-什么是-mvcc" class="table-of-contents__link toc-highlight">2. 什么是 MVCC？</a></li><li><a href="#3-解释-postgresql-的-acid-特性" class="table-of-contents__link toc-highlight">3. 解释 PostgreSQL 的 ACID 特性</a></li></ul></li><li><a href="#-中级题" class="table-of-contents__link toc-highlight">🎯 中级题</a><ul><li><a href="#4-postgresql-有哪些索引类型各适用于什么场景" class="table-of-contents__link toc-highlight">4. PostgreSQL 有哪些索引类型？各适用于什么场景？</a></li><li><a href="#5-什么是索引失效如何避免" class="table-of-contents__link toc-highlight">5. 什么是索引失效？如何避免？</a></li><li><a href="#6-postgresql-的隔离级别有哪些" class="table-of-contents__link toc-highlight">6. PostgreSQL 的隔离级别有哪些？</a></li><li><a href="#7-vacuum-的作用是什么" class="table-of-contents__link toc-highlight">7. VACUUM 的作用是什么？</a></li></ul></li><li><a href="#-高级题" class="table-of-contents__link toc-highlight">🚀 高级题</a><ul><li><a href="#8-如何优化一个慢查询请给出步骤" class="table-of-contents__link toc-highlight">8. 如何优化一个慢查询？请给出步骤。</a></li><li><a href="#9-什么是死锁如何避免" class="table-of-contents__link toc-highlight">9. 什么是死锁？如何避免？</a></li><li><a href="#10-如何实现主从复制" class="table-of-contents__link toc-highlight">10. 如何实现主从复制？</a></li><li><a href="#11-分区表的优缺点" class="table-of-contents__link toc-highlight">11. 分区表的优缺点？</a></li><li><a href="#12-如何实现数据库的高可用" class="table-of-contents__link toc-highlight">12. 如何实现数据库的高可用？</a></li></ul></li><li><a href="#-实战题" class="table-of-contents__link toc-highlight">💡 实战题</a><ul><li><a href="#13-设计一个转账系统的数据库表结构" class="table-of-contents__link toc-highlight">13. 设计一个转账系统的数据库表结构</a></li><li><a href="#14-如何处理大量数据的分页查询" class="table-of-contents__link toc-highlight">14. 如何处理大量数据的分页查询？</a></li></ul></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">📚 相关资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/postgres-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/redis-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Redis 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/kafka-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Kafka 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-基础题" class="table-of-contents__link toc-highlight">📚 基础题</a><ul><li><a href="#1-postgresql-与-mysql-的主要区别" class="table-of-contents__link toc-highlight">1. PostgreSQL 与 MySQL 的主要区别？</a></li><li><a href="#2-什么是-mvcc" class="table-of-contents__link toc-highlight">2. 什么是 MVCC？</a></li><li><a href="#3-解释-postgresql-的-acid-特性" class="table-of-contents__link toc-highlight">3. 解释 PostgreSQL 的 ACID 特性</a></li></ul></li><li><a href="#-中级题" class="table-of-contents__link toc-highlight">🎯 中级题</a><ul><li><a href="#4-postgresql-有哪些索引类型各适用于什么场景" class="table-of-contents__link toc-highlight">4. PostgreSQL 有哪些索引类型？各适用于什么场景？</a></li><li><a href="#5-什么是索引失效如何避免" class="table-of-contents__link toc-highlight">5. 什么是索引失效？如何避免？</a></li><li><a href="#6-postgresql-的隔离级别有哪些" class="table-of-contents__link toc-highlight">6. PostgreSQL 的隔离级别有哪些？</a></li><li><a href="#7-vacuum-的作用是什么" class="table-of-contents__link toc-highlight">7. VACUUM 的作用是什么？</a></li></ul></li><li><a href="#-高级题" class="table-of-contents__link toc-highlight">🚀 高级题</a><ul><li><a href="#8-如何优化一个慢查询请给出步骤" class="table-of-contents__link toc-highlight">8. 如何优化一个慢查询？请给出步骤。</a></li><li><a href="#9-什么是死锁如何避免" class="table-of-contents__link toc-highlight">9. 什么是死锁？如何避免？</a></li><li><a href="#10-如何实现主从复制" class="table-of-contents__link toc-highlight">10. 如何实现主从复制？</a></li><li><a href="#11-分区表的优缺点" class="table-of-contents__link toc-highlight">11. 分区表的优缺点？</a></li><li><a href="#12-如何实现数据库的高可用" class="table-of-contents__link toc-highlight">12. 如何实现数据库的高可用？</a></li></ul></li><li><a href="#-实战题" class="table-of-contents__link toc-highlight">💡 实战题</a><ul><li><a href="#13-设计一个转账系统的数据库表结构" class="table-of-contents__link toc-highlight">13. 设计一个转账系统的数据库表结构</a></li><li><a href="#14-如何处理大量数据的分页查询" class="table-of-contents__link toc-highlight">14. 如何处理大量数据的分页查询？</a></li></ul></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">📚 相关资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

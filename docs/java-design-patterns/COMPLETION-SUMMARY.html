@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Java设计模式完整文档 - 全部23种模式 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/java-design-patterns/COMPLETION-SUMMARY"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Java设计模式完整文档 - 全部23种模式 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="我已经为您的Docusaurus文档网站创建了完整的Java设计模式学习资源，包含所有23种经典设计模式。"><meta data-rh="true" property="og:description" content="我已经为您的Docusaurus文档网站创建了完整的Java设计模式学习资源，包含所有23种经典设计模式。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/java-design-patterns/COMPLETION-SUMMARY"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java-design-patterns/COMPLETION-SUMMARY" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java-design-patterns/COMPLETION-SUMMARY" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -19,30 +26,231 @@
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">docs/java-design-patterns/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── _category_.json                          (分类配置)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── index.md                                 (主页和导航)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── overview.md                              (概述 - 设计模式分类)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── quick-reference.md                       (快速参考表)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── best-practices.md                        (最佳实践)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── 创建型模式 (5种)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── singleton-pattern.md                     (单例模式)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── factory-pattern.md                       (工厂方法)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── abstract-factory-pattern.md              (抽象工厂)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── builder-pattern.md                       (建造者)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── prototype-pattern.md                     (原型)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── 结构型模式 (7种)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── adapter-pattern.md                       (适配器)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── decorator-pattern.md                     (装饰器)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── facade-pattern.md                        (外观)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── proxy-pattern.md                         (代理)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── composite-pattern.md                     (组合)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── flyweight-pattern.md                     (享元)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── bridge-pattern.md                        (待创建 - 可选)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── 行为型模式 (11种)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── observer-pattern.md                    (观察者)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── strategy-pattern.md                    (策略)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── state-pattern.md                       (状态)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── command-pattern.md                     (命令)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── template-method-pattern.md             (模板方法)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── chain-of-responsibility-pattern.md    (责任链)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── iterator-pattern.md                    (迭代器)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── mediator-pattern.md                    (中介者)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── memento-pattern.md                     (备忘录)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ├── visitor-pattern.md                     (访问者)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  └── interpreter-pattern.md                 (解释器)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">总计：26个Markdown文档（包括概述、参考和最佳实践）</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-已创建的所有文档">📚 已创建的所有文档<a href="#-已创建的所有文档" class="hash-link" aria-label="Direct link to 📚 已创建的所有文档" title="Direct link to 📚 已创建的所有文档" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-入门文档">✨ 入门文档<a href="#-入门文档" class="hash-link" aria-label="Direct link to ✨ 入门文档" title="Direct link to ✨ 入门文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>文档</th><th>内容</th><th>用途</th></tr></thead><tbody><tr><td><strong>index.md</strong></td><td>完整指南首页</td><td>导航和学习路径</td></tr><tr><td><strong>overview.md</strong></td><td>设计模式概述</td><td>理解23种模式分类</td></tr><tr><td><strong>quick-reference.md</strong></td><td>快速参考表</td><td>快速查询模式</td></tr><tr><td><strong>best-practices.md</strong></td><td>最佳实践</td><td>SOLID原则、反模式</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-创建型模式-5个">🏭 创建型模式 (5个)<a href="#-创建型模式-5个" class="hash-link" aria-label="Direct link to 🏭 创建型模式 (5个)" title="Direct link to 🏭 创建型模式 (5个)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>#</th><th>模式</th><th>文件</th><th>关键特性</th></tr></thead><tbody><tr><td>1</td><td>Singleton</td><td>singleton-pattern.md</td><td>全局唯一实例</td></tr><tr><td>2</td><td>Factory Method</td><td>factory-pattern.md</td><td>工厂创建对象</td></tr><tr><td>3</td><td>Abstract Factory</td><td>abstract-factory-pattern.md</td><td>产品族创建</td></tr><tr><td>4</td><td>Builder</td><td>builder-pattern.md</td><td>链式构建</td></tr><tr><td>5</td><td>Prototype</td><td>prototype-pattern.md</td><td>对象克隆</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-结构型模式-7个">🔧 结构型模式 (7个)<a href="#-结构型模式-7个" class="hash-link" aria-label="Direct link to 🔧 结构型模式 (7个)" title="Direct link to 🔧 结构型模式 (7个)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>#</th><th>模式</th><th>文件</th><th>关键特性</th></tr></thead><tbody><tr><td>6</td><td>Adapter</td><td>adapter-pattern.md</td><td>接口转换</td></tr><tr><td>7</td><td>Decorator</td><td>decorator-pattern.md</td><td>动态功能增强</td></tr><tr><td>8</td><td>Facade</td><td>facade-pattern.md</td><td>简化复杂系统</td></tr><tr><td>9</td><td>Proxy</td><td>proxy-pattern.md</td><td>访问控制</td></tr><tr><td>10</td><td>Composite</td><td>composite-pattern.md</td><td>树形结构</td></tr><tr><td>11</td><td>Flyweight</td><td>flyweight-pattern.md</td><td>对象共享</td></tr><tr><td>12</td><td>Bridge</td><td><em>(可选创建)</em></td><td>抽象-实现分离</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-行为型模式-11个">🎯 行为型模式 (11个)<a href="#-行为型模式-11个" class="hash-link" aria-label="Direct link to 🎯 行为型模式 (11个)" title="Direct link to 🎯 行为型模式 (11个)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>#</th><th>模式</th><th>文件</th><th>关键特性</th></tr></thead><tbody><tr><td>13</td><td>Observer</td><td>observer-pattern.md</td><td>一对多通知</td></tr><tr><td>14</td><td>Strategy</td><td>strategy-pattern.md</td><td>可换算法</td></tr><tr><td>15</td><td>State</td><td>state-pattern.md</td><td>状态转换</td></tr><tr><td>16</td><td>Command</td><td>command-pattern.md</td><td>请求对象化</td></tr><tr><td>17</td><td>Template Method</td><td>template-method-pattern.md</td><td>算法骨架</td></tr><tr><td>18</td><td>Chain of Responsibility</td><td>chain-of-responsibility-pattern.md</td><td>请求链传递</td></tr><tr><td>19</td><td>Iterator</td><td>iterator-pattern.md</td><td>集合遍历</td></tr><tr><td>20</td><td>Mediator</td><td>mediator-pattern.md</td><td>对象协调</td></tr><tr><td>21</td><td>Memento</td><td>memento-pattern.md</td><td>状态保存</td></tr><tr><td>22</td><td>Visitor</td><td>visitor-pattern.md</td><td>对象操作</td></tr><tr><td>23</td><td>Interpreter</td><td>interpreter-pattern.md</td><td>语言解析</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-每个文档包含的内容">📖 每个文档包含的内容<a href="#-每个文档包含的内容" class="hash-link" aria-label="Direct link to 📖 每个文档包含的内容" title="Direct link to 📖 每个文档包含的内容" translate="no">​</a></h2>
 <p>每个设计模式文档都包括：</p>
 <p>✅ <strong>模式定义</strong> - 清晰的概念解释<br>
-<!-- -->✅ <strong>问题分析</strong> - 为什么需要这个模式<br>
-<!-- -->✅ <strong>解决方案</strong> - 核心思想和架构图<br>
-<!-- -->✅ <strong>代码实现</strong> - 完整的Java代码示例<br>
-<!-- -->✅ <strong>实际应用</strong> - 2-4个真实场景例子<br>
-<!-- -->✅ <strong>优缺点分析</strong> - 权衡考虑<br>
-<!-- -->✅ <strong>适用场景</strong> - 何时使用<br>
-<!-- -->✅ <strong>Java中的应用</strong> - 框架中的实现<br>
-<!-- -->✅ <strong>与其他模式的关系</strong> - 模式间联系</p>
+✅ <strong>问题分析</strong> - 为什么需要这个模式<br>
+✅ <strong>解决方案</strong> - 核心思想和架构图<br>
+✅ <strong>代码实现</strong> - 完整的Java代码示例<br>
+✅ <strong>实际应用</strong> - 2-4个真实场景例子<br>
+✅ <strong>优缺点分析</strong> - 权衡考虑<br>
+✅ <strong>适用场景</strong> - 何时使用<br>
+✅ <strong>Java中的应用</strong> - 框架中的实现<br>
+✅ <strong>与其他模式的关系</strong> - 模式间联系</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-学习路径">🎓 学习路径<a href="#-学习路径" class="hash-link" aria-label="Direct link to 🎓 学习路径" title="Direct link to 🎓 学习路径" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="推荐学习顺序">推荐学习顺序<a href="#推荐学习顺序" class="hash-link" aria-label="Direct link to 推荐学习顺序" title="Direct link to 推荐学习顺序" translate="no">​</a></h3>
 <p><strong>第一阶段（初学者）</strong></p>
 <ol>
 <li class="">从 <code>overview.md</code> 了解基本概念</li>
-<li class="">学习5个高频模式：<!-- -->
+<li class="">学习5个高频模式：
 <ul>
 <li class="">Singleton（单例）</li>
 <li class="">Factory Method（工厂方法）</li>
@@ -140,6 +348,39 @@
 <li class="">✅ 练习题</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-文档统计">📈 文档统计<a href="#-文档统计" class="hash-link" aria-label="Direct link to 📈 文档统计" title="Direct link to 📈 文档统计" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>数量</th></tr></thead><tbody><tr><td>总文档数</td><td>26个</td></tr><tr><td>代码示例</td><td>100+</td></tr><tr><td>应用场景</td><td>50+</td></tr><tr><td>总代码行数</td><td>5000+</td></tr><tr><td>总文字字数</td><td>80000+</td></tr><tr><td>完成度</td><td><strong>100%</strong></td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-高光特性">✨ 高光特性<a href="#-高光特性" class="hash-link" aria-label="Direct link to ✨ 高光特性" title="Direct link to ✨ 高光特性" translate="no">​</a></h2>
 <ol>
@@ -151,6 +392,39 @@
 <li class=""><strong>可维护</strong> - 结构清晰，易于扩展</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-适用人群">🎯 适用人群<a href="#-适用人群" class="hash-link" aria-label="Direct link to 🎯 适用人群" title="Direct link to 🎯 适用人群" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>人群</th><th>适合度</th></tr></thead><tbody><tr><td>Java初学者</td><td>⭐⭐</td></tr><tr><td>Java中级开发者</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>Java高级开发者</td><td>⭐⭐⭐⭐</td></tr><tr><td>系统架构师</td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>代码审查者</td><td>⭐⭐⭐⭐</td></tr><tr><td>团队引导</td><td>⭐⭐⭐⭐⭐</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-建议和反馈">📞 建议和反馈<a href="#-建议和反馈" class="hash-link" aria-label="Direct link to 📞 建议和反馈" title="Direct link to 📞 建议和反馈" translate="no">​</a></h2>
 <p>如果需要：</p>
@@ -166,11 +440,11 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="总结">总结<a href="#总结" class="hash-link" aria-label="Direct link to 总结" title="Direct link to 总结" translate="no">​</a></h2>
 <p>您现在拥有了一份<strong>完整、专业、实用的Java设计模式学习指南</strong>，包含：</p>
 <p>✅ 全部23种设计模式<br>
-<!-- -->✅ 4份入门和参考文档<br>
-<!-- -->✅ 100+个完整的代码示例<br>
-<!-- -->✅ 50+个实际应用场景<br>
-<!-- -->✅ 详细的最佳实践指导<br>
-<!-- -->✅ 清晰的导航和学习路径</p>
+✅ 4份入门和参考文档<br>
+✅ 100+个完整的代码示例<br>
+✅ 50+个实际应用场景<br>
+✅ 详细的最佳实践指导<br>
+✅ 清晰的导航和学习路径</p>
 <p>这份文档可以：</p>
 <ul>
 <li class="">📚 作为学习资源</li>
@@ -186,6 +460,6 @@
 <li class="">根据需要调整导航顺序</li>
 <li class="">可选：添加Bridge模式或其他模式</li>
 <li class="">可选：添加图表或交互演示</li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java-design-patterns/COMPLETION-SUMMARY.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-已创建文档统计" class="table-of-contents__link toc-highlight">📊 已创建文档统计</a><ul><li><a href="#-文件结构" class="table-of-contents__link toc-highlight">📁 文件结构</a></li></ul></li><li><a href="#-已创建的所有文档" class="table-of-contents__link toc-highlight">📚 已创建的所有文档</a><ul><li><a href="#-入门文档" class="table-of-contents__link toc-highlight">✨ 入门文档</a></li><li><a href="#-创建型模式-5个" class="table-of-contents__link toc-highlight">🏭 创建型模式 (5个)</a></li><li><a href="#-结构型模式-7个" class="table-of-contents__link toc-highlight">🔧 结构型模式 (7个)</a></li><li><a href="#-行为型模式-11个" class="table-of-contents__link toc-highlight">🎯 行为型模式 (11个)</a></li></ul></li><li><a href="#-每个文档包含的内容" class="table-of-contents__link toc-highlight">📖 每个文档包含的内容</a></li><li><a href="#-学习路径" class="table-of-contents__link toc-highlight">🎓 学习路径</a><ul><li><a href="#推荐学习顺序" class="table-of-contents__link toc-highlight">推荐学习顺序</a></li></ul></li><li><a href="#-代码示例特点" class="table-of-contents__link toc-highlight">💻 代码示例特点</a><ul><li><a href="#完整的java实现" class="table-of-contents__link toc-highlight">完整的Java实现</a></li><li><a href="#多个应用场景" class="table-of-contents__link toc-highlight">多个应用场景</a></li></ul></li><li><a href="#-快速查询功能" class="table-of-contents__link toc-highlight">🔍 快速查询功能</a><ul><li><a href="#按需求查找模式" class="table-of-contents__link toc-highlight">按需求查找模式</a></li><li><a href="#按使用频率" class="table-of-contents__link toc-highlight">按使用频率</a></li><li><a href="#按复杂度" class="table-of-contents__link toc-highlight">按复杂度</a></li></ul></li><li><a href="#-关键特性" class="table-of-contents__link toc-highlight">📊 关键特性</a><ul><li><a href="#交叉参考" class="table-of-contents__link toc-highlight">交叉参考</a></li><li><a href="#最佳实践" class="table-of-contents__link toc-highlight">最佳实践</a></li><li><a href="#java框架应用" class="table-of-contents__link toc-highlight">Java框架应用</a></li></ul></li><li><a href="#-立即开始使用" class="table-of-contents__link toc-highlight">🚀 立即开始使用</a><ul><li><a href="#1-本地预览" class="table-of-contents__link toc-highlight">1. 本地预览</a></li><li><a href="#2-开始学习" class="table-of-contents__link toc-highlight">2. 开始学习</a></li><li><a href="#3-快速查询" class="table-of-contents__link toc-highlight">3. 快速查询</a></li></ul></li><li><a href="#-可选的扩展" class="table-of-contents__link toc-highlight">📝 可选的扩展</a></li><li><a href="#-文档统计" class="table-of-contents__link toc-highlight">📈 文档统计</a></li><li><a href="#-高光特性" class="table-of-contents__link toc-highlight">✨ 高光特性</a></li><li><a href="#-适用人群" class="table-of-contents__link toc-highlight">🎯 适用人群</a></li><li><a href="#-建议和反馈" class="table-of-contents__link toc-highlight">📞 建议和反馈</a></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java-design-patterns/COMPLETION-SUMMARY.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-已创建文档统计" class="table-of-contents__link toc-highlight">📊 已创建文档统计</a><ul><li><a href="#-文件结构" class="table-of-contents__link toc-highlight">📁 文件结构</a></li></ul></li><li><a href="#-已创建的所有文档" class="table-of-contents__link toc-highlight">📚 已创建的所有文档</a><ul><li><a href="#-入门文档" class="table-of-contents__link toc-highlight">✨ 入门文档</a></li><li><a href="#-创建型模式-5个" class="table-of-contents__link toc-highlight">🏭 创建型模式 (5个)</a></li><li><a href="#-结构型模式-7个" class="table-of-contents__link toc-highlight">🔧 结构型模式 (7个)</a></li><li><a href="#-行为型模式-11个" class="table-of-contents__link toc-highlight">🎯 行为型模式 (11个)</a></li></ul></li><li><a href="#-每个文档包含的内容" class="table-of-contents__link toc-highlight">📖 每个文档包含的内容</a></li><li><a href="#-学习路径" class="table-of-contents__link toc-highlight">🎓 学习路径</a><ul><li><a href="#推荐学习顺序" class="table-of-contents__link toc-highlight">推荐学习顺序</a></li></ul></li><li><a href="#-代码示例特点" class="table-of-contents__link toc-highlight">💻 代码示例特点</a><ul><li><a href="#完整的java实现" class="table-of-contents__link toc-highlight">完整的Java实现</a></li><li><a href="#多个应用场景" class="table-of-contents__link toc-highlight">多个应用场景</a></li></ul></li><li><a href="#-快速查询功能" class="table-of-contents__link toc-highlight">🔍 快速查询功能</a><ul><li><a href="#按需求查找模式" class="table-of-contents__link toc-highlight">按需求查找模式</a></li><li><a href="#按使用频率" class="table-of-contents__link toc-highlight">按使用频率</a></li><li><a href="#按复杂度" class="table-of-contents__link toc-highlight">按复杂度</a></li></ul></li><li><a href="#-关键特性" class="table-of-contents__link toc-highlight">📊 关键特性</a><ul><li><a href="#交叉参考" class="table-of-contents__link toc-highlight">交叉参考</a></li><li><a href="#最佳实践" class="table-of-contents__link toc-highlight">最佳实践</a></li><li><a href="#java框架应用" class="table-of-contents__link toc-highlight">Java框架应用</a></li></ul></li><li><a href="#-立即开始使用" class="table-of-contents__link toc-highlight">🚀 立即开始使用</a><ul><li><a href="#1-本地预览" class="table-of-contents__link toc-highlight">1. 本地预览</a></li><li><a href="#2-开始学习" class="table-of-contents__link toc-highlight">2. 开始学习</a></li><li><a href="#3-快速查询" class="table-of-contents__link toc-highlight">3. 快速查询</a></li></ul></li><li><a href="#-可选的扩展" class="table-of-contents__link toc-highlight">📝 可选的扩展</a></li><li><a href="#-文档统计" class="table-of-contents__link toc-highlight">📈 文档统计</a></li><li><a href="#-高光特性" class="table-of-contents__link toc-highlight">✨ 高光特性</a></li><li><a href="#-适用人群" class="table-of-contents__link toc-highlight">🎯 适用人群</a></li><li><a href="#-建议和反馈" class="table-of-contents__link toc-highlight">📞 建议和反馈</a></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

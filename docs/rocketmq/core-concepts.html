@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">核心概念 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/rocketmq/core-concepts"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="核心概念 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="RocketMQ 核心概念详解：Topic、Queue、Producer、Consumer 等"><meta data-rh="true" property="og:description" content="RocketMQ 核心概念详解：Topic、Queue、Producer、Consumer 等"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/rocketmq/core-concepts"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/rocketmq/core-concepts" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/rocketmq/core-concepts" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"核心概念","item":"https://to-lib.github.io/docs/rocketmq/core-concepts"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -23,6 +30,27 @@
 </ul>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 创建 Topic（管理命令）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sh mqadmin updateTopic -n localhost:9876 -b localhost:10911 -t TopicTest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 删除 Topic</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sh mqadmin deleteTopic -n localhost:9876 -c DefaultCluster -t TopicTest</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="topic-设计原则">Topic 设计原则<a href="#topic-设计原则" class="hash-link" aria-label="Direct link to Topic 设计原则" title="Direct link to Topic 设计原则" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>原则</th><th>说明</th></tr></thead><tbody><tr><td>业务隔离</td><td>不同业务使用不同 Topic</td></tr><tr><td>粒度适中</td><td>不要太粗也不要太细</td></tr><tr><td>命名规范</td><td>建议使用下划线分隔</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="message-queue消息队列">Message Queue（消息队列）<a href="#message-queue消息队列" class="hash-link" aria-label="Direct link to Message Queue（消息队列）" title="Direct link to Message Queue（消息队列）" translate="no">​</a></h2>
 <p>Message Queue 是 Topic 的物理分区，用于实现消息的并行处理。</p>
@@ -55,19 +83,134 @@
 </ul>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(&quot;ConsumerGroup_Order&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setNamesrvAddr(&quot;localhost:9876&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.subscribe(&quot;TopicTest&quot;, &quot;*&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.start();</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消费模式对比">消费模式对比<a href="#消费模式对比" class="hash-link" aria-label="Direct link to 消费模式对比" title="Direct link to 消费模式对比" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模式</th><th>集群消费</th><th>广播消费</th></tr></thead><tbody><tr><td>消息分发</td><td>一条消息只消费一次</td><td>每个消费者都消费</td></tr><tr><td>消费进度</td><td>Broker 端保存</td><td>消费者端保存</td></tr><tr><td>使用场景</td><td>负载均衡</td><td>全量推送</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="push-vs-pull">Push vs Pull<a href="#push-vs-pull" class="hash-link" aria-label="Direct link to Push vs Pull" title="Direct link to Push vs Pull" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>Push 模式</th><th>Pull 模式</th></tr></thead><tbody><tr><td>实时性</td><td>高</td><td>取决于拉取频率</td></tr><tr><td>控制力</td><td>低</td><td>高</td></tr><tr><td>复杂度</td><td>简单</td><td>复杂</td></tr><tr><td>适用场景</td><td>一般业务</td><td>需要精细控制</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="message消息">Message（消息）<a href="#message消息" class="hash-link" aria-label="Direct link to Message（消息）" title="Direct link to Message（消息）" translate="no">​</a></h2>
 <p>消息是 RocketMQ 的最小传输单元。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消息结构">消息结构<a href="#消息结构" class="hash-link" aria-label="Direct link to 消息结构" title="Direct link to 消息结构" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public class Message {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private String topic;        // 主题</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private int flag;           // 消息标志</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private Map&lt;String, String&gt; properties;  // 扩展属性</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private byte[] body;        // 消息体</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private String transactionId;  // 事务ID</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消息属性">消息属性<a href="#消息属性" class="hash-link" aria-label="Direct link to 消息属性" title="Direct link to 消息属性" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>属性</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>Topic</td><td>消息主题</td><td>OrderTopic</td></tr><tr><td>Tag</td><td>消息标签</td><td>create, pay, cancel</td></tr><tr><td>Keys</td><td>消息键</td><td>用于查询</td></tr><tr><td>DelayTimeLevel</td><td>延迟级别</td><td>1-18</td></tr><tr><td>Body</td><td>消息体</td><td>JSON/Protobuf</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">Message msg = new Message();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">msg.setTopic(&quot;OrderTopic&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">msg.setTags(&quot;create&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">msg.setKeys(&quot;ORDER_&quot; + orderId);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">msg.setBody(JSON.toJSONBytes(order));</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="offset消费位点">Offset（消费位点）<a href="#offset消费位点" class="hash-link" aria-label="Direct link to Offset（消费位点）" title="Direct link to Offset（消费位点）" translate="no">​</a></h2>
 <p>Offset 记录了消费者消费到的位置。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="offset-类型">Offset 类型<a href="#offset-类型" class="hash-link" aria-label="Direct link to Offset 类型" title="Direct link to Offset 类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>说明</th><th>存储位置</th></tr></thead><tbody><tr><td>CommitOffset</td><td>已提交的消费位点</td><td>Broker/消费者本地</td></tr><tr><td>MaxOffset</td><td>Queue 最大位点</td><td>Broker</td></tr><tr><td>MinOffset</td><td>Queue 最小位点</td><td>Broker</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="offset-管理">Offset 管理<a href="#offset-管理" class="hash-link" aria-label="Direct link to Offset 管理" title="Direct link to Offset 管理" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 从头开始消费</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 从最新位置消费</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 从指定时间开始消费</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_TIMESTAMP);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setConsumeTimestamp(&quot;20240101120000&quot;);</span><br></span></code></pre></div></div>
@@ -76,9 +219,64 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="tag-使用">Tag 使用<a href="#tag-使用" class="hash-link" aria-label="Direct link to Tag 使用" title="Direct link to Tag 使用" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 发送带 Tag 的消息</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Message msg = new Message(&quot;OrderTopic&quot;, &quot;TagA&quot;, body);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 订阅单个 Tag</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.subscribe(&quot;OrderTopic&quot;, &quot;TagA&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 订阅多个 Tag</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.subscribe(&quot;OrderTopic&quot;, &quot;TagA || TagB || TagC&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 订阅所有 Tag</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.subscribe(&quot;OrderTopic&quot;, &quot;*&quot;);</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="topic-vs-tag-选择">Topic vs Tag 选择<a href="#topic-vs-tag-选择" class="hash-link" aria-label="Direct link to Topic vs Tag 选择" title="Direct link to Topic vs Tag 选择" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>建议</th></tr></thead><tbody><tr><td>业务完全不同</td><td>使用不同 Topic</td></tr><tr><td>同一业务的不同类型</td><td>使用不同 Tag</td></tr><tr><td>需要隔离的数据</td><td>使用不同 Topic</td></tr><tr><td>仅需过滤的数据</td><td>使用不同 Tag</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="consumer-group-负载均衡">Consumer Group 负载均衡<a href="#consumer-group-负载均衡" class="hash-link" aria-label="Direct link to Consumer Group 负载均衡" title="Direct link to Consumer Group 负载均衡" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="负载均衡策略">负载均衡策略<a href="#负载均衡策略" class="hash-link" aria-label="Direct link to 负载均衡策略" title="Direct link to 负载均衡策略" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>策略</th><th>说明</th><th>类名</th></tr></thead><tbody><tr><td>平均分配</td><td>默认策略</td><td>AllocateMessageQueueAveragely</td></tr><tr><td>轮询分配</td><td>按消费者轮询</td><td>AllocateMessageQueueAveragelyByCircle</td></tr><tr><td>指定机房</td><td>优先消费本机房消息</td><td>AllocateMessageQueueByMachineRoom</td></tr><tr><td>一致性哈希</td><td>减少重新分配</td><td>AllocateMessageQueueConsistentHash</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 设置负载均衡策略</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setAllocateMessageQueueStrategy(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    new AllocateMessageQueueAveragely()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">);</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="负载均衡示例">负载均衡示例<a href="#负载均衡示例" class="hash-link" aria-label="Direct link to 负载均衡示例" title="Direct link to 负载均衡示例" translate="no">​</a></h3>
@@ -89,6 +287,43 @@
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 设置发送重试次数</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">producer.setRetryTimesWhenSendFailed(3);        // 同步发送</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">producer.setRetryTimesWhenSendAsyncFailed(3);   // 异步发送</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 发送超时</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">producer.setSendMsgTimeout(3000);</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消费重试">消费重试<a href="#消费重试" class="hash-link" aria-label="Direct link to 消费重试" title="Direct link to 消费重试" translate="no">​</a></h3>
 <p>RocketMQ 会自动重试消费失败的消息：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>重试次数</th><th>延迟时间</th></tr></thead><tbody><tr><td>1</td><td>10s</td></tr><tr><td>2</td><td>30s</td></tr><tr><td>3</td><td>1min</td></tr><tr><td>4</td><td>2min</td></tr><tr><td>5</td><td>3min</td></tr><tr><td>...</td><td>...</td></tr><tr><td>16</td><td>2h</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 设置最大重试次数</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">consumer.setMaxReconsumeTimes(16);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 消费失败，进入重试队列</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">return ConsumeConcurrentlyStatus.RECONSUME_LATER;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="死信队列">死信队列<a href="#死信队列" class="hash-link" aria-label="Direct link to 死信队列" title="Direct link to 死信队列" translate="no">​</a></h3>
@@ -102,6 +337,6 @@
 <li class="">🔄 <a class="" href="/docs/rocketmq/message-types">消息类型</a> - 各种消息类型详解</li>
 </ul>
 <hr>
-<p><strong>💡 提示：</strong> 理解这些核心概念是使用 RocketMQ 的基础，建议结合实践加深理解。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/rocketmq/core-concepts.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/rocketmq/quick-start"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">快速开始</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/rocketmq/message-types"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">消息类型</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#topic主题" class="table-of-contents__link toc-highlight">Topic（主题）</a><ul><li><a href="#topic-特性" class="table-of-contents__link toc-highlight">Topic 特性</a></li><li><a href="#topic-设计原则" class="table-of-contents__link toc-highlight">Topic 设计原则</a></li></ul></li><li><a href="#message-queue消息队列" class="table-of-contents__link toc-highlight">Message Queue（消息队列）</a><ul><li><a href="#queue-分布" class="table-of-contents__link toc-highlight">Queue 分布</a></li><li><a href="#queue-数量配置" class="table-of-contents__link toc-highlight">Queue 数量配置</a></li></ul></li><li><a href="#producer生产者" class="table-of-contents__link toc-highlight">Producer（生产者）</a><ul><li><a href="#producer-group" class="table-of-contents__link toc-highlight">Producer Group</a></li><li><a href="#发送消息流程" class="table-of-contents__link toc-highlight">发送消息流程</a></li><li><a href="#消息发送策略" class="table-of-contents__link toc-highlight">消息发送策略</a></li></ul></li><li><a href="#consumer消费者" class="table-of-contents__link toc-highlight">Consumer（消费者）</a><ul><li><a href="#consumer-group" class="table-of-contents__link toc-highlight">Consumer Group</a></li><li><a href="#消费模式对比" class="table-of-contents__link toc-highlight">消费模式对比</a></li><li><a href="#push-vs-pull" class="table-of-contents__link toc-highlight">Push vs Pull</a></li></ul></li><li><a href="#message消息" class="table-of-contents__link toc-highlight">Message（消息）</a><ul><li><a href="#消息结构" class="table-of-contents__link toc-highlight">消息结构</a></li><li><a href="#消息属性" class="table-of-contents__link toc-highlight">消息属性</a></li></ul></li><li><a href="#offset消费位点" class="table-of-contents__link toc-highlight">Offset（消费位点）</a><ul><li><a href="#offset-类型" class="table-of-contents__link toc-highlight">Offset 类型</a></li><li><a href="#offset-管理" class="table-of-contents__link toc-highlight">Offset 管理</a></li></ul></li><li><a href="#tag标签" class="table-of-contents__link toc-highlight">Tag（标签）</a><ul><li><a href="#tag-使用" class="table-of-contents__link toc-highlight">Tag 使用</a></li><li><a href="#topic-vs-tag-选择" class="table-of-contents__link toc-highlight">Topic vs Tag 选择</a></li></ul></li><li><a href="#consumer-group-负载均衡" class="table-of-contents__link toc-highlight">Consumer Group 负载均衡</a><ul><li><a href="#负载均衡策略" class="table-of-contents__link toc-highlight">负载均衡策略</a></li><li><a href="#负载均衡示例" class="table-of-contents__link toc-highlight">负载均衡示例</a></li></ul></li><li><a href="#重试机制" class="table-of-contents__link toc-highlight">重试机制</a><ul><li><a href="#发送重试" class="table-of-contents__link toc-highlight">发送重试</a></li><li><a href="#消费重试" class="table-of-contents__link toc-highlight">消费重试</a></li><li><a href="#死信队列" class="table-of-contents__link toc-highlight">死信队列</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>💡 提示：</strong> 理解这些核心概念是使用 RocketMQ 的基础，建议结合实践加深理解。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/rocketmq/core-concepts.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/rocketmq/quick-start"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">快速开始</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/rocketmq/message-types"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">消息类型</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#topic主题" class="table-of-contents__link toc-highlight">Topic（主题）</a><ul><li><a href="#topic-特性" class="table-of-contents__link toc-highlight">Topic 特性</a></li><li><a href="#topic-设计原则" class="table-of-contents__link toc-highlight">Topic 设计原则</a></li></ul></li><li><a href="#message-queue消息队列" class="table-of-contents__link toc-highlight">Message Queue（消息队列）</a><ul><li><a href="#queue-分布" class="table-of-contents__link toc-highlight">Queue 分布</a></li><li><a href="#queue-数量配置" class="table-of-contents__link toc-highlight">Queue 数量配置</a></li></ul></li><li><a href="#producer生产者" class="table-of-contents__link toc-highlight">Producer（生产者）</a><ul><li><a href="#producer-group" class="table-of-contents__link toc-highlight">Producer Group</a></li><li><a href="#发送消息流程" class="table-of-contents__link toc-highlight">发送消息流程</a></li><li><a href="#消息发送策略" class="table-of-contents__link toc-highlight">消息发送策略</a></li></ul></li><li><a href="#consumer消费者" class="table-of-contents__link toc-highlight">Consumer（消费者）</a><ul><li><a href="#consumer-group" class="table-of-contents__link toc-highlight">Consumer Group</a></li><li><a href="#消费模式对比" class="table-of-contents__link toc-highlight">消费模式对比</a></li><li><a href="#push-vs-pull" class="table-of-contents__link toc-highlight">Push vs Pull</a></li></ul></li><li><a href="#message消息" class="table-of-contents__link toc-highlight">Message（消息）</a><ul><li><a href="#消息结构" class="table-of-contents__link toc-highlight">消息结构</a></li><li><a href="#消息属性" class="table-of-contents__link toc-highlight">消息属性</a></li></ul></li><li><a href="#offset消费位点" class="table-of-contents__link toc-highlight">Offset（消费位点）</a><ul><li><a href="#offset-类型" class="table-of-contents__link toc-highlight">Offset 类型</a></li><li><a href="#offset-管理" class="table-of-contents__link toc-highlight">Offset 管理</a></li></ul></li><li><a href="#tag标签" class="table-of-contents__link toc-highlight">Tag（标签）</a><ul><li><a href="#tag-使用" class="table-of-contents__link toc-highlight">Tag 使用</a></li><li><a href="#topic-vs-tag-选择" class="table-of-contents__link toc-highlight">Topic vs Tag 选择</a></li></ul></li><li><a href="#consumer-group-负载均衡" class="table-of-contents__link toc-highlight">Consumer Group 负载均衡</a><ul><li><a href="#负载均衡策略" class="table-of-contents__link toc-highlight">负载均衡策略</a></li><li><a href="#负载均衡示例" class="table-of-contents__link toc-highlight">负载均衡示例</a></li></ul></li><li><a href="#重试机制" class="table-of-contents__link toc-highlight">重试机制</a><ul><li><a href="#发送重试" class="table-of-contents__link toc-highlight">发送重试</a></li><li><a href="#消费重试" class="table-of-contents__link toc-highlight">消费重试</a></li><li><a href="#死信队列" class="table-of-contents__link toc-highlight">死信队列</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

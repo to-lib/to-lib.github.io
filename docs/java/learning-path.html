@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">后端工程师高阶 Spring 学习路线 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/java/learning-path"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="后端工程师高阶 Spring 学习路线 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="（偏并发、Netty、分布式、工程化）"><meta data-rh="true" property="og:description" content="（偏并发、Netty、分布式、工程化）"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/java/learning-path"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/learning-path" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/learning-path" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -49,6 +56,27 @@
 <li class=""><strong>事务失效场景</strong>：自调用、异常类型、非 public 方法等</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档">📚 推荐文档<a href="#-推荐文档" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/spring/core-concepts">Spring 核心概念</a></td><td>IoC、DI、Bean 管理</td></tr><tr><td><a class="" href="/docs/spring/aop">Spring AOP</a></td><td>面向切面编程原理与实践</td></tr><tr><td><a class="" href="/docs/spring/transactions">Spring 事务</a></td><td>事务管理、传播机制</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目">🛠 实践项目<a href="#-实践项目" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
@@ -59,10 +87,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验">✅ 阶段目标检验<a href="#-阶段目标检验" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 Spring 容器启动的完整流程图</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能讲清三级缓存解决循环依赖的原理</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能自定义 BeanPostProcessor 实现特定功能</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能分析事务失效的原因并给出解决方案</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能画出 Spring 容器启动的完整流程图</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能讲清三级缓存解决循环依赖的原理</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能自定义 BeanPostProcessor 实现特定功能</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能分析事务失效的原因并给出解决方案</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-2spring-boot-自动装配体系架构级理解">阶段 2：Spring Boot 自动装配体系（架构级理解）<a href="#阶段-2spring-boot-自动装配体系架构级理解" class="hash-link" aria-label="Direct link to 阶段 2：Spring Boot 自动装配体系（架构级理解）" title="Direct link to 阶段 2：Spring Boot 自动装配体系（架构级理解）" translate="no">​</a></h2>
@@ -97,10 +125,27 @@
 <li class=""><strong>依赖管理</strong>：可选依赖与传递依赖</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-1">📚 推荐文档<a href="#-推荐文档-1" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/springboot/quick-start">Spring Boot 入门</a></td><td>快速开始 Spring Boot</td></tr><tr><td><a class="" href="/docs/springboot/auto-configuration">Spring Boot 自动装配</a></td><td>自动装配原理</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-1">🛠 实践项目<a href="#-实践项目-1" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>写一个 Redis Starter</strong>：<!-- -->
+<li class=""><strong>写一个 Redis Starter</strong>：
 <ul>
 <li class="">自动配置连接池（Lettuce/Jedis）</li>
 <li class="">多种序列化方式支持（JSON/Protobuf）</li>
@@ -108,14 +153,14 @@
 <li class="">配置属性绑定与验证</li>
 </ul>
 </li>
-<li class=""><strong>写一个 MQ Starter</strong>：<!-- -->
+<li class=""><strong>写一个 MQ Starter</strong>：
 <ul>
 <li class="">自动装配消息生产者</li>
 <li class="">消费监听器自动注册</li>
 <li class="">重试机制与死信队列</li>
 </ul>
 </li>
-<li class=""><strong>写一个分布式锁 Starter</strong>：<!-- -->
+<li class=""><strong>写一个分布式锁 Starter</strong>：
 <ul>
 <li class="">基于 Redis 实现</li>
 <li class="">注解式使用</li>
@@ -125,10 +170,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-1">✅ 阶段目标检验<a href="#-阶段目标检验-1" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 Spring Boot 自动装配的完整流程</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确使用各种条件注解</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能独立开发一个企业级 Starter</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解 Spring Boot 2.7+ 和 3.x 的配置变化</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能画出 Spring Boot 自动装配的完整流程</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能正确使用各种条件注解</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能独立开发一个企业级 Starter</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解 Spring Boot 2.7+ 和 3.x 的配置变化</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-3spring-mvc-深度与高性能-web-层">阶段 3：Spring MVC 深度与高性能 Web 层<a href="#阶段-3spring-mvc-深度与高性能-web-层" class="hash-link" aria-label="Direct link to 阶段 3：Spring MVC 深度与高性能 Web 层" title="Direct link to 阶段 3：Spring MVC 深度与高性能 Web 层" translate="no">​</a></h2>
@@ -162,23 +207,36 @@
 <li class=""><strong>背压机制</strong>：Backpressure 策略</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-2">📚 推荐文档<a href="#-推荐文档-2" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/spring/spring-mvc">Spring MVC</a></td><td>Web 开发、请求处理</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-2">🛠 实践项目<a href="#-实践项目-2" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>自己实现一个参数解析器</strong>：<!-- -->
+<li class=""><strong>自己实现一个参数解析器</strong>：
 <ul>
 <li class="">@CurrentUser 自动注入登录用户</li>
 <li class="">@RequestIP 自动注入请求 IP</li>
 </ul>
 </li>
-<li class=""><strong>自己写一个全局异常处理框架</strong>：<!-- -->
+<li class=""><strong>自己写一个全局异常处理框架</strong>：
 <ul>
 <li class="">统一响应格式</li>
 <li class="">异常码体系</li>
 <li class="">异常日志记录</li>
 </ul>
 </li>
-<li class=""><strong>用 WebFlux + Netty 写高并发接口</strong>：<!-- -->
+<li class=""><strong>用 WebFlux + Netty 写高并发接口</strong>：
 <ul>
 <li class="">异步数据库访问（R2DBC）</li>
 <li class="">响应式 Redis 操作</li>
@@ -188,10 +246,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-2">✅ 阶段目标检验<a href="#-阶段目标检验-2" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能画出 DispatcherServlet 请求处理流程图</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能自定义参数解析器和返回值处理器</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解 WebFlux 的适用场景与局限性</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能用 Reactor 编写复杂的异步处理链</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能画出 DispatcherServlet 请求处理流程图</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能自定义参数解析器和返回值处理器</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解 WebFlux 的适用场景与局限性</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能用 Reactor 编写复杂的异步处理链</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-4spring-与并发体系整合高级">阶段 4：Spring 与并发体系整合（高级）<a href="#阶段-4spring-与并发体系整合高级" class="hash-link" aria-label="Direct link to 阶段 4：Spring 与并发体系整合（高级）" title="Direct link to 阶段 4：Spring 与并发体系整合（高级）" translate="no">​</a></h2>
@@ -219,7 +277,7 @@
 <ul>
 <li class=""><strong>事务传播与线程边界</strong>：事务不跨线程传播</li>
 <li class=""><strong>多线程事务失效</strong>：子线程中事务不生效</li>
-<li class=""><strong>解决方案</strong>：<!-- -->
+<li class=""><strong>解决方案</strong>：
 <ul>
 <li class="">编程式事务（TransactionTemplate）</li>
 <li class="">分布式事务（Seata）</li>
@@ -240,10 +298,27 @@
 <li class=""><strong>上下文传递</strong>：Context API</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-3">📚 推荐文档<a href="#-推荐文档-3" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/multithreading">多线程</a></td><td>线程创建、同步、通信、线程池、并发工具类</td></tr><tr><td><a class="" href="/docs/java/performance">性能优化</a></td><td>并发优化、锁优化策略</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-3">🛠 实践项目<a href="#-实践项目-3" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>自己实现一个可监控的线程池 Starter</strong>：<!-- -->
+<li class=""><strong>自己实现一个可监控的线程池 Starter</strong>：
 <ul>
 <li class="">线程池状态暴露（活跃线程数、队列大小等）</li>
 <li class="">Prometheus 指标集成</li>
@@ -251,13 +326,13 @@
 <li class="">拒绝策略告警</li>
 </ul>
 </li>
-<li class=""><strong>解决&quot;多线程下 @Transactional 失效&quot;问题</strong>：<!-- -->
+<li class=""><strong>解决&quot;多线程下 @Transactional 失效&quot;问题</strong>：
 <ul>
 <li class="">编写测试用例复现问题</li>
 <li class="">分析原因并给出多种解决方案</li>
 </ul>
 </li>
-<li class=""><strong>用 Reactor 写高吞吐的异步链路</strong>：<!-- -->
+<li class=""><strong>用 Reactor 写高吞吐的异步链路</strong>：
 <ul>
 <li class="">多数据源并行查询</li>
 <li class="">结果聚合与超时处理</li>
@@ -267,10 +342,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-3">✅ 阶段目标检验<a href="#-阶段目标检验-3" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能正确配置和监控 Spring 线程池</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解 Spring 事务与多线程的关系</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能识别和解决 Bean 的线程安全问题</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能用 Reactor 实现复杂的异步流程</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能正确配置和监控 Spring 线程池</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解 Spring 事务与多线程的关系</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能识别和解决 Bean 的线程安全问题</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能用 Reactor 实现复杂的异步流程</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-5spring-与-netty-深度结合高性能架构">阶段 5：Spring 与 Netty 深度结合（高性能架构）<a href="#阶段-5spring-与-netty-深度结合高性能架构" class="hash-link" aria-label="Direct link to 阶段 5：Spring 与 Netty 深度结合（高性能架构）" title="Direct link to 阶段 5：Spring 与 Netty 深度结合（高性能架构）" translate="no">​</a></h2>
@@ -302,10 +377,31 @@
 <li class=""><strong>动态路由</strong>：配置中心集成</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-4">📚 推荐文档<a href="#-推荐文档-4" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/netty/overview">Netty 概述</a></td><td>Netty 简介与核心概念</td></tr><tr><td><a class="" href="/docs/netty/core-components">Netty 核心组件</a></td><td>EventLoop、Channel、Pipeline</td></tr><tr><td><a class="" href="/docs/netty/practical-examples">Netty 实战</a></td><td>实战案例</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-4">🛠 实践项目<a href="#-实践项目-4" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>用 Netty + Spring Boot 写一个长连接 IM 服务</strong>：<!-- -->
+<li class=""><strong>用 Netty + Spring Boot 写一个长连接 IM 服务</strong>：
 <ul>
 <li class="">用户上下线管理</li>
 <li class="">私聊与群聊</li>
@@ -314,7 +410,7 @@
 <li class="">集群方案（Redis Pub/Sub）</li>
 </ul>
 </li>
-<li class=""><strong>用 Netty 写一个 RPC 框架并与 Spring 集成</strong>：<!-- -->
+<li class=""><strong>用 Netty 写一个 RPC 框架并与 Spring 集成</strong>：
 <ul>
 <li class="">服务注册与发现</li>
 <li class="">负载均衡</li>
@@ -323,7 +419,7 @@
 <li class="">@RpcService/@RpcReference 注解</li>
 </ul>
 </li>
-<li class=""><strong>自己实现一个 Gateway Filter（高性能限流）</strong>：<!-- -->
+<li class=""><strong>自己实现一个 Gateway Filter（高性能限流）</strong>：
 <ul>
 <li class="">令牌桶算法</li>
 <li class="">分布式限流（Redis）</li>
@@ -334,10 +430,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-4">✅ 阶段目标检验<a href="#-阶段目标检验-4" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能将 Netty 服务与 Spring Boot 正确整合</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解 WebFlux 的底层网络模型</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能编写高性能的自定义 Gateway Filter</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能设计和实现一个简单的 RPC 框架</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能将 Netty 服务与 Spring Boot 正确整合</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解 WebFlux 的底层网络模型</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能编写高性能的自定义 Gateway Filter</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能设计和实现一个简单的 RPC 框架</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-6spring-cloud-微服务体系架构级">阶段 6：Spring Cloud 微服务体系（架构级）<a href="#阶段-6spring-cloud-微服务体系架构级" class="hash-link" aria-label="Direct link to 阶段 6：Spring Cloud 微服务体系（架构级）" title="Direct link to 阶段 6：Spring Cloud 微服务体系（架构级）" translate="no">​</a></h2>
@@ -387,10 +483,27 @@
 <li class=""><strong>最佳实践</strong>：何时使用哪种模式</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-5">📚 推荐文档<a href="#-推荐文档-5" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/springcloud">Spring Cloud 入门</a></td><td>微服务架构入门</td></tr><tr><td><a class="" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></td><td>Nacos、Sentinel 等</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-5">🛠 实践项目<a href="#-实践项目-5" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>搭建一个完整的微服务架构</strong>：<!-- -->
+<li class=""><strong>搭建一个完整的微服务架构</strong>：
 <ul>
 <li class="">用户服务、订单服务、商品服务</li>
 <li class="">Nacos 注册与配置</li>
@@ -399,14 +512,14 @@
 <li class="">Sleuth 链路追踪</li>
 </ul>
 </li>
-<li class=""><strong>自己实现一个 Feign 拦截器链</strong>：<!-- -->
+<li class=""><strong>自己实现一个 Feign 拦截器链</strong>：
 <ul>
 <li class="">请求签名</li>
 <li class="">Token 传递</li>
 <li class="">请求日志</li>
 </ul>
 </li>
-<li class=""><strong>用 Sentinel 做高并发限流</strong>：<!-- -->
+<li class=""><strong>用 Sentinel 做高并发限流</strong>：
 <ul>
 <li class="">QPS 限流</li>
 <li class="">热点参数限流</li>
@@ -417,10 +530,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-5">✅ 阶段目标检验<a href="#-阶段目标检验-5" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能独立搭建完整的微服务架构</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解各组件的工作原理和选型依据</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能实现自定义的 Feign 拦截器</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能配置合理的熔断降级策略</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能独立搭建完整的微服务架构</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解各组件的工作原理和选型依据</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能实现自定义的 Feign 拦截器</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能配置合理的熔断降级策略</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-7spring-与分布式系统整合高阶">阶段 7：Spring 与分布式系统整合（高阶）<a href="#阶段-7spring-与分布式系统整合高阶" class="hash-link" aria-label="Direct link to 阶段 7：Spring 与分布式系统整合（高阶）" title="Direct link to 阶段 7：Spring 与分布式系统整合（高阶）" translate="no">​</a></h2>
@@ -472,10 +585,39 @@
 <li class=""><strong>最大努力通知</strong>：适用场景</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-6">📚 推荐文档<a href="#-推荐文档-6" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/redis/introduction">Redis 入门</a></td><td>Redis 基础与数据结构</td></tr><tr><td><a class="" href="/docs/redis/cache-strategies">Redis 缓存策略</a></td><td>缓存设计与问题处理</td></tr><tr><td><a class="" href="/docs/redis/practical-examples">Redis 分布式锁</a></td><td>分布式锁实现</td></tr><tr><td><a class="" href="/docs/kafka">Kafka 入门</a></td><td>Kafka 核心概念</td></tr><tr><td><a class="" href="/docs/rocketmq">RocketMQ 入门</a></td><td>RocketMQ 核心概念</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-6">🛠 实践项目<a href="#-实践项目-6" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>写一个 Redis 分布式锁 Starter</strong>：<!-- -->
+<li class=""><strong>写一个 Redis 分布式锁 Starter</strong>：
 <ul>
 <li class="">注解式使用：@DistributedLock</li>
 <li class="">可重入支持</li>
@@ -483,7 +625,7 @@
 <li class="">锁等待与超时</li>
 </ul>
 </li>
-<li class=""><strong>写一个基于 Kafka 的事件总线</strong>：<!-- -->
+<li class=""><strong>写一个基于 Kafka 的事件总线</strong>：
 <ul>
 <li class="">事件发布与订阅</li>
 <li class="">事件序列化</li>
@@ -491,7 +633,7 @@
 <li class="">事件追踪</li>
 </ul>
 </li>
-<li class=""><strong>用 Spring + Redis 实现缓存一致性方案</strong>：<!-- -->
+<li class=""><strong>用 Spring + Redis 实现缓存一致性方案</strong>：
 <ul>
 <li class="">延迟双删</li>
 <li class="">订阅 MySQL binlog（Canal）</li>
@@ -501,10 +643,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-6">✅ 阶段目标检验<a href="#-阶段目标检验-6" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能选择合适的分布式锁方案</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能设计可靠的消息消费方案</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能解决缓存一致性问题</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->理解各种最终一致性方案的适用场景</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能选择合适的分布式锁方案</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能设计可靠的消息消费方案</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能解决缓存一致性问题</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 理解各种最终一致性方案的适用场景</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="阶段-8spring-工程化与可观测性生产级">阶段 8：Spring 工程化与可观测性（生产级）<a href="#阶段-8spring-工程化与可观测性生产级" class="hash-link" aria-label="Direct link to 阶段 8：Spring 工程化与可观测性（生产级）" title="Direct link to 阶段 8：Spring 工程化与可观测性（生产级）" translate="no">​</a></h2>
@@ -550,10 +692,31 @@
 <li class=""><strong>蓝绿部署 / 金丝雀发布</strong>：策略与实践</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-推荐文档-7">📚 推荐文档<a href="#-推荐文档-7" class="hash-link" aria-label="Direct link to 📚 推荐文档" title="Direct link to 📚 推荐文档" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/java/build-tools">构建工具</a></td><td>Maven/Gradle 配置</td></tr><tr><td><a class="" href="/docs/docker">Docker 入门</a></td><td>Docker 基础与实践</td></tr><tr><td><a class="" href="/docs/kubernetes">Kubernetes 入门</a></td><td>K8s 核心概念与实践</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-实践项目-7">🛠 实践项目<a href="#-实践项目-7" class="hash-link" aria-label="Direct link to 🛠 实践项目" title="Direct link to 🛠 实践项目" translate="no">​</a></h3>
 <ul>
-<li class=""><strong>给 Spring Boot 服务接入 Prometheus</strong>：<!-- -->
+<li class=""><strong>给 Spring Boot 服务接入 Prometheus</strong>：
 <ul>
 <li class="">自定义业务指标</li>
 <li class="">JVM 监控面板</li>
@@ -561,7 +724,7 @@
 <li class="">告警规则配置</li>
 </ul>
 </li>
-<li class=""><strong>用 GitHub Actions 自动构建 + 部署</strong>：<!-- -->
+<li class=""><strong>用 GitHub Actions 自动构建 + 部署</strong>：
 <ul>
 <li class="">单元测试</li>
 <li class="">代码质量检查</li>
@@ -569,7 +732,7 @@
 <li class="">K8s 自动部署</li>
 </ul>
 </li>
-<li class=""><strong>用 Docker Compose 管理微服务集群</strong>：<!-- -->
+<li class=""><strong>用 Docker Compose 管理微服务集群</strong>：
 <ul>
 <li class="">多服务编排</li>
 <li class="">网络配置</li>
@@ -580,10 +743,10 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-阶段目标检验-7">✅ 阶段目标检验<a href="#-阶段目标检验-7" class="hash-link" aria-label="Direct link to ✅ 阶段目标检验" title="Direct link to ✅ 阶段目标检验" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能配置完整的监控告警体系</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能设计合理的日志架构</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能配置 CI/CD 流水线</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->能使用 Docker/K8s 部署服务</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能配置完整的监控告警体系</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能设计合理的日志架构</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能配置 CI/CD 流水线</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 能使用 Docker/K8s 部署服务</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-总结高阶-spring-学习路径图">📚 总结：高阶 Spring 学习路径图<a href="#-总结高阶-spring-学习路径图" class="hash-link" aria-label="Direct link to 📚 总结：高阶 Spring 学习路径图" title="Direct link to 📚 总结：高阶 Spring 学习路径图" translate="no">​</a></h2>
@@ -600,6 +763,31 @@
 </ol>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="时间规划建议">时间规划建议<a href="#时间规划建议" class="hash-link" aria-label="Direct link to 时间规划建议" title="Direct link to 时间规划建议" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>目标</th><th>预计时间</th><th>重点</th></tr></thead><tbody><tr><td><strong>资深开发者</strong></td><td>3-6 个月</td><td>阶段 1-3 + 基础微服务</td></tr><tr><td><strong>高级后端工程师</strong></td><td>6-12 个月</td><td>全部阶段 + 源码阅读</td></tr><tr><td><strong>架构师方向</strong></td><td>12-24 个月</td><td>全部阶段 + 系统设计 + 带队</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="推荐学习资源">推荐学习资源<a href="#推荐学习资源" class="hash-link" aria-label="Direct link to 推荐学习资源" title="Direct link to 推荐学习资源" translate="no">​</a></h3>
 <p><strong>官方文档</strong>：</p>
@@ -635,6 +823,6 @@
 </ul>
 <blockquote>
 <p>🚀 祝你成为优秀的高级后端工程师！掌握 Spring 生态，驾驭分布式架构！</p>
-</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java/learning-path.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#阶段-1spring-核心机制深度掌握源码级" class="table-of-contents__link toc-highlight">阶段 1：Spring 核心机制深度掌握（源码级）</a><ul><li><a href="#-必学内容" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-2spring-boot-自动装配体系架构级理解" class="table-of-contents__link toc-highlight">阶段 2：Spring Boot 自动装配体系（架构级理解）</a><ul><li><a href="#-必学内容-1" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-1" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-1" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-1" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-3spring-mvc-深度与高性能-web-层" class="table-of-contents__link toc-highlight">阶段 3：Spring MVC 深度与高性能 Web 层</a><ul><li><a href="#-必学内容-2" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-2" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-2" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-2" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-4spring-与并发体系整合高级" class="table-of-contents__link toc-highlight">阶段 4：Spring 与并发体系整合（高级）</a><ul><li><a href="#-必学内容-3" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-3" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-3" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-3" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-5spring-与-netty-深度结合高性能架构" class="table-of-contents__link toc-highlight">阶段 5：Spring 与 Netty 深度结合（高性能架构）</a><ul><li><a href="#-必学内容-4" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-4" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-4" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-4" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-6spring-cloud-微服务体系架构级" class="table-of-contents__link toc-highlight">阶段 6：Spring Cloud 微服务体系（架构级）</a><ul><li><a href="#-必学内容-5" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-5" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-5" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-5" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-7spring-与分布式系统整合高阶" class="table-of-contents__link toc-highlight">阶段 7：Spring 与分布式系统整合（高阶）</a><ul><li><a href="#-必学内容-6" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-6" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-6" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-6" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-8spring-工程化与可观测性生产级" class="table-of-contents__link toc-highlight">阶段 8：Spring 工程化与可观测性（生产级）</a><ul><li><a href="#-必学内容-7" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-7" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-7" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-7" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#-总结高阶-spring-学习路径图" class="table-of-contents__link toc-highlight">📚 总结：高阶 Spring 学习路径图</a></li><li><a href="#-学习建议" class="table-of-contents__link toc-highlight">🎯 学习建议</a><ul><li><a href="#时间规划建议" class="table-of-contents__link toc-highlight">时间规划建议</a></li><li><a href="#推荐学习资源" class="table-of-contents__link toc-highlight">推荐学习资源</a></li></ul></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">🔗 相关资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java/learning-path.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#阶段-1spring-核心机制深度掌握源码级" class="table-of-contents__link toc-highlight">阶段 1：Spring 核心机制深度掌握（源码级）</a><ul><li><a href="#-必学内容" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-2spring-boot-自动装配体系架构级理解" class="table-of-contents__link toc-highlight">阶段 2：Spring Boot 自动装配体系（架构级理解）</a><ul><li><a href="#-必学内容-1" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-1" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-1" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-1" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-3spring-mvc-深度与高性能-web-层" class="table-of-contents__link toc-highlight">阶段 3：Spring MVC 深度与高性能 Web 层</a><ul><li><a href="#-必学内容-2" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-2" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-2" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-2" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-4spring-与并发体系整合高级" class="table-of-contents__link toc-highlight">阶段 4：Spring 与并发体系整合（高级）</a><ul><li><a href="#-必学内容-3" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-3" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-3" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-3" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-5spring-与-netty-深度结合高性能架构" class="table-of-contents__link toc-highlight">阶段 5：Spring 与 Netty 深度结合（高性能架构）</a><ul><li><a href="#-必学内容-4" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-4" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-4" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-4" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-6spring-cloud-微服务体系架构级" class="table-of-contents__link toc-highlight">阶段 6：Spring Cloud 微服务体系（架构级）</a><ul><li><a href="#-必学内容-5" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-5" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-5" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-5" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-7spring-与分布式系统整合高阶" class="table-of-contents__link toc-highlight">阶段 7：Spring 与分布式系统整合（高阶）</a><ul><li><a href="#-必学内容-6" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-6" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-6" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-6" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#阶段-8spring-工程化与可观测性生产级" class="table-of-contents__link toc-highlight">阶段 8：Spring 工程化与可观测性（生产级）</a><ul><li><a href="#-必学内容-7" class="table-of-contents__link toc-highlight">📌 必学内容</a></li><li><a href="#-推荐文档-7" class="table-of-contents__link toc-highlight">📚 推荐文档</a></li><li><a href="#-实践项目-7" class="table-of-contents__link toc-highlight">🛠 实践项目</a></li><li><a href="#-阶段目标检验-7" class="table-of-contents__link toc-highlight">✅ 阶段目标检验</a></li></ul></li><li><a href="#-总结高阶-spring-学习路径图" class="table-of-contents__link toc-highlight">📚 总结：高阶 Spring 学习路径图</a></li><li><a href="#-学习建议" class="table-of-contents__link toc-highlight">🎯 学习建议</a><ul><li><a href="#时间规划建议" class="table-of-contents__link toc-highlight">时间规划建议</a></li><li><a href="#推荐学习资源" class="table-of-contents__link toc-highlight">推荐学习资源</a></li></ul></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">🔗 相关资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

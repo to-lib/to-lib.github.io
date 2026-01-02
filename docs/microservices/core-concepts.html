@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">核心概念 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/microservices/core-concepts"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="核心概念 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="微服务架构的核心概念 - 服务拆分、通信方式、API 设计"><meta data-rh="true" property="og:description" content="微服务架构的核心概念 - 服务拆分、通信方式、API 设计"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/microservices/core-concepts"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/microservices/core-concepts" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/microservices/core-concepts" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"核心概念","item":"https://to-lib.github.io/docs/microservices/core-concepts"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -19,6 +26,36 @@
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="领域驱动设计ddd">领域驱动设计（DDD）<a href="#领域驱动设计ddd" class="hash-link" aria-label="Direct link to 领域驱动设计（DDD）" title="Direct link to 领域驱动设计（DDD）" translate="no">​</a></h3>
 <p>使用 DDD 的限界上下文（Bounded Context）来划分服务边界：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>概念</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><strong>领域</strong></td><td>业务问题空间</td><td>电商系统</td></tr><tr><td><strong>子域</strong></td><td>领域的细分</td><td>订单、库存、支付</td></tr><tr><td><strong>限界上下文</strong></td><td>模型的边界</td><td>订单上下文、支付上下文</td></tr><tr><td><strong>聚合</strong></td><td>数据一致性边界</td><td>订单聚合（订单+订单项）</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="拆分策略">拆分策略<a href="#拆分策略" class="hash-link" aria-label="Direct link to 拆分策略" title="Direct link to 拆分策略" translate="no">​</a></h3>
 <ol>
@@ -57,6 +94,46 @@
 <p>高性能的 RPC 框架，使用 Protocol Buffers：</p>
 <div class="language-protobuf codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-protobuf codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// user.proto</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">syntax = &quot;proto3&quot;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">service UserService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rpc GetUser(GetUserRequest) returns (User);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    rpc CreateUser(CreateUserRequest) returns (User);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">message User {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int64 id = 1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    string name = 2;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    string email = 3;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">message GetUserRequest {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int64 id = 1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="同步通信对比">同步通信对比<a href="#同步通信对比" class="hash-link" aria-label="Direct link to 同步通信对比" title="Direct link to 同步通信对比" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>REST</th><th>gRPC</th></tr></thead><tbody><tr><td><strong>协议</strong></td><td>HTTP/1.1 或 HTTP/2</td><td>HTTP/2</td></tr><tr><td><strong>数据格式</strong></td><td>JSON/XML</td><td>Protocol Buffers</td></tr><tr><td><strong>性能</strong></td><td>较低</td><td>高</td></tr><tr><td><strong>浏览器支持</strong></td><td>原生支持</td><td>需要 gRPC-Web</td></tr><tr><td><strong>学习曲线</strong></td><td>低</td><td>中等</td></tr><tr><td><strong>适用场景</strong></td><td>公开 API</td><td>内部服务通信</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="异步通信">异步通信<a href="#异步通信" class="hash-link" aria-label="Direct link to 异步通信" title="Direct link to 异步通信" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="消息队列">消息队列<a href="#消息队列" class="hash-link" aria-label="Direct link to 消息队列" title="Direct link to 消息队列" translate="no">​</a></h4>
@@ -65,6 +142,41 @@
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="事件驱动架构">事件驱动架构<a href="#事件驱动架构" class="hash-link" aria-label="Direct link to 事件驱动架构" title="Direct link to 事件驱动架构" translate="no">​</a></h4>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="通信方式选择">通信方式选择<a href="#通信方式选择" class="hash-link" aria-label="Direct link to 通信方式选择" title="Direct link to 通信方式选择" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>推荐方式</th><th>原因</th></tr></thead><tbody><tr><td>需要立即响应</td><td>同步（REST/gRPC）</td><td>实时性要求</td></tr><tr><td>可以延迟处理</td><td>异步（消息队列）</td><td>解耦、削峰</td></tr><tr><td>内部高频调用</td><td>gRPC</td><td>高性能</td></tr><tr><td>对外公开 API</td><td>REST</td><td>通用性好</td></tr><tr><td>事件通知</td><td>异步消息</td><td>松耦合</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="api-设计最佳实践">API 设计最佳实践<a href="#api-设计最佳实践" class="hash-link" aria-label="Direct link to API 设计最佳实践" title="Direct link to API 设计最佳实践" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="restful-api-设计">RESTful API 设计<a href="#restful-api-设计" class="hash-link" aria-label="Direct link to RESTful API 设计" title="Direct link to RESTful API 设计" translate="no">​</a></h3>
@@ -73,6 +185,56 @@
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="响应格式">响应格式<a href="#响应格式" class="hash-link" aria-label="Direct link to 响应格式" title="Direct link to 响应格式" translate="no">​</a></h4>
 <div class="language-json codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-json codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// 成功响应</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;code&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">200</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;message&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;success&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;data&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;id&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;name&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;张三&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;email&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;zhangsan@example.com&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// 分页响应</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;code&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">200</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;message&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;success&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;data&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;content&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">...</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;page&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;size&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">&quot;total&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">100</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// 错误响应</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;code&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">400</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;message&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;参数错误&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;errors&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token punctuation" style="color:#393A34">{</span><span class="token property" style="color:#36acaa">&quot;field&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;email&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token property" style="color:#36acaa">&quot;message&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;邮箱格式不正确&quot;</span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="http-状态码">HTTP 状态码<a href="#http-状态码" class="hash-link" aria-label="Direct link to HTTP 状态码" title="Direct link to HTTP 状态码" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>状态码</th><th>含义</th><th>使用场景</th></tr></thead><tbody><tr><td>200</td><td>OK</td><td>请求成功</td></tr><tr><td>201</td><td>Created</td><td>资源创建成功</td></tr><tr><td>204</td><td>No Content</td><td>删除成功</td></tr><tr><td>400</td><td>Bad Request</td><td>请求参数错误</td></tr><tr><td>401</td><td>Unauthorized</td><td>未认证</td></tr><tr><td>403</td><td>Forbidden</td><td>无权限</td></tr><tr><td>404</td><td>Not Found</td><td>资源不存在</td></tr><tr><td>500</td><td>Internal Server Error</td><td>服务器错误</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="api-版本控制">API 版本控制<a href="#api-版本控制" class="hash-link" aria-label="Direct link to API 版本控制" title="Direct link to API 版本控制" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// URL 路径版本</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@RequestMapping(&quot;/api/v1/users&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@RequestMapping(&quot;/api/v2/users&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 请求头版本</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(headers = &quot;X-API-Version=1&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(headers = &quot;X-API-Version=2&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Accept 头版本</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(produces = &quot;application/vnd.company.v1+json&quot;)</span><br></span></code></pre></div></div>
@@ -88,6 +250,60 @@
 <p>消费者从注册中心获取服务实例列表：</p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 使用 RestTemplate + 负载均衡</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class RestTemplateConfig {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Bean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @LoadBalanced</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public RestTemplate restTemplate() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return new RestTemplate();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class OrderService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private RestTemplate restTemplate;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public User getUser(Long userId) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 使用服务名调用，自动负载均衡</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return restTemplate.getForObject(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;http://user-service/api/users/&quot; + userId, </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            User.class</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        );</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="主流注册中心对比">主流注册中心对比<a href="#主流注册中心对比" class="hash-link" aria-label="Direct link to 主流注册中心对比" title="Direct link to 主流注册中心对比" translate="no">​</a></h3>
-<table><thead><tr><th>特性</th><th>Nacos</th><th>Consul</th><th>Eureka</th><th>Zookeeper</th></tr></thead><tbody><tr><td><strong>一致性协议</strong></td><td>AP/CP 可切换</td><td>CP</td><td>AP</td><td>CP</td></tr><tr><td><strong>健康检查</strong></td><td>TCP/HTTP/MySQL</td><td>TCP/HTTP/gRPC</td><td>心跳</td><td>心跳</td></tr><tr><td><strong>配置管理</strong></td><td>支持</td><td>支持</td><td>不支持</td><td>支持</td></tr><tr><td><strong>多数据中心</strong></td><td>支持</td><td>支持</td><td>支持</td><td>不支持</td></tr><tr><td><strong>管理界面</strong></td><td>有</td><td>有</td><td>有</td><td>无</td></tr><tr><td><strong>Spring Cloud 集成</strong></td><td>好</td><td>好</td><td>好</td><td>一般</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/microservices/core-concepts.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/microservices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">微服务概述</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/microservices/design-patterns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">设计模式</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#服务拆分原则" class="table-of-contents__link toc-highlight">服务拆分原则</a><ul><li><a href="#单一职责原则" class="table-of-contents__link toc-highlight">单一职责原则</a></li><li><a href="#领域驱动设计ddd" class="table-of-contents__link toc-highlight">领域驱动设计（DDD）</a></li><li><a href="#拆分策略" class="table-of-contents__link toc-highlight">拆分策略</a></li></ul></li><li><a href="#服务通信方式" class="table-of-contents__link toc-highlight">服务通信方式</a><ul><li><a href="#同步通信" class="table-of-contents__link toc-highlight">同步通信</a></li><li><a href="#异步通信" class="table-of-contents__link toc-highlight">异步通信</a></li><li><a href="#通信方式选择" class="table-of-contents__link toc-highlight">通信方式选择</a></li></ul></li><li><a href="#api-设计最佳实践" class="table-of-contents__link toc-highlight">API 设计最佳实践</a><ul><li><a href="#restful-api-设计" class="table-of-contents__link toc-highlight">RESTful API 设计</a></li><li><a href="#api-版本控制" class="table-of-contents__link toc-highlight">API 版本控制</a></li></ul></li><li><a href="#服务注册与发现" class="table-of-contents__link toc-highlight">服务注册与发现</a><ul><li><a href="#概念" class="table-of-contents__link toc-highlight">概念</a></li><li><a href="#服务注册" class="table-of-contents__link toc-highlight">服务注册</a></li><li><a href="#服务发现" class="table-of-contents__link toc-highlight">服务发现</a></li><li><a href="#主流注册中心对比" class="table-of-contents__link toc-highlight">主流注册中心对比</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th>Nacos</th><th>Consul</th><th>Eureka</th><th>Zookeeper</th></tr></thead><tbody><tr><td><strong>一致性协议</strong></td><td>AP/CP 可切换</td><td>CP</td><td>AP</td><td>CP</td></tr><tr><td><strong>健康检查</strong></td><td>TCP/HTTP/MySQL</td><td>TCP/HTTP/gRPC</td><td>心跳</td><td>心跳</td></tr><tr><td><strong>配置管理</strong></td><td>支持</td><td>支持</td><td>不支持</td><td>支持</td></tr><tr><td><strong>多数据中心</strong></td><td>支持</td><td>支持</td><td>支持</td><td>不支持</td></tr><tr><td><strong>管理界面</strong></td><td>有</td><td>有</td><td>有</td><td>无</td></tr><tr><td><strong>Spring Cloud 集成</strong></td><td>好</td><td>好</td><td>好</td><td>一般</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/microservices/core-concepts.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/microservices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">微服务概述</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/microservices/design-patterns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">设计模式</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#服务拆分原则" class="table-of-contents__link toc-highlight">服务拆分原则</a><ul><li><a href="#单一职责原则" class="table-of-contents__link toc-highlight">单一职责原则</a></li><li><a href="#领域驱动设计ddd" class="table-of-contents__link toc-highlight">领域驱动设计（DDD）</a></li><li><a href="#拆分策略" class="table-of-contents__link toc-highlight">拆分策略</a></li></ul></li><li><a href="#服务通信方式" class="table-of-contents__link toc-highlight">服务通信方式</a><ul><li><a href="#同步通信" class="table-of-contents__link toc-highlight">同步通信</a></li><li><a href="#异步通信" class="table-of-contents__link toc-highlight">异步通信</a></li><li><a href="#通信方式选择" class="table-of-contents__link toc-highlight">通信方式选择</a></li></ul></li><li><a href="#api-设计最佳实践" class="table-of-contents__link toc-highlight">API 设计最佳实践</a><ul><li><a href="#restful-api-设计" class="table-of-contents__link toc-highlight">RESTful API 设计</a></li><li><a href="#api-版本控制" class="table-of-contents__link toc-highlight">API 版本控制</a></li></ul></li><li><a href="#服务注册与发现" class="table-of-contents__link toc-highlight">服务注册与发现</a><ul><li><a href="#概念" class="table-of-contents__link toc-highlight">概念</a></li><li><a href="#服务注册" class="table-of-contents__link toc-highlight">服务注册</a></li><li><a href="#服务发现" class="table-of-contents__link toc-highlight">服务发现</a></li><li><a href="#主流注册中心对比" class="table-of-contents__link toc-highlight">主流注册中心对比</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

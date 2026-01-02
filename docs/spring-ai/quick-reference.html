@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">快速参考 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/spring-ai/quick-reference"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="快速参考 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Spring AI 常用配置和 API 速查表。"><meta data-rh="true" property="og:description" content="Spring AI 常用配置和 API 速查表。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/spring-ai/quick-reference"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/spring-ai/quick-reference" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/spring-ai/quick-reference" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"快速参考","item":"https://to-lib.github.io/docs/spring-ai/quick-reference"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,6 +25,47 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="maven-bom">Maven BOM<a href="#maven-bom" class="hash-link" aria-label="Direct link to Maven BOM" title="Direct link to Maven BOM" translate="no">​</a></h3>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependencyManagement</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependencies</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.springframework.ai</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">spring-ai-bom</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0.0-M4</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">type</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">pom</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">type</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">scope</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">import</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">scope</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependencies</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependencyManagement</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">repositories</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">repository</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">id</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">spring-milestones</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">id</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">url</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">https://repo.spring.io/milestone</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">url</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">repository</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">repositories</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常用-starter">常用 Starter<a href="#常用-starter" class="hash-link" aria-label="Direct link to 常用 Starter" title="Direct link to 常用 Starter" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Starter</th><th>用途</th></tr></thead><tbody><tr><td><code>spring-ai-openai-spring-boot-starter</code></td><td>OpenAI (GPT, DALL-E)</td></tr><tr><td><code>spring-ai-azure-openai-spring-boot-starter</code></td><td>Azure OpenAI</td></tr><tr><td><code>spring-ai-ollama-spring-boot-starter</code></td><td>Ollama 本地模型</td></tr><tr><td><code>spring-ai-anthropic-spring-boot-starter</code></td><td>Anthropic Claude</td></tr><tr><td><code>spring-ai-bedrock-ai-spring-boot-starter</code></td><td>Amazon Bedrock</td></tr><tr><td><code>spring-ai-pgvector-store-spring-boot-starter</code></td><td>PGvector 向量数据库</td></tr><tr><td><code>spring-ai-chroma-store-spring-boot-starter</code></td><td>Chroma 向量数据库</td></tr><tr><td><code>spring-ai-milvus-store-spring-boot-starter</code></td><td>Milvus 向量数据库</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="配置速查">配置速查<a href="#配置速查" class="hash-link" aria-label="Direct link to 配置速查" title="Direct link to 配置速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="openai">OpenAI<a href="#openai" class="hash-link" aria-label="Direct link to OpenAI" title="Direct link to OpenAI" translate="no">​</a></h3>
@@ -53,10 +101,122 @@
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">vectorStore.similaritySearch(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    SearchRequest.query(&quot;查询&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        .withTopK(5)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        .withFilterExpression(&quot;source == &#x27;docs&#x27; &amp;&amp; year &gt;= 2024&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">);</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常用参数">常用参数<a href="#常用参数" class="hash-link" aria-label="Direct link to 常用参数" title="Direct link to 常用参数" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="chatoptions">ChatOptions<a href="#chatoptions" class="hash-link" aria-label="Direct link to ChatOptions" title="Direct link to ChatOptions" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>默认值</th></tr></thead><tbody><tr><td><code>model</code></td><td>String</td><td>模型名称</td><td>提供商默认</td></tr><tr><td><code>temperature</code></td><td>Float</td><td>随机性 (0-1)</td><td>0.7</td></tr><tr><td><code>maxTokens</code></td><td>Integer</td><td>最大输出 token</td><td>无限制</td></tr><tr><td><code>topP</code></td><td>Float</td><td>核采样 (0-1)</td><td>1.0</td></tr><tr><td><code>topK</code></td><td>Integer</td><td>候选词数量</td><td>-</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="imageoptions">ImageOptions<a href="#imageoptions" class="hash-link" aria-label="Direct link to ImageOptions" title="Direct link to ImageOptions" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td><code>model</code></td><td>String</td><td>模型</td><td>dall-e-2, dall-e-3</td></tr><tr><td><code>size</code></td><td>String</td><td>尺寸</td><td>1024x1024, 1792x1024</td></tr><tr><td><code>quality</code></td><td>String</td><td>质量</td><td>standard, hd</td></tr><tr><td><code>style</code></td><td>String</td><td>风格</td><td>vivid, natural</td></tr><tr><td><code>responseFormat</code></td><td>String</td><td>返回格式</td><td>url, b64_json</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="异常类型">异常类型<a href="#异常类型" class="hash-link" aria-label="Direct link to 异常类型" title="Direct link to 异常类型" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>异常</th><th>说明</th><th>处理方式</th></tr></thead><tbody><tr><td><code>NonTransientAiException</code></td><td>不可重试错误</td><td>检查配置/输入</td></tr><tr><td><code>TransientAiException</code></td><td>可重试错误</td><td>重试</td></tr><tr><td><code>RateLimitException</code></td><td>限流错误</td><td>延迟重试</td></tr><tr><td><code>ContentPolicyException</code></td><td>内容违规</td><td>修改输入</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="ollama-常用命令">Ollama 常用命令<a href="#ollama-常用命令" class="hash-link" aria-label="Direct link to Ollama 常用命令" title="Direct link to Ollama 常用命令" translate="no">​</a></h2>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 安装</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">brew install ollama</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 启动服务</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama serve</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 拉取模型</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama pull llama2</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama pull mistral</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama pull codellama</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama pull nomic-embed-text</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 查看已安装模型</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama list</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 删除模型</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ollama rm llama2</span><br></span></code></pre></div></div>
@@ -64,6 +224,6 @@
 <ul>
 <li class=""><a class="" href="/docs/spring-ai/core-concepts">核心概念</a> - 深入了解核心概念</li>
 <li class=""><a class="" href="/docs/spring-ai/best-practices">最佳实践</a> - 生产环境最佳实践</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/spring-ai/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/spring-ai/best-practices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">最佳实践</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/spring-ai/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#依赖配置" class="table-of-contents__link toc-highlight">依赖配置</a><ul><li><a href="#maven-bom" class="table-of-contents__link toc-highlight">Maven BOM</a></li><li><a href="#常用-starter" class="table-of-contents__link toc-highlight">常用 Starter</a></li></ul></li><li><a href="#配置速查" class="table-of-contents__link toc-highlight">配置速查</a><ul><li><a href="#openai" class="table-of-contents__link toc-highlight">OpenAI</a></li><li><a href="#ollama" class="table-of-contents__link toc-highlight">Ollama</a></li><li><a href="#azure-openai" class="table-of-contents__link toc-highlight">Azure OpenAI</a></li></ul></li><li><a href="#chatclient-api" class="table-of-contents__link toc-highlight">ChatClient API</a><ul><li><a href="#基础调用" class="table-of-contents__link toc-highlight">基础调用</a></li><li><a href="#带系统提示" class="table-of-contents__link toc-highlight">带系统提示</a></li><li><a href="#多轮对话" class="table-of-contents__link toc-highlight">多轮对话</a></li><li><a href="#函数调用" class="table-of-contents__link toc-highlight">函数调用</a></li><li><a href="#带选项" class="table-of-contents__link toc-highlight">带选项</a></li><li><a href="#使用-advisor" class="table-of-contents__link toc-highlight">使用 Advisor</a></li></ul></li><li><a href="#输出解析" class="table-of-contents__link toc-highlight">输出解析</a><ul><li><a href="#bean-解析" class="table-of-contents__link toc-highlight">Bean 解析</a></li><li><a href="#list-解析" class="table-of-contents__link toc-highlight">List 解析</a></li></ul></li><li><a href="#vectorstore-api" class="table-of-contents__link toc-highlight">VectorStore API</a><ul><li><a href="#添加文档" class="table-of-contents__link toc-highlight">添加文档</a></li><li><a href="#相似度搜索" class="table-of-contents__link toc-highlight">相似度搜索</a></li><li><a href="#带过滤条件" class="table-of-contents__link toc-highlight">带过滤条件</a></li></ul></li><li><a href="#常用参数" class="table-of-contents__link toc-highlight">常用参数</a><ul><li><a href="#chatoptions" class="table-of-contents__link toc-highlight">ChatOptions</a></li><li><a href="#imageoptions" class="table-of-contents__link toc-highlight">ImageOptions</a></li></ul></li><li><a href="#异常类型" class="table-of-contents__link toc-highlight">异常类型</a></li><li><a href="#ollama-常用命令" class="table-of-contents__link toc-highlight">Ollama 常用命令</a></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/spring-ai/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/spring-ai/best-practices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">最佳实践</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/spring-ai/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#依赖配置" class="table-of-contents__link toc-highlight">依赖配置</a><ul><li><a href="#maven-bom" class="table-of-contents__link toc-highlight">Maven BOM</a></li><li><a href="#常用-starter" class="table-of-contents__link toc-highlight">常用 Starter</a></li></ul></li><li><a href="#配置速查" class="table-of-contents__link toc-highlight">配置速查</a><ul><li><a href="#openai" class="table-of-contents__link toc-highlight">OpenAI</a></li><li><a href="#ollama" class="table-of-contents__link toc-highlight">Ollama</a></li><li><a href="#azure-openai" class="table-of-contents__link toc-highlight">Azure OpenAI</a></li></ul></li><li><a href="#chatclient-api" class="table-of-contents__link toc-highlight">ChatClient API</a><ul><li><a href="#基础调用" class="table-of-contents__link toc-highlight">基础调用</a></li><li><a href="#带系统提示" class="table-of-contents__link toc-highlight">带系统提示</a></li><li><a href="#多轮对话" class="table-of-contents__link toc-highlight">多轮对话</a></li><li><a href="#函数调用" class="table-of-contents__link toc-highlight">函数调用</a></li><li><a href="#带选项" class="table-of-contents__link toc-highlight">带选项</a></li><li><a href="#使用-advisor" class="table-of-contents__link toc-highlight">使用 Advisor</a></li></ul></li><li><a href="#输出解析" class="table-of-contents__link toc-highlight">输出解析</a><ul><li><a href="#bean-解析" class="table-of-contents__link toc-highlight">Bean 解析</a></li><li><a href="#list-解析" class="table-of-contents__link toc-highlight">List 解析</a></li></ul></li><li><a href="#vectorstore-api" class="table-of-contents__link toc-highlight">VectorStore API</a><ul><li><a href="#添加文档" class="table-of-contents__link toc-highlight">添加文档</a></li><li><a href="#相似度搜索" class="table-of-contents__link toc-highlight">相似度搜索</a></li><li><a href="#带过滤条件" class="table-of-contents__link toc-highlight">带过滤条件</a></li></ul></li><li><a href="#常用参数" class="table-of-contents__link toc-highlight">常用参数</a><ul><li><a href="#chatoptions" class="table-of-contents__link toc-highlight">ChatOptions</a></li><li><a href="#imageoptions" class="table-of-contents__link toc-highlight">ImageOptions</a></li></ul></li><li><a href="#异常类型" class="table-of-contents__link toc-highlight">异常类型</a></li><li><a href="#ollama-常用命令" class="table-of-contents__link toc-highlight">Ollama 常用命令</a></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

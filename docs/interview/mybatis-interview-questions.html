@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">MyBatis 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/mybatis-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MyBatis 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="本页汇总 MyBatis 常见面试题，涵盖基础概念、缓存机制、动态 SQL 和源码原理。"><meta data-rh="true" property="og:description" content="本页汇总 MyBatis 常见面试题，涵盖基础概念、缓存机制、动态 SQL 和源码原理。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/mybatis-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/mybatis-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/mybatis-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MyBatis 面试题","item":"https://to-lib.github.io/docs/interview/mybatis-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -35,11 +42,81 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q2-mybatis-的核心组件有哪些">Q2: MyBatis 的核心组件有哪些？<a href="#q2-mybatis-的核心组件有哪些" class="hash-link" aria-label="Direct link to Q2: MyBatis 的核心组件有哪些？" title="Direct link to Q2: MyBatis 的核心组件有哪些？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>描述</th></tr></thead><tbody><tr><td><code>SqlSessionFactoryBuilder</code></td><td>构建 SqlSessionFactory</td></tr><tr><td><code>SqlSessionFactory</code></td><td>创建 SqlSession 的工厂</td></tr><tr><td><code>SqlSession</code></td><td>执行 SQL 的核心接口</td></tr><tr><td><code>Mapper</code></td><td>数据访问接口</td></tr><tr><td><code>Configuration</code></td><td>核心配置类</td></tr><tr><td><code>Executor</code></td><td>SQL 执行器</td></tr><tr><td><code>StatementHandler</code></td><td>语句处理器</td></tr><tr><td><code>ParameterHandler</code></td><td>参数处理器</td></tr><tr><td><code>ResultSetHandler</code></td><td>结果集处理器</td></tr></tbody></table>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar__9bU" id="q3--和--的区别">Q3: #<!-- --> 和 $<!-- --> 的区别？<a href="#q3--和--的区别" class="hash-link" aria-label="Direct link to q3--和--的区别" title="Direct link to q3--和--的区别" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="q3--和--的区别">Q3: #{} 和 ${} 的区别？<a href="#q3--和--的区别" class="hash-link" aria-label="Direct link to Q3: #{} 和 ${} 的区别？" title="Direct link to Q3: #{} 和 ${} 的区别？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
-<table><thead><tr><th>特性</th><th>#</th><th>$</th></tr></thead><tbody><tr><td>处理方式</td><td>预编译，使用 ? 占位符</td><td>字符串替换</td></tr><tr><td>安全性</td><td>防止 SQL 注入</td><td>有 SQL 注入风险</td></tr><tr><td>使用场景</td><td>参数值</td><td>表名、列名、排序字段</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th>#{}</th><th>${}</th></tr></thead><tbody><tr><td>处理方式</td><td>预编译，使用 ? 占位符</td><td>字符串替换</td></tr><tr><td>安全性</td><td>防止 SQL 注入</td><td>有 SQL 注入风险</td></tr><tr><td>使用场景</td><td>参数值</td><td>表名、列名、排序字段</td></tr></tbody></table>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- #{} 生成: WHERE id = ? --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE id = #{id}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- ${} 生成: ORDER BY create_time --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ORDER BY ${orderColumn}</span><br></span></code></pre></div></div>
 <p><strong>使用建议</strong>：优先使用 <code>#{}</code>，<code>${}</code> 只用于动态表名/列名，且需要白名单校验。</p>
 <hr>
@@ -62,6 +139,36 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q6-resulttype-和-resultmap-的区别">Q6: resultType 和 resultMap 的区别？<a href="#q6-resulttype-和-resultmap-的区别" class="hash-link" aria-label="Direct link to Q6: resultType 和 resultMap 的区别？" title="Direct link to Q6: resultType 和 resultMap 的区别？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>resultType</th><th>resultMap</th></tr></thead><tbody><tr><td>使用场景</td><td>简单映射</td><td>复杂映射</td></tr><tr><td>字段映射</td><td>自动（需开启驼峰映射）</td><td>手动配置</td></tr><tr><td>关联映射</td><td>不支持</td><td>支持（association/collection）</td></tr><tr><td>性能</td><td>略高</td><td>略低</td></tr></tbody></table>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- resultType：简单映射 --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">select</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">id</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">selectById</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">resultType</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">User</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    SELECT id, name, email FROM user WHERE id = #{id}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">select</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- resultMap：复杂映射 --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">resultMap</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">id</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">userMap</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">type</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">User</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">id</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">property</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">id</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">column</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">id</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">result</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">property</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">userName</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">column</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">user_name</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">collection</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">property</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">orders</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">ofType</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">Order</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">id</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">property</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">id</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">column</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">order_id</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">collection</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">resultMap</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="缓存机制">缓存机制<a href="#缓存机制" class="hash-link" aria-label="Direct link to 缓存机制" title="Direct link to 缓存机制" translate="no">​</a></h2>
@@ -122,6 +229,47 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="动态-sql">动态 SQL<a href="#动态-sql" class="hash-link" aria-label="Direct link to 动态 SQL" title="Direct link to 动态 SQL" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q11-mybatis-有哪些动态-sql-标签">Q11: MyBatis 有哪些动态 SQL 标签？<a href="#q11-mybatis-有哪些动态-sql-标签" class="hash-link" aria-label="Direct link to Q11: MyBatis 有哪些动态 SQL 标签？" title="Direct link to Q11: MyBatis 有哪些动态 SQL 标签？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>标签</th><th>描述</th></tr></thead><tbody><tr><td><code>&lt;if&gt;</code></td><td>条件判断</td></tr><tr><td><code>&lt;choose&gt;/&lt;when&gt;/&lt;otherwise&gt;</code></td><td>多条件分支</td></tr><tr><td><code>&lt;where&gt;</code></td><td>智能处理 WHERE</td></tr><tr><td><code>&lt;set&gt;</code></td><td>智能处理 SET</td></tr><tr><td><code>&lt;trim&gt;</code></td><td>自定义前后缀</td></tr><tr><td><code>&lt;foreach&gt;</code></td><td>遍历集合</td></tr><tr><td><code>&lt;sql&gt;</code></td><td>SQL 片段</td></tr><tr><td><code>&lt;bind&gt;</code></td><td>变量绑定</td></tr></tbody></table>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q12-where-标签的作用">Q12: where 标签的作用？<a href="#q12-where-标签的作用" class="hash-link" aria-label="Direct link to Q12: where 标签的作用？" title="Direct link to Q12: where 标签的作用？" translate="no">​</a></h3>
@@ -135,6 +283,39 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q13-foreach-标签的属性有哪些">Q13: foreach 标签的属性有哪些？<a href="#q13-foreach-标签的属性有哪些" class="hash-link" aria-label="Direct link to Q13: foreach 标签的属性有哪些？" title="Direct link to Q13: foreach 标签的属性有哪些？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><code>collection</code></td><td>要遍历的集合</td></tr><tr><td><code>item</code></td><td>当前元素变量名</td></tr><tr><td><code>index</code></td><td>当前索引</td></tr><tr><td><code>open</code></td><td>开始符号</td></tr><tr><td><code>close</code></td><td>结束符号</td></tr><tr><td><code>separator</code></td><td>分隔符</td></tr></tbody></table>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">foreach</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">collection</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">ids</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">item</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">id</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">open</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">(</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">separator</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">,</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">close</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">)</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    #{id}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">foreach</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <hr>
@@ -152,7 +333,7 @@
 <li class=""><strong>创建 SqlSessionFactory</strong>：构建 Configuration 对象</li>
 <li class=""><strong>获取 SqlSession</strong>：从工厂获取 SqlSession</li>
 <li class=""><strong>获取 Mapper 代理</strong>：通过 JDK 动态代理生成 Mapper 实现</li>
-<li class=""><strong>执行 SQL</strong>：<!-- -->
+<li class=""><strong>执行 SQL</strong>：
 <ul>
 <li class="">MapperProxy 拦截方法调用</li>
 <li class="">找到对应的 MappedStatement</li>
@@ -191,14 +372,35 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q18-mybatis-有哪些-executor-类型">Q18: MyBatis 有哪些 Executor 类型？<a href="#q18-mybatis-有哪些-executor-类型" class="hash-link" aria-label="Direct link to Q18: MyBatis 有哪些 Executor 类型？" title="Direct link to Q18: MyBatis 有哪些 Executor 类型？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>SimpleExecutor</code></td><td>默认，每次执行创建新 Statement</td></tr><tr><td><code>ReuseExecutor</code></td><td>重用 Statement</td></tr><tr><td><code>BatchExecutor</code></td><td>批量执行，适合大量 insert/update</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">SqlSession session = sqlSessionFactory.openSession(ExecutorType.BATCH);</span><br></span></code></pre></div></div>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q19-mybatis-如何防止-sql-注入">Q19: MyBatis 如何防止 SQL 注入？<a href="#q19-mybatis-如何防止-sql-注入" class="hash-link" aria-label="Direct link to Q19: MyBatis 如何防止 SQL 注入？" title="Direct link to Q19: MyBatis 如何防止 SQL 注入？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
 <ol>
-<li class=""><strong>使用 #</strong>：预编译参数，使用 PreparedStatement</li>
-<li class=""><strong>避免 $</strong>：或对 $<!-- --> 参数进行白名单校验</li>
+<li class=""><strong>使用 #{}</strong>：预编译参数，使用 PreparedStatement</li>
+<li class="">**避免 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow></mrow><mo>∗</mo><mo>∗</mo><mtext>：或对</mtext></mrow><annotation encoding="application/x-tex">{}**：或对 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em"></span><span class="mord"></span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord">∗</span><span class="mord cjk_fallback">：或对</span></span></span></span>{} 参数进行白名单校验</li>
 <li class=""><strong>使用动态 SQL 标签</strong>：避免手动拼接 SQL</li>
 </ol>
 <div class="language-xml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-xml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- 安全：预编译 --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE name = #{name}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">&lt;!-- 危险：字符串拼接 --&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">WHERE name = &#x27;${name}&#x27;</span><br></span></code></pre></div></div>
@@ -219,6 +421,31 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="spring-集成">Spring 集成<a href="#spring-集成" class="hash-link" aria-label="Direct link to Spring 集成" title="Direct link to Spring 集成" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q21-mybatis-与-spring-集成的核心类">Q21: MyBatis 与 Spring 集成的核心类？<a href="#q21-mybatis-与-spring-集成的核心类" class="hash-link" aria-label="Direct link to Q21: MyBatis 与 Spring 集成的核心类？" title="Direct link to Q21: MyBatis 与 Spring 集成的核心类？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类</th><th>描述</th></tr></thead><tbody><tr><td><code>SqlSessionFactoryBean</code></td><td>创建 SqlSessionFactory</td></tr><tr><td><code>MapperScannerConfigurer</code></td><td>扫描 Mapper 接口</td></tr><tr><td><code>SqlSessionTemplate</code></td><td>线程安全的 SqlSession</td></tr><tr><td><code>MapperFactoryBean</code></td><td>创建 Mapper 代理</td></tr></tbody></table>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q22-spring-中-mybatis-的一级缓存为什么不生效">Q22: Spring 中 MyBatis 的一级缓存为什么不生效？<a href="#q22-spring-中-mybatis-的一级缓存为什么不生效" class="hash-link" aria-label="Direct link to Q22: Spring 中 MyBatis 的一级缓存为什么不生效？" title="Direct link to Q22: Spring 中 MyBatis 的一级缓存为什么不生效？" translate="no">​</a></h3>
@@ -229,6 +456,26 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q23-mapperscan-和-mapper-的区别">Q23: @MapperScan 和 @Mapper 的区别？<a href="#q23-mapperscan-和-mapper-的区别" class="hash-link" aria-label="Direct link to Q23: @MapperScan 和 @Mapper 的区别？" title="Direct link to Q23: @MapperScan 和 @Mapper 的区别？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>位置</th><th>作用</th></tr></thead><tbody><tr><td><code>@Mapper</code></td><td>Mapper 接口</td><td>标记单个接口为 Mapper</td></tr><tr><td><code>@MapperScan</code></td><td>配置类</td><td>批量扫描包下所有 Mapper</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// @Mapper：每个接口都要加</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Mapper</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public interface UserMapper { }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// @MapperScan：一次配置，扫描整个包</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@MapperScan(&quot;com.example.mapper&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class Application { }</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="相关链接">相关链接<a href="#相关链接" class="hash-link" aria-label="Direct link to 相关链接" title="Direct link to 相关链接" translate="no">​</a></h2>
@@ -240,6 +487,6 @@
 <li class=""><a class="" href="/docs/mybatis/spring-integration">Spring 集成</a></li>
 </ul>
 <hr>
-<p><strong>最后更新</strong>: 2025 年 12 月</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/mybatis-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/mysql-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MySQL 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/redis-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Redis 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#q1-什么是-mybatis它有什么优点" class="table-of-contents__link toc-highlight">Q1: 什么是 MyBatis？它有什么优点？</a></li><li><a href="#q2-mybatis-的核心组件有哪些" class="table-of-contents__link toc-highlight">Q2: MyBatis 的核心组件有哪些？</a></li><li><a href="#q3--和--的区别" class="table-of-contents__link toc-highlight">Q3: # 和 $ 的区别？</a></li><li><a href="#q4-mybatis-如何获取自增主键" class="table-of-contents__link toc-highlight">Q4: MyBatis 如何获取自增主键？</a></li><li><a href="#q5-mybatis-的-mapper-接口如何与-xml-绑定" class="table-of-contents__link toc-highlight">Q5: MyBatis 的 Mapper 接口如何与 XML 绑定？</a></li><li><a href="#q6-resulttype-和-resultmap-的区别" class="table-of-contents__link toc-highlight">Q6: resultType 和 resultMap 的区别？</a></li></ul></li><li><a href="#缓存机制" class="table-of-contents__link toc-highlight">缓存机制</a><ul><li><a href="#q7-mybatis-的一级缓存和二级缓存" class="table-of-contents__link toc-highlight">Q7: MyBatis 的一级缓存和二级缓存？</a></li><li><a href="#q8-一级缓存在什么情况下会失效" class="table-of-contents__link toc-highlight">Q8: 一级缓存在什么情况下会失效？</a></li><li><a href="#q9-二级缓存的使用注意事项" class="table-of-contents__link toc-highlight">Q9: 二级缓存的使用注意事项？</a></li><li><a href="#q10-mybatis-缓存的查询顺序" class="table-of-contents__link toc-highlight">Q10: MyBatis 缓存的查询顺序？</a></li></ul></li><li><a href="#动态-sql" class="table-of-contents__link toc-highlight">动态 SQL</a><ul><li><a href="#q11-mybatis-有哪些动态-sql-标签" class="table-of-contents__link toc-highlight">Q11: MyBatis 有哪些动态 SQL 标签？</a></li><li><a href="#q12-where-标签的作用" class="table-of-contents__link toc-highlight">Q12: where 标签的作用？</a></li><li><a href="#q13-foreach-标签的属性有哪些" class="table-of-contents__link toc-highlight">Q13: foreach 标签的属性有哪些？</a></li><li><a href="#q14-如何实现批量插入" class="table-of-contents__link toc-highlight">Q14: 如何实现批量插入？</a></li></ul></li><li><a href="#源码原理" class="table-of-contents__link toc-highlight">源码原理</a><ul><li><a href="#q15-mybatis-的执行流程" class="table-of-contents__link toc-highlight">Q15: MyBatis 的执行流程？</a></li><li><a href="#q16-mybatis-的-mapper-接口没有实现类为什么能调用" class="table-of-contents__link toc-highlight">Q16: MyBatis 的 Mapper 接口没有实现类，为什么能调用？</a></li><li><a href="#q17-mybatis-的插件原理" class="table-of-contents__link toc-highlight">Q17: MyBatis 的插件原理？</a></li><li><a href="#q18-mybatis-有哪些-executor-类型" class="table-of-contents__link toc-highlight">Q18: MyBatis 有哪些 Executor 类型？</a></li><li><a href="#q19-mybatis-如何防止-sql-注入" class="table-of-contents__link toc-highlight">Q19: MyBatis 如何防止 SQL 注入？</a></li><li><a href="#q20-mybatis-延迟加载的原理" class="table-of-contents__link toc-highlight">Q20: MyBatis 延迟加载的原理？</a></li></ul></li><li><a href="#spring-集成" class="table-of-contents__link toc-highlight">Spring 集成</a><ul><li><a href="#q21-mybatis-与-spring-集成的核心类" class="table-of-contents__link toc-highlight">Q21: MyBatis 与 Spring 集成的核心类？</a></li><li><a href="#q22-spring-中-mybatis-的一级缓存为什么不生效" class="table-of-contents__link toc-highlight">Q22: Spring 中 MyBatis 的一级缓存为什么不生效？</a></li><li><a href="#q23-mapperscan-和-mapper-的区别" class="table-of-contents__link toc-highlight">Q23: @MapperScan 和 @Mapper 的区别？</a></li></ul></li><li><a href="#相关链接" class="table-of-contents__link toc-highlight">相关链接</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>最后更新</strong>: 2025 年 12 月</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/mybatis-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/mysql-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MySQL 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/redis-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Redis 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#q1-什么是-mybatis它有什么优点" class="table-of-contents__link toc-highlight">Q1: 什么是 MyBatis？它有什么优点？</a></li><li><a href="#q2-mybatis-的核心组件有哪些" class="table-of-contents__link toc-highlight">Q2: MyBatis 的核心组件有哪些？</a></li><li><a href="#q3--和--的区别" class="table-of-contents__link toc-highlight">Q3: #{} 和 ${} 的区别？</a></li><li><a href="#q4-mybatis-如何获取自增主键" class="table-of-contents__link toc-highlight">Q4: MyBatis 如何获取自增主键？</a></li><li><a href="#q5-mybatis-的-mapper-接口如何与-xml-绑定" class="table-of-contents__link toc-highlight">Q5: MyBatis 的 Mapper 接口如何与 XML 绑定？</a></li><li><a href="#q6-resulttype-和-resultmap-的区别" class="table-of-contents__link toc-highlight">Q6: resultType 和 resultMap 的区别？</a></li></ul></li><li><a href="#缓存机制" class="table-of-contents__link toc-highlight">缓存机制</a><ul><li><a href="#q7-mybatis-的一级缓存和二级缓存" class="table-of-contents__link toc-highlight">Q7: MyBatis 的一级缓存和二级缓存？</a></li><li><a href="#q8-一级缓存在什么情况下会失效" class="table-of-contents__link toc-highlight">Q8: 一级缓存在什么情况下会失效？</a></li><li><a href="#q9-二级缓存的使用注意事项" class="table-of-contents__link toc-highlight">Q9: 二级缓存的使用注意事项？</a></li><li><a href="#q10-mybatis-缓存的查询顺序" class="table-of-contents__link toc-highlight">Q10: MyBatis 缓存的查询顺序？</a></li></ul></li><li><a href="#动态-sql" class="table-of-contents__link toc-highlight">动态 SQL</a><ul><li><a href="#q11-mybatis-有哪些动态-sql-标签" class="table-of-contents__link toc-highlight">Q11: MyBatis 有哪些动态 SQL 标签？</a></li><li><a href="#q12-where-标签的作用" class="table-of-contents__link toc-highlight">Q12: where 标签的作用？</a></li><li><a href="#q13-foreach-标签的属性有哪些" class="table-of-contents__link toc-highlight">Q13: foreach 标签的属性有哪些？</a></li><li><a href="#q14-如何实现批量插入" class="table-of-contents__link toc-highlight">Q14: 如何实现批量插入？</a></li></ul></li><li><a href="#源码原理" class="table-of-contents__link toc-highlight">源码原理</a><ul><li><a href="#q15-mybatis-的执行流程" class="table-of-contents__link toc-highlight">Q15: MyBatis 的执行流程？</a></li><li><a href="#q16-mybatis-的-mapper-接口没有实现类为什么能调用" class="table-of-contents__link toc-highlight">Q16: MyBatis 的 Mapper 接口没有实现类，为什么能调用？</a></li><li><a href="#q17-mybatis-的插件原理" class="table-of-contents__link toc-highlight">Q17: MyBatis 的插件原理？</a></li><li><a href="#q18-mybatis-有哪些-executor-类型" class="table-of-contents__link toc-highlight">Q18: MyBatis 有哪些 Executor 类型？</a></li><li><a href="#q19-mybatis-如何防止-sql-注入" class="table-of-contents__link toc-highlight">Q19: MyBatis 如何防止 SQL 注入？</a></li><li><a href="#q20-mybatis-延迟加载的原理" class="table-of-contents__link toc-highlight">Q20: MyBatis 延迟加载的原理？</a></li></ul></li><li><a href="#spring-集成" class="table-of-contents__link toc-highlight">Spring 集成</a><ul><li><a href="#q21-mybatis-与-spring-集成的核心类" class="table-of-contents__link toc-highlight">Q21: MyBatis 与 Spring 集成的核心类？</a></li><li><a href="#q22-spring-中-mybatis-的一级缓存为什么不生效" class="table-of-contents__link toc-highlight">Q22: Spring 中 MyBatis 的一级缓存为什么不生效？</a></li><li><a href="#q23-mapperscan-和-mapper-的区别" class="table-of-contents__link toc-highlight">Q23: @MapperScan 和 @Mapper 的区别？</a></li></ul></li><li><a href="#相关链接" class="table-of-contents__link toc-highlight">相关链接</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

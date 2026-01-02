@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">MyBatis 持久层框架学习指南 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/mybatis"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MyBatis 持久层框架学习指南 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="欢迎来到 MyBatis 持久层框架完整学习指南！本指南涵盖了 MyBatis 从基础到高级的核心知识和实践技巧。"><meta data-rh="true" property="og:description" content="欢迎来到 MyBatis 持久层框架完整学习指南！本指南涵盖了 MyBatis 从基础到高级的核心知识和实践技巧。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/mybatis"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mybatis" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mybatis" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MyBatis 持久层框架学习指南","item":"https://to-lib.github.io/docs/mybatis/"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -38,6 +45,39 @@
 <li class=""><strong>最佳实践</strong> - Mapper 设计规范、SQL 编写规范、性能优化</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-核心特性">🎯 核心特性<a href="#-核心特性" class="hash-link" aria-label="Direct link to 🎯 核心特性" title="Direct link to 🎯 核心特性" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>描述</th></tr></thead><tbody><tr><td><strong>灵活的 SQL 控制</strong></td><td>直接编写原生 SQL，完全掌控 SQL 执行</td></tr><tr><td><strong>强大的映射能力</strong></td><td>支持复杂的结果集映射，包括一对一、一对多关联</td></tr><tr><td><strong>动态 SQL</strong></td><td>根据条件动态生成 SQL，避免字符串拼接</td></tr><tr><td><strong>插件扩展</strong></td><td>通过拦截器机制扩展功能，如分页、SQL 监控</td></tr><tr><td><strong>缓存支持</strong></td><td>内置一级、二级缓存，支持第三方缓存集成</td></tr><tr><td><strong>Spring 集成</strong></td><td>与 Spring/Spring Boot 无缝集成</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-快速开始">🚀 快速开始<a href="#-快速开始" class="hash-link" aria-label="Direct link to 🚀 快速开始" title="Direct link to 🚀 快速开始" translate="no">​</a></h2>
 <p>如果你是 MyBatis 初学者，建议按以下顺序学习：</p>
@@ -76,8 +116,118 @@
 <li class="">批量操作优化</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-完整学习资源">📚 完整学习资源<a href="#-完整学习资源" class="hash-link" aria-label="Direct link to 📚 完整学习资源" title="Direct link to 📚 完整学习资源" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>主题</th><th>描述</th></tr></thead><tbody><tr><td><a class="" href="/docs/mybatis/core-concepts">核心概念</a></td><td>MyBatis 架构、核心组件、工作流程</td></tr><tr><td><a class="" href="/docs/mybatis/configuration">配置详解</a></td><td>配置文件结构、常用配置项、环境配置</td></tr><tr><td><a class="" href="/docs/mybatis/xml-mapping">XML 映射</a></td><td>Mapper XML、CRUD 标签、resultMap、参数映射</td></tr><tr><td><a class="" href="/docs/mybatis/dynamic-sql">动态 SQL</a></td><td>if、choose、where、set、foreach、sql 片段</td></tr><tr><td><a class="" href="/docs/mybatis/annotations">注解映射</a></td><td>@Select、@Results、@Provider 系列注解</td></tr><tr><td><a class="" href="/docs/mybatis/caching">缓存机制</a></td><td>一级缓存、二级缓存、第三方缓存集成</td></tr><tr><td><a class="" href="/docs/mybatis/spring-integration">Spring 集成</a></td><td>MyBatis-Spring、Spring Boot Starter、事务管理</td></tr><tr><td><a class="" href="/docs/mybatis/plugins">插件机制</a></td><td>拦截器原理、自定义插件、PageHelper、MyBatis-Plus</td></tr><tr><td><a class="" href="/docs/mybatis/best-practices">最佳实践</a></td><td>Mapper 设计规范、SQL 规范、性能优化</td></tr><tr><td><a class="" href="/docs/mybatis/quick-reference">快速参考</a></td><td>配置速查、标签速查、注解速查、代码片段</td></tr><tr><td><a class="" href="/docs/mybatis/faq">常见问题</a></td><td>配置问题、映射问题、性能问题、集成问题</td></tr><tr><td><a class="" href="/docs/interview/mybatis-interview-questions">面试题集</a></td><td>MyBatis 常见面试题和答案详解</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-mybatis-vs-jdbc-vs-jpa">🔧 MyBatis vs JDBC vs JPA<a href="#-mybatis-vs-jdbc-vs-jpa" class="hash-link" aria-label="Direct link to 🔧 MyBatis vs JDBC vs JPA" title="Direct link to 🔧 MyBatis vs JDBC vs JPA" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>JDBC</th><th>MyBatis</th><th>JPA/Hibernate</th></tr></thead><tbody><tr><td>SQL 控制</td><td>完全手写</td><td>手写 SQL</td><td>自动生成</td></tr><tr><td>学习曲线</td><td>低</td><td>中</td><td>高</td></tr><tr><td>开发效率</td><td>低</td><td>中</td><td>高</td></tr><tr><td>灵活性</td><td>高</td><td>高</td><td>中</td></tr><tr><td>复杂查询</td><td>繁琐</td><td>方便</td><td>需要 JPQL/原生 SQL</td></tr><tr><td>缓存支持</td><td>无</td><td>一级/二级缓存</td><td>一级/二级缓存</td></tr><tr><td>适用场景</td><td>简单项目</td><td>复杂 SQL 场景</td><td>标准 CRUD 场景</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-为什么选择-mybatis">💡 为什么选择 MyBatis？<a href="#-为什么选择-mybatis" class="hash-link" aria-label="Direct link to 💡 为什么选择 MyBatis？" title="Direct link to 💡 为什么选择 MyBatis？" translate="no">​</a></h2>
 <ol>
@@ -121,6 +271,6 @@
 <hr>
 <p><strong>最后更新</strong>: 2025 年 12 月<br>
 <strong>版本</strong>: MyBatis 3.5.x</p>
-<p>开始你的 MyBatis 学习之旅吧！🚀</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mybatis/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mybatis/core-concepts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">MyBatis 核心概念</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-学习内容" class="table-of-contents__link toc-highlight">📚 学习内容</a><ul><li><a href="#基础知识" class="table-of-contents__link toc-highlight">基础知识</a></li><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#企业应用" class="table-of-contents__link toc-highlight">企业应用</a></li></ul></li><li><a href="#-核心特性" class="table-of-contents__link toc-highlight">🎯 核心特性</a></li><li><a href="#-快速开始" class="table-of-contents__link toc-highlight">🚀 快速开始</a></li><li><a href="#-学习路径" class="table-of-contents__link toc-highlight">📖 学习路径</a><ul><li><a href="#初级开发者1-2-周" class="table-of-contents__link toc-highlight">初级开发者（1-2 周）</a></li><li><a href="#中级开发者2-4-周" class="table-of-contents__link toc-highlight">中级开发者（2-4 周）</a></li><li><a href="#高级开发者4-6-周" class="table-of-contents__link toc-highlight">高级开发者（4-6 周）</a></li></ul></li><li><a href="#-完整学习资源" class="table-of-contents__link toc-highlight">📚 完整学习资源</a></li><li><a href="#-mybatis-vs-jdbc-vs-jpa" class="table-of-contents__link toc-highlight">🔧 MyBatis vs JDBC vs JPA</a></li><li><a href="#-为什么选择-mybatis" class="table-of-contents__link toc-highlight">💡 为什么选择 MyBatis？</a></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">🔗 相关资源</a><ul><li><a href="#java-基础" class="table-of-contents__link toc-highlight">Java 基础</a></li><li><a href="#spring-生态" class="table-of-contents__link toc-highlight">Spring 生态</a></li><li><a href="#数据库" class="table-of-contents__link toc-highlight">数据库</a></li><li><a href="#面试准备" class="table-of-contents__link toc-highlight">面试准备</a></li></ul></li><li><a href="#-推荐学习资源" class="table-of-contents__link toc-highlight">📖 推荐学习资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p>开始你的 MyBatis 学习之旅吧！🚀</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mybatis/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mybatis/core-concepts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">MyBatis 核心概念</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-学习内容" class="table-of-contents__link toc-highlight">📚 学习内容</a><ul><li><a href="#基础知识" class="table-of-contents__link toc-highlight">基础知识</a></li><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#企业应用" class="table-of-contents__link toc-highlight">企业应用</a></li></ul></li><li><a href="#-核心特性" class="table-of-contents__link toc-highlight">🎯 核心特性</a></li><li><a href="#-快速开始" class="table-of-contents__link toc-highlight">🚀 快速开始</a></li><li><a href="#-学习路径" class="table-of-contents__link toc-highlight">📖 学习路径</a><ul><li><a href="#初级开发者1-2-周" class="table-of-contents__link toc-highlight">初级开发者（1-2 周）</a></li><li><a href="#中级开发者2-4-周" class="table-of-contents__link toc-highlight">中级开发者（2-4 周）</a></li><li><a href="#高级开发者4-6-周" class="table-of-contents__link toc-highlight">高级开发者（4-6 周）</a></li></ul></li><li><a href="#-完整学习资源" class="table-of-contents__link toc-highlight">📚 完整学习资源</a></li><li><a href="#-mybatis-vs-jdbc-vs-jpa" class="table-of-contents__link toc-highlight">🔧 MyBatis vs JDBC vs JPA</a></li><li><a href="#-为什么选择-mybatis" class="table-of-contents__link toc-highlight">💡 为什么选择 MyBatis？</a></li><li><a href="#-相关资源" class="table-of-contents__link toc-highlight">🔗 相关资源</a><ul><li><a href="#java-基础" class="table-of-contents__link toc-highlight">Java 基础</a></li><li><a href="#spring-生态" class="table-of-contents__link toc-highlight">Spring 生态</a></li><li><a href="#数据库" class="table-of-contents__link toc-highlight">数据库</a></li><li><a href="#面试准备" class="table-of-contents__link toc-highlight">面试准备</a></li></ul></li><li><a href="#-推荐学习资源" class="table-of-contents__link toc-highlight">📖 推荐学习资源</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

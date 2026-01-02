@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">监控与运维 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/rocketmq/monitoring"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="监控与运维 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="RocketMQ 监控体系与日常运维指南"><meta data-rh="true" property="og:description" content="RocketMQ 监控体系与日常运维指南"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/rocketmq/monitoring"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/rocketmq/monitoring" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/rocketmq/monitoring" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"监控与运维","item":"https://to-lib.github.io/docs/rocketmq/monitoring"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,6 +25,36 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="监控维度">监控维度<a href="#监控维度" class="hash-link" aria-label="Direct link to 监控维度" title="Direct link to 监控维度" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="监控工具选型">监控工具选型<a href="#监控工具选型" class="hash-link" aria-label="Direct link to 监控工具选型" title="Direct link to 监控工具选型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>工具</th><th>适用场景</th><th>特点</th></tr></thead><tbody><tr><td>RocketMQ Dashboard</td><td>日常运维</td><td>官方控制台，功能全面</td></tr><tr><td>Prometheus + Grafana</td><td>生产监控</td><td>指标丰富，可视化强</td></tr><tr><td>Skywalking/Zipkin</td><td>链路追踪</td><td>消息全链路追踪</td></tr><tr><td>ELK</td><td>日志分析</td><td>日志集中管理</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="rocketmq-dashboard">RocketMQ Dashboard<a href="#rocketmq-dashboard" class="hash-link" aria-label="Direct link to RocketMQ Dashboard" title="Direct link to RocketMQ Dashboard" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="安装部署">安装部署<a href="#安装部署" class="hash-link" aria-label="Direct link to 安装部署" title="Direct link to 安装部署" translate="no">​</a></h3>
@@ -66,10 +103,90 @@
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># prometheus.yml</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">scrape_configs</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token key atrule" style="color:#00a4db">job_name</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;rocketmq&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">static_configs</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token key atrule" style="color:#00a4db">targets</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">&quot;192.168.1.10:5557&quot;</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">relabel_configs</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token key atrule" style="color:#00a4db">source_labels</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">__address__</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">target_label</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> instance</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键监控指标">关键监控指标<a href="#关键监控指标" class="hash-link" aria-label="Direct link to 关键监控指标" title="Direct link to 关键监控指标" translate="no">​</a></h3>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="broker-指标">Broker 指标<a href="#broker-指标" class="hash-link" aria-label="Direct link to Broker 指标" title="Direct link to Broker 指标" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>告警阈值</th></tr></thead><tbody><tr><td><code>rocketmq_broker_tps</code></td><td>Broker TPS</td><td>-</td></tr><tr><td><code>rocketmq_broker_qps</code></td><td>Broker QPS</td><td>-</td></tr><tr><td><code>rocketmq_broker_commitlog_disk_ratio</code></td><td>磁盘使用率</td><td>&gt; 80%</td></tr><tr><td><code>rocketmq_broker_runtime_putmessage_failed_total</code></td><td>写入失败数</td><td>&gt; 0</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="topic-指标">Topic 指标<a href="#topic-指标" class="hash-link" aria-label="Direct link to Topic 指标" title="Direct link to Topic 指标" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>告警阈值</th></tr></thead><tbody><tr><td><code>rocketmq_producer_tps</code></td><td>Topic 生产 TPS</td><td>-</td></tr><tr><td><code>rocketmq_consumer_tps</code></td><td>Topic 消费 TPS</td><td>-</td></tr><tr><td><code>rocketmq_producer_message_size</code></td><td>消息大小</td><td>&gt; 1MB</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="consumer-指标">Consumer 指标<a href="#consumer-指标" class="hash-link" aria-label="Direct link to Consumer 指标" title="Direct link to Consumer 指标" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>告警阈值</th></tr></thead><tbody><tr><td><code>rocketmq_consumer_offset</code></td><td>消费位点</td><td>-</td></tr><tr><td><code>rocketmq_consumer_diff</code></td><td>消息堆积量</td><td>&gt; 10000</td></tr><tr><td><code>rocketmq_consumer_online</code></td><td>在线消费者数</td><td>&lt; 1</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="grafana-dashboard">Grafana Dashboard<a href="#grafana-dashboard" class="hash-link" aria-label="Direct link to Grafana Dashboard" title="Direct link to Grafana Dashboard" translate="no">​</a></h3>
 <p>导入官方 Dashboard：</p>
@@ -113,25 +230,25 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="巡检清单">巡检清单<a href="#巡检清单" class="hash-link" aria-label="Direct link to 巡检清单" title="Direct link to 巡检清单" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="每日巡检">每日巡检<a href="#每日巡检" class="hash-link" aria-label="Direct link to 每日巡检" title="Direct link to 每日巡检" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查集群状态</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查消息堆积</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查磁盘使用率</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查告警信息</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查死信队列</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查集群状态</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查消息堆积</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查磁盘使用率</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查告警信息</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查死信队列</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="每周巡检">每周巡检<a href="#每周巡检" class="hash-link" aria-label="Direct link to 每周巡检" title="Direct link to 每周巡检" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查消费者连接数变化</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->分析 TPS 趋势</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->检查 GC 日志</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->备份配置文件</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查消费者连接数变化</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 分析 TPS 趋势</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 检查 GC 日志</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 备份配置文件</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="每月巡检">每月巡检<a href="#每月巡检" class="hash-link" aria-label="Direct link to 每月巡检" title="Direct link to 每月巡检" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->容量规划评估</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->性能测试</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->安全漏洞检查</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->版本升级评估</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 容量规划评估</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 性能测试</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 安全漏洞检查</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> 版本升级评估</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="下一步">下一步<a href="#下一步" class="hash-link" aria-label="Direct link to 下一步" title="Direct link to 下一步" translate="no">​</a></h2>
 <ul>
@@ -144,6 +261,6 @@
 <li class=""><a href="https://github.com/apache/rocketmq-dashboard" target="_blank" rel="noopener noreferrer" class="">RocketMQ Dashboard</a></li>
 <li class=""><a href="https://github.com/apache/rocketmq-exporter" target="_blank" rel="noopener noreferrer" class="">RocketMQ Exporter</a></li>
 <li class=""><a href="https://rocketmq.apache.org/docs/deploymentOperations/" target="_blank" rel="noopener noreferrer" class="">RocketMQ 运维文档</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/rocketmq/monitoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/rocketmq/cluster-management"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">集群管理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/rocketmq/performance-optimization"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">性能优化</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#监控概述" class="table-of-contents__link toc-highlight">监控概述</a><ul><li><a href="#监控维度" class="table-of-contents__link toc-highlight">监控维度</a></li><li><a href="#监控工具选型" class="table-of-contents__link toc-highlight">监控工具选型</a></li></ul></li><li><a href="#rocketmq-dashboard" class="table-of-contents__link toc-highlight">RocketMQ Dashboard</a><ul><li><a href="#安装部署" class="table-of-contents__link toc-highlight">安装部署</a></li><li><a href="#核心功能" class="table-of-contents__link toc-highlight">核心功能</a></li></ul></li><li><a href="#prometheus--grafana-监控" class="table-of-contents__link toc-highlight">Prometheus + Grafana 监控</a><ul><li><a href="#架构图" class="table-of-contents__link toc-highlight">架构图</a></li><li><a href="#rocketmq-exporter-部署" class="table-of-contents__link toc-highlight">RocketMQ Exporter 部署</a></li><li><a href="#prometheus-配置" class="table-of-contents__link toc-highlight">Prometheus 配置</a></li><li><a href="#关键监控指标" class="table-of-contents__link toc-highlight">关键监控指标</a></li><li><a href="#grafana-dashboard" class="table-of-contents__link toc-highlight">Grafana Dashboard</a></li></ul></li><li><a href="#告警配置" class="table-of-contents__link toc-highlight">告警配置</a><ul><li><a href="#alertmanager-规则" class="table-of-contents__link toc-highlight">AlertManager 规则</a></li><li><a href="#钉钉告警配置" class="table-of-contents__link toc-highlight">钉钉告警配置</a></li></ul></li><li><a href="#日志管理" class="table-of-contents__link toc-highlight">日志管理</a><ul><li><a href="#日志位置" class="table-of-contents__link toc-highlight">日志位置</a></li><li><a href="#日志配置" class="table-of-contents__link toc-highlight">日志配置</a></li><li><a href="#elk-日志收集" class="table-of-contents__link toc-highlight">ELK 日志收集</a></li></ul></li><li><a href="#日常运维操作" class="table-of-contents__link toc-highlight">日常运维操作</a><ul><li><a href="#健康检查" class="table-of-contents__link toc-highlight">健康检查</a></li><li><a href="#消息堆积处理" class="table-of-contents__link toc-highlight">消息堆积处理</a></li><li><a href="#消息查询" class="table-of-contents__link toc-highlight">消息查询</a></li><li><a href="#消息补发" class="table-of-contents__link toc-highlight">消息补发</a></li><li><a href="#死信队列处理" class="table-of-contents__link toc-highlight">死信队列处理</a></li></ul></li><li><a href="#故障排查指南" class="table-of-contents__link toc-highlight">故障排查指南</a><ul><li><a href="#发送失败" class="table-of-contents__link toc-highlight">发送失败</a></li><li><a href="#消费延迟" class="table-of-contents__link toc-highlight">消费延迟</a></li><li><a href="#broker-异常" class="table-of-contents__link toc-highlight">Broker 异常</a></li><li><a href="#消息丢失排查" class="table-of-contents__link toc-highlight">消息丢失排查</a></li></ul></li><li><a href="#巡检清单" class="table-of-contents__link toc-highlight">巡检清单</a><ul><li><a href="#每日巡检" class="table-of-contents__link toc-highlight">每日巡检</a></li><li><a href="#每周巡检" class="table-of-contents__link toc-highlight">每周巡检</a></li><li><a href="#每月巡检" class="table-of-contents__link toc-highlight">每月巡检</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li><li><a href="#参考资料" class="table-of-contents__link toc-highlight">参考资料</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/rocketmq/monitoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/rocketmq/cluster-management"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">集群管理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/rocketmq/performance-optimization"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">性能优化</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#监控概述" class="table-of-contents__link toc-highlight">监控概述</a><ul><li><a href="#监控维度" class="table-of-contents__link toc-highlight">监控维度</a></li><li><a href="#监控工具选型" class="table-of-contents__link toc-highlight">监控工具选型</a></li></ul></li><li><a href="#rocketmq-dashboard" class="table-of-contents__link toc-highlight">RocketMQ Dashboard</a><ul><li><a href="#安装部署" class="table-of-contents__link toc-highlight">安装部署</a></li><li><a href="#核心功能" class="table-of-contents__link toc-highlight">核心功能</a></li></ul></li><li><a href="#prometheus--grafana-监控" class="table-of-contents__link toc-highlight">Prometheus + Grafana 监控</a><ul><li><a href="#架构图" class="table-of-contents__link toc-highlight">架构图</a></li><li><a href="#rocketmq-exporter-部署" class="table-of-contents__link toc-highlight">RocketMQ Exporter 部署</a></li><li><a href="#prometheus-配置" class="table-of-contents__link toc-highlight">Prometheus 配置</a></li><li><a href="#关键监控指标" class="table-of-contents__link toc-highlight">关键监控指标</a></li><li><a href="#grafana-dashboard" class="table-of-contents__link toc-highlight">Grafana Dashboard</a></li></ul></li><li><a href="#告警配置" class="table-of-contents__link toc-highlight">告警配置</a><ul><li><a href="#alertmanager-规则" class="table-of-contents__link toc-highlight">AlertManager 规则</a></li><li><a href="#钉钉告警配置" class="table-of-contents__link toc-highlight">钉钉告警配置</a></li></ul></li><li><a href="#日志管理" class="table-of-contents__link toc-highlight">日志管理</a><ul><li><a href="#日志位置" class="table-of-contents__link toc-highlight">日志位置</a></li><li><a href="#日志配置" class="table-of-contents__link toc-highlight">日志配置</a></li><li><a href="#elk-日志收集" class="table-of-contents__link toc-highlight">ELK 日志收集</a></li></ul></li><li><a href="#日常运维操作" class="table-of-contents__link toc-highlight">日常运维操作</a><ul><li><a href="#健康检查" class="table-of-contents__link toc-highlight">健康检查</a></li><li><a href="#消息堆积处理" class="table-of-contents__link toc-highlight">消息堆积处理</a></li><li><a href="#消息查询" class="table-of-contents__link toc-highlight">消息查询</a></li><li><a href="#消息补发" class="table-of-contents__link toc-highlight">消息补发</a></li><li><a href="#死信队列处理" class="table-of-contents__link toc-highlight">死信队列处理</a></li></ul></li><li><a href="#故障排查指南" class="table-of-contents__link toc-highlight">故障排查指南</a><ul><li><a href="#发送失败" class="table-of-contents__link toc-highlight">发送失败</a></li><li><a href="#消费延迟" class="table-of-contents__link toc-highlight">消费延迟</a></li><li><a href="#broker-异常" class="table-of-contents__link toc-highlight">Broker 异常</a></li><li><a href="#消息丢失排查" class="table-of-contents__link toc-highlight">消息丢失排查</a></li></ul></li><li><a href="#巡检清单" class="table-of-contents__link toc-highlight">巡检清单</a><ul><li><a href="#每日巡检" class="table-of-contents__link toc-highlight">每日巡检</a></li><li><a href="#每周巡检" class="table-of-contents__link toc-highlight">每周巡检</a></li><li><a href="#每月巡检" class="table-of-contents__link toc-highlight">每月巡检</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li><li><a href="#参考资料" class="table-of-contents__link toc-highlight">参考资料</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

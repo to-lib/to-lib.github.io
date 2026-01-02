@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">UDP 协议 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/udp"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UDP 协议 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="UDP协议详解，包括报文结构、与TCP对比、应用场景"><meta data-rh="true" property="og:description" content="UDP协议详解，包括报文结构、与TCP对比、应用场景"><meta data-rh="true" name="keywords" content="UDP,无连接,用户数据报,DNS,视频流,实时通信"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/udp"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/udp" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/udp" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UDP 协议","item":"https://to-lib.github.io/docs/networking/udp"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -25,11 +32,91 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="udp-报文结构">UDP 报文结构<a href="#udp-报文结构" class="hash-link" aria-label="Direct link to UDP 报文结构" title="Direct link to UDP 报文结构" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"> 0                   1                   2                   3</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|          Source Port          |       Destination Port        |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|            Length             |           Checksum            |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                             Data                              |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="字段说明">字段说明<a href="#字段说明" class="hash-link" aria-label="Direct link to 字段说明" title="Direct link to 字段说明" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>Source Port</td><td>16 bit</td><td>源端口号</td></tr><tr><td>Destination Port</td><td>16 bit</td><td>目的端口号</td></tr><tr><td>Length</td><td>16 bit</td><td>数据报总长度（含头部）</td></tr><tr><td>Checksum</td><td>16 bit</td><td>校验和（可选）</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-tip admonition_LeLL alert alert--success"><div class="admonitionHeading_uXiR"><span class="admonitionIcon_IOyl"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_Drhn"><p>UDP 头部仅 8 字节，而 TCP 头部至少 20 字节。这使得 UDP 更加轻量高效。</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="tcp-vs-udp">TCP vs UDP<a href="#tcp-vs-udp" class="hash-link" aria-label="Direct link to TCP vs UDP" title="Direct link to TCP vs UDP" translate="no">​</a></h2>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="详细对比">详细对比<a href="#详细对比" class="hash-link" aria-label="Direct link to 详细对比" title="Direct link to 详细对比" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>TCP</th><th>UDP</th></tr></thead><tbody><tr><td>连接方式</td><td>面向连接</td><td>无连接</td></tr><tr><td>可靠性</td><td>可靠（确认重传）</td><td>不可靠</td></tr><tr><td>有序性</td><td>保证顺序</td><td>不保证</td></tr><tr><td>传输方式</td><td>字节流</td><td>数据报</td></tr><tr><td>头部大小</td><td>20-60 字节</td><td>8 字节</td></tr><tr><td>传输效率</td><td>较低</td><td>较高</td></tr><tr><td>广播/多播</td><td>不支持</td><td>支持</td></tr><tr><td>适用场景</td><td>文件传输、网页</td><td>视频流、DNS、游戏</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="应用场景">应用场景<a href="#应用场景" class="hash-link" aria-label="Direct link to 应用场景" title="Direct link to 应用场景" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-dns-查询">1. DNS 查询<a href="#1-dns-查询" class="hash-link" aria-label="Direct link to 1. DNS 查询" title="Direct link to 1. DNS 查询" translate="no">​</a></h3>
@@ -53,6 +140,36 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-在线游戏">3. 在线游戏<a href="#3-在线游戏" class="hash-link" aria-label="Direct link to 3. 在线游戏" title="Direct link to 3. 在线游戏" translate="no">​</a></h3>
 <p>游戏状态更新使用 UDP：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>数据类型</th><th>协议</th><th>原因</th></tr></thead><tbody><tr><td>位置同步</td><td>UDP</td><td>实时性优先</td></tr><tr><td>登录认证</td><td>TCP</td><td>可靠性优先</td></tr><tr><td>聊天消息</td><td>TCP</td><td>不能丢失</td></tr><tr><td>动作指令</td><td>UDP</td><td>低延迟</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="4-dhcp">4. DHCP<a href="#4-dhcp" class="hash-link" aria-label="Direct link to 4. DHCP" title="Direct link to 4. DHCP" translate="no">​</a></h3>
 <p>动态主机配置使用 UDP（端口 67/68）：</p>
@@ -60,15 +177,115 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-snmp">5. SNMP<a href="#5-snmp" class="hash-link" aria-label="Direct link to 5. SNMP" title="Direct link to 5. SNMP" translate="no">​</a></h3>
 <p>网络管理使用 UDP（端口 161/162）进行设备监控。</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="基于-udp-的协议">基于 UDP 的协议<a href="#基于-udp-的协议" class="hash-link" aria-label="Direct link to 基于 UDP 的协议" title="Direct link to 基于 UDP 的协议" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>协议</th><th>端口</th><th>用途</th></tr></thead><tbody><tr><td>DNS</td><td>53</td><td>域名解析</td></tr><tr><td>DHCP</td><td>67/68</td><td>动态 IP 分配</td></tr><tr><td>TFTP</td><td>69</td><td>简单文件传输</td></tr><tr><td>SNMP</td><td>161</td><td>网络管理</td></tr><tr><td>NTP</td><td>123</td><td>时间同步</td></tr><tr><td>RTP</td><td>动态</td><td>实时音视频传输</td></tr><tr><td>QUIC</td><td>443</td><td>HTTP/3 底层协议</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="udp-可靠性增强">UDP 可靠性增强<a href="#udp-可靠性增强" class="hash-link" aria-label="Direct link to UDP 可靠性增强" title="Direct link to UDP 可靠性增强" translate="no">​</a></h2>
 <p>虽然 UDP 本身不可靠，但应用层可以实现可靠性机制：</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常见方案">常见方案<a href="#常见方案" class="hash-link" aria-label="Direct link to 常见方案" title="Direct link to 常见方案" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="实现示例">实现示例<a href="#实现示例" class="hash-link" aria-label="Direct link to 实现示例" title="Direct link to 实现示例" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>协议/框架</th><th>说明</th></tr></thead><tbody><tr><td>QUIC</td><td>Google 开发，HTTP/3 基础</td></tr><tr><td>KCP</td><td>游戏领域常用</td></tr><tr><td>UDT</td><td>高性能数据传输</td></tr><tr><td>RUDP</td><td>可靠 UDP</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="quic-协议">QUIC 协议<a href="#quic-协议" class="hash-link" aria-label="Direct link to QUIC 协议" title="Direct link to QUIC 协议" translate="no">​</a></h3>
 <p>QUIC 是基于 UDP 的现代传输协议：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>TCP + TLS</th><th>QUIC</th></tr></thead><tbody><tr><td>握手延迟</td><td>2-3 RTT</td><td>0-1 RTT</td></tr><tr><td>队头阻塞</td><td>存在</td><td>无</td></tr><tr><td>连接迁移</td><td>不支持</td><td>支持</td></tr><tr><td>加密</td><td>可选 TLS</td><td>强制加密</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="udp-编程示例">UDP 编程示例<a href="#udp-编程示例" class="hash-link" aria-label="Direct link to UDP 编程示例" title="Direct link to UDP 编程示例" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="java-udp-服务端">Java UDP 服务端<a href="#java-udp-服务端" class="hash-link" aria-label="Direct link to Java UDP 服务端" title="Direct link to Java UDP 服务端" translate="no">​</a></h3>
@@ -91,6 +308,6 @@
 <ul>
 <li class="">学习 <a class="" href="/docs/networking/socket-programming">Socket 编程</a> 实践</li>
 <li class="">了解 <a class="" href="/docs/networking/dns">DNS 协议</a> 工作原理</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/udp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/tcp"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">TCP 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/http"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">HTTP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#udp-报文结构" class="table-of-contents__link toc-highlight">UDP 报文结构</a><ul><li><a href="#字段说明" class="table-of-contents__link toc-highlight">字段说明</a></li></ul></li><li><a href="#tcp-vs-udp" class="table-of-contents__link toc-highlight">TCP vs UDP</a><ul><li><a href="#详细对比" class="table-of-contents__link toc-highlight">详细对比</a></li></ul></li><li><a href="#应用场景" class="table-of-contents__link toc-highlight">应用场景</a><ul><li><a href="#1-dns-查询" class="table-of-contents__link toc-highlight">1. DNS 查询</a></li><li><a href="#2-视频流音频流" class="table-of-contents__link toc-highlight">2. 视频流/音频流</a></li><li><a href="#3-在线游戏" class="table-of-contents__link toc-highlight">3. 在线游戏</a></li><li><a href="#4-dhcp" class="table-of-contents__link toc-highlight">4. DHCP</a></li><li><a href="#5-snmp" class="table-of-contents__link toc-highlight">5. SNMP</a></li></ul></li><li><a href="#基于-udp-的协议" class="table-of-contents__link toc-highlight">基于 UDP 的协议</a></li><li><a href="#udp-可靠性增强" class="table-of-contents__link toc-highlight">UDP 可靠性增强</a><ul><li><a href="#常见方案" class="table-of-contents__link toc-highlight">常见方案</a></li><li><a href="#实现示例" class="table-of-contents__link toc-highlight">实现示例</a></li><li><a href="#quic-协议" class="table-of-contents__link toc-highlight">QUIC 协议</a></li></ul></li><li><a href="#udp-编程示例" class="table-of-contents__link toc-highlight">UDP 编程示例</a><ul><li><a href="#java-udp-服务端" class="table-of-contents__link toc-highlight">Java UDP 服务端</a></li><li><a href="#java-udp-客户端" class="table-of-contents__link toc-highlight">Java UDP 客户端</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-何时选择-udp" class="table-of-contents__link toc-highlight">Q: 何时选择 UDP？</a></li><li><a href="#q-udp-数据报最大多大" class="table-of-contents__link toc-highlight">Q: UDP 数据报最大多大？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/udp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/tcp"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">TCP 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/http"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">HTTP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#udp-报文结构" class="table-of-contents__link toc-highlight">UDP 报文结构</a><ul><li><a href="#字段说明" class="table-of-contents__link toc-highlight">字段说明</a></li></ul></li><li><a href="#tcp-vs-udp" class="table-of-contents__link toc-highlight">TCP vs UDP</a><ul><li><a href="#详细对比" class="table-of-contents__link toc-highlight">详细对比</a></li></ul></li><li><a href="#应用场景" class="table-of-contents__link toc-highlight">应用场景</a><ul><li><a href="#1-dns-查询" class="table-of-contents__link toc-highlight">1. DNS 查询</a></li><li><a href="#2-视频流音频流" class="table-of-contents__link toc-highlight">2. 视频流/音频流</a></li><li><a href="#3-在线游戏" class="table-of-contents__link toc-highlight">3. 在线游戏</a></li><li><a href="#4-dhcp" class="table-of-contents__link toc-highlight">4. DHCP</a></li><li><a href="#5-snmp" class="table-of-contents__link toc-highlight">5. SNMP</a></li></ul></li><li><a href="#基于-udp-的协议" class="table-of-contents__link toc-highlight">基于 UDP 的协议</a></li><li><a href="#udp-可靠性增强" class="table-of-contents__link toc-highlight">UDP 可靠性增强</a><ul><li><a href="#常见方案" class="table-of-contents__link toc-highlight">常见方案</a></li><li><a href="#实现示例" class="table-of-contents__link toc-highlight">实现示例</a></li><li><a href="#quic-协议" class="table-of-contents__link toc-highlight">QUIC 协议</a></li></ul></li><li><a href="#udp-编程示例" class="table-of-contents__link toc-highlight">UDP 编程示例</a><ul><li><a href="#java-udp-服务端" class="table-of-contents__link toc-highlight">Java UDP 服务端</a></li><li><a href="#java-udp-客户端" class="table-of-contents__link toc-highlight">Java UDP 客户端</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-何时选择-udp" class="table-of-contents__link toc-highlight">Q: 何时选择 UDP？</a></li><li><a href="#q-udp-数据报最大多大" class="table-of-contents__link toc-highlight">Q: UDP 数据报最大多大？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

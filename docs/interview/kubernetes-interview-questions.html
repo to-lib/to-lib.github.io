@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Kubernetes 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/kubernetes-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Kubernetes 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Kubernetes 面试常见问题与解答"><meta data-rh="true" property="og:description" content="Kubernetes 面试常见问题与解答"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/kubernetes-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/kubernetes-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/kubernetes-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Kubernetes 面试题","item":"https://to-lib.github.io/docs/interview/kubernetes-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,10 +25,82 @@
 <p><strong>答案</strong>：</p>
 <p>Kubernetes 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用程序。</p>
 <p><strong>解决的问题</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>问题</th><th>K8s 解决方案</th></tr></thead><tbody><tr><td>容器编排</td><td>自动化调度和部署</td></tr><tr><td>服务发现</td><td>内置 DNS 和 Service</td></tr><tr><td>负载均衡</td><td>Service 和 Ingress</td></tr><tr><td>自动扩缩容</td><td>HPA/VPA</td></tr><tr><td>自愈能力</td><td>自动重启、替换故障容器</td></tr><tr><td>配置管理</td><td>ConfigMap 和 Secret</td></tr><tr><td>存储编排</td><td>PV/PVC 抽象</td></tr></tbody></table>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q2-pod-和容器的区别是什么">Q2: Pod 和容器的区别是什么？<a href="#q2-pod-和容器的区别是什么" class="hash-link" aria-label="Direct link to Q2: Pod 和容器的区别是什么？" title="Direct link to Q2: Pod 和容器的区别是什么？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>对比项</th><th>Pod</th><th>Container</th></tr></thead><tbody><tr><td>定义</td><td>K8s 最小部署单元</td><td>运行时实例</td></tr><tr><td>数量</td><td>可包含多个容器</td><td>单个进程</td></tr><tr><td>网络</td><td>共享网络命名空间</td><td>共享 Pod 网络</td></tr><tr><td>存储</td><td>可共享 Volume</td><td>挂载 Volume</td></tr><tr><td>生命周期</td><td>独立管理</td><td>随 Pod 创建/销毁</td></tr></tbody></table>
 <p><strong>Pod 内多容器通信</strong>：</p>
 <ul>
@@ -51,11 +130,66 @@
 <li class=""><strong>网络策略</strong>：NetworkPolicy 可按 Namespace 控制流量</li>
 </ol>
 <p><strong>默认 Namespace</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Namespace</th><th>用途</th></tr></thead><tbody><tr><td>default</td><td>默认资源位置</td></tr><tr><td>kube-system</td><td>系统组件</td></tr><tr><td>kube-public</td><td>公开资源</td></tr><tr><td>kube-node-lease</td><td>节点心跳</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="网络相关">网络相关<a href="#网络相关" class="hash-link" aria-label="Direct link to 网络相关" title="Direct link to 网络相关" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q5-service-有哪几种类型分别用于什么场景">Q5: Service 有哪几种类型？分别用于什么场景？<a href="#q5-service-有哪几种类型分别用于什么场景" class="hash-link" aria-label="Direct link to Q5: Service 有哪几种类型？分别用于什么场景？" title="Direct link to Q5: Service 有哪几种类型？分别用于什么场景？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>说明</th><th>使用场景</th></tr></thead><tbody><tr><td>ClusterIP</td><td>仅集群内部访问</td><td>内部服务通信</td></tr><tr><td>NodePort</td><td>通过节点端口暴露</td><td>开发测试</td></tr><tr><td>LoadBalancer</td><td>云厂商负载均衡器</td><td>生产环境外部访问</td></tr><tr><td>ExternalName</td><td>映射外部 DNS</td><td>集成外部服务</td></tr></tbody></table>
 <p><strong>选择建议</strong>：</p>
 <ul>
@@ -66,7 +200,42 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q6-ingress-和-service-的区别">Q6: Ingress 和 Service 的区别？<a href="#q6-ingress-和-service-的区别" class="hash-link" aria-label="Direct link to Q6: Ingress 和 Service 的区别？" title="Direct link to Q6: Ingress 和 Service 的区别？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
-<table><thead><tr><th>对比项</th><th>Service</th><th>Ingress</th></tr></thead><tbody><tr><td>层级</td><td>L4（传输层）</td><td>L7（应用层）</td></tr><tr><td>协议</td><td>TCP/UDP</td><td>HTTP/HTTPS</td></tr><tr><td>路由</td><td>IP<!-- -->:Port</td><td>域名/路径</td></tr><tr><td>TLS</td><td>不支持</td><td>支持</td></tr><tr><td>负载均衡</td><td>简单轮询</td><td>高级路由规则</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>对比项</th><th>Service</th><th>Ingress</th></tr></thead><tbody><tr><td>层级</td><td>L4（传输层）</td><td>L7（应用层）</td></tr><tr><td>协议</td><td>TCP/UDP</td><td>HTTP/HTTPS</td></tr><tr><td>路由</td><td>IP:Port</td><td>域名/路径</td></tr><tr><td>TLS</td><td>不支持</td><td>支持</td></tr><tr><td>负载均衡</td><td>简单轮询</td><td>高级路由规则</td></tr></tbody></table>
 <p><strong>典型架构</strong>：</p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">Internet → LoadBalancer → Ingress → Service → Pod</span><br></span></code></pre></div></div>
 <hr>
@@ -142,6 +311,27 @@
 <li class=""><strong>Toleration（容忍）</strong>：应用在 Pod 上，允许调度到有污点的节点</li>
 </ul>
 <p><strong>效果</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Effect</th><th>说明</th></tr></thead><tbody><tr><td>NoSchedule</td><td>不调度新 Pod</td></tr><tr><td>PreferNoSchedule</td><td>尽量不调度</td></tr><tr><td>NoExecute</td><td>不调度且驱逐现有 Pod</td></tr></tbody></table>
 <p><strong>使用场景</strong>：</p>
 <ol>
@@ -154,6 +344,27 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q12-rbac-的工作原理">Q12: RBAC 的工作原理？<a href="#q12-rbac-的工作原理" class="hash-link" aria-label="Direct link to Q12: RBAC 的工作原理？" title="Direct link to Q12: RBAC 的工作原理？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
 <p>RBAC（基于角色的访问控制）包含四个核心概念：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>资源</th><th>说明</th></tr></thead><tbody><tr><td>ServiceAccount</td><td>身份标识</td></tr><tr><td>Role/ClusterRole</td><td>权限定义（动词 + 资源）</td></tr><tr><td>RoleBinding/ClusterRoleBinding</td><td>将角色绑定到主体</td></tr></tbody></table>
 <p><strong>权限检查流程</strong>：</p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">请求 → 认证（谁？）→ 授权（RBAC 检查）→ 准入控制 → API Server</span><br></span></code></pre></div></div>
@@ -199,6 +410,35 @@
 <p><strong>排查步骤</strong>：</p>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 1. 查看 Pod 事件</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">kubectl describe pod &lt;pod-name&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 2. 查看当前日志</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">kubectl logs &lt;pod-name&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 3. 查看上一个容器的日志</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">kubectl logs &lt;pod-name&gt; --previous</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 4. 检查退出码</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">kubectl get pod &lt;pod-name&gt; -o jsonpath=&#x27;{.status.containerStatuses[0].lastState.terminated.exitCode}&#x27;</span><br></span></code></pre></div></div>
 <p><strong>常见原因</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>原因</th><th>解决方案</th></tr></thead><tbody><tr><td>应用配置错误</td><td>检查 ConfigMap/Secret</td></tr><tr><td>依赖服务不可用</td><td>添加 Init Container 等待</td></tr><tr><td>资源不足（OOM）</td><td>增加内存限制</td></tr><tr><td>健康检查失败</td><td>调整 Probe 参数</td></tr><tr><td>镜像问题</td><td>验证镜像是否正确</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="架构设计">架构设计<a href="#架构设计" class="hash-link" aria-label="Direct link to 架构设计" title="Direct link to 架构设计" translate="no">​</a></h2>
@@ -216,6 +456,35 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q17-kubernetes-控制平面组件有哪些各自作用">Q17: Kubernetes 控制平面组件有哪些？各自作用？<a href="#q17-kubernetes-控制平面组件有哪些各自作用" class="hash-link" aria-label="Direct link to Q17: Kubernetes 控制平面组件有哪些？各自作用？" title="Direct link to Q17: Kubernetes 控制平面组件有哪些？各自作用？" translate="no">​</a></h3>
 <p><strong>答案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>作用</th></tr></thead><tbody><tr><td><strong>API Server</strong></td><td>所有请求的入口，负责认证授权、数据校验</td></tr><tr><td><strong>etcd</strong></td><td>分布式键值存储，保存集群状态</td></tr><tr><td><strong>Scheduler</strong></td><td>调度 Pod 到合适的节点</td></tr><tr><td><strong>Controller Manager</strong></td><td>运行各种控制器（Deployment、ReplicaSet 等）</td></tr><tr><td><strong>Cloud Controller Manager</strong></td><td>与云平台集成（可选）</td></tr></tbody></table>
 <p><strong>数据流</strong>：</p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">kubectl → API Server → etcd</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">           ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Controller Manager</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">           ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       Scheduler</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">           ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Kubelet (Node)</span><br></span></code></pre></div></div>
@@ -263,6 +532,6 @@
 <p><strong>2. LimitRange</strong></p>
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">apiVersion</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> v1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">kind</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> LimitRange</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">metadata</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">name</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> default</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">limits</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">namespace</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> team</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">a</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">spec</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">limits</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token key atrule" style="color:#00a4db">default</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">cpu</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;500m&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">memory</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;512Mi&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">defaultRequest</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">cpu</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;100m&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">memory</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;128Mi&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">type</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> Container</span><br></span></code></pre></div></div>
 <p><strong>3. NetworkPolicy</strong></p>
-<p>限制网络访问范围。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/kubernetes-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/docker-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Docker 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/podman-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Podman 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a><ul><li><a href="#q1-什么是-kubernetes它解决了什么问题" class="table-of-contents__link toc-highlight">Q1: 什么是 Kubernetes？它解决了什么问题？</a></li><li><a href="#q2-pod-和容器的区别是什么" class="table-of-contents__link toc-highlight">Q2: Pod 和容器的区别是什么？</a></li><li><a href="#q3-deploymentreplicasetpod-的关系是什么" class="table-of-contents__link toc-highlight">Q3: Deployment、ReplicaSet、Pod 的关系是什么？</a></li><li><a href="#q4-什么是-namespace有什么作用" class="table-of-contents__link toc-highlight">Q4: 什么是 Namespace？有什么作用？</a></li></ul></li><li><a href="#网络相关" class="table-of-contents__link toc-highlight">网络相关</a><ul><li><a href="#q5-service-有哪几种类型分别用于什么场景" class="table-of-contents__link toc-highlight">Q5: Service 有哪几种类型？分别用于什么场景？</a></li><li><a href="#q6-ingress-和-service-的区别" class="table-of-contents__link toc-highlight">Q6: Ingress 和 Service 的区别？</a></li><li><a href="#q7-pod-之间是如何通信的" class="table-of-contents__link toc-highlight">Q7: Pod 之间是如何通信的？</a></li></ul></li><li><a href="#存储相关" class="table-of-contents__link toc-highlight">存储相关</a><ul><li><a href="#q8-pv-和-pvc-的关系是什么" class="table-of-contents__link toc-highlight">Q8: PV 和 PVC 的关系是什么？</a></li><li><a href="#q9-storageclass-的作用是什么" class="table-of-contents__link toc-highlight">Q9: StorageClass 的作用是什么？</a></li></ul></li><li><a href="#调度相关" class="table-of-contents__link toc-highlight">调度相关</a><ul><li><a href="#q10-kubernetes-调度器是如何工作的" class="table-of-contents__link toc-highlight">Q10: Kubernetes 调度器是如何工作的？</a></li><li><a href="#q11-taint-和-toleration-是什么" class="table-of-contents__link toc-highlight">Q11: Taint 和 Toleration 是什么？</a></li></ul></li><li><a href="#安全相关" class="table-of-contents__link toc-highlight">安全相关</a><ul><li><a href="#q12-rbac-的工作原理" class="table-of-contents__link toc-highlight">Q12: RBAC 的工作原理？</a></li><li><a href="#q13-pod-安全的最佳实践有哪些" class="table-of-contents__link toc-highlight">Q13: Pod 安全的最佳实践有哪些？</a></li></ul></li><li><a href="#运维相关" class="table-of-contents__link toc-highlight">运维相关</a><ul><li><a href="#q14-如何实现零停机部署" class="table-of-contents__link toc-highlight">Q14: 如何实现零停机部署？</a></li><li><a href="#q15-如何排查-pod-crashloopbackoff" class="table-of-contents__link toc-highlight">Q15: 如何排查 Pod CrashLoopBackOff？</a></li></ul></li><li><a href="#架构设计" class="table-of-contents__link toc-highlight">架构设计</a><ul><li><a href="#q16-如何设计高可用的-kubernetes-应用" class="table-of-contents__link toc-highlight">Q16: 如何设计高可用的 Kubernetes 应用？</a></li><li><a href="#q17-kubernetes-控制平面组件有哪些各自作用" class="table-of-contents__link toc-highlight">Q17: Kubernetes 控制平面组件有哪些？各自作用？</a></li></ul></li><li><a href="#场景题" class="table-of-contents__link toc-highlight">场景题</a><ul><li><a href="#q18-描述一次完整的-pod-创建流程" class="table-of-contents__link toc-highlight">Q18: 描述一次完整的 Pod 创建流程</a></li><li><a href="#q19-如果-api-server-挂了会怎样" class="table-of-contents__link toc-highlight">Q19: 如果 API Server 挂了会怎样？</a></li><li><a href="#q20-如何限制某个-namespace-的资源使用" class="table-of-contents__link toc-highlight">Q20: 如何限制某个 Namespace 的资源使用？</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p>限制网络访问范围。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/kubernetes-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/docker-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Docker 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/podman-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Podman 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a><ul><li><a href="#q1-什么是-kubernetes它解决了什么问题" class="table-of-contents__link toc-highlight">Q1: 什么是 Kubernetes？它解决了什么问题？</a></li><li><a href="#q2-pod-和容器的区别是什么" class="table-of-contents__link toc-highlight">Q2: Pod 和容器的区别是什么？</a></li><li><a href="#q3-deploymentreplicasetpod-的关系是什么" class="table-of-contents__link toc-highlight">Q3: Deployment、ReplicaSet、Pod 的关系是什么？</a></li><li><a href="#q4-什么是-namespace有什么作用" class="table-of-contents__link toc-highlight">Q4: 什么是 Namespace？有什么作用？</a></li></ul></li><li><a href="#网络相关" class="table-of-contents__link toc-highlight">网络相关</a><ul><li><a href="#q5-service-有哪几种类型分别用于什么场景" class="table-of-contents__link toc-highlight">Q5: Service 有哪几种类型？分别用于什么场景？</a></li><li><a href="#q6-ingress-和-service-的区别" class="table-of-contents__link toc-highlight">Q6: Ingress 和 Service 的区别？</a></li><li><a href="#q7-pod-之间是如何通信的" class="table-of-contents__link toc-highlight">Q7: Pod 之间是如何通信的？</a></li></ul></li><li><a href="#存储相关" class="table-of-contents__link toc-highlight">存储相关</a><ul><li><a href="#q8-pv-和-pvc-的关系是什么" class="table-of-contents__link toc-highlight">Q8: PV 和 PVC 的关系是什么？</a></li><li><a href="#q9-storageclass-的作用是什么" class="table-of-contents__link toc-highlight">Q9: StorageClass 的作用是什么？</a></li></ul></li><li><a href="#调度相关" class="table-of-contents__link toc-highlight">调度相关</a><ul><li><a href="#q10-kubernetes-调度器是如何工作的" class="table-of-contents__link toc-highlight">Q10: Kubernetes 调度器是如何工作的？</a></li><li><a href="#q11-taint-和-toleration-是什么" class="table-of-contents__link toc-highlight">Q11: Taint 和 Toleration 是什么？</a></li></ul></li><li><a href="#安全相关" class="table-of-contents__link toc-highlight">安全相关</a><ul><li><a href="#q12-rbac-的工作原理" class="table-of-contents__link toc-highlight">Q12: RBAC 的工作原理？</a></li><li><a href="#q13-pod-安全的最佳实践有哪些" class="table-of-contents__link toc-highlight">Q13: Pod 安全的最佳实践有哪些？</a></li></ul></li><li><a href="#运维相关" class="table-of-contents__link toc-highlight">运维相关</a><ul><li><a href="#q14-如何实现零停机部署" class="table-of-contents__link toc-highlight">Q14: 如何实现零停机部署？</a></li><li><a href="#q15-如何排查-pod-crashloopbackoff" class="table-of-contents__link toc-highlight">Q15: 如何排查 Pod CrashLoopBackOff？</a></li></ul></li><li><a href="#架构设计" class="table-of-contents__link toc-highlight">架构设计</a><ul><li><a href="#q16-如何设计高可用的-kubernetes-应用" class="table-of-contents__link toc-highlight">Q16: 如何设计高可用的 Kubernetes 应用？</a></li><li><a href="#q17-kubernetes-控制平面组件有哪些各自作用" class="table-of-contents__link toc-highlight">Q17: Kubernetes 控制平面组件有哪些？各自作用？</a></li></ul></li><li><a href="#场景题" class="table-of-contents__link toc-highlight">场景题</a><ul><li><a href="#q18-描述一次完整的-pod-创建流程" class="table-of-contents__link toc-highlight">Q18: 描述一次完整的 Pod 创建流程</a></li><li><a href="#q19-如果-api-server-挂了会怎样" class="table-of-contents__link toc-highlight">Q19: 如果 API Server 挂了会怎样？</a></li><li><a href="#q20-如何限制某个-namespace-的资源使用" class="table-of-contents__link toc-highlight">Q20: 如何限制某个 Namespace 的资源使用？</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

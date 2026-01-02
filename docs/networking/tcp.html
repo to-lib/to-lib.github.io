@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">TCP 协议 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/tcp"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TCP 协议 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="TCP协议详解，包括三次握手、四次挥手、流量控制、拥塞控制"><meta data-rh="true" property="og:description" content="TCP协议详解，包括三次握手、四次挥手、流量控制、拥塞控制"><meta data-rh="true" name="keywords" content="TCP,三次握手,四次挥手,可靠传输,流量控制,拥塞控制"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/tcp"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/tcp" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/tcp" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TCP 协议","item":"https://to-lib.github.io/docs/networking/tcp"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -25,6 +32,46 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="tcp-报文结构">TCP 报文结构<a href="#tcp-报文结构" class="hash-link" aria-label="Direct link to TCP 报文结构" title="Direct link to TCP 报文结构" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"> 0                   1                   2                   3</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|          Source Port          |       Destination Port        |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                        Sequence Number                        |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                    Acknowledgment Number                      |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|  Data |       |U|A|P|R|S|F|                                   |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| Offset|  Res  |R|C|S|S|Y|I|            Window                 |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|       |       |G|K|H|T|N|N|                                   |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|           Checksum            |         Urgent Pointer        |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                    Options                    |    Padding    |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                             Data                              |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键字段">关键字段<a href="#关键字段" class="hash-link" aria-label="Direct link to 关键字段" title="Direct link to 关键字段" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>Source Port</td><td>16 bits</td><td>源端口号</td></tr><tr><td>Destination Port</td><td>16 bits</td><td>目标端口号</td></tr><tr><td>Sequence Number</td><td>32 bits</td><td>序列号</td></tr><tr><td>ACK Number</td><td>32 bits</td><td>确认号</td></tr><tr><td>Flags</td><td>6 bits</td><td>控制标志位</td></tr><tr><td>Window</td><td>16 bits</td><td>窗口大小</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="三次握手">三次握手<a href="#三次握手" class="hash-link" aria-label="Direct link to 三次握手" title="Direct link to 三次握手" translate="no">​</a></h2>
 <p>建立 TCP 连接需要三次握手（Three-way Handshake）：</p>
@@ -58,7 +105,7 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="time_wait-状态">TIME_WAIT 状态<a href="#time_wait-状态" class="hash-link" aria-label="Direct link to TIME_WAIT 状态" title="Direct link to TIME_WAIT 状态" translate="no">​</a></h3>
 <ul>
 <li class="">持续时间：<strong>2MSL</strong>（Maximum Segment Lifetime，通常 60 秒）</li>
-<li class="">作用：<!-- -->
+<li class="">作用：
 <ol>
 <li class="">确保最后一个 ACK 能被对端收到</li>
 <li class="">让旧连接的数据包在网络中消失</li>
@@ -76,6 +123,36 @@
 <p>TCP 使用多种算法控制网络拥塞：</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="四种算法">四种算法<a href="#四种算法" class="hash-link" aria-label="Direct link to 四种算法" title="Direct link to 四种算法" translate="no">​</a></h3>
 <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>算法</th><th>触发条件</th><th>行为</th></tr></thead><tbody><tr><td>慢启动</td><td>连接建立</td><td>cwnd 指数增长</td></tr><tr><td>拥塞避免</td><td>cwnd ≥ ssthresh</td><td>cwnd 线性增长</td></tr><tr><td>快重传</td><td>3 次重复 ACK</td><td>立即重传丢失报文</td></tr><tr><td>快恢复</td><td>快重传后</td><td>ssthresh = cwnd/2</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="tcp-状态机">TCP 状态机<a href="#tcp-状态机" class="hash-link" aria-label="Direct link to TCP 状态机" title="Direct link to TCP 状态机" translate="no">​</a></h2>
 <!-- -->
@@ -100,6 +177,6 @@
 <ul>
 <li class="">了解 <a class="" href="/docs/networking/udp">UDP 协议</a> 的特点</li>
 <li class="">学习 <a class="" href="/docs/networking/socket-programming">Socket 编程</a> 实践</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/tcp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/data-link-layer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">数据链路层</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/udp"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">UDP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#tcp-报文结构" class="table-of-contents__link toc-highlight">TCP 报文结构</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li></ul></li><li><a href="#三次握手" class="table-of-contents__link toc-highlight">三次握手</a><ul><li><a href="#为什么是三次握手" class="table-of-contents__link toc-highlight">为什么是三次握手？</a></li></ul></li><li><a href="#四次挥手" class="table-of-contents__link toc-highlight">四次挥手</a><ul><li><a href="#为什么是四次挥手" class="table-of-contents__link toc-highlight">为什么是四次挥手？</a></li><li><a href="#time_wait-状态" class="table-of-contents__link toc-highlight">TIME_WAIT 状态</a></li></ul></li><li><a href="#流量控制" class="table-of-contents__link toc-highlight">流量控制</a></li><li><a href="#拥塞控制" class="table-of-contents__link toc-highlight">拥塞控制</a><ul><li><a href="#四种算法" class="table-of-contents__link toc-highlight">四种算法</a></li></ul></li><li><a href="#tcp-状态机" class="table-of-contents__link toc-highlight">TCP 状态机</a></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#syn-攻击" class="table-of-contents__link toc-highlight">SYN 攻击</a></li><li><a href="#粘包与拆包" class="table-of-contents__link toc-highlight">粘包与拆包</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/tcp.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/data-link-layer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">数据链路层</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/udp"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">UDP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心特性" class="table-of-contents__link toc-highlight">核心特性</a></li><li><a href="#tcp-报文结构" class="table-of-contents__link toc-highlight">TCP 报文结构</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li></ul></li><li><a href="#三次握手" class="table-of-contents__link toc-highlight">三次握手</a><ul><li><a href="#为什么是三次握手" class="table-of-contents__link toc-highlight">为什么是三次握手？</a></li></ul></li><li><a href="#四次挥手" class="table-of-contents__link toc-highlight">四次挥手</a><ul><li><a href="#为什么是四次挥手" class="table-of-contents__link toc-highlight">为什么是四次挥手？</a></li><li><a href="#time_wait-状态" class="table-of-contents__link toc-highlight">TIME_WAIT 状态</a></li></ul></li><li><a href="#流量控制" class="table-of-contents__link toc-highlight">流量控制</a></li><li><a href="#拥塞控制" class="table-of-contents__link toc-highlight">拥塞控制</a><ul><li><a href="#四种算法" class="table-of-contents__link toc-highlight">四种算法</a></li></ul></li><li><a href="#tcp-状态机" class="table-of-contents__link toc-highlight">TCP 状态机</a></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#syn-攻击" class="table-of-contents__link toc-highlight">SYN 攻击</a></li><li><a href="#粘包与拆包" class="table-of-contents__link toc-highlight">粘包与拆包</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

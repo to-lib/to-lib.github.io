@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">集合框架 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/java/collections"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="集合框架 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Java 集合框架提供了一套性能优良、使用方便的接口和类，用于存储和操作对象组。"><meta data-rh="true" property="og:description" content="Java 集合框架提供了一套性能优良、使用方便的接口和类，用于存储和操作对象组。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/java/collections"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/collections" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/java/collections" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"集合框架","item":"https://to-lib.github.io/docs/java/collections"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,6 +25,31 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="集合框架结构">集合框架结构<a href="#集合框架结构" class="hash-link" aria-label="Direct link to 集合框架结构" title="Direct link to 集合框架结构" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="collection-与-map-的区别">Collection 与 Map 的区别<a href="#collection-与-map-的区别" class="hash-link" aria-label="Direct link to Collection 与 Map 的区别" title="Direct link to Collection 与 Map 的区别" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>Collection</th><th>Map</th></tr></thead><tbody><tr><td>存储方式</td><td>单列集合，存储对象</td><td>双列集合，存储键值对</td></tr><tr><td>元素特点</td><td>存储元素</td><td>存储 key-value</td></tr><tr><td>继承关系</td><td>继承自 Iterable</td><td>独立的接口</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="list-接口">List 接口<a href="#list-接口" class="hash-link" aria-label="Direct link to List 接口" title="Direct link to List 接口" translate="no">​</a></h2>
 <p>List 是有序集合，允许重复元素。</p>
@@ -28,6 +60,41 @@
 <p>基于双向链表实现，增删快，查询慢。</p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">import java.util.LinkedList;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class LinkedListExample {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public static void main(String[] args) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        LinkedList&lt;String&gt; list = new LinkedList&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 添加元素</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.add(&quot;A&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.add(&quot;B&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.add(&quot;C&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 首尾操作</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.addFirst(&quot;Start&quot;);  // 在开头添加</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.addLast(&quot;End&quot;);     // 在末尾添加</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String first = list.getFirst();  // 获取第一个</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String last = list.getLast();    // 获取最后一个</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.removeFirst();  // 删除第一个</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.removeLast();   // 删除最后一个</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 作为栈使用（LIFO）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.push(&quot;X&quot;);  // 入栈</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String pop = list.pop();  // 出栈</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 作为队列使用（FIFO）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        list.offer(&quot;Y&quot;);  // 入队</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String poll = list.poll();  // 出队</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        System.out.println(list);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="arraylist-vs-linkedlist">ArrayList vs LinkedList<a href="#arraylist-vs-linkedlist" class="hash-link" aria-label="Direct link to ArrayList vs LinkedList" title="Direct link to ArrayList vs LinkedList" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>ArrayList</th><th>LinkedList</th></tr></thead><tbody><tr><td>底层实现</td><td>动态数组</td><td>双向链表</td></tr><tr><td>随机访问</td><td>O(1) 快</td><td>O(n) 慢</td></tr><tr><td>插入删除（中间）</td><td>O(n) 慢</td><td>O(1) 快（找到位置后）</td></tr><tr><td>内存占用</td><td>较小</td><td>较大（需要存储前后指针）</td></tr><tr><td>适用场景</td><td>查询多</td><td>增删多</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="set-接口">Set 接口<a href="#set-接口" class="hash-link" aria-label="Direct link to Set 接口" title="Direct link to Set 接口" translate="no">​</a></h2>
 <p>Set 不允许重复元素。</p>
@@ -66,6 +133,67 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="选择-map">选择 Map<a href="#选择-map" class="hash-link" aria-label="Direct link to 选择 Map" title="Direct link to 选择 Map" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 不需要排序 → HashMap</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Integer&gt; map1 = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 需要排序 → TreeMap</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Integer&gt; map2 = new TreeMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 保持插入顺序 → LinkedHashMap</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Integer&gt; map3 = new LinkedHashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 需要线程安全 → ConcurrentHashMap</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Integer&gt; map4 = new ConcurrentHashMap&lt;&gt;();</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="性能比较">性能比较<a href="#性能比较" class="hash-link" aria-label="Direct link to 性能比较" title="Direct link to 性能比较" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>集合类</th><th>添加</th><th>删除</th><th>查找</th><th>遍历</th><th>特点</th></tr></thead><tbody><tr><td>ArrayList</td><td>O(1)</td><td>O(n)</td><td>O(1)</td><td>快</td><td>随机访问快</td></tr><tr><td>LinkedList</td><td>O(1)</td><td>O(1)</td><td>O(n)</td><td>慢</td><td>头尾操作快</td></tr><tr><td>HashSet</td><td>O(1)</td><td>O(1)</td><td>O(1)</td><td>快</td><td>无序，不重复</td></tr><tr><td>TreeSet</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>慢</td><td>有序，不重复</td></tr><tr><td>HashMap</td><td>O(1)</td><td>O(1)</td><td>O(1)</td><td>快</td><td>键值对，无序</td></tr><tr><td>TreeMap</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>慢</td><td>键值对，有序</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="最佳实践">最佳实践<a href="#最佳实践" class="hash-link" aria-label="Direct link to 最佳实践" title="Direct link to 最佳实践" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-使用接口类型声明">1. 使用接口类型声明<a href="#1-使用接口类型声明" class="hash-link" aria-label="Direct link to 1. 使用接口类型声明" title="Direct link to 1. 使用接口类型声明" translate="no">​</a></h3>
@@ -86,6 +214,6 @@
 <li class="">✅ Collections 工具类</li>
 <li class="">✅ 集合选择和性能比较</li>
 </ul>
-<p>掌握集合框架后，继续学习 <a class="" href="/docs/java/generics">泛型</a> 和 <a class="" href="/docs/java/exception-handling">异常处理</a>。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java/collections.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/java/common-classes"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Java 常用类库</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/java/generics"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">泛型编程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#集合框架概述" class="table-of-contents__link toc-highlight">集合框架概述</a><ul><li><a href="#集合框架结构" class="table-of-contents__link toc-highlight">集合框架结构</a></li><li><a href="#collection-与-map-的区别" class="table-of-contents__link toc-highlight">Collection 与 Map 的区别</a></li></ul></li><li><a href="#list-接口" class="table-of-contents__link toc-highlight">List 接口</a><ul><li><a href="#arraylist" class="table-of-contents__link toc-highlight">ArrayList</a></li><li><a href="#linkedlist" class="table-of-contents__link toc-highlight">LinkedList</a></li><li><a href="#arraylist-vs-linkedlist" class="table-of-contents__link toc-highlight">ArrayList vs LinkedList</a></li></ul></li><li><a href="#set-接口" class="table-of-contents__link toc-highlight">Set 接口</a><ul><li><a href="#hashset" class="table-of-contents__link toc-highlight">HashSet</a></li><li><a href="#treeset" class="table-of-contents__link toc-highlight">TreeSet</a></li><li><a href="#linkedhashset" class="table-of-contents__link toc-highlight">LinkedHashSet</a></li></ul></li><li><a href="#map-接口" class="table-of-contents__link toc-highlight">Map 接口</a><ul><li><a href="#hashmap" class="table-of-contents__link toc-highlight">HashMap</a></li><li><a href="#treemap" class="table-of-contents__link toc-highlight">TreeMap</a></li><li><a href="#linkedhashmap" class="table-of-contents__link toc-highlight">LinkedHashMap</a></li></ul></li><li><a href="#queue-接口" class="table-of-contents__link toc-highlight">Queue 接口</a><ul><li><a href="#priorityqueue" class="table-of-contents__link toc-highlight">PriorityQueue</a></li></ul></li><li><a href="#collections-工具类" class="table-of-contents__link toc-highlight">Collections 工具类</a></li><li><a href="#选择合适的集合" class="table-of-contents__link toc-highlight">选择合适的集合</a><ul><li><a href="#选择-list" class="table-of-contents__link toc-highlight">选择 List</a></li><li><a href="#选择-set" class="table-of-contents__link toc-highlight">选择 Set</a></li><li><a href="#选择-map" class="table-of-contents__link toc-highlight">选择 Map</a></li></ul></li><li><a href="#性能比较" class="table-of-contents__link toc-highlight">性能比较</a></li><li><a href="#最佳实践" class="table-of-contents__link toc-highlight">最佳实践</a><ul><li><a href="#1-使用接口类型声明" class="table-of-contents__link toc-highlight">1. 使用接口类型声明</a></li><li><a href="#2-指定初始容量" class="table-of-contents__link toc-highlight">2. 指定初始容量</a></li><li><a href="#3-使用泛型" class="table-of-contents__link toc-highlight">3. 使用泛型</a></li><li><a href="#4-避免在循环中修改集合" class="table-of-contents__link toc-highlight">4. 避免在循环中修改集合</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p>掌握集合框架后，继续学习 <a class="" href="/docs/java/generics">泛型</a> 和 <a class="" href="/docs/java/exception-handling">异常处理</a>。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/java/collections.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/java/common-classes"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Java 常用类库</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/java/generics"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">泛型编程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#集合框架概述" class="table-of-contents__link toc-highlight">集合框架概述</a><ul><li><a href="#集合框架结构" class="table-of-contents__link toc-highlight">集合框架结构</a></li><li><a href="#collection-与-map-的区别" class="table-of-contents__link toc-highlight">Collection 与 Map 的区别</a></li></ul></li><li><a href="#list-接口" class="table-of-contents__link toc-highlight">List 接口</a><ul><li><a href="#arraylist" class="table-of-contents__link toc-highlight">ArrayList</a></li><li><a href="#linkedlist" class="table-of-contents__link toc-highlight">LinkedList</a></li><li><a href="#arraylist-vs-linkedlist" class="table-of-contents__link toc-highlight">ArrayList vs LinkedList</a></li></ul></li><li><a href="#set-接口" class="table-of-contents__link toc-highlight">Set 接口</a><ul><li><a href="#hashset" class="table-of-contents__link toc-highlight">HashSet</a></li><li><a href="#treeset" class="table-of-contents__link toc-highlight">TreeSet</a></li><li><a href="#linkedhashset" class="table-of-contents__link toc-highlight">LinkedHashSet</a></li></ul></li><li><a href="#map-接口" class="table-of-contents__link toc-highlight">Map 接口</a><ul><li><a href="#hashmap" class="table-of-contents__link toc-highlight">HashMap</a></li><li><a href="#treemap" class="table-of-contents__link toc-highlight">TreeMap</a></li><li><a href="#linkedhashmap" class="table-of-contents__link toc-highlight">LinkedHashMap</a></li></ul></li><li><a href="#queue-接口" class="table-of-contents__link toc-highlight">Queue 接口</a><ul><li><a href="#priorityqueue" class="table-of-contents__link toc-highlight">PriorityQueue</a></li></ul></li><li><a href="#collections-工具类" class="table-of-contents__link toc-highlight">Collections 工具类</a></li><li><a href="#选择合适的集合" class="table-of-contents__link toc-highlight">选择合适的集合</a><ul><li><a href="#选择-list" class="table-of-contents__link toc-highlight">选择 List</a></li><li><a href="#选择-set" class="table-of-contents__link toc-highlight">选择 Set</a></li><li><a href="#选择-map" class="table-of-contents__link toc-highlight">选择 Map</a></li></ul></li><li><a href="#性能比较" class="table-of-contents__link toc-highlight">性能比较</a></li><li><a href="#最佳实践" class="table-of-contents__link toc-highlight">最佳实践</a><ul><li><a href="#1-使用接口类型声明" class="table-of-contents__link toc-highlight">1. 使用接口类型声明</a></li><li><a href="#2-指定初始容量" class="table-of-contents__link toc-highlight">2. 指定初始容量</a></li><li><a href="#3-使用泛型" class="table-of-contents__link toc-highlight">3. 使用泛型</a></li><li><a href="#4-避免在循环中修改集合" class="table-of-contents__link toc-highlight">4. 避免在循环中修改集合</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

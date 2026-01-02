@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Flink 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/flink-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Flink 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Flink 面试常见问题及答案"><meta data-rh="true" property="og:description" content="Flink 面试常见问题及答案"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/flink-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/flink-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/flink-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flink 面试题","item":"https://to-lib.github.io/docs/interview/flink-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -43,6 +50,31 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="时间与窗口">时间与窗口<a href="#时间与窗口" class="hash-link" aria-label="Direct link to 时间与窗口" title="Direct link to 时间与窗口" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="4-flink-支持哪些时间语义">4. Flink 支持哪些时间语义？<a href="#4-flink-支持哪些时间语义" class="hash-link" aria-label="Direct link to 4. Flink 支持哪些时间语义？" title="Direct link to 4. Flink 支持哪些时间语义？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>时间类型</th><th>描述</th><th>使用场景</th></tr></thead><tbody><tr><td>Event Time</td><td>事件发生时间</td><td>需要精确结果</td></tr><tr><td>Processing Time</td><td>处理时间</td><td>对延迟敏感</td></tr><tr><td>Ingestion Time</td><td>摄入时间</td><td>折中方案</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-什么是-watermark如何处理迟到数据">5. 什么是 Watermark？如何处理迟到数据？<a href="#5-什么是-watermark如何处理迟到数据" class="hash-link" aria-label="Direct link to 5. 什么是 Watermark？如何处理迟到数据？" title="Direct link to 5. 什么是 Watermark？如何处理迟到数据？" translate="no">​</a></h3>
 <p><strong>Watermark</strong> 是处理乱序数据的机制，表示该时间点之前的数据应该都已到达。</p>
@@ -76,6 +108,36 @@
 <li class="">BroadcastState</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="8-checkpoint-和-savepoint-有什么区别">8. Checkpoint 和 Savepoint 有什么区别？<a href="#8-checkpoint-和-savepoint-有什么区别" class="hash-link" aria-label="Direct link to 8. Checkpoint 和 Savepoint 有什么区别？" title="Direct link to 8. Checkpoint 和 Savepoint 有什么区别？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特征</th><th>Checkpoint</th><th>Savepoint</th></tr></thead><tbody><tr><td>触发方式</td><td>自动</td><td>手动</td></tr><tr><td>主要用途</td><td>故障恢复</td><td>升级/迁移</td></tr><tr><td>格式</td><td>内部格式</td><td>可移植格式</td></tr><tr><td>生命周期</td><td>作业完成后可删除</td><td>用户管理</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="9-如何保证-exactly-once-语义">9. 如何保证 Exactly-Once 语义？<a href="#9-如何保证-exactly-once-语义" class="hash-link" aria-label="Direct link to 9. 如何保证 Exactly-Once 语义？" title="Direct link to 9. 如何保证 Exactly-Once 语义？" translate="no">​</a></h3>
 <ol>
@@ -130,6 +192,39 @@
 <li class="">检查下游系统性能</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="17-flink-sql-和-datastream-api-如何选择">17. Flink SQL 和 DataStream API 如何选择？<a href="#17-flink-sql-和-datastream-api-如何选择" class="hash-link" aria-label="Direct link to 17. Flink SQL 和 DataStream API 如何选择？" title="Direct link to 17. Flink SQL 和 DataStream API 如何选择？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>推荐 API</th></tr></thead><tbody><tr><td>简单 ETL</td><td>Flink SQL</td></tr><tr><td>复杂业务逻辑</td><td>DataStream API</td></tr><tr><td>快速原型开发</td><td>Flink SQL</td></tr><tr><td>需要精细控制</td><td>DataStream API</td></tr><tr><td>多表关联</td><td>Flink SQL</td></tr><tr><td>CEP 模式匹配</td><td>DataStream API</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="18-rocksdb-状态后端的优缺点">18. RocksDB 状态后端的优缺点？<a href="#18-rocksdb-状态后端的优缺点" class="hash-link" aria-label="Direct link to 18. RocksDB 状态后端的优缺点？" title="Direct link to 18. RocksDB 状态后端的优缺点？" translate="no">​</a></h3>
 <p><strong>优点</strong>：</p>
@@ -153,6 +248,41 @@
 <li class=""><strong>业务幂等设计</strong>：使用唯一业务 ID</li>
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="20-flink-集群的部署模式有哪些">20. Flink 集群的部署模式有哪些？<a href="#20-flink-集群的部署模式有哪些" class="hash-link" aria-label="Direct link to 20. Flink 集群的部署模式有哪些？" title="Direct link to 20. Flink 集群的部署模式有哪些？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模式</th><th>特点</th><th>适用场景</th></tr></thead><tbody><tr><td><strong>Standalone</strong></td><td>简单部署</td><td>开发测试</td></tr><tr><td><strong>YARN Session</strong></td><td>共享资源</td><td>多作业环境</td></tr><tr><td><strong>YARN Per-Job</strong></td><td>资源隔离</td><td>生产环境</td></tr><tr><td><strong>Kubernetes</strong></td><td>云原生</td><td>K8s 环境</td></tr><tr><td><strong>Application Mode</strong></td><td>推荐模式</td><td>生产最佳实践</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="21-如何监控-flink-作业">21. 如何监控 Flink 作业？<a href="#21-如何监控-flink-作业" class="hash-link" aria-label="Direct link to 21. 如何监控 Flink 作业？" title="Direct link to 21. 如何监控 Flink 作业？" translate="no">​</a></h3>
 <ol>
@@ -211,6 +341,6 @@
 <li class=""><code>cleanupFullSnapshot()</code>：检查点时清理</li>
 <li class=""><code>cleanupIncrementally()</code>：访问时增量清理</li>
 <li class=""><code>cleanupInRocksdbCompactFilter()</code>：RocksDB 压缩时清理</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/flink-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/netty-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Netty 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/microservices-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">微服务面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#1-什么是-apache-flink" class="table-of-contents__link toc-highlight">1. 什么是 Apache Flink？</a></li><li><a href="#2-flink-的核心组件有哪些" class="table-of-contents__link toc-highlight">2. Flink 的核心组件有哪些？</a></li><li><a href="#3-什么是-operator-chain" class="table-of-contents__link toc-highlight">3. 什么是 Operator Chain？</a></li></ul></li><li><a href="#时间与窗口" class="table-of-contents__link toc-highlight">时间与窗口</a><ul><li><a href="#4-flink-支持哪些时间语义" class="table-of-contents__link toc-highlight">4. Flink 支持哪些时间语义？</a></li><li><a href="#5-什么是-watermark如何处理迟到数据" class="table-of-contents__link toc-highlight">5. 什么是 Watermark？如何处理迟到数据？</a></li><li><a href="#6-flink-窗口类型有哪些" class="table-of-contents__link toc-highlight">6. Flink 窗口类型有哪些？</a></li></ul></li><li><a href="#状态管理" class="table-of-contents__link toc-highlight">状态管理</a><ul><li><a href="#7-flink-有哪些状态类型" class="table-of-contents__link toc-highlight">7. Flink 有哪些状态类型？</a></li><li><a href="#8-checkpoint-和-savepoint-有什么区别" class="table-of-contents__link toc-highlight">8. Checkpoint 和 Savepoint 有什么区别？</a></li><li><a href="#9-如何保证-exactly-once-语义" class="table-of-contents__link toc-highlight">9. 如何保证 Exactly-Once 语义？</a></li></ul></li><li><a href="#性能优化" class="table-of-contents__link toc-highlight">性能优化</a><ul><li><a href="#10-如何解决数据倾斜问题" class="table-of-contents__link toc-highlight">10. 如何解决数据倾斜问题？</a></li><li><a href="#11-flink-有哪些调优手段" class="table-of-contents__link toc-highlight">11. Flink 有哪些调优手段？</a></li></ul></li><li><a href="#实战问题" class="table-of-contents__link toc-highlight">实战问题</a><ul><li><a href="#12-如何实现双流-join" class="table-of-contents__link toc-highlight">12. 如何实现双流 Join？</a></li><li><a href="#13-如何实现-topn-查询" class="table-of-contents__link toc-highlight">13. 如何实现 TopN 查询？</a></li><li><a href="#14-生产环境选择什么部署模式" class="table-of-contents__link toc-highlight">14. 生产环境选择什么部署模式？</a></li></ul></li><li><a href="#高级主题" class="table-of-contents__link toc-highlight">高级主题</a><ul><li><a href="#15-flink-cdc-是什么" class="table-of-contents__link toc-highlight">15. Flink CDC 是什么？</a></li><li><a href="#16-如何处理-flink-作业的反压" class="table-of-contents__link toc-highlight">16. 如何处理 Flink 作业的反压？</a></li><li><a href="#17-flink-sql-和-datastream-api-如何选择" class="table-of-contents__link toc-highlight">17. Flink SQL 和 DataStream API 如何选择？</a></li><li><a href="#18-rocksdb-状态后端的优缺点" class="table-of-contents__link toc-highlight">18. RocksDB 状态后端的优缺点？</a></li><li><a href="#19-如何保证-flink-作业的幂等性" class="table-of-contents__link toc-highlight">19. 如何保证 Flink 作业的幂等性？</a></li><li><a href="#20-flink-集群的部署模式有哪些" class="table-of-contents__link toc-highlight">20. Flink 集群的部署模式有哪些？</a></li><li><a href="#21-如何监控-flink-作业" class="table-of-contents__link toc-highlight">21. 如何监控 Flink 作业？</a></li><li><a href="#22-flink-如何实现端到端精确一次" class="table-of-contents__link toc-highlight">22. Flink 如何实现端到端精确一次？</a></li><li><a href="#23-什么是-flink-的-unaligned-checkpoint" class="table-of-contents__link toc-highlight">23. 什么是 Flink 的 Unaligned Checkpoint？</a></li><li><a href="#24-如何优化-flink-sql-作业性能" class="table-of-contents__link toc-highlight">24. 如何优化 Flink SQL 作业性能？</a></li><li><a href="#25-flink-状态过期如何配置" class="table-of-contents__link toc-highlight">25. Flink 状态过期如何配置？</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/flink-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/netty-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Netty 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/microservices-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">微服务面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#1-什么是-apache-flink" class="table-of-contents__link toc-highlight">1. 什么是 Apache Flink？</a></li><li><a href="#2-flink-的核心组件有哪些" class="table-of-contents__link toc-highlight">2. Flink 的核心组件有哪些？</a></li><li><a href="#3-什么是-operator-chain" class="table-of-contents__link toc-highlight">3. 什么是 Operator Chain？</a></li></ul></li><li><a href="#时间与窗口" class="table-of-contents__link toc-highlight">时间与窗口</a><ul><li><a href="#4-flink-支持哪些时间语义" class="table-of-contents__link toc-highlight">4. Flink 支持哪些时间语义？</a></li><li><a href="#5-什么是-watermark如何处理迟到数据" class="table-of-contents__link toc-highlight">5. 什么是 Watermark？如何处理迟到数据？</a></li><li><a href="#6-flink-窗口类型有哪些" class="table-of-contents__link toc-highlight">6. Flink 窗口类型有哪些？</a></li></ul></li><li><a href="#状态管理" class="table-of-contents__link toc-highlight">状态管理</a><ul><li><a href="#7-flink-有哪些状态类型" class="table-of-contents__link toc-highlight">7. Flink 有哪些状态类型？</a></li><li><a href="#8-checkpoint-和-savepoint-有什么区别" class="table-of-contents__link toc-highlight">8. Checkpoint 和 Savepoint 有什么区别？</a></li><li><a href="#9-如何保证-exactly-once-语义" class="table-of-contents__link toc-highlight">9. 如何保证 Exactly-Once 语义？</a></li></ul></li><li><a href="#性能优化" class="table-of-contents__link toc-highlight">性能优化</a><ul><li><a href="#10-如何解决数据倾斜问题" class="table-of-contents__link toc-highlight">10. 如何解决数据倾斜问题？</a></li><li><a href="#11-flink-有哪些调优手段" class="table-of-contents__link toc-highlight">11. Flink 有哪些调优手段？</a></li></ul></li><li><a href="#实战问题" class="table-of-contents__link toc-highlight">实战问题</a><ul><li><a href="#12-如何实现双流-join" class="table-of-contents__link toc-highlight">12. 如何实现双流 Join？</a></li><li><a href="#13-如何实现-topn-查询" class="table-of-contents__link toc-highlight">13. 如何实现 TopN 查询？</a></li><li><a href="#14-生产环境选择什么部署模式" class="table-of-contents__link toc-highlight">14. 生产环境选择什么部署模式？</a></li></ul></li><li><a href="#高级主题" class="table-of-contents__link toc-highlight">高级主题</a><ul><li><a href="#15-flink-cdc-是什么" class="table-of-contents__link toc-highlight">15. Flink CDC 是什么？</a></li><li><a href="#16-如何处理-flink-作业的反压" class="table-of-contents__link toc-highlight">16. 如何处理 Flink 作业的反压？</a></li><li><a href="#17-flink-sql-和-datastream-api-如何选择" class="table-of-contents__link toc-highlight">17. Flink SQL 和 DataStream API 如何选择？</a></li><li><a href="#18-rocksdb-状态后端的优缺点" class="table-of-contents__link toc-highlight">18. RocksDB 状态后端的优缺点？</a></li><li><a href="#19-如何保证-flink-作业的幂等性" class="table-of-contents__link toc-highlight">19. 如何保证 Flink 作业的幂等性？</a></li><li><a href="#20-flink-集群的部署模式有哪些" class="table-of-contents__link toc-highlight">20. Flink 集群的部署模式有哪些？</a></li><li><a href="#21-如何监控-flink-作业" class="table-of-contents__link toc-highlight">21. 如何监控 Flink 作业？</a></li><li><a href="#22-flink-如何实现端到端精确一次" class="table-of-contents__link toc-highlight">22. Flink 如何实现端到端精确一次？</a></li><li><a href="#23-什么是-flink-的-unaligned-checkpoint" class="table-of-contents__link toc-highlight">23. 什么是 Flink 的 Unaligned Checkpoint？</a></li><li><a href="#24-如何优化-flink-sql-作业性能" class="table-of-contents__link toc-highlight">24. 如何优化 Flink SQL 作业性能？</a></li><li><a href="#25-flink-状态过期如何配置" class="table-of-contents__link toc-highlight">25. Flink 状态过期如何配置？</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

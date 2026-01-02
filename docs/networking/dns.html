@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">DNS 域名解析 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/dns"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DNS 域名解析 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="DNS系统详解，包括分层结构、解析过程、记录类型"><meta data-rh="true" property="og:description" content="DNS系统详解，包括分层结构、解析过程、记录类型"><meta data-rh="true" name="keywords" content="DNS,域名解析,A记录,CNAME,MX,递归查询,迭代查询"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/dns"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/dns" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/dns" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DNS 域名解析","item":"https://to-lib.github.io/docs/networking/dns"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -24,10 +31,65 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="域名结构">域名结构<a href="#域名结构" class="hash-link" aria-label="Direct link to 域名结构" title="Direct link to 域名结构" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">www.example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└┬┘ └──┬──┘ └┬┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> │     │     └── 顶级域名 (TLD)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> │     └──────── 二级域名 (SLD)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> └────────────── 子域名/主机名</span><br></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>层级</th><th>示例</th><th>说明</th></tr></thead><tbody><tr><td>根域</td><td>.</td><td>DNS 根</td></tr><tr><td>顶级域</td><td>com</td><td>通用/国家顶级域</td></tr><tr><td>二级域</td><td>example</td><td>注册的域名</td></tr><tr><td>子域</td><td>www</td><td>具体主机</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="dns-层次结构">DNS 层次结构<a href="#dns-层次结构" class="hash-link" aria-label="Direct link to DNS 层次结构" title="Direct link to DNS 层次结构" translate="no">​</a></h2>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="服务器类型">服务器类型<a href="#服务器类型" class="hash-link" aria-label="Direct link to 服务器类型" title="Direct link to 服务器类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>根服务器</td><td>全球 13 组根服务器</td></tr><tr><td>TLD 服务器</td><td>管理顶级域（.com, .cn 等）</td></tr><tr><td>权威服务器</td><td>管理具体域名的 DNS 记录</td></tr><tr><td>本地 DNS</td><td>ISP 提供的递归解析器</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="解析过程">解析过程<a href="#解析过程" class="hash-link" aria-label="Direct link to 解析过程" title="Direct link to 解析过程" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="递归查询-vs-迭代查询">递归查询 vs 迭代查询<a href="#递归查询-vs-迭代查询" class="hash-link" aria-label="Direct link to 递归查询 vs 迭代查询" title="Direct link to 递归查询 vs 迭代查询" translate="no">​</a></h3>
@@ -43,12 +105,94 @@
 <li class=""><strong>权威 DNS 服务器</strong></li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="dns-记录类型">DNS 记录类型<a href="#dns-记录类型" class="hash-link" aria-label="Direct link to DNS 记录类型" title="Direct link to DNS 记录类型" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>名称</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td>A</td><td>Address</td><td>域名 → IPv4</td><td>example.com → 192.0.2.1</td></tr><tr><td>AAAA</td><td>IPv6 Address</td><td>域名 → IPv6</td><td>example.com → 2001:db8::1</td></tr><tr><td>CNAME</td><td>Canonical Name</td><td>别名</td><td>www → example.com</td></tr><tr><td>MX</td><td>Mail Exchange</td><td>邮件服务器</td><td>example.com → mail.example.com</td></tr><tr><td>NS</td><td>Name Server</td><td>权威 DNS 服务器</td><td>example.com → ns1.example.com</td></tr><tr><td>TXT</td><td>Text</td><td>文本记录</td><td>SPF, DKIM 验证</td></tr><tr><td>SOA</td><td>Start of Auth</td><td>区域授权起始</td><td>主 DNS、管理员邮箱、序列号</td></tr><tr><td>PTR</td><td>Pointer</td><td>反向解析 IP → 域名</td><td>1.2.0.192 → example.com</td></tr><tr><td>SRV</td><td>Service</td><td>服务发现</td><td>_http._tcp.example.com</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="记录示例">记录示例<a href="#记录示例" class="hash-link" aria-label="Direct link to 记录示例" title="Direct link to 记录示例" translate="no">​</a></h3>
 <div class="language-dns codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-dns codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">; A 记录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  A       192.0.2.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">; AAAA 记录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  AAAA    2001:db8::1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">; CNAME 记录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">www.example.com.    IN  CNAME   example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">; MX 记录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  MX  10  mail1.example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  MX  20  mail2.example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">; NS 记录</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  NS      ns1.example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  NS      ns2.example.com.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">; TXT 记录 (SPF)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com.        IN  TXT     &quot;v=spf1 mx -all&quot;</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="dns-缓存">DNS 缓存<a href="#dns-缓存" class="hash-link" aria-label="Direct link to DNS 缓存" title="Direct link to DNS 缓存" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="ttltime-to-live">TTL（Time To Live）<a href="#ttltime-to-live" class="hash-link" aria-label="Direct link to TTL（Time To Live）" title="Direct link to TTL（Time To Live）" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">example.com.    3600    IN    A    192.0.2.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                └──┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                TTL = 3600秒</span><br></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>TTL 值</th><th>说明</th></tr></thead><tbody><tr><td>短 (60s)</td><td>变更快速生效</td></tr><tr><td>长 (86400s)</td><td>减少查询，更稳定</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="查看缓存">查看缓存<a href="#查看缓存" class="hash-link" aria-label="Direct link to 查看缓存" title="Direct link to 查看缓存" translate="no">​</a></h3>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># macOS 清除 DNS 缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo dscacheutil -flushcache</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Windows 清除 DNS 缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ipconfig /flushdns</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># Linux 清除 systemd-resolved 缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemd-resolve --flush-caches</span><br></span></code></pre></div></div>
@@ -61,13 +205,96 @@
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">$ host example.com</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com has address 93.184.216.34</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">example.com has IPv6 address 2606:2800:220:1:248:1893:25c8:1946</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="dns-安全">DNS 安全<a href="#dns-安全" class="hash-link" aria-label="Direct link to DNS 安全" title="Direct link to DNS 安全" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常见威胁">常见威胁<a href="#常见威胁" class="hash-link" aria-label="Direct link to 常见威胁" title="Direct link to 常见威胁" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>威胁</th><th>描述</th><th>防护措施</th></tr></thead><tbody><tr><td>DNS 劫持</td><td>篡改 DNS 响应</td><td>使用可信 DNS</td></tr><tr><td>DNS 污染</td><td>注入虚假记录</td><td>DNSSEC, DoH</td></tr><tr><td>DDoS 攻击</td><td>放大攻击</td><td>速率限制</td></tr><tr><td>缓存投毒</td><td>毒化 DNS 缓存</td><td>随机化端口/ID</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="dnssec">DNSSEC<a href="#dnssec" class="hash-link" aria-label="Direct link to DNSSEC" title="Direct link to DNSSEC" translate="no">​</a></h3>
 <p>DNSSEC 通过数字签名验证 DNS 响应的真实性：</p>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="doh--dot">DoH / DoT<a href="#doh--dot" class="hash-link" aria-label="Direct link to DoH / DoT" title="Direct link to DoH / DoT" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>协议</th><th>全称</th><th>端口</th><th>说明</th></tr></thead><tbody><tr><td>DoH</td><td>DNS over HTTPS</td><td>443</td><td>HTTPS 加密</td></tr><tr><td>DoT</td><td>DNS over TLS</td><td>853</td><td>TLS 加密</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="公共-dns-服务">公共 DNS 服务<a href="#公共-dns-服务" class="hash-link" aria-label="Direct link to 公共 DNS 服务" title="Direct link to 公共 DNS 服务" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>提供商</th><th>主 DNS</th><th>备用 DNS</th></tr></thead><tbody><tr><td>Google</td><td>8.8.8.8</td><td>8.8.4.4</td></tr><tr><td>Cloudflare</td><td>1.1.1.1</td><td>1.0.0.1</td></tr><tr><td>阿里 DNS</td><td>223.5.5.5</td><td>223.6.6.6</td></tr><tr><td>腾讯 DNS</td><td>119.29.29.29</td><td>119.28.28.28</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常见问题">常见问题<a href="#常见问题" class="hash-link" aria-label="Direct link to 常见问题" title="Direct link to 常见问题" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="q-dns-使用-tcp-还是-udp">Q: DNS 使用 TCP 还是 UDP？<a href="#q-dns-使用-tcp-还是-udp" class="hash-link" aria-label="Direct link to Q: DNS 使用 TCP 还是 UDP？" title="Direct link to Q: DNS 使用 TCP 还是 UDP？" translate="no">​</a></h3>
@@ -86,6 +313,6 @@
 <ul>
 <li class="">了解 <a class="" href="/docs/networking/http">HTTP 协议</a></li>
 <li class="">学习 <a class="" href="/docs/networking/tls-ssl">TLS/SSL</a> 安全传输</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/dns.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/websocket"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">WebSocket 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/tls-ssl"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TLS/SSL 安全协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基本概念" class="table-of-contents__link toc-highlight">基本概念</a><ul><li><a href="#为什么需要-dns" class="table-of-contents__link toc-highlight">为什么需要 DNS？</a></li><li><a href="#域名结构" class="table-of-contents__link toc-highlight">域名结构</a></li></ul></li><li><a href="#dns-层次结构" class="table-of-contents__link toc-highlight">DNS 层次结构</a><ul><li><a href="#服务器类型" class="table-of-contents__link toc-highlight">服务器类型</a></li></ul></li><li><a href="#解析过程" class="table-of-contents__link toc-highlight">解析过程</a><ul><li><a href="#递归查询-vs-迭代查询" class="table-of-contents__link toc-highlight">递归查询 vs 迭代查询</a></li><li><a href="#解析顺序" class="table-of-contents__link toc-highlight">解析顺序</a></li></ul></li><li><a href="#dns-记录类型" class="table-of-contents__link toc-highlight">DNS 记录类型</a><ul><li><a href="#记录示例" class="table-of-contents__link toc-highlight">记录示例</a></li></ul></li><li><a href="#dns-缓存" class="table-of-contents__link toc-highlight">DNS 缓存</a><ul><li><a href="#ttltime-to-live" class="table-of-contents__link toc-highlight">TTL（Time To Live）</a></li><li><a href="#查看缓存" class="table-of-contents__link toc-highlight">查看缓存</a></li></ul></li><li><a href="#dns-工具" class="table-of-contents__link toc-highlight">DNS 工具</a><ul><li><a href="#nslookup" class="table-of-contents__link toc-highlight">nslookup</a></li><li><a href="#dig" class="table-of-contents__link toc-highlight">dig</a></li><li><a href="#host" class="table-of-contents__link toc-highlight">host</a></li></ul></li><li><a href="#dns-安全" class="table-of-contents__link toc-highlight">DNS 安全</a><ul><li><a href="#常见威胁" class="table-of-contents__link toc-highlight">常见威胁</a></li><li><a href="#dnssec" class="table-of-contents__link toc-highlight">DNSSEC</a></li><li><a href="#doh--dot" class="table-of-contents__link toc-highlight">DoH / DoT</a></li></ul></li><li><a href="#公共-dns-服务" class="table-of-contents__link toc-highlight">公共 DNS 服务</a></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-dns-使用-tcp-还是-udp" class="table-of-contents__link toc-highlight">Q: DNS 使用 TCP 还是 UDP？</a></li><li><a href="#q-域名解析慢怎么办" class="table-of-contents__link toc-highlight">Q: 域名解析慢怎么办？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/dns.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/websocket"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">WebSocket 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/tls-ssl"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TLS/SSL 安全协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基本概念" class="table-of-contents__link toc-highlight">基本概念</a><ul><li><a href="#为什么需要-dns" class="table-of-contents__link toc-highlight">为什么需要 DNS？</a></li><li><a href="#域名结构" class="table-of-contents__link toc-highlight">域名结构</a></li></ul></li><li><a href="#dns-层次结构" class="table-of-contents__link toc-highlight">DNS 层次结构</a><ul><li><a href="#服务器类型" class="table-of-contents__link toc-highlight">服务器类型</a></li></ul></li><li><a href="#解析过程" class="table-of-contents__link toc-highlight">解析过程</a><ul><li><a href="#递归查询-vs-迭代查询" class="table-of-contents__link toc-highlight">递归查询 vs 迭代查询</a></li><li><a href="#解析顺序" class="table-of-contents__link toc-highlight">解析顺序</a></li></ul></li><li><a href="#dns-记录类型" class="table-of-contents__link toc-highlight">DNS 记录类型</a><ul><li><a href="#记录示例" class="table-of-contents__link toc-highlight">记录示例</a></li></ul></li><li><a href="#dns-缓存" class="table-of-contents__link toc-highlight">DNS 缓存</a><ul><li><a href="#ttltime-to-live" class="table-of-contents__link toc-highlight">TTL（Time To Live）</a></li><li><a href="#查看缓存" class="table-of-contents__link toc-highlight">查看缓存</a></li></ul></li><li><a href="#dns-工具" class="table-of-contents__link toc-highlight">DNS 工具</a><ul><li><a href="#nslookup" class="table-of-contents__link toc-highlight">nslookup</a></li><li><a href="#dig" class="table-of-contents__link toc-highlight">dig</a></li><li><a href="#host" class="table-of-contents__link toc-highlight">host</a></li></ul></li><li><a href="#dns-安全" class="table-of-contents__link toc-highlight">DNS 安全</a><ul><li><a href="#常见威胁" class="table-of-contents__link toc-highlight">常见威胁</a></li><li><a href="#dnssec" class="table-of-contents__link toc-highlight">DNSSEC</a></li><li><a href="#doh--dot" class="table-of-contents__link toc-highlight">DoH / DoT</a></li></ul></li><li><a href="#公共-dns-服务" class="table-of-contents__link toc-highlight">公共 DNS 服务</a></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#q-dns-使用-tcp-还是-udp" class="table-of-contents__link toc-highlight">Q: DNS 使用 TCP 还是 UDP？</a></li><li><a href="#q-域名解析慢怎么办" class="table-of-contents__link toc-highlight">Q: 域名解析慢怎么办？</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Spring Boot 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/springboot-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Spring Boot 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP]"><meta data-rh="true" property="og:description" content="[!TIP]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/springboot-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/springboot-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/springboot-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Spring Boot 面试题","item":"https://to-lib.github.io/docs/interview/springboot-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -31,6 +38,31 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-什么是-spring-boot它解决了什么问题">1. 什么是 Spring Boot？它解决了什么问题？<a href="#1-什么是-spring-boot它解决了什么问题" class="hash-link" aria-label="Direct link to 1. 什么是 Spring Boot？它解决了什么问题？" title="Direct link to 1. 什么是 Spring Boot？它解决了什么问题？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
 <p>Spring Boot 是基于 Spring 框架的快速开发脚手架，主要解决以下问题：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>问题</th><th>Spring Boot 解决方案</th></tr></thead><tbody><tr><td>配置繁琐</td><td>自动配置（Auto-Configuration）</td></tr><tr><td>依赖管理复杂</td><td>Starter 依赖简化</td></tr><tr><td>部署麻烦</td><td>内嵌服务器，可执行 JAR</td></tr><tr><td>缺乏标准化</td><td>约定优于配置</td></tr></tbody></table>
 <p><strong>核心特性：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 一个注解启动整个应用</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@SpringBootApplication</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class MyApplication {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public static void main(String[] args) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        SpringApplication.run(MyApplication.class, args);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -40,6 +72,27 @@
 <p><strong>答案要点：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@SpringBootApplication</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ├── @SpringBootConfiguration  // 标识为配置类</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    │       └── @Configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ├── @EnableAutoConfiguration  // 启用自动配置</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    │       └── @Import(AutoConfigurationImportSelector.class)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    └── @ComponentScan            // 组件扫描</span><br></span></code></pre></div></div>
 <p><strong>各注解作用：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>作用</th></tr></thead><tbody><tr><td><code>@SpringBootConfiguration</code></td><td>标识当前类为配置类</td></tr><tr><td><code>@EnableAutoConfiguration</code></td><td>启用自动配置机制</td></tr><tr><td><code>@ComponentScan</code></td><td>扫描当前包及子包的组件</td></tr></tbody></table>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-spring-boot-的启动流程是怎样的">3. Spring Boot 的启动流程是怎样的？<a href="#3-spring-boot-的启动流程是怎样的" class="hash-link" aria-label="Direct link to 3. Spring Boot 的启动流程是怎样的？" title="Direct link to 3. Spring Boot 的启动流程是怎样的？" translate="no">​</a></h3>
@@ -59,6 +112,39 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-常用的条件注解有哪些">5. 常用的条件注解有哪些？<a href="#5-常用的条件注解有哪些" class="hash-link" aria-label="Direct link to 5. 常用的条件注解有哪些？" title="Direct link to 5. 常用的条件注解有哪些？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>条件</th></tr></thead><tbody><tr><td><code>@ConditionalOnClass</code></td><td>类路径存在指定类</td></tr><tr><td><code>@ConditionalOnMissingClass</code></td><td>类路径不存在指定类</td></tr><tr><td><code>@ConditionalOnBean</code></td><td>容器中存在指定 Bean</td></tr><tr><td><code>@ConditionalOnMissingBean</code></td><td>容器中不存在指定 Bean</td></tr><tr><td><code>@ConditionalOnProperty</code></td><td>配置属性满足条件</td></tr><tr><td><code>@ConditionalOnWebApplication</code></td><td>是 Web 应用</td></tr></tbody></table>
 <p><strong>示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@ConditionalOnClass(DataSource.class)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@ConditionalOnProperty(prefix = &quot;spring.datasource&quot;, name = &quot;url&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class DataSourceAutoConfiguration {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Bean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @ConditionalOnMissingBean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public DataSource dataSource() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return DataSourceBuilder.create().build();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -85,6 +171,26 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="8-restcontroller-和-controller-的区别">8. @RestController 和 @Controller 的区别？<a href="#8-restcontroller-和-controller-的区别" class="hash-link" aria-label="Direct link to 8. @RestController 和 @Controller 的区别？" title="Direct link to 8. @RestController 和 @Controller 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>返回值处理</th><th>适用场景</th></tr></thead><tbody><tr><td><code>@Controller</code></td><td>返回视图名称</td><td>传统 MVC，返回页面</td></tr><tr><td><code>@RestController</code></td><td>返回 JSON/XML</td><td>RESTful API</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// @RestController = @Controller + @ResponseBody</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@RestController</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class UserController {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @GetMapping(&quot;/users/{id}&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public User getUser(@PathVariable Long id) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return userService.findById(id);  // 自动序列化为 JSON</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <hr>
@@ -104,11 +210,71 @@
 <p><strong>答案要点：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class UserService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional(rollbackFor = Exception.class)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void createUser(User user) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        userRepository.save(user);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 发生异常会回滚</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional(propagation = Propagation.REQUIRES_NEW)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void logOperation(String operation) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 独立事务，不受外部事务影响</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <p><strong>事务传播行为：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>传播行为</th><th>说明</th></tr></thead><tbody><tr><td><code>REQUIRED</code></td><td>默认，有则加入，无则新建</td></tr><tr><td><code>REQUIRES_NEW</code></td><td>总是新建事务</td></tr><tr><td><code>NESTED</code></td><td>嵌套事务</td></tr><tr><td><code>SUPPORTS</code></td><td>有则加入，无则非事务执行</td></tr></tbody></table>
 <p><strong>延伸：</strong> 参考 <a class="" href="/docs/springboot/transaction">Spring Boot 事务管理</a></p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="12-jpa-和-mybatis-如何选择">12. JPA 和 MyBatis 如何选择？<a href="#12-jpa-和-mybatis-如何选择" class="hash-link" aria-label="Direct link to 12. JPA 和 MyBatis 如何选择？" title="Direct link to 12. JPA 和 MyBatis 如何选择？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>JPA/Hibernate</th><th>MyBatis</th></tr></thead><tbody><tr><td>SQL 控制</td><td>自动生成</td><td>手写 SQL</td></tr><tr><td>学习曲线</td><td>较陡</td><td>平缓</td></tr><tr><td>复杂查询</td><td>较弱</td><td>强</td></tr><tr><td>缓存</td><td>一级+二级缓存</td><td>需配置</td></tr><tr><td>适用场景</td><td>简单 CRUD</td><td>复杂查询</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-安全与监控">🎯 安全与监控<a href="#-安全与监控" class="hash-link" aria-label="Direct link to 🎯 安全与监控" title="Direct link to 🎯 安全与监控" translate="no">​</a></h2>
@@ -119,6 +285,47 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="14-spring-boot-actuator-有哪些常用端点">14. Spring Boot Actuator 有哪些常用端点？<a href="#14-spring-boot-actuator-有哪些常用端点" class="hash-link" aria-label="Direct link to 14. Spring Boot Actuator 有哪些常用端点？" title="Direct link to 14. Spring Boot Actuator 有哪些常用端点？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>端点</th><th>说明</th></tr></thead><tbody><tr><td><code>/actuator/health</code></td><td>健康检查</td></tr><tr><td><code>/actuator/info</code></td><td>应用信息</td></tr><tr><td><code>/actuator/metrics</code></td><td>指标数据</td></tr><tr><td><code>/actuator/env</code></td><td>环境变量</td></tr><tr><td><code>/actuator/beans</code></td><td>Bean 列表</td></tr><tr><td><code>/actuator/mappings</code></td><td>请求映射</td></tr><tr><td><code>/actuator/threaddump</code></td><td>线程转储</td></tr><tr><td><code>/actuator/heapdump</code></td><td>堆转储</td></tr></tbody></table>
 <p><strong>配置：</strong></p>
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">management</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">endpoints</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">web</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">exposure</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">include</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> health</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">info</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">metrics</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">endpoint</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">health</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">show-details</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> always</span><br></span></code></pre></div></div>
@@ -193,6 +400,6 @@
 <li class=""><a class="" href="/docs/springboot/core-concepts">Spring Boot 核心概念</a></li>
 <li class=""><a class="" href="/docs/springboot/auto-configuration">Spring Boot 自动配置</a></li>
 <li class=""><a class="" href="/docs/springboot/best-practices">Spring Boot 最佳实践</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/springboot-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/spring-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Spring 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/springcloud-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Spring Cloud 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#目录" class="table-of-contents__link toc-highlight">目录</a></li><li><a href="#-核心概念" class="table-of-contents__link toc-highlight">🎯 核心概念</a><ul><li><a href="#1-什么是-spring-boot它解决了什么问题" class="table-of-contents__link toc-highlight">1. 什么是 Spring Boot？它解决了什么问题？</a></li><li><a href="#2-springbootapplication-注解包含哪些注解" class="table-of-contents__link toc-highlight">2. @SpringBootApplication 注解包含哪些注解？</a></li><li><a href="#3-spring-boot-的启动流程是怎样的" class="table-of-contents__link toc-highlight">3. Spring Boot 的启动流程是怎样的？</a></li></ul></li><li><a href="#-自动配置" class="table-of-contents__link toc-highlight">🎯 自动配置</a><ul><li><a href="#4-spring-boot-自动配置原理是什么" class="table-of-contents__link toc-highlight">4. Spring Boot 自动配置原理是什么？</a></li><li><a href="#5-常用的条件注解有哪些" class="table-of-contents__link toc-highlight">5. 常用的条件注解有哪些？</a></li><li><a href="#6-如何自定义一个-starter" class="table-of-contents__link toc-highlight">6. 如何自定义一个 Starter？</a></li></ul></li><li><a href="#-web-开发" class="table-of-contents__link toc-highlight">🎯 Web 开发</a><ul><li><a href="#7-spring-boot-如何处理静态资源" class="table-of-contents__link toc-highlight">7. Spring Boot 如何处理静态资源？</a></li><li><a href="#8-restcontroller-和-controller-的区别" class="table-of-contents__link toc-highlight">8. @RestController 和 @Controller 的区别？</a></li><li><a href="#9-如何实现全局异常处理" class="table-of-contents__link toc-highlight">9. 如何实现全局异常处理？</a></li></ul></li><li><a href="#-数据访问" class="table-of-contents__link toc-highlight">🎯 数据访问</a><ul><li><a href="#10-spring-boot-如何配置多数据源" class="table-of-contents__link toc-highlight">10. Spring Boot 如何配置多数据源？</a></li><li><a href="#11-spring-boot-事务管理如何配置" class="table-of-contents__link toc-highlight">11. Spring Boot 事务管理如何配置？</a></li><li><a href="#12-jpa-和-mybatis-如何选择" class="table-of-contents__link toc-highlight">12. JPA 和 MyBatis 如何选择？</a></li></ul></li><li><a href="#-安全与监控" class="table-of-contents__link toc-highlight">🎯 安全与监控</a><ul><li><a href="#13-spring-boot-如何集成-spring-security" class="table-of-contents__link toc-highlight">13. Spring Boot 如何集成 Spring Security？</a></li><li><a href="#14-spring-boot-actuator-有哪些常用端点" class="table-of-contents__link toc-highlight">14. Spring Boot Actuator 有哪些常用端点？</a></li><li><a href="#15-如何自定义健康检查指标" class="table-of-contents__link toc-highlight">15. 如何自定义健康检查指标？</a></li></ul></li><li><a href="#-部署与运维" class="table-of-contents__link toc-highlight">🎯 部署与运维</a><ul><li><a href="#16-spring-boot-如何打包部署" class="table-of-contents__link toc-highlight">16. Spring Boot 如何打包部署？</a></li><li><a href="#17-如何实现配置文件的多环境管理" class="table-of-contents__link toc-highlight">17. 如何实现配置文件的多环境管理？</a></li><li><a href="#18-spring-boot-如何优雅停机" class="table-of-contents__link toc-highlight">18. Spring Boot 如何优雅停机？</a></li></ul></li><li><a href="#-性能优化" class="table-of-contents__link toc-highlight">🎯 性能优化</a><ul><li><a href="#19-spring-boot-应用如何优化启动速度" class="table-of-contents__link toc-highlight">19. Spring Boot 应用如何优化启动速度？</a></li><li><a href="#20-如何监控-spring-boot-应用性能" class="table-of-contents__link toc-highlight">20. 如何监控 Spring Boot 应用性能？</a></li></ul></li><li><a href="#-总结" class="table-of-contents__link toc-highlight">📌 总结</a><ul><li><a href="#学习建议" class="table-of-contents__link toc-highlight">学习建议</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/springboot-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/spring-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Spring 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/springcloud-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Spring Cloud 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#目录" class="table-of-contents__link toc-highlight">目录</a></li><li><a href="#-核心概念" class="table-of-contents__link toc-highlight">🎯 核心概念</a><ul><li><a href="#1-什么是-spring-boot它解决了什么问题" class="table-of-contents__link toc-highlight">1. 什么是 Spring Boot？它解决了什么问题？</a></li><li><a href="#2-springbootapplication-注解包含哪些注解" class="table-of-contents__link toc-highlight">2. @SpringBootApplication 注解包含哪些注解？</a></li><li><a href="#3-spring-boot-的启动流程是怎样的" class="table-of-contents__link toc-highlight">3. Spring Boot 的启动流程是怎样的？</a></li></ul></li><li><a href="#-自动配置" class="table-of-contents__link toc-highlight">🎯 自动配置</a><ul><li><a href="#4-spring-boot-自动配置原理是什么" class="table-of-contents__link toc-highlight">4. Spring Boot 自动配置原理是什么？</a></li><li><a href="#5-常用的条件注解有哪些" class="table-of-contents__link toc-highlight">5. 常用的条件注解有哪些？</a></li><li><a href="#6-如何自定义一个-starter" class="table-of-contents__link toc-highlight">6. 如何自定义一个 Starter？</a></li></ul></li><li><a href="#-web-开发" class="table-of-contents__link toc-highlight">🎯 Web 开发</a><ul><li><a href="#7-spring-boot-如何处理静态资源" class="table-of-contents__link toc-highlight">7. Spring Boot 如何处理静态资源？</a></li><li><a href="#8-restcontroller-和-controller-的区别" class="table-of-contents__link toc-highlight">8. @RestController 和 @Controller 的区别？</a></li><li><a href="#9-如何实现全局异常处理" class="table-of-contents__link toc-highlight">9. 如何实现全局异常处理？</a></li></ul></li><li><a href="#-数据访问" class="table-of-contents__link toc-highlight">🎯 数据访问</a><ul><li><a href="#10-spring-boot-如何配置多数据源" class="table-of-contents__link toc-highlight">10. Spring Boot 如何配置多数据源？</a></li><li><a href="#11-spring-boot-事务管理如何配置" class="table-of-contents__link toc-highlight">11. Spring Boot 事务管理如何配置？</a></li><li><a href="#12-jpa-和-mybatis-如何选择" class="table-of-contents__link toc-highlight">12. JPA 和 MyBatis 如何选择？</a></li></ul></li><li><a href="#-安全与监控" class="table-of-contents__link toc-highlight">🎯 安全与监控</a><ul><li><a href="#13-spring-boot-如何集成-spring-security" class="table-of-contents__link toc-highlight">13. Spring Boot 如何集成 Spring Security？</a></li><li><a href="#14-spring-boot-actuator-有哪些常用端点" class="table-of-contents__link toc-highlight">14. Spring Boot Actuator 有哪些常用端点？</a></li><li><a href="#15-如何自定义健康检查指标" class="table-of-contents__link toc-highlight">15. 如何自定义健康检查指标？</a></li></ul></li><li><a href="#-部署与运维" class="table-of-contents__link toc-highlight">🎯 部署与运维</a><ul><li><a href="#16-spring-boot-如何打包部署" class="table-of-contents__link toc-highlight">16. Spring Boot 如何打包部署？</a></li><li><a href="#17-如何实现配置文件的多环境管理" class="table-of-contents__link toc-highlight">17. 如何实现配置文件的多环境管理？</a></li><li><a href="#18-spring-boot-如何优雅停机" class="table-of-contents__link toc-highlight">18. Spring Boot 如何优雅停机？</a></li></ul></li><li><a href="#-性能优化" class="table-of-contents__link toc-highlight">🎯 性能优化</a><ul><li><a href="#19-spring-boot-应用如何优化启动速度" class="table-of-contents__link toc-highlight">19. Spring Boot 应用如何优化启动速度？</a></li><li><a href="#20-如何监控-spring-boot-应用性能" class="table-of-contents__link toc-highlight">20. 如何监控 Spring Boot 应用性能？</a></li></ul></li><li><a href="#-总结" class="table-of-contents__link toc-highlight">📌 总结</a><ul><li><a href="#学习建议" class="table-of-contents__link toc-highlight">学习建议</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

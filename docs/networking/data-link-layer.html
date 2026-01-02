@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">数据链路层 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/data-link-layer"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="数据链路层 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="数据链路层详解，包括MAC地址、以太网、ARP协议、交换机原理"><meta data-rh="true" property="og:description" content="数据链路层详解，包括MAC地址、以太网、ARP协议、交换机原理"><meta data-rh="true" name="keywords" content="数据链路层,MAC地址,以太网,ARP,交换机,VLAN"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/data-link-layer"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/data-link-layer" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/data-link-layer" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"数据链路层","item":"https://to-lib.github.io/docs/networking/data-link-layer"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -26,21 +33,191 @@
 <p>MAC（Media Access Control）地址是网络设备的物理地址，由 48 位（6 字节）组成。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="地址格式">地址格式<a href="#地址格式" class="hash-link" aria-label="Direct link to 地址格式" title="Direct link to 地址格式" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">AA:BB:CC:DD:EE:FF</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└──┬──┘ └──┬──┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  OUI    设备ID</span><br></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>部分</th><th>位数</th><th>说明</th></tr></thead><tbody><tr><td>OUI</td><td>24 bit</td><td>组织唯一标识符（厂商分配）</td></tr><tr><td>设备 ID</td><td>24 bit</td><td>设备唯一标识（厂商自定义）</td></tr><tr><td>首字节 LSB</td><td>1 bit</td><td>0=单播地址，1=多播地址</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="特殊地址">特殊地址<a href="#特殊地址" class="hash-link" aria-label="Direct link to 特殊地址" title="Direct link to 特殊地址" translate="no">​</a></h3>
-<table><thead><tr><th>地址</th><th>类型</th><th>用途</th></tr></thead><tbody><tr><td>FF:FF:FF:FF:FF<!-- -->:FF</td><td>广播地址</td><td>发送给所有设备</td></tr><tr><td>01:00:5E:xx:xx<!-- -->:xx</td><td>多播地址</td><td>IP 组播映射</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>地址</th><th>类型</th><th>用途</th></tr></thead><tbody><tr><td>FF:FF:FF:FF:FF:FF</td><td>广播地址</td><td>发送给所有设备</td></tr><tr><td>01:00:5E:xx:xx:xx</td><td>多播地址</td><td>IP 组播映射</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="以太网帧结构">以太网帧结构<a href="#以太网帧结构" class="hash-link" aria-label="Direct link to 以太网帧结构" title="Direct link to 以太网帧结构" translate="no">​</a></h2>
 <p>以太网是最常用的局域网技术，其帧结构如下：</p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">+---------+--------+--------+------+------+----------+-----+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| Preamble| SFD    | Dest   | Src  | Type | Payload  | FCS |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| 7 bytes | 1 byte | 6 bytes|6 bytes|2 bytes|46-1500  | 4   |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+---------+--------+--------+------+------+----------+-----+</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键字段">关键字段<a href="#关键字段" class="hash-link" aria-label="Direct link to 关键字段" title="Direct link to 关键字段" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>Preamble</td><td>7 字节</td><td>前导码（同步时钟）</td></tr><tr><td>SFD</td><td>1 字节</td><td>帧起始定界符（10101011）</td></tr><tr><td>Dest MAC</td><td>6 字节</td><td>目的 MAC 地址</td></tr><tr><td>Src MAC</td><td>6 字节</td><td>源 MAC 地址</td></tr><tr><td>Type</td><td>2 字节</td><td>上层协议类型</td></tr><tr><td>Payload</td><td>46-1500 字节</td><td>数据载荷</td></tr><tr><td>FCS</td><td>4 字节</td><td>帧校验序列（CRC-32）</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常见-type-值">常见 Type 值<a href="#常见-type-值" class="hash-link" aria-label="Direct link to 常见 Type 值" title="Direct link to 常见 Type 值" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Type</th><th>协议</th></tr></thead><tbody><tr><td>0x0800</td><td>IPv4</td></tr><tr><td>0x0806</td><td>ARP</td></tr><tr><td>0x86DD</td><td>IPv6</td></tr><tr><td>0x8100</td><td>VLAN 标签</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="arp-协议">ARP 协议<a href="#arp-协议" class="hash-link" aria-label="Direct link to ARP 协议" title="Direct link to ARP 协议" translate="no">​</a></h2>
 <p>ARP（Address Resolution Protocol）用于将 IP 地址解析为 MAC 地址。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="工作流程">工作流程<a href="#工作流程" class="hash-link" aria-label="Direct link to 工作流程" title="Direct link to 工作流程" translate="no">​</a></h3>
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="arp-报文格式">ARP 报文格式<a href="#arp-报文格式" class="hash-link" aria-label="Direct link to ARP 报文格式" title="Direct link to ARP 报文格式" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>硬件类型</td><td>2 字节</td><td>1=以太网</td></tr><tr><td>协议类型</td><td>2 字节</td><td>0x0800=IPv4</td></tr><tr><td>硬件长度</td><td>1 字节</td><td>6（MAC 地址长度）</td></tr><tr><td>协议长度</td><td>1 字节</td><td>4（IP 地址长度）</td></tr><tr><td>操作码</td><td>2 字节</td><td>1=请求，2=应答</td></tr><tr><td>发送方 MAC</td><td>6 字节</td><td>发送方硬件地址</td></tr><tr><td>发送方 IP</td><td>4 字节</td><td>发送方协议地址</td></tr><tr><td>目标 MAC</td><td>6 字节</td><td>目标硬件地址</td></tr><tr><td>目标 IP</td><td>4 字节</td><td>目标协议地址</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="arp-缓存">ARP 缓存<a href="#arp-缓存" class="hash-link" aria-label="Direct link to ARP 缓存" title="Direct link to ARP 缓存" translate="no">​</a></h3>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 查看 ARP 缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">arp -a</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 清除 ARP 缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">arp -d *</span><br></span></code></pre></div></div>
@@ -48,6 +225,31 @@
 <p>交换机工作在数据链路层，基于 MAC 地址进行帧转发。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="核心功能-1">核心功能<a href="#核心功能-1" class="hash-link" aria-label="Direct link to 核心功能" title="Direct link to 核心功能" translate="no">​</a></h3>
 <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>功能</th><th>描述</th></tr></thead><tbody><tr><td>学习</td><td>记录源 MAC 与端口的映射关系</td></tr><tr><td>转发</td><td>根据目的 MAC 查表转发到对应端口</td></tr><tr><td>过滤</td><td>不转发源和目的在同一端口的帧</td></tr><tr><td>老化</td><td>定期清除长时间未使用的 MAC 表项</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="mac-地址表">MAC 地址表<a href="#mac-地址表" class="hash-link" aria-label="Direct link to MAC 地址表" title="Direct link to MAC 地址表" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">MAC Address          Port    VLAN    Type</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">------------------------------------------</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">00:1A:2B:3C:4D:5E    Gi0/1   1       Dynamic</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">00:1A:2B:3C:4D:5F    Gi0/2   1       Dynamic</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">00:1A:2B:3C:4D:60    Gi0/3   2       Static</span><br></span></code></pre></div></div>
@@ -55,8 +257,59 @@
 <p>VLAN 用于在逻辑上划分广播域，提高网络安全性和管理效率。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="vlan-标签8021q">VLAN 标签（802.1Q）<a href="#vlan-标签8021q" class="hash-link" aria-label="Direct link to VLAN 标签（802.1Q）" title="Direct link to VLAN 标签（802.1Q）" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">+--------+--------+------+------+----------+-----+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| Dest   | Src    | TPID | TCI  | Type     | ... |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| 6 bytes| 6 bytes|0x8100| 2B   | 2 bytes  |     |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+--------+--------+------+------+----------+-----+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                  └────VLAN Tag (4 bytes)───┘</span><br></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>TPID</td><td>2 字节</td><td>标签协议标识（0x8100）</td></tr><tr><td>PCP</td><td>3 bit</td><td>优先级（QoS）</td></tr><tr><td>DEI</td><td>1 bit</td><td>丢弃指示符</td></tr><tr><td>VID</td><td>12 bit</td><td>VLAN ID（1-4094）</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="端口类型">端口类型<a href="#端口类型" class="hash-link" aria-label="Direct link to 端口类型" title="Direct link to 端口类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>Access</td><td>连接终端设备，发送无标签帧</td></tr><tr><td>Trunk</td><td>连接交换机，发送带标签帧</td></tr><tr><td>Hybrid</td><td>可同时发送带标签和无标签帧</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常见问题">常见问题<a href="#常见问题" class="hash-link" aria-label="Direct link to 常见问题" title="Direct link to 常见问题" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="广播风暴">广播风暴<a href="#广播风暴" class="hash-link" aria-label="Direct link to 广播风暴" title="Direct link to 广播风暴" translate="no">​</a></h3>
@@ -79,6 +332,6 @@
 <ul>
 <li class="">学习 <a class="" href="/docs/networking/network-layer">网络层</a> 协议</li>
 <li class="">了解 <a class="" href="/docs/networking/tcp">TCP 协议</a> 传输机制</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/data-link-layer.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/network-layer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">网络层</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/tcp"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TCP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心功能" class="table-of-contents__link toc-highlight">核心功能</a></li><li><a href="#mac-地址" class="table-of-contents__link toc-highlight">MAC 地址</a><ul><li><a href="#地址格式" class="table-of-contents__link toc-highlight">地址格式</a></li><li><a href="#特殊地址" class="table-of-contents__link toc-highlight">特殊地址</a></li></ul></li><li><a href="#以太网帧结构" class="table-of-contents__link toc-highlight">以太网帧结构</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li><li><a href="#常见-type-值" class="table-of-contents__link toc-highlight">常见 Type 值</a></li></ul></li><li><a href="#arp-协议" class="table-of-contents__link toc-highlight">ARP 协议</a><ul><li><a href="#工作流程" class="table-of-contents__link toc-highlight">工作流程</a></li><li><a href="#arp-报文格式" class="table-of-contents__link toc-highlight">ARP 报文格式</a></li><li><a href="#arp-缓存" class="table-of-contents__link toc-highlight">ARP 缓存</a></li></ul></li><li><a href="#交换机原理" class="table-of-contents__link toc-highlight">交换机原理</a><ul><li><a href="#核心功能-1" class="table-of-contents__link toc-highlight">核心功能</a></li><li><a href="#mac-地址表" class="table-of-contents__link toc-highlight">MAC 地址表</a></li></ul></li><li><a href="#vlan虚拟局域网" class="table-of-contents__link toc-highlight">VLAN（虚拟局域网）</a><ul><li><a href="#vlan-标签8021q" class="table-of-contents__link toc-highlight">VLAN 标签（802.1Q）</a></li><li><a href="#端口类型" class="table-of-contents__link toc-highlight">端口类型</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#广播风暴" class="table-of-contents__link toc-highlight">广播风暴</a></li><li><a href="#arp-欺骗" class="table-of-contents__link toc-highlight">ARP 欺骗</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/data-link-layer.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/network-layer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">网络层</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/tcp"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TCP 协议</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心功能" class="table-of-contents__link toc-highlight">核心功能</a></li><li><a href="#mac-地址" class="table-of-contents__link toc-highlight">MAC 地址</a><ul><li><a href="#地址格式" class="table-of-contents__link toc-highlight">地址格式</a></li><li><a href="#特殊地址" class="table-of-contents__link toc-highlight">特殊地址</a></li></ul></li><li><a href="#以太网帧结构" class="table-of-contents__link toc-highlight">以太网帧结构</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li><li><a href="#常见-type-值" class="table-of-contents__link toc-highlight">常见 Type 值</a></li></ul></li><li><a href="#arp-协议" class="table-of-contents__link toc-highlight">ARP 协议</a><ul><li><a href="#工作流程" class="table-of-contents__link toc-highlight">工作流程</a></li><li><a href="#arp-报文格式" class="table-of-contents__link toc-highlight">ARP 报文格式</a></li><li><a href="#arp-缓存" class="table-of-contents__link toc-highlight">ARP 缓存</a></li></ul></li><li><a href="#交换机原理" class="table-of-contents__link toc-highlight">交换机原理</a><ul><li><a href="#核心功能-1" class="table-of-contents__link toc-highlight">核心功能</a></li><li><a href="#mac-地址表" class="table-of-contents__link toc-highlight">MAC 地址表</a></li></ul></li><li><a href="#vlan虚拟局域网" class="table-of-contents__link toc-highlight">VLAN（虚拟局域网）</a><ul><li><a href="#vlan-标签8021q" class="table-of-contents__link toc-highlight">VLAN 标签（802.1Q）</a></li><li><a href="#端口类型" class="table-of-contents__link toc-highlight">端口类型</a></li></ul></li><li><a href="#常见问题" class="table-of-contents__link toc-highlight">常见问题</a><ul><li><a href="#广播风暴" class="table-of-contents__link toc-highlight">广播风暴</a></li><li><a href="#arp-欺骗" class="table-of-contents__link toc-highlight">ARP 欺骗</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

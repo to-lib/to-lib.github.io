@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">快速参考 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/flink/quick-reference"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="快速参考 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="Flink 常用配置和命令速查"><meta data-rh="true" property="og:description" content="Flink 常用配置和命令速查"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/flink/quick-reference"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/flink/quick-reference" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/flink/quick-reference" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"快速参考","item":"https://to-lib.github.io/docs/flink/quick-reference"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -26,19 +33,192 @@
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># JobManager 配置</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">jobmanager.rpc.address</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> localhost</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">jobmanager.rpc.port</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">6123</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">jobmanager.memory.process.size</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> 1600m</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># TaskManager 配置</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">taskmanager.memory.process.size</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> 4096m</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">taskmanager.numberOfTaskSlots</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 并行度</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">parallelism.default</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 检查点</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">execution.checkpointing.interval</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">60000</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">state.backend</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> rocksdb</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">state.checkpoints.dir</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> hdfs</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain">///checkpoints</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># Web UI</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token key atrule" style="color:#00a4db">rest.port</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">8081</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="api-速查">API 速查<a href="#api-速查" class="hash-link" aria-label="Direct link to API 速查" title="Direct link to API 速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="datastream-常用操作">DataStream 常用操作<a href="#datastream-常用操作" class="hash-link" aria-label="Direct link to DataStream 常用操作" title="Direct link to DataStream 常用操作" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>操作</th><th>示例</th></tr></thead><tbody><tr><td>map</td><td><code>stream.map(x -&gt; x * 2)</code></td></tr><tr><td>flatMap</td><td><code>stream.flatMap((s, c) -&gt; { for(String w : s.split(&quot; &quot;)) c.collect(w); })</code></td></tr><tr><td>filter</td><td><code>stream.filter(x -&gt; x &gt; 0)</code></td></tr><tr><td>keyBy</td><td><code>stream.keyBy(e -&gt; e.getKey())</code></td></tr><tr><td>reduce</td><td><code>keyed.reduce((a, b) -&gt; a + b)</code></td></tr><tr><td>sum</td><td><code>keyed.sum(&quot;field&quot;)</code></td></tr><tr><td>window</td><td><code>keyed.window(TumblingEventTimeWindows.of(Time.seconds(5)))</code></td></tr><tr><td>union</td><td><code>stream1.union(stream2)</code></td></tr><tr><td>connect</td><td><code>stream1.connect(stream2)</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="窗口类型">窗口类型<a href="#窗口类型" class="hash-link" aria-label="Direct link to 窗口类型" title="Direct link to 窗口类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>窗口</th><th>创建方式</th></tr></thead><tbody><tr><td>滚动事件时间窗口</td><td><code>TumblingEventTimeWindows.of(Time.hours(1))</code></td></tr><tr><td>滑动事件时间窗口</td><td><code>SlidingEventTimeWindows.of(Time.hours(1), Time.minutes(15))</code></td></tr><tr><td>会话窗口</td><td><code>EventTimeSessionWindows.withGap(Time.minutes(10))</code></td></tr><tr><td>滚动处理时间窗口</td><td><code>TumblingProcessingTimeWindows.of(Time.hours(1))</code></td></tr><tr><td>计数窗口</td><td><code>countWindow(100)</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="状态类型">状态类型<a href="#状态类型" class="hash-link" aria-label="Direct link to 状态类型" title="Direct link to 状态类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>状态</th><th>描述</th><th>初始化</th></tr></thead><tbody><tr><td>ValueState</td><td>单值</td><td><code>new ValueStateDescriptor&lt;&gt;(&quot;name&quot;, Type.class)</code></td></tr><tr><td>ListState</td><td>列表</td><td><code>new ListStateDescriptor&lt;&gt;(&quot;name&quot;, Type.class)</code></td></tr><tr><td>MapState</td><td>映射</td><td><code>new MapStateDescriptor&lt;&gt;(&quot;name&quot;, Key.class, Value.class)</code></td></tr><tr><td>ReducingState</td><td>聚合</td><td><code>new ReducingStateDescriptor&lt;&gt;(&quot;name&quot;, reducer, Type.class)</code></td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="sql-速查">SQL 速查<a href="#sql-速查" class="hash-link" aria-label="Direct link to SQL 速查" title="Direct link to SQL 速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常用-ddl">常用 DDL<a href="#常用-ddl" class="hash-link" aria-label="Direct link to 常用 DDL" title="Direct link to 常用 DDL" translate="no">​</a></h3>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 创建表</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> table_name </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    column_name </span><span class="token keyword" style="color:#00009f">TYPE</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ts </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">3</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    WATERMARK </span><span class="token keyword" style="color:#00009f">FOR</span><span class="token plain"> ts </span><span class="token keyword" style="color:#00009f">AS</span><span class="token plain"> ts </span><span class="token operator" style="color:#393A34">-</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;5&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">SECOND</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">id</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> ENFORCED</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">WITH</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 删除表</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">DROP</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">IF</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">EXISTS</span><span class="token plain"> table_name</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常用函数">常用函数<a href="#常用函数" class="hash-link" aria-label="Direct link to 常用函数" title="Direct link to 常用函数" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>函数</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td>CONCAT</td><td>字符串连接</td><td><code>CONCAT(a, b)</code></td></tr><tr><td>UPPER/LOWER</td><td>大小写</td><td><code>UPPER(name)</code></td></tr><tr><td>SUBSTRING</td><td>截取</td><td><code>SUBSTRING(str, 1, 5)</code></td></tr><tr><td>CAST</td><td>类型转换</td><td><code>CAST(x AS STRING)</code></td></tr><tr><td>COALESCE</td><td>空值处理</td><td><code>COALESCE(a, b, &#x27;default&#x27;)</code></td></tr><tr><td>DATE_FORMAT</td><td>日期格式化</td><td><code>DATE_FORMAT(ts, &#x27;yyyy-MM-dd&#x27;)</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="窗口函数">窗口函数<a href="#窗口函数" class="hash-link" aria-label="Direct link to 窗口函数" title="Direct link to 窗口函数" translate="no">​</a></h3>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 滚动窗口</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">TUMBLE</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">time_col</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;1&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">HOUR</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 滑动窗口</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">HOP</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">time_col</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;5&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">MINUTE</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;1&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">HOUR</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 会话窗口</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SESSION</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">time_col</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;30&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">MINUTE</span><span class="token punctuation" style="color:#393A34">)</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常见问题快速解决">常见问题快速解决<a href="#常见问题快速解决" class="hash-link" aria-label="Direct link to 常见问题快速解决" title="Direct link to 常见问题快速解决" translate="no">​</a></h2>
-<table><thead><tr><th>问题</th><th>解决方案</th></tr></thead><tbody><tr><td>作业提交失败</td><td>检查集群状态、检查 JAR 包</td></tr><tr><td>内存不足</td><td>增加 TaskManager 内存或减少并行度</td></tr><tr><td>检查点失败</td><td>检查状态后端配置、增大超时时间</td></tr><tr><td>数据倾斜</td><td>添加随机前缀、使用 rebalance()</td></tr><tr><td>延迟数据</td><td>使用侧输出、增大水印延迟</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/flink/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/flink/best-practices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">最佳实践</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/flink/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#常用命令" class="table-of-contents__link toc-highlight">常用命令</a><ul><li><a href="#集群管理" class="table-of-contents__link toc-highlight">集群管理</a></li><li><a href="#作业管理" class="table-of-contents__link toc-highlight">作业管理</a></li></ul></li><li><a href="#常用配置" class="table-of-contents__link toc-highlight">常用配置</a><ul><li><a href="#flink-confyaml" class="table-of-contents__link toc-highlight">flink-conf.yaml</a></li></ul></li><li><a href="#api-速查" class="table-of-contents__link toc-highlight">API 速查</a><ul><li><a href="#datastream-常用操作" class="table-of-contents__link toc-highlight">DataStream 常用操作</a></li><li><a href="#窗口类型" class="table-of-contents__link toc-highlight">窗口类型</a></li><li><a href="#状态类型" class="table-of-contents__link toc-highlight">状态类型</a></li></ul></li><li><a href="#sql-速查" class="table-of-contents__link toc-highlight">SQL 速查</a><ul><li><a href="#常用-ddl" class="table-of-contents__link toc-highlight">常用 DDL</a></li><li><a href="#常用函数" class="table-of-contents__link toc-highlight">常用函数</a></li><li><a href="#窗口函数" class="table-of-contents__link toc-highlight">窗口函数</a></li></ul></li><li><a href="#常见问题快速解决" class="table-of-contents__link toc-highlight">常见问题快速解决</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>问题</th><th>解决方案</th></tr></thead><tbody><tr><td>作业提交失败</td><td>检查集群状态、检查 JAR 包</td></tr><tr><td>内存不足</td><td>增加 TaskManager 内存或减少并行度</td></tr><tr><td>检查点失败</td><td>检查状态后端配置、增大超时时间</td></tr><tr><td>数据倾斜</td><td>添加随机前缀、使用 rebalance()</td></tr><tr><td>延迟数据</td><td>使用侧输出、增大水印延迟</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/flink/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/flink/best-practices"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">最佳实践</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/flink/faq"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">常见问题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#常用命令" class="table-of-contents__link toc-highlight">常用命令</a><ul><li><a href="#集群管理" class="table-of-contents__link toc-highlight">集群管理</a></li><li><a href="#作业管理" class="table-of-contents__link toc-highlight">作业管理</a></li></ul></li><li><a href="#常用配置" class="table-of-contents__link toc-highlight">常用配置</a><ul><li><a href="#flink-confyaml" class="table-of-contents__link toc-highlight">flink-conf.yaml</a></li></ul></li><li><a href="#api-速查" class="table-of-contents__link toc-highlight">API 速查</a><ul><li><a href="#datastream-常用操作" class="table-of-contents__link toc-highlight">DataStream 常用操作</a></li><li><a href="#窗口类型" class="table-of-contents__link toc-highlight">窗口类型</a></li><li><a href="#状态类型" class="table-of-contents__link toc-highlight">状态类型</a></li></ul></li><li><a href="#sql-速查" class="table-of-contents__link toc-highlight">SQL 速查</a><ul><li><a href="#常用-ddl" class="table-of-contents__link toc-highlight">常用 DDL</a></li><li><a href="#常用函数" class="table-of-contents__link toc-highlight">常用函数</a></li><li><a href="#窗口函数" class="table-of-contents__link toc-highlight">窗口函数</a></li></ul></li><li><a href="#常见问题快速解决" class="table-of-contents__link toc-highlight">常见问题快速解决</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

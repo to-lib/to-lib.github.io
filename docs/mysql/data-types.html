@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">MySQL 数据类型 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/mysql/data-types"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MySQL 数据类型 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP] &gt; 性能优化关键: 选择合适的数据类型可以显著提升数据库性能和节省存储空间。遵循&quot;够用就好&quot;的原则，不要浪费存储空间。"><meta data-rh="true" property="og:description" content="[!TIP] &gt; 性能优化关键: 选择合适的数据类型可以显著提升数据库性能和节省存储空间。遵循&quot;够用就好&quot;的原则，不要浪费存储空间。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/mysql/data-types"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mysql/data-types" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mysql/data-types" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MySQL 数据类型","item":"https://to-lib.github.io/docs/mysql/data-types"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -26,6 +33,53 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="数值类型">数值类型<a href="#数值类型" class="hash-link" aria-label="Direct link to 数值类型" title="Direct link to 数值类型" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="整数类型">整数类型<a href="#整数类型" class="hash-link" aria-label="Direct link to 整数类型" title="Direct link to 整数类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>存储空间</th><th>有符号范围</th><th>无符号范围</th><th>常用场景</th></tr></thead><tbody><tr><td>TINYINT</td><td>1 字节</td><td>-128 ~ 127</td><td>0 ~ 255</td><td>状态值、年龄</td></tr><tr><td>SMALLINT</td><td>2 字节</td><td>-32768 ~ 32767</td><td>0 ~ 65535</td><td>小范围计数</td></tr><tr><td>MEDIUMINT</td><td>3 字节</td><td>-8388608 ~ 8388607</td><td>0 ~ 16777215</td><td>中等计数</td></tr><tr><td>INT</td><td>4 字节</td><td>-2147483648 ~ 2147483647</td><td>0 ~ 4294967295</td><td>常规 ID、计数</td></tr><tr><td>BIGINT</td><td>8 字节</td><td>-2^63 ~ 2^63-1</td><td>0 ~ 2^64-1</td><td>大数值、雪花 ID</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="使用示例">使用示例<a href="#使用示例" class="hash-link" aria-label="Direct link to 使用示例" title="Direct link to 使用示例" translate="no">​</a></h4>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> user_info </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">           </span><span class="token comment" style="color:#999988;font-style:italic">-- 主键用 BIGINT</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    age </span><span class="token keyword" style="color:#00009f">TINYINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UNSIGNED</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                   </span><span class="token comment" style="color:#999988;font-style:italic">-- 年龄用 TINYINT</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    view_count </span><span class="token keyword" style="color:#00009f">INT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UNSIGNED</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">               </span><span class="token comment" style="color:#999988;font-style:italic">-- 浏览量用 INT</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">status</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TINYINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain">                         </span><span class="token comment" style="color:#999988;font-style:italic">-- 状态值用 TINYINT</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
@@ -40,6 +94,35 @@
 </ul>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="浮点数和定点数">浮点数和定点数<a href="#浮点数和定点数" class="hash-link" aria-label="Direct link to 浮点数和定点数" title="Direct link to 浮点数和定点数" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>存储空间</th><th>精度</th><th>用途</th></tr></thead><tbody><tr><td>FLOAT</td><td>4 字节</td><td>单精度，约 7 位</td><td>科学计算</td></tr><tr><td>DOUBLE</td><td>8 字节</td><td>双精度，约 15 位</td><td>科学计算</td></tr><tr><td>DECIMAL(M,D)</td><td>变长</td><td>精确定点数</td><td>金额、价格</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="使用示例-1">使用示例<a href="#使用示例-1" class="hash-link" aria-label="Direct link to 使用示例" title="Direct link to 使用示例" translate="no">​</a></h4>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> products </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">INT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    price </span><span class="token keyword" style="color:#00009f">DECIMAL</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">        </span><span class="token comment" style="color:#999988;font-style:italic">-- 价格，最多10位，小数2位</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    weight </span><span class="token keyword" style="color:#00009f">FLOAT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                          </span><span class="token comment" style="color:#999988;font-style:italic">-- 重量（可以有误差）</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    discount_rate </span><span class="token keyword" style="color:#00009f">DECIMAL</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">5</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">4</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">           </span><span class="token comment" style="color:#999988;font-style:italic">-- 折扣率 0.0000 ~ 9.9999</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> products </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">price</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> weight</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> discount_rate</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">99.99</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1.5</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0.8500</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
@@ -50,6 +133,29 @@
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="字符串类型">字符串类型<a href="#字符串类型" class="hash-link" aria-label="Direct link to 字符串类型" title="Direct link to 字符串类型" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="字符类型">字符类型<a href="#字符类型" class="hash-link" aria-label="Direct link to 字符类型" title="Direct link to 字符类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>最大长度</th><th>存储方式</th><th>适用场景</th></tr></thead><tbody><tr><td>CHAR(M)</td><td>255 字符</td><td>定长，不足补空格</td><td>固定长度字符串（如手机号）</td></tr><tr><td>VARCHAR(M)</td><td>65535 字节</td><td>变长，按实际长度</td><td>变长字符串（如用户名）</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="char-vs-varchar">CHAR vs VARCHAR<a href="#char-vs-varchar" class="hash-link" aria-label="Direct link to CHAR vs VARCHAR" title="Direct link to CHAR vs VARCHAR" translate="no">​</a></h4>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> string_test </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    fixed_str </span><span class="token keyword" style="color:#00009f">CHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">      </span><span class="token comment" style="color:#999988;font-style:italic">-- 定长</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    var_str </span><span class="token keyword" style="color:#00009f">VARCHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">      </span><span class="token comment" style="color:#999988;font-style:italic">-- 变长</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> string_test </span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;ABC&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;ABC&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- CHAR(10) 存储：&#x27;ABC       &#x27; (10字节，补7个空格)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- VARCHAR(10) 存储：&#x27;ABC&#x27; (3字节 + 1字节长度)</span><br></span></code></pre></div></div>
@@ -60,6 +166,36 @@
 </ul>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> users </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    username </span><span class="token keyword" style="color:#00009f">VARCHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">50</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">         </span><span class="token comment" style="color:#999988;font-style:italic">-- 变长</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    phone </span><span class="token keyword" style="color:#00009f">CHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">11</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                        </span><span class="token comment" style="color:#999988;font-style:italic">-- 固定长度</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id_card </span><span class="token keyword" style="color:#00009f">CHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">18</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                      </span><span class="token comment" style="color:#999988;font-style:italic">-- 固定长度</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    email </span><span class="token keyword" style="color:#00009f">VARCHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">100</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                    </span><span class="token comment" style="color:#999988;font-style:italic">-- 变长</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    password </span><span class="token keyword" style="color:#00009f">CHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">32</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">                      </span><span class="token comment" style="color:#999988;font-style:italic">-- MD5固定32位</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="文本类型">文本类型<a href="#文本类型" class="hash-link" aria-label="Direct link to 文本类型" title="Direct link to 文本类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>最大长度</th><th>适用场景</th></tr></thead><tbody><tr><td>TINYTEXT</td><td>255 字节</td><td>很少使用</td></tr><tr><td>TEXT</td><td>64 KB</td><td>文章摘要、短文本</td></tr><tr><td>MEDIUMTEXT</td><td>16 MB</td><td>文章内容</td></tr><tr><td>LONGTEXT</td><td>4 GB</td><td>超长文本</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="使用示例-2">使用示例<a href="#使用示例-2" class="hash-link" aria-label="Direct link to 使用示例" title="Direct link to 使用示例" translate="no">​</a></h4>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> articles </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    title </span><span class="token keyword" style="color:#00009f">VARCHAR</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">200</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    summary </span><span class="token keyword" style="color:#00009f">TEXT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                    </span><span class="token comment" style="color:#999988;font-style:italic">-- 摘要</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    content </span><span class="token keyword" style="color:#00009f">MEDIUMTEXT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">     </span><span class="token comment" style="color:#999988;font-style:italic">-- 正文</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    created_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
@@ -74,6 +210,27 @@ TEXT 类型字段：</p>
 </ul>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="二进制类型">二进制类型<a href="#二进制类型" class="hash-link" aria-label="Direct link to 二进制类型" title="Direct link to 二进制类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>BINARY(M)</td><td>定长二进制</td></tr><tr><td>VARBINARY(M)</td><td>变长二进制</td></tr><tr><td>BLOB</td><td>二进制大对象</td></tr></tbody></table>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> files </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    file_hash </span><span class="token keyword" style="color:#00009f">BINARY</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">16</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">           </span><span class="token comment" style="color:#999988;font-style:italic">-- MD5/UUID</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    file_data </span><span class="token keyword" style="color:#00009f">BLOB</span><span class="token plain">                  </span><span class="token comment" style="color:#999988;font-style:italic">-- 文件内容（不推荐存数据库）</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <blockquote>
@@ -81,10 +238,92 @@ TEXT 类型字段：</p>
 不建议在数据库中存储文件内容，应该将文件存储在对象存储（如 OSS）中，数据库只存储文件路径。</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="日期时间类型">日期时间类型<a href="#日期时间类型" class="hash-link" aria-label="Direct link to 日期时间类型" title="Direct link to 日期时间类型" translate="no">​</a></h2>
-<table><thead><tr><th>类型</th><th>格式</th><th>范围</th><th>存储空间</th><th>时区</th></tr></thead><tbody><tr><td>DATE</td><td>YYYY-MM-DD</td><td>1000-01-01 ~ 9999-12-31</td><td>3 字节</td><td>无</td></tr><tr><td>TIME</td><td>HH:MM<!-- -->:SS</td><td>-838:59:59 ~ 838:59:59</td><td>3 字节</td><td>无</td></tr><tr><td>DATETIME</td><td>YYYY-MM-DD HH:MM<!-- -->:SS</td><td>1000-01-01 ~ 9999-12-31</td><td>8 字节</td><td>无关</td></tr><tr><td>TIMESTAMP</td><td>YYYY-MM-DD HH:MM<!-- -->:SS</td><td>1970-01-01 ~ 2038-01-19</td><td>4 字节</td><td>相关</td></tr><tr><td>YEAR</td><td>YYYY</td><td>1901 ~ 2155</td><td>1 字节</td><td>无</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>格式</th><th>范围</th><th>存储空间</th><th>时区</th></tr></thead><tbody><tr><td>DATE</td><td>YYYY-MM-DD</td><td>1000-01-01 ~ 9999-12-31</td><td>3 字节</td><td>无</td></tr><tr><td>TIME</td><td>HH:MM:SS</td><td>-838:59:59 ~ 838:59:59</td><td>3 字节</td><td>无</td></tr><tr><td>DATETIME</td><td>YYYY-MM-DD HH:MM:SS</td><td>1000-01-01 ~ 9999-12-31</td><td>8 字节</td><td>无关</td></tr><tr><td>TIMESTAMP</td><td>YYYY-MM-DD HH:MM:SS</td><td>1970-01-01 ~ 2038-01-19</td><td>4 字节</td><td>相关</td></tr><tr><td>YEAR</td><td>YYYY</td><td>1901 ~ 2155</td><td>1 字节</td><td>无</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="使用示例-3">使用示例<a href="#使用示例-3" class="hash-link" aria-label="Direct link to 使用示例" title="Direct link to 使用示例" translate="no">​</a></h3>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> events </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    event_date </span><span class="token keyword" style="color:#00009f">DATE</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                                        </span><span class="token comment" style="color:#999988;font-style:italic">-- 日期</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    event_time </span><span class="token keyword" style="color:#00009f">TIME</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                                        </span><span class="token comment" style="color:#999988;font-style:italic">-- 时间</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    event_datetime </span><span class="token keyword" style="color:#00009f">DATETIME</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">                                </span><span class="token comment" style="color:#999988;font-style:italic">-- 日期时间</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    created_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">         </span><span class="token comment" style="color:#999988;font-style:italic">-- 创建时间</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    updated_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                         </span><span class="token keyword" style="color:#00009f">ON</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token plain">        </span><span class="token comment" style="color:#999988;font-style:italic">-- 更新时间</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 插入数据</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">INSERT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTO</span><span class="token plain"> events </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">event_date</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> event_time</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> event_datetime</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">VALUES</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;2025-12-09&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;14:30:00&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;2025-12-09 14:30:00&#x27;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 查询</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> events </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> event_date </span><span class="token operator" style="color:#393A34">&gt;=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;2025-01-01&#x27;</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> events </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> created_at </span><span class="token operator" style="color:#393A34">&gt;=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">NOW</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INTERVAL</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">7</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DAY</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="datetime-vs-timestamp">DATETIME vs TIMESTAMP<a href="#datetime-vs-timestamp" class="hash-link" aria-label="Direct link to DATETIME vs TIMESTAMP" title="Direct link to DATETIME vs TIMESTAMP" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>DATETIME</th><th>TIMESTAMP</th></tr></thead><tbody><tr><td>存储空间</td><td>8 字节</td><td>4 字节</td></tr><tr><td>时区</td><td>独立</td><td>依赖时区</td></tr><tr><td>范围</td><td>1000 ~ 9999</td><td>1970 ~ 2038</td></tr><tr><td>自动更新</td><td>不支持</td><td>支持 ON UPDATE</td></tr><tr><td>NULL</td><td>允许</td><td>不允许（默认）</td></tr></tbody></table>
 <h4 class="anchor anchorTargetStickyNavbar__9bU" id="使用建议">使用建议<a href="#使用建议" class="hash-link" aria-label="Direct link to 使用建议" title="Direct link to 使用建议" translate="no">​</a></h4>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 推荐方式：记录时间使用 TIMESTAMP</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">TABLE</span><span class="token plain"> orders </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">PRIMARY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">KEY</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">AUTO_INCREMENT</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    user_id </span><span class="token keyword" style="color:#00009f">BIGINT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    total_amount </span><span class="token keyword" style="color:#00009f">DECIMAL</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">10</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    created_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    updated_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">NOT</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">DEFAULT</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">ON</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">CURRENT_TIMESTAMP</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    paid_at </span><span class="token keyword" style="color:#00009f">TIMESTAMP</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">NULL</span><span class="token plain">                  </span><span class="token comment" style="color:#999988;font-style:italic">-- 支付时间，可为空</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
@@ -114,6 +353,76 @@ JSON 类型的优势：</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="数据类型选择建议">数据类型选择建议<a href="#数据类型选择建议" class="hash-link" aria-label="Direct link to 数据类型选择建议" title="Direct link to 数据类型选择建议" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常见场景推荐">常见场景推荐<a href="#常见场景推荐" class="hash-link" aria-label="Direct link to 常见场景推荐" title="Direct link to 常见场景推荐" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>推荐类型</th><th>示例</th></tr></thead><tbody><tr><td>主键 ID</td><td>BIGINT UNSIGNED</td><td><code>id BIGINT PRIMARY KEY AUTO_INCREMENT</code></td></tr><tr><td>用户名</td><td>VARCHAR(50)</td><td><code>username VARCHAR(50) NOT NULL</code></td></tr><tr><td>密码哈希</td><td>CHAR(64)</td><td><code>password CHAR(64)</code> (SHA256)</td></tr><tr><td>手机号</td><td>CHAR(11)</td><td><code>phone CHAR(11)</code></td></tr><tr><td>邮箱</td><td>VARCHAR(100)</td><td><code>email VARCHAR(100)</code></td></tr><tr><td>金额</td><td>DECIMAL(10,2)</td><td><code>price DECIMAL(10,2) NOT NULL</code></td></tr><tr><td>年龄</td><td>TINYINT UNSIGNED</td><td><code>age TINYINT UNSIGNED</code></td></tr><tr><td>状态</td><td>TINYINT</td><td><code>status TINYINT DEFAULT 1</code></td></tr><tr><td>创建时间</td><td>TIMESTAMP</td><td><code>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</code></td></tr><tr><td>生日</td><td>DATE</td><td><code>birthday DATE</code></td></tr><tr><td>文章内容</td><td>MEDIUMTEXT</td><td><code>content MEDIUMTEXT</code></td></tr><tr><td>配置信息</td><td>JSON</td><td><code>settings JSON</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="优化原则">优化原则<a href="#优化原则" class="hash-link" aria-label="Direct link to 优化原则" title="Direct link to 优化原则" translate="no">​</a></h3>
 <blockquote>
@@ -137,6 +446,6 @@ JSON 类型的优势：</p>
 <li class="">✅ 时间：记录时间用 TIMESTAMP，业务日期用 DATE</li>
 <li class="">✅ JSON：存储灵活的结构化数据</li>
 </ul>
-<p>掌握数据类型选择后，可以继续学习 <a class="" href="/docs/mysql/sql-syntax">SQL 语法</a> 和 <a class="" href="/docs/mysql/indexes">索引优化</a>！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mysql/data-types.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mysql/basic-concepts"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MySQL 基础概念</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mysql/sql-syntax"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SQL 语法详解</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#数据类型概览" class="table-of-contents__link toc-highlight">数据类型概览</a></li><li><a href="#数值类型" class="table-of-contents__link toc-highlight">数值类型</a><ul><li><a href="#整数类型" class="table-of-contents__link toc-highlight">整数类型</a></li><li><a href="#浮点数和定点数" class="table-of-contents__link toc-highlight">浮点数和定点数</a></li></ul></li><li><a href="#字符串类型" class="table-of-contents__link toc-highlight">字符串类型</a><ul><li><a href="#字符类型" class="table-of-contents__link toc-highlight">字符类型</a></li><li><a href="#文本类型" class="table-of-contents__link toc-highlight">文本类型</a></li><li><a href="#二进制类型" class="table-of-contents__link toc-highlight">二进制类型</a></li></ul></li><li><a href="#日期时间类型" class="table-of-contents__link toc-highlight">日期时间类型</a><ul><li><a href="#使用示例-3" class="table-of-contents__link toc-highlight">使用示例</a></li><li><a href="#datetime-vs-timestamp" class="table-of-contents__link toc-highlight">DATETIME vs TIMESTAMP</a></li></ul></li><li><a href="#json-类型" class="table-of-contents__link toc-highlight">JSON 类型</a><ul><li><a href="#基本使用" class="table-of-contents__link toc-highlight">基本使用</a></li><li><a href="#json-函数" class="table-of-contents__link toc-highlight">JSON 函数</a></li></ul></li><li><a href="#数据类型选择建议" class="table-of-contents__link toc-highlight">数据类型选择建议</a><ul><li><a href="#常见场景推荐" class="table-of-contents__link toc-highlight">常见场景推荐</a></li><li><a href="#优化原则" class="table-of-contents__link toc-highlight">优化原则</a></li><li><a href="#示例规范的表设计" class="table-of-contents__link toc-highlight">示例：规范的表设计</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p>掌握数据类型选择后，可以继续学习 <a class="" href="/docs/mysql/sql-syntax">SQL 语法</a> 和 <a class="" href="/docs/mysql/indexes">索引优化</a>！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mysql/data-types.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mysql/basic-concepts"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MySQL 基础概念</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mysql/sql-syntax"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SQL 语法详解</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#数据类型概览" class="table-of-contents__link toc-highlight">数据类型概览</a></li><li><a href="#数值类型" class="table-of-contents__link toc-highlight">数值类型</a><ul><li><a href="#整数类型" class="table-of-contents__link toc-highlight">整数类型</a></li><li><a href="#浮点数和定点数" class="table-of-contents__link toc-highlight">浮点数和定点数</a></li></ul></li><li><a href="#字符串类型" class="table-of-contents__link toc-highlight">字符串类型</a><ul><li><a href="#字符类型" class="table-of-contents__link toc-highlight">字符类型</a></li><li><a href="#文本类型" class="table-of-contents__link toc-highlight">文本类型</a></li><li><a href="#二进制类型" class="table-of-contents__link toc-highlight">二进制类型</a></li></ul></li><li><a href="#日期时间类型" class="table-of-contents__link toc-highlight">日期时间类型</a><ul><li><a href="#使用示例-3" class="table-of-contents__link toc-highlight">使用示例</a></li><li><a href="#datetime-vs-timestamp" class="table-of-contents__link toc-highlight">DATETIME vs TIMESTAMP</a></li></ul></li><li><a href="#json-类型" class="table-of-contents__link toc-highlight">JSON 类型</a><ul><li><a href="#基本使用" class="table-of-contents__link toc-highlight">基本使用</a></li><li><a href="#json-函数" class="table-of-contents__link toc-highlight">JSON 函数</a></li></ul></li><li><a href="#数据类型选择建议" class="table-of-contents__link toc-highlight">数据类型选择建议</a><ul><li><a href="#常见场景推荐" class="table-of-contents__link toc-highlight">常见场景推荐</a></li><li><a href="#优化原则" class="table-of-contents__link toc-highlight">优化原则</a></li><li><a href="#示例规范的表设计" class="table-of-contents__link toc-highlight">示例：规范的表设计</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

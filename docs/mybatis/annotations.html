@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">MyBatis 注解映射 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/mybatis/annotations"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MyBatis 注解映射 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="MyBatis 支持使用注解来定义 SQL 映射，无需编写 XML 文件。本章介绍常用注解及其使用方法。"><meta data-rh="true" property="og:description" content="MyBatis 支持使用注解来定义 SQL 映射，无需编写 XML 文件。本章介绍常用注解及其使用方法。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/mybatis/annotations"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mybatis/annotations" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mybatis/annotations" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MyBatis 注解映射","item":"https://to-lib.github.io/docs/mybatis/annotations"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -16,12 +23,120 @@
 <p>MyBatis 支持使用注解来定义 SQL 映射，无需编写 XML 文件。本章介绍常用注解及其使用方法。</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="注解概览">注解概览<a href="#注解概览" class="hash-link" aria-label="Direct link to 注解概览" title="Direct link to 注解概览" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="crud-注解">CRUD 注解<a href="#crud-注解" class="hash-link" aria-label="Direct link to CRUD 注解" title="Direct link to CRUD 注解" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>描述</th></tr></thead><tbody><tr><td><code>@Select</code></td><td>查询语句</td></tr><tr><td><code>@Insert</code></td><td>插入语句</td></tr><tr><td><code>@Update</code></td><td>更新语句</td></tr><tr><td><code>@Delete</code></td><td>删除语句</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="结果映射注解">结果映射注解<a href="#结果映射注解" class="hash-link" aria-label="Direct link to 结果映射注解" title="Direct link to 结果映射注解" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>描述</th></tr></thead><tbody><tr><td><code>@Results</code></td><td>结果映射集合</td></tr><tr><td><code>@Result</code></td><td>单个字段映射</td></tr><tr><td><code>@One</code></td><td>一对一关联</td></tr><tr><td><code>@Many</code></td><td>一对多关联</td></tr><tr><td><code>@ResultMap</code></td><td>引用 XML 中的 resultMap</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="动态-sql-注解">动态 SQL 注解<a href="#动态-sql-注解" class="hash-link" aria-label="Direct link to 动态 SQL 注解" title="Direct link to 动态 SQL 注解" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>描述</th></tr></thead><tbody><tr><td><code>@SelectProvider</code></td><td>动态查询 SQL</td></tr><tr><td><code>@InsertProvider</code></td><td>动态插入 SQL</td></tr><tr><td><code>@UpdateProvider</code></td><td>动态更新 SQL</td></tr><tr><td><code>@DeleteProvider</code></td><td>动态删除 SQL</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="其他注解">其他注解<a href="#其他注解" class="hash-link" aria-label="Direct link to 其他注解" title="Direct link to 其他注解" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>描述</th></tr></thead><tbody><tr><td><code>@Options</code></td><td>配置选项（主键、超时等）</td></tr><tr><td><code>@Param</code></td><td>参数命名</td></tr><tr><td><code>@MapKey</code></td><td>Map 结果的 key</td></tr><tr><td><code>@Flush</code></td><td>刷新语句</td></tr><tr><td><code>@CacheNamespace</code></td><td>缓存配置</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="基本-crud-注解">基本 CRUD 注解<a href="#基本-crud-注解" class="hash-link" aria-label="Direct link to 基本 CRUD 注解" title="Direct link to 基本 CRUD 注解" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="select-查询">@Select 查询<a href="#select-查询" class="hash-link" aria-label="Direct link to @Select 查询" title="Direct link to @Select 查询" translate="no">​</a></h3>
@@ -36,11 +151,102 @@
 <p><code>@Options</code> 用于配置语句的各种选项。</p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public interface UserMapper {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Insert(&quot;INSERT INTO user(name, email) VALUES(#{name}, #{email})&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Options(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        useGeneratedKeys = true,    // 使用自增主键</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        keyProperty = &quot;id&quot;,         // 主键属性名</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        keyColumn = &quot;id&quot;,           // 主键列名</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        timeout = 30,               // 超时时间（秒）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        flushCache = Options.FlushCachePolicy.TRUE,  // 刷新缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        useCache = false,           // 不使用缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        fetchSize = 100,            // 每次获取记录数</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        statementType = StatementType.PREPARED  // 语句类型</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    )</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int insert(User user);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="options-属性">Options 属性<a href="#options-属性" class="hash-link" aria-label="Direct link to Options 属性" title="Direct link to Options 属性" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>属性</th><th>描述</th><th>默认值</th></tr></thead><tbody><tr><td><code>useGeneratedKeys</code></td><td>使用自增主键</td><td>false</td></tr><tr><td><code>keyProperty</code></td><td>主键属性名</td><td>-</td></tr><tr><td><code>keyColumn</code></td><td>主键列名</td><td>-</td></tr><tr><td><code>timeout</code></td><td>超时时间（秒）</td><td>-1（无限制）</td></tr><tr><td><code>flushCache</code></td><td>刷新缓存策略</td><td>DEFAULT</td></tr><tr><td><code>useCache</code></td><td>使用二级缓存</td><td>true</td></tr><tr><td><code>fetchSize</code></td><td>每次获取记录数</td><td>-1</td></tr><tr><td><code>statementType</code></td><td>语句类型</td><td>PREPARED</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="results-结果映射">@Results 结果映射<a href="#results-结果映射" class="hash-link" aria-label="Direct link to @Results 结果映射" title="Direct link to @Results 结果映射" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="基本映射">基本映射<a href="#基本映射" class="hash-link" aria-label="Direct link to 基本映射" title="Direct link to 基本映射" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public interface UserMapper {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Select(&quot;SELECT id, user_name, user_email, user_age FROM user WHERE id = #{id}&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Results(id = &quot;userResultMap&quot;, value = {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;id&quot;, column = &quot;id&quot;, id = true),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;name&quot;, column = &quot;user_name&quot;),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;email&quot;, column = &quot;user_email&quot;),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;age&quot;, column = &quot;user_age&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    })</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    User selectById(Long id);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 复用 resultMap</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Select(&quot;SELECT id, user_name, user_email, user_age FROM user&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @ResultMap(&quot;userResultMap&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    List&lt;User&gt; selectAll();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="result-属性">@Result 属性<a href="#result-属性" class="hash-link" aria-label="Direct link to @Result 属性" title="Direct link to @Result 属性" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><code>property</code></td><td>Java 属性名</td></tr><tr><td><code>column</code></td><td>数据库列名</td></tr><tr><td><code>id</code></td><td>是否为主键</td></tr><tr><td><code>javaType</code></td><td>Java 类型</td></tr><tr><td><code>jdbcType</code></td><td>JDBC 类型</td></tr><tr><td><code>typeHandler</code></td><td>类型处理器</td></tr><tr><td><code>one</code></td><td>一对一关联</td></tr><tr><td><code>many</code></td><td>一对多关联</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="关联映射">关联映射<a href="#关联映射" class="hash-link" aria-label="Direct link to 关联映射" title="Direct link to 关联映射" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="one-一对一">@One 一对一<a href="#one-一对一" class="hash-link" aria-label="Direct link to @One 一对一" title="Direct link to @One 一对一" translate="no">​</a></h3>
@@ -48,6 +254,27 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="many-一对多">@Many 一对多<a href="#many-一对多" class="hash-link" aria-label="Direct link to @Many 一对多" title="Direct link to @Many 一对多" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public interface UserMapper {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 嵌套查询方式</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Select(&quot;SELECT * FROM user WHERE id = #{id}&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Results({</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;id&quot;, column = &quot;id&quot;, id = true),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;name&quot;, column = &quot;name&quot;),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        @Result(property = &quot;orders&quot;, column = &quot;id&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                many = @Many(select = &quot;com.example.mapper.OrderMapper.selectByUserId&quot;,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                            fetchType = FetchType.LAZY))</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    })</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    User selectWithOrders(Long id);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public interface OrderMapper {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Select(&quot;SELECT * FROM orders WHERE user_id = #{userId}&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    List&lt;Order&gt; selectByUserId(Long userId);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="fetchtype-加载类型">FetchType 加载类型<a href="#fetchtype-加载类型" class="hash-link" aria-label="Direct link to FetchType 加载类型" title="Direct link to FetchType 加载类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>FetchType.DEFAULT</code></td><td>使用全局配置</td></tr><tr><td><code>FetchType.LAZY</code></td><td>延迟加载</td></tr><tr><td><code>FetchType.EAGER</code></td><td>立即加载</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="provider-动态-sql">@Provider 动态 SQL<a href="#provider-动态-sql" class="hash-link" aria-label="Direct link to @Provider 动态 SQL" title="Direct link to @Provider 动态 SQL" translate="no">​</a></h2>
 <p>Provider 注解用于动态生成 SQL，适合复杂的动态查询。</p>
@@ -63,6 +290,103 @@
 <p>MyBatis 提供 <code>SQL</code> 类来构建 SQL 语句：</p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public class UserSqlProvider {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public String buildSelectSql(UserQuery query) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        SQL sql = new SQL();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        sql.SELECT(&quot;id&quot;, &quot;name&quot;, &quot;email&quot;, &quot;age&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        sql.FROM(&quot;user&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        if (query.getName() != null) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            sql.WHERE(&quot;name = #{name}&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        if (query.getStatus() != null) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            sql.WHERE(&quot;status = #{status}&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        sql.ORDER_BY(&quot;create_time DESC&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return sql.toString();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 使用 Lambda 风格</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public String buildSelectSqlLambda(UserQuery query) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return new SQL() {{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            SELECT(&quot;*&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            FROM(&quot;user&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            WHERE(&quot;status = 1&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            if (query.getName() != null) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                AND();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                WHERE(&quot;name = #{name}&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            ORDER_BY(&quot;id DESC&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }}.toString();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="sql-类方法">SQL 类方法<a href="#sql-类方法" class="hash-link" aria-label="Direct link to SQL 类方法" title="Direct link to SQL 类方法" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td><code>SELECT(String...)</code></td><td>SELECT 子句</td></tr><tr><td><code>SELECT_DISTINCT(String...)</code></td><td>SELECT DISTINCT</td></tr><tr><td><code>FROM(String...)</code></td><td>FROM 子句</td></tr><tr><td><code>JOIN(String)</code></td><td>JOIN</td></tr><tr><td><code>INNER_JOIN(String)</code></td><td>INNER JOIN</td></tr><tr><td><code>LEFT_OUTER_JOIN(String)</code></td><td>LEFT JOIN</td></tr><tr><td><code>RIGHT_OUTER_JOIN(String)</code></td><td>RIGHT JOIN</td></tr><tr><td><code>WHERE(String)</code></td><td>WHERE 条件</td></tr><tr><td><code>OR()</code></td><td>OR 连接</td></tr><tr><td><code>AND()</code></td><td>AND 连接</td></tr><tr><td><code>GROUP_BY(String...)</code></td><td>GROUP BY</td></tr><tr><td><code>HAVING(String)</code></td><td>HAVING</td></tr><tr><td><code>ORDER_BY(String...)</code></td><td>ORDER BY</td></tr><tr><td><code>LIMIT(String)</code></td><td>LIMIT</td></tr><tr><td><code>OFFSET(String)</code></td><td>OFFSET</td></tr><tr><td><code>INSERT_INTO(String)</code></td><td>INSERT INTO</td></tr><tr><td><code>VALUES(String, String)</code></td><td>VALUES</td></tr><tr><td><code>INTO_COLUMNS(String...)</code></td><td>插入列</td></tr><tr><td><code>INTO_VALUES(String...)</code></td><td>插入值</td></tr><tr><td><code>UPDATE(String)</code></td><td>UPDATE</td></tr><tr><td><code>SET(String)</code></td><td>SET</td></tr><tr><td><code>DELETE_FROM(String)</code></td><td>DELETE FROM</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="param-参数注解">@Param 参数注解<a href="#param-参数注解" class="hash-link" aria-label="Direct link to @Param 参数注解" title="Direct link to @Param 参数注解" translate="no">​</a></h2>
 <p><code>@Param</code> 用于给参数命名，在多参数时必须使用。</p>
@@ -76,6 +400,51 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="cachenamespaceref">@CacheNamespaceRef<a href="#cachenamespaceref" class="hash-link" aria-label="Direct link to @CacheNamespaceRef" title="Direct link to @CacheNamespaceRef" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 引用其他 Mapper 的缓存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@CacheNamespaceRef(UserMapper.class)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public interface OrderMapper {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="xml-vs-注解对比">XML vs 注解对比<a href="#xml-vs-注解对比" class="hash-link" aria-label="Direct link to XML vs 注解对比" title="Direct link to XML vs 注解对比" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>方面</th><th>XML</th><th>注解</th></tr></thead><tbody><tr><td>复杂 SQL</td><td>✅ 更适合</td><td>❌ 可读性差</td></tr><tr><td>简单 CRUD</td><td>❌ 繁琐</td><td>✅ 简洁</td></tr><tr><td>动态 SQL</td><td>✅ 强大</td><td>⚠️ 需要 script 或 Provider</td></tr><tr><td>结果映射</td><td>✅ 灵活</td><td>⚠️ 功能有限</td></tr><tr><td>维护性</td><td>✅ SQL 集中管理</td><td>⚠️ 分散在代码中</td></tr><tr><td>重构</td><td>❌ 需要手动同步</td><td>✅ IDE 支持</td></tr><tr><td>学习曲线</td><td>中等</td><td>低</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="使用建议">使用建议<a href="#使用建议" class="hash-link" aria-label="Direct link to 使用建议" title="Direct link to 使用建议" translate="no">​</a></h3>
 <ol>
@@ -94,6 +463,6 @@
 <li class=""><a class="" href="/docs/mybatis/caching">缓存机制</a> - 缓存配置详解</li>
 </ul>
 <hr>
-<p><strong>最后更新</strong>: 2025 年 12 月</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mybatis/annotations.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mybatis/dynamic-sql"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MyBatis 动态 SQL</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mybatis/caching"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">MyBatis 缓存机制</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#注解概览" class="table-of-contents__link toc-highlight">注解概览</a><ul><li><a href="#crud-注解" class="table-of-contents__link toc-highlight">CRUD 注解</a></li><li><a href="#结果映射注解" class="table-of-contents__link toc-highlight">结果映射注解</a></li><li><a href="#动态-sql-注解" class="table-of-contents__link toc-highlight">动态 SQL 注解</a></li><li><a href="#其他注解" class="table-of-contents__link toc-highlight">其他注解</a></li></ul></li><li><a href="#基本-crud-注解" class="table-of-contents__link toc-highlight">基本 CRUD 注解</a><ul><li><a href="#select-查询" class="table-of-contents__link toc-highlight">@Select 查询</a></li><li><a href="#insert-插入" class="table-of-contents__link toc-highlight">@Insert 插入</a></li><li><a href="#update-更新" class="table-of-contents__link toc-highlight">@Update 更新</a></li><li><a href="#delete-删除" class="table-of-contents__link toc-highlight">@Delete 删除</a></li></ul></li><li><a href="#options-配置选项" class="table-of-contents__link toc-highlight">@Options 配置选项</a><ul><li><a href="#options-属性" class="table-of-contents__link toc-highlight">Options 属性</a></li></ul></li><li><a href="#results-结果映射" class="table-of-contents__link toc-highlight">@Results 结果映射</a><ul><li><a href="#基本映射" class="table-of-contents__link toc-highlight">基本映射</a></li><li><a href="#result-属性" class="table-of-contents__link toc-highlight">@Result 属性</a></li></ul></li><li><a href="#关联映射" class="table-of-contents__link toc-highlight">关联映射</a><ul><li><a href="#one-一对一" class="table-of-contents__link toc-highlight">@One 一对一</a></li><li><a href="#many-一对多" class="table-of-contents__link toc-highlight">@Many 一对多</a></li><li><a href="#fetchtype-加载类型" class="table-of-contents__link toc-highlight">FetchType 加载类型</a></li></ul></li><li><a href="#provider-动态-sql" class="table-of-contents__link toc-highlight">@Provider 动态 SQL</a><ul><li><a href="#selectprovider" class="table-of-contents__link toc-highlight">@SelectProvider</a></li><li><a href="#insertprovider" class="table-of-contents__link toc-highlight">@InsertProvider</a></li><li><a href="#updateprovider" class="table-of-contents__link toc-highlight">@UpdateProvider</a></li><li><a href="#deleteprovider" class="table-of-contents__link toc-highlight">@DeleteProvider</a></li><li><a href="#sql-构建器" class="table-of-contents__link toc-highlight">SQL 构建器</a></li><li><a href="#sql-类方法" class="table-of-contents__link toc-highlight">SQL 类方法</a></li></ul></li><li><a href="#param-参数注解" class="table-of-contents__link toc-highlight">@Param 参数注解</a></li><li><a href="#脚本模式" class="table-of-contents__link toc-highlight">脚本模式</a></li><li><a href="#缓存注解" class="table-of-contents__link toc-highlight">缓存注解</a><ul><li><a href="#cachenamespace" class="table-of-contents__link toc-highlight">@CacheNamespace</a></li><li><a href="#cachenamespaceref" class="table-of-contents__link toc-highlight">@CacheNamespaceRef</a></li></ul></li><li><a href="#xml-vs-注解对比" class="table-of-contents__link toc-highlight">XML vs 注解对比</a><ul><li><a href="#使用建议" class="table-of-contents__link toc-highlight">使用建议</a></li></ul></li><li><a href="#完整示例" class="table-of-contents__link toc-highlight">完整示例</a></li><li><a href="#相关链接" class="table-of-contents__link toc-highlight">相关链接</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>最后更新</strong>: 2025 年 12 月</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mybatis/annotations.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mybatis/dynamic-sql"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">MyBatis 动态 SQL</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mybatis/caching"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">MyBatis 缓存机制</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#注解概览" class="table-of-contents__link toc-highlight">注解概览</a><ul><li><a href="#crud-注解" class="table-of-contents__link toc-highlight">CRUD 注解</a></li><li><a href="#结果映射注解" class="table-of-contents__link toc-highlight">结果映射注解</a></li><li><a href="#动态-sql-注解" class="table-of-contents__link toc-highlight">动态 SQL 注解</a></li><li><a href="#其他注解" class="table-of-contents__link toc-highlight">其他注解</a></li></ul></li><li><a href="#基本-crud-注解" class="table-of-contents__link toc-highlight">基本 CRUD 注解</a><ul><li><a href="#select-查询" class="table-of-contents__link toc-highlight">@Select 查询</a></li><li><a href="#insert-插入" class="table-of-contents__link toc-highlight">@Insert 插入</a></li><li><a href="#update-更新" class="table-of-contents__link toc-highlight">@Update 更新</a></li><li><a href="#delete-删除" class="table-of-contents__link toc-highlight">@Delete 删除</a></li></ul></li><li><a href="#options-配置选项" class="table-of-contents__link toc-highlight">@Options 配置选项</a><ul><li><a href="#options-属性" class="table-of-contents__link toc-highlight">Options 属性</a></li></ul></li><li><a href="#results-结果映射" class="table-of-contents__link toc-highlight">@Results 结果映射</a><ul><li><a href="#基本映射" class="table-of-contents__link toc-highlight">基本映射</a></li><li><a href="#result-属性" class="table-of-contents__link toc-highlight">@Result 属性</a></li></ul></li><li><a href="#关联映射" class="table-of-contents__link toc-highlight">关联映射</a><ul><li><a href="#one-一对一" class="table-of-contents__link toc-highlight">@One 一对一</a></li><li><a href="#many-一对多" class="table-of-contents__link toc-highlight">@Many 一对多</a></li><li><a href="#fetchtype-加载类型" class="table-of-contents__link toc-highlight">FetchType 加载类型</a></li></ul></li><li><a href="#provider-动态-sql" class="table-of-contents__link toc-highlight">@Provider 动态 SQL</a><ul><li><a href="#selectprovider" class="table-of-contents__link toc-highlight">@SelectProvider</a></li><li><a href="#insertprovider" class="table-of-contents__link toc-highlight">@InsertProvider</a></li><li><a href="#updateprovider" class="table-of-contents__link toc-highlight">@UpdateProvider</a></li><li><a href="#deleteprovider" class="table-of-contents__link toc-highlight">@DeleteProvider</a></li><li><a href="#sql-构建器" class="table-of-contents__link toc-highlight">SQL 构建器</a></li><li><a href="#sql-类方法" class="table-of-contents__link toc-highlight">SQL 类方法</a></li></ul></li><li><a href="#param-参数注解" class="table-of-contents__link toc-highlight">@Param 参数注解</a></li><li><a href="#脚本模式" class="table-of-contents__link toc-highlight">脚本模式</a></li><li><a href="#缓存注解" class="table-of-contents__link toc-highlight">缓存注解</a><ul><li><a href="#cachenamespace" class="table-of-contents__link toc-highlight">@CacheNamespace</a></li><li><a href="#cachenamespaceref" class="table-of-contents__link toc-highlight">@CacheNamespaceRef</a></li></ul></li><li><a href="#xml-vs-注解对比" class="table-of-contents__link toc-highlight">XML vs 注解对比</a><ul><li><a href="#使用建议" class="table-of-contents__link toc-highlight">使用建议</a></li></ul></li><li><a href="#完整示例" class="table-of-contents__link toc-highlight">完整示例</a></li><li><a href="#相关链接" class="table-of-contents__link toc-highlight">相关链接</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

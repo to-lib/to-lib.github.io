@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">分布式与中间件 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/java-senior/distributed"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="分布式与中间件 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="26. Redis 的持久化机制有哪些？如何选择？"><meta data-rh="true" property="og:description" content="26. Redis 的持久化机制有哪些？如何选择？"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/java-senior/distributed"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/java-senior/distributed" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/java-senior/distributed" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"分布式与中间件","item":"https://to-lib.github.io/docs/interview/java-senior/distributed"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -16,6 +23,41 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="26-redis-的持久化机制有哪些如何选择">26. Redis 的持久化机制有哪些？如何选择？<a href="#26-redis-的持久化机制有哪些如何选择" class="hash-link" aria-label="Direct link to 26. Redis 的持久化机制有哪些？如何选择？" title="Direct link to 26. Redis 的持久化机制有哪些？如何选择？" translate="no">​</a></h2>
 <p><strong>答案要点：</strong></p>
 <p><strong>两种持久化方式对比：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>RDB</th><th>AOF</th></tr></thead><tbody><tr><td><strong>原理</strong></td><td>快照，保存某时刻数据</td><td>追加写命令日志</td></tr><tr><td><strong>文件大小</strong></td><td>小（二进制压缩）</td><td>大（文本命令）</td></tr><tr><td><strong>恢复速度</strong></td><td>快</td><td>慢（需重放命令）</td></tr><tr><td><strong>数据安全</strong></td><td>可能丢失最后一次快照后的数据</td><td>最多丢失 1 秒数据</td></tr><tr><td><strong>性能影响</strong></td><td>fork 子进程时可能阻塞</td><td>每秒 fsync 影响小</td></tr></tbody></table>
 <p><strong>RDB 配置：</strong></p>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># redis.conf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">save 900 1      # 900秒内至少1个key变化则保存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">save 300 10     # 300秒内至少10个key变化则保存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">save 60 10000   # 60秒内至少10000个key变化则保存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 手动触发</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">BGSAVE          # 后台异步保存</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">SAVE            # 同步保存（阻塞）</span><br></span></code></pre></div></div>
@@ -47,6 +89,47 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="28-如何设计分布式-id-生成方案">28. 如何设计分布式 ID 生成方案？<a href="#28-如何设计分布式-id-生成方案" class="hash-link" aria-label="Direct link to 28. 如何设计分布式 ID 生成方案？" title="Direct link to 28. 如何设计分布式 ID 生成方案？" translate="no">​</a></h2>
 <p><strong>答案要点：</strong></p>
 <p><strong>常见方案对比：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>方案</th><th>优点</th><th>缺点</th><th>适用场景</th></tr></thead><tbody><tr><td>UUID</td><td>简单，无依赖</td><td>无序，存储大</td><td>非主键场景</td></tr><tr><td>数据库自增</td><td>简单，有序</td><td>性能瓶颈，单点</td><td>小规模系统</td></tr><tr><td>Redis INCR</td><td>性能高</td><td>依赖 Redis</td><td>中等规模</td></tr><tr><td>雪花算法</td><td>有序，高性能</td><td>时钟回拨问题</td><td>大规模分布式</td></tr><tr><td>Leaf</td><td>高可用，高性能</td><td>复杂度高</td><td>大规模分布式</td></tr></tbody></table>
 <p><strong>雪花算法（Snowflake）：</strong></p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">64位 ID 结构：</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">┌─────────────────────────────────────────────────────────────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│ 0 │ 41位时间戳 │ 10位机器ID │ 12位序列号 │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└─────────────────────────────────────────────────────────────────┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  ↓       ↓            ↓            ↓</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">符号位  毫秒级时间   机器标识    同毫秒序列</span><br></span></code></pre></div></div>
@@ -57,6 +140,36 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="29-如何实现分布式锁有哪些方案">29. 如何实现分布式锁？有哪些方案？<a href="#29-如何实现分布式锁有哪些方案" class="hash-link" aria-label="Direct link to 29. 如何实现分布式锁？有哪些方案？" title="Direct link to 29. 如何实现分布式锁？有哪些方案？" translate="no">​</a></h2>
 <p><strong>答案要点：</strong></p>
 <p><strong>分布式锁方案对比：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>方案</th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td>MySQL</td><td>简单</td><td>性能差，单点</td></tr><tr><td>Redis</td><td>性能高</td><td>主从切换可能丢锁</td></tr><tr><td>ZooKeeper</td><td>可靠性高</td><td>性能一般</td></tr><tr><td>Etcd</td><td>可靠性高，性能好</td><td>复杂度高</td></tr></tbody></table>
 <p><strong>Redis 分布式锁实现：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public class RedisDistributedLock {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private StringRedisTemplate redisTemplate;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private String lockKey;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private String lockValue;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private long expireTime;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public boolean tryLock() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        lockValue = UUID.randomUUID().toString();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Boolean success = redisTemplate.opsForValue()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            .setIfAbsent(lockKey, lockValue, expireTime, TimeUnit.MILLISECONDS);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return Boolean.TRUE.equals(success);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void unlock() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // Lua 脚本保证原子性</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String script =</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;if redis.call(&#x27;get&#x27;, KEYS[1]) == ARGV[1] then &quot; +</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;   return redis.call(&#x27;del&#x27;, KEYS[1]) &quot; +</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;else &quot; +</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;   return 0 &quot; +</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            &quot;end&quot;;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        redisTemplate.execute(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            new DefaultRedisScript&lt;&gt;(script, Long.class),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            Collections.singletonList(lockKey),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            lockValue</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        );</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -71,6 +184,35 @@
 <p><strong>RPC 调用流程：</strong></p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">客户端                                    服务端</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   │                                        │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   │  1. 调用本地代理                        │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   ▼                                        │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">┌──────────┐                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│ Proxy    │                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└────┬─────┘                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     │ 2. 序列化                             │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     ▼                                      │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">┌──────────┐                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│ Codec    │                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└────┬─────┘                                │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     │ 3. 网络传输                           │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     ▼                                      ▼</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">┌──────────┐    ─────────────────&gt;    ┌──────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│ Transport│                          │ Transport│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└──────────┘                          └────┬─────┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                           │ 4. 反序列化</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                           ▼</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     ┌──────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     │ Codec    │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     └────┬─────┘</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                           │ 5. 调用实际方法</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                           ▼</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     ┌──────────┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     │ Service  │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                     └──────────┘</span><br></span></code></pre></div></div>
 <p><strong>核心组件：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>作用</th></tr></thead><tbody><tr><td><strong>动态代理</strong></td><td>生成客户端代理对象</td></tr><tr><td><strong>序列化</strong></td><td>对象与字节流转换</td></tr><tr><td><strong>网络通信</strong></td><td>数据传输（Netty）</td></tr><tr><td><strong>服务注册发现</strong></td><td>服务地址管理</td></tr><tr><td><strong>负载均衡</strong></td><td>请求分发策略</td></tr></tbody></table>
 <p><strong>简易 RPC 框架实现：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 1. 服务接口</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public interface UserService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    User getUser(Long id);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 2. 客户端代理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class RpcProxy {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @SuppressWarnings(&quot;unchecked&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public static &lt;T&gt; T create(Class&lt;T&gt; interfaceClass) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return (T) Proxy.newProxyInstance(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            interfaceClass.getClassLoader(),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            new Class[]{interfaceClass},</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            (proxy, method, args) -&gt; {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                // 构建请求</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                RpcRequest request = new RpcRequest();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                request.setClassName(interfaceClass.getName());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                request.setMethodName(method.getName());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                request.setParameterTypes(method.getParameterTypes());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                request.setParameters(args);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                // 发送请求</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                RpcResponse response = sendRequest(request);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                return response.getResult();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        );</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 3. 服务端处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class RpcServer {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private Map&lt;String, Object&gt; serviceMap = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void register(String serviceName, Object service) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        serviceMap.put(serviceName, service);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public Object handle(RpcRequest request) throws Exception {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Object service = serviceMap.get(request.getClassName());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Method method = service.getClass().getMethod(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            request.getMethodName(),</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            request.getParameterTypes()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        );</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return method.invoke(service, request.getParameters());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -100,9 +242,34 @@
 <p><strong>日志复制过程：</strong></p>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">Client -&gt; Leader -&gt; (AppendEntries) -&gt; Followers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">         (Receive Command)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     (Write to Local Log)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     (Replicate to Followers)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     (Majority Acknowledge?) -&gt; Yes -&gt; Commit &amp; Apply -&gt; Response to Client</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                    -&gt; Notify Followers to Commit</span><br></span></code></pre></div></div>
 <p><strong>Paxos vs Raft：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>Paxos</th><th>Raft</th></tr></thead><tbody><tr><td><strong>理解难度</strong></td><td>极难（理论性强）</td><td>较易（工程导向）</td></tr><tr><td><strong>实现难度</strong></td><td>极难</td><td>有详细参考实现</td></tr><tr><td><strong>应用</strong></td><td>Zookeeper (ZAB), Google Chubby</td><td>Etcd, Consul, TIKV</td></tr></tbody></table>
 <p><strong>延伸：</strong> 参考 <a class="" href="/docs/distributed/raft">分布式系统 - Raft 详解</a></p>
 <hr>
-<p><strong>延伸：</strong> 参考 <a class="" href="/docs/netty/practical-examples">Netty 实战</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/java-senior/distributed.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/java-senior/framework-source"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">框架源码分析</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/java-senior/design-patterns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">设计模式与代码设计</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#26-redis-的持久化机制有哪些如何选择" class="table-of-contents__link toc-highlight">26. Redis 的持久化机制有哪些？如何选择？</a></li><li><a href="#27-kafka-如何保证消息不丢失" class="table-of-contents__link toc-highlight">27. Kafka 如何保证消息不丢失？</a></li><li><a href="#28-如何设计分布式-id-生成方案" class="table-of-contents__link toc-highlight">28. 如何设计分布式 ID 生成方案？</a></li><li><a href="#29-如何实现分布式锁有哪些方案" class="table-of-contents__link toc-highlight">29. 如何实现分布式锁？有哪些方案？</a></li><li><a href="#30-rpc-框架的核心原理是什么" class="table-of-contents__link toc-highlight">30. RPC 框架的核心原理是什么？</a></li><li><a href="#31-分布式共识算法paxosraft是如何工作的" class="table-of-contents__link toc-highlight">31. 分布式共识算法（Paxos/Raft）是如何工作的？</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>延伸：</strong> 参考 <a class="" href="/docs/netty/practical-examples">Netty 实战</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/java-senior/distributed.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/java-senior/framework-source"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">框架源码分析</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/java-senior/design-patterns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">设计模式与代码设计</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#26-redis-的持久化机制有哪些如何选择" class="table-of-contents__link toc-highlight">26. Redis 的持久化机制有哪些？如何选择？</a></li><li><a href="#27-kafka-如何保证消息不丢失" class="table-of-contents__link toc-highlight">27. Kafka 如何保证消息不丢失？</a></li><li><a href="#28-如何设计分布式-id-生成方案" class="table-of-contents__link toc-highlight">28. 如何设计分布式 ID 生成方案？</a></li><li><a href="#29-如何实现分布式锁有哪些方案" class="table-of-contents__link toc-highlight">29. 如何实现分布式锁？有哪些方案？</a></li><li><a href="#30-rpc-框架的核心原理是什么" class="table-of-contents__link toc-highlight">30. RPC 框架的核心原理是什么？</a></li><li><a href="#31-分布式共识算法paxosraft是如何工作的" class="table-of-contents__link toc-highlight">31. 分布式共识算法（Paxos/Raft）是如何工作的？</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

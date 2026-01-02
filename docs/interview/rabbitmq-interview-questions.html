@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">RabbitMQ 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/rabbitmq-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="RabbitMQ 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="RabbitMQ 面试常见问题"><meta data-rh="true" property="og:description" content="RabbitMQ 面试常见问题"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/rabbitmq-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/rabbitmq-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/rabbitmq-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"RabbitMQ 面试题","item":"https://to-lib.github.io/docs/interview/rabbitmq-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -24,6 +31,35 @@
 <li class="">多协议：AMQP、STOMP、MQTT</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="2-rabbitmq-的核心组件">2. RabbitMQ 的核心组件？<a href="#2-rabbitmq-的核心组件" class="hash-link" aria-label="Direct link to 2. RabbitMQ 的核心组件？" title="Direct link to 2. RabbitMQ 的核心组件？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>说明</th></tr></thead><tbody><tr><td>Producer</td><td>消息生产者</td></tr><tr><td>Exchange</td><td>交换机，路由消息</td></tr><tr><td>Binding</td><td>绑定规则</td></tr><tr><td>Queue</td><td>消息队列</td></tr><tr><td>Consumer</td><td>消息消费者</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-四种交换机类型的区别">3. 四种交换机类型的区别？<a href="#3-四种交换机类型的区别" class="hash-link" aria-label="Direct link to 3. 四种交换机类型的区别？" title="Direct link to 3. 四种交换机类型的区别？" translate="no">​</a></h3>
 <ul>
@@ -71,6 +107,36 @@
 <p><strong>方案 2：延迟插件（推荐）</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 声明延迟交换机</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Object&gt; args = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">args.put(&quot;x-delayed-type&quot;, &quot;direct&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">channel.exchangeDeclare(&quot;delayed&quot;, &quot;x-delayed-message&quot;, true, false, args);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 发送时设置延迟时间</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">headers.put(&quot;x-delay&quot;, 60000);</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="9-镜像队列和-quorum-队列的区别">9. 镜像队列和 Quorum 队列的区别？<a href="#9-镜像队列和-quorum-队列的区别" class="hash-link" aria-label="Direct link to 9. 镜像队列和 Quorum 队列的区别？" title="Direct link to 9. 镜像队列和 Quorum 队列的区别？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>镜像队列</th><th>Quorum 队列</th></tr></thead><tbody><tr><td>一致性</td><td>弱一致</td><td>强一致(Raft)</td></tr><tr><td>性能</td><td>较高</td><td>中等</td></tr><tr><td>数据安全</td><td>一般</td><td>更好</td></tr><tr><td>推荐场景</td><td>老版本</td><td>3.8+新项目</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="10-如何保证消息顺序">10. 如何保证消息顺序？<a href="#10-如何保证消息顺序" class="hash-link" aria-label="Direct link to 10. 如何保证消息顺序？" title="Direct link to 10. 如何保证消息顺序？" translate="no">​</a></h3>
 <ol>
@@ -94,6 +160,31 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="13-消息可靠性传输的完整流程">13. 消息可靠性传输的完整流程？<a href="#13-消息可靠性传输的完整流程" class="hash-link" aria-label="Direct link to 13. 消息可靠性传输的完整流程？" title="Direct link to 13. 消息可靠性传输的完整流程？" translate="no">​</a></h3>
 <!-- -->
 <p><strong>保障措施：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>环节</th><th>保障措施</th></tr></thead><tbody><tr><td>生产者 →Broker</td><td>发布确认 + 重试</td></tr><tr><td>Broker 存储</td><td>队列持久化 + 消息持久化</td></tr><tr><td>Broker→ 消费者</td><td>手动确认 + 死信队列</td></tr><tr><td>消费者处理</td><td>幂等性 + 事务</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="14-rabbitmq-集群架构设计">14. RabbitMQ 集群架构设计？<a href="#14-rabbitmq-集群架构设计" class="hash-link" aria-label="Direct link to 14. RabbitMQ 集群架构设计？" title="Direct link to 14. RabbitMQ 集群架构设计？" translate="no">​</a></h3>
 <!-- -->
@@ -105,6 +196,66 @@
 <li class="">配置负载均衡和健康检查</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="15-rabbitmq-vs-kafka-深入对比">15. RabbitMQ vs Kafka 深入对比？<a href="#15-rabbitmq-vs-kafka-深入对比" class="hash-link" aria-label="Direct link to 15. RabbitMQ vs Kafka 深入对比？" title="Direct link to 15. RabbitMQ vs Kafka 深入对比？" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>维度</th><th>RabbitMQ</th><th>Kafka</th></tr></thead><tbody><tr><td><strong>设计目标</strong></td><td>消息代理</td><td>分布式日志</td></tr><tr><td><strong>消息模型</strong></td><td>推送模式</td><td>拉取模式</td></tr><tr><td><strong>消息顺序</strong></td><td>队列内有序</td><td>分区内有序</td></tr><tr><td><strong>消息路由</strong></td><td>灵活强大</td><td>简单按 Topic</td></tr><tr><td><strong>消息回溯</strong></td><td>不支持</td><td>支持</td></tr><tr><td><strong>吞吐量</strong></td><td>万级/秒</td><td>百万级/秒</td></tr><tr><td><strong>延迟</strong></td><td>微秒级</td><td>毫秒级</td></tr><tr><td><strong>消息确认</strong></td><td>支持</td><td>支持</td></tr><tr><td><strong>事务</strong></td><td>支持</td><td>支持(0.11+)</td></tr><tr><td><strong>适用场景</strong></td><td>任务队列、RPC</td><td>日志收集、流处理</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="16-如何实现消息优先级">16. 如何实现消息优先级？<a href="#16-如何实现消息优先级" class="hash-link" aria-label="Direct link to 16. 如何实现消息优先级？" title="Direct link to 16. 如何实现消息优先级？" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 1. 声明优先级队列</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Map&lt;String, Object&gt; args = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">args.put(&quot;x-max-priority&quot;, 10);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">channel.queueDeclare(&quot;priority_queue&quot;, true, false, false, args);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 2. 发送带优先级的消息</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">AMQP.BasicProperties props = new AMQP.BasicProperties.Builder()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    .priority(9)  // 高优先级</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    .build();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">channel.basicPublish(&quot;&quot;, &quot;priority_queue&quot;, props, message.getBytes());</span><br></span></code></pre></div></div>
@@ -118,6 +269,31 @@
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class RabbitConfig {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Bean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            ConnectionFactory connectionFactory) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        SimpleRabbitListenerContainerFactory factory =</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            new SimpleRabbitListenerContainerFactory();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setConnectionFactory(connectionFactory);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setConcurrentConsumers(5);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setMaxConcurrentConsumers(20);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setPrefetchCount(10);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 配置重试</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        RetryTemplate retryTemplate = new RetryTemplate();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        retryTemplate.setRetryPolicy(new SimpleRetryPolicy(3));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        factory.setRetryTemplate(retryTemplate);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return factory;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class OrderConsumer {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @RabbitListener(queues = &quot;order.queue&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void handleOrder(Order order, Message message, Channel channel,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                            @Header(AmqpHeaders.DELIVERY_TAG) long tag) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String msgId = message.getMessageProperties().getMessageId();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        try {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            // 幂等性检查</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            if (idempotencyService.isDuplicate(msgId)) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                channel.basicAck(tag, false);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                return;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            // 业务处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            orderService.process(order);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            // 标记已处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            idempotencyService.markProcessed(msgId);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            channel.basicAck(tag, false);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        } catch (RecoverableException e) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            // 可恢复，重新入队</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            channel.basicNack(tag, false, true);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        } catch (Exception e) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            // 不可恢复，进入死信</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            channel.basicNack(tag, false, false);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="18-如何监控-rabbitmq">18. 如何监控 RabbitMQ？<a href="#18-如何监控-rabbitmq" class="hash-link" aria-label="Direct link to 18. 如何监控 RabbitMQ？" title="Direct link to 18. 如何监控 RabbitMQ？" translate="no">​</a></h3>
 <p><strong>监控指标：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>指标</th></tr></thead><tbody><tr><td>队列</td><td>消息数、消费者数、内存占用</td></tr><tr><td>连接</td><td>连接数、通道数</td></tr><tr><td>节点</td><td>CPU、内存、磁盘</td></tr><tr><td>消息</td><td>发送速率、消费速率、确认速率</td></tr></tbody></table>
 <p><strong>监控方案：</strong></p>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 启用 Prometheus 插件</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rabbitmq-plugins enable rabbitmq_prometheus</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 访问指标端点</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">curl http://localhost:15692/metrics</span><br></span></code></pre></div></div>
@@ -160,6 +336,6 @@
 <ul>
 <li class=""><a href="https://www.rabbitmq.com/documentation.html" target="_blank" rel="noopener noreferrer" class="">RabbitMQ 官方文档</a></li>
 <li class=""><a href="https://docs.spring.io/spring-amqp/docs/current/reference/html/" target="_blank" rel="noopener noreferrer" class="">Spring AMQP 文档</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/rabbitmq-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/rocketmq-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RocketMQ 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/linux-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Linux 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#1-什么是-rabbitmq" class="table-of-contents__link toc-highlight">1. 什么是 RabbitMQ？</a></li><li><a href="#2-rabbitmq-的核心组件" class="table-of-contents__link toc-highlight">2. RabbitMQ 的核心组件？</a></li><li><a href="#3-四种交换机类型的区别" class="table-of-contents__link toc-highlight">3. 四种交换机类型的区别？</a></li><li><a href="#4-如何保证消息可靠性" class="table-of-contents__link toc-highlight">4. 如何保证消息可靠性？</a></li><li><a href="#5-消息确认机制" class="table-of-contents__link toc-highlight">5. 消息确认机制？</a></li></ul></li><li><a href="#进阶问题" class="table-of-contents__link toc-highlight">进阶问题</a><ul><li><a href="#6-如何处理消息重复消费" class="table-of-contents__link toc-highlight">6. 如何处理消息重复消费？</a></li><li><a href="#7-死信队列的使用场景" class="table-of-contents__link toc-highlight">7. 死信队列的使用场景？</a></li><li><a href="#8-如何实现延迟消息" class="table-of-contents__link toc-highlight">8. 如何实现延迟消息？</a></li><li><a href="#9-镜像队列和-quorum-队列的区别" class="table-of-contents__link toc-highlight">9. 镜像队列和 Quorum 队列的区别？</a></li><li><a href="#10-如何保证消息顺序" class="table-of-contents__link toc-highlight">10. 如何保证消息顺序？</a></li></ul></li><li><a href="#高级问题" class="table-of-contents__link toc-highlight">高级问题</a><ul><li><a href="#11-rabbitmq-如何实现分布式事务" class="table-of-contents__link toc-highlight">11. RabbitMQ 如何实现分布式事务？</a></li><li><a href="#12-rabbitmq-消息积压处理方案" class="table-of-contents__link toc-highlight">12. RabbitMQ 消息积压处理方案？</a></li><li><a href="#13-消息可靠性传输的完整流程" class="table-of-contents__link toc-highlight">13. 消息可靠性传输的完整流程？</a></li><li><a href="#14-rabbitmq-集群架构设计" class="table-of-contents__link toc-highlight">14. RabbitMQ 集群架构设计？</a></li><li><a href="#15-rabbitmq-vs-kafka-深入对比" class="table-of-contents__link toc-highlight">15. RabbitMQ vs Kafka 深入对比？</a></li><li><a href="#16-如何实现消息优先级" class="table-of-contents__link toc-highlight">16. 如何实现消息优先级？</a></li><li><a href="#17-spring-boot-中如何优雅地处理消息" class="table-of-contents__link toc-highlight">17. Spring Boot 中如何优雅地处理消息？</a></li><li><a href="#18-如何监控-rabbitmq" class="table-of-contents__link toc-highlight">18. 如何监控 RabbitMQ？</a></li><li><a href="#19-rabbitmq-的内存管理机制" class="table-of-contents__link toc-highlight">19. RabbitMQ 的内存管理机制？</a></li><li><a href="#20-生产环境部署最佳实践" class="table-of-contents__link toc-highlight">20. 生产环境部署最佳实践？</a></li></ul></li><li><a href="#场景设计" class="table-of-contents__link toc-highlight">场景设计</a><ul><li><a href="#21-设计一个订单系统的消息队列" class="table-of-contents__link toc-highlight">21. 设计一个订单系统的消息队列？</a></li><li><a href="#22-高并发场景如何优化" class="table-of-contents__link toc-highlight">22. 高并发场景如何优化？</a></li></ul></li><li><a href="#参考资料" class="table-of-contents__link toc-highlight">参考资料</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/rabbitmq-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/rocketmq-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RocketMQ 面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/linux-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Linux 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a><ul><li><a href="#1-什么是-rabbitmq" class="table-of-contents__link toc-highlight">1. 什么是 RabbitMQ？</a></li><li><a href="#2-rabbitmq-的核心组件" class="table-of-contents__link toc-highlight">2. RabbitMQ 的核心组件？</a></li><li><a href="#3-四种交换机类型的区别" class="table-of-contents__link toc-highlight">3. 四种交换机类型的区别？</a></li><li><a href="#4-如何保证消息可靠性" class="table-of-contents__link toc-highlight">4. 如何保证消息可靠性？</a></li><li><a href="#5-消息确认机制" class="table-of-contents__link toc-highlight">5. 消息确认机制？</a></li></ul></li><li><a href="#进阶问题" class="table-of-contents__link toc-highlight">进阶问题</a><ul><li><a href="#6-如何处理消息重复消费" class="table-of-contents__link toc-highlight">6. 如何处理消息重复消费？</a></li><li><a href="#7-死信队列的使用场景" class="table-of-contents__link toc-highlight">7. 死信队列的使用场景？</a></li><li><a href="#8-如何实现延迟消息" class="table-of-contents__link toc-highlight">8. 如何实现延迟消息？</a></li><li><a href="#9-镜像队列和-quorum-队列的区别" class="table-of-contents__link toc-highlight">9. 镜像队列和 Quorum 队列的区别？</a></li><li><a href="#10-如何保证消息顺序" class="table-of-contents__link toc-highlight">10. 如何保证消息顺序？</a></li></ul></li><li><a href="#高级问题" class="table-of-contents__link toc-highlight">高级问题</a><ul><li><a href="#11-rabbitmq-如何实现分布式事务" class="table-of-contents__link toc-highlight">11. RabbitMQ 如何实现分布式事务？</a></li><li><a href="#12-rabbitmq-消息积压处理方案" class="table-of-contents__link toc-highlight">12. RabbitMQ 消息积压处理方案？</a></li><li><a href="#13-消息可靠性传输的完整流程" class="table-of-contents__link toc-highlight">13. 消息可靠性传输的完整流程？</a></li><li><a href="#14-rabbitmq-集群架构设计" class="table-of-contents__link toc-highlight">14. RabbitMQ 集群架构设计？</a></li><li><a href="#15-rabbitmq-vs-kafka-深入对比" class="table-of-contents__link toc-highlight">15. RabbitMQ vs Kafka 深入对比？</a></li><li><a href="#16-如何实现消息优先级" class="table-of-contents__link toc-highlight">16. 如何实现消息优先级？</a></li><li><a href="#17-spring-boot-中如何优雅地处理消息" class="table-of-contents__link toc-highlight">17. Spring Boot 中如何优雅地处理消息？</a></li><li><a href="#18-如何监控-rabbitmq" class="table-of-contents__link toc-highlight">18. 如何监控 RabbitMQ？</a></li><li><a href="#19-rabbitmq-的内存管理机制" class="table-of-contents__link toc-highlight">19. RabbitMQ 的内存管理机制？</a></li><li><a href="#20-生产环境部署最佳实践" class="table-of-contents__link toc-highlight">20. 生产环境部署最佳实践？</a></li></ul></li><li><a href="#场景设计" class="table-of-contents__link toc-highlight">场景设计</a><ul><li><a href="#21-设计一个订单系统的消息队列" class="table-of-contents__link toc-highlight">21. 设计一个订单系统的消息队列？</a></li><li><a href="#22-高并发场景如何优化" class="table-of-contents__link toc-highlight">22. 高并发场景如何优化？</a></li></ul></li><li><a href="#参考资料" class="table-of-contents__link toc-highlight">参考资料</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

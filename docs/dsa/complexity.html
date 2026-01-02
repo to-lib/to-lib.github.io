@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">时间空间复杂度 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/dsa/complexity"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="时间空间复杂度 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="算法复杂度分析是评估算法效率的核心技能，帮助我们在编写代码前预判性能表现。"><meta data-rh="true" property="og:description" content="算法复杂度分析是评估算法效率的核心技能，帮助我们在编写代码前预判性能表现。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/dsa/complexity"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/dsa/complexity" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/dsa/complexity" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"时间空间复杂度","item":"https://to-lib.github.io/docs/dsa/complexity"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -17,6 +24,51 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-大-o-表示法">📖 大 O 表示法<a href="#-大-o-表示法" class="hash-link" aria-label="Direct link to 📖 大 O 表示法" title="Direct link to 📖 大 O 表示法" translate="no">​</a></h2>
 <p>大 O 表示法（Big O Notation）描述算法执行时间或空间随输入规模增长的<strong>上界</strong>。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="常见复杂度等级">常见复杂度等级<a href="#常见复杂度等级" class="hash-link" aria-label="Direct link to 常见复杂度等级" title="Direct link to 常见复杂度等级" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>复杂度</th><th>名称</th><th>示例</th></tr></thead><tbody><tr><td>O(1)</td><td>常数</td><td>数组索引访问</td></tr><tr><td>O(log n)</td><td>对数</td><td>二分查找</td></tr><tr><td>O(n)</td><td>线性</td><td>遍历数组</td></tr><tr><td>O(n log n)</td><td>线性对数</td><td>归并排序</td></tr><tr><td>O(n²)</td><td>平方</td><td>冒泡排序</td></tr><tr><td>O(2ⁿ)</td><td>指数</td><td>递归斐波那契</td></tr><tr><td>O(n!)</td><td>阶乘</td><td>全排列</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="增长趋势对比">增长趋势对比<a href="#增长趋势对比" class="hash-link" aria-label="Direct link to 增长趋势对比" title="Direct link to 增长趋势对比" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">n=10:     1 &lt; 3 &lt; 10 &lt; 33 &lt; 100 &lt; 1024 &lt; 3628800</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">n=100:    1 &lt; 7 &lt; 100 &lt; 664 &lt; 10000 &lt; 10³⁰ &lt; 10¹⁵⁸</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">          O(1) O(logn) O(n) O(nlogn) O(n²) O(2ⁿ) O(n!)</span><br></span></code></pre></div></div>
@@ -41,6 +93,31 @@
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 二分查找递归版本</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public int binarySearchRecursive(int[] arr, int target, int left, int right) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if (left &gt; right) return -1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int mid = left + (right - left) / 2;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if (arr[mid] == target) return mid;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if (arr[mid] &lt; target) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return binarySearchRecursive(arr, target, mid + 1, right);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    } else {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return binarySearchRecursive(arr, target, left, mid - 1);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}  // 空间 O(log n) - 递归调用栈</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-最好最坏平均复杂度">📊 最好、最坏、平均复杂度<a href="#-最好最坏平均复杂度" class="hash-link" aria-label="Direct link to 📊 最好、最坏、平均复杂度" title="Direct link to 📊 最好、最坏、平均复杂度" translate="no">​</a></h2>
 <p>以<strong>快速排序</strong>为例：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>情况</th><th>时间复杂度</th><th>说明</th></tr></thead><tbody><tr><td>最好</td><td>O(n log n)</td><td>每次均匀分割</td></tr><tr><td>平均</td><td>O(n log n)</td><td>随机数据</td></tr><tr><td>最坏</td><td>O(n²)</td><td>已排序或逆序</td></tr></tbody></table>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 快速排序</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public void quickSort(int[] arr, int low, int high) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if (low &lt; high) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        int pi = partition(arr, low, high);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        quickSort(arr, low, pi - 1);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        quickSort(arr, pi + 1, high);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private int partition(int[] arr, int low, int high) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int pivot = arr[high];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int i = low - 1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    for (int j = low; j &lt; high; j++) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        if (arr[j] &lt; pivot) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            i++;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            swap(arr, i, j);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    swap(arr, i + 1, high);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    return i + 1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private void swap(int[] arr, int i, int j) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int temp = arr[i];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    arr[i] = arr[j];</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    arr[j] = temp;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-复杂度分析技巧">🎯 复杂度分析技巧<a href="#-复杂度分析技巧" class="hash-link" aria-label="Direct link to 🎯 复杂度分析技巧" title="Direct link to 🎯 复杂度分析技巧" translate="no">​</a></h2>
@@ -55,6 +132,65 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-摊销分析">3. 摊销分析<a href="#3-摊销分析" class="hash-link" aria-label="Direct link to 3. 摊销分析" title="Direct link to 3. 摊销分析" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// ArrayList 动态扩容</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 单次添加可能是 O(n)（扩容时）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 但平均摊销下来是 O(1)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">List&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">for (int i = 0; i &lt; n; i++) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    list.add(i);  // 摊销 O(1)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-常见算法复杂度总结">📋 常见算法复杂度总结<a href="#-常见算法复杂度总结" class="hash-link" aria-label="Direct link to 📋 常见算法复杂度总结" title="Direct link to 📋 常见算法复杂度总结" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>算法</th><th>时间(平均)</th><th>时间(最坏)</th><th>空间</th></tr></thead><tbody><tr><td>冒泡排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr><tr><td>选择排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr><tr><td>插入排序</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr><tr><td>归并排序</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td></tr><tr><td>快速排序</td><td>O(n log n)</td><td>O(n²)</td><td>O(log n)</td></tr><tr><td>堆排序</td><td>O(n log n)</td><td>O(n log n)</td><td>O(1)</td></tr><tr><td>二分查找</td><td>O(log n)</td><td>O(log n)</td><td>O(1)</td></tr><tr><td>哈希查找</td><td>O(1)</td><td>O(n)</td><td>O(n)</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-面试技巧">💡 面试技巧<a href="#-面试技巧" class="hash-link" aria-label="Direct link to 💡 面试技巧" title="Direct link to 💡 面试技巧" translate="no">​</a></h2>
 <ol>
@@ -66,6 +202,6 @@
 <blockquote>
 <p>[!TIP]
 面试中，如果面试官问&quot;能否优化&quot;，通常意味着存在更低复杂度的解法。</p>
-</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/dsa/complexity.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dsa"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">数据结构与算法概述</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dsa/array-linkedlist"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">数组与链表</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-大-o-表示法" class="table-of-contents__link toc-highlight">📖 大 O 表示法</a><ul><li><a href="#常见复杂度等级" class="table-of-contents__link toc-highlight">常见复杂度等级</a></li><li><a href="#增长趋势对比" class="table-of-contents__link toc-highlight">增长趋势对比</a></li></ul></li><li><a href="#️-时间复杂度" class="table-of-contents__link toc-highlight">⏱️ 时间复杂度</a><ul><li><a href="#o1---常数时间" class="table-of-contents__link toc-highlight">O(1) - 常数时间</a></li><li><a href="#olog-n---对数时间" class="table-of-contents__link toc-highlight">O(log n) - 对数时间</a></li><li><a href="#on---线性时间" class="table-of-contents__link toc-highlight">O(n) - 线性时间</a></li><li><a href="#on-log-n---线性对数时间" class="table-of-contents__link toc-highlight">O(n log n) - 线性对数时间</a></li><li><a href="#on---平方时间" class="table-of-contents__link toc-highlight">O(n²) - 平方时间</a></li></ul></li><li><a href="#-空间复杂度" class="table-of-contents__link toc-highlight">💾 空间复杂度</a><ul><li><a href="#o1-原地算法" class="table-of-contents__link toc-highlight">O(1) 原地算法</a></li><li><a href="#on-线性空间" class="table-of-contents__link toc-highlight">O(n) 线性空间</a></li><li><a href="#olog-n-递归栈空间" class="table-of-contents__link toc-highlight">O(log n) 递归栈空间</a></li></ul></li><li><a href="#-最好最坏平均复杂度" class="table-of-contents__link toc-highlight">📊 最好、最坏、平均复杂度</a></li><li><a href="#-复杂度分析技巧" class="table-of-contents__link toc-highlight">🎯 复杂度分析技巧</a><ul><li><a href="#1-循环次数法" class="table-of-contents__link toc-highlight">1. 循环次数法</a></li><li><a href="#2-递归主定理" class="table-of-contents__link toc-highlight">2. 递归主定理</a></li><li><a href="#3-摊销分析" class="table-of-contents__link toc-highlight">3. 摊销分析</a></li></ul></li><li><a href="#-常见算法复杂度总结" class="table-of-contents__link toc-highlight">📋 常见算法复杂度总结</a></li><li><a href="#-面试技巧" class="table-of-contents__link toc-highlight">💡 面试技巧</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/dsa/complexity.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dsa"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">数据结构与算法概述</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dsa/array-linkedlist"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">数组与链表</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-大-o-表示法" class="table-of-contents__link toc-highlight">📖 大 O 表示法</a><ul><li><a href="#常见复杂度等级" class="table-of-contents__link toc-highlight">常见复杂度等级</a></li><li><a href="#增长趋势对比" class="table-of-contents__link toc-highlight">增长趋势对比</a></li></ul></li><li><a href="#️-时间复杂度" class="table-of-contents__link toc-highlight">⏱️ 时间复杂度</a><ul><li><a href="#o1---常数时间" class="table-of-contents__link toc-highlight">O(1) - 常数时间</a></li><li><a href="#olog-n---对数时间" class="table-of-contents__link toc-highlight">O(log n) - 对数时间</a></li><li><a href="#on---线性时间" class="table-of-contents__link toc-highlight">O(n) - 线性时间</a></li><li><a href="#on-log-n---线性对数时间" class="table-of-contents__link toc-highlight">O(n log n) - 线性对数时间</a></li><li><a href="#on---平方时间" class="table-of-contents__link toc-highlight">O(n²) - 平方时间</a></li></ul></li><li><a href="#-空间复杂度" class="table-of-contents__link toc-highlight">💾 空间复杂度</a><ul><li><a href="#o1-原地算法" class="table-of-contents__link toc-highlight">O(1) 原地算法</a></li><li><a href="#on-线性空间" class="table-of-contents__link toc-highlight">O(n) 线性空间</a></li><li><a href="#olog-n-递归栈空间" class="table-of-contents__link toc-highlight">O(log n) 递归栈空间</a></li></ul></li><li><a href="#-最好最坏平均复杂度" class="table-of-contents__link toc-highlight">📊 最好、最坏、平均复杂度</a></li><li><a href="#-复杂度分析技巧" class="table-of-contents__link toc-highlight">🎯 复杂度分析技巧</a><ul><li><a href="#1-循环次数法" class="table-of-contents__link toc-highlight">1. 循环次数法</a></li><li><a href="#2-递归主定理" class="table-of-contents__link toc-highlight">2. 递归主定理</a></li><li><a href="#3-摊销分析" class="table-of-contents__link toc-highlight">3. 摊销分析</a></li></ul></li><li><a href="#-常见算法复杂度总结" class="table-of-contents__link toc-highlight">📋 常见算法复杂度总结</a></li><li><a href="#-面试技巧" class="table-of-contents__link toc-highlight">💡 面试技巧</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

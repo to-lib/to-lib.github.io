@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">🧠 LLM 基础知识 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/ai/llm-fundamentals"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="🧠 LLM 基础知识 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="大型语言模型 (Large Language Model, LLM) 是一类基于深度学习的人工智能模型，能够理解和生成人类语言。本文介绍 LLM 的核心概念和工作原理。"><meta data-rh="true" property="og:description" content="大型语言模型 (Large Language Model, LLM) 是一类基于深度学习的人工智能模型，能够理解和生成人类语言。本文介绍 LLM 的核心概念和工作原理。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/ai/llm-fundamentals"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai/llm-fundamentals" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai/llm-fundamentals" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"🧠 LLM 基础知识","item":"https://to-lib.github.io/docs/ai/llm-fundamentals"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,8 +25,58 @@
 <p>现代 LLM 几乎都基于 <strong>Transformer</strong> 架构，这是 2017 年 Google 在论文《Attention Is All You Need》中提出的。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="核心组件">核心组件<a href="#核心组件" class="hash-link" aria-label="Direct link to 核心组件" title="Direct link to 核心组件" translate="no">​</a></h3>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">输入文本 → Tokenization → Embedding → Transformer Layers → 输出概率</span><br></span></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>组件</th><th>作用</th></tr></thead><tbody><tr><td><strong>Self-Attention</strong></td><td>捕捉序列中任意两个位置之间的依赖关系</td></tr><tr><td><strong>Multi-Head Attention</strong></td><td>并行运行多个注意力机制，捕捉不同类型的关系</td></tr><tr><td><strong>Feed-Forward Network</strong></td><td>对每个位置独立进行非线性变换</td></tr><tr><td><strong>Layer Normalization</strong></td><td>稳定训练过程</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="模型类型">模型类型<a href="#模型类型" class="hash-link" aria-label="Direct link to 模型类型" title="Direct link to 模型类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>代表模型</th><th>特点</th></tr></thead><tbody><tr><td><strong>Encoder-only</strong></td><td>BERT</td><td>双向理解，适合分类、NER</td></tr><tr><td><strong>Decoder-only</strong></td><td>GPT, LLaMA, Claude</td><td>自回归生成，适合文本生成</td></tr><tr><td><strong>Encoder-Decoder</strong></td><td>T5, BART</td><td>序列到序列，适合翻译、摘要</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="token-与上下文窗口">Token 与上下文窗口<a href="#token-与上下文窗口" class="hash-link" aria-label="Direct link to Token 与上下文窗口" title="Direct link to Token 与上下文窗口" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="什么是-token">什么是 Token？<a href="#什么是-token" class="hash-link" aria-label="Direct link to 什么是 Token？" title="Direct link to 什么是 Token？" translate="no">​</a></h3>
@@ -37,11 +94,64 @@
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="上下文窗口-context-window">上下文窗口 (Context Window)<a href="#上下文窗口-context-window" class="hash-link" aria-label="Direct link to 上下文窗口 (Context Window)" title="Direct link to 上下文窗口 (Context Window)" translate="no">​</a></h3>
 <p>上下文窗口是模型一次能处理的最大 token 数量。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模型</th><th>上下文长度</th></tr></thead><tbody><tr><td>GPT-3.5</td><td>4K / 16K</td></tr><tr><td>GPT-4</td><td>8K / 32K / 128K</td></tr><tr><td>Claude 3</td><td>200K</td></tr><tr><td>Gemini 1.5 Pro</td><td>1M</td></tr><tr><td>LLaMA 3</td><td>8K</td></tr></tbody></table>
-<div class="theme-admonition theme-admonition-tip admonition_LeLL alert alert--success"><div class="admonitionHeading_uXiR"><span class="admonitionIcon_IOyl"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>计算 Token</div><div class="admonitionContent_Drhn"><p>使用 tiktoken (OpenAI) 或 Hugging Face tokenizers 库计算 token 数量：</p><div class="language-python codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-python codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> tiktoken</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">enc </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> tiktoken</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encoding_for_model</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;gpt-4&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tokens </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> enc</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Hello, world!&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">print</span><span class="token punctuation" style="color:#393A34">(</span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">tokens</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic"># 4</span><br></span></code></pre></div></div></div></div>
+<p>:::tip 计算 Token
+使用 tiktoken (OpenAI) 或 Hugging Face tokenizers 库计算 token 数量：</p>
+<div class="language-python codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-python codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> tiktoken</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">enc </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> tiktoken</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encoding_for_model</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;gpt-4&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tokens </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> enc</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Hello, world!&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">print</span><span class="token punctuation" style="color:#393A34">(</span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">tokens</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic"># 4</span><br></span></code></pre></div></div>
+<p>:::</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="生成参数">生成参数<a href="#生成参数" class="hash-link" aria-label="Direct link to 生成参数" title="Direct link to 生成参数" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="temperature-温度">Temperature (温度)<a href="#temperature-温度" class="hash-link" aria-label="Direct link to Temperature (温度)" title="Direct link to Temperature (温度)" translate="no">​</a></h3>
 <p>控制输出的随机性。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>值</th><th>效果</th></tr></thead><tbody><tr><td>0.0</td><td>确定性输出，总是选择最高概率的 token</td></tr><tr><td>0.7</td><td>平衡创造性和一致性 (推荐默认值)</td></tr><tr><td>1.0+</td><td>高创造性，可能产生意外或不连贯的输出</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="top-p-核采样">Top-P (核采样)<a href="#top-p-核采样" class="hash-link" aria-label="Direct link to Top-P (核采样)" title="Direct link to Top-P (核采样)" translate="no">​</a></h3>
 <p>只从累积概率达到 P 的最小 token 集合中采样。</p>
@@ -49,11 +159,97 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="max-tokens">Max Tokens<a href="#max-tokens" class="hash-link" aria-label="Direct link to Max Tokens" title="Direct link to Max Tokens" translate="no">​</a></h3>
 <p>限制生成的最大 token 数量。注意：输入 + 输出不能超过上下文窗口。</p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="其他参数">其他参数<a href="#其他参数" class="hash-link" aria-label="Direct link to 其他参数" title="Direct link to 其他参数" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>参数</th><th>作用</th></tr></thead><tbody><tr><td><code>frequency_penalty</code></td><td>惩罚已出现过的 token，减少重复</td></tr><tr><td><code>presence_penalty</code></td><td>惩罚已出现的主题，增加多样性</td></tr><tr><td><code>stop</code></td><td>停止词序列，遇到时停止生成</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="主流模型对比">主流模型对比<a href="#主流模型对比" class="hash-link" aria-label="Direct link to 主流模型对比" title="Direct link to 主流模型对比" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="商业模型">商业模型<a href="#商业模型" class="hash-link" aria-label="Direct link to 商业模型" title="Direct link to 商业模型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模型</th><th>提供商</th><th>特点</th></tr></thead><tbody><tr><td><strong>GPT-4o</strong></td><td>OpenAI</td><td>多模态，速度快，性价比高</td></tr><tr><td><strong>Claude 3.5 Sonnet</strong></td><td>Anthropic</td><td>长上下文，强推理，代码能力强</td></tr><tr><td><strong>Gemini 1.5 Pro</strong></td><td>Google</td><td>超长上下文 (1M)，多模态</td></tr><tr><td><strong>文心一言</strong></td><td>百度</td><td>中文优化，国产首选</td></tr><tr><td><strong>通义千问</strong></td><td>阿里</td><td>开源版本可用，多模态</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="开源模型">开源模型<a href="#开源模型" class="hash-link" aria-label="Direct link to 开源模型" title="Direct link to 开源模型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模型</th><th>参数量</th><th>特点</th></tr></thead><tbody><tr><td><strong>LLaMA 3</strong></td><td>8B / 70B</td><td>Meta 出品，性能优秀</td></tr><tr><td><strong>Mistral</strong></td><td>7B</td><td>小巧高效，适合部署</td></tr><tr><td><strong>Qwen 2</strong></td><td>0.5B - 72B</td><td>阿里出品，中英文佳</td></tr><tr><td><strong>DeepSeek</strong></td><td>7B / 67B</td><td>国产，代码能力强</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="api-调用示例">API 调用示例<a href="#api-调用示例" class="hash-link" aria-label="Direct link to API 调用示例" title="Direct link to API 调用示例" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="openai-api">OpenAI API<a href="#openai-api" class="hash-link" aria-label="Direct link to OpenAI API" title="Direct link to OpenAI API" translate="no">​</a></h3>
@@ -66,6 +262,6 @@
 <li class=""><a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer" class="">OpenAI API 文档</a></li>
 <li class=""><a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer" class="">Anthropic API 文档</a></li>
 <li class=""><a href="https://huggingface.co/models" target="_blank" rel="noopener noreferrer" class="">Hugging Face 模型库</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/llm-fundamentals.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ai"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">🤖 AI 开发概览</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/prompt-engineering"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">✨ 提示工程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#transformer-架构" class="table-of-contents__link toc-highlight">Transformer 架构</a><ul><li><a href="#核心组件" class="table-of-contents__link toc-highlight">核心组件</a></li><li><a href="#模型类型" class="table-of-contents__link toc-highlight">模型类型</a></li></ul></li><li><a href="#token-与上下文窗口" class="table-of-contents__link toc-highlight">Token 与上下文窗口</a><ul><li><a href="#什么是-token" class="table-of-contents__link toc-highlight">什么是 Token？</a></li><li><a href="#上下文窗口-context-window" class="table-of-contents__link toc-highlight">上下文窗口 (Context Window)</a></li></ul></li><li><a href="#生成参数" class="table-of-contents__link toc-highlight">生成参数</a><ul><li><a href="#temperature-温度" class="table-of-contents__link toc-highlight">Temperature (温度)</a></li><li><a href="#top-p-核采样" class="table-of-contents__link toc-highlight">Top-P (核采样)</a></li><li><a href="#max-tokens" class="table-of-contents__link toc-highlight">Max Tokens</a></li><li><a href="#其他参数" class="table-of-contents__link toc-highlight">其他参数</a></li></ul></li><li><a href="#主流模型对比" class="table-of-contents__link toc-highlight">主流模型对比</a><ul><li><a href="#商业模型" class="table-of-contents__link toc-highlight">商业模型</a></li><li><a href="#开源模型" class="table-of-contents__link toc-highlight">开源模型</a></li></ul></li><li><a href="#api-调用示例" class="table-of-contents__link toc-highlight">API 调用示例</a><ul><li><a href="#openai-api" class="table-of-contents__link toc-highlight">OpenAI API</a></li><li><a href="#anthropic-api" class="table-of-contents__link toc-highlight">Anthropic API</a></li></ul></li><li><a href="#延伸阅读" class="table-of-contents__link toc-highlight">延伸阅读</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/llm-fundamentals.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ai"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">🤖 AI 开发概览</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/prompt-engineering"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">✨ 提示工程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#transformer-架构" class="table-of-contents__link toc-highlight">Transformer 架构</a><ul><li><a href="#核心组件" class="table-of-contents__link toc-highlight">核心组件</a></li><li><a href="#模型类型" class="table-of-contents__link toc-highlight">模型类型</a></li></ul></li><li><a href="#token-与上下文窗口" class="table-of-contents__link toc-highlight">Token 与上下文窗口</a><ul><li><a href="#什么是-token" class="table-of-contents__link toc-highlight">什么是 Token？</a></li><li><a href="#上下文窗口-context-window" class="table-of-contents__link toc-highlight">上下文窗口 (Context Window)</a></li></ul></li><li><a href="#生成参数" class="table-of-contents__link toc-highlight">生成参数</a><ul><li><a href="#temperature-温度" class="table-of-contents__link toc-highlight">Temperature (温度)</a></li><li><a href="#top-p-核采样" class="table-of-contents__link toc-highlight">Top-P (核采样)</a></li><li><a href="#max-tokens" class="table-of-contents__link toc-highlight">Max Tokens</a></li><li><a href="#其他参数" class="table-of-contents__link toc-highlight">其他参数</a></li></ul></li><li><a href="#主流模型对比" class="table-of-contents__link toc-highlight">主流模型对比</a><ul><li><a href="#商业模型" class="table-of-contents__link toc-highlight">商业模型</a></li><li><a href="#开源模型" class="table-of-contents__link toc-highlight">开源模型</a></li></ul></li><li><a href="#api-调用示例" class="table-of-contents__link toc-highlight">API 调用示例</a><ul><li><a href="#openai-api" class="table-of-contents__link toc-highlight">OpenAI API</a></li><li><a href="#anthropic-api" class="table-of-contents__link toc-highlight">Anthropic API</a></li></ul></li><li><a href="#延伸阅读" class="table-of-contents__link toc-highlight">延伸阅读</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

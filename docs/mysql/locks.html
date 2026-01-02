@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">锁机制详解 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/mysql/locks"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="锁机制详解 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP] &gt; 并发控制核心: 锁是保证数据一致性和并发访问的关键机制。理解锁的工作原理有助于优化应用性能和避免死锁。"><meta data-rh="true" property="og:description" content="[!TIP] &gt; 并发控制核心: 锁是保证数据一致性和并发访问的关键机制。理解锁的工作原理有助于优化应用性能和避免死锁。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/mysql/locks"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mysql/locks" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/mysql/locks" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"锁机制详解","item":"https://to-lib.github.io/docs/mysql/locks"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -18,8 +25,64 @@
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="锁的分类">锁的分类<a href="#锁的分类" class="hash-link" aria-label="Direct link to 锁的分类" title="Direct link to 锁的分类" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="按锁粒度分类">按锁粒度分类<a href="#按锁粒度分类" class="hash-link" aria-label="Direct link to 按锁粒度分类" title="Direct link to 按锁粒度分类" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>锁类型</th><th>粒度</th><th>开销</th><th>并发度</th><th>引擎支持</th></tr></thead><tbody><tr><td>表锁</td><td>整表</td><td>低</td><td>低</td><td>MyISAM, InnoDB</td></tr><tr><td>页锁</td><td>数据页</td><td>中</td><td>中</td><td>BDB</td></tr><tr><td>行锁</td><td>单行</td><td>高</td><td>高</td><td>InnoDB</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="按锁模式分类">按锁模式分类<a href="#按锁模式分类" class="hash-link" aria-label="Direct link to 按锁模式分类" title="Direct link to 按锁模式分类" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>锁类型</th><th>别名</th><th>兼容性</th><th>用途</th></tr></thead><tbody><tr><td>共享锁（S 锁）</td><td>读锁</td><td>S 与 S 兼容</td><td>SELECT ... LOCK IN SHARE MODE</td></tr><tr><td>排他锁（X 锁）</td><td>写锁</td><td>与所有锁不兼容</td><td>UPDATE, DELETE, SELECT ... FOR UPDATE</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="表级锁">表级锁<a href="#表级锁" class="hash-link" aria-label="Direct link to 表级锁" title="Direct link to 表级锁" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="表锁操作">表锁操作<a href="#表锁操作" class="hash-link" aria-label="Direct link to 表锁操作" title="Direct link to 表锁操作" translate="no">​</a></h3>
@@ -33,12 +96,72 @@
 <p>InnoDB 行锁是通过<strong>锁定索引项</strong>来实现的：</p>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 有索引：锁定索引项，精确锁定行</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> id </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FOR</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 无索引：锁定全表！</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> name </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&#x27;张三&#x27;</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FOR</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 如果 name 没有索引，会锁全表</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 解决方案：添加索引</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">CREATE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">INDEX</span><span class="token plain"> idx_name </span><span class="token keyword" style="color:#00009f">ON</span><span class="token plain"> users</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">name</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="锁兼容性矩阵">锁兼容性矩阵<a href="#锁兼容性矩阵" class="hash-link" aria-label="Direct link to 锁兼容性矩阵" title="Direct link to 锁兼容性矩阵" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>请求\持有</th><th>S 锁</th><th>X 锁</th></tr></thead><tbody><tr><td>S 锁</td><td>✅ 兼容</td><td>❌ 冲突</td></tr><tr><td>X 锁</td><td>❌ 冲突</td><td>❌ 冲突</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="意向锁">意向锁<a href="#意向锁" class="hash-link" aria-label="Direct link to 意向锁" title="Direct link to 意向锁" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="意向锁概念">意向锁概念<a href="#意向锁概念" class="hash-link" aria-label="Direct link to 意向锁概念" title="Direct link to 意向锁概念" translate="no">​</a></h3>
 <p>意向锁是表级锁，用于快速判断表中是否有行锁。</p>
 <div class="language-sql codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-sql codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">-- 意向共享锁（IS）：事务准备给数据行加 S 锁</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 意向排他锁（IX）：事务准备给数据行加 X 锁</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 自动加锁，无需手动操作</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> id </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">LOCK</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">IN</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">SHARE</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">MODE</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 先加表级 IS 锁，再加行级 S 锁</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">SELECT</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FROM</span><span class="token plain"> users </span><span class="token keyword" style="color:#00009f">WHERE</span><span class="token plain"> id </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">FOR</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">UPDATE</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">-- 先加表级 IX 锁，再加行级 X 锁</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="意向锁兼容性">意向锁兼容性<a href="#意向锁兼容性" class="hash-link" aria-label="Direct link to 意向锁兼容性" title="Direct link to 意向锁兼容性" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>请求\持有</th><th>IS</th><th>IX</th><th>S</th><th>X</th></tr></thead><tbody><tr><td>IS</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>IX</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr><tr><td>S</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td></tr><tr><td>X</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="间隙锁gap-lock">间隙锁（Gap Lock）<a href="#间隙锁gap-lock" class="hash-link" aria-label="Direct link to 间隙锁（Gap Lock）" title="Direct link to 间隙锁（Gap Lock）" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="间隙锁概念">间隙锁概念<a href="#间隙锁概念" class="hash-link" aria-label="Direct link to 间隙锁概念" title="Direct link to 间隙锁概念" translate="no">​</a></h3>
@@ -106,6 +229,6 @@
 <li class="">✅ 死锁检测和避免</li>
 <li class="">✅ 锁监控和优化</li>
 </ul>
-<p>继续学习 <a class="" href="/docs/mysql/transactions">事务处理</a> 和 <a class="" href="/docs/mysql/performance-optimization">性能优化</a>！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mysql/locks.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mysql/transactions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">事务处理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mysql/security-and-accounts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">账号、权限与安全</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#锁的分类" class="table-of-contents__link toc-highlight">锁的分类</a><ul><li><a href="#按锁粒度分类" class="table-of-contents__link toc-highlight">按锁粒度分类</a></li><li><a href="#按锁模式分类" class="table-of-contents__link toc-highlight">按锁模式分类</a></li></ul></li><li><a href="#表级锁" class="table-of-contents__link toc-highlight">表级锁</a><ul><li><a href="#表锁操作" class="table-of-contents__link toc-highlight">表锁操作</a></li><li><a href="#表锁特点" class="table-of-contents__link toc-highlight">表锁特点</a></li></ul></li><li><a href="#innodb-行锁" class="table-of-contents__link toc-highlight">InnoDB 行锁</a><ul><li><a href="#行锁类型" class="table-of-contents__link toc-highlight">行锁类型</a></li><li><a href="#行锁实现" class="table-of-contents__link toc-highlight">行锁实现</a></li><li><a href="#锁兼容性矩阵" class="table-of-contents__link toc-highlight">锁兼容性矩阵</a></li></ul></li><li><a href="#意向锁" class="table-of-contents__link toc-highlight">意向锁</a><ul><li><a href="#意向锁概念" class="table-of-contents__link toc-highlight">意向锁概念</a></li><li><a href="#意向锁兼容性" class="table-of-contents__link toc-highlight">意向锁兼容性</a></li></ul></li><li><a href="#间隙锁gap-lock" class="table-of-contents__link toc-highlight">间隙锁（Gap Lock）</a><ul><li><a href="#间隙锁概念" class="table-of-contents__link toc-highlight">间隙锁概念</a></li><li><a href="#间隙锁规则" class="table-of-contents__link toc-highlight">间隙锁规则</a></li></ul></li><li><a href="#next-key-lock" class="table-of-contents__link toc-highlight">Next-Key Lock</a><ul><li><a href="#概念" class="table-of-contents__link toc-highlight">概念</a></li><li><a href="#加锁规则" class="table-of-contents__link toc-highlight">加锁规则</a></li></ul></li><li><a href="#元数据锁mdl" class="table-of-contents__link toc-highlight">元数据锁（MDL）</a><ul><li><a href="#mdl-概念" class="table-of-contents__link toc-highlight">MDL 概念</a></li><li><a href="#mdl-阻塞问题" class="table-of-contents__link toc-highlight">MDL 阻塞问题</a></li><li><a href="#解决方案" class="table-of-contents__link toc-highlight">解决方案</a></li></ul></li><li><a href="#死锁" class="table-of-contents__link toc-highlight">死锁</a><ul><li><a href="#死锁示例" class="table-of-contents__link toc-highlight">死锁示例</a></li><li><a href="#死锁检测" class="table-of-contents__link toc-highlight">死锁检测</a></li><li><a href="#避免死锁" class="table-of-contents__link toc-highlight">避免死锁</a></li></ul></li><li><a href="#锁监控" class="table-of-contents__link toc-highlight">锁监控</a><ul><li><a href="#查看当前锁" class="table-of-contents__link toc-highlight">查看当前锁</a></li><li><a href="#查看-innodb-状态" class="table-of-contents__link toc-highlight">查看 InnoDB 状态</a></li></ul></li><li><a href="#锁优化建议" class="table-of-contents__link toc-highlight">锁优化建议</a></li><li><a href="#实战案例" class="table-of-contents__link toc-highlight">实战案例</a><ul><li><a href="#乐观锁实现" class="table-of-contents__link toc-highlight">乐观锁实现</a></li><li><a href="#悲观锁实现" class="table-of-contents__link toc-highlight">悲观锁实现</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p>继续学习 <a class="" href="/docs/mysql/transactions">事务处理</a> 和 <a class="" href="/docs/mysql/performance-optimization">性能优化</a>！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/mysql/locks.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/mysql/transactions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">事务处理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/mysql/security-and-accounts"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">账号、权限与安全</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#锁的分类" class="table-of-contents__link toc-highlight">锁的分类</a><ul><li><a href="#按锁粒度分类" class="table-of-contents__link toc-highlight">按锁粒度分类</a></li><li><a href="#按锁模式分类" class="table-of-contents__link toc-highlight">按锁模式分类</a></li></ul></li><li><a href="#表级锁" class="table-of-contents__link toc-highlight">表级锁</a><ul><li><a href="#表锁操作" class="table-of-contents__link toc-highlight">表锁操作</a></li><li><a href="#表锁特点" class="table-of-contents__link toc-highlight">表锁特点</a></li></ul></li><li><a href="#innodb-行锁" class="table-of-contents__link toc-highlight">InnoDB 行锁</a><ul><li><a href="#行锁类型" class="table-of-contents__link toc-highlight">行锁类型</a></li><li><a href="#行锁实现" class="table-of-contents__link toc-highlight">行锁实现</a></li><li><a href="#锁兼容性矩阵" class="table-of-contents__link toc-highlight">锁兼容性矩阵</a></li></ul></li><li><a href="#意向锁" class="table-of-contents__link toc-highlight">意向锁</a><ul><li><a href="#意向锁概念" class="table-of-contents__link toc-highlight">意向锁概念</a></li><li><a href="#意向锁兼容性" class="table-of-contents__link toc-highlight">意向锁兼容性</a></li></ul></li><li><a href="#间隙锁gap-lock" class="table-of-contents__link toc-highlight">间隙锁（Gap Lock）</a><ul><li><a href="#间隙锁概念" class="table-of-contents__link toc-highlight">间隙锁概念</a></li><li><a href="#间隙锁规则" class="table-of-contents__link toc-highlight">间隙锁规则</a></li></ul></li><li><a href="#next-key-lock" class="table-of-contents__link toc-highlight">Next-Key Lock</a><ul><li><a href="#概念" class="table-of-contents__link toc-highlight">概念</a></li><li><a href="#加锁规则" class="table-of-contents__link toc-highlight">加锁规则</a></li></ul></li><li><a href="#元数据锁mdl" class="table-of-contents__link toc-highlight">元数据锁（MDL）</a><ul><li><a href="#mdl-概念" class="table-of-contents__link toc-highlight">MDL 概念</a></li><li><a href="#mdl-阻塞问题" class="table-of-contents__link toc-highlight">MDL 阻塞问题</a></li><li><a href="#解决方案" class="table-of-contents__link toc-highlight">解决方案</a></li></ul></li><li><a href="#死锁" class="table-of-contents__link toc-highlight">死锁</a><ul><li><a href="#死锁示例" class="table-of-contents__link toc-highlight">死锁示例</a></li><li><a href="#死锁检测" class="table-of-contents__link toc-highlight">死锁检测</a></li><li><a href="#避免死锁" class="table-of-contents__link toc-highlight">避免死锁</a></li></ul></li><li><a href="#锁监控" class="table-of-contents__link toc-highlight">锁监控</a><ul><li><a href="#查看当前锁" class="table-of-contents__link toc-highlight">查看当前锁</a></li><li><a href="#查看-innodb-状态" class="table-of-contents__link toc-highlight">查看 InnoDB 状态</a></li></ul></li><li><a href="#锁优化建议" class="table-of-contents__link toc-highlight">锁优化建议</a></li><li><a href="#实战案例" class="table-of-contents__link toc-highlight">实战案例</a><ul><li><a href="#乐观锁实现" class="table-of-contents__link toc-highlight">乐观锁实现</a></li><li><a href="#悲观锁实现" class="table-of-contents__link toc-highlight">悲观锁实现</a></li></ul></li><li><a href="#总结" class="table-of-contents__link toc-highlight">总结</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

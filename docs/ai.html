@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">🤖 AI 开发概览 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/ai"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="🤖 AI 开发概览 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="欢迎来到 AI 开发文档。这里汇集了关于人工智能应用开发的核心概念和技术指南，特别是针对大语言模型（LLM）的应用开发。"><meta data-rh="true" property="og:description" content="欢迎来到 AI 开发文档。这里汇集了关于人工智能应用开发的核心概念和技术指南，特别是针对大语言模型（LLM）的应用开发。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/ai"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"🤖 AI 开发概览","item":"https://to-lib.github.io/docs/ai/"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -27,34 +34,175 @@
 <li class=""><a class="" href="/docs/function-calling">🔧 Function Calling</a> - 函数调用原理与 API 使用</li>
 <li class=""><a class="" href="/docs/rag">📚 RAG (检索增强生成)</a> - RAG 工作流程与代码实践</li>
 <li class=""><a class="" href="/docs/mcp">🔌 MCP (模型上下文协议)</a> - 模型与外部工具的标准化连接协议</li>
+<li class=""><a class="" href="/docs/langgraph">🔀 LangGraph 工作流编排</a> - 复杂 Agent 工作流、状态管理、人机协作</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="️-工程实践">🛠️ 工程实践<a href="#️-工程实践" class="hash-link" aria-label="Direct link to 🛠️ 工程实践" title="Direct link to 🛠️ 工程实践" translate="no">​</a></h3>
 <ul>
 <li class=""><a class="" href="/docs/fine-tuning">🧪 Fine-tuning（微调）</a> - 什么时候用微调、数据准备、评估与发布</li>
+<li class=""><a class="" href="/docs/distillation">🧬 模型蒸馏</a> - 大模型知识迁移到小模型</li>
+<li class=""><a class="" href="/docs/rlhf">🎯 RLHF 与 DPO</a> - 人类反馈强化学习、偏好对齐</li>
+<li class=""><a class="" href="/docs/model-merging">🔀 模型合并</a> - TIES、DARE、Task Arithmetic</li>
+<li class=""><a class="" href="/docs/continual-learning">📚 持续学习</a> - 增量学习、防止灾难性遗忘</li>
 <li class=""><a class="" href="/docs/evaluation">📏 Evaluation（评估与测试）</a> - 离线评估、在线 A/B、回归体系</li>
 <li class=""><a class="" href="/docs/production">🚀 Production（生产化与部署）</a> - 延迟/成本/稳定性/观测/发布策略</li>
 <li class=""><a class="" href="/docs/security">🔐 Security（安全与隐私）</a> - Prompt 注入、工具滥用、权限与脱敏</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-多模态与进阶">🎨 多模态与进阶<a href="#-多模态与进阶" class="hash-link" aria-label="Direct link to 🎨 多模态与进阶" title="Direct link to 🎨 多模态与进阶" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/docs/multimodal">🖼️ 多模态 AI</a> - Vision、Audio、图像生成</li>
+<li class=""><a class="" href="/docs/structured-output">📐 结构化输出</a> - JSON Mode、Pydantic 集成、数据提取</li>
+<li class=""><a class="" href="/docs/streaming">🌊 流式处理</a> - 流式 API、SSE、前端集成</li>
+<li class=""><a class="" href="/docs/local-llm">🏠 本地部署 LLM</a> - Ollama、vLLM、llama.cpp</li>
+<li class=""><a class="" href="/docs/quantization">🗜️ 模型量化</a> - GGUF、GPTQ、AWQ、bitsandbytes</li>
+<li class=""><a class="" href="/docs/moe">🧩 Mixture of Experts</a> - MoE 架构原理、Mixtral、DeepSeek</li>
+<li class=""><a class="" href="/docs/speculative-decoding">⚡ Speculative Decoding</a> - 推测解码加速推理</li>
+<li class=""><a class="" href="/docs/vector-database">🗄️ 向量数据库实战</a> - Chroma、Milvus、Pinecone、pgvector</li>
+<li class=""><a class="" href="/docs/lora-fine-tuning">🚀 LoRA Fine-tuning</a> - 本地微调开源模型实战</li>
+<li class=""><a class="" href="/docs/reasoning">🧩 Reasoning 模型</a> - o1/o3 推理模型使用指南</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-框架与优化">🔧 框架与优化<a href="#-框架与优化" class="hash-link" aria-label="Direct link to 🔧 框架与优化" title="Direct link to 🔧 框架与优化" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/docs/llamaindex">🦙 LlamaIndex 框架</a> - 数据索引与检索专业框架</li>
+<li class=""><a class="" href="/docs/prompt-caching">💾 Prompt Caching</a> - 提示缓存降低成本</li>
+<li class=""><a class="" href="/docs/long-context">📜 长上下文处理</a> - Map-Reduce、Refine、层次化摘要</li>
+<li class=""><a class="" href="/docs/memory">🧠 对话记忆管理</a> - 短期/长期记忆、向量记忆、实体记忆</li>
+<li class=""><a class="" href="/docs/graphrag">🕸️ GraphRAG</a> - 知识图谱增强检索</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="️-安全与运维">🛡️ 安全与运维<a href="#️-安全与运维" class="hash-link" aria-label="Direct link to 🛡️ 安全与运维" title="Direct link to 🛡️ 安全与运维" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/docs/guardrails">🛡️ Guardrails（护栏）</a> - 输入输出过滤、内容审核、NeMo Guardrails</li>
+<li class=""><a class="" href="/docs/cost-optimization">💰 成本优化</a> - Token 优化、模型选择、批处理、缓存策略</li>
+<li class=""><a class="" href="/docs/observability">📊 AI 可观测性</a> - Tracing、Logging、Metrics、LangSmith</li>
+<li class=""><a class="" href="/docs/voice">🎙️ 语音交互</a> - TTS、STT、OpenAI Realtime API</li>
+<li class=""><a class="" href="/docs/ai-ethics">⚖️ AI 伦理与合规</a> - 偏见检测、公平性、隐私保护、合规要求</li>
+<li class=""><a class="" href="/docs/federated-learning">🔒 联邦学习</a> - 隐私保护训练、FedAvg、Flower 框架</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="-应用开发">💻 应用开发<a href="#-应用开发" class="hash-link" aria-label="Direct link to 💻 应用开发" title="Direct link to 💻 应用开发" translate="no">​</a></h3>
+<ul>
+<li class=""><a class="" href="/docs/coding-assistant">💻 AI 编码助手开发</a> - 代码补全、生成、解释、重构</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="-参考指南">📚 参考指南<a href="#-参考指南" class="hash-link" aria-label="Direct link to 📚 参考指南" title="Direct link to 📚 参考指南" translate="no">​</a></h3>
 <ul>
 <li class=""><a class="" href="/docs/quick-reference">📋 快速参考</a> - API、参数、代码片段速查</li>
 <li class=""><a class="" href="/docs/faq">❓ 常见问题</a> - FAQ 解答</li>
+<li class=""><a class="" href="/docs/gemini-for-google-workspace-prompting-guide-101">📋 Gemini Workspace 提示词指南</a> - Google Workspace 提示词最佳实践</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="学习路线">学习路线<a href="#学习路线" class="hash-link" aria-label="Direct link to 学习路线" title="Direct link to 学习路线" translate="no">​</a></h2>
 <!-- -->
 <p><strong>推荐顺序</strong>：</p>
 <ol>
 <li class=""><strong>基础概念</strong>：先掌握 LLM 工作原理和 Prompt 技巧</li>
-<li class=""><strong>向量与检索</strong>：理解 Embeddings，为 RAG/记忆打基础</li>
-<li class=""><strong>知识增强</strong>：通过 RAG 连接外部知识库</li>
+<li class=""><strong>输出控制</strong>：学习结构化输出和流式处理</li>
+<li class=""><strong>向量与检索</strong>：理解 Embeddings 和向量数据库</li>
+<li class=""><strong>知识增强</strong>：通过 RAG 连接外部知识库，学习 LlamaIndex 和 GraphRAG</li>
 <li class=""><strong>工具调用</strong>：学习 Function Calling，让模型具备行动能力</li>
-<li class=""><strong>智能体</strong>：构建完整的 Agent 系统（规划/记忆/工具编排）</li>
-<li class=""><strong>评估体系</strong>：建立离线回归与在线 A/B，让迭代可控</li>
-<li class=""><strong>生产化</strong>：优化延迟/成本/稳定性/观测与发布流程</li>
-<li class=""><strong>安全与隐私</strong>：处理注入、越权、工具滥用与脱敏</li>
-<li class=""><strong>标准集成</strong>：使用 MCP 实现标准化工具连接</li>
+<li class=""><strong>智能体</strong>：构建完整的 Agent 系统，掌握对话记忆管理</li>
+<li class=""><strong>工作流编排</strong>：使用 LangGraph 处理复杂流程</li>
+<li class=""><strong>多模态</strong>：掌握图像、音频、语音交互能力</li>
+<li class=""><strong>长上下文</strong>：学习处理超长文档的策略</li>
+<li class=""><strong>推理模型</strong>：使用 o1/o3 解决复杂推理问题</li>
+<li class=""><strong>评估体系</strong>：建立离线回归与在线 A/B</li>
+<li class=""><strong>生产化</strong>：优化延迟/成本/稳定性，使用 Prompt Caching</li>
+<li class=""><strong>安全防护</strong>：Guardrails 护栏、注入防护、内容审核</li>
+<li class=""><strong>运维监控</strong>：可观测性、成本优化</li>
+<li class=""><strong>本地部署</strong>：使用 Ollama/vLLM 部署开源模型</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="技术栈推荐">技术栈推荐<a href="#技术栈推荐" class="hash-link" aria-label="Direct link to 技术栈推荐" title="Direct link to 技术栈推荐" translate="no">​</a></h2>
-<table><thead><tr><th>类型</th><th>推荐</th><th>备选</th></tr></thead><tbody><tr><td><strong>框架</strong></td><td>LangChain</td><td>LlamaIndex</td></tr><tr><td><strong>模型</strong></td><td>GPT-4o / Claude 3.5</td><td>Qwen2 / LLaMA 3</td></tr><tr><td><strong>向量库</strong></td><td>Chroma (开发) / Milvus (生产)</td><td>Pinecone, pgvector</td></tr><tr><td><strong>评估</strong></td><td>Langsmith</td><td>Arize, Deepeval</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/llm-fundamentals"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">🧠 LLM 基础知识</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#文档导航" class="table-of-contents__link toc-highlight">文档导航</a><ul><li><a href="#-基础知识" class="table-of-contents__link toc-highlight">📖 基础知识</a></li><li><a href="#-核心技术" class="table-of-contents__link toc-highlight">🎯 核心技术</a></li><li><a href="#️-工程实践" class="table-of-contents__link toc-highlight">🛠️ 工程实践</a></li><li><a href="#-参考指南" class="table-of-contents__link toc-highlight">📚 参考指南</a></li></ul></li><li><a href="#学习路线" class="table-of-contents__link toc-highlight">学习路线</a></li><li><a href="#技术栈推荐" class="table-of-contents__link toc-highlight">技术栈推荐</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>推荐</th><th>备选</th></tr></thead><tbody><tr><td><strong>框架</strong></td><td>LangChain</td><td>LlamaIndex</td></tr><tr><td><strong>工作流</strong></td><td>LangGraph</td><td>Prefect, Airflow</td></tr><tr><td><strong>模型</strong></td><td>GPT-4o / Claude 3.5</td><td>Qwen2.5 / LLaMA 3</td></tr><tr><td><strong>推理模型</strong></td><td>o1-mini / o1</td><td>Claude 3.5 Sonnet</td></tr><tr><td><strong>向量库</strong></td><td>Chroma (开发) / Milvus (生产)</td><td>Pinecone, pgvector</td></tr><tr><td><strong>图数据库</strong></td><td>Neo4j</td><td>ArangoDB</td></tr><tr><td><strong>评估</strong></td><td>Langsmith</td><td>Arize, Deepeval</td></tr><tr><td><strong>多模态</strong></td><td>GPT-4o / Gemini 1.5</td><td>Claude 3.5 Vision</td></tr><tr><td><strong>语音</strong></td><td>OpenAI Realtime API</td><td>Azure Speech</td></tr><tr><td><strong>微调</strong></td><td>OpenAI Fine-tuning</td><td>LoRA + PEFT</td></tr><tr><td><strong>本地部署</strong></td><td>Ollama (开发) / vLLM (生产)</td><td>llama.cpp, TGI</td></tr><tr><td><strong>量化</strong></td><td>GGUF (CPU) / AWQ (GPU)</td><td>GPTQ, bitsandbytes</td></tr><tr><td><strong>MoE 模型</strong></td><td>Mixtral</td><td>DeepSeek, Qwen-MoE</td></tr><tr><td><strong>蒸馏</strong></td><td>OpenAI Distillation</td><td>数据蒸馏</td></tr><tr><td><strong>对齐</strong></td><td>DPO</td><td>RLHF, ORPO</td></tr><tr><td><strong>护栏</strong></td><td>NeMo Guardrails</td><td>Guardrails AI</td></tr><tr><td><strong>可观测性</strong></td><td>LangSmith</td><td>Arize, OpenTelemetry</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/llm-fundamentals"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">🧠 LLM 基础知识</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#文档导航" class="table-of-contents__link toc-highlight">文档导航</a><ul><li><a href="#-基础知识" class="table-of-contents__link toc-highlight">📖 基础知识</a></li><li><a href="#-核心技术" class="table-of-contents__link toc-highlight">🎯 核心技术</a></li><li><a href="#️-工程实践" class="table-of-contents__link toc-highlight">🛠️ 工程实践</a></li><li><a href="#-多模态与进阶" class="table-of-contents__link toc-highlight">🎨 多模态与进阶</a></li><li><a href="#-框架与优化" class="table-of-contents__link toc-highlight">🔧 框架与优化</a></li><li><a href="#️-安全与运维" class="table-of-contents__link toc-highlight">🛡️ 安全与运维</a></li><li><a href="#-应用开发" class="table-of-contents__link toc-highlight">💻 应用开发</a></li><li><a href="#-参考指南" class="table-of-contents__link toc-highlight">📚 参考指南</a></li></ul></li><li><a href="#学习路线" class="table-of-contents__link toc-highlight">学习路线</a></li><li><a href="#技术栈推荐" class="table-of-contents__link toc-highlight">技术栈推荐</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

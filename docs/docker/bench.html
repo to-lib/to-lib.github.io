@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-docker/bench" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Docker Bench | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/docker/bench"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Docker Bench | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="CIS Docker 安全基准检测脚本"><meta data-rh="true" property="og:description" content="CIS Docker 安全基准检测脚本"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/docker/bench"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/docker/bench" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/docker/bench" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_k978" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="to-lib Logo" class="themedComponent_FW6w themedComponent--light_ZYRo"><img src="/img/logo.svg" alt="to-lib Logo" class="themedComponent_FW6w themedComponent--dark_Rd3V"></div><b class="navbar__title text--truncate">to-lib</b></a><a class="navbar__item navbar__link" href="/blog">Blog</a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">💻 编程语言</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">Java 编程</div></li><li><a class="dropdown__link" href="/docs/java">📖 Java 概述</a></li><li><a class="dropdown__link" href="/docs/java/jdk21-features">📦 JDK 8-21 新特性</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Rust 编程</div></li><li><a class="dropdown__link" href="/docs/rust">📖 Rust 概述</a></li><li><a class="dropdown__link" href="/docs/rust/cargo-guide">📦 Cargo 指南</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">Frontend</div></li><li><a class="dropdown__link" href="/docs/react">⚛️ React 19</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🏗️ 框架与中间件</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Spring 生态</div></li><li><a class="dropdown__link" href="/docs/spring">🍃 Spring Framework</a></li><li><a class="dropdown__link" href="/docs/springboot">🚀 Spring Boot</a></li><li><a class="dropdown__link" href="/docs/springcloud">☁️ Spring Cloud</a></li><li><a class="dropdown__link" href="/docs/springcloud-alibaba">🛍️ Spring Cloud Alibaba</a></li><li><a class="dropdown__link" href="/docs/spring-ai">🤖 Spring AI</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">网络与消息</div></li><li><a class="dropdown__link" href="/docs/netty">⚡ Netty</a></li><li><a class="dropdown__link" href="/docs/rabbitmq">🐰 RabbitMQ</a></li><li><a class="dropdown__link" href="/docs/kafka">📊 Kafka</a></li><li><a class="dropdown__link" href="/docs/rocketmq">🚀 RocketMQ</a></li><li><a class="dropdown__link" href="/docs/flink">⚡ Flink</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">数据库</div></li><li><a class="dropdown__link" href="/docs/mysql">🐬 MySQL</a></li><li><a class="dropdown__link" href="/docs/redis">💾 Redis</a></li><li><a class="dropdown__link" href="/docs/postgres">🐘 PostgreSQL</a></li><li><a class="dropdown__link" href="/docs/mybatis">🗃️ MyBatis</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🐧 运维与工具</a><ul class="dropdown__menu"><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #000;">Linux System</div></li><li><a class="dropdown__link" href="/docs/linux">🐧 Linux</a></li><li><a class="dropdown__link" href="/docs/linux/shell-scripting">🐚 Shell Scripting</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #009688;">Web Server & Media</div></li><li><a class="dropdown__link" href="/docs/nginx">🌐 Nginx</a></li><li><a class="dropdown__link" href="/docs/ffmpeg">🎬 FFmpeg</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">Containers</div></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/docs/docker">🐳 Docker</a></li><li><a class="dropdown__link" href="/docs/podman">🦭 Podman</a></li><li><a class="dropdown__link" href="/docs/kubernetes">☸️ Kubernetes</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">架构</div></li><li><a class="dropdown__link" href="/docs/microservices">🏛️ 微服务架构</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🧠 CS 基础</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/dsa">🧮 数据结构与算法</a></li><li><a class="dropdown__link" href="/docs/dsa/quick-reference">📋 DSA 快速参考</a></li><li><a class="dropdown__link" href="/docs/interview/dsa-interview-questions">🧠 DSA 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li><a class="dropdown__link" href="/docs/networking">🌐 计算机网络</a></li><li><a class="dropdown__link" href="/docs/java-design-patterns">🎨 设计模式 (Java)</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">📝 面试题库</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/interview">📚 面试题库首页</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #d32f2f;">Java 面试</div></li><li><a class="dropdown__link" href="/docs/interview/java-interview-questions">☕ Java 基础面试题</a></li><li><a class="dropdown__link" href="/docs/interview/java-senior">🎯 Java 高级面试题</a></li><li><a class="dropdown__link" href="/docs/interview/java-design-patterns-interview-questions">🎨 设计模式面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">Spring 生态</div></li><li><a class="dropdown__link" href="/docs/interview/spring-interview-questions">🍃 Spring 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springboot-interview-questions">🚀 Spring Boot 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springcloud-interview-questions">☁️ Spring Cloud 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/springcloud-alibaba-interview-questions">🛍️ Spring Cloud Alibaba 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">数据库 & 中间件</div></li><li><a class="dropdown__link" href="/docs/interview/mysql-interview-questions">🐬 MySQL 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/mybatis-interview-questions">🗃️ MyBatis 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/redis-interview-questions">💾 Redis 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/postgres-interview-questions">🐘 PostgreSQL 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/kafka-interview-questions">📊 Kafka 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rocketmq-interview-questions">🚀 RocketMQ 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">其他</div></li><li><a class="dropdown__link" href="/docs/interview/linux-interview-questions">🐧 Linux 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/netty-interview-questions">⚡ Netty 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/docker-interview-questions">🐳 Docker 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/kubernetes-interview-questions">☸️ Kubernetes 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rabbitmq-interview-questions">🐰 RabbitMQ 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/flink-interview-questions">⚡ Flink 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/microservices-interview-questions">🏛️ 微服务面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #61dafb;">前端 & 其他</div></li><li><a class="dropdown__link" href="/docs/interview/react-interview-questions">⚛️ React 面试题</a></li><li><a class="dropdown__link" href="/docs/interview/dsa-interview-questions">🧮 数据结构与算法面试题</a></li><li><a class="dropdown__link" href="/docs/interview/rust-interview-questions">🦀 Rust 面试题</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #ff9800;">架构与软技能</div></li><li><a class="dropdown__link" href="/docs/interview/system-design-interview-questions">🏗️ 系统设计面试题</a></li><li><a class="dropdown__link" href="/docs/interview/behavioral-interview-questions">🗣️ 行为面试题 (BQ)</a></li></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">🤖 AI 开发</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/ai">📖 AI 概览</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #9c27b0;">基础知识</div></li><li><a class="dropdown__link" href="/docs/ai/llm-fundamentals">🧠 LLM 基础知识</a></li><li><a class="dropdown__link" href="/docs/ai/prompt-engineering">✨ 提示工程</a></li><li><a class="dropdown__link" href="/docs/ai/embeddings">🧩 Embeddings（向量表示）</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #1976d2;">核心技术</div></li><li><a class="dropdown__link" href="/docs/ai/agent">🤖 AI Agent (智能体)</a></li><li><a class="dropdown__link" href="/docs/ai/function-calling">🔧 Function Calling</a></li><li><a class="dropdown__link" href="/docs/ai/rag">📚 RAG (检索增强生成)</a></li><li><a class="dropdown__link" href="/docs/ai/mcp">🔌 MCP (模型上下文协议)</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #ff9800;">工程实践</div></li><li><a class="dropdown__link" href="/docs/ai/fine-tuning">🧪 Fine-tuning（微调）</a></li><li><a class="dropdown__link" href="/docs/ai/evaluation">📏 Evaluation（评估与测试）</a></li><li><a class="dropdown__link" href="/docs/ai/production">🚀 Production（生产化与部署）</a></li><li><a class="dropdown__link" href="/docs/ai/security">🔐 Security（安全与隐私）</a></li><li class=""><hr style="margin: 8px 0;"></li><li class=""><div style="padding: 8px 12px; font-weight: bold; color: #388e3c;">参考指南</div></li><li><a class="dropdown__link" href="/docs/ai/quick-reference">📋 快速参考</a></li><li><a class="dropdown__link" href="/docs/ai/faq">❓ 常见问题</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_lwka colorModeToggle_SVpo"><button class="clean-btn toggleButton_Mbg6 toggleButtonDisabled_dsJi" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ lightToggleIcon_iZ7o"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ darkToggleIcon_sbHe"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_LX0_ systemToggleIcon_rNLr"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_bxl4"><div class="navbar__search searchBarContainer_klkp" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_AuBj" value=""><div class="loadingRing_Allz searchBarLoadingRing_DNDh"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_CSSr"><div class="docsWrapper_b3o4"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_ngaE" type="button"></button><div class="docRoot_vnET"><main class="docMainContainer_WeUM docMainContainerEnhanced_GPOT"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_qoff"><div class="docItemContainer_phNv"><article><div class="tocCollapsible_Jjm_ theme-doc-toc-mobile tocMobile_KLro"><button type="button" class="clean-btn tocCollapsibleButton_ibvO">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Docker Bench</h1></header>
+<p>Docker Bench for Security 是一个脚本，用于检查 Docker 部署是否符合 CIS（Center for Internet Security）安全基准。</p>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="快速使用">快速使用<a href="#快速使用" class="hash-link" aria-label="Direct link to 快速使用" title="Direct link to 快速使用" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># 运行 Docker Bench</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">docker run --rm --net host --pid host --userns host --cap-add audit_control \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -e DOCKER_CONTENT_TRUST=$DOCKER_CONTENT_TRUST \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /etc:/etc:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /lib/systemd/system:/lib/systemd/system:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /usr/bin/containerd:/usr/bin/containerd:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /usr/bin/runc:/usr/bin/runc:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /usr/lib/systemd:/usr/lib/systemd:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /var/lib:/var/lib:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /var/run/docker.sock:/var/run/docker.sock:ro \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  --label docker_bench_security \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  docker/docker-bench-security</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="检查类别">检查类别<a href="#检查类别" class="hash-link" aria-label="Direct link to 检查类别" title="Direct link to 检查类别" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-主机配置">1. 主机配置<a href="#1-主机配置" class="hash-link" aria-label="Direct link to 1. 主机配置" title="Direct link to 1. 主机配置" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>1.1</td><td>为容器创建单独分区</td></tr><tr><td>1.2</td><td>加固容器主机</td></tr><tr><td>1.3</td><td>保持 Docker 更新</td></tr><tr><td>1.4</td><td>只允许受信任用户控制 Docker</td></tr><tr><td>1.5</td><td>审计 Docker 守护进程</td></tr><tr><td>1.6</td><td>审计 Docker 文件和目录</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="2-docker-守护进程配置">2. Docker 守护进程配置<a href="#2-docker-守护进程配置" class="hash-link" aria-label="Direct link to 2. Docker 守护进程配置" title="Direct link to 2. Docker 守护进程配置" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>2.1</td><td>限制默认网桥上的容器间通信</td></tr><tr><td>2.2</td><td>设置日志级别为 info</td></tr><tr><td>2.3</td><td>允许 Docker 修改 iptables</td></tr><tr><td>2.4</td><td>不使用不安全的 registry</td></tr><tr><td>2.5</td><td>不使用 aufs 存储驱动</td></tr><tr><td>2.6</td><td>配置 TLS 认证</td></tr><tr><td>2.7</td><td>设置默认 ulimit</td></tr><tr><td>2.8</td><td>启用用户命名空间</td></tr><tr><td>2.9</td><td>使用默认 cgroup</td></tr><tr><td>2.10</td><td>设置默认 seccomp 配置</td></tr><tr><td>2.11</td><td>启用实验性功能时要谨慎</td></tr><tr><td>2.12</td><td>限制容器获取新权限</td></tr><tr><td>2.13</td><td>启用实时恢复</td></tr><tr><td>2.14</td><td>禁用 Swarm 模式（如不使用）</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-docker-守护进程配置文件">3. Docker 守护进程配置文件<a href="#3-docker-守护进程配置文件" class="hash-link" aria-label="Direct link to 3. Docker 守护进程配置文件" title="Direct link to 3. Docker 守护进程配置文件" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>3.1-3.22</td><td>验证配置文件权限（644 或更严格）</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="4-容器镜像和构建">4. 容器镜像和构建<a href="#4-容器镜像和构建" class="hash-link" aria-label="Direct link to 4. 容器镜像和构建" title="Direct link to 4. 容器镜像和构建" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>4.1</td><td>创建容器用户</td></tr><tr><td>4.2</td><td>使用受信任的基础镜像</td></tr><tr><td>4.3</td><td>不安装不必要的包</td></tr><tr><td>4.4</td><td>扫描镜像漏洞</td></tr><tr><td>4.5</td><td>启用 Content Trust</td></tr><tr><td>4.6</td><td>添加 HEALTHCHECK</td></tr><tr><td>4.7</td><td>不使用 update 指令</td></tr><tr><td>4.8</td><td>删除 setuid/setgid 权限</td></tr><tr><td>4.9</td><td>使用 COPY 而非 ADD</td></tr><tr><td>4.10</td><td>不存储密钥</td></tr><tr><td>4.11</td><td>只安装已验证的包</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-容器运行时">5. 容器运行时<a href="#5-容器运行时" class="hash-link" aria-label="Direct link to 5. 容器运行时" title="Direct link to 5. 容器运行时" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>5.1</td><td>不禁用 AppArmor</td></tr><tr><td>5.2</td><td>设置 SELinux 选项</td></tr><tr><td>5.3</td><td>限制 Linux Capabilities</td></tr><tr><td>5.4</td><td>不使用特权容器</td></tr><tr><td>5.5</td><td>不挂载敏感主机目录</td></tr><tr><td>5.6</td><td>不在容器内运行 sshd</td></tr><tr><td>5.7</td><td>不映射特权端口</td></tr><tr><td>5.8</td><td>只打开需要的端口</td></tr><tr><td>5.9</td><td>不共享主机网络命名空间</td></tr><tr><td>5.10</td><td>限制内存使用</td></tr><tr><td>5.11</td><td>设置 CPU 优先级</td></tr><tr><td>5.12</td><td>挂载根文件系统为只读</td></tr><tr><td>5.13</td><td>限制容器重启次数</td></tr><tr><td>5.14</td><td>不共享主机进程命名空间</td></tr><tr><td>5.15</td><td>不共享主机 IPC 命名空间</td></tr><tr><td>5.16</td><td>不直接暴露主机设备</td></tr><tr><td>5.17</td><td>覆盖默认 ulimit</td></tr><tr><td>5.18</td><td>不共享主机 UTS 命名空间</td></tr><tr><td>5.19</td><td>不禁用默认 seccomp</td></tr><tr><td>5.20</td><td>不使用 docker exec --privileged</td></tr><tr><td>5.21</td><td>不使用 docker exec --user=root</td></tr><tr><td>5.22</td><td>不禁用默认 cgroup</td></tr><tr><td>5.23</td><td>限制容器获取额外权限</td></tr><tr><td>5.24</td><td>检查容器健康状态</td></tr><tr><td>5.25</td><td>限制 PIDs</td></tr><tr><td>5.26</td><td>不使用 host 网络模式</td></tr><tr><td>5.27</td><td>限制 CPU 使用</td></tr><tr><td>5.28</td><td>使用 PIDs cgroup 限制</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="6-docker-安全操作">6. Docker 安全操作<a href="#6-docker-安全操作" class="hash-link" aria-label="Direct link to 6. Docker 安全操作" title="Direct link to 6. Docker 安全操作" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>说明</th></tr></thead><tbody><tr><td>6.1</td><td>定期审计镜像</td></tr><tr><td>6.2</td><td>定期审计容器</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="输出示例">输出示例<a href="#输出示例" class="hash-link" aria-label="Direct link to 输出示例" title="Direct link to 输出示例" translate="no">​</a></h2>
+<div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">[INFO] 1 - Host Configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[PASS] 1.1  - Ensure a separate partition for containers has been created</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[WARN] 1.2  - Ensure the container host has been Hardened</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[PASS] 1.3  - Ensure Docker is up to date</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[INFO] 2 - Docker daemon configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[WARN] 2.1  - Ensure network traffic is restricted between containers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[PASS] 2.2  - Ensure the logging level is set to &#x27;info&#x27;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">[PASS] 2.3  - Ensure Docker is allowed to make changes to iptables</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="修复常见问题">修复常见问题<a href="#修复常见问题" class="hash-link" aria-label="Direct link to 修复常见问题" title="Direct link to 修复常见问题" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="21-限制容器间通信">2.1 限制容器间通信<a href="#21-限制容器间通信" class="hash-link" aria-label="Direct link to 2.1 限制容器间通信" title="Direct link to 2.1 限制容器间通信" translate="no">​</a></h3>
+<div class="language-json codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-json codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// /etc/docker/daemon.json</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;icc&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="214-禁用-swarm如不使用">2.14 禁用 Swarm（如不使用）<a href="#214-禁用-swarm如不使用" class="hash-link" aria-label="Direct link to 2.14 禁用 Swarm（如不使用）" title="Direct link to 2.14 禁用 Swarm（如不使用）" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">docker swarm leave --force</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="41-创建非-root-用户">4.1 创建非 root 用户<a href="#41-创建非-root-用户" class="hash-link" aria-label="Direct link to 4.1 创建非 root 用户" title="Direct link to 4.1 创建非 root 用户" translate="no">​</a></h3>
+<div class="language-dockerfile codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-dockerfile codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">RUN useradd -r -u 1001 appuser</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">USER appuser</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="53-限制-capabilities">5.3 限制 Capabilities<a href="#53-限制-capabilities" class="hash-link" aria-label="Direct link to 5.3 限制 Capabilities" title="Direct link to 5.3 限制 Capabilities" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE nginx</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="510-限制内存">5.10 限制内存<a href="#510-限制内存" class="hash-link" aria-label="Direct link to 5.10 限制内存" title="Direct link to 5.10 限制内存" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">docker run --memory=512m --memory-swap=512m nginx</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="512-只读根文件系统">5.12 只读根文件系统<a href="#512-只读根文件系统" class="hash-link" aria-label="Direct link to 5.12 只读根文件系统" title="Direct link to 5.12 只读根文件系统" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">docker run --read-only --tmpfs /tmp nginx</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="自动化检查">自动化检查<a href="#自动化检查" class="hash-link" aria-label="Direct link to 自动化检查" title="Direct link to 自动化检查" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="cicd-集成">CI/CD 集成<a href="#cicd-集成" class="hash-link" aria-label="Direct link to CI/CD 集成" title="Direct link to CI/CD 集成" translate="no">​</a></h3>
+<div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># GitHub Actions</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain"> </span><span class="token key atrule" style="color:#00a4db">name</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> Run Docker Bench</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">run</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">|</span><span class="token scalar string" style="color:#e3116c"></span><br></span><span class="token-line" style="color:#393A34"><span class="token scalar string" style="color:#e3116c">    docker run --rm \</span><br></span><span class="token-line" style="color:#393A34"><span class="token scalar string" style="color:#e3116c">      -v /var/run/docker.sock:/var/run/docker.sock \</span><br></span><span class="token-line" style="color:#393A34"><span class="token scalar string" style="color:#e3116c">      docker/docker-bench-security \</span><br></span><span class="token-line" style="color:#393A34"><span class="token scalar string" style="color:#e3116c">      -l /dev/stdout 2&gt;&amp;1 | tee bench-results.txt</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic"># 检查是否有 WARN</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    if grep </span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">q &quot;\</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">WARN\</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain">&quot; bench</span><span class="token punctuation" style="color:#393A34">-</span><span class="token plain">results.txt; then</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      echo &quot;Security warnings found</span><span class="token tag" style="color:#00009f">!</span><span class="token plain">&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      exit 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    fi</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="定期扫描脚本">定期扫描脚本<a href="#定期扫描脚本" class="hash-link" aria-label="Direct link to 定期扫描脚本" title="Direct link to 定期扫描脚本" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">#!/bin/bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># security-scan.sh</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">REPORT_DIR=&quot;/var/log/docker-bench&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mkdir -p $REPORT_DIR</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">docker run --rm \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -v $REPORT_DIR:/report \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  docker/docker-bench-security \</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  -l /report/$(date +%Y%m%d).log</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># 发送告警（如有 WARN）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">if grep -q &quot;\[WARN\]&quot; $REPORT_DIR/$(date +%Y%m%d).log; then</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  # 发送邮件或 Slack 通知</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  echo &quot;Docker security warnings detected&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">fi</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="相关工具">相关工具<a href="#相关工具" class="hash-link" aria-label="Direct link to 相关工具" title="Direct link to 相关工具" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>工具</th><th>用途</th></tr></thead><tbody><tr><td>Docker Bench</td><td>CIS 基准检测</td></tr><tr><td>Trivy</td><td>镜像漏洞扫描</td></tr><tr><td>Docker Scout</td><td>官方安全扫描</td></tr><tr><td>Falco</td><td>运行时安全监控</td></tr><tr><td>Anchore</td><td>镜像策略检查</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/docker/bench.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#快速使用" class="table-of-contents__link toc-highlight">快速使用</a></li><li><a href="#检查类别" class="table-of-contents__link toc-highlight">检查类别</a><ul><li><a href="#1-主机配置" class="table-of-contents__link toc-highlight">1. 主机配置</a></li><li><a href="#2-docker-守护进程配置" class="table-of-contents__link toc-highlight">2. Docker 守护进程配置</a></li><li><a href="#3-docker-守护进程配置文件" class="table-of-contents__link toc-highlight">3. Docker 守护进程配置文件</a></li><li><a href="#4-容器镜像和构建" class="table-of-contents__link toc-highlight">4. 容器镜像和构建</a></li><li><a href="#5-容器运行时" class="table-of-contents__link toc-highlight">5. 容器运行时</a></li><li><a href="#6-docker-安全操作" class="table-of-contents__link toc-highlight">6. Docker 安全操作</a></li></ul></li><li><a href="#输出示例" class="table-of-contents__link toc-highlight">输出示例</a></li><li><a href="#修复常见问题" class="table-of-contents__link toc-highlight">修复常见问题</a><ul><li><a href="#21-限制容器间通信" class="table-of-contents__link toc-highlight">2.1 限制容器间通信</a></li><li><a href="#214-禁用-swarm如不使用" class="table-of-contents__link toc-highlight">2.14 禁用 Swarm（如不使用）</a></li><li><a href="#41-创建非-root-用户" class="table-of-contents__link toc-highlight">4.1 创建非 root 用户</a></li><li><a href="#53-限制-capabilities" class="table-of-contents__link toc-highlight">5.3 限制 Capabilities</a></li><li><a href="#510-限制内存" class="table-of-contents__link toc-highlight">5.10 限制内存</a></li><li><a href="#512-只读根文件系统" class="table-of-contents__link toc-highlight">5.12 只读根文件系统</a></li></ul></li><li><a href="#自动化检查" class="table-of-contents__link toc-highlight">自动化检查</a><ul><li><a href="#cicd-集成" class="table-of-contents__link toc-highlight">CI/CD 集成</a></li><li><a href="#定期扫描脚本" class="table-of-contents__link toc-highlight">定期扫描脚本</a></li></ul></li><li><a href="#相关工具" class="table-of-contents__link toc-highlight">相关工具</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Spring 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/spring-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Spring 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP]"><meta data-rh="true" property="og:description" content="[!TIP]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/spring-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/spring-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/spring-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Spring 面试题","item":"https://to-lib.github.io/docs/interview/spring-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -53,6 +60,36 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="3-autowired-和-resource-的区别">3. @Autowired 和 @Resource 的区别？<a href="#3-autowired-和-resource-的区别" class="hash-link" aria-label="Direct link to 3. @Autowired 和 @Resource 的区别？" title="Direct link to 3. @Autowired 和 @Resource 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>@Autowired</th><th>@Resource</th></tr></thead><tbody><tr><td>来源</td><td>Spring</td><td>Java EE（JSR-250）</td></tr><tr><td>默认装配方式</td><td>byType（按类型）</td><td>byName（按名称）</td></tr><tr><td>指定名称</td><td>配合@Qualifier</td><td>name 属性</td></tr><tr><td>支持位置</td><td>字段、setter、构造器</td><td>字段、setter</td></tr></tbody></table>
 <p><strong>示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// @Autowired - 按类型匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private UserDao userDao;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 多个同类型Bean时，配合@Qualifier</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Qualifier(&quot;userDaoImpl&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private UserDao userDao;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// @Resource - 按名称匹配</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Resource(name = &quot;userDaoImpl&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">private UserDao userDao;</span><br></span></code></pre></div></div>
@@ -61,6 +98,46 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="4-bean-的作用域有哪些">4. Bean 的作用域有哪些？<a href="#4-bean-的作用域有哪些" class="hash-link" aria-label="Direct link to 4. Bean 的作用域有哪些？" title="Direct link to 4. Bean 的作用域有哪些？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
 <p><strong>六种作用域：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>作用域</th><th>说明</th><th>使用场景</th></tr></thead><tbody><tr><td>singleton</td><td>单例（默认）</td><td>无状态 Bean</td></tr><tr><td>prototype</td><td>每次请求创建新实例</td><td>有状态 Bean</td></tr><tr><td>request</td><td>每个 HTTP 请求一个实例</td><td>Web 应用</td></tr><tr><td>session</td><td>每个 HTTP 会话一个实例</td><td>用户会话数据</td></tr><tr><td>application</td><td>整个 ServletContext 一个实例</td><td>全局应用数据</td></tr><tr><td>websocket</td><td>每个 WebSocket 会话一个实例</td><td>WebSocket 应用</td></tr></tbody></table>
 <p><strong>配置示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// 单例（默认）</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Scope(&quot;singleton&quot;)  // 可省略</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class UserService { }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 原型</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Scope(&quot;prototype&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class OrderService { }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Web相关作用域</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Controller</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Scope(&quot;request&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class LoginController { }</span><br></span></code></pre></div></div>
@@ -119,6 +196,41 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="7-spring-aop-和-aspectj-aop-的区别">7. Spring AOP 和 AspectJ AOP 的区别？<a href="#7-spring-aop-和-aspectj-aop-的区别" class="hash-link" aria-label="Direct link to 7. Spring AOP 和 AspectJ AOP 的区别？" title="Direct link to 7. Spring AOP 和 AspectJ AOP 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>Spring AOP</th><th>AspectJ AOP</th></tr></thead><tbody><tr><td>实现方式</td><td>动态代理（JDK/CGLIB）</td><td>编译时/加载时织入</td></tr><tr><td>功能</td><td>仅支持方法级别</td><td>支持字段、构造器等</td></tr><tr><td>性能</td><td>运行时代理，略慢</td><td>编译时织入，更快</td></tr><tr><td>易用性</td><td>简单，Spring 原生支持</td><td>复杂，需要特殊编译器</td></tr><tr><td>适用场景</td><td>一般企业应用</td><td>复杂 AOP 需求</td></tr></tbody></table>
 <p><strong>Spring AOP 代理方式：</strong></p>
 <ul>
@@ -156,6 +268,43 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="9-spring-事务的传播行为有哪些">9. Spring 事务的传播行为有哪些？<a href="#9-spring-事务的传播行为有哪些" class="hash-link" aria-label="Direct link to 9. Spring 事务的传播行为有哪些？" title="Direct link to 9. Spring 事务的传播行为有哪些？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
 <p><strong>七种传播行为：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>传播行为</th><th>说明</th></tr></thead><tbody><tr><td><strong>REQUIRED（默认）</strong></td><td>有事务则加入，无则新建</td></tr><tr><td><strong>REQUIRES_NEW</strong></td><td>总是新建事务，挂起当前事务</td></tr><tr><td><strong>SUPPORTS</strong></td><td>有事务则加入，无则非事务执行</td></tr><tr><td><strong>NOT_SUPPORTED</strong></td><td>总是非事务执行，挂起当前事务</td></tr><tr><td><strong>MANDATORY</strong></td><td>必须在事务中执行，否则抛异常</td></tr><tr><td><strong>NEVER</strong></td><td>不能在事务中执行，否则抛异常</td></tr><tr><td><strong>NESTED</strong></td><td>嵌套事务，有保存点</td></tr></tbody></table>
 <p><strong>常用场景示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class OrderService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 默认：加入外层事务或新建</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional(propagation = Propagation.REQUIRED)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void createOrder() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        logService.log();  // 如果log抛异常，整个order事务回滚</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@Service</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class LogService {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 独立事务：即使失败也不影响外层</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Transactional(propagation = Propagation.REQUIRES_NEW)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void log() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 日志记录失败不应该影响订单创建</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -182,6 +331,41 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="11-事务的隔离级别有哪些">11. 事务的隔离级别有哪些？<a href="#11-事务的隔离级别有哪些" class="hash-link" aria-label="Direct link to 11. 事务的隔离级别有哪些？" title="Direct link to 11. 事务的隔离级别有哪些？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
 <p><strong>四种隔离级别：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>隔离级别</th><th>脏读</th><th>不可重复读</th><th>幻读</th></tr></thead><tbody><tr><td>READ_UNCOMMITTED</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>READ_COMMITTED</td><td>✗</td><td>✓</td><td>✓</td></tr><tr><td>REPEATABLE_READ</td><td>✗</td><td>✗</td><td>✓</td></tr><tr><td>SERIALIZABLE</td><td>✗</td><td>✗</td><td>✗</td></tr></tbody></table>
 <p><strong>MySQL 默认：</strong> REPEATABLE_READ<br>
 <strong>Oracle 默认：</strong> READ_COMMITTED</p>
@@ -216,6 +400,26 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="13-requestparam-和-pathvariable-的区别">13. @RequestParam 和 @PathVariable 的区别？<a href="#13-requestparam-和-pathvariable-的区别" class="hash-link" aria-label="Direct link to 13. @RequestParam 和 @PathVariable 的区别？" title="Direct link to 13. @RequestParam 和 @PathVariable 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>注解</th><th>用途</th><th>示例</th></tr></thead><tbody><tr><td>@RequestParam</td><td>获取查询参数</td><td><code>/users?id=1</code></td></tr><tr><td>@PathVariable</td><td>获取路径变量</td><td><code>/users/1</code></td></tr></tbody></table>
 <p><strong>代码示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// @RequestParam - 查询参数</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(&quot;/users&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public List&lt;User&gt; search(@RequestParam String name,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                        @RequestParam(required = false) Integer age) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // GET /users?name=Tom&amp;age=20</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// @PathVariable - 路径变量</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(&quot;/users/{id}&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public User getUser(@PathVariable Long id) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // GET /users/123</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// 组合使用</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">@GetMapping(&quot;/users/{id}/orders&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public List&lt;Order&gt; getUserOrders(@PathVariable Long id,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                @RequestParam String status) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // GET /users/123/orders?status=PENDING</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -296,6 +500,6 @@
 <li class=""><a class="" href="/docs/spring/best-practices">最佳实践</a></li>
 </ul>
 <hr>
-<p><strong>持续更新中...</strong> 欢迎反馈和补充！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/spring-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/java-design-patterns-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">设计模式面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/springboot-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Spring Boot 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-核心概念" class="table-of-contents__link toc-highlight">🎯 核心概念</a><ul><li><a href="#1-什么是-spring-ioc有什么优势" class="table-of-contents__link toc-highlight">1. 什么是 Spring IoC？有什么优势？</a></li><li><a href="#2-spring-中的依赖注入有几种方式推荐哪种" class="table-of-contents__link toc-highlight">2. Spring 中的依赖注入有几种方式？推荐哪种？</a></li><li><a href="#3-autowired-和-resource-的区别" class="table-of-contents__link toc-highlight">3. @Autowired 和 @Resource 的区别？</a></li><li><a href="#4-bean-的作用域有哪些" class="table-of-contents__link toc-highlight">4. Bean 的作用域有哪些？</a></li><li><a href="#5-bean-的生命周期" class="table-of-contents__link toc-highlight">5. Bean 的生命周期？</a></li></ul></li><li><a href="#-aop-面向切面" class="table-of-contents__link toc-highlight">🎯 AOP 面向切面</a><ul><li><a href="#6-什么是-aop有哪些应用场景" class="table-of-contents__link toc-highlight">6. 什么是 AOP？有哪些应用场景？</a></li><li><a href="#7-spring-aop-和-aspectj-aop-的区别" class="table-of-contents__link toc-highlight">7. Spring AOP 和 AspectJ AOP 的区别？</a></li><li><a href="#8-beforeafteraround-的执行顺序" class="table-of-contents__link toc-highlight">8. @Before、@After、@Around 的执行顺序？</a></li></ul></li><li><a href="#-事务管理" class="table-of-contents__link toc-highlight">🎯 事务管理</a><ul><li><a href="#9-spring-事务的传播行为有哪些" class="table-of-contents__link toc-highlight">9. Spring 事务的传播行为有哪些？</a></li><li><a href="#10-transactional-失效的场景有哪些" class="table-of-contents__link toc-highlight">10. @Transactional 失效的场景有哪些？</a></li><li><a href="#11-事务的隔离级别有哪些" class="table-of-contents__link toc-highlight">11. 事务的隔离级别有哪些？</a></li></ul></li><li><a href="#-spring-mvc" class="table-of-contents__link toc-highlight">🎯 Spring MVC</a><ul><li><a href="#12-spring-mvc-的请求处理流程" class="table-of-contents__link toc-highlight">12. Spring MVC 的请求处理流程？</a></li><li><a href="#13-requestparam-和-pathvariable-的区别" class="table-of-contents__link toc-highlight">13. @RequestParam 和 @PathVariable 的区别？</a></li></ul></li><li><a href="#-配置与高级" class="table-of-contents__link toc-highlight">🎯 配置与高级</a><ul><li><a href="#14-componentservicerepositorycontroller-的区别" class="table-of-contents__link toc-highlight">14. @Component、@Service、@Repository、@Controller 的区别？</a></li><li><a href="#15-spring-boot-自动配置原理" class="table-of-contents__link toc-highlight">15. Spring Boot 自动配置原理？</a></li></ul></li><li><a href="#-总结与建议" class="table-of-contents__link toc-highlight">📌 总结与建议</a><ul><li><a href="#高频考点" class="table-of-contents__link toc-highlight">高频考点</a></li><li><a href="#学习建议" class="table-of-contents__link toc-highlight">学习建议</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>持续更新中...</strong> 欢迎反馈和补充！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/spring-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview/java-design-patterns-interview-questions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">设计模式面试题</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/springboot-interview-questions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Spring Boot 面试题</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-核心概念" class="table-of-contents__link toc-highlight">🎯 核心概念</a><ul><li><a href="#1-什么是-spring-ioc有什么优势" class="table-of-contents__link toc-highlight">1. 什么是 Spring IoC？有什么优势？</a></li><li><a href="#2-spring-中的依赖注入有几种方式推荐哪种" class="table-of-contents__link toc-highlight">2. Spring 中的依赖注入有几种方式？推荐哪种？</a></li><li><a href="#3-autowired-和-resource-的区别" class="table-of-contents__link toc-highlight">3. @Autowired 和 @Resource 的区别？</a></li><li><a href="#4-bean-的作用域有哪些" class="table-of-contents__link toc-highlight">4. Bean 的作用域有哪些？</a></li><li><a href="#5-bean-的生命周期" class="table-of-contents__link toc-highlight">5. Bean 的生命周期？</a></li></ul></li><li><a href="#-aop-面向切面" class="table-of-contents__link toc-highlight">🎯 AOP 面向切面</a><ul><li><a href="#6-什么是-aop有哪些应用场景" class="table-of-contents__link toc-highlight">6. 什么是 AOP？有哪些应用场景？</a></li><li><a href="#7-spring-aop-和-aspectj-aop-的区别" class="table-of-contents__link toc-highlight">7. Spring AOP 和 AspectJ AOP 的区别？</a></li><li><a href="#8-beforeafteraround-的执行顺序" class="table-of-contents__link toc-highlight">8. @Before、@After、@Around 的执行顺序？</a></li></ul></li><li><a href="#-事务管理" class="table-of-contents__link toc-highlight">🎯 事务管理</a><ul><li><a href="#9-spring-事务的传播行为有哪些" class="table-of-contents__link toc-highlight">9. Spring 事务的传播行为有哪些？</a></li><li><a href="#10-transactional-失效的场景有哪些" class="table-of-contents__link toc-highlight">10. @Transactional 失效的场景有哪些？</a></li><li><a href="#11-事务的隔离级别有哪些" class="table-of-contents__link toc-highlight">11. 事务的隔离级别有哪些？</a></li></ul></li><li><a href="#-spring-mvc" class="table-of-contents__link toc-highlight">🎯 Spring MVC</a><ul><li><a href="#12-spring-mvc-的请求处理流程" class="table-of-contents__link toc-highlight">12. Spring MVC 的请求处理流程？</a></li><li><a href="#13-requestparam-和-pathvariable-的区别" class="table-of-contents__link toc-highlight">13. @RequestParam 和 @PathVariable 的区别？</a></li></ul></li><li><a href="#-配置与高级" class="table-of-contents__link toc-highlight">🎯 配置与高级</a><ul><li><a href="#14-componentservicerepositorycontroller-的区别" class="table-of-contents__link toc-highlight">14. @Component、@Service、@Repository、@Controller 的区别？</a></li><li><a href="#15-spring-boot-自动配置原理" class="table-of-contents__link toc-highlight">15. Spring Boot 自动配置原理？</a></li></ul></li><li><a href="#-总结与建议" class="table-of-contents__link toc-highlight">📌 总结与建议</a><ul><li><a href="#高频考点" class="table-of-contents__link toc-highlight">高频考点</a></li><li><a href="#学习建议" class="table-of-contents__link toc-highlight">学习建议</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

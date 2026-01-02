@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">WebSocket 协议 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/networking/websocket"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WebSocket 协议 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="WebSocket协议详解，包括握手流程、数据帧格式、应用场景"><meta data-rh="true" property="og:description" content="WebSocket协议详解，包括握手流程、数据帧格式、应用场景"><meta data-rh="true" name="keywords" content="WebSocket,全双工,实时通信,握手,ws,wss"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/networking/websocket"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/websocket" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/networking/websocket" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WebSocket 协议","item":"https://to-lib.github.io/docs/networking/websocket"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -19,6 +26,41 @@
 <!-- -->
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="websocket-优势">WebSocket 优势<a href="#websocket-优势" class="hash-link" aria-label="Direct link to WebSocket 优势" title="Direct link to WebSocket 优势" translate="no">​</a></h3>
 <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>对比项</th><th>HTTP</th><th>WebSocket</th></tr></thead><tbody><tr><td>通信方式</td><td>请求-响应</td><td>全双工</td></tr><tr><td>连接</td><td>短连接/长连接</td><td>持久连接</td></tr><tr><td>开销</td><td>每次请求都有头部</td><td>握手后开销小</td></tr><tr><td>实时性</td><td>轮询/长轮询</td><td>实时推送</td></tr><tr><td>协议</td><td>http:// / https://</td><td>ws:// / wss://</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="握手过程">握手过程<a href="#握手过程" class="hash-link" aria-label="Direct link to 握手过程" title="Direct link to 握手过程" translate="no">​</a></h2>
 <p>WebSocket 通过 HTTP Upgrade 机制建立连接。</p>
@@ -31,12 +73,113 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="数据帧格式">数据帧格式<a href="#数据帧格式" class="hash-link" aria-label="Direct link to 数据帧格式" title="Direct link to 数据帧格式" translate="no">​</a></h2>
 <div class="language-text codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-text codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"> 0                   1                   2                   3</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-------+-+-------------+-------------------------------+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|F|R|R|R| opcode|M| Payload len |    Extended payload length    |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|I|S|S|S|  (4)  |A|     (7)     |             (16/64)           |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|N|V|V|V|       |S|             |   (if payload len==126/127)   |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">| |1|2|3|       |K|             |                               |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-+-+-+-+-------+-+-------------+-------------------------------+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|     Masking-key (if MASK set to 1)                            |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+-------------------------------+-------------------------------+</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|                     Payload Data                              |</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">+---------------------------------------------------------------+</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键字段">关键字段<a href="#关键字段" class="hash-link" aria-label="Direct link to 关键字段" title="Direct link to 关键字段" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>字段</th><th>大小</th><th>描述</th></tr></thead><tbody><tr><td>FIN</td><td>1 bit</td><td>是否为消息的最后一帧</td></tr><tr><td>opcode</td><td>4 bit</td><td>帧类型</td></tr><tr><td>MASK</td><td>1 bit</td><td>是否掩码（客户端必须为 1）</td></tr><tr><td>Payload len</td><td>7 bit</td><td>数据长度</td></tr><tr><td>Masking-key</td><td>32 bit</td><td>掩码密钥（如果 MASK=1）</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="opcode-类型">Opcode 类型<a href="#opcode-类型" class="hash-link" aria-label="Direct link to Opcode 类型" title="Direct link to Opcode 类型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Opcode</th><th>描述</th></tr></thead><tbody><tr><td>0x0</td><td>继续帧</td></tr><tr><td>0x1</td><td>文本帧</td></tr><tr><td>0x2</td><td>二进制帧</td></tr><tr><td>0x8</td><td>关闭连接</td></tr><tr><td>0x9</td><td>Ping</td></tr><tr><td>0xA</td><td>Pong</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="心跳机制">心跳机制<a href="#心跳机制" class="hash-link" aria-label="Direct link to 心跳机制" title="Direct link to 心跳机制" translate="no">​</a></h2>
 <!-- -->
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="应用场景">应用场景<a href="#应用场景" class="hash-link" aria-label="Direct link to 应用场景" title="Direct link to 应用场景" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>描述</th></tr></thead><tbody><tr><td>即时通讯</td><td>聊天应用、客服系统</td></tr><tr><td>实时数据</td><td>股票行情、体育比分</td></tr><tr><td>协作编辑</td><td>在线文档、白板</td></tr><tr><td>游戏</td><td>多人在线游戏</td></tr><tr><td>推送通知</td><td>系统消息、订单状态</td></tr><tr><td>直播互动</td><td>弹幕、礼物、点赞</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="代码示例">代码示例<a href="#代码示例" class="hash-link" aria-label="Direct link to 代码示例" title="Direct link to 代码示例" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="javascript-客户端">JavaScript 客户端<a href="#javascript-客户端" class="hash-link" aria-label="Direct link to JavaScript 客户端" title="Direct link to JavaScript 客户端" translate="no">​</a></h3>
@@ -46,8 +189,93 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="netty-服务端">Netty 服务端<a href="#netty-服务端" class="hash-link" aria-label="Direct link to Netty 服务端" title="Direct link to Netty 服务端" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public class WebSocketServerInitializer extends ChannelInitializer&lt;SocketChannel&gt; {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Override</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    protected void initChannel(SocketChannel ch) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ChannelPipeline pipeline = ch.pipeline();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        pipeline.addLast(new HttpServerCodec());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        pipeline.addLast(new HttpObjectAggregator(65536));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        pipeline.addLast(new WebSocketServerProtocolHandler(&quot;/ws&quot;));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        pipeline.addLast(new TextWebSocketFrameHandler());</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class TextWebSocketFrameHandler</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    extends SimpleChannelInboundHandler&lt;TextWebSocketFrame&gt; {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Override</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    protected void channelRead0(ChannelHandlerContext ctx,</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                                TextWebSocketFrame frame) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        String text = frame.text();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        System.out.println(&quot;收到: &quot; + text);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ctx.channel().writeAndFlush(new TextWebSocketFrame(&quot;Echo: &quot; + text));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="关闭码">关闭码<a href="#关闭码" class="hash-link" aria-label="Direct link to 关闭码" title="Direct link to 关闭码" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>状态码</th><th>描述</th></tr></thead><tbody><tr><td>1000</td><td>正常关闭</td></tr><tr><td>1001</td><td>端点离开</td></tr><tr><td>1002</td><td>协议错误</td></tr><tr><td>1003</td><td>不支持的数据类型</td></tr><tr><td>1006</td><td>异常关闭</td></tr><tr><td>1007</td><td>无效的数据</td></tr><tr><td>1008</td><td>策略违规</td></tr><tr><td>1009</td><td>消息过大</td></tr><tr><td>1011</td><td>服务器错误</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="websocket-vs-其他方案">WebSocket vs 其他方案<a href="#websocket-vs-其他方案" class="hash-link" aria-label="Direct link to WebSocket vs 其他方案" title="Direct link to WebSocket vs 其他方案" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>方案</th><th>实时性</th><th>双向</th><th>开销</th><th>兼容性</th></tr></thead><tbody><tr><td>轮询</td><td>低</td><td>单向</td><td>高</td><td>好</td></tr><tr><td>长轮询</td><td>中</td><td>单向</td><td>中</td><td>好</td></tr><tr><td>SSE</td><td>高</td><td>单向</td><td>低</td><td>较好</td></tr><tr><td>WebSocket</td><td>高</td><td>双向</td><td>低</td><td>好</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="安全考虑">安全考虑<a href="#安全考虑" class="hash-link" aria-label="Direct link to 安全考虑" title="Direct link to 安全考虑" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="wss-加密">wss:// 加密<a href="#wss-加密" class="hash-link" aria-label="Direct link to wss:// 加密" title="Direct link to wss:// 加密" translate="no">​</a></h3>
@@ -60,6 +288,6 @@
 <ul>
 <li class="">学习 <a class="" href="/docs/networking/socket-programming">Socket 编程</a></li>
 <li class="">了解 <a class="" href="/docs/netty/websocket">Netty 框架</a></li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/websocket.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/http"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">HTTP 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/dns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">DNS 域名解析</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#为什么需要-websocket" class="table-of-contents__link toc-highlight">为什么需要 WebSocket？</a><ul><li><a href="#http-的局限性" class="table-of-contents__link toc-highlight">HTTP 的局限性</a></li><li><a href="#websocket-优势" class="table-of-contents__link toc-highlight">WebSocket 优势</a></li></ul></li><li><a href="#握手过程" class="table-of-contents__link toc-highlight">握手过程</a><ul><li><a href="#客户端请求" class="table-of-contents__link toc-highlight">客户端请求</a></li><li><a href="#服务端响应" class="table-of-contents__link toc-highlight">服务端响应</a></li><li><a href="#密钥计算" class="table-of-contents__link toc-highlight">密钥计算</a></li></ul></li><li><a href="#数据帧格式" class="table-of-contents__link toc-highlight">数据帧格式</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li><li><a href="#opcode-类型" class="table-of-contents__link toc-highlight">Opcode 类型</a></li></ul></li><li><a href="#心跳机制" class="table-of-contents__link toc-highlight">心跳机制</a></li><li><a href="#应用场景" class="table-of-contents__link toc-highlight">应用场景</a></li><li><a href="#代码示例" class="table-of-contents__link toc-highlight">代码示例</a><ul><li><a href="#javascript-客户端" class="table-of-contents__link toc-highlight">JavaScript 客户端</a></li><li><a href="#java-服务端-spring" class="table-of-contents__link toc-highlight">Java 服务端 (Spring)</a></li><li><a href="#netty-服务端" class="table-of-contents__link toc-highlight">Netty 服务端</a></li></ul></li><li><a href="#关闭码" class="table-of-contents__link toc-highlight">关闭码</a></li><li><a href="#websocket-vs-其他方案" class="table-of-contents__link toc-highlight">WebSocket vs 其他方案</a></li><li><a href="#安全考虑" class="table-of-contents__link toc-highlight">安全考虑</a><ul><li><a href="#wss-加密" class="table-of-contents__link toc-highlight">wss:// 加密</a></li><li><a href="#跨域限制" class="table-of-contents__link toc-highlight">跨域限制</a></li><li><a href="#认证" class="table-of-contents__link toc-highlight">认证</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/networking/websocket.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/networking/http"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">HTTP 协议</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/networking/dns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">DNS 域名解析</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#为什么需要-websocket" class="table-of-contents__link toc-highlight">为什么需要 WebSocket？</a><ul><li><a href="#http-的局限性" class="table-of-contents__link toc-highlight">HTTP 的局限性</a></li><li><a href="#websocket-优势" class="table-of-contents__link toc-highlight">WebSocket 优势</a></li></ul></li><li><a href="#握手过程" class="table-of-contents__link toc-highlight">握手过程</a><ul><li><a href="#客户端请求" class="table-of-contents__link toc-highlight">客户端请求</a></li><li><a href="#服务端响应" class="table-of-contents__link toc-highlight">服务端响应</a></li><li><a href="#密钥计算" class="table-of-contents__link toc-highlight">密钥计算</a></li></ul></li><li><a href="#数据帧格式" class="table-of-contents__link toc-highlight">数据帧格式</a><ul><li><a href="#关键字段" class="table-of-contents__link toc-highlight">关键字段</a></li><li><a href="#opcode-类型" class="table-of-contents__link toc-highlight">Opcode 类型</a></li></ul></li><li><a href="#心跳机制" class="table-of-contents__link toc-highlight">心跳机制</a></li><li><a href="#应用场景" class="table-of-contents__link toc-highlight">应用场景</a></li><li><a href="#代码示例" class="table-of-contents__link toc-highlight">代码示例</a><ul><li><a href="#javascript-客户端" class="table-of-contents__link toc-highlight">JavaScript 客户端</a></li><li><a href="#java-服务端-spring" class="table-of-contents__link toc-highlight">Java 服务端 (Spring)</a></li><li><a href="#netty-服务端" class="table-of-contents__link toc-highlight">Netty 服务端</a></li></ul></li><li><a href="#关闭码" class="table-of-contents__link toc-highlight">关闭码</a></li><li><a href="#websocket-vs-其他方案" class="table-of-contents__link toc-highlight">WebSocket vs 其他方案</a></li><li><a href="#安全考虑" class="table-of-contents__link toc-highlight">安全考虑</a><ul><li><a href="#wss-加密" class="table-of-contents__link toc-highlight">wss:// 加密</a></li><li><a href="#跨域限制" class="table-of-contents__link toc-highlight">跨域限制</a></li><li><a href="#认证" class="table-of-contents__link toc-highlight">认证</a></li></ul></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

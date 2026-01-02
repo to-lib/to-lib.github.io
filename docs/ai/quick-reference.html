@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">📋 快速参考 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/ai/quick-reference"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="📋 快速参考 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="本文汇总 AI 开发中常用的 API、参数、命令和代码片段，便于快速查阅。"><meta data-rh="true" property="og:description" content="本文汇总 AI 开发中常用的 API、参数、命令和代码片段，便于快速查阅。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/ai/quick-reference"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai/quick-reference" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/ai/quick-reference" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"📋 快速参考","item":"https://to-lib.github.io/docs/ai/quick-reference"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -16,13 +23,137 @@
 <p>本文汇总 AI 开发中常用的 API、参数、命令和代码片段，便于快速查阅。</p>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="模型参数速查">模型参数速查<a href="#模型参数速查" class="hash-link" aria-label="Direct link to 模型参数速查" title="Direct link to 模型参数速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="通用生成参数">通用生成参数<a href="#通用生成参数" class="hash-link" aria-label="Direct link to 通用生成参数" title="Direct link to 通用生成参数" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>参数</th><th>范围</th><th>推荐值</th><th>说明</th></tr></thead><tbody><tr><td><code>temperature</code></td><td>0.0 - 2.0</td><td>0.7</td><td>控制随机性，越高越随机</td></tr><tr><td><code>top_p</code></td><td>0.0 - 1.0</td><td>0.9</td><td>核采样阈值</td></tr><tr><td><code>max_tokens</code></td><td>1 - 模型上限</td><td>按需设置</td><td>最大输出 token 数</td></tr><tr><td><code>frequency_penalty</code></td><td>-2.0 - 2.0</td><td>0</td><td>惩罚重复 token</td></tr><tr><td><code>presence_penalty</code></td><td>-2.0 - 2.0</td><td>0</td><td>惩罚重复主题</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="场景推荐配置">场景推荐配置<a href="#场景推荐配置" class="hash-link" aria-label="Direct link to 场景推荐配置" title="Direct link to 场景推荐配置" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>场景</th><th>temperature</th><th>top_p</th><th>说明</th></tr></thead><tbody><tr><td>代码生成</td><td>0.0 - 0.2</td><td>0.9</td><td>确定性，减少错误</td></tr><tr><td>文档写作</td><td>0.5 - 0.7</td><td>0.9</td><td>平衡准确与流畅</td></tr><tr><td>创意写作</td><td>0.8 - 1.0</td><td>0.95</td><td>增加创意</td></tr><tr><td>数据提取</td><td>0.0</td><td>1.0</td><td>严格确定性</td></tr><tr><td>聊天对话</td><td>0.7</td><td>0.9</td><td>自然对话</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="api-端点速查">API 端点速查<a href="#api-端点速查" class="hash-link" aria-label="Direct link to API 端点速查" title="Direct link to API 端点速查" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="openai">OpenAI<a href="#openai" class="hash-link" aria-label="Direct link to OpenAI" title="Direct link to OpenAI" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>功能</th><th>端点</th></tr></thead><tbody><tr><td>Chat</td><td><code>POST /v1/chat/completions</code></td></tr><tr><td>Embeddings</td><td><code>POST /v1/embeddings</code></td></tr><tr><td>Images</td><td><code>POST /v1/images/generations</code></td></tr><tr><td>Audio (TTS)</td><td><code>POST /v1/audio/speech</code></td></tr><tr><td>Audio (STT)</td><td><code>POST /v1/audio/transcriptions</code></td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="anthropic">Anthropic<a href="#anthropic" class="hash-link" aria-label="Direct link to Anthropic" title="Direct link to Anthropic" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>功能</th><th>端点</th></tr></thead><tbody><tr><td>Messages</td><td><code>POST /v1/messages</code></td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="常用代码片段">常用代码片段<a href="#常用代码片段" class="hash-link" aria-label="Direct link to 常用代码片段" title="Direct link to 常用代码片段" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="openai-chat-completion">OpenAI Chat Completion<a href="#openai-chat-completion" class="hash-link" aria-label="Direct link to OpenAI Chat Completion" title="Direct link to OpenAI Chat Completion" translate="no">​</a></h3>
@@ -36,8 +167,95 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="langchain-rag-简化版">LangChain RAG 简化版<a href="#langchain-rag-简化版" class="hash-link" aria-label="Direct link to LangChain RAG 简化版" title="Direct link to LangChain RAG 简化版" translate="no">​</a></h3>
 <div class="language-python codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-python codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">from</span><span class="token plain"> langchain_openai </span><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> OpenAIEmbeddings</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> ChatOpenAI</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">from</span><span class="token plain"> langchain_community</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">vectorstores </span><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> Chroma</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">from</span><span class="token plain"> langchain_core</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">prompts </span><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> PromptTemplate</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">from</span><span class="token plain"> langchain</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">text_splitter </span><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> RecursiveCharacterTextSplitter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 1. 切分文档</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">splitter </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> RecursiveCharacterTextSplitter</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">chunk_size</span><span class="token operator" style="color:#393A34">=</span><span class="token number" style="color:#36acaa">1000</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> chunk_overlap</span><span class="token operator" style="color:#393A34">=</span><span class="token number" style="color:#36acaa">200</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">chunks </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> splitter</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">split_documents</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">documents</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 2. 存入向量库</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">vectorstore </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> Chroma</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">from_documents</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">chunks</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> OpenAIEmbeddings</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 3. 检索</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">retriever </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> vectorstore</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">as_retriever</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">search_kwargs</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token string" style="color:#e3116c">&quot;k&quot;</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">3</span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">docs </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> retriever</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">invoke</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;your question&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 4. 生成回答</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">llm </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> ChatOpenAI</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">model</span><span class="token operator" style="color:#393A34">=</span><span class="token string" style="color:#e3116c">&quot;gpt-4o&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">context </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;\n&quot;</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">join</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">doc</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">page_content </span><span class="token keyword" style="color:#00009f">for</span><span class="token plain"> doc </span><span class="token keyword" style="color:#00009f">in</span><span class="token plain"> docs</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">prompt </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string-interpolation string" style="color:#e3116c">f&quot;Context:\n</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">{</span><span class="token string-interpolation interpolation">context</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">}</span><span class="token string-interpolation string" style="color:#e3116c">\n\nQuestion: your question\n\nAnswer:&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">response </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> llm</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">invoke</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">prompt</span><span class="token punctuation" style="color:#393A34">)</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="embedding-模型对比">Embedding 模型对比<a href="#embedding-模型对比" class="hash-link" aria-label="Direct link to Embedding 模型对比" title="Direct link to Embedding 模型对比" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模型</th><th>提供商</th><th>维度</th><th>最大 Token</th><th>特点</th></tr></thead><tbody><tr><td>text-embedding-3-small</td><td>OpenAI</td><td>1536</td><td>8191</td><td>经济实惠</td></tr><tr><td>text-embedding-3-large</td><td>OpenAI</td><td>3072</td><td>8191</td><td>高精度</td></tr><tr><td>text-embedding-ada-002</td><td>OpenAI</td><td>1536</td><td>8191</td><td>旧版本</td></tr><tr><td>bge-large-zh</td><td>BAAI</td><td>1024</td><td>512</td><td>中文最佳开源</td></tr><tr><td>m3e-base</td><td>Moka</td><td>768</td><td>512</td><td>中文开源</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="向量数据库对比">向量数据库对比<a href="#向量数据库对比" class="hash-link" aria-label="Direct link to 向量数据库对比" title="Direct link to 向量数据库对比" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>数据库</th><th>类型</th><th>特点</th></tr></thead><tbody><tr><td><strong>Pinecone</strong></td><td>托管</td><td>易用，自动扩展</td></tr><tr><td><strong>Chroma</strong></td><td>开源</td><td>轻量，开发友好</td></tr><tr><td><strong>Milvus</strong></td><td>开源</td><td>高性能，生产级</td></tr><tr><td><strong>Qdrant</strong></td><td>开源</td><td>Rust 实现，快速</td></tr><tr><td><strong>pgvector</strong></td><td>扩展</td><td>PostgreSQL 插件</td></tr><tr><td><strong>Elasticsearch</strong></td><td>扩展</td><td>混合检索</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="prompt-模板">Prompt 模板<a href="#prompt-模板" class="hash-link" aria-label="Direct link to Prompt 模板" title="Direct link to Prompt 模板" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="通用助手">通用助手<a href="#通用助手" class="hash-link" aria-label="Direct link to 通用助手" title="Direct link to 通用助手" translate="no">​</a></h3>
@@ -54,7 +272,178 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="token-计算">Token 计算<a href="#token-计算" class="hash-link" aria-label="Direct link to Token 计算" title="Direct link to Token 计算" translate="no">​</a></h2>
 <div class="language-python codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-python codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">import</span><span class="token plain"> tiktoken</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">def</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">count_tokens</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">text</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">str</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> model</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">str</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;gpt-4o&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"> </span><span class="token builtin">int</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    enc </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> tiktoken</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encoding_for_model</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">model</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token builtin">len</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">enc</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">encode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">text</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># 使用</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tokens </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> count_tokens</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Hello, world!&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">print</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string-interpolation string" style="color:#e3116c">f&quot;Token 数量: </span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">{</span><span class="token string-interpolation interpolation">tokens</span><span class="token string-interpolation interpolation punctuation" style="color:#393A34">}</span><span class="token string-interpolation string" style="color:#e3116c">&quot;</span><span class="token punctuation" style="color:#393A34">)</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="成本估算">成本估算<a href="#成本估算" class="hash-link" aria-label="Direct link to 成本估算" title="Direct link to 成本估算" translate="no">​</a></h2>
-<table><thead><tr><th>模型</th><th>输入价格</th><th>输出价格</th></tr></thead><tbody><tr><td>GPT-4o</td><td>$2.50/1M</td><td>$10.00/1M</td></tr><tr><td>GPT-4o-mini</td><td>$0.15/1M</td><td>$0.60/1M</td></tr><tr><td>Claude 3.5 Sonnet</td><td>$3.00/1M</td><td>$15.00/1M</td></tr><tr><td>Claude 3.5 Haiku</td><td>$0.25/1M</td><td>$1.25/1M</td></tr></tbody></table>
-<p><em>价格单位：美元/百万 token，数据更新于 2024 年</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ai/security"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">🔐 Security（安全与隐私）</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/gemini-for-google-workspace-prompting-guide-101"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">📋 Gemini Workspace 提示词指南</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#模型参数速查" class="table-of-contents__link toc-highlight">模型参数速查</a><ul><li><a href="#通用生成参数" class="table-of-contents__link toc-highlight">通用生成参数</a></li><li><a href="#场景推荐配置" class="table-of-contents__link toc-highlight">场景推荐配置</a></li></ul></li><li><a href="#api-端点速查" class="table-of-contents__link toc-highlight">API 端点速查</a><ul><li><a href="#openai" class="table-of-contents__link toc-highlight">OpenAI</a></li><li><a href="#anthropic" class="table-of-contents__link toc-highlight">Anthropic</a></li></ul></li><li><a href="#常用代码片段" class="table-of-contents__link toc-highlight">常用代码片段</a><ul><li><a href="#openai-chat-completion" class="table-of-contents__link toc-highlight">OpenAI Chat Completion</a></li><li><a href="#openai-embedding" class="table-of-contents__link toc-highlight">OpenAI Embedding</a></li><li><a href="#anthropic-messages" class="table-of-contents__link toc-highlight">Anthropic Messages</a></li><li><a href="#langchain-基础" class="table-of-contents__link toc-highlight">LangChain 基础</a></li><li><a href="#langchain-rag-简化版" class="table-of-contents__link toc-highlight">LangChain RAG 简化版</a></li></ul></li><li><a href="#embedding-模型对比" class="table-of-contents__link toc-highlight">Embedding 模型对比</a></li><li><a href="#向量数据库对比" class="table-of-contents__link toc-highlight">向量数据库对比</a></li><li><a href="#prompt-模板" class="table-of-contents__link toc-highlight">Prompt 模板</a><ul><li><a href="#通用助手" class="table-of-contents__link toc-highlight">通用助手</a></li><li><a href="#rag-问答" class="table-of-contents__link toc-highlight">RAG 问答</a></li><li><a href="#结构化输出" class="table-of-contents__link toc-highlight">结构化输出</a></li></ul></li><li><a href="#常用命令" class="table-of-contents__link toc-highlight">常用命令</a><ul><li><a href="#安装依赖" class="table-of-contents__link toc-highlight">安装依赖</a></li><li><a href="#环境变量" class="table-of-contents__link toc-highlight">环境变量</a></li></ul></li><li><a href="#token-计算" class="table-of-contents__link toc-highlight">Token 计算</a></li><li><a href="#成本估算" class="table-of-contents__link toc-highlight">成本估算</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="文本模型">文本模型<a href="#文本模型" class="hash-link" aria-label="Direct link to 文本模型" title="Direct link to 文本模型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模型</th><th>输入价格</th><th>输出价格</th><th>上下文长度</th></tr></thead><tbody><tr><td>GPT-4o</td><td>$2.50/1M</td><td>$10.00/1M</td><td>128K</td></tr><tr><td>GPT-4o-mini</td><td>$0.15/1M</td><td>$0.60/1M</td><td>128K</td></tr><tr><td>o1</td><td>$15.00/1M</td><td>$60.00/1M</td><td>200K</td></tr><tr><td>o1-mini</td><td>$3.00/1M</td><td>$12.00/1M</td><td>128K</td></tr><tr><td>Claude 3.5 Sonnet</td><td>$3.00/1M</td><td>$15.00/1M</td><td>200K</td></tr><tr><td>Claude 3.5 Haiku</td><td>$0.80/1M</td><td>$4.00/1M</td><td>200K</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="embedding-模型">Embedding 模型<a href="#embedding-模型" class="hash-link" aria-label="Direct link to Embedding 模型" title="Direct link to Embedding 模型" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模型</th><th>价格</th><th>维度</th></tr></thead><tbody><tr><td>text-embedding-3-small</td><td>$0.02/1M</td><td>1536</td></tr><tr><td>text-embedding-3-large</td><td>$0.13/1M</td><td>3072</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="图像生成">图像生成<a href="#图像生成" class="hash-link" aria-label="Direct link to 图像生成" title="Direct link to 图像生成" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模型</th><th>分辨率</th><th>质量</th><th>价格</th></tr></thead><tbody><tr><td>DALL-E 3</td><td>1024x1024</td><td>standard</td><td>$0.040</td></tr><tr><td>DALL-E 3</td><td>1024x1024</td><td>hd</td><td>$0.080</td></tr><tr><td>DALL-E 3</td><td>1792x1024</td><td>standard</td><td>$0.080</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar__9bU" id="音频">音频<a href="#音频" class="hash-link" aria-label="Direct link to 音频" title="Direct link to 音频" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>服务</th><th>价格</th></tr></thead><tbody><tr><td>Whisper</td><td>$0.006 / 分钟</td></tr><tr><td>TTS</td><td>$15.00 / 1M 字符</td></tr><tr><td>TTS-HD</td><td>$30.00 / 1M 字符</td></tr></tbody></table>
+<p><em>价格单位：美元，数据更新于 2025 年 1 月</em></p>
+<h2 class="anchor anchorTargetStickyNavbar__9bU" id="模型选择指南">模型选择指南<a href="#模型选择指南" class="hash-link" aria-label="Direct link to 模型选择指南" title="Direct link to 模型选择指南" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>场景</th><th>推荐模型</th><th>备选</th></tr></thead><tbody><tr><td>日常对话</td><td>GPT-4o-mini</td><td>Claude 3.5 Haiku</td></tr><tr><td>复杂推理</td><td>o1 / GPT-4o</td><td>Claude 3.5 Sonnet</td></tr><tr><td>代码生成</td><td>Claude 3.5 Sonnet</td><td>GPT-4o</td></tr><tr><td>长文档处理</td><td>Claude 3.5 Sonnet</td><td>Gemini 1.5 Pro</td></tr><tr><td>图像理解</td><td>GPT-4o</td><td>Claude 3.5 Sonnet</td></tr><tr><td>成本敏感</td><td>GPT-4o-mini</td><td>Claude 3.5 Haiku</td></tr><tr><td>中文优化</td><td>Qwen2.5</td><td>DeepSeek</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/ai/quick-reference.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ai/security"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">🔐 Security（安全与隐私）</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ai/gemini-for-google-workspace-prompting-guide-101"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">📋 Gemini Workspace 提示词指南</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#模型参数速查" class="table-of-contents__link toc-highlight">模型参数速查</a><ul><li><a href="#通用生成参数" class="table-of-contents__link toc-highlight">通用生成参数</a></li><li><a href="#场景推荐配置" class="table-of-contents__link toc-highlight">场景推荐配置</a></li></ul></li><li><a href="#api-端点速查" class="table-of-contents__link toc-highlight">API 端点速查</a><ul><li><a href="#openai" class="table-of-contents__link toc-highlight">OpenAI</a></li><li><a href="#anthropic" class="table-of-contents__link toc-highlight">Anthropic</a></li></ul></li><li><a href="#常用代码片段" class="table-of-contents__link toc-highlight">常用代码片段</a><ul><li><a href="#openai-chat-completion" class="table-of-contents__link toc-highlight">OpenAI Chat Completion</a></li><li><a href="#openai-embedding" class="table-of-contents__link toc-highlight">OpenAI Embedding</a></li><li><a href="#anthropic-messages" class="table-of-contents__link toc-highlight">Anthropic Messages</a></li><li><a href="#langchain-基础" class="table-of-contents__link toc-highlight">LangChain 基础</a></li><li><a href="#langchain-rag-简化版" class="table-of-contents__link toc-highlight">LangChain RAG 简化版</a></li></ul></li><li><a href="#embedding-模型对比" class="table-of-contents__link toc-highlight">Embedding 模型对比</a></li><li><a href="#向量数据库对比" class="table-of-contents__link toc-highlight">向量数据库对比</a></li><li><a href="#prompt-模板" class="table-of-contents__link toc-highlight">Prompt 模板</a><ul><li><a href="#通用助手" class="table-of-contents__link toc-highlight">通用助手</a></li><li><a href="#rag-问答" class="table-of-contents__link toc-highlight">RAG 问答</a></li><li><a href="#结构化输出" class="table-of-contents__link toc-highlight">结构化输出</a></li></ul></li><li><a href="#常用命令" class="table-of-contents__link toc-highlight">常用命令</a><ul><li><a href="#安装依赖" class="table-of-contents__link toc-highlight">安装依赖</a></li><li><a href="#环境变量" class="table-of-contents__link toc-highlight">环境变量</a></li></ul></li><li><a href="#token-计算" class="table-of-contents__link toc-highlight">Token 计算</a></li><li><a href="#成本估算" class="table-of-contents__link toc-highlight">成本估算</a><ul><li><a href="#文本模型" class="table-of-contents__link toc-highlight">文本模型</a></li><li><a href="#embedding-模型" class="table-of-contents__link toc-highlight">Embedding 模型</a></li><li><a href="#图像生成" class="table-of-contents__link toc-highlight">图像生成</a></li><li><a href="#音频" class="table-of-contents__link toc-highlight">音频</a></li></ul></li><li><a href="#模型选择指南" class="table-of-contents__link toc-highlight">模型选择指南</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

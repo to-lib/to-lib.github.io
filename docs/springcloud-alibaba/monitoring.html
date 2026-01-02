@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">监控与运维 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/springcloud-alibaba/monitoring"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="监控与运维 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!IMPORTANT]"><meta data-rh="true" property="og:description" content="[!IMPORTANT]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/springcloud-alibaba/monitoring"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/springcloud-alibaba/monitoring" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/springcloud-alibaba/monitoring" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"监控与运维","item":"https://to-lib.github.io/docs/springcloud-alibaba/monitoring"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -28,6 +35,36 @@
 <li class="">命名空间管理</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键指标">关键指标<a href="#关键指标" class="hash-link" aria-label="Direct link to 关键指标" title="Direct link to 关键指标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>正常范围</th></tr></thead><tbody><tr><td>服务实例数</td><td>注册的服务实例数</td><td>-</td></tr><tr><td>健康实例比例</td><td>健康实例/总实例</td><td>&gt; 80%</td></tr><tr><td>配置变更次数</td><td>配置修改频率</td><td>-</td></tr><tr><td>服务订阅数</td><td>服务被订阅次数</td><td>-</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="metrics-接口">Metrics 接口<a href="#metrics-接口" class="hash-link" aria-label="Direct link to Metrics 接口" title="Direct link to Metrics 接口" translate="no">​</a></h3>
 <p>Nacos 提供 Prometheus 格式的 Metrics:</p>
@@ -48,6 +85,35 @@
 <li class="">机器列表</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="实时监控指标">实时监控指标<a href="#实时监控指标" class="hash-link" aria-label="Direct link to 实时监控指标" title="Direct link to 实时监控指标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th></tr></thead><tbody><tr><td>QPS</td><td>每秒请求数</td></tr><tr><td>通过 QPS</td><td>通过的请求数</td></tr><tr><td>拒绝 QPS</td><td>被限流的请求数</td></tr><tr><td>异常 QPS</td><td>异常的请求数</td></tr><tr><td>平均响应时间</td><td>响应时间</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="metrics-接口-1">Metrics 接口<a href="#metrics-接口-1" class="hash-link" aria-label="Direct link to Metrics 接口" title="Direct link to Metrics 接口" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@RestController</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class MetricsController {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @GetMapping(&quot;/metrics&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public Map&lt;String, Object&gt; getMetrics() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Map&lt;String, Object&gt; metrics = new HashMap&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 获取所有资源的统计信息</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        for (String resource : InMemoryMetricsRepository.getInstance().listResourcesOfType(MetricEvent.PASS)) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            metrics.put(resource, InMemoryMetricsRepository.getInstance()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                .queryByAppAndResourceBetween(resource, 0, System.currentTimeMillis()));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return metrics;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -61,6 +127,36 @@
 <li class="">全局锁查询</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键指标-1">关键指标<a href="#关键指标-1" class="hash-link" aria-label="Direct link to 关键指标" title="Direct link to 关键指标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>告警阈值</th></tr></thead><tbody><tr><td>活跃全局事务数</td><td>正在执行的全局事务</td><td>&gt; 1000</td></tr><tr><td>全局事务超时数</td><td>超时的全局事务</td><td>&gt; 0</td></tr><tr><td>事务提交成功率</td><td>提交成功/总事务</td><td>&lt; 95%</td></tr><tr><td>事务回滚率</td><td>回滚/总事务</td><td>&gt; 5%</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="日志监控-1">日志监控<a href="#日志监控-1" class="hash-link" aria-label="Direct link to 日志监控" title="Direct link to 日志监控" translate="no">​</a></h3>
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain"># Seata Server 日志</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">${seata.home}/logs/seata_gc.log</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">${seata.home}/logs/seata.log</span><br></span></code></pre></div></div>
@@ -74,6 +170,36 @@
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/apache/rocketmq-dashboard.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd rocketmq-dashboard</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mvn clean package -Dmaven.test.skip=true</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">java -jar target/rocketmq-dashboard-1.0.0.jar</span><br></span></code></pre></div></div>
 <p><strong>访问</strong>: <code>http://localhost:8080</code></p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键指标-2">关键指标<a href="#关键指标-2" class="hash-link" aria-label="Direct link to 关键指标" title="Direct link to 关键指标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th><th>告警阈值</th></tr></thead><tbody><tr><td>消息堆积数</td><td>未消费的消息数</td><td>&gt; 10000</td></tr><tr><td>消费 TPS</td><td>每秒消费消息数</td><td>-</td></tr><tr><td>生产 TPS</td><td>每秒生产消息数</td><td>-</td></tr><tr><td>消费延迟</td><td>消息延迟时间</td><td>&gt; 1s</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="消息堆积监控">消息堆积监控<a href="#消息堆积监控" class="hash-link" aria-label="Direct link to 消息堆积监控" title="Direct link to 消息堆积监控" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class RocketMQMonitor {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Autowired</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private DefaultMQAdminExt mqAdminExt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public long getMessageBacklog(String consumerGroup, String topic) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        try {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            ConsumeStats consumeStats = mqAdminExt.examineConsumeStats(consumerGroup);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            long diff = consumeStats.computeTotalDiff();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            return diff;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        } catch (Exception e) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            log.error(&quot;获取消息堆积失败&quot;, e);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            return -1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -83,6 +209,35 @@
 <div class="language-bash codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-bash codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/apache/dubbo-admin.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd dubbo-admin</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">mvn clean package</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd dubbo-admin-distribution/target</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">java -jar dubbo-admin-0.6.0.jar</span><br></span></code></pre></div></div>
 <p><strong>访问</strong>: <code>http://localhost:8080</code></p>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键指标-3">关键指标<a href="#关键指标-3" class="hash-link" aria-label="Direct link to 关键指标" title="Direct link to 关键指标" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>指标</th><th>说明</th></tr></thead><tbody><tr><td>服务提供者数</td><td>Provider 数量</td></tr><tr><td>服务消费者数</td><td>Consumer 数量</td></tr><tr><td>调用成功率</td><td>成功/总调用</td></tr><tr><td>平均响应时间</td><td>平均 RT</td></tr><tr><td>调用 QPS</td><td>每秒调用数</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="6-spring-boot-actuator">6. Spring Boot Actuator<a href="#6-spring-boot-actuator" class="hash-link" aria-label="Direct link to 6. Spring Boot Actuator" title="Direct link to 6. Spring Boot Actuator" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="添加依赖">添加依赖<a href="#添加依赖" class="hash-link" aria-label="Direct link to 添加依赖" title="Direct link to 添加依赖" translate="no">​</a></h3>
@@ -90,6 +245,46 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="配置">配置<a href="#配置" class="hash-link" aria-label="Direct link to 配置" title="Direct link to 配置" translate="no">​</a></h3>
 <div class="language-yaml codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-yaml codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token key atrule" style="color:#00a4db">management</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">endpoints</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">web</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">exposure</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">include</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;*&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">endpoint</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">health</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">show-details</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> always</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token key atrule" style="color:#00a4db">metrics</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token key atrule" style="color:#00a4db">export</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token key atrule" style="color:#00a4db">prometheus</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token key atrule" style="color:#00a4db">enabled</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean important" style="color:#36acaa">true</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="核心端点">核心端点<a href="#核心端点" class="hash-link" aria-label="Direct link to 核心端点" title="Direct link to 核心端点" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>端点</th><th>说明</th><th>URL</th></tr></thead><tbody><tr><td>health</td><td>健康检查</td><td>/actuator/health</td></tr><tr><td>info</td><td>应用信息</td><td>/actuator/info</td></tr><tr><td>metrics</td><td>度量指标</td><td>/actuator/metrics</td></tr><tr><td>prometheus</td><td>Prometheus格式</td><td>/actuator/prometheus</td></tr><tr><td>env</td><td>环境变量</td><td>/actuator/env</td></tr><tr><td>beans</td><td>Spring Beans</td><td>/actuator/beans</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="自定义健康检查">自定义健康检查<a href="#自定义健康检查" class="hash-link" aria-label="Direct link to 自定义健康检查" title="Direct link to 自定义健康检查" translate="no">​</a></h3>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">@Component</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public class CustomHealthIndicator implements HealthIndicator {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    @Override</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public Health health() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 检查数据库连接</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        if (checkDatabase()) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            return Health.up()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                .withDetail(&quot;database&quot;, &quot;MySQL&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                .withDetail(&quot;status&quot;, &quot;UP&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">                .build();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return Health.down()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            .withDetail(&quot;database&quot;, &quot;MySQL&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            .withDetail(&quot;error&quot;, &quot;连接失败&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">            .build();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    private boolean checkDatabase() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        // 实际检查逻辑</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        return true;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -184,12 +379,12 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="13-总结">13. 总结<a href="#13-总结" class="hash-link" aria-label="Direct link to 13. 总结" title="Direct link to 13. 总结" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="监控覆盖">监控覆盖<a href="#监控覆盖" class="hash-link" aria-label="Direct link to 监控覆盖" title="Direct link to 监控覆盖" translate="no">​</a></h3>
 <ul class="contains-task-list containsTaskList_uYv3">
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->基础设施监控 (CPU、内存、磁盘、网络)</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->应用监控 (QPS、RT、错误率)</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->中间件监控 (Nacos、Sentinel、RocketMQ)</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->数据库监控 (MySQL、Redis)</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->日志收集和分析</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->链路追踪</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 基础设施监控 (CPU、内存、磁盘、网络)</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 应用监控 (QPS、RT、错误率)</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 中间件监控 (Nacos、Sentinel、RocketMQ)</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 数据库监控 (MySQL、Redis)</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 日志收集和分析</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> 链路追踪</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="关键要点">关键要点<a href="#关键要点" class="hash-link" aria-label="Direct link to 关键要点" title="Direct link to 关键要点" translate="no">​</a></h3>
 <ul>
@@ -199,6 +394,6 @@
 <li class="">定期review监控指标</li>
 </ul>
 <hr>
-<p><strong>下一步</strong>: 学习 <a class="" href="/docs/springcloud-alibaba/faq">FAQ 常见问题</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/springcloud-alibaba/monitoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/springcloud-alibaba/service-governance"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">服务治理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/springcloud-alibaba/security-and-access"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">安全与权限</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-nacos-监控" class="table-of-contents__link toc-highlight">1. Nacos 监控</a><ul><li><a href="#nacos-控制台" class="table-of-contents__link toc-highlight">Nacos 控制台</a></li><li><a href="#关键指标" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#metrics-接口" class="table-of-contents__link toc-highlight">Metrics 接口</a></li><li><a href="#日志监控" class="table-of-contents__link toc-highlight">日志监控</a></li></ul></li><li><a href="#2-sentinel-监控" class="table-of-contents__link toc-highlight">2. Sentinel 监控</a><ul><li><a href="#sentinel-dashboard" class="table-of-contents__link toc-highlight">Sentinel Dashboard</a></li><li><a href="#实时监控指标" class="table-of-contents__link toc-highlight">实时监控指标</a></li><li><a href="#metrics-接口-1" class="table-of-contents__link toc-highlight">Metrics 接口</a></li></ul></li><li><a href="#3-seata-监控" class="table-of-contents__link toc-highlight">3. Seata 监控</a><ul><li><a href="#seata-server-控制台" class="table-of-contents__link toc-highlight">Seata Server 控制台</a></li><li><a href="#关键指标-1" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#日志监控-1" class="table-of-contents__link toc-highlight">日志监控</a></li><li><a href="#metrics-集成" class="table-of-contents__link toc-highlight">Metrics 集成</a></li></ul></li><li><a href="#4-rocketmq-监控" class="table-of-contents__link toc-highlight">4. RocketMQ 监控</a><ul><li><a href="#rocketmq-dashboard" class="table-of-contents__link toc-highlight">RocketMQ Dashboard</a></li><li><a href="#关键指标-2" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#消息堆积监控" class="table-of-contents__link toc-highlight">消息堆积监控</a></li></ul></li><li><a href="#5-dubbo-监控" class="table-of-contents__link toc-highlight">5. Dubbo 监控</a><ul><li><a href="#dubbo-admin" class="table-of-contents__link toc-highlight">Dubbo Admin</a></li><li><a href="#关键指标-3" class="table-of-contents__link toc-highlight">关键指标</a></li></ul></li><li><a href="#6-spring-boot-actuator" class="table-of-contents__link toc-highlight">6. Spring Boot Actuator</a><ul><li><a href="#添加依赖" class="table-of-contents__link toc-highlight">添加依赖</a></li><li><a href="#配置" class="table-of-contents__link toc-highlight">配置</a></li><li><a href="#核心端点" class="table-of-contents__link toc-highlight">核心端点</a></li><li><a href="#自定义健康检查" class="table-of-contents__link toc-highlight">自定义健康检查</a></li></ul></li><li><a href="#7-prometheus--grafana" class="table-of-contents__link toc-highlight">7. Prometheus + Grafana</a><ul><li><a href="#prometheus-配置" class="table-of-contents__link toc-highlight">Prometheus 配置</a></li><li><a href="#grafana-dashboard" class="table-of-contents__link toc-highlight">Grafana Dashboard</a></li><li><a href="#关键指标面板" class="table-of-contents__link toc-highlight">关键指标面板</a></li></ul></li><li><a href="#8-日志收集-elk" class="table-of-contents__link toc-highlight">8. 日志收集 (ELK)</a><ul><li><a href="#架构" class="table-of-contents__link toc-highlight">架构</a></li><li><a href="#logback-配置" class="table-of-contents__link toc-highlight">Logback 配置</a></li></ul></li><li><a href="#9-链路追踪-sleuth--zipkin" class="table-of-contents__link toc-highlight">9. 链路追踪 (Sleuth + Zipkin)</a><ul><li><a href="#添加依赖-1" class="table-of-contents__link toc-highlight">添加依赖</a></li><li><a href="#配置-1" class="table-of-contents__link toc-highlight">配置</a></li><li><a href="#zipkin-server" class="table-of-contents__link toc-highlight">Zipkin Server</a></li></ul></li><li><a href="#10-告警配置" class="table-of-contents__link toc-highlight">10. 告警配置</a><ul><li><a href="#prometheus-alertmanager" class="table-of-contents__link toc-highlight">Prometheus Alertmanager</a></li><li><a href="#alertmanager-配置" class="table-of-contents__link toc-highlight">Alertmanager 配置</a></li></ul></li><li><a href="#11-监控最佳实践" class="table-of-contents__link toc-highlight">11. 监控最佳实践</a><ul><li><a href="#核心指标-red" class="table-of-contents__link toc-highlight">核心指标 (RED)</a></li><li><a href="#黄金指标-use" class="table-of-contents__link toc-highlight">黄金指标 (USE)</a></li><li><a href="#告警原则" class="table-of-contents__link toc-highlight">告警原则</a></li><li><a href="#日志规范" class="table-of-contents__link toc-highlight">日志规范</a></li></ul></li><li><a href="#12-运维工具脚本" class="table-of-contents__link toc-highlight">12. 运维工具脚本</a><ul><li><a href="#健康检查脚本" class="table-of-contents__link toc-highlight">健康检查脚本</a></li><li><a href="#日志分析脚本" class="table-of-contents__link toc-highlight">日志分析脚本</a></li></ul></li><li><a href="#13-总结" class="table-of-contents__link toc-highlight">13. 总结</a><ul><li><a href="#监控覆盖" class="table-of-contents__link toc-highlight">监控覆盖</a></li><li><a href="#关键要点" class="table-of-contents__link toc-highlight">关键要点</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>下一步</strong>: 学习 <a class="" href="/docs/springcloud-alibaba/faq">FAQ 常见问题</a></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/springcloud-alibaba/monitoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/springcloud-alibaba/service-governance"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">服务治理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/springcloud-alibaba/security-and-access"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">安全与权限</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-nacos-监控" class="table-of-contents__link toc-highlight">1. Nacos 监控</a><ul><li><a href="#nacos-控制台" class="table-of-contents__link toc-highlight">Nacos 控制台</a></li><li><a href="#关键指标" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#metrics-接口" class="table-of-contents__link toc-highlight">Metrics 接口</a></li><li><a href="#日志监控" class="table-of-contents__link toc-highlight">日志监控</a></li></ul></li><li><a href="#2-sentinel-监控" class="table-of-contents__link toc-highlight">2. Sentinel 监控</a><ul><li><a href="#sentinel-dashboard" class="table-of-contents__link toc-highlight">Sentinel Dashboard</a></li><li><a href="#实时监控指标" class="table-of-contents__link toc-highlight">实时监控指标</a></li><li><a href="#metrics-接口-1" class="table-of-contents__link toc-highlight">Metrics 接口</a></li></ul></li><li><a href="#3-seata-监控" class="table-of-contents__link toc-highlight">3. Seata 监控</a><ul><li><a href="#seata-server-控制台" class="table-of-contents__link toc-highlight">Seata Server 控制台</a></li><li><a href="#关键指标-1" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#日志监控-1" class="table-of-contents__link toc-highlight">日志监控</a></li><li><a href="#metrics-集成" class="table-of-contents__link toc-highlight">Metrics 集成</a></li></ul></li><li><a href="#4-rocketmq-监控" class="table-of-contents__link toc-highlight">4. RocketMQ 监控</a><ul><li><a href="#rocketmq-dashboard" class="table-of-contents__link toc-highlight">RocketMQ Dashboard</a></li><li><a href="#关键指标-2" class="table-of-contents__link toc-highlight">关键指标</a></li><li><a href="#消息堆积监控" class="table-of-contents__link toc-highlight">消息堆积监控</a></li></ul></li><li><a href="#5-dubbo-监控" class="table-of-contents__link toc-highlight">5. Dubbo 监控</a><ul><li><a href="#dubbo-admin" class="table-of-contents__link toc-highlight">Dubbo Admin</a></li><li><a href="#关键指标-3" class="table-of-contents__link toc-highlight">关键指标</a></li></ul></li><li><a href="#6-spring-boot-actuator" class="table-of-contents__link toc-highlight">6. Spring Boot Actuator</a><ul><li><a href="#添加依赖" class="table-of-contents__link toc-highlight">添加依赖</a></li><li><a href="#配置" class="table-of-contents__link toc-highlight">配置</a></li><li><a href="#核心端点" class="table-of-contents__link toc-highlight">核心端点</a></li><li><a href="#自定义健康检查" class="table-of-contents__link toc-highlight">自定义健康检查</a></li></ul></li><li><a href="#7-prometheus--grafana" class="table-of-contents__link toc-highlight">7. Prometheus + Grafana</a><ul><li><a href="#prometheus-配置" class="table-of-contents__link toc-highlight">Prometheus 配置</a></li><li><a href="#grafana-dashboard" class="table-of-contents__link toc-highlight">Grafana Dashboard</a></li><li><a href="#关键指标面板" class="table-of-contents__link toc-highlight">关键指标面板</a></li></ul></li><li><a href="#8-日志收集-elk" class="table-of-contents__link toc-highlight">8. 日志收集 (ELK)</a><ul><li><a href="#架构" class="table-of-contents__link toc-highlight">架构</a></li><li><a href="#logback-配置" class="table-of-contents__link toc-highlight">Logback 配置</a></li></ul></li><li><a href="#9-链路追踪-sleuth--zipkin" class="table-of-contents__link toc-highlight">9. 链路追踪 (Sleuth + Zipkin)</a><ul><li><a href="#添加依赖-1" class="table-of-contents__link toc-highlight">添加依赖</a></li><li><a href="#配置-1" class="table-of-contents__link toc-highlight">配置</a></li><li><a href="#zipkin-server" class="table-of-contents__link toc-highlight">Zipkin Server</a></li></ul></li><li><a href="#10-告警配置" class="table-of-contents__link toc-highlight">10. 告警配置</a><ul><li><a href="#prometheus-alertmanager" class="table-of-contents__link toc-highlight">Prometheus Alertmanager</a></li><li><a href="#alertmanager-配置" class="table-of-contents__link toc-highlight">Alertmanager 配置</a></li></ul></li><li><a href="#11-监控最佳实践" class="table-of-contents__link toc-highlight">11. 监控最佳实践</a><ul><li><a href="#核心指标-red" class="table-of-contents__link toc-highlight">核心指标 (RED)</a></li><li><a href="#黄金指标-use" class="table-of-contents__link toc-highlight">黄金指标 (USE)</a></li><li><a href="#告警原则" class="table-of-contents__link toc-highlight">告警原则</a></li><li><a href="#日志规范" class="table-of-contents__link toc-highlight">日志规范</a></li></ul></li><li><a href="#12-运维工具脚本" class="table-of-contents__link toc-highlight">12. 运维工具脚本</a><ul><li><a href="#健康检查脚本" class="table-of-contents__link toc-highlight">健康检查脚本</a></li><li><a href="#日志分析脚本" class="table-of-contents__link toc-highlight">日志分析脚本</a></li></ul></li><li><a href="#13-总结" class="table-of-contents__link toc-highlight">13. 总结</a><ul><li><a href="#监控覆盖" class="table-of-contents__link toc-highlight">监控覆盖</a></li><li><a href="#关键要点" class="table-of-contents__link toc-highlight">关键要点</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

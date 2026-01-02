@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Java 面试题 | TechLib - 开发者知识库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://to-lib.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://to-lib.github.io/docs/interview/java-interview-questions"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Java 面试题 | TechLib - 开发者知识库"><meta data-rh="true" name="description" content="[!TIP]"><meta data-rh="true" property="og:description" content="[!TIP]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://to-lib.github.io/docs/interview/java-interview-questions"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/java-interview-questions" hreflang="en"><link data-rh="true" rel="alternate" href="https://to-lib.github.io/docs/interview/java-interview-questions" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Java 面试题","item":"https://to-lib.github.io/docs/interview/java-interview-questions"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="TechLib - 开发者知识库 RSS Feed">
-<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed"><link rel="stylesheet" href="/assets/css/styles.98a981a1.css">
-<script src="/assets/js/runtime~main.62c1b3b3.js" defer="defer"></script>
-<script src="/assets/js/main.adafc4b2.js" defer="defer"></script>
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="TechLib - 开发者知识库 Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smOFZETl1RojAnj1Q3LqyqZP/EaGzz0YsZvs0jTfnXADWY" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.e3a887e5.css">
+<script src="/assets/js/runtime~main.2c045b89.js" defer="defer"></script>
+<script src="/assets/js/main.f04b6832.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -21,7 +28,7 @@
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="1-java-的基本数据类型有哪些占用多少字节">1. Java 的基本数据类型有哪些？占用多少字节？<a href="#1-java-的基本数据类型有哪些占用多少字节" class="hash-link" aria-label="Direct link to 1. Java 的基本数据类型有哪些？占用多少字节？" title="Direct link to 1. Java 的基本数据类型有哪些？占用多少字节？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
 <ul>
-<li class="">8 种基本数据类型：<!-- -->
+<li class="">8 种基本数据类型：
 <ul>
 <li class="">整型：<code>byte</code>(1 字节)、<code>short</code>(2 字节)、<code>int</code>(4 字节)、<code>long</code>(8 字节)</li>
 <li class="">浮点型：<code>float</code>(4 字节)、<code>double</code>(8 字节)</li>
@@ -68,6 +75,46 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="5-抽象类和接口的区别">5. 抽象类和接口的区别？<a href="#5-抽象类和接口的区别" class="hash-link" aria-label="Direct link to 5. 抽象类和接口的区别？" title="Direct link to 5. 抽象类和接口的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>抽象类</th><th>接口</th></tr></thead><tbody><tr><td>关键字</td><td><code>abstract class</code></td><td><code>interface</code></td></tr><tr><td>继承</td><td>单继承</td><td>多实现</td></tr><tr><td>方法</td><td>可以有抽象和具体方法</td><td>Java 8+ 可以有 default 和 static 方法</td></tr><tr><td>成员变量</td><td>可以有实例变量</td><td>只能有 public static final 常量</td></tr><tr><td>构造方法</td><td>可以有构造方法</td><td>不能有构造方法</td></tr><tr><td>访问修饰符</td><td>可以有各种修饰符</td><td>方法默认 public abstract</td></tr></tbody></table>
 <p><strong>使用场景：</strong></p>
 <ul>
@@ -99,6 +146,41 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-集合框架中级">🎯 集合框架（中级）<a href="#-集合框架中级" class="hash-link" aria-label="Direct link to 🎯 集合框架（中级）" title="Direct link to 🎯 集合框架（中级）" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="7-arraylist-和-linkedlist-的区别">7. ArrayList 和 LinkedList 的区别？<a href="#7-arraylist-和-linkedlist-的区别" class="hash-link" aria-label="Direct link to 7. ArrayList 和 LinkedList 的区别？" title="Direct link to 7. ArrayList 和 LinkedList 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>ArrayList</th><th>LinkedList</th></tr></thead><tbody><tr><td>底层结构</td><td>动态数组</td><td>双向链表</td></tr><tr><td>随机访问</td><td>O(1) - 快</td><td>O(n) - 慢</td></tr><tr><td>插入/删除（中间）</td><td>O(n) - 需要移动元素</td><td>O(1) - 只需改指针</td></tr><tr><td>内存占用</td><td>连续内存，可能浪费</td><td>每个节点额外存储两个指针</td></tr><tr><td>适用场景</td><td>频繁查询</td><td>频繁插入删除</td></tr></tbody></table>
 <p><strong>性能测试：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// ArrayList适合随机访问</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">List&lt;Integer&gt; arrayList = new ArrayList&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">arrayList.get(1000);  // 快速</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// LinkedList适合头尾操作</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LinkedList&lt;Integer&gt; linkedList = new LinkedList&lt;&gt;();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">linkedList.addFirst(1);  // 快速</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">linkedList.addLast(2);   // 快速</span><br></span></code></pre></div></div>
@@ -140,7 +222,37 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="9-hashmap-和-concurrenthashmap-的区别">9. HashMap 和 ConcurrentHashMap 的区别？<a href="#9-hashmap-和-concurrenthashmap-的区别" class="hash-link" aria-label="Direct link to 9. HashMap 和 ConcurrentHashMap 的区别？" title="Direct link to 9. HashMap 和 ConcurrentHashMap 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
-<table><thead><tr><th>特性</th><th>HashMap</th><th>ConcurrentHashMap</th></tr></thead><tbody><tr><td>线程安全</td><td>非线程安全</td><td>线程安全</td></tr><tr><td>并发性能</td><td>高（无锁）</td><td>较高（分段锁/CAS）</td></tr><tr><td>null 键值</td><td>允许一个 null 键</td><td>不允许 null 键值</td></tr><tr><td>实现方式</td><td>简单数组+链表/树</td><td>JDK1.7:分段锁<br>JDK1.8<!-- -->:CAS<!-- -->+synchronized</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th>HashMap</th><th>ConcurrentHashMap</th></tr></thead><tbody><tr><td>线程安全</td><td>非线程安全</td><td>线程安全</td></tr><tr><td>并发性能</td><td>高（无锁）</td><td>较高（分段锁/CAS）</td></tr><tr><td>null 键值</td><td>允许一个 null 键</td><td>不允许 null 键值</td></tr><tr><td>实现方式</td><td>简单数组+链表/树</td><td>JDK1.7:分段锁<br>JDK1.8:CAS+synchronized</td></tr></tbody></table>
 <p><strong>ConcurrentHashMap 实现（JDK 1.8）：</strong></p>
 <ul>
 <li class="">使用 CAS + synchronized 实现线程安全</li>
@@ -177,6 +289,41 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="12-synchronized-和-lock-的区别">12. synchronized 和 Lock 的区别？<a href="#12-synchronized-和-lock-的区别" class="hash-link" aria-label="Direct link to 12. synchronized 和 Lock 的区别？" title="Direct link to 12. synchronized 和 Lock 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>特性</th><th>synchronized</th><th>ReentrantLock</th></tr></thead><tbody><tr><td>类型</td><td>关键字，JVM 层面</td><td>类，API 层面</td></tr><tr><td>锁释放</td><td>自动释放</td><td>手动释放（finally 中）</td></tr><tr><td>灵活性</td><td>低</td><td>高（可中断、超时、公平锁）</td></tr><tr><td>性能</td><td>JDK1.6 优化后相当</td><td>略高（复杂场景）</td></tr><tr><td>条件变量</td><td>只有一个 wait/notify</td><td>可以有多个 Condition</td></tr></tbody></table>
 <p><strong>synchronized 示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">public synchronized void method() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 自动加锁和释放</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -289,6 +436,36 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-异常处理中级">🎯 异常处理（中级）<a href="#-异常处理中级" class="hash-link" aria-label="Direct link to 🎯 异常处理（中级）" title="Direct link to 🎯 异常处理（中级）" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="17-checked-exception-和-unchecked-exception-的区别">17. Checked Exception 和 Unchecked Exception 的区别？<a href="#17-checked-exception-和-unchecked-exception-的区别" class="hash-link" aria-label="Direct link to 17. Checked Exception 和 Unchecked Exception 的区别？" title="Direct link to 17. Checked Exception 和 Unchecked Exception 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>类型</th><th>Checked Exception</th><th>Unchecked Exception</th></tr></thead><tbody><tr><td>继承关系</td><td>Exception（除 RuntimeException）</td><td>RuntimeException</td></tr><tr><td>编译检查</td><td>必须捕获或声明抛出</td><td>不强制处理</td></tr><tr><td>常见例子</td><td>IOException、SQLException</td><td>NullPointerException、IndexOutOfBoundsException</td></tr><tr><td>使用场景</td><td>可预期的异常情况</td><td>编程错误</td></tr></tbody></table>
 <p><strong>示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">// Checked Exception - 必须处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public void readFile() throws IOException {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    FileReader reader = new FileReader(&quot;file.txt&quot;);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">// Unchecked Exception - 可不处理</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">public void divide(int a, int b) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    int result = a / b;  // 可能抛出ArithmeticException</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -307,6 +484,31 @@
 <h2 class="anchor anchorTargetStickyNavbar__9bU" id="-io-流中级">🎯 IO 流（中级）<a href="#-io-流中级" class="hash-link" aria-label="Direct link to 🎯 IO 流（中级）" title="Direct link to 🎯 IO 流（中级）" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar__9bU" id="19-bionioaio-的区别">19. BIO、NIO、AIO 的区别？<a href="#19-bionioaio-的区别" class="hash-link" aria-label="Direct link to 19. BIO、NIO、AIO 的区别？" title="Direct link to 19. BIO、NIO、AIO 的区别？" translate="no">​</a></h3>
 <p><strong>答案要点：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>模型</th><th>说明</th><th>特点</th></tr></thead><tbody><tr><td>BIO</td><td>Blocking IO 同步阻塞</td><td>一线程一连接，阻塞等待</td></tr><tr><td>NIO</td><td>Non-blocking IO 同步非阻塞</td><td>一线程多连接，Selector 轮询</td></tr><tr><td>AIO</td><td>Asynchronous IO 异步非阻塞</td><td>回调通知，真正异步</td></tr></tbody></table>
 <p><strong>BIO 示例：</strong></p>
 <div class="language-java codeBlockContainer_WMw_ theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_wTBs"><pre tabindex="0" class="prism-code language-java codeBlock_Nmz_ thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_Uft3"><span class="token-line" style="color:#393A34"><span class="token plain">ServerSocket server = new ServerSocket(8080);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">while (true) {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Socket socket = server.accept();  // 阻塞等待</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // 每个连接需要一个线程</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    new Thread(() -&gt; handleRequest(socket)).start();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
@@ -357,6 +559,6 @@
 <li class=""><a class="" href="/docs/interview/java-design-patterns-interview-questions">设计模式面试题</a></li>
 </ul>
 <hr>
-<p><strong>持续更新中...</strong> 欢迎反馈和补充！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/java-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">面试题库</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/java-senior"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Java 高级面试题精选</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-基础语法初级" class="table-of-contents__link toc-highlight">🎯 基础语法（初级）</a><ul><li><a href="#1-java-的基本数据类型有哪些占用多少字节" class="table-of-contents__link toc-highlight">1. Java 的基本数据类型有哪些？占用多少字节？</a></li><li><a href="#2--和-equals-的区别" class="table-of-contents__link toc-highlight">2. <code>==</code> 和 <code>equals()</code> 的区别？</a></li><li><a href="#3-stringstringbuilderstringbuffer-的区别" class="table-of-contents__link toc-highlight">3. String、StringBuilder、StringBuffer 的区别？</a></li></ul></li><li><a href="#-面向对象中级" class="table-of-contents__link toc-highlight">🎯 面向对象（中级）</a><ul><li><a href="#4-java-面向对象的三大特性是什么" class="table-of-contents__link toc-highlight">4. Java 面向对象的三大特性是什么？</a></li><li><a href="#5-抽象类和接口的区别" class="table-of-contents__link toc-highlight">5. 抽象类和接口的区别？</a></li><li><a href="#6-重载overload和重写override的区别" class="table-of-contents__link toc-highlight">6. 重载（Overload）和重写（Override）的区别？</a></li></ul></li><li><a href="#-集合框架中级" class="table-of-contents__link toc-highlight">🎯 集合框架（中级）</a><ul><li><a href="#7-arraylist-和-linkedlist-的区别" class="table-of-contents__link toc-highlight">7. ArrayList 和 LinkedList 的区别？</a></li><li><a href="#8-hashmap-的底层实现原理" class="table-of-contents__link toc-highlight">8. HashMap 的底层实现原理？</a></li><li><a href="#9-hashmap-和-concurrenthashmap-的区别" class="table-of-contents__link toc-highlight">9. HashMap 和 ConcurrentHashMap 的区别？</a></li><li><a href="#10-hashset-如何保证元素不重复" class="table-of-contents__link toc-highlight">10. HashSet 如何保证元素不重复？</a></li></ul></li><li><a href="#-多线程高级" class="table-of-contents__link toc-highlight">🎯 多线程（高级）</a><ul><li><a href="#11-创建线程的几种方式" class="table-of-contents__link toc-highlight">11. 创建线程的几种方式？</a></li><li><a href="#12-synchronized-和-lock-的区别" class="table-of-contents__link toc-highlight">12. synchronized 和 Lock 的区别？</a></li><li><a href="#13-volatile-关键字的作用" class="table-of-contents__link toc-highlight">13. volatile 关键字的作用？</a></li><li><a href="#14-线程池的核心参数有哪些" class="table-of-contents__link toc-highlight">14. 线程池的核心参数有哪些？</a></li></ul></li><li><a href="#-jvm高级" class="table-of-contents__link toc-highlight">🎯 JVM（高级）</a><ul><li><a href="#15-jvm-内存结构有哪些区域" class="table-of-contents__link toc-highlight">15. JVM 内存结构有哪些区域？</a></li><li><a href="#16-垃圾回收算法有哪些" class="table-of-contents__link toc-highlight">16. 垃圾回收算法有哪些？</a></li></ul></li><li><a href="#-异常处理中级" class="table-of-contents__link toc-highlight">🎯 异常处理（中级）</a><ul><li><a href="#17-checked-exception-和-unchecked-exception-的区别" class="table-of-contents__link toc-highlight">17. Checked Exception 和 Unchecked Exception 的区别？</a></li><li><a href="#18-try-catch-finally-的执行顺序" class="table-of-contents__link toc-highlight">18. try-catch-finally 的执行顺序？</a></li></ul></li><li><a href="#-io-流中级" class="table-of-contents__link toc-highlight">🎯 IO 流（中级）</a><ul><li><a href="#19-bionioaio-的区别" class="table-of-contents__link toc-highlight">19. BIO、NIO、AIO 的区别？</a></li></ul></li><li><a href="#-新特性中级" class="table-of-contents__link toc-highlight">🎯 新特性（中级）</a><ul><li><a href="#20-lambda-表达式的优缺点" class="table-of-contents__link toc-highlight">20. Lambda 表达式的优缺点？</a></li></ul></li><li><a href="#-总结与学习建议" class="table-of-contents__link toc-highlight">📌 总结与学习建议</a><ul><li><a href="#难度分级" class="table-of-contents__link toc-highlight">难度分级</a></li><li><a href="#学习路径" class="table-of-contents__link toc-highlight">学习路径</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
+<p><strong>持续更新中...</strong> 欢迎反馈和补充！</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_LFcd"><a href="https://github.com/to-lib/to-lib.github.io/tree/main/docs/interview/java-interview-questions.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_cm6n" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_o2CG"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/interview"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">面试题库</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/interview/java-senior"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Java 高级面试题精选</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_Odgc thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-基础语法初级" class="table-of-contents__link toc-highlight">🎯 基础语法（初级）</a><ul><li><a href="#1-java-的基本数据类型有哪些占用多少字节" class="table-of-contents__link toc-highlight">1. Java 的基本数据类型有哪些？占用多少字节？</a></li><li><a href="#2--和-equals-的区别" class="table-of-contents__link toc-highlight">2. <code>==</code> 和 <code>equals()</code> 的区别？</a></li><li><a href="#3-stringstringbuilderstringbuffer-的区别" class="table-of-contents__link toc-highlight">3. String、StringBuilder、StringBuffer 的区别？</a></li></ul></li><li><a href="#-面向对象中级" class="table-of-contents__link toc-highlight">🎯 面向对象（中级）</a><ul><li><a href="#4-java-面向对象的三大特性是什么" class="table-of-contents__link toc-highlight">4. Java 面向对象的三大特性是什么？</a></li><li><a href="#5-抽象类和接口的区别" class="table-of-contents__link toc-highlight">5. 抽象类和接口的区别？</a></li><li><a href="#6-重载overload和重写override的区别" class="table-of-contents__link toc-highlight">6. 重载（Overload）和重写（Override）的区别？</a></li></ul></li><li><a href="#-集合框架中级" class="table-of-contents__link toc-highlight">🎯 集合框架（中级）</a><ul><li><a href="#7-arraylist-和-linkedlist-的区别" class="table-of-contents__link toc-highlight">7. ArrayList 和 LinkedList 的区别？</a></li><li><a href="#8-hashmap-的底层实现原理" class="table-of-contents__link toc-highlight">8. HashMap 的底层实现原理？</a></li><li><a href="#9-hashmap-和-concurrenthashmap-的区别" class="table-of-contents__link toc-highlight">9. HashMap 和 ConcurrentHashMap 的区别？</a></li><li><a href="#10-hashset-如何保证元素不重复" class="table-of-contents__link toc-highlight">10. HashSet 如何保证元素不重复？</a></li></ul></li><li><a href="#-多线程高级" class="table-of-contents__link toc-highlight">🎯 多线程（高级）</a><ul><li><a href="#11-创建线程的几种方式" class="table-of-contents__link toc-highlight">11. 创建线程的几种方式？</a></li><li><a href="#12-synchronized-和-lock-的区别" class="table-of-contents__link toc-highlight">12. synchronized 和 Lock 的区别？</a></li><li><a href="#13-volatile-关键字的作用" class="table-of-contents__link toc-highlight">13. volatile 关键字的作用？</a></li><li><a href="#14-线程池的核心参数有哪些" class="table-of-contents__link toc-highlight">14. 线程池的核心参数有哪些？</a></li></ul></li><li><a href="#-jvm高级" class="table-of-contents__link toc-highlight">🎯 JVM（高级）</a><ul><li><a href="#15-jvm-内存结构有哪些区域" class="table-of-contents__link toc-highlight">15. JVM 内存结构有哪些区域？</a></li><li><a href="#16-垃圾回收算法有哪些" class="table-of-contents__link toc-highlight">16. 垃圾回收算法有哪些？</a></li></ul></li><li><a href="#-异常处理中级" class="table-of-contents__link toc-highlight">🎯 异常处理（中级）</a><ul><li><a href="#17-checked-exception-和-unchecked-exception-的区别" class="table-of-contents__link toc-highlight">17. Checked Exception 和 Unchecked Exception 的区别？</a></li><li><a href="#18-try-catch-finally-的执行顺序" class="table-of-contents__link toc-highlight">18. try-catch-finally 的执行顺序？</a></li></ul></li><li><a href="#-io-流中级" class="table-of-contents__link toc-highlight">🎯 IO 流（中级）</a><ul><li><a href="#19-bionioaio-的区别" class="table-of-contents__link toc-highlight">19. BIO、NIO、AIO 的区别？</a></li></ul></li><li><a href="#-新特性中级" class="table-of-contents__link toc-highlight">🎯 新特性（中级）</a><ul><li><a href="#20-lambda-表达式的优缺点" class="table-of-contents__link toc-highlight">20. Lambda 表达式的优缺点？</a></li></ul></li><li><a href="#-总结与学习建议" class="table-of-contents__link toc-highlight">📌 总结与学习建议</a><ul><li><a href="#难度分级" class="table-of-contents__link toc-highlight">难度分级</a></li><li><a href="#学习路径" class="table-of-contents__link toc-highlight">学习路径</a></li><li><a href="#相关资源" class="table-of-contents__link toc-highlight">相关资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📚 设计模式</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/overview">模式概览</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/singleton-pattern">创建型模式 (5)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/proxy-pattern">结构型模式 (7)</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/observer-pattern">行为型模式 (11)</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">☕ Java 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java">Java 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/basic-syntax">基础语法</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/collections">集合框架</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/multithreading">多线程</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/jvm-basics">JVM 基础</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java/performance">性能优化</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🦀 Rust 编程</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/rust">Rust 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/ownership">所有权系统</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/error-handling">错误处理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/rust/concurrency">并发编程</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🐧 Linux</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/linux">Linux 概述</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/basic-commands">基础命令</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/permissions">权限管理</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/linux/shell-scripting">Shell 脚本</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">📖 学习资源</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/quick-reference">快速参考</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/best-practices">最佳实践</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/java-design-patterns/selection-guide">选择指南</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🛠️ 框架应用</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/spring">Spring Framework</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springboot">Spring Boot</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud">Spring Cloud</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba">Spring Cloud Alibaba</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/springcloud-alibaba/security-and-access">Spring Cloud Alibaba 安全与权限</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/netty/overview">Netty</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">🔗 链接</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/to-lib/to-lib.github.io/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">问题反馈<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_Cy_U"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 to-lib 开发者知识库. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
