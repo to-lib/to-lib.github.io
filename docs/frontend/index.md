@@ -41,13 +41,14 @@ graph LR
 
 ### CSS - 网页样式
 
-| 主题                                       | 内容                  |
-| ------------------------------------------ | --------------------- |
-| [CSS 入门](/docs/frontend/css/)            | 语法、引入方式        |
-| [选择器](/docs/frontend/css/selectors)     | 选择器类型、优先级    |
-| [布局](/docs/frontend/css/layout)          | Flexbox、Grid         |
-| [响应式](/docs/frontend/css/responsive)    | 媒体查询、移动优先    |
-| [动画与过渡](/docs/frontend/css/animation) | transition、animation |
+| 主题                                        | 内容                     |
+| ------------------------------------------- | ------------------------ |
+| [CSS 入门](/docs/frontend/css/)             | 语法、引入方式           |
+| [选择器](/docs/frontend/css/selectors)      | 选择器类型、优先级       |
+| [布局](/docs/frontend/css/layout)           | Flexbox、Grid            |
+| [响应式](/docs/frontend/css/responsive)     | 媒体查询、移动优先       |
+| [动画与过渡](/docs/frontend/css/animation)  | transition、animation    |
+| [CSS 新特性](/docs/frontend/css/modern-css) | 容器查询、:has()、层叠层 |
 
 ### JavaScript - 网页交互
 
@@ -60,17 +61,22 @@ graph LR
 | [ES6+](/docs/frontend/javascript/es6)                | 现代 JavaScript      |
 | [闭包与作用域](/docs/frontend/javascript/closure)    | 词法作用域、闭包应用 |
 | [原型链](/docs/frontend/javascript/prototype)        | 原型、继承、Class    |
+| [this 关键字](/docs/frontend/javascript/this)        | 绑定规则、箭头函数   |
+| [深浅拷贝](/docs/frontend/javascript/copy)           | 引用类型、克隆方法   |
+| [函数式编程](/docs/frontend/javascript/functional)   | 纯函数、组合、柯里化 |
+| [TypeScript](/docs/frontend/javascript/typescript)   | 类型系统、接口、泛型 |
 | [错误处理](/docs/frontend/javascript/error-handling) | try/catch、异步错误  |
 | [模块化](/docs/frontend/javascript/modules)          | ESM、CommonJS        |
 | [正则表达式](/docs/frontend/javascript/regex)        | 模式匹配、常用模式   |
 
 ### 浏览器 - 运行环境
 
-| 主题                                        | 内容                       |
-| ------------------------------------------- | -------------------------- |
-| [浏览器原理](/docs/frontend/browser/)       | 渲染流程、Event Loop       |
-| [存储机制](/docs/frontend/browser/storage)  | Cookie、Storage、IndexedDB |
-| [HTTP 网络](/docs/frontend/browser/network) | Fetch、CORS、请求优化      |
+| 主题                                          | 内容                       |
+| --------------------------------------------- | -------------------------- |
+| [浏览器原理](/docs/frontend/browser/)         | 渲染流程、Event Loop       |
+| [存储机制](/docs/frontend/browser/storage)    | Cookie、Storage、IndexedDB |
+| [HTTP 网络](/docs/frontend/browser/network)   | Fetch、CORS、请求优化      |
+| [Web Workers](/docs/frontend/browser/workers) | 多线程、Service Worker     |
 
 ### 进阶主题
 
