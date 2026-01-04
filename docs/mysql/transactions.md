@@ -407,37 +407,316 @@ COMMIT;
 
 ## MVCC (多版本并发控制)
 
+> [!TIP]
+> **核心概念**: MVCC（Multi-Version Concurrency Control）是 InnoDB 实现高并发的核心机制，通过保存数据的多个版本，让读写操作互不阻塞。
+
 ### MVCC 原理
 
-InnoDB 使用 MVCC 实现非锁定读，提高并发性能。
+InnoDB 使用 MVCC 实现非锁定读，提高并发性能：
 
-- 每行记录有多个版本
-- 事务读取时根据版本号判断可见性
-- 不需要加锁，提高并发
+- **多版本存储** - 每行记录保存多个历史版本
+- **版本可见性判断** - 事务根据规则判断哪个版本可见
+- **读写不阻塞** - 读操作不加锁，与写操作互不干扰
+
+```mermaid
+graph LR
+    A[事务读取] --> B{判断版本可见性}
+    B -->|可见| C[返回该版本数据]
+    B -->|不可见| D[沿版本链查找]
+    D --> B
+```
 
 ### 隐藏列
 
-InnoDB 为每行添加隐藏列：
+InnoDB 为每行记录自动添加三个隐藏列：
 
-- **DB_TRX_ID** - 事务 ID
-- **DB_ROLL_PTR** - 回滚指针
-- **DB_ROW_ID** - 行 ID（无主键时）
-
-### Read View
-
-事务开始时创建 Read View，确定哪些版本可见。
+| 隐藏列 | 大小 | 说明 |
+|--------|------|------|
+| **DB_TRX_ID** | 6 字节 | 最近修改该行的事务 ID |
+| **DB_ROLL_PTR** | 7 字节 | 回滚指针，指向 Undo Log 中的前一个版本 |
+| **DB_ROW_ID** | 6 字节 | 隐藏主键（仅当表没有主键时生成） |
 
 ```sql
--- REPEATABLE READ：事务开始时创建 Read View
-START TRANSACTION;
-SELECT * FROM users WHERE id = 1;  -- 创建 Read View
--- 之后的查询使用同一个 Read View（可重复读）
-
--- READ COMMITTED：每次查询都创建新的 Read View
-START TRANSACTION;
-SELECT * FROM users WHERE id = 1;  -- 创建 Read View 1
-SELECT * FROM users WHERE id = 1;  -- 创建 Read View 2
+-- 实际存储结构示意
+-- | id | name | age | DB_TRX_ID | DB_ROLL_PTR | DB_ROW_ID |
+-- | 1  | 张三 | 25  | 100       | 0x12345     | 1         |
 ```
+
+### 版本链与 Undo Log
+
+每次更新记录时，InnoDB 会：
+
+1. 将旧版本写入 Undo Log
+2. 用 DB_ROLL_PTR 指向旧版本
+3. 形成版本链（链表结构）
+
+```mermaid
+graph LR
+    subgraph 当前数据
+        A["id=1, name=王五, age=30<br/>trx_id=300"]
+    end
+    subgraph Undo Log
+        B["id=1, name=李四, age=28<br/>trx_id=200"]
+        C["id=1, name=张三, age=25<br/>trx_id=100"]
+    end
+    A -->|roll_ptr| B
+    B -->|roll_ptr| C
+    C -->|roll_ptr| D[NULL]
+```
+
+**版本链查找过程**：
+
+1. 从最新版本开始
+2. 检查该版本对当前事务是否可见
+3. 如果不可见，沿 roll_ptr 找上一个版本
+4. 直到找到可见版本或到达链尾
+
+### Read View（读视图）
+
+Read View 是事务进行快照读时产生的读视图，用于判断版本可见性。
+
+#### Read View 核心字段
+
+| 字段 | 说明 |
+|------|------|
+| **m_ids** | 创建 Read View 时，活跃（未提交）的事务 ID 列表 |
+| **min_trx_id** | m_ids 中的最小值，小于它的事务都已提交 |
+| **max_trx_id** | 创建 Read View 时，系统应分配给下一个事务的 ID |
+| **creator_trx_id** | 创建该 Read View 的事务 ID |
+
+#### 可见性判断算法
+
+对于某个数据版本，其 `trx_id` 的可见性判断规则：
+
+```
+1. 如果 trx_id == creator_trx_id
+   → 可见（自己修改的数据）
+
+2. 如果 trx_id < min_trx_id
+   → 可见（该事务在创建 Read View 前已提交）
+
+3. 如果 trx_id >= max_trx_id
+   → 不可见（该事务在创建 Read View 后才开始）
+
+4. 如果 min_trx_id <= trx_id < max_trx_id
+   → 如果 trx_id 在 m_ids 中：不可见（该事务还未提交）
+   → 如果 trx_id 不在 m_ids 中：可见（该事务已提交）
+```
+
+```mermaid
+flowchart TD
+    A[获取版本 trx_id] --> B{trx_id == creator_trx_id?}
+    B -->|是| C[✅ 可见]
+    B -->|否| D{trx_id < min_trx_id?}
+    D -->|是| C
+    D -->|否| E{trx_id >= max_trx_id?}
+    E -->|是| F[❌ 不可见]
+    E -->|否| G{trx_id 在 m_ids 中?}
+    G -->|是| F
+    G -->|否| C
+```
+
+#### 可见性判断示例
+
+```sql
+-- 假设当前活跃事务：trx_id = 100, 200, 300
+-- 事务 300 创建 Read View 时：
+--   m_ids = [100, 200, 300]
+--   min_trx_id = 100
+--   max_trx_id = 301
+--   creator_trx_id = 300
+
+-- 判断不同版本的可见性：
+-- trx_id = 50  → 50 < 100 → 可见（早已提交）
+-- trx_id = 100 → 100 在 m_ids 中 → 不可见（未提交）
+-- trx_id = 150 → 150 不在 m_ids 中 → 可见（已提交）
+-- trx_id = 300 → 等于 creator_trx_id → 可见（自己的修改）
+-- trx_id = 400 → 400 >= 301 → 不可见（未来事务）
+```
+
+### 快照读 vs 当前读
+
+MVCC 中有两种读取方式：
+
+| 类型 | 说明 | 是否加锁 | SQL 示例 |
+|------|------|----------|----------|
+| **快照读** | 读取 Read View 可见的版本 | ❌ 不加锁 | `SELECT * FROM t` |
+| **当前读** | 读取最新已提交的版本 | ✅ 加锁 | `SELECT ... FOR UPDATE` |
+
+#### 快照读（Snapshot Read）
+
+普通的 SELECT 语句，不加锁，读取历史版本：
+
+```sql
+-- 快照读示例
+START TRANSACTION;
+SELECT * FROM users WHERE id = 1;  -- 快照读，不加锁
+-- 即使其他事务修改了 id=1 的数据并提交，这里仍读取旧版本
+```
+
+**特点**：
+
+- 不加任何锁
+- 可能读取历史版本
+- 并发性能最好
+- REPEATABLE READ 下实现可重复读
+
+#### 当前读（Current Read）
+
+需要读取最新数据并加锁的操作：
+
+```sql
+-- 当前读示例
+SELECT * FROM users WHERE id = 1 LOCK IN SHARE MODE;  -- 加 S 锁
+SELECT * FROM users WHERE id = 1 FOR UPDATE;          -- 加 X 锁
+UPDATE users SET age = 26 WHERE id = 1;               -- 加 X 锁
+DELETE FROM users WHERE id = 1;                       -- 加 X 锁
+INSERT INTO users VALUES (...);                       -- 加 X 锁
+```
+
+**特点**：
+
+- 读取最新已提交版本
+- 会加锁（共享锁或排它锁）
+- 其他事务的写操作会被阻塞
+
+#### 快照读与当前读对比示例
+
+```sql
+-- 会话 1
+START TRANSACTION;  -- 事务开始，此时 age = 25
+SELECT age FROM users WHERE id = 1;  -- 快照读：25
+
+-- 会话 2
+UPDATE users SET age = 30 WHERE id = 1;
+COMMIT;  -- 提交修改
+
+-- 会话 1（继续）
+SELECT age FROM users WHERE id = 1;              -- 快照读：25（读历史版本）
+SELECT age FROM users WHERE id = 1 FOR UPDATE;  -- 当前读：30（读最新版本）
+```
+
+### 不同隔离级别下的 MVCC
+
+MVCC 的行为在不同隔离级别下有所不同：
+
+#### READ COMMITTED (RC)
+
+**每次 SELECT 都创建新的 Read View**：
+
+```sql
+-- RC 隔离级别
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+START TRANSACTION;  -- trx_id = 100
+
+SELECT * FROM users WHERE id = 1;  -- Read View 1：看到当前已提交的数据
+
+-- 其他事务提交了修改
+
+SELECT * FROM users WHERE id = 1;  -- Read View 2：能看到新提交的数据（不可重复读）
+```
+
+**特点**：
+
+- 每次查询都能看到最新已提交的数据
+- 存在不可重复读问题
+- 不存在脏读问题
+
+#### REPEATABLE READ (RR)
+
+**第一次 SELECT 时创建 Read View，后续复用**：
+
+```sql
+-- RR 隔离级别（MySQL 默认）
+SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+
+START TRANSACTION;  -- trx_id = 100
+
+SELECT * FROM users WHERE id = 1;  -- 创建 Read View，并复用
+
+-- 其他事务提交了修改
+
+SELECT * FROM users WHERE id = 1;  -- 使用同一个 Read View，结果不变（可重复读）
+
+COMMIT;
+```
+
+**特点**：
+
+- 事务内多次读取结果一致
+- 解决不可重复读问题
+- 通过 Next-Key Lock 解决部分幻读问题
+
+#### RC vs RR 对比示例
+
+```sql
+-- 初始数据：users 表 id=1, name='张三', age=25
+
+-- ============ READ COMMITTED ============
+-- 会话1 (RC)                          -- 会话2
+SET SESSION TRANSACTION ISOLATION      
+LEVEL READ COMMITTED;                  
+START TRANSACTION;                     
+SELECT age FROM users WHERE id=1;      
+-- 结果: 25                            
+                                       UPDATE users SET age=30 WHERE id=1;
+                                       COMMIT;
+SELECT age FROM users WHERE id=1;      
+-- 结果: 30 (能看到会话2的提交)        
+
+-- ============ REPEATABLE READ ============
+-- 会话1 (RR)                          -- 会话2
+SET SESSION TRANSACTION ISOLATION      
+LEVEL REPEATABLE READ;                 
+START TRANSACTION;                     
+SELECT age FROM users WHERE id=1;      
+-- 结果: 25                            
+                                       UPDATE users SET age=30 WHERE id=1;
+                                       COMMIT;
+SELECT age FROM users WHERE id=1;      
+-- 结果: 25 (可重复读，看不到会话2的提交)
+```
+
+### MVCC 解决的问题
+
+| 问题 | MVCC 如何解决 |
+|------|--------------|
+| **脏读** | Read View 只能看到已提交事务的修改 |
+| **不可重复读** | RR 级别下复用同一个 Read View |
+| **幻读（部分）** | 快照读通过 Read View 解决；当前读通过 Next-Key Lock 解决 |
+
+> [!WARNING]
+> **MVCC 的局限性**：MVCC 只能解决快照读的幻读问题。对于当前读（`SELECT ... FOR UPDATE`），需要依赖 Next-Key Lock（间隙锁 + 行锁）来防止幻读。
+
+### MVCC 总结
+
+```mermaid
+graph TB
+    subgraph MVCC核心组件
+        A[隐藏列<br/>DB_TRX_ID / DB_ROLL_PTR]
+        B[Undo Log<br/>版本链]
+        C[Read View<br/>可见性判断]
+    end
+    
+    subgraph 读取方式
+        D[快照读<br/>不加锁，读历史版本]
+        E[当前读<br/>加锁，读最新版本]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+```
+
+**MVCC 核心要点**：
+
+1. ✅ 通过 **Undo Log** 保存历史版本，形成版本链
+2. ✅ 通过 **隐藏列** 记录事务信息和版本指针
+3. ✅ 通过 **Read View** 判断版本可见性
+4. ✅ **快照读**不加锁，**当前读**需加锁
+5. ✅ **RR** 复用 Read View，**RC** 每次创建新的 Read View
 
 ## 事务日志
 
