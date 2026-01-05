@@ -775,7 +775,30 @@ Binlog 记录了数据库所有 DDL 和 DML 语句（除了查询语句）。
 
 为了保证 Redo Log 和 Binlog 的一致性，MySQL 使用了**两阶段提交 (Two-Phase Commit)**。
 
+#### 写入流程图解 (Buffer to Disk)
+
+以下流程图展示了数据从内存缓冲区最终落盘的完整过程：
+
+```mermaid
+flowchart TD
+    Start([事务开始]) --> Undo[写入 Undo Log Buffer]
+    Undo --> Exec[执行数据更新<br/>(修改 Buffer Pool)]
+    Exec --> RedoPrep[写入 Redo Log Buffer<br/>(Prepare 状态)]
+    
+    subgraph Commit[提交阶段 (2PC)]
+        direction TB
+        RedoPrep --> Binlog[写入 Binlog Cache]
+        Binlog --> PersistBin{Sync Binlog?}
+        PersistBin -->|Yes| FlushBin[fsync Binlog]
+        FlushBin --> PersistRedo{Sync Redo?}
+        PersistRedo -->|Yes| FlushRedo[fsync Redo Log<br/>(Commit 状态)]
+    end
+    
+    FlushRedo --> End([事务结束])
+```
+
 如果不使用 2PC：
+
 - 先写 Redo 即使 Crash：Redo 有记录，Binlog 无 -> 主库有数据，从库丢失。
 - 先写 Binlog 即使 Crash：Binlog 有记录，Redo 无 -> 主库没数据，从库多数据。
 
@@ -809,6 +832,7 @@ sequenceDiagram
 3. **Commit 阶段**：Server 通知 Engine 提交，Engine 将 Redo Log 标记为 `COMMIT` 状态。
 
 **崩溃恢复规则**：
+
 - 如果有 Binlog 且完整 -> 提交事务
 - 如果没有 Binlog 或不完整 -> 回滚事务
 
