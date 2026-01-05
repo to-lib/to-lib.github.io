@@ -938,6 +938,7 @@ const sidebars: SidebarsConfig = {
         "redis/quick-start",
         "redis/introduction",
         "redis/data-types",
+        "redis/client-libraries",
       ],
     },
     {
@@ -955,6 +956,7 @@ const sidebars: SidebarsConfig = {
         "redis/pipeline",
         "redis/lua-scripting",
         "redis/geo",
+        "redis/redis7-features",
       ],
     },
     {
@@ -971,6 +973,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "⚡ 集成与实战",
+      collapsed: true,
+      items: [
+        "redis/spring-integration",
+        "redis/common-scenarios",
+        "redis/practical-examples",
+      ],
+    },
+    {
+      type: "category",
       label: "🛠️ 运维与排障",
       collapsed: true,
       items: [
@@ -983,7 +995,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "📚 参考指南",
       collapsed: true,
-      items: ["redis/quick-reference", "redis/faq", "redis/practical-examples"],
+      items: ["redis/quick-reference", "redis/faq"],
     },
   ],
 

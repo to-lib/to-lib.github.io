@@ -178,6 +178,7 @@ ZRANK leaderboard "player1"
 | 主题                                   | 描述                                   |
 | -------------------------------------- | -------------------------------------- |
 | [Redis 简介](/docs/redis/introduction)           | Redis 特点、应用场景、安装和基本操作   |
+| [快速入门](/docs/redis/quick-start)              | 5 分钟快速上手 Redis                   |
 | [数据类型](/docs/redis/data-types)               | String、List、Set、Hash、Sorted Set 等 |
 | [持久化](/docs/redis/persistence)                | RDB、AOF、混合持久化机制               |
 | [主从复制](/docs/redis/replication)              | 主从复制原理、配置、故障处理           |
@@ -186,9 +187,15 @@ ZRANK leaderboard "player1"
 | [事务](/docs/redis/transactions)                 | MULTI/EXEC、WATCH、Lua 脚本            |
 | [缓存策略](/docs/redis/cache-strategies)         | 缓存穿透、击穿、雪崩、分布式锁         |
 | [性能优化](/docs/redis/performance-optimization) | 内存优化、慢查询分析、性能监控         |
-| [配置与部署](/docs/redis/configuration)          | 关键配置项与生产部署建议               |
-| [监控与排障](/docs/redis/monitoring-and-troubleshooting) | 指标、命令与常见故障排查路径           |
-| [备份与恢复](/docs/redis/backup-and-recovery)    | RDB/AOF 备份恢复与演练建议             |
+| [内存管理](/docs/redis/memory-management)        | 淘汰策略、大 Key 分析、碎片整理        |
+| [配置与部署](/docs/redis/configuration)          | 关键配置项、容器化与生产部署           |
+| [监控与排障](/docs/redis/monitoring-and-troubleshooting) | 监控指标、Prometheus 集成、故障排查   |
+| [备份与恢复](/docs/redis/backup-and-recovery)    | 备份脚本、云存储、灾难恢复             |
+| [安全配置](/docs/redis/security)                 | 认证、ACL、TLS、网络安全               |
+| [客户端库详解](/docs/redis/client-libraries)     | Jedis、Lettuce、Redisson 对比与使用    |
+| [Spring Boot 集成](/docs/redis/spring-integration) | RedisTemplate、缓存注解、Session     |
+| [Redis 7.0+ 新特性](/docs/redis/redis7-features) | Functions、Multi-part AOF、ACL v2      |
+| [常见业务场景](/docs/redis/common-scenarios)     | 延迟队列、限流、排行榜、抢红包         |
 
 ## 🔗 相关资源
 
