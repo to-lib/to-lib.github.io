@@ -781,20 +781,20 @@ Binlog 记录了数据库所有 DDL 和 DML 语句（除了查询语句）。
 
 ```mermaid
 flowchart TD
-    Start([事务开始]) --> Undo[写入 Undo Log Buffer]
-    Undo --> Exec[执行数据更新<br/>(修改 Buffer Pool)]
-    Exec --> RedoPrep[写入 Redo Log Buffer<br/>(Prepare 状态)]
+    Start(["事务开始"]) --> Undo["写入 Undo Log Buffer"]
+    Undo --> Exec["执行数据更新 (修改 Buffer Pool)"]
+    Exec --> RedoPrep["写入 Redo Log Buffer (Prepare 状态)"]
     
-    subgraph Commit[提交阶段 (2PC)]
+    subgraph Commit["提交阶段 2PC"]
         direction TB
-        RedoPrep --> Binlog[写入 Binlog Cache]
-        Binlog --> PersistBin{Sync Binlog?}
-        PersistBin -->|Yes| FlushBin[fsync Binlog]
-        FlushBin --> PersistRedo{Sync Redo?}
-        PersistRedo -->|Yes| FlushRedo[fsync Redo Log<br/>(Commit 状态)]
+        RedoPrep --> Binlog["写入 Binlog Cache"]
+        Binlog --> PersistBin{"Sync Binlog?"}
+        PersistBin -->|Yes| FlushBin["fsync Binlog"]
+        FlushBin --> PersistRedo{"Sync Redo?"}
+        PersistRedo -->|Yes| FlushRedo["fsync Redo Log (Commit 状态)"]
     end
     
-    FlushRedo --> End([事务结束])
+    FlushRedo --> End(["事务结束"])
 ```
 
 如果不使用 2PC：
