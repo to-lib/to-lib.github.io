@@ -720,44 +720,97 @@ graph TB
 
 ## 事务日志
 
+MySQL 的强大之处不仅在于 SQL 处理，更在于其日志系统保证了数据的安全性和一致性。
+
+### 三大日志对比
+
+| 特性 | Undo Log (回滚日志) | Redo Log (重做日志) | Binlog (归档日志) |
+| :--- | :--- | :--- | :--- |
+| **作用** | 保证事务**原子性** (Atomicity) | 保证事务**持久性** (Durability) | 数据备份、主从复制 |
+| **层级** | 存储引擎层 (InnoDB) | 存储引擎层 (InnoDB) | Server 层 (通用) |
+| **内容** | **逻辑日志** (记录相反 SQL) | **物理日志** (记录页修改) | **逻辑日志** (SQL / 数据行) |
+| **写入时机**| 事务进行中，甚至提交前 | 事务提交时 (Write-Ahead Log) | 事务提交时 |
+| **释放** | 事务提交后 (MVCC 需保留) | 事务落盘后 | 设置的过期时间后 |
+
 ### Undo Log (回滚日志)
 
-用于回滚和 MVCC。
+Undo Log 记录了事务修改数据的"反向操作"。
+
+- **原子性保障**：如果事务执行失败或调用 ROLLBACK，MySQL 利用 Undo Log 将数据恢复到事务开始前的状态。
+- **MVCC 支撑**：在 MVCC 中，Undo Log 存储了数据的历史版本（版本链），使得不同事务可以读取到不同时间点的数据快照。
 
 ```sql
--- 事务开始
-START TRANSACTION;
-UPDATE users SET age = 26 WHERE id = 1;  -- Undo Log: age = 25
-
--- 回滚
-ROLLBACK;  -- 使用 Undo Log 恢复 age = 25
+-- 示例：Undo Log 逻辑
+-- 执行：UPDATE users SET age = 20 WHERE id = 1;
+-- 记录：UPDATE users SET age = 19 WHERE id = 1; (反向操作)
 ```
 
 ### Redo Log (重做日志)
 
-用于崩溃恢复，保证持久性。
+Redo Log 是 InnoDB 特有的日志，用于保证 Crash-Safe 能力。
 
-```sql
--- 事务提交
-START TRANSACTION;
-UPDATE users SET age = 26 WHERE id = 1;
-COMMIT;  -- 写入 Redo Log，即使崩溃也能恢复
+- **物理日志**：记录的是"在某个数据页上做了什么修改"。
+- **WAL 技术**：Write-Ahead Logging，先写日志，再写磁盘。即便数据库异常重启，通过 Redo Log 也能恢复未落盘的数据。
+- **循环写入**：Redo Log 文件组是固定大小的，循环写入。当写满时，需要将 Checkpoint 推进，强制将脏页刷新到磁盘。
+
+```mermaid
+graph LR
+    A[Write Pos] -->|写入| B((Redo Log File))
+    B -->|同步| C[Checkpoint]
+    C -.->|擦除旧记录| A
 ```
 
 ### Binlog (二进制日志)
 
-用于主从复制和数据恢复。
+Binlog 记录了数据库所有 DDL 和 DML 语句（除了查询语句）。
 
-```sql
--- 开启 binlog
-SET GLOBAL log_bin = ON;
+- **主从复制**：从库通过读取主库的 Binlog 来同步数据。
+- **数据恢复**：通过 mysqlbinlog 工具可以恢复数据到任意时间点。
+- **格式**：
+  - `STATEMENT`：记录 SQL 语句 (可能造成主从不一致，如 `rand()`)
+  - `ROW`：记录每行数据的具体变更 (最安全，但日志量大)
+  - `MIXED`：混合模式
 
--- 查看 binlog 文件
-SHOW BINARY LOGS;
+### 写入流程 & 两阶段提交 (2PC)
 
--- 查看 binlog 内容
-SHOW BINLOG EVENTS IN 'mysql-bin.000001';
+为了保证 Redo Log 和 Binlog 的一致性，MySQL 使用了**两阶段提交 (Two-Phase Commit)**。
+
+如果不使用 2PC：
+- 先写 Redo 即使 Crash：Redo 有记录，Binlog 无 -> 主库有数据，从库丢失。
+- 先写 Binlog 即使 Crash：Binlog 有记录，Redo 无 -> 主库没数据，从库多数据。
+
+#### 2PC 流程详解
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server (Executor)
+    participant E as Engine (InnoDB)
+    participant B as Binlog
+    participant R as Redo Log
+
+    C->>S: UPDATE T SET v=2 WHERE id=1
+    S->>E: 执行更新
+    E->>E: 写入 Undo Log
+    E->>E: 更新内存数据
+    E->>R: 写入 Redo Log (Prepare)
+    Note right of R: 状态: PREPARE
+    E-->>S: 完成
+    S->>B: 写入 Binlog
+    S->>E: 提交事务
+    E->>R: 写入 Redo Log (Commit)
+    Note right of R: 状态: COMMIT
+    E-->>S: 返回成功
+    S-->>C: Update Success
 ```
+
+1. **Prepare 阶段**：Engine 将事务写入 Redo Log，并标记为 `PREPARE` 状态。
+2. **Binlog 阶段**：Server 将事务写入 Binlog。
+3. **Commit 阶段**：Server 通知 Engine 提交，Engine 将 Redo Log 标记为 `COMMIT` 状态。
+
+**崩溃恢复规则**：
+- 如果有 Binlog 且完整 -> 提交事务
+- 如果没有 Binlog 或不完整 -> 回滚事务
 
 ## 最佳实践
 
