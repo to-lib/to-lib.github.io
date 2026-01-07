@@ -125,6 +125,11 @@ gcc -g -Wall hello.c -o hello
 5. [多文件编程](/docs/c/multi-file) - 头文件、模块化设计
 6. [项目实战](/docs/c/practical-projects) - 综合项目
 7. [嵌入式编程](/docs/c/embedded) - 硬件寄存器、中断、驱动开发
+8. [构建系统](/docs/c/build-systems) - Makefile 与 CMake
+9. [安全编程](/docs/c/secure-coding) - 防范漏洞
+10. [信号处理](/docs/c/signal-handling) - 处理系统信号
+11. [可变参数函数](/docs/c/variadic-functions) - 实现类似 printf 的函数
+12. [复数与高级数学](/docs/c/complex-math) - 复数运算
 
 ## 🎯 C vs 其他语言
 
