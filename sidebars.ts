@@ -691,6 +691,69 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // C Programming sidebar
+  c: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "c/index",
+        "c/environment-setup",
+        "c/basic-syntax",
+        "c/functions",
+        "c/arrays-strings",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 指针与内存",
+      collapsed: true,
+      items: [
+        "c/pointers",
+        "c/advanced-pointers",
+        "c/memory-management",
+        "c/structs-unions",
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 高级特性",
+      collapsed: true,
+      items: [
+        "c/file-io",
+        "c/preprocessor",
+        "c/bit-operations",
+        "c/data-structures",
+        "c/multi-file",
+      ],
+    },
+    {
+      type: "category",
+      label: "🚀 进阶主题",
+      collapsed: true,
+      items: [
+        "c/embedded",
+        "c/network-programming",
+        "c/multithreading",
+        "c/c11-c17-features",
+        "c/c-cpp-interop",
+      ],
+    },
+    {
+      type: "category",
+      label: "🏗️ 实战与项目",
+      collapsed: true,
+      items: ["c/practical-projects", "c/performance"],
+    },
+    {
+      type: "category",
+      label: "📚 参考指南",
+      collapsed: true,
+      items: ["c/stdlib-reference", "c/debugging", "c/interview-questions"],
+    },
+  ],
+
   // Linux sidebar
   linux: [
     {

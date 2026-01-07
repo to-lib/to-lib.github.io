@@ -157,6 +157,23 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #555;'>C 语言编程</div>",
+            },
+            {
+              label: "📖 C 语言概述",
+              to: "/docs/c",
+            },
+            {
+              label: "🔧 嵌入式开发",
+              to: "/docs/c/embedded",
+            },
+            {
+              type: "html",
+              value: "<hr style='margin: 8px 0;'>",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>前端开发</div>",
             },
             {
@@ -724,7 +741,28 @@ const config: Config = {
           ],
         },
         {
-          title: "🐧 Linux",
+          title: "� C 语言",
+          items: [
+            {
+              label: "C 语言概述",
+              to: "/docs/c",
+            },
+            {
+              label: "指针详解",
+              to: "/docs/c/pointers",
+            },
+            {
+              label: "嵌入式编程",
+              to: "/docs/c/embedded",
+            },
+            {
+              label: "面试题汇总",
+              to: "/docs/c/interview-questions",
+            },
+          ],
+        },
+        {
+          title: "�🐧 Linux",
           items: [
             {
               label: "Linux 概述",
