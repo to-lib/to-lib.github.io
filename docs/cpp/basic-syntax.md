@@ -189,6 +189,191 @@ int main() {
 }
 ```
 
+## 🔢 枚举类型
+
+### 传统枚举 (C 风格)
+
+```cpp
+enum Color { Red, Green, Blue };  // Red=0, Green=1, Blue=2
+enum Status { Success = 1, Failure = -1, Pending = 0 };
+
+Color c = Red;
+int value = c;  // 隐式转换为 int
+```
+
+### 强类型枚举 (C++11 enum class)
+
+```cpp
+enum class Direction {
+    Up,
+    Down,
+    Left,
+    Right
+};
+
+enum class HttpStatus : int {
+    OK = 200,
+    NotFound = 404,
+    InternalError = 500
+};
+
+Direction d = Direction::Up;
+// int value = d;  // 错误！不能隐式转换
+int value = static_cast<int>(d);  // 显式转换
+
+HttpStatus status = HttpStatus::OK;
+
+// switch 使用
+switch (d) {
+    case Direction::Up:    break;
+    case Direction::Down:  break;
+    case Direction::Left:  break;
+    case Direction::Right: break;
+}
+```
+
+:::tip 推荐使用 enum class
+
+- 作用域隔离，避免命名冲突
+- 类型安全，不能隐式转换为整数
+- 可指定底层类型
+  :::
+
+## 🧱 结构体与联合体
+
+### 结构体 (struct)
+
+```cpp
+// 定义结构体
+struct Point {
+    double x;
+    double y;
+};
+
+// 带成员函数的结构体
+struct Rectangle {
+    double width;
+    double height;
+
+    double area() const { return width * height; }
+    double perimeter() const { return 2 * (width + height); }
+};
+
+int main() {
+    // 初始化方式
+    Point p1 = {1.0, 2.0};        // 聚合初始化
+    Point p2{3.0, 4.0};           // 统一初始化
+    Point p3;                      // 默认初始化（值未定义）
+    Point p4 = {};                // 零初始化
+
+    // C++20 指定初始化
+    Point p5 = {.x = 5.0, .y = 6.0};
+
+    Rectangle rect{10, 20};
+    std::cout << rect.area() << std::endl;  // 200
+
+    return 0;
+}
+```
+
+### 联合体 (union)
+
+```cpp
+// 联合体：所有成员共享同一块内存
+union Data {
+    int i;
+    float f;
+    char c;
+};
+
+int main() {
+    Data d;
+    d.i = 42;
+    std::cout << d.i << std::endl;  // 42
+
+    d.f = 3.14f;  // 覆盖之前的值
+    // d.i 现在是未定义的
+
+    std::cout << sizeof(Data) << std::endl;  // 通常是 4
+    return 0;
+}
+```
+
+### std::variant (C++17，类型安全的联合体)
+
+```cpp
+#include <variant>
+
+std::variant<int, double, std::string> value;
+
+value = 42;
+std::cout << std::get<int>(value) << std::endl;
+
+value = 3.14;
+std::cout << std::get<double>(value) << std::endl;
+
+value = "hello";
+std::cout << std::get<std::string>(value) << std::endl;
+
+// 使用 std::visit
+std::visit([](auto&& arg) {
+    std::cout << arg << std::endl;
+}, value);
+```
+
+## ⚙️ constexpr 深入
+
+### constexpr 变量
+
+```cpp
+constexpr int SIZE = 10;              // 编译期常量
+constexpr double PI = 3.14159;
+constexpr int arr[] = {1, 2, 3};      // 编译期数组
+
+int runtime_value = 5;
+// constexpr int x = runtime_value;  // 错误：必须是编译期已知
+```
+
+### constexpr 函数
+
+```cpp
+constexpr int factorial(int n) {
+    return (n <= 1) ? 1 : n * factorial(n - 1);
+}
+
+constexpr int result = factorial(5);  // 编译期计算 = 120
+static_assert(result == 120, "factorial error");
+
+// C++14 允许更复杂的 constexpr 函数
+constexpr int fibonacci(int n) {
+    if (n <= 1) return n;
+    int a = 0, b = 1;
+    for (int i = 2; i <= n; ++i) {
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+    return b;
+}
+```
+
+### consteval (C++20) - 必须编译期执行
+
+```cpp
+consteval int compiletime_only(int n) {
+    return n * 2;
+}
+
+constexpr int a = compiletime_only(10);  // OK
+// int b = compiletime_only(runtime_value);  // 错误：必须编译期
+```
+
+### constinit (C++20) - 静态初始化
+
+```cpp
+constinit int global = 42;  // 保证静态初始化
+```
+
 ## ➕ 运算符
 
 ### 算术运算符
