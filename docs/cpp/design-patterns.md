@@ -11,6 +11,15 @@ title: 设计模式
 
 ### 单例模式
 
+```mermaid
+classDiagram
+    class Singleton {
+        -static instance : Singleton
+        -Singleton()
+        +getInstance()$ : Singleton
+    }
+```
+
 ```cpp
 class Singleton {
 private:
@@ -28,6 +37,23 @@ public:
 ```
 
 ### 工厂模式
+
+```mermaid
+classDiagram
+    class Product {
+        <<interface>>
+        +use()
+    }
+    class ConcreteProductA {
+        +use()
+    }
+    class Factory {
+        +create(type) : Product
+    }
+
+    Product <|-- ConcreteProductA
+    Factory ..> Product : Creates
+```
 
 ```cpp
 class Product {
@@ -53,6 +79,24 @@ public:
 ## 🔧 结构型模式
 
 ### 适配器模式
+
+```mermaid
+classDiagram
+    class Target {
+        <<interface>>
+        +request()
+    }
+    class Adapter {
+        -adaptee : Adaptee
+        +request()
+    }
+    class Adaptee {
+        +specificRequest()
+    }
+
+    Target <|-- Adapter
+    Adapter --> Adaptee
+```
 
 ```cpp
 class Target {
@@ -80,6 +124,23 @@ public:
 
 ### 观察者模式
 
+```mermaid
+classDiagram
+    class Subject {
+        -observers : List
+        +attach(Observer)
+        +setState(state)
+    }
+    class Observer {
+        <<interface>>
+        +update(value)
+    }
+    class ConcreteObserver
+
+    Subject o-- Observer
+    Observer <|-- ConcreteObserver
+```
+
 ```cpp
 class Observer {
 public:
@@ -101,6 +162,25 @@ public:
 ```
 
 ### 策略模式
+
+```mermaid
+classDiagram
+    class Context {
+        -strategy : Strategy
+        +setStrategy(Strategy)
+        +doWork()
+    }
+    class Strategy {
+        <<interface>>
+        +execute()
+    }
+    class AddStrategy {
+        +execute()
+    }
+
+    Context o-- Strategy
+    Strategy <|-- AddStrategy
+```
 
 ```cpp
 class Strategy {

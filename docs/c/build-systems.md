@@ -13,6 +13,19 @@ Make 是最经典的构建工具，通过 `Makefile` 定义构建规则。
 
 ### 基础结构
 
+```mermaid
+graph TD
+    user((User)) -->|Run make| file[Makefile]
+
+    file -->|Depends on| target[Target: myprogram]
+    target -->|Depends on| obj[Objects: *.o]
+    obj -->|Depends on| src[Source: *.c]
+
+    style target fill:#ff9999
+    style obj fill:#f9f
+    style src fill:#90EE90
+```
+
 一个简单的 `Makefile` 通常包含变量定义、目标规则和伪目标。
 
 ```makefile

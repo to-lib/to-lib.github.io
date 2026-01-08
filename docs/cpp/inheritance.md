@@ -9,6 +9,17 @@ title: 继承
 
 ## 🎯 基本继承
 
+```mermaid
+classDiagram
+    class Animal {
+        +eat()
+    }
+    class Dog {
+        +bark()
+    }
+    Animal <|-- Dog
+```
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -45,6 +56,31 @@ int main() {
 ```
 
 ## 🔐 继承方式
+
+```mermaid
+classDiagram
+    class Base {
+        +public
+        #protected
+        -private
+    }
+    class DerivedPublic {
+        +public
+        #protected
+    }
+    class DerivedProtected {
+        #public
+        #protected
+    }
+    class DerivedPrivate {
+        -public
+        -protected
+    }
+
+    Base <|-- DerivedPublic : Public
+    Base <|-- DerivedProtected : Protected
+    Base <|-- DerivedPrivate : Private
+```
 
 ```cpp
 class Base {
@@ -130,6 +166,19 @@ int main() {
 ```
 
 ## 💎 菱形继承与虚继承
+
+```mermaid
+classDiagram
+    class Animal
+    class Mammal
+    class Bird
+    class Bat
+
+    Animal <|-- Mammal : Virtual
+    Animal <|-- Bird : Virtual
+    Mammal <|-- Bat
+    Bird <|-- Bat
+```
 
 ```cpp
 class Animal {

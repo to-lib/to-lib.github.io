@@ -9,6 +9,28 @@ title: 多文件编程
 
 ## 项目结构
 
+```mermaid
+graph LR
+    subgraph Source
+    src[src/*.c]
+    header[include/*.h]
+    end
+
+    subgraph Build
+    obj[build/*.o]
+    bin[build/program]
+    end
+
+    src -->|Compile| obj
+    header -.->|Include| src
+    obj -->|Link| bin
+
+    style src fill:#90EE90
+    style header fill:#90EE90
+    style obj fill:#f9f
+    style bin fill:#99ccff
+```
+
 ```
 project/
 ├── Makefile

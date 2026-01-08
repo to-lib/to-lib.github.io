@@ -9,6 +9,16 @@ title: 指针
 
 ## 指针基础
 
+```mermaid
+graph LR
+    subgraph Memory
+    p[Pointer 'p'] -->|Stores Address| x[Variable 'x': 10]
+    end
+
+    style p fill:#f9f,stroke:#333
+    style x fill:#bbf,stroke:#333
+```
+
 ### 什么是指针
 
 ```c
@@ -57,6 +67,22 @@ int main(void) {
 ```
 
 ## 指针和数组
+
+```mermaid
+graph TD
+    p[Pointer 'p'] --> arr0
+
+    subgraph Array
+    arr0[arr[0]] --- arr1[arr[1]] --- arr2[arr[2]] --- arr3[arr[3]] --- arr4[arr[4]]
+    end
+
+    style p fill:#f9f,stroke:#333
+    style arr0 fill:#bbf
+    style arr1 fill:#bbf
+    style arr2 fill:#bbf
+    style arr3 fill:#bbf
+    style arr4 fill:#bbf
+```
 
 ```c
 #include <stdio.h>
@@ -112,6 +138,16 @@ int main(void) {
 ```
 
 ## 多级指针
+
+```mermaid
+graph LR
+    pp[**pp] -->|Points to| p[*p]
+    p -->|Points to| x[x: 10]
+
+    style pp fill:#ff9
+    style p fill:#f9f
+    style x fill:#bbf
+```
 
 ```c
 #include <stdio.h>

@@ -127,6 +127,26 @@ void gpio_example(void) {
 
 ## 中断处理
 
+```mermaid
+graph TD
+    Main[Main Loop] -->|Normal Execution| Task[Task Execution]
+    Task --> Main
+
+    ISR((Interrupt)) --o Main
+    ISR --o Task
+
+    subgraph Interrupt Handler
+    Context[Save Context] --> Handle[Execute ISR]
+    Handle --> Restore[Restore Context]
+    end
+
+    Main -.->|Hardware Trigger| Context
+    Restore -.->|Return| Main
+
+    style ISR fill:#ff9999
+    style Handle fill:#ff9999
+```
+
 ### 中断向量表
 
 ```c
@@ -473,6 +493,18 @@ int main(void) {
 ```
 
 ### 状态机
+
+```mermaid
+stateDiagram-v2
+    [*] --> IDLE
+    IDLE --> RUNNING : START
+    RUNNING --> PAUSED : PAUSE
+    PAUSED --> RUNNING : RESUME
+    RUNNING --> IDLE : STOP
+    PAUSED --> IDLE : STOP
+    RUNNING --> ERROR : ERROR
+    ERROR --> IDLE : STOP
+```
 
 ```c
 typedef enum {

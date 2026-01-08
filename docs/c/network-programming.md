@@ -32,6 +32,29 @@ inet_ntop(AF_INET, &addr, buf, sizeof(buf)); // 二进制 -> 字符串
 
 ## TCP 服务器
 
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+
+    Server->>Server: socket()
+    Server->>Server: bind()
+    Server->>Server: listen()
+    Client->>Client: socket()
+    Client->>Server: connect()
+    Server->>Client: accept()
+
+    Note over Client, Server: Connection Established
+
+    Client->>Server: write(Data)
+    Server->>Client: read(Data)
+    Server->>Client: write(Response)
+    Client->>Server: read(Response)
+
+    Client->>Server: close()
+    Server->>Client: close()
+```
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -164,6 +187,24 @@ int main(void) {
 ```
 
 ## UDP 通信
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+
+    Server->>Server: socket()
+    Server->>Server: bind()
+
+    Client->>Client: socket()
+
+    Client->>Server: sendto(Data)
+    Server->>Client: recvfrom(Data)
+    Server->>Client: sendto(Response)
+    Client->>Server: recvfrom(Response)
+
+    Note over Client, Server: No Connection State
+```
 
 ### UDP 服务器
 

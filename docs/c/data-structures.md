@@ -9,6 +9,18 @@ title: 数据结构实现
 
 ## 链表
 
+```mermaid
+graph LR
+    head((head)) --> n1[Data: 10]
+    n1 --> n2[Data: 20]
+    n2 --> n3[Data: 30]
+    n3 --> null((NULL))
+
+    style n1 fill:#f9f,stroke:#333
+    style n2 fill:#f9f,stroke:#333
+    style n3 fill:#f9f,stroke:#333
+```
+
 ### 单链表
 
 ```c
@@ -113,6 +125,21 @@ int main(void) {
 
 ## 栈
 
+```mermaid
+graph TD
+    subgraph Stack
+    top[Top Element] --- mid[Middle Element]
+    mid --- bottom[Bottom Element]
+    end
+
+    push(Push ⬇️) --> top
+    top --> pop(Pop ⬆️)
+
+    style top fill:#ff9999
+    style mid fill:#ff9999
+    style bottom fill:#ff9999
+```
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -172,6 +199,22 @@ int main(void) {
 
 ## 队列
 
+```mermaid
+graph LR
+    input(Enqueue) --> rear[Rear]
+    rear -.-> front[Front]
+    front --> output(Dequeue)
+
+    subgraph Queue Elements
+    rear --- e1[Data] --- e2[Data] --- front
+    end
+
+    style rear fill:#99ccff
+    style front fill:#99ccff
+    style e1 fill:#99ccff
+    style e2 fill:#99ccff
+```
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -223,6 +266,21 @@ int main(void) {
 ```
 
 ## 二叉树
+
+```mermaid
+graph TD
+    root((1))
+    root --> L((2))
+    root --> R((3))
+    L --> LL((4))
+    L --> LR((5))
+
+    style root fill:#90EE90
+    style L fill:#90EE90
+    style R fill:#90EE90
+    style LL fill:#90EE90
+    style LR fill:#90EE90
+```
 
 ```c
 #include <stdio.h>

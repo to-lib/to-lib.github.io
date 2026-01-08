@@ -9,6 +9,18 @@ title: 数据结构实现
 
 ## 🔗 链表
 
+```mermaid
+graph LR
+    head((head)) --> n1[Data]
+    n1 --> n2[Data]
+    n2 --> n3[Data]
+    n3 --> null((NULL))
+
+    style n1 fill:#f9f,stroke:#333
+    style n2 fill:#f9f,stroke:#333
+    style n3 fill:#f9f,stroke:#333
+```
+
 ```cpp
 template<typename T>
 class LinkedList {
@@ -43,6 +55,21 @@ public:
 
 ## 📚 栈
 
+```mermaid
+graph TD
+    subgraph Stack Container
+    top[Top] --- mid[Middle]
+    mid --- bottom[Bottom]
+    end
+
+    push(Push ⬇️) --> top
+    top --> pop(Pop ⬆️)
+
+    style top fill:#ff9999
+    style mid fill:#ff9999
+    style bottom fill:#ff9999
+```
+
 ```cpp
 template<typename T>
 class Stack {
@@ -63,6 +90,22 @@ public:
 
 ## 📮 队列
 
+```mermaid
+graph LR
+    input(Enqueue) --> rear[Rear]
+    rear -.-> front[Front]
+    front --> output(Dequeue)
+
+    subgraph Queue Container
+    rear --- e1[Data] --- e2[Data] --- front
+    end
+
+    style rear fill:#99ccff
+    style front fill:#99ccff
+    style e1 fill:#99ccff
+    style e2 fill:#99ccff
+```
+
 ```cpp
 template<typename T>
 class Queue {
@@ -80,6 +123,22 @@ public:
 ```
 
 ## 🌳 二叉搜索树
+
+```mermaid
+graph TD
+    root((5))
+    root --> L((3))
+    root --> R((7))
+    L --> LL((2))
+    L --> LR((4))
+    R --> RL((6))
+    R --> RR((8))
+
+    style root fill:#90EE90
+    style L fill:#90EE90
+    style R fill:#90EE90
+    style RR fill:#90EE90
+```
 
 ```cpp
 template<typename T>

@@ -9,6 +9,22 @@ title: 多态
 
 ## 🎯 虚函数
 
+```mermaid
+classDiagram
+    class Shape {
+        +draw()
+    }
+    class Circle {
+        +draw()
+    }
+    class Rectangle {
+        +draw()
+    }
+
+    Shape <|-- Circle
+    Shape <|-- Rectangle
+```
+
 ```cpp
 #include <iostream>
 
@@ -84,6 +100,25 @@ int main() {
 ```
 
 ## 🎭 接口
+
+```mermaid
+classDiagram
+    class Drawable {
+        <<interface>>
+        +draw()
+    }
+    class Printable {
+        <<interface>>
+        +print()
+    }
+    class Document {
+        +draw()
+        +print()
+    }
+
+    Drawable <|.. Document
+    Printable <|.. Document
+```
 
 ```cpp
 // 纯接口（只有纯虚函数）

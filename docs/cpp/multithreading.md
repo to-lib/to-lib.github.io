@@ -9,6 +9,19 @@ C++11 引入了标准线程库，支持跨平台多线程编程。
 
 ## 🎯 std::thread
 
+```mermaid
+sequenceDiagram
+    participant Main as Main Thread
+    participant Worker as Worker Thread
+
+    Main->>Worker: std::thread t(func)
+    activate Worker
+    Note over Worker: Execute func()
+    Worker-->>Main: Task Complete
+    deactivate Worker
+    Main->>Worker: t.join()
+```
+
 ```cpp
 #include <thread>
 #include <iostream>

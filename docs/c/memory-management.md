@@ -9,22 +9,23 @@ C 语言允许程序员直接管理内存，这提供了极大的灵活性，但
 
 ## 内存布局
 
-```
-+------------------+
-|       栈         |  <- 局部变量、函数参数
-+------------------+
-|        ↓         |
-|                  |
-|        ↑         |
-+------------------+
-|       堆         |  <- 动态分配的内存
-+------------------+
-|   未初始化数据   |  <- 全局变量（未初始化）
-+------------------+
-|   已初始化数据   |  <- 全局变量（已初始化）
-+------------------+
-|      代码段      |  <- 程序代码
-+------------------+
+```mermaid
+block-beta
+  columns 1
+  stack["栈 (Stack)"]:3
+  space:2
+  heap["堆 (Heap)"]:3
+  bss["未初始化数据 (BSS)"]
+  data["已初始化数据 (Data)"]
+  text["代码段 (Text/Code)"]
+
+  stack--"⬇️ 向下增长"--space
+  space--"⬆️ 向上增长"--heap
+  style stack fill:#ff9999,stroke:#333,stroke-width:2px
+  style heap fill:#99ccff,stroke:#333,stroke-width:2px
+  style bss fill:#ffffcc,stroke:#333,stroke-width:2px
+  style data fill:#ccffcc,stroke:#333,stroke-width:2px
+  style text fill:#e0e0e0,stroke:#333,stroke-width:2px
 ```
 
 ## 动态内存分配
