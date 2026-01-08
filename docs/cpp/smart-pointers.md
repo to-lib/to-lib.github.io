@@ -45,6 +45,18 @@ std::unique_ptr<FILE, decltype(deleter)> file(fopen("test.txt", "r"), deleter);
 
 ## 🔗 shared_ptr
 
+```mermaid
+graph LR
+    P1[Ptr 1] --> CB[Control Block]
+    P2[Ptr 2] --> CB
+    CB --> Obj[Managed Object]
+
+    style P1 fill:#f9f,stroke:#333
+    style P2 fill:#f9f,stroke:#333
+    style CB fill:#ff9999,stroke:#333
+    style Obj fill:#90EE90,stroke:#333
+```
+
 共享所有权，引用计数：
 
 ```cpp
@@ -69,6 +81,16 @@ auto sp = std::shared_ptr<int>(new int(42), [](int* p) {
 ```
 
 ## 🔍 weak_ptr
+
+```mermaid
+graph LR
+    Shared[Shared Ptr] --> CB[Control Block]
+    Weak[Weak Ptr] -.-> CB
+    CB --> Obj[Managed Object]
+
+    style Shared fill:#f9f,stroke:#333
+    style Weak fill:#e0e0e0,stroke:#333,stroke-dasharray: 5 5
+```
 
 弱引用，不增加引用计数，避免循环引用：
 

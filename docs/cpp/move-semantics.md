@@ -19,6 +19,17 @@ int&& rref2 = x + 5;
 
 ## 📦 std::move
 
+```mermaid
+graph LR
+    Src[Source Object] -->|Transfer Ptr| Dest[Dest Object]
+    Dest -->|Owns| Res[Resource]
+    Src -.->|Null/Empty| Res
+
+    style Src fill:#ff9999
+    style Dest fill:#90EE90
+    style Res fill:#99ccff
+```
+
 将左值转换为右值引用：
 
 ```cpp

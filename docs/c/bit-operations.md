@@ -121,6 +121,22 @@ int main(void) {
 
 ## 位域
 
+```mermaid
+block-beta
+  columns 4
+  block:flags
+    reserved["Res (1)"]
+    df["DF (1)"]
+    mf["MF (1)"]
+    offset["Fragment Offset (13)"]
+  end
+  style flags fill:#f9f9f9,stroke:#333
+  style reserved fill:#e0e0e0
+  style df fill:#ff9999
+  style mf fill:#99ccff
+  style offset fill:#90EE90
+```
+
 ```c
 #include <stdio.h>
 

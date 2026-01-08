@@ -9,6 +9,20 @@ title: 结构体和联合体
 
 ## 结构体基础
 
+```mermaid
+block-beta
+  columns 3
+  block:struct
+    name["name[50]"]
+    age["age (4)"]
+    score["score (4)"]
+  end
+  style struct fill:#f9f9f9,stroke:#333
+  style name fill:#ff9999
+  style age fill:#99ccff
+  style score fill:#90EE90
+```
+
 ### 定义和使用
 
 ```c
@@ -151,6 +165,20 @@ int main(void) {
 ```
 
 ## 联合体
+
+```mermaid
+block-beta
+  columns 1
+  block:union
+    int["int i (4)"]
+    float["float f (4)"]
+    str["char str[20]"]
+  end
+  style union fill:#f9f9f9,stroke:#333
+  style int fill:#ff9999,opacity:0.5
+  style float fill:#99ccff,opacity:0.5
+  style str fill:#90EE90,opacity:0.5
+```
 
 ```c
 #include <stdio.h>
