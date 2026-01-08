@@ -74,6 +74,22 @@ int main() {
 | 支持算术运算 | ✅        | ❌       |
 | 用于函数参数 | 可选参数  | 必传参数 |
 
+```mermaid
+graph LR
+    subgraph Pointer
+        P[ptr] -->|Store Address| V[Value]
+        P -.->|Reassign| V2[New Value]
+        P -.->|nullptr| Null[NULL]
+    end
+
+    subgraph Reference
+        R[ref] ===|Alias/Fixed binding| V3[Value]
+    end
+
+    style P fill:#bbf,stroke:#333,stroke-width:2px
+    style R fill:#fbb,stroke:#333,stroke-width:2px
+```
+
 ## 🔒 const 修饰符
 
 ```cpp

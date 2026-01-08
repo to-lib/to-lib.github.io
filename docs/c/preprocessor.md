@@ -7,6 +7,18 @@ title: 预处理器
 
 预处理器在编译之前处理源代码，执行宏替换、文件包含和条件编译等操作。
 
+```mermaid
+graph LR
+    A[Source Code .c] -->|Preprocessor| B[Expanded Code .i]
+    B -->|Compiler| C[Assembly .s]
+    C -->|Assembler| D[Object File .o]
+    D -->|Linker| E[Executable]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bfb,stroke:#333,stroke-width:2px
+```
+
 ## 宏定义
 
 ### 简单宏
@@ -76,6 +88,19 @@ int main(void) {
 ## 条件编译
 
 ### #ifdef / #ifndef
+
+```mermaid
+graph TD
+    A{Symbol Defined?}
+    A -->|Yes| B[Include #ifdef Block]
+    A -->|No| C[Include #else/#elif Block]
+    B --> D[Next Line]
+    C --> D
+
+    style A fill:#ff9,stroke:#333,stroke-width:2px
+    style B fill:#bfb,stroke:#333,stroke-width:1px
+    style C fill:#fbb,stroke:#333,stroke-width:1px
+```
 
 ```c
 #include <stdio.h>

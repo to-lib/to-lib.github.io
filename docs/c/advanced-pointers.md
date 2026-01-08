@@ -143,6 +143,22 @@ FuncPtr fp2;  // 更清晰
 
 ## 二维数组与指针
 
+```mermaid
+graph TD
+    Rows[Row Pointers] --> R0[Row 0]
+    Rows --> R1[Row 1]
+    Rows --> R2[Row 2]
+
+    R0 --> C00[Col 0] --- C01[Col 1] --- C02[Col 2] --- C03[Col 3]
+    R1 --> C10[Col 0] --- C11[Col 1] --- C12[Col 2] --- C13[Col 3]
+    R2 --> C20[Col 0] --- C21[Col 1] --- C22[Col 2] --- C23[Col 3]
+
+    style Rows fill:#f9f,stroke:#333
+    style R0 fill:#99ccff
+    style R1 fill:#99ccff
+    style R2 fill:#99ccff
+```
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>

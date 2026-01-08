@@ -141,6 +141,28 @@ public:
 
 ## 🔒 访问控制
 
+```mermaid
+classDiagram
+    class Base {
+        +publicVar
+        #protectedVar
+        -privateVar
+    }
+
+    class Derived {
+        accesses publicVar
+        accesses protectedVar
+    }
+
+    class Outside {
+        accesses publicVar
+    }
+
+    Base <|-- Derived
+    Derived ..> Base : Inheritance
+    Outside ..> Base : User
+```
+
 ```cpp
 class Example {
 public:     // 公有：任何地方都可以访问

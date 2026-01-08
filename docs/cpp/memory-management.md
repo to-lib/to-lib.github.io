@@ -14,6 +14,31 @@ C++ 提供了强大的内存管理机制，从手动 new/delete 到现代智能�
 - **全局/静态区**: 全局变量和静态变量
 - **代码区**: 程序代码
 
+```mermaid
+block-beta
+    columns 1
+    block:stack
+        label("Stack (High Memory)")
+        note("Local Variables, Function Calls")
+    end
+    space
+    block:heap
+        label("Heap (Low Memory)")
+        note("Dynamic Allocation (new/malloc)")
+    end
+    block:data
+        label("Global/Static Data")
+    end
+    block:code
+        label("Text/Code Segment")
+    end
+
+    style stack fill:#f99,stroke:#333
+    style heap fill:#99f,stroke:#333
+    style data fill:#ff9,stroke:#333
+    style code fill:#9f9,stroke:#333
+```
+
 ## 📦 new 和 delete
 
 ```cpp
@@ -50,6 +75,21 @@ int main() {
 ## 🛡️ RAII 原则
 
 Resource Acquisition Is Initialization（资源获取即初始化）：
+
+```mermaid
+sequenceDiagram
+    participant Code as User Code
+    participant Res as Resource (RAII Object)
+
+    Code->>Res: Constructor (Acquire Resource)
+    activate Res
+    Note right of Res: Resource is valid
+    Code->>Res: Perform Operations
+    Code->>Res: ...
+    deactivate Res
+    Res-->>Code: Destructor (Release Resource)
+    Note right of Res: End of Scope
+```
 
 ```cpp
 #include <fstream>

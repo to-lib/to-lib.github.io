@@ -59,6 +59,21 @@ try {
 }
 ```
 
+```mermaid
+graph TD
+    A[dynamic_cast Target* source] --> B{Is Source a Target?}
+    B -->|Yes| C[Return Target Pointer]
+    B -->|No| D[Return nullptr]
+
+    E[dynamic_cast Target& source] --> F{Is Source a Target?}
+    F -->|Yes| G[Return Reference]
+    F -->|No| H[Throw std::bad_cast]
+
+    style C fill:#bfb,stroke:#333
+    style D fill:#fbb,stroke:#333
+    style H fill:#fbb,stroke:#333
+```
+
 ### const_cast
 
 添加或移除 const/volatile：

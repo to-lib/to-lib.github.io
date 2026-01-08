@@ -139,6 +139,23 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
+```mermaid
+block-beta
+    columns 4
+    block:good
+        label("Row-Major (Good)")
+        A1["(0,0)"] A2["(0,1)"] A3["(0,2)"] A4["(0,3)"]
+    end
+    space
+    block:bad
+        label("Col-Major (Bad)")
+        B1["(0,0)"] B2["(1,0)"] B3["(2,0)"] B4["(3,0)"]
+    end
+
+    style good fill:#dfd,stroke:#333
+    style bad fill:#fdd,stroke:#333
+```
+
 ### 算术优化
 
 ```c

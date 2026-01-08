@@ -9,6 +9,18 @@ C 语言提供了强大的文件操作功能，支持文本文件和二进制文
 
 ## 文件基础
 
+```mermaid
+graph LR
+    App[Application] -->|fwrite| UBuf[User Buffer]
+    UBuf -->|Flush| KBuf[Kernel Buffer]
+    KBuf -->|Sync| Disk[Hard Disk]
+
+    style App fill:#ff9999
+    style UBuf fill:#99ccff
+    style KBuf fill:#f9f
+    style Disk fill:#e0e0e0
+```
+
 ### 打开和关闭文件
 
 ```c

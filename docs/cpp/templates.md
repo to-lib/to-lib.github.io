@@ -9,6 +9,22 @@ title: 模板编程
 
 ## 🎯 函数模板
 
+```mermaid
+graph TD
+    Source[Source Code] -->|Contains| Tmpl[Template&lt;T&gt;]
+    Source -->|Call| Usage[max&lt;int&gt;(10, 20)]
+
+    Tmpl -->|Compiler| Inst[Instantiation]
+    Usage -->|Trigger| Inst
+
+    Inst -->|Generate| Func[int max(int, int)]
+
+    style Source fill:#f9f,stroke:#333
+    style Tmpl fill:#ff9999
+    style Usage fill:#99ccff
+    style Func fill:#90EE90
+```
+
 ```cpp
 #include <iostream>
 

@@ -9,6 +9,27 @@ title: 异常处理
 
 ## 🎯 基本语法
 
+```mermaid
+sequenceDiagram
+    participant Main
+    participant Function
+    participant Object
+
+    Main->>Function: Call function()
+    activate Function
+    Function->>Object: Create local object
+    activate Object
+
+    Note right of Function: Error Occurs!
+    Function--xMain: Throw Exception
+
+    Object->>Object: Destructor called (Unwinding)
+    deactivate Object
+    deactivate Function
+
+    Main->>Main: Catch Block handles error
+```
+
 ```cpp
 #include <stdexcept>
 #include <iostream>

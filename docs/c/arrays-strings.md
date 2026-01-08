@@ -120,7 +120,7 @@ int main(void) {
 
 ### 字符串声明
 
-```c
+````c
 #include <stdio.h>
 #include <string.h>
 
@@ -139,6 +139,29 @@ int main(void) {
 
     printf("str1: %s\n", str1);
     printf("str2: %s, 长度: %zu\n", str2, strlen(str2));
+}
+```
+
+```mermaid
+block-beta
+    columns 7
+    block:array
+        A["'H'"] B["'e'"] C["'l'"] D["'l'"] E["'o'"]
+    end
+    space
+    block:string
+        F["'W'"] G["'o'"] H["'r'"] I["'l'"] J["'d'"] K["'\\0'"]
+    end
+
+    A-- "Character Array" -->E
+    F-- "String (Null-Terminated)" -->K
+
+    style K fill:#f99,stroke:#333,stroke-width:2px
+```
+
+```c
+int main_continued(void) {
+    char str1[10] = "Hello";
 
     // 修改字符数组
     str1[0] = 'h';
@@ -146,7 +169,7 @@ int main(void) {
 
     return 0;
 }
-```
+````
 
 ### 字符串函数
 

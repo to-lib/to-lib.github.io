@@ -9,6 +9,28 @@ STL 提供了通用的容器、迭代器和算法。
 
 ## 📦 序列容器
 
+```mermaid
+graph LR
+    subgraph Vector [Vector (Contiguous)]
+    v1[1] --- v2[2] --- v3[3] --- v4[4]
+    end
+
+    subgraph List [List (Linked)]
+    l1((1)) --> l2((2)) --> l3((3)) --> l4((4))
+    end
+
+    style Vector fill:#f9f9f9,stroke:#333
+    style List fill:#f9f9f9,stroke:#333
+    style v1 fill:#99ccff
+    style v2 fill:#99ccff
+    style v3 fill:#99ccff
+    style v4 fill:#99ccff
+    style l1 fill:#ff9999
+    style l2 fill:#ff9999
+    style l3 fill:#ff9999
+    style l4 fill:#ff9999
+```
+
 ```cpp
 #include <vector>
 #include <deque>
@@ -35,6 +57,24 @@ std::array<int, 3> arr = {1, 2, 3};
 ```
 
 ## 🗂️ 关联容器
+
+```mermaid
+graph TD
+    root((8))
+    root --> L((3))
+    root --> R((10))
+    L --> LL((1))
+    L --> LR((6))
+    R --> RL((null))
+    R --> RR((14))
+
+    style root fill:#90EE90
+    style L fill:#90EE90
+    style R fill:#90EE90
+    style LL fill:#90EE90
+    style LR fill:#90EE90
+    style RR fill:#90EE90
+```
 
 ```cpp
 #include <set>

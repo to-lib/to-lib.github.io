@@ -56,6 +56,18 @@ for (int x : result) {
 }
 ```
 
+```mermaid
+graph LR
+    Input[Data Source] -->|Filter % 2 == 0| A[Even Numbers]
+    A -->|Transform x * x| B[Squared Numbers]
+    B -->|Iteration| Output[Result]
+
+    style Input fill:#e1f5fe,stroke:#01579b
+    style A fill:#e0f2f1,stroke:#004d40
+    style B fill:#fff3e0,stroke:#e65100
+    style Output fill:#f3e5f5,stroke:#4a148c
+```
+
 ## 🔄 Coroutines (协程)
 
 ```cpp
@@ -67,6 +79,22 @@ Generator<int> range(int start, int end) {
         co_yield i;
     }
 }
+```
+
+```mermaid
+sequenceDiagram
+    participant Caller
+    participant Coroutine
+
+    Caller->>Coroutine: Call function
+    activate Coroutine
+    Coroutine->>Caller: co_yield val (Suspend)
+    deactivate Coroutine
+    Caller->>Caller: Use value
+    Caller->>Coroutine: Resume
+    activate Coroutine
+    Coroutine->>Caller: co_yield next_val (Suspend)
+    deactivate Coroutine
 ```
 
 ## 📋 三路比较 (Spaceship)

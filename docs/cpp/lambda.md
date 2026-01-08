@@ -26,6 +26,17 @@ auto divide = [](double a, double b) -> double {
 
 ## 📦 捕获方式
 
+```mermaid
+classDiagram
+    class LambdaClosure {
+        -int x (Value Capture)
+        -int& y (Ref Capture)
+        +operator()()
+    }
+
+    note for LambdaClosure "auto f = [x, &y]() { ... }"
+```
+
 ```cpp
 int x = 10, y = 20;
 
