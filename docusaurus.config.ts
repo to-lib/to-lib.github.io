@@ -174,6 +174,19 @@ const config: Config = {
             {
               type: "html",
               value:
+                "<div style='padding: 8px 12px; font-weight: bold; color: #00599C;'>C++ 编程</div>",
+            },
+            {
+              label: "📖 C++ 概述",
+              to: "/docs/cpp",
+            },
+            {
+              label: "✨ 现代 C++ 特性",
+              to: "/docs/cpp/cpp20-features",
+            },
+            {
+              type: "html",
+              value:
                 "<div style='padding: 8px 12px; font-weight: bold; color: #d32f2f;'>前端开发</div>",
             },
             {
@@ -758,6 +771,27 @@ const config: Config = {
             {
               label: "面试题汇总",
               to: "/docs/c/interview-questions",
+            },
+          ],
+        },
+        {
+          title: "🔷 C++",
+          items: [
+            {
+              label: "C++ 概述",
+              to: "/docs/cpp",
+            },
+            {
+              label: "面向对象",
+              to: "/docs/cpp/classes-objects",
+            },
+            {
+              label: "STL 标准库",
+              to: "/docs/cpp/stl",
+            },
+            {
+              label: "现代 C++",
+              to: "/docs/cpp/cpp20-features",
             },
           ],
         },

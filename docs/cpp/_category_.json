@@ -1,0 +1,8 @@
+{
+  "label": "C++ 编程",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "C++ 编程完整学习指南，涵盖面向对象、模板、STL、现代 C++ 特性等核心内容"
+  }
+}

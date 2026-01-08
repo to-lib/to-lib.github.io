@@ -758,6 +758,80 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
+  // C++ Programming sidebar
+  cpp: [
+    {
+      type: "category",
+      label: "📖 概览与基础",
+      collapsed: false,
+      items: [
+        "cpp/index",
+        "cpp/environment-setup",
+        "cpp/basic-syntax",
+        "cpp/functions",
+        "cpp/arrays-strings",
+        "cpp/type-casting",
+        "cpp/pointers-references",
+        "cpp/file-io",
+        "cpp/memory-management",
+      ],
+    },
+    {
+      type: "category",
+      label: "🎯 面向对象",
+      collapsed: true,
+      items: [
+        "cpp/classes-objects",
+        "cpp/operator-overloading",
+        "cpp/inheritance",
+        "cpp/polymorphism",
+        "cpp/encapsulation",
+        "cpp/abstract-interface",
+      ],
+    },
+    {
+      type: "category",
+      label: "🔧 高级特性",
+      collapsed: true,
+      items: [
+        "cpp/templates",
+        "cpp/stl",
+        "cpp/data-structures",
+        "cpp/smart-pointers",
+        "cpp/move-semantics",
+        "cpp/lambda",
+        "cpp/multithreading",
+        "cpp/preprocessor",
+        "cpp/exception-handling",
+      ],
+    },
+    {
+      type: "category",
+      label: "✨ 现代 C++",
+      collapsed: true,
+      items: [
+        "cpp/cpp11-features",
+        "cpp/cpp14-features",
+        "cpp/cpp17-features",
+        "cpp/cpp20-features",
+      ],
+    },
+    {
+      type: "category",
+      label: "🏗️ 工程实践",
+      collapsed: true,
+      items: [
+        "cpp/design-patterns",
+        "cpp/best-practices",
+        "cpp/debugging",
+        "cpp/performance",
+        "cpp/network-programming",
+        "cpp/interview-questions",
+        "cpp/practical-projects",
+      ],
+    },
+  ],
+
   // Linux sidebar
   linux: [
     {
